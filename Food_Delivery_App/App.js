@@ -1,112 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import type {Node} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
+  Image,
+  SafeAreaView,
+  ScrollView,
 } from 'react-native';
+import React from 'react';
+import CUSTOM_COLOR from './src/constant/color';
+import {IMG_Background, IMG_Logo} from './src/assets/images';
+import FONT_FAMILY from './src/constant/font';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <ScrollView>
+      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        {/* logo */}
+        <View style={styles.logoContainer}>
+          <Image source={IMG_Logo} style={styles.logo} />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+        {/* title */}
+        <Text style={styles.title}>{'Food for \n Evryone'}</Text>
+        {/* image */}
+        <View style={styles.backgroundContainer}>
+          <Image
+            source={IMG_Background}
+            style={styles.background}
+            resizeMode={'contain'}
+          />
+        </View>
+        {/* button */}
+        <View style={styles.buttonContainer}>
+          <Text>{'Get Starteed'}</Text>
+        </View>
+      </SafeAreaView>
+    </ScrollView>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  logoContainer: {
+    width: 73,
+    height: 74,
+    borderRadius: 37,
+    backgroundColor: CUSTOM_COLOR.White,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 50,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  backgroundContainer: {
+    backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
-  highlight: {
-    fontWeight: '700',
+
+  background: {},
+  logo: {
+    width: '100%',
+    height: '100%',
+  },
+  title: {
+    fontSize: 65,
+    color: CUSTOM_COLOR.White,
+    marginLeft: 50,
+    fontFamily: FONT_FAMILY.Black,
+  },
+  buttonContainer: {
+    backgroundColor: CUSTOM_COLOR.White,
+    width: 314,
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 35,
+    alignSelf: 'center',
+  },
+  textButton: {
+    fontFamily: FONT_FAMILY.Black,
+    fontSize: 20,
   },
 });
-
-export default App;
