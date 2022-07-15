@@ -1,7 +1,16 @@
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ImageBackground,
+  Dimensions,
+} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from './src/constants/colors';
 import {IMG_Logo, IMG_Background} from './src/assets/images';
+import FONT_FAMILY from './src/constants/fonts';
 
 const App = () => {
   return (
@@ -14,12 +23,28 @@ const App = () => {
       </>
       {/* Title */}
       <>
+<<<<<<< HEAD
 
+=======
+        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
+>>>>>>> d406ec30369e7abcf3346fe72714b0fd7dee86ae
       </>
       {/* Image */}
-      <></>
+      <>
+        <View style={styles.backgroundContainer}>
+          <ImageBackground
+            source={IMG_Background}
+            style={styles.background}
+            resizeMode={'contain'}>
+            <>
+              <View style={styles.button}>
+                <Text style={styles.buttonComment}>{'Get started'}</Text>
+              </View>
+            </>
+          </ImageBackground>
+        </View>
+      </>
       {/* Button */}
-      <></>
     </ScrollView>
   );
 };
@@ -38,10 +63,38 @@ const styles = StyleSheet.create({
   logoContainer: {
     width: 73,
     height: 73,
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 36,
     backgroundColor: CUSTOM_COLOR.White,
     overflow: 'hidden',
+    marginTop: 56,
+    marginLeft: 49,
+  },
+  title: {
+    fontSize: 65,
+    fontFamily: FONT_FAMILY.Heavy,
+    color: CUSTOM_COLOR.white,
+    marginLeft: 49,
+  },
+  backgroundContainer: {},
+  background: {
+    width: Dimensions.get('window').width,
+    height: 540,
+    justifyContent: 'flex-end',
+  },
+  button: {
+    backgroundColor: CUSTOM_COLOR.white,
+    height: 70,
+    width: 314,
+    borderRadius: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  buttonComment: {
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.ProTextSemibold,
+    color: CUSTOM_COLOR.SunsetColor,
   },
 });
