@@ -1,6 +1,6 @@
 import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from './src/contants/colors';
+import CUSTOM_COLOR from './src/constants/colors';
 import {IMG_Logo, IMG_Background} from './src/assets/images';
 
 const App = () => {
@@ -13,7 +13,9 @@ const App = () => {
         </View>
       </>
       {/* Title */}
-      <></>
+      <>
+
+      </>
       {/* Image */}
       <></>
       {/* Button */}
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     justifyContent: 'center',
     borderRadius: 36,
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     overflow: 'hidden',
   },
 });
