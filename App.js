@@ -12,7 +12,7 @@ const App = () => {
           <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
         </View>
       </>
-      {/* Title  */}
+      {/* Title */}
       <></>
       {/* Image */}
       <></>
