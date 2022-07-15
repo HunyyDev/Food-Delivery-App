@@ -48,6 +48,7 @@ const Section = ({children, title}): Node => {
         ]}>
         {children}
       </Text>
+      <Text>Just for fun</Text>
     </View>
   );
 };
