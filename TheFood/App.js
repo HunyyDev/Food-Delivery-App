@@ -1,5 +1,13 @@
-import React from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
 
+import React from 'react';
+import type {Node} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -10,7 +18,15 @@ import {
   View,
 } from 'react-native';
 
-const Section = ({children, title}) => {
+import {
+  Colors,
+  DebugInstructions,
+  Header,
+  LearnMoreLinks,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+
+const Section = ({children, title}): Node => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -36,7 +52,7 @@ const Section = ({children, title}) => {
   );
 };
 
-const App = () => {
+const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
