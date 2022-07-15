@@ -31,7 +31,7 @@ export default function App() {
         </View>
         {/* button */}
         <View style={styles.buttonContainer}>
-          <Text>{'Get Starteed'}</Text>
+          <Text style={styles.textButton}>{'Get Started'}</Text>
         </View>
       </SafeAreaView>
     </ScrollView>
