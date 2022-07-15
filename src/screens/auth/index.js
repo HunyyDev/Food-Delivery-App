@@ -11,7 +11,7 @@ class LoginScreen extends Component {
     return (
       <View>
         <Text>Login and Sign up Screen</Text>
-        <Text>Description</Text>
+        <Text>This is authen screen</Text>
       </View>
     );
   }
