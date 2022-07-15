@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from './src/constants/colors';
+import {IMG_Logo, IMG_Background} from './src/assets/images';
 import FONT_FAMILY from './src/constants/fonts';
-import {IMG_Logo, IMG_Background} from './src/assets/images/index.js';
 
 const App = () => {
   return (
@@ -57,21 +57,21 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   logoContainer: {
-    width: 70,
-    height: 70,
+    width: 73,
+    height: 73,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 36,
     backgroundColor: CUSTOM_COLOR.white,
     overflow: 'hidden',
-    marginTop: 6,
-    marginLeft: 40,
+    marginTop: 56,
+    marginLeft: 49,
   },
   title: {
-    fontSize: 41,
-    fontFamily: FONT_FAMILY.Regular,
+    fontSize: 65,
+    fontFamily: FONT_FAMILY.Heavy,
     color: CUSTOM_COLOR.white,
-    marginLeft: 40,
+    marginLeft: 49,
   },
   backgroundContainer: {},
   backgound: {
