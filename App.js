@@ -8,9 +8,9 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from './src/contants/colors';
+import CUSTOM_COLOR from './src/constants/colors';
 import {IMG_Logo, IMG_Background} from './src/assets/images';
-import FONT_FAMILY from './src/contants/fonts';
+import FONT_FAMILY from './src/constants/fonts';
 
 const App = () => {
   return (
