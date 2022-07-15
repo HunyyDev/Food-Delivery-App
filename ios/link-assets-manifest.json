@@ -28,6 +28,10 @@
     {
       "path": "src/assets/fonts/SFProText-Regular.ttf",
       "sha1": "b4893462f2289df6978f9462a63db9e64bcc9342"
+    },
+    {
+      "path": "src/assets/fonts/SFProText-Semibold.ttf",
+      "sha1": "9560ae412d73c7c9af72333db50464b4e597b0f9"
     }
   ]
 }

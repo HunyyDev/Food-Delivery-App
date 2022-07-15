@@ -30,11 +30,11 @@ const App = () => {
         <View style={styles.backgroundContainer}>
           <ImageBackground
             source={IMG_Background}
-            style={styles.backgound}
+            style={styles.background}
             resizeMode={'contain'}>
             <>
               <View style={styles.button}>
-                <Text>{'Get started'}</Text>
+                <Text style={styles.buttonComment}>{'Get started'}</Text>
               </View>
             </>
           </ImageBackground>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginLeft: 49,
   },
   backgroundContainer: {},
-  backgound: {
+  background: {
     width: Dimensions.get('window').width,
     height: 540,
     justifyContent: 'flex-end',
@@ -87,5 +87,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+  },
+  buttonComment: {
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.ProTextSemibold,
+    color: CUSTOM_COLOR.SunsetColor,
   },
 });

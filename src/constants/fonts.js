@@ -8,6 +8,7 @@ const FONT_FAMILY = {
   Regular: Prefix + 'Regular',
   ProTextBold: ProText + 'Bold',
   ProTextRegular: ProText + 'Regular',
+  ProTextSemibold: ProText + 'Semibold',
 };
 
 export default FONT_FAMILY;
