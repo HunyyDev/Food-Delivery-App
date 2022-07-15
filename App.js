@@ -9,7 +9,7 @@ const App = () => {
       {/* Logo */}
       <>
         <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'}>
+          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
         </View>
       </>
       {/* Title */}
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SunsetColor,
   },
-  logo:{
+  logo: {
     width: '100%',
     height: '100%',
   },
