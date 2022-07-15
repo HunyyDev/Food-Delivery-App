@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -10,7 +10,8 @@ class LoginScreen extends Component {
   render() {
     return (
       <View>
-        <Text> index </Text>
+        <Text>Login and Sign up Screen</Text>
+        <Text>Description</Text>
       </View>
     );
   }
