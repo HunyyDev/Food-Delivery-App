@@ -5,7 +5,7 @@ export class index extends Component {
   render() {
     return (
       <View>
-        <Text>This is Home Screen</Text>
+        <Text>This is Home Screen description</Text>
       </View>
     );
   }
