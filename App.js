@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
 import FONT_FAMILY from './src/constants/fonts';
+import {IMG_Logo, IMG_Background} from './src/assets/images/index.js';
 
 const App = () => {
   return (
