@@ -1,5 +1,6 @@
 const CUSTOM_COLOR = {
   SunsetColor: '#FF4B3A',
-  white: '#FFFFFF',
+  White: '#FFFFFF',
+  Vermilion: '#FF460A',
 };
 export default CUSTOM_COLOR;

@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 65,
     fontFamily: FONT_FAMILY.Heavy,
-    color: CUSTOM_COLOR.white,
+    color: CUSTOM_COLOR.White,
     marginLeft: 49,
   },
   backgroundContainer: {},
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     height: 70,
     width: 314,
     borderRadius: 35,
@@ -91,6 +91,6 @@ const styles = StyleSheet.create({
   buttonComment: {
     fontSize: 17,
     fontFamily: FONT_FAMILY.ProTextSemibold,
-    color: CUSTOM_COLOR.SunsetColor,
+    color: CUSTOM_COLOR.Vermilion,
   },
 });
