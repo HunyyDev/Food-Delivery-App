@@ -48,4 +48,16 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginTop: 15,
     },
+    logo: {
+
+    },
+    loginContainer: {
+
+    },
+    headlines: {
+
+    },
+    input: {
+
+    },
 });
