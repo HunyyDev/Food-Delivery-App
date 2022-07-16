@@ -1,111 +1,108 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import type {Node} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
+  Image,
+  SafeAreaView,
+  Dimensions,
+  ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
+import CUSTOM_COLOR from './src/constants/colors';
+import {IMG_Logo, IMG_Background} from './src/assets/images';
+import FONT_FAMILY from './src/constants/fonts';
+import {scaleWidth} from './src/constants/reponsive';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <SafeAreaView style={styles.container}>
+      {/* Logo */}
+      <>
+        <View style={styles.logoContainer}>
+          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
         </View>
-      </ScrollView>
+      </>
+
+      {/* Title */}
+      <>
+        <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
+      </>
+
+      {/* Image */}
+      <>
+        <View style={styles.backgroundContainer}>
+          <ImageBackground
+            source={IMG_Background}
+            style={styles.background}
+            resizeMode={'contain'}>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.text}>{'Get started'}</Text>
+            </TouchableOpacity>
+          </ImageBackground>
+        </View>
+      </>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    alignSelf: 'stretch',
+    marginTop: 0,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+
+  logoContainer: {
+    width: scaleWidth(74),
+    height: scaleWidth(74),
+    borderRadius: scaleWidth(74) / 2,
+    // top: scaleWidth(56),
+    backgroundColor: CUSTOM_COLOR.Bold,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: scaleWidth(49),
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+
+  logo: {
+    width: '100%',
+    height: '100%',
   },
-  highlight: {
-    fontWeight: '700',
+
+  titleText: {
+    fontSize: scaleWidth(65),
+    fontFamily: FONT_FAMILY.Bold,
+    color: CUSTOM_COLOR.white,
+    marginLeft: scaleWidth(49),
+    fontWeight: 'bold',
+  },
+
+  backgroundContainer: {
+    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+  },
+
+  background: {
+    width: Dimensions.get('window').width,
+    height: 430,
+    justifyContent: 'flex-end',
+  },
+
+  button: {
+    backgroundColor: CUSTOM_COLOR.white,
+    height: scaleWidth(60),
+    width: scaleWidth(300),
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+
+  text: {
+    fontSize: scaleWidth(17),
+    fontFamily: FONT_FAMILY.ExtraBold,
+    color: CUSTOM_COLOR.SunsetOrange,
   },
 });
 
