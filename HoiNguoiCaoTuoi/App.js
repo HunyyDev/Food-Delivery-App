@@ -58,11 +58,11 @@ const styles = StyleSheet.create({
     width: scaleWidth(74),
     height: scaleWidth(74),
     borderRadius: scaleWidth(74) / 2,
-    // top: scaleWidth(56),
     backgroundColor: CUSTOM_COLOR.Bold,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: scaleWidth(56),
     marginLeft: scaleWidth(49),
   },
 
