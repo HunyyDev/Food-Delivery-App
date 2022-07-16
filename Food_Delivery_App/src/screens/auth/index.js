@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   forgotBackground: {
     width: '75%',
     height: '8%',
-    margin: 30,
+    margin: 31,
     marginBottom: 10,
     backgroundColor: CUSTOM_COLOR.Concrete,
     alignSelf: 'center',
