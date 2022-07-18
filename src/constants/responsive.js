@@ -17,4 +17,4 @@ function scaleHeight(number) {
   return scaleNumber;
 }
 
-export default scaleWidth;
+export default {scaleWidth, scaleHeight};
