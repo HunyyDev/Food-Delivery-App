@@ -23,11 +23,7 @@ const App = () => {
       </>
       {/* Title */}
       <>
-<<<<<<< HEAD
-
-=======
         <Text style={styles.title}>{'Food for \nEveryone'}</Text>
->>>>>>> d406ec30369e7abcf3346fe72714b0fd7dee86ae
       </>
       {/* Image */}
       <>
