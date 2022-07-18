@@ -1,7 +1,8 @@
 import React from 'react';
 import LoginScreen from './src/screens/auth';
 import OnboardingScreen from './src/screens/onboarding';
-import {StyleSheet, Text, View} from 'react-native';
+import HomeScreen from './src/screens/home';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 
 const App = props => {
   return (

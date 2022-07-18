@@ -71,6 +71,15 @@
 		<string>SF-Pro-Display-ThinItalic.otf</string>
 		<string>SF-Pro-Display-Ultralight.otf</string>
 		<string>SF-Pro-Display-UltralightItalic.otf</string>
+		<string>SF-Pro-Rounded-Black.otf</string>
+		<string>SF-Pro-Rounded-Bold.otf</string>
+		<string>SF-Pro-Rounded-Heavy.otf</string>
+		<string>SF-Pro-Rounded-Light.otf</string>
+		<string>SF-Pro-Rounded-Medium.otf</string>
+		<string>SF-Pro-Rounded-Regular.otf</string>
+		<string>SF-Pro-Rounded-Semibold.otf</string>
+		<string>SF-Pro-Rounded-Thin.otf</string>
+		<string>SF-Pro-Rounded-Ultralight.otf</string>
 	</array>
 </dict>
 </plist>
