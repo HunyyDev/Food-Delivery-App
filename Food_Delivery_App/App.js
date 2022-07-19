@@ -3,7 +3,7 @@ import OnBoardingScreen from './src/screens/onboarding';
 const App = () => {
   return (
     <>
-      <HomeScreen />
+      < OnBoardingScreen />
     </>
 };
 
