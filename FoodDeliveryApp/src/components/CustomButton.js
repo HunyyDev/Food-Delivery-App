@@ -7,17 +7,17 @@ export class CustomButton extends Component {
   render() {
     return (
       <>
-        <TouchableOpacity style={styles.container}>
+        <View style={styles.container}>
           {this.props.type === 'primary' ? (
-            <View style={styles.buttonPrimary}>
+            <TouchableOpacity style={styles.buttonPrimary}>
               <Text style={styles.textButtonPrimary}>{this.props.text}</Text>
-            </View>
+            </TouchableOpacity>
           ) : (
-            <View style={styles.buttonSecondary}>
+            <TouchableOpacity style={styles.buttonSecondary}>
               <Text style={styles.textButtonSecondary}>{this.props.text}</Text>
-            </View>
+            </TouchableOpacity>
           )}
-        </TouchableOpacity>
+        </View>
       </>
     );
   }
@@ -27,17 +27,17 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   container: {
-    height: scale(70),
-    width: scale(314),
-    justifyContent: 'center',
+    height: '100%',
+    width: '100%',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     alignSelf: 'center',
   },
 
   buttonPrimary: {
     backgroundColor: CUSTOM_COLOR.White,
-    height: '100%',
-    width: '100%',
+    height: scale(70),
+    width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: scale(30),
@@ -50,10 +50,10 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Orange,
   },
 
-  buttonSecondary:{
+  buttonSecondary: {
     backgroundColor: CUSTOM_COLOR.Orange,
-    height: '100%',
-    width: '100%',
+    height: scale(70),
+    width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: scale(30),
@@ -65,5 +65,4 @@ const styles = StyleSheet.create({
     fontSize: scale(17),
     color: CUSTOM_COLOR.White,
   },
-
 });
