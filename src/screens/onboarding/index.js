@@ -32,11 +32,11 @@ const App = () => {
             source={IMG_Background}
             style={styles.background}
             resizeMode={'contain'}>
-            <>
+            {/* <>
               <View style={styles.button}>
                 <Text style={styles.buttonComment}>{'Get started'}</Text>
               </View>
-            </>
+            </> */}
           </ImageBackground>
         </View>
       </>
@@ -79,18 +79,18 @@ const styles = StyleSheet.create({
     height: 540,
     justifyContent: 'flex-end',
   },
-  button: {
-    backgroundColor: CUSTOM_COLOR.white,
-    height: 70,
-    width: 314,
-    borderRadius: 35,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  buttonComment: {
-    fontSize: 17,
-    fontFamily: FONT_FAMILY.ProTextSemibold,
-    color: CUSTOM_COLOR.SunsetColor,
-  },
+  // button: {
+  //   backgroundColor: CUSTOM_COLOR.white,
+  //   height: 70,
+  //   width: 314,
+  //   borderRadius: 35,
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   alignSelf: 'center',
+  // },
+  // buttonComment: {
+  //   fontSize: 17,
+  //   fontFamily: FONT_FAMILY.ProTextSemibold,
+  //   color: CUSTOM_COLOR.SunsetColor,
+  // },
 });

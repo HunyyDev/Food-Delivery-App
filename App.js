@@ -1,88 +1,58 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View, Pressable} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
 import FONT_FAMILY from './src/constants/fonts';
 
-const App = () => {
+const Custom_Button = props => {
+  const {type, child, ...moreProps} = props;
+  const styles = () => {
+    switch (type) {
+      case 'primary':
+        return primary;
+      case 'secondary':
+        return secondary;
+      default:
+        return primary;
+    }
+  };
   return (
-    <ScrollView style={styles.container}>
-      {/* Logo */}
-      <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-        </View>
-      </>
-      {/* Title */}
-      <>
-        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
-      </>
-      {/* Image */}
-      <>
-        <View style={styles.backgroundContainer}>
-          <ImageBackground
-            source={IMG_Background}
-            style={styles.background}
-            resizeMode={'contain'}>
-            <>
-              <View style={styles.button}>
-                <Text style={styles.buttonComment}>{'Get started'}</Text>
-              </View>
-            </>
-          </ImageBackground>
-        </View>
-      </>
-      {/* Button */}
-    </ScrollView>
+    <Pressable {...moreProps}>
+      {({pressed}) => (
+        <Text
+          style={[
+            general.button,
+            styles.button,
+            pressed && styles.buttonHover,
+          ]}>
+          {child}
+        </Text>
+      )}
+    </Pressable>
   );
 };
 
-export default App;
+export default Custom_Button;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
-  },
-  logo: {
-    width: '100%',
-    height: '100%',
-  },
-  logoContainer: {
-    width: 73,
-    height: 73,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 36,
-    backgroundColor: CUSTOM_COLOR.white,
-    overflow: 'hidden',
-    marginTop: 56,
-    marginLeft: 49,
-  },
-  title: {
-    fontSize: 65,
-    fontFamily: FONT_FAMILY.Heavy,
-    color: CUSTOM_COLOR.White,
-    marginLeft: 49,
-  },
-  backgroundContainer: {},
-  background: {
-    width: Dimensions.get('window').width,
-    height: 540,
-    justifyContent: 'flex-end',
-  },
+const general = StyleSheet.create({
   button: {
-    backgroundColor: CUSTOM_COLOR.White,
-    height: 70,
     width: 314,
+    alignSelf: 'center',
+    fontFamily: FONT_FAMILY.SF_Pro_Rounded,
+    fontSize: 18,
+    flex: 1,
+    textAlign: 'center',
+    borderWidth: 2,
+    borderRadius: 30,
+    marginBottom: 20,
+    paddingVertical: 20,
+  },
+});
+
+const primary = StyleSheet.create({
+  buttonContainer: {
+    width: 314,
+    height: 70,
+    backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 35,
     justifyContent: 'center',
     alignItems: 'center',
@@ -91,6 +61,23 @@ const styles = StyleSheet.create({
   buttonComment: {
     fontSize: 17,
     fontFamily: FONT_FAMILY.ProTextSemibold,
-    color: CUSTOM_COLOR.Vermilion,
+    color: CUSTOM_COLOR.SunsetColor,
+  },
+});
+
+const secondary = StyleSheet.create({
+  buttonContainer: {
+    width: 314,
+    height: 70,
+    backgroundColor: CUSTOM_COLOR.SunsetColor,
+    borderRadius: 35,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+  },
+  buttonComment: {
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.ProTextSemibold,
+    color: CUSTOM_COLOR.White,
   },
 });
