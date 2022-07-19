@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: -30,
     },
+    shadowOpacity: '0.8',
     justifyContent: 'flex-end',
   },
   imageWrapper: {
@@ -152,6 +153,19 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.58,
     shadowRadius: 16.0,
     elevation: 24,
+  },
+  SeeMore: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    marginTop: 30,
+    marginBottom: -50,
+    paddingRight: 41,
+    width: Dimensions.get('window').width,
+  },
+  TextSeeMore: {
+    fontFamily: FONT_FAMILY.RoundedRegular,
+    fontSize: 15,
+    color: CUSTOM_COLOR.SunsetOrange,
   },
 });
 

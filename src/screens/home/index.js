@@ -110,6 +110,11 @@ export default class HomeScreen extends Component {
           </ScrollView>
         </>
         <>
+          <View style={styles.SeeMore}>
+            <Text style={styles.TextSeeMore}>see more</Text>
+          </View>
+        </>
+        <>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.productWrapper}>
               {this.productList.map(({id, source, title, price}) => (
