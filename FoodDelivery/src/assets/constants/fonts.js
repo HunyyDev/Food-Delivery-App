@@ -6,5 +6,6 @@ const FONT_FAMILY = {
   Light: Prefix + 'Light',
   SFBlack: SF + 'Black',
   SFProTextBold: SFProText + 'Bold',
+  SFProRoundedBold: 'SF-Pro-Rounded-Bold',
 };
 export default FONT_FAMILY;

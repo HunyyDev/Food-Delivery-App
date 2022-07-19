@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
 
   Text: {
     color: 'white',
-    fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(65),
+    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontSize: scale(70),
     marginLeft: scale(51),
     position: 'absolute',
-    marginTop: scale(160),
+    marginTop: scale(155),
   },
 
   backgroundContainer: {
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: CUSTOM_COLOR.SunsetOrange,
-    fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(17),
+    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontSize: scale(18),
     fontWeight: '600',
     justifyContent: 'center',
     alignSelf: 'center',
