@@ -5,7 +5,8 @@ import {IMG_Logo} from '../../assets/images'
 import CUSTOM_COLOR from '../../constants/colors'
 import FONT_FAMILY from '../../constants/fonts'
 
-function index ({navigation})  {
+function LoginScreen (props)  {
+    const {navigation} = props; 
     const [tab, setTab] = useState('login');
     const isDarkMode = useColorScheme() === 'dark';
   return (
@@ -26,10 +27,8 @@ function index ({navigation})  {
                     Sign-up
                 </UnderlineButton>
             </View>
-
         </View>
       </>
-     <></>
       <>
     <ScrollView style={styles.loginContainer}>
         <View>
@@ -58,17 +57,9 @@ function index ({navigation})  {
     </>
     <View style={styles.buttonView}>
         <Pressable style={styles.button}>
-            {({pressed}) =>
-                pressed ? (
-                    <Text style={[{color: 'white'}, styles.buttonText]}>
-                    Getting started
-                    </Text>
-                ) : (
-                     <Text style={[{color: '#FF4B3A'}, styles.buttonText]}>
-                     Getting started
-                     </Text>
-                )
-            }
+            <Text style={styles.buttonText}>
+                Login
+            </Text>
         </Pressable>
     </View>
     </ScrollView>
@@ -77,7 +68,7 @@ function index ({navigation})  {
   );
 };
 
-export default index;
+export default LoginScreen;
 
 const Holder = () => {
     return (
@@ -125,13 +116,13 @@ const styles = StyleSheet.create({
 
     navigationBackground: ({isChoosing}) => ({
         borderBottomWidth: 3,
-        borderBottomColor: isChoosing ? CUSTOM_COLOR.SunsetYellow : 'transparent',
+        borderBottomColor: isChoosing ? CUSTOM_COLOR.SunsetYellow : CUSTOM_COLOR.Transparent,
         width: 134,
     }),
     navigationText: {
         color: CUSTOM_COLOR.Black,
         padding: 15,
-        fontWeight: '700',
+        fontFamily: FONT_FAMILY.ProTextBold,
         fontSize: 18,
         alignSelf: 'center',
     },
@@ -165,7 +156,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     button: ({pressed}) => ({
-        backgroundColor: pressed ? CUSTOM_COLOR.SunsetYellow : CUSTOM_COLOR.White,
+        backgroundColor: CUSTOM_COLOR.SunsetYellow,
+        opacity: pressed ? 0.4 : 1,
         height: 70,
         width: 314,
         justifyContent: 'center',
@@ -175,7 +167,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 136,
     }),
     buttonText: {
-        fontWeight: '700',
+        color: CUSTOM_COLOR.White,
+        fontFamily: FONT_FAMILY.ProTextBold,
         fontSize: 18,
     },
 });
