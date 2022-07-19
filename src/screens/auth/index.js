@@ -47,33 +47,41 @@ export default class LoginScreen extends Component {
             </View>
           </View>
         </>
+        {this.state.tab === 'login' ? (
+          <>
+            <CustomInput label={'Email address'} secure={false} />
+            <CustomInput label={'Password'} secure={true} />
+
+            <Pressable
+              // onPress={10}
+              style={({pressed}) => [
+                {
+                  backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+                },
+                styles.forgotBackground,
+              ]}>
+              {({pressed}) =>
+                pressed ? (
+                  <Text style={styles.forgotPressed}>Forgot passcode?</Text>
+                ) : (
+                  <Text style={styles.forgot}>Forgot passcode?</Text>
+                )
+              }
+            </Pressable>
+          </>
+        ) : (
+          <>
+            <CustomInput label={'Email address'} secure={false} />
+            <CustomInput label={'Password'} secure={true} />
+            <CustomInput label={'Confirm Password'} secure={true} />
+          </>
+        )}
         <>
-          <CustomInput label={'Email address'} secure={false} />
-          <CustomInput label={'Password'} secure={true} />
-        </>
-        <>
-          {/* <Pressable
-            onPress={10}
-            style={({pressed}) => [
-              {
-                backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
-              },
-              styles.forgotBackground,
-            ]}>
-            {({pressed}) =>
-              ({pressed} ? (
-                <Text style={styles.forgot}>Forgot passcode?</Text>
-              ) : (
-                <Text style={styles.forgotPressed}>Forgot passcode?</Text>
-              ))
-            }
-          </Pressable> */}
-          <View style={styles.forgotBackground}>
-            <Text style={styles.forgot}>Forgot passcode?</Text>
-          </View>
-        </>
-        <>
-          <CustomButton label={'secondary'} text={'Login'} />
+          <CustomButton
+            label={'secondary'}
+            text={'Login'}
+            onPress={() => this.props.navigation.navigate('Home')}
+          />
         </>
       </ScrollView>
     );

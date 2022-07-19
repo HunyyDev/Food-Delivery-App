@@ -1,4 +1,4 @@
-import {Text, StyleSheet, View, Dimensions} from 'react-native';
+import {Text, StyleSheet, View, Dimensions, Pressable} from 'react-native';
 import React, {Component, useState} from 'react';
 import CUSTOM_COLOR from '../constants/colors';
 
@@ -6,17 +6,47 @@ import FONT_FAMILY from '../constants/fonts';
 
 const CustomButton = props => {
   return (
-    <View style={styles.buttonBackground}>
-      {props.label === 'primary' ? (
-        <View style={styles.buttonWhite}>
-          <Text style={styles.TextButtonWhite}>{props.text}</Text>
-        </View>
-      ) : (
-        <View style={styles.buttonOrange}>
-          <Text style={styles.TextButtonOrange}>{props.text}</Text>
-        </View>
-      )}
-    </View>
+    // <View style={styles.buttonBackground}>
+    //   {props.label === 'primary' ? (
+    //     <View style={styles.buttonWhite}>
+    //       <Text style={styles.TextButtonWhite}>{props.text}</Text>
+    //     </View>
+    //   ) : (
+    //     <View style={styles.buttonOrange}>
+    //       <Text style={styles.TextButtonOrange}>{props.text}</Text>
+    //     </View>
+    //   )}
+    // </View>
+    <Pressable
+      onPress={props.onPress}
+      style={({pressed}) => [
+        {
+          backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
+        },
+        styles.buttonBackground,
+      ]}>
+      {props.label === 'primary'
+        ? ({pressed}) =>
+            pressed ? (
+              <View style={styles.buttonOrange}>
+                <Text style={styles.TextButtonOrange}>{props.text}</Text>
+              </View>
+            ) : (
+              <View style={styles.buttonWhite}>
+                <Text style={styles.TextButtonWhite}>{props.text}</Text>
+              </View>
+            )
+        : ({pressed}) =>
+            pressed ? (
+              <View style={styles.buttonWhite}>
+                <Text style={styles.TextButtonWhite}>{props.text}</Text>
+              </View>
+            ) : (
+              <View style={styles.buttonOrange}>
+                <Text style={styles.TextButtonOrange}>{props.text}</Text>
+              </View>
+            )}
+    </Pressable>
   );
 };
 
@@ -24,14 +54,14 @@ const styles = StyleSheet.create({
   buttonWhite: {
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 35,
-    height: '100%',
+    height: Dimensions.get('window').height * 0.08,
     padding: 20,
-    width: '100%',
+    width: Dimensions.get('window').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: 50,
-    margin: 20,
+    // marginTop: 30,
+    margin: 30,
   },
   TextButtonWhite: {
     fontFamily: FONT_FAMILY.TextBold,
@@ -41,14 +71,14 @@ const styles = StyleSheet.create({
   buttonOrange: {
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
     borderRadius: 35,
-    height: '100%',
+    height: Dimensions.get('window').height * 0.08,
     padding: 20,
-    width: '100%',
+    width: Dimensions.get('window').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    marginTop: 50,
-    margin: 20,
+    // marginTop: 30,
+    margin: 30,
   },
   TextButtonOrange: {
     fontFamily: FONT_FAMILY.TextBold,
@@ -56,11 +86,7 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.White,
   },
   buttonBackground: {
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    // borderRadius: 999,
-    height: '9%',
-    //padding: 20,
-    width: '80%',
+    backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',

@@ -12,8 +12,9 @@ import React from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 import FONT_FAMILY from '../../constants/fonts';
+import CustomButton from '../../components/CustomButton';
 
-const OnboardingScreen = () => {
+const OnboardingScreen = props => {
   return (
     <ScrollView style={styles.container}>
       <>
@@ -34,9 +35,14 @@ const OnboardingScreen = () => {
             source={IMG_Background} //require('./src/assets/images/logo.png')}
             style={styles.background}
             resizeMode={'contain'}>
-            <View style={styles.button}>
+            {/* <View style={styles.button}>
               <Text style={styles.textButton}>Get started</Text>
-            </View>
+            </View> */}
+            <CustomButton
+              label={'primary'}
+              text={'Get started'}
+              onPress={() => props.navigation.navigate('Login')}
+            />
           </ImageBackground>
         </View>
       </>
@@ -83,7 +89,7 @@ const styles = StyleSheet.create({
   },
   background: {
     width: Dimensions.get('window').width,
-    height: 500,
+    height: Dimensions.get('window').height * 0.65,
     justifyContent: 'flex-end',
   },
   button: {

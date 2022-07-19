@@ -8,7 +8,7 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import {ICON_2, ICON_3, ICON_33, ICON_4, ICON_Menu} from '../../assets/icons';
+import {ICON_33, ICON_Menu, ICON_shop} from '../../assets/icons';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import ButtonHome from '../../components/ButtonHome';
@@ -26,7 +26,7 @@ export default class HomeScreen extends Component {
         <>
           <View style={styles.MenuContainer}>
             <Image source={ICON_Menu} style={styles.IconMenu} />
-            {/* <Image source={ICON_2} style={styles.Icon2} /> */}
+            <Image source={ICON_shop} style={styles.IconShop} />
           </View>
         </>
         <>
@@ -38,13 +38,18 @@ export default class HomeScreen extends Component {
           <View style={styles.SearchContainer}>
             <View style={styles.Search}>
               <Image source={ICON_33} style={styles.IconSearch} />
-              <Text style={styles.TextSearch}>Search</Text>
+              {/* <Text style={styles.TextSearch}>Search</Text> */}
+              <TextInput
+                style={styles.TextSearch}
+                placeholder={'Search'}
+                placeholderTextColor={CUSTOM_COLOR.Light_Black}
+              />
             </View>
           </View>
         </>
         <>
-          <View style={styles.TitleContainer}>
-            <View style={styles.navigationBar}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={[styles.navigationBar, styles.TitleContainer]}>
               <ButtonHome
                 onPress={() => this.setState({tab: 'Foods'})}
                 isChoosing={this.state.tab === 'Foods'}>
@@ -66,7 +71,7 @@ export default class HomeScreen extends Component {
                 Sauce
               </ButtonHome>
             </View>
-          </View>
+          </ScrollView>
         </>
         <>
           <View style={styles.ImageContainer} />
@@ -110,19 +115,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   TitleContainer: {
-    height: Dimensions.get('window').height * 0.1,
-    width: Dimensions.get('window').width,
-    backgroundColor: 'blue',
-    // flexDirection: 'row',
+    padding: 10,
+    marginTop: 36,
+    paddingHorizontal: 75,
+    backgroundColor: CUSTOM_COLOR.Concrete,
     flex: 1,
   },
   navigationBar: {
-    position: 'absolute',
-    bottom: 0,
-    width: Dimensions.get('window').width,
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    gap: 41,
   },
   ImageContainer: {
     height: Dimensions.get('window').height * 0.5,
@@ -137,9 +139,9 @@ const styles = StyleSheet.create({
   IconMenu: {
     marginLeft: 50,
   },
-  Icon2: {
-    width: 40,
-    height: 40,
+  IconShop: {
+    position: 'absolute',
+    left: 350,
     alignSelf: 'flex-end',
   },
   Text: {
@@ -162,11 +164,11 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
   TextSearch: {
-    margin: 18,
-    marginLeft: -5,
+    // margin: 18,
+    // marginLeft: -5,
     color: CUSTOM_COLOR.Black,
     opacity: 0.5,
-    fontFamily: FONT_FAMILY.RoundedBold,
+    // fontFamily: FONT_FAMILY.RoundedBold,
     fontSize: 17,
   },
 });
