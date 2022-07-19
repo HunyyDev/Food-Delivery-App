@@ -39,7 +39,7 @@ export class Login extends Component {
               <Image source={IMG_Logo} style={styles.logo} />
             </View>
             <>{/*Change between Login and Sign Up*/}</>
-            <View style={styles.backgroundbuttomText}>
+            <View style={styles.backgroundbuttonText}>
               <View style={styles.buttonLogin}>
                 <Text style={styles.buttonText}>Login</Text>
               </View>
@@ -99,14 +99,14 @@ const styles = StyleSheet.create({
     marginEnd: scale(50),
     justifyContent: 'space-around',
   },
-  backgroundbuttomText: {
+  backgroundbuttonText: {
     alignContent: 'center',
     overflow: 'hidden',
     width: '100%',
-    position: 'absolute',
-    bottom: 15,
+    bottom: scale(-23),
+    alignSelf: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   backgroundLogo: {
     alignSelf: 'center',
@@ -114,11 +114,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonLogin: {
-    backgroundColor: CUSTOM_COLOR.White,
+    height: scale(60),
+    width: '30%',
     overflow: 'hidden',
-    justifyContent: 'center',
-    borderRadius: 30,
-    flex: 1,
+    borderBottomWidth: 3,
+    borderColor: CUSTOM_COLOR.Vermilion,
   },
   buttonText: {
     color: 'black',
