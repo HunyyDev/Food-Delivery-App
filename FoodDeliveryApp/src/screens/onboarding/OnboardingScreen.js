@@ -4,6 +4,7 @@ import {IMG_Background, IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
+import CUSTOM_FONT from '../../constants/fonts';
 
 export class OnboardingScreen extends Component {
   render() {
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
     fontSize: scale(65),
     color: CUSTOM_COLOR.White,
     lineHeight: scale(65),
+    fontFamily: CUSTOM_FONT.Black,
   },
 
   centerSection: {},

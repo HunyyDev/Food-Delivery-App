@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-FoodDeliveryApp-FoodDeliveryAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-FoodDeliveryApp-FoodDeliveryAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		81DE79439BC94789B616F84C /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED14580260094F45A8636A62 /* MPLUSRounded1c-Black.ttf */; };
+		7DB1878D297A4CB0AB664474 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27F6B59E36FC45AFB17D5DB1 /* MPLUSRounded1c-Bold.ttf */; };
+		ED6E5FEA5FA2465598D711E3 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2925D044B371464499EF1950 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		2498EBA6A56F43E1B925934C /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87B267430D084C7B8DCA97CE /* MPLUSRounded1c-Light.ttf */; };
+		C0EE9B217F764B21B8221E3A /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32E670F0BA2F49C88D684DCE /* MPLUSRounded1c-Medium.ttf */; };
+		B8DAD0EE833041D2B7AD20B6 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2BFA1F8828C4921B5B3CC95 /* MPLUSRounded1c-Regular.ttf */; };
+		5E438902D0234C19A603C404 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7572D251AD94BC3B040A7E9 /* MPLUSRounded1c-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FoodDeliveryApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-FoodDeliveryApp-FoodDeliveryAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodDeliveryApp-FoodDeliveryAppTests.release.xcconfig"; path = "Target Support Files/Pods-FoodDeliveryApp-FoodDeliveryAppTests/Pods-FoodDeliveryApp-FoodDeliveryAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		ED14580260094F45A8636A62 /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Black.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		27F6B59E36FC45AFB17D5DB1 /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Bold.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2925D044B371464499EF1950 /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-ExtraBold.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87B267430D084C7B8DCA97CE /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Light.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		32E670F0BA2F49C88D684DCE /* MPLUSRounded1c-Medium.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Medium.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E2BFA1F8828C4921B5B3CC95 /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Regular.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B7572D251AD94BC3B040A7E9 /* MPLUSRounded1c-Thin.ttf */ = {isa = PBXFileReference; name = "MPLUSRounded1c-Thin.ttf"; path = "../src/assets/fonts/MPLUSRounded1c-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				A7FB60DEE9184DE99740D544 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		A7FB60DEE9184DE99740D544 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				ED14580260094F45A8636A62 /* MPLUSRounded1c-Black.ttf */,
+				27F6B59E36FC45AFB17D5DB1 /* MPLUSRounded1c-Bold.ttf */,
+				2925D044B371464499EF1950 /* MPLUSRounded1c-ExtraBold.ttf */,
+				87B267430D084C7B8DCA97CE /* MPLUSRounded1c-Light.ttf */,
+				32E670F0BA2F49C88D684DCE /* MPLUSRounded1c-Medium.ttf */,
+				E2BFA1F8828C4921B5B3CC95 /* MPLUSRounded1c-Regular.ttf */,
+				B7572D251AD94BC3B040A7E9 /* MPLUSRounded1c-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				81DE79439BC94789B616F84C /* MPLUSRounded1c-Black.ttf in Resources */,
+				7DB1878D297A4CB0AB664474 /* MPLUSRounded1c-Bold.ttf in Resources */,
+				ED6E5FEA5FA2465598D711E3 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				2498EBA6A56F43E1B925934C /* MPLUSRounded1c-Light.ttf in Resources */,
+				C0EE9B217F764B21B8221E3A /* MPLUSRounded1c-Medium.ttf in Resources */,
+				B8DAD0EE833041D2B7AD20B6 /* MPLUSRounded1c-Regular.ttf in Resources */,
+				5E438902D0234C19A603C404 /* MPLUSRounded1c-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
