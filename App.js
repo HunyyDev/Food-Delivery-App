@@ -7,27 +7,11 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  ImageBackground,
-  Dimensions,
-} from 'react-native';
-import CUSTOM_COLOR from './src/constants/colors';
-import OnboardingScreen from './src/screens/onboarding';
-
+//import OnboardingScreen from './src/screens/onboarding';
+import HomeScreen from './src/screens/home';
 const App = props => {
-  return <OnboardingScreen {...props}></OnboardingScreen>;
+  //return <OnboardingScreen {...props}></OnboardingScreen>;
+  return <HomeScreen></HomeScreen>;
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
-  },
-});
 
 export default App;

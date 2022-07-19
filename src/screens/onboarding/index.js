@@ -25,10 +25,9 @@ import {
   ImageBackground,
   Dimensions,
 } from 'react-native';
-import {IMG_Logo} from 'D:/ReactNative/food-delivery-app/src/assets/images/images';
-import {IMG_Background} from 'D:/ReactNative/food-delivery-app/src/assets/images/images';
-import CUSTOM_COLOR from 'D:/ReactNative/food-delivery-app/src/constants/colors.js';
-import FONT_FAMILY from 'D:/ReactNative/food-delivery-app/src/constants/fonts.js';
+import {IMG_Logo, IMG_Background} from '../../assets/images/images';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
 
 const OnboardingScreen = () => {
   return (

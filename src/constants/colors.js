@@ -3,5 +3,7 @@ const CUSTOM_COLOR = {
   White: '#FFF',
   Vermilion: '#FF460A',
   Black: '#000000',
+  AntiFlashWhite: '#F2F2F2',
+  Gallery: '#EFEEEE',
 };
 export default CUSTOM_COLOR;
