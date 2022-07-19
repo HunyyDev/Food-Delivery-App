@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
 
   headerText: {
     marginTop: 30,
-    fontSize: scale(65),
+    fontSize: scale(60),
     color: CUSTOM_COLOR.White,
     lineHeight: scale(65),
     fontFamily: CUSTOM_FONT.Black,
