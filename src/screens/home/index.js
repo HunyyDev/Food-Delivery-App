@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
     position: 'absolute',
+  },
   Menu: {
     top: scaleHeight(65),
     left: scaleWidth(54.6),
