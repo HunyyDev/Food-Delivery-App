@@ -8,10 +8,20 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import {ICON_33, ICON_Menu, ICON_shop} from '../../assets/icons';
+import {
+  ICON_33,
+  ICON_clock,
+  ICON_heart,
+  ICON_home,
+  ICON_Menu,
+  ICON_shop,
+  ICON_user,
+} from '../../assets/icons';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import ButtonHome from '../../components/ButtonHome';
+import {IMG_Background, IMG_Logo, IMG_Product_1} from '../../assets/images';
+import styles from './styles';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -20,6 +30,32 @@ export default class HomeScreen extends Component {
       tab: 'Foods',
     };
   }
+  productList = [
+    {
+      id: 1,
+      source: IMG_Product_1,
+      title: 'Veggie tomato mix',
+      price: 'N1,900',
+    },
+    {
+      id: 2,
+      source: IMG_Product_1,
+      title: 'Spicy fish sauce',
+      price: 'N2,300.99',
+    },
+    {
+      id: 3,
+      source: IMG_Product_1,
+      title: 'Veggie tomato mix',
+      price: 'N1,900',
+    },
+    {
+      id: 4,
+      source: IMG_Product_1,
+      title: 'Spicy fish sauce',
+      price: 'N2,300.99',
+    },
+  ];
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -74,101 +110,33 @@ export default class HomeScreen extends Component {
           </ScrollView>
         </>
         <>
-          <View style={styles.ImageContainer} />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={styles.productWrapper}>
+              {this.productList.map(({id, source, title, price}) => (
+                <View key={id} style={styles.productItem}>
+                  <Image
+                    style={styles.imageWrapper}
+                    source={source}
+                    resizeMode="cover"
+                  />
+                  <View style={styles.productInfo}>
+                    <Text style={styles.titleText}>{title}</Text>
+                    <Text style={styles.priceText}>{price}</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
+          </ScrollView>
         </>
         <>
-          <View style={styles.HomeContainer} />
+          <View style={styles.footer}>
+            <Image style={styles.chosenIcon} source={ICON_home} />
+            <Image source={ICON_heart} />
+            <Image source={ICON_user} />
+            <Image source={ICON_clock} />
+          </View>
         </>
       </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    flexDirection: 'column',
-  },
-  MenuContainer: {
-    height: Dimensions.get('window').height * 0.1,
-    width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    flexDirection: 'column',
-    // alignItems: 'flex-end',
-    justifyContent: 'flex-end',
-  },
-  TextContainer: {
-    height: Dimensions.get('window').height * 0.22,
-    width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    padding: 30,
-    paddingLeft: 50,
-  },
-  SearchContainer: {
-    height: Dimensions.get('window').height * 0.08,
-    width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    paddingLeft: 50,
-    paddingRight: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  TitleContainer: {
-    padding: 10,
-    marginTop: 36,
-    paddingHorizontal: 75,
-    backgroundColor: CUSTOM_COLOR.Concrete,
-    flex: 1,
-  },
-  navigationBar: {
-    flex: 1,
-    flexDirection: 'row',
-    gap: 41,
-  },
-  ImageContainer: {
-    height: Dimensions.get('window').height * 0.5,
-    width: '100%',
-    backgroundColor: CUSTOM_COLOR.Black,
-  },
-  HomeContainer: {
-    height: Dimensions.get('window').height * 0.15,
-    width: '100%',
-    backgroundColor: 'red',
-  },
-  IconMenu: {
-    marginLeft: 50,
-  },
-  IconShop: {
-    position: 'absolute',
-    left: 350,
-    alignSelf: 'flex-end',
-  },
-  Text: {
-    color: CUSTOM_COLOR.Black,
-    fontFamily: FONT_FAMILY.RoundedHeavy,
-    fontSize: 34,
-  },
-  Search: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: CUSTOM_COLOR.Gallery,
-    flexDirection: 'row',
-    borderRadius: 40,
-    alignItems: 'center',
-    // padding: 21,
-    // paddingLeft: 35,
-  },
-  IconSearch: {
-    margin: 21,
-    marginLeft: 35,
-  },
-  TextSearch: {
-    // margin: 18,
-    // marginLeft: -5,
-    color: CUSTOM_COLOR.Black,
-    opacity: 0.5,
-    // fontFamily: FONT_FAMILY.RoundedBold,
-    fontSize: 17,
-  },
-});

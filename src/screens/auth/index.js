@@ -7,6 +7,7 @@ import {
   Dimensions,
   TextInput,
   Pressable,
+  Alert,
 } from 'react-native';
 import React, {Component, useState} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -23,6 +24,15 @@ export default class LoginScreen extends Component {
       tab: 'login',
     };
   }
+  createButtonAlert = () =>
+    Alert.alert('Forgot password', 'Ngu!!!', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -53,7 +63,7 @@ export default class LoginScreen extends Component {
             <CustomInput label={'Password'} secure={true} />
 
             <Pressable
-              // onPress={10}
+              onPress={this.createButtonAlert}
               style={({pressed}) => [
                 {
                   backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
@@ -68,21 +78,35 @@ export default class LoginScreen extends Component {
                 )
               }
             </Pressable>
+            <>
+              <CustomButton
+                label={'secondary'}
+                text={'Login'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
+            </>
           </>
         ) : (
           <>
             <CustomInput label={'Email address'} secure={false} />
             <CustomInput label={'Password'} secure={true} />
             <CustomInput label={'Confirm Password'} secure={true} />
+            <>
+              <CustomButton
+                label={'secondary'}
+                text={'Sign up'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
+            </>
           </>
         )}
-        <>
+        {/* <>
           <CustomButton
             label={'secondary'}
             text={'Login'}
             onPress={() => this.props.navigation.navigate('Home')}
           />
-        </>
+        </> */}
       </ScrollView>
     );
   }
