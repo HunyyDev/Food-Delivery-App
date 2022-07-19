@@ -1,4 +1,11 @@
-import {Text, View, Image, StyleSheet, Dimensions} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  Dimensions,
+  ImageBackground,
+} from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -24,20 +31,19 @@ export class OnboardingScreen extends Component {
         {/* centerSection */}
         <>
           <View style={styles.centerSection}>
-            <Image
+            <ImageBackground
               source={IMG_Background}
               style={styles.centerImage}
-              resizeMode={'contain'}
-            />
+              resizeMode={'contain'}>
+              <View style={styles.buttonSection}>
+                <CustomButton type={'primary'} text={'Get Started'} />
+              </View>
+            </ImageBackground>
           </View>
         </>
 
         {/* buttonSection */}
-        <>
-          <View style={styles.buttonSection}>
-            <CustomButton type={'primary'} text={'Get Started'} />
-          </View>
-        </>
+        <></>
       </View>
     );
   }
@@ -68,10 +74,11 @@ const styles = StyleSheet.create({
   centerSection: {},
 
   centerImage: {
-    width: Dimensions.get('window').width,
     position: 'absolute',
+    width: Dimensions.get('window').width,
+    height: scale(500),
+    justifyContent: 'flex-end',
   },
-  buttonSection: {
-    marginTop: 420,
-  },
+
+  buttonSection: {},
 });
