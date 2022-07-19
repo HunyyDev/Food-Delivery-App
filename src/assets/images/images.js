@@ -3,3 +3,7 @@ export {default as IMG_Background} from './background.png';
 export {default as IMG_Menu} from './Menu.png';
 export {default as IMG_Search} from './Search.png';
 export {default as IMG_Shopping_cart} from './shopping-cart.png';
+export {default as IMG_Home} from './Home.png';
+export {default as IMG_Heart} from './Heart.png';
+export {default as IMG_User} from './user.png';
+export {default as IMG_History} from './ic_sharp-history.png';

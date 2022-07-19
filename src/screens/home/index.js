@@ -24,6 +24,10 @@ import {
   IMG_Menu,
   IMG_Search,
   IMG_Shopping_cart,
+  IMG_Heart,
+  IMG_Home,
+  IMG_History,
+  IMG_User,
 } from '../../assets/images/images';
 import FONT_FAMILY from '../../constants/fonts';
 export class HomeScreen extends Component {
@@ -68,6 +72,15 @@ export class HomeScreen extends Component {
               <Text style={styles.ItemText}>Snacks</Text>
               <Text style={styles.ItemText}>Sauce</Text>
             </ScrollView>
+          </View>
+        </>
+        {/* Bottom */}
+        <>
+          <View style={styles.BottomContainer}>
+            <Image source={IMG_Home}></Image>
+            <Image source={IMG_Heart}></Image>
+            <Image source={IMG_User}></Image>
+            <Image source={IMG_History}></Image>
           </View>
         </>
       </SafeAreaView>
@@ -140,11 +153,13 @@ const styles = StyleSheet.create({
   },
   ItemText: {
     fontSize: 17,
-    paddingLeft: 21,
-    paddingRight: 20,
+    padding: 22,
   },
-  ContainerContent: {
-    paddingVertical: 20,
-    paddingHorizontal: 10,
+  BottomContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 50,
+    width: '100%',
+    justifyContent: 'space-evenly',
   },
 });
