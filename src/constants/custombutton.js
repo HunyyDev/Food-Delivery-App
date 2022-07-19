@@ -28,7 +28,9 @@ class CustomButton extends Component {
           <View
             style={styles.ButtonContainer}
             backgroundColor={CUSTOM_COLOR.Vermilion}>
-            <Text style={(styles.Text, {color: CUSTOM_COLOR.White})}>Login</Text>
+            <Text style={(styles.Text, {color: CUSTOM_COLOR.White})}>
+              Login
+            </Text>
           </View>
         </TouchableOpacity>
       );
