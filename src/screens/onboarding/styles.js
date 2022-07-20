@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
