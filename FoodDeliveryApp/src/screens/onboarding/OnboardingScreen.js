@@ -5,14 +5,13 @@ import {
   StyleSheet,
   Dimensions,
   ImageBackground,
-  TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
-import CUSTOM_FONT from '../../constants/fonts';
+import FONT_FAMILY from '../../constants/fonts';
 
 export class OnboardingScreen extends Component {
   render() {
@@ -77,7 +76,7 @@ const styles = StyleSheet.create({
     fontSize: scale(60),
     color: CUSTOM_COLOR.White,
     lineHeight: scale(65),
-    fontFamily: CUSTOM_FONT.Black,
+    fontFamily: FONT_FAMILY.Black,
   },
 
   centerSection: {
