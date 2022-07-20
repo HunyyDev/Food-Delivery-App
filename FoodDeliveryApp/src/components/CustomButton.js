@@ -5,17 +5,34 @@ import scale from '../constants/responsive';
 import FONT_FAMILY from '../constants/fonts';
 
 export class CustomButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  navigate = location => {
+    this.props.navigation.navigate(location);
+  };
+
   render() {
     return (
       <>
         <View style={styles.container}>
           {this.props.type === 'primary' ? (
-            <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
-              <Text style={[styles.text, styles.textButtonPrimary]}>{this.props.text}</Text>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonPrimary]}
+              onPress={this.props.onPress}>
+              <Text style={[styles.text, styles.textButtonPrimary]}>
+                {this.props.text}
+              </Text>
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
-              <Text style={[styles.text, styles.textButtonSecondary]}>{this.props.text}</Text>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonSecondary]}
+              onPress={this.props.onPress}>
+              <Text style={[styles.text, styles.textButtonSecondary]}>
+                {this.props.text}
+              </Text>
             </TouchableOpacity>
           )}
         </View>
@@ -23,6 +40,8 @@ export class CustomButton extends Component {
     );
   }
 }
+
+// onPress={() => this.props.navigation.navigate
 
 export default CustomButton;
 
