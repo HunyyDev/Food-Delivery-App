@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {Text, StyleSheet, Pressable} from 'react-native';
 import CUSTOM_COLOR from '../constants/colors';
-
-import COLORS from '../constants/colors';
 
 const ButtonHome = ({children, isChoosing, onPress}) => {
   return (
@@ -17,8 +15,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: isChoosing ? CUSTOM_COLOR.SunsetOrange : 'transparent',
     width: 100,
-    // position: 'absolute',
-    // bottom: 0,
   }),
   text: ({isChoosing}) => ({
     color: isChoosing ? CUSTOM_COLOR.SunsetOrange : CUSTOM_COLOR.Manatee,
