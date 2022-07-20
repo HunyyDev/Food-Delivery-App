@@ -20,7 +20,7 @@ const Custom_Button = props => {
         <Text
           style={[
             general.button,
-            styles.button,
+            styles.buttonCommentContainer,
             pressed && styles.buttonPress,
           ]}>
           {child}
