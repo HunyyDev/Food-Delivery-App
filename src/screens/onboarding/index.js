@@ -10,7 +10,8 @@ import {
 import React from 'react';
 import {onboardingStyles} from './styles';
 import {IMG_Logo, IMG_Background} from '../../assets/images';
-const OnboardingSreen = () => {
+import Custom_Button from '../../components/CustomButton';
+const OnboardingScreen = () => {
   return (
     <ScrollView style={onboardingStyles.container}>
       {/* Logo */}
@@ -33,18 +34,12 @@ const OnboardingSreen = () => {
           <ImageBackground
             source={IMG_Background}
             style={onboardingStyles.background}
-            resizeMode={'contain'}>
-            {/* <>
-              <View style={styles.button}>
-                <Text style={styles.buttonComment}>{'Get started'}</Text>
-              </View>
-            </> */}
-          </ImageBackground>
+            resizeMode={'contain'}></ImageBackground>
+          <Custom_Button type="primary">Get Started</Custom_Button>
         </View>
       </>
-      {/* Button */}
     </ScrollView>
   );
 };
 
-export default OnboardingSreen;
+export default OnboardingScreen;

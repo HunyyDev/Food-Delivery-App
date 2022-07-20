@@ -26,27 +26,12 @@ export const onboardingStyles = StyleSheet.create({
   title: {
     fontSize: 65,
     fontFamily: FONT_FAMILY.Heavy,
-    color: CUSTOM_COLOR.white,
+    color: CUSTOM_COLOR.White,
     marginLeft: 49,
   },
   backgroundContainer: {},
   background: {
     width: Dimensions.get('window').width,
     height: 540,
-    justifyContent: 'flex-end',
   },
-  // button: {
-  //   backgroundColor: CUSTOM_COLOR.white,
-  //   height: 70,
-  //   width: 314,
-  //   borderRadius: 35,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   alignSelf: 'center',
-  // },
-  // buttonComment: {
-  //   fontSize: 17,
-  //   fontFamily: FONT_FAMILY.ProTextSemibold,
-  //   color: CUSTOM_COLOR.SunsetColor,
-  // },
 });

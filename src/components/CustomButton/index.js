@@ -3,8 +3,8 @@ import {secondary, primary, general} from './styles';
 import React from 'react';
 
 const Custom_Button = props => {
-  const {type, child, ...moreProps} = props;
-  const styles = () => {
+  const {type, children, ...moreProps} = props;
+  const styles = (() => {
     switch (type) {
       case 'primary':
         return primary;
@@ -13,7 +13,7 @@ const Custom_Button = props => {
       default:
         return primary;
     }
-  };
+  })();
   return (
     <Pressable {...moreProps}>
       {({pressed}) => (
@@ -23,7 +23,7 @@ const Custom_Button = props => {
             styles.buttonCommentContainer,
             pressed && styles.buttonPress,
           ]}>
-          {child}
+          {children}
         </Text>
       )}
     </Pressable>
