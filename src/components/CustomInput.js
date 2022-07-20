@@ -1,7 +1,7 @@
 import {Text, TextInput, View, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_COLOR from './colors';
-import FONT_FAMILY from './fonts';
+import CUSTOM_COLOR from '../constants/colors';
+import FONT_FAMILY from '../constants/fonts';
 
 export class CustomInput extends Component {
   constructor(props) {
