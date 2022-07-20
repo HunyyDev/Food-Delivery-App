@@ -5,7 +5,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Hello Im duy</Text>
+        <Text>Hello Im duy nguyen</Text>
       </View>
     );
   }
