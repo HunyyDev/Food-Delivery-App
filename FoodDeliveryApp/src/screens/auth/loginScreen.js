@@ -5,14 +5,11 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
 } from 'react-native';
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Logo} from '../../assets/images';
-import scale from '../../constants/responsive';
+import scale from '../../../responsive';
 import CustomInput from '../../components/CustomInput';
 import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
@@ -36,75 +33,75 @@ export default class LoginScreen extends Component {
     return (
       <>
         <SafeAreaView style={styles.container}>
-          <KeyboardAvoidingView style={{height: '100%'}}>
-            {/* headerSection */}
-            <View style={styles.headerSection}>
-              <Image
-                source={IMG_Logo}
-                style={styles.logo}
-                resizeMode={'contain'}
-              />
+          {/* headerSection */}
+          <View style={styles.headerSection}>
+            <Image
+              source={IMG_Logo}
+              style={styles.logo}
+              resizeMode={'contain'}
+            />
 
-              <View style={styles.headerText}>
-                <TouchableOpacity
-                  style={styles.loginAndSignUp}
-                  onPress={() => {
-                    this.setPage(LOGIN);
-                  }}>
-                  <Text style={styles.text}>Login</Text>
-                  {this.state.page === LOGIN ? (
-                    <View style={styles.line}></View>
-                  ) : null}
-                </TouchableOpacity>
-
-                <TouchableOpacity
-                  style={styles.loginAndSignUp}
-                  onPress={() => {
-                    this.setPage(SIGN_UP);
-                  }}>
-                  <Text style={styles.text}>Sign-up</Text>
-                  {this.state.page === SIGN_UP ? (
-                    <View style={styles.line}></View>
-                  ) : null}
-                </TouchableOpacity>
-              </View>
-            </View>
-
-            {/* inputSection */}
-            <View style={styles.inputSection}>
-              <View>
+            <View style={styles.headerText}>
+              <TouchableOpacity
+                style={styles.loginAndSignUp}
+                onPress={() => {
+                  this.setPage(LOGIN);
+                }}>
+                <Text style={styles.text}>Login</Text>
                 {this.state.page === LOGIN ? (
-                  <View>
-                    <CustomInput label={'Email address'} />
-                    {/* Password */}
-                    <CustomInput label={'Password'} secureText={true} />
+                  <View style={styles.line}></View>
+                ) : null}
+              </TouchableOpacity>
 
-                    <TouchableOpacity>
-                      <Text style={styles.forgotPasscode}>
-                        Forgot passcode?
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                ) : (
-                  <View>
-                    <CustomInput label={'Email address'} />
-                    {/* Password */}
-                    <CustomInput label={'Password'} secureText={true} />
-                    {/* Confirm Password */}
-                    <CustomInput label={'Confirm Password'} secureText={true} />
-                  </View>
-                )}
-                {/* Email address */}
+              <TouchableOpacity
+                style={styles.loginAndSignUp}
+                onPress={() => {
+                  this.setPage(SIGN_UP);
+                }}>
+                <Text style={styles.text}>Sign-up</Text>
+                {this.state.page === SIGN_UP ? (
+                  <View style={styles.line}></View>
+                ) : null}
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          {/* inputSection */}
+
+          <View style={styles.inputSection}>
+            {this.state.page === LOGIN ? (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
+
+                <TouchableOpacity>
+                  <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
+                </TouchableOpacity>
               </View>
-            </View>
+            ) : (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
+                {/* Confirm Password */}
+                <CustomInput label={'Confirm Password'} secureText={true} />
+              </View>
+            )}
+          </View>
 
-            {/* buttonSection */}
-            <View style={styles.buttonSection}>
-              {this.state.page === LOGIN ? (
+          {/* buttonSection */}
+          <View style={styles.buttonSection}>
+            {this.state.page === LOGIN ? (
               <CustomButton type={'secondary'} text={'Login'} />
-              ) : (<CustomButton type={'secondary'} text={'Sign Up'} />)}
-            </View>
-          </KeyboardAvoidingView>
+            ) : (
+              <CustomButton type={'secondary'} text={'Sign Up'} />
+            )}
+          </View>
+
+          {/* <KeyboardAvoidingView
+            style={{height: '100%'}}
+            behavior="padding"></KeyboardAvoidingView> */}
         </SafeAreaView>
       </>
     );

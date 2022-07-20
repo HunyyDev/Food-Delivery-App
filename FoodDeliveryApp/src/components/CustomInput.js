@@ -1,8 +1,8 @@
-import {Text, View, TextInput, StyleSheet} from 'react-native';
+import {Text, TextInput, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../constants/colors';
 import FONT_FAMILY from '../constants/fonts';
-import scale from '../constants/responsive';
+import scale from '../../responsive';
 
 export class CustomInput extends Component {
   render() {
@@ -31,12 +31,11 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: CUSTOM_COLOR.Silver,
     marginTop: 10,
-    borderButtonColor: CUSTOM_COLOR.Black,
-    borderRightColor: CUSTOM_COLOR.Silver,
-    borderLeftColor: CUSTOM_COLOR.Silver,
-    borderTopColor: CUSTOM_COLOR.Silver,
     borderWidth: 1,
     fontFamily: FONT_FAMILY.ExtraBold,
+    borderRightColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderTopColor: 'transparent',
   },
 
   textInput: {
