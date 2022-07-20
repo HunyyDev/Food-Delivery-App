@@ -1,16 +1,10 @@
-import {
-  Text,
-  View,
-  Image,
-  StyleSheet,
-  Dimensions,
-  ImageBackground,
-} from 'react-native';
+import {Text, View, Image, StyleSheet, Dimensions, ImageBackground} from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
+import CUSTOM_FONT from '../../constants/fonts';
 
 export class OnboardingScreen extends Component {
   render() {
@@ -42,8 +36,6 @@ export class OnboardingScreen extends Component {
           </View>
         </>
 
-        {/* buttonSection */}
-        <></>
       </View>
     );
   }
@@ -62,13 +54,19 @@ const styles = StyleSheet.create({
     marginTop: scale(56),
   },
 
-  logo: {},
+  logo: {
+    backgroundColor: CUSTOM_COLOR.White,
+    borderRadius: 40,
+    width: scale(73),
+    height: scale(73),
+  },
 
   headerText: {
     marginTop: 30,
-    fontSize: scale(65),
+    fontSize: scale(60),
     color: CUSTOM_COLOR.White,
     lineHeight: scale(65),
+    fontFamily: CUSTOM_FONT.Black,
   },
 
   centerSection: {},
@@ -78,7 +76,11 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: scale(500),
     justifyContent: 'flex-end',
+
   },
 
-  buttonSection: {},
+  buttonSection: {
+
+
+  },
 });

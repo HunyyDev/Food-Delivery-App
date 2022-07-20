@@ -10,12 +10,12 @@ export class CustomButton extends Component {
       <>
         <View style={styles.container}>
           {this.props.type === 'primary' ? (
-            <TouchableOpacity style={styles.buttonPrimary}>
-              <Text style={styles.textButtonPrimary}>{this.props.text}</Text>
+            <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
+              <Text style={[styles.text, styles.textButtonPrimary]}>{this.props.text}</Text>
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity style={styles.buttonSecondary}>
-              <Text style={styles.textButtonSecondary}>{this.props.text}</Text>
+            <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
+              <Text style={[styles.text, styles.textButtonSecondary]}>{this.props.text}</Text>
             </TouchableOpacity>
           )}
         </View>
@@ -35,8 +35,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
-  buttonPrimary: {
-    backgroundColor: CUSTOM_COLOR.White,
+  button: {
     height: scale(70),
     width: scale(314),
     justifyContent: 'center',
@@ -46,26 +45,24 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  textButtonPrimary: {
+  buttonPrimary: {
+    backgroundColor: CUSTOM_COLOR.White,
+  },
+
+  text: {
     fontSize: scale(17),
-    color: CUSTOM_COLOR.Orange,
     fontFamily: FONT_FAMILY.ExtraBold,
+  },
+
+  textButtonPrimary: {
+    color: CUSTOM_COLOR.Orange,
   },
 
   buttonSecondary: {
     backgroundColor: CUSTOM_COLOR.Orange,
-    height: scale(70),
-    width: scale(314),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: scale(30),
-    alignSelf: 'center',
-    padding: 20,
   },
 
   textButtonSecondary: {
-    fontSize: scale(17),
     color: CUSTOM_COLOR.White,
-    fontFamily: FONT_FAMILY.ExtraBold,
   },
 });
