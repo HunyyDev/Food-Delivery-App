@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import CUSTOM_COLOR from '../constants/colors';
-import {scaleWidth} from '../constants/responsive';
+import scaleWidth from '../constants/responsive';
 
 
 const ListButton = props =>{
@@ -34,8 +34,8 @@ const styles = StyleSheet.create({
         justifyContent:'center',
     },
     selected:{
-        borderBottomColor: CUSTOM_COLOR.Vermillon,
-        borderBottomWidth: 3,
+        borderBottomColor: CUSTOM_COLOR.Vermilion,
+        borderBottomWidth: scaleWidth(3),
     },
     buttonLabel: {
         fontFamily: 'SFProText-Regular',
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         fontSize: scaleWidth(17),
     },
     selectedLabel: {
-        color: CUSTOM_COLOR.Vermillon
+        color: CUSTOM_COLOR.Vermilion
     }
 });
 

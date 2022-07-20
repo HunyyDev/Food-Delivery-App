@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../constants/colors';
-import {scaleWidth} from '../constants/responsive';
+import scaleWidth from '../constants/responsive';
 
 //Usage: <CustomDish source={'image_path'} name={'name'} cost={'cost'}/>
 const CustomDish = (props) => {

@@ -45,7 +45,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   seemoreButton: {
     fontFamily: 'SF-Pro-Rounded-Regular',
-    color: CUSTOM_COLOR.Vermillon,
+    color: CUSTOM_COLOR.Vermilion,
     fontSize: scaleWidth(15),
   },
   seemoreContainer:{
