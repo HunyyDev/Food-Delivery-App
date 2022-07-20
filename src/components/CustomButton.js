@@ -6,17 +6,6 @@ import FONT_FAMILY from '../constants/fonts';
 
 const CustomButton = props => {
   return (
-    // <View style={styles.buttonBackground}>
-    //   {props.label === 'primary' ? (
-    //     <View style={styles.buttonWhite}>
-    //       <Text style={styles.TextButtonWhite}>{props.text}</Text>
-    //     </View>
-    //   ) : (
-    //     <View style={styles.buttonOrange}>
-    //       <Text style={styles.TextButtonOrange}>{props.text}</Text>
-    //     </View>
-    //   )}
-    // </View>
     <Pressable
       onPress={props.onPress}
       style={({pressed}) => [

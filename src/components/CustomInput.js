@@ -5,7 +5,6 @@ import FONT_FAMILY from '../constants/fonts';
 
 const CustomInput = props => {
   console.log('props', props);
-  //let value;
   const [value, setValue] = useState('');
   return (
     <View style={styles.SignInContainer}>
@@ -19,7 +18,6 @@ const CustomInput = props => {
         }}
         secureTextEntry={props.secure}
       />
-      {/* <Text style={styles.Text}>Value: {value}</Text> */}
     </View>
   );
 };
@@ -36,7 +34,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: CUSTOM_COLOR.Black,
     justifyContent: 'center',
-    // alignItems: 'flex-start',
   },
   Text: {
     color: CUSTOM_COLOR.Black,

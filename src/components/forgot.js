@@ -6,7 +6,6 @@ import FONT_FAMILY from '../constants/fonts';
 const forgot = () => {
   return (
     <Pressable
-      // onPress={10}
       style={({pressed}) => [
         {
           backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',

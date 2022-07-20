@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Pressable} from 'react-native';
+import {Text, StyleSheet, Pressable} from 'react-native';
 import CUSTOM_COLOR from '../constants/colors';
-
-import COLORS from '../constants/colors';
 
 const UnderlineButton = ({children, isChoosing, onPress}) => {
   return (
