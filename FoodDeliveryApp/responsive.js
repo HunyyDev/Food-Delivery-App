@@ -1,5 +1,6 @@
-const designWidth = 412;
+const designWidth = 414;
 import { Dimensions } from "react-native";
+
 function scale(number) {
   let scaleNumber;
   const currentDeviceWidth = Dimensions.get('window').width;
