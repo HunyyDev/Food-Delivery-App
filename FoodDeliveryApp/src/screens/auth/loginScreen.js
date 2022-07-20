@@ -100,7 +100,9 @@ export default class LoginScreen extends Component {
 
             {/* buttonSection */}
             <View style={styles.buttonSection}>
+              {this.state.page === LOGIN ? (
               <CustomButton type={'secondary'} text={'Login'} />
+              ) : (<CustomButton type={'secondary'} text={'Sign Up'} />)}
             </View>
           </KeyboardAvoidingView>
         </SafeAreaView>
