@@ -1,6 +1,7 @@
 import {Text, Pressable} from 'react-native';
 import {secondary, primary, general} from './styles';
 import React from 'react';
+
 const Custom_Button = props => {
   const {type, child, ...moreProps} = props;
   const styles = () => {
@@ -20,7 +21,7 @@ const Custom_Button = props => {
           style={[
             general.button,
             styles.button,
-            pressed && styles.buttonHover,
+            pressed && styles.buttonPress,
           ]}>
           {child}
         </Text>

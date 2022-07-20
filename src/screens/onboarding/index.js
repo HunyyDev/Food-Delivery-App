@@ -8,29 +8,31 @@ import {
   Dimensions,
 } from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
-import FONT_FAMILY from './src/constants/fonts';
-
-const App = () => {
+import {onboardingStyles} from './styles';
+import {IMG_Logo, IMG_Background} from '../../assets/images';
+const OnboardingSreen = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={onboardingStyles.container}>
       {/* Logo */}
       <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
+        <View style={onboardingStyles.logoContainer}>
+          <Image
+            source={IMG_Logo}
+            style={onboardingStyles.logo}
+            resizeMode={'contain'}
+          />
         </View>
       </>
       {/* Title */}
       <>
-        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
+        <Text style={onboardingStyles.title}>{'Food for \nEveryone'}</Text>
       </>
       {/* Image */}
       <>
-        <View style={styles.backgroundContainer}>
+        <View style={onboardingStyles.backgroundContainer}>
           <ImageBackground
             source={IMG_Background}
-            style={styles.background}
+            style={onboardingStyles.background}
             resizeMode={'contain'}>
             {/* <>
               <View style={styles.button}>
@@ -45,52 +47,4 @@ const App = () => {
   );
 };
 
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
-  },
-  logo: {
-    width: '100%',
-    height: '100%',
-  },
-  logoContainer: {
-    width: 73,
-    height: 73,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 36,
-    backgroundColor: CUSTOM_COLOR.white,
-    overflow: 'hidden',
-    marginTop: 56,
-    marginLeft: 49,
-  },
-  title: {
-    fontSize: 65,
-    fontFamily: FONT_FAMILY.Heavy,
-    color: CUSTOM_COLOR.white,
-    marginLeft: 49,
-  },
-  backgroundContainer: {},
-  background: {
-    width: Dimensions.get('window').width,
-    height: 540,
-    justifyContent: 'flex-end',
-  },
-  // button: {
-  //   backgroundColor: CUSTOM_COLOR.white,
-  //   height: 70,
-  //   width: 314,
-  //   borderRadius: 35,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   alignSelf: 'center',
-  // },
-  // buttonComment: {
-  //   fontSize: 17,
-  //   fontFamily: FONT_FAMILY.ProTextSemibold,
-  //   color: CUSTOM_COLOR.SunsetColor,
-  // },
-});
+export default OnboardingSreen;
