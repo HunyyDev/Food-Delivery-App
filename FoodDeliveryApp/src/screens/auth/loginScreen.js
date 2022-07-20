@@ -5,8 +5,9 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  KeyboardAwareScrollView,
 } from 'react-native';
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Logo} from '../../assets/images';
 import scale from '../../constants/responsive';
@@ -67,23 +68,36 @@ export default class LoginScreen extends Component {
           </View>
 
           {/* inputSection */}
+
           <View style={styles.inputSection}>
-            <View>
-              {/* Email address */}
-              <CustomInput label={'Email address'} />
+            {this.state.page === LOGIN ? (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
 
-              {/* Password */}
-              <CustomInput label={'Password'} secureText={true} />
-
-              <TouchableOpacity>
-                <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
-              </TouchableOpacity>
-            </View>
+                <TouchableOpacity>
+                  <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
+                {/* Confirm Password */}
+                <CustomInput label={'Confirm Password'} secureText={true} />
+              </View>
+            )}
           </View>
 
           {/* buttonSection */}
           <View style={styles.buttonSection}>
-            <CustomButton type={'secondary'} text={'Login'} />
+            {this.state.page === LOGIN ? (
+              <CustomButton type={'secondary'} text={'Login'} />
+            ) : (
+              <CustomButton type={'secondary'} text={'Sign Up'} />
+            )}
           </View>
         </SafeAreaView>
       </>
@@ -94,7 +108,7 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
   },
 
   headerSection: {
@@ -125,7 +139,7 @@ const styles = StyleSheet.create({
 
   inputSection: {
     flex: 6,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     margin: 30,
   },
 
