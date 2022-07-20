@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  KeyboardAwareScrollView,
 } from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -98,10 +99,6 @@ export default class LoginScreen extends Component {
               <CustomButton type={'secondary'} text={'Sign Up'} />
             )}
           </View>
-
-          {/* <KeyboardAvoidingView
-            style={{height: '100%'}}
-            behavior="padding"></KeyboardAvoidingView> */}
         </SafeAreaView>
       </>
     );
@@ -111,7 +108,7 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
   },
 
   headerSection: {
@@ -142,7 +139,7 @@ const styles = StyleSheet.create({
 
   inputSection: {
     flex: 6,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     margin: 30,
   },
 

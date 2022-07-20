@@ -6,7 +6,7 @@ import LoginScreen from './src/screens/auth/LoginScreen';
 const App = props => {
   return (
     <View style={styles.container}>
-      <LoginScreen {...props}/>
+      <LoginScreen {...props} />
     </View>
   );
 };
