@@ -43,7 +43,7 @@ const OnboardingScreen = () => {
         style={styles.background}
         source={IMG_Background}
         resizeMode={'contain'}>
-        <CustomButton type={'primary'} />
+        <CustomButton type={'primary'} text={'Get started'} />
       </ImageBackground>
     </SafeAreaView>
   );

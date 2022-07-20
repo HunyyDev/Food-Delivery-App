@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import FONT_FAMILY from './fonts';
-import CUSTOM_COLOR from './colors';
+import FONT_FAMILY from '../constants/fonts';
+import CUSTOM_COLOR from '../constants/colors';
 import {Component} from 'react';
 
 class CustomButton extends Component {
@@ -16,7 +16,7 @@ class CustomButton extends Component {
             style={styles.ButtonContainer}
             backgroundColor={CUSTOM_COLOR.White}>
             <Text style={(styles.Text, {color: CUSTOM_COLOR.Vermilion})}>
-              Get started
+              {this.props.text}
             </Text>
           </View>
         </TouchableOpacity>
@@ -29,7 +29,7 @@ class CustomButton extends Component {
             style={styles.ButtonContainer}
             backgroundColor={CUSTOM_COLOR.Vermilion}>
             <Text style={(styles.Text, {color: CUSTOM_COLOR.White})}>
-              Login
+              {this.props.text}
             </Text>
           </View>
         </TouchableOpacity>
