@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   ItemText: {
     fontSize: 17,
-    padding: 22,
+    width: '25%',
   },
   BottomContainer: {
     flexDirection: 'row',
