@@ -25,10 +25,10 @@ import {
   ImageBackground,
   Dimensions,
 } from 'react-native';
-import {IMG_Logo} from './src/assets/images/images';
-import {IMG_Background} from './src/assets/images/images';
-import CUSTOM_COLOR from './src/constants/colors';
-import FONT_FAMILY from './src/constants/fonts';
+import {IMG_Logo, IMG_Background} from '../../assets/images/images';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
+import CustomButton from '../../constants/custombutton';
 
 const OnboardingScreen = () => {
   return (
@@ -42,11 +42,9 @@ const OnboardingScreen = () => {
       <ImageBackground
         style={styles.background}
         source={IMG_Background}
-        resizeMode={'contain'}
-      />
-      <View style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>Get started</Text>
-      </View>
+        resizeMode={'contain'}>
+        <CustomButton type={'primary'} text={'Get started'} />
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -84,24 +82,8 @@ const styles = StyleSheet.create({
   },
   background: {
     width: Dimensions.get('window').width,
-    height: scaleHeight(540),
+    height: scaleHeight(600),
     justifyContent: 'flex-end',
-  },
-  buttonContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
-    width: scaleWidth(314),
-    height: scaleHeight(70),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
-    alignSelf: 'center',
-    position: 'absolute',
-    bottom: scaleHeight(20),
-  },
-  buttonText: {
-    color: CUSTOM_COLOR.Vermilion,
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 17,
   },
 });
 
