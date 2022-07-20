@@ -6,9 +6,10 @@ import HomeScreen from './src/screens/HomeScreen';
 const App = () => {
   return (
     <>
-      < OnBoardingScreen />
+      <OnBoardingScreen />
+      <Text>{'Hello Quyen'}</Text>
     </>
-  )
+  );
 };
 
 export default App;
