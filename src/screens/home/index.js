@@ -1,22 +1,3 @@
-import {Dimensions, ScrollView} from 'react-native';
-
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
-const designWidth = 414;
-const designHeight = 896;
-
-function scaleWidth(number) {
-  let scaleNumber;
-  scaleNumber = (number / designWidth) * width;
-  return scaleNumber;
-}
-
-function scaleHeight(number) {
-  let scaleNumber;
-  scaleNumber = (number / designHeight) * height;
-  return scaleNumber;
-}
-
 import {Text, View, StyleSheet, Image, SafeAreaView} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -30,6 +11,7 @@ import {
   IMG_User,
 } from '../../assets/images/images';
 import FONT_FAMILY from '../../constants/fonts';
+import scale from '../../constants/responsive';
 export class HomeScreen extends Component {
   render() {
     return (
@@ -61,7 +43,7 @@ export class HomeScreen extends Component {
         </>
         {/* Boding */}
         <>
-          <View>
+          {/* <View>
             <ScrollView
               style={styles.ListText}
               horizontal={true}
@@ -72,7 +54,7 @@ export class HomeScreen extends Component {
               <Text style={styles.ItemText}>Snacks</Text>
               <Text style={styles.ItemText}>Sauce</Text>
             </ScrollView>
-          </View>
+          </View> */}
         </>
         {/* Bottom */}
         <>
@@ -101,18 +83,18 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   Menu: {
-    top: scaleHeight(65),
-    left: scaleWidth(54.6),
+    top: 65,
+    left: scale(54.6),
   },
   ShoppingCart: {
-    top: scaleHeight(66),
-    right: scaleWidth(42),
+    top: 66,
+    right: scale(42),
   },
   containerText: {
     width: 190,
-    height: scaleHeight(82),
-    left: scaleWidth(50),
-    top: scaleHeight(136),
+    height: 82,
+    left: scale(50),
+    top: 136,
   },
   Content: {
     fontSize: 34,
@@ -122,9 +104,9 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
   },
   Search: {
-    top: scaleHeight(242),
-    width: scaleWidth(314),
-    height: scaleHeight(60),
+    top: 242,
+    width: scale(314),
+    height: 60,
     backgroundColor: CUSTOM_COLOR.Gallery,
     flexDirection: 'row',
     alignSelf: 'center',
@@ -134,7 +116,7 @@ const styles = StyleSheet.create({
   },
   LogoSearch: {
     flex: 0.2,
-    left: scaleWidth(35),
+    left: scale(35),
   },
   SearchText: {
     flex: 0.8,
@@ -143,17 +125,6 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Medium,
     color: CUSTOM_COLOR.Black,
     fontWeight: '600',
-  },
-  ListText: {
-    top: scaleHeight(250),
-    flexDirection: 'row',
-    width: '100%',
-    position: 'absolute',
-    left: 100,
-  },
-  ItemText: {
-    fontSize: 17,
-    width: '25%',
   },
   BottomContainer: {
     flexDirection: 'row',

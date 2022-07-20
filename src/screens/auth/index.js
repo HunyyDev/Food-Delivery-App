@@ -1,17 +1,17 @@
-import {Text, View} from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
-import {
-  scaleHeight,
-  scaleWidth,
-} from 'D:/ReactNative/food-delivery-app/src/constants/responsive';
+import CUSTOM_COLOR from '../../constants/colors';
 export class LoginScreen extends Component {
   render() {
-    return (
-      <View>
-        <Text>{scaleHeight(30)}</Text>
-      </View>
-    );
+    return <SafeAreaView style={styles.Container}></SafeAreaView>;
   }
 }
 
 export default LoginScreen;
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    backgroundColor: CUSTOM_COLOR.AntiFlashWhite,
+  },
+});
