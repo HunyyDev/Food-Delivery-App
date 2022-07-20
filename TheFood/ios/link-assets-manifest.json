@@ -12,6 +12,10 @@
     {
       "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Regular.ttf",
       "sha1": "f2060ab5a5d6140c103bf47616f882ae62539cf2"
+    },
+    {
+      "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Semibold.ttf",
+      "sha1": "543ab6e5c840d17d63bfc8eb4233c05a049b683e"
     }
   ]
 }

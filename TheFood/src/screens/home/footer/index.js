@@ -2,7 +2,7 @@ import { Text, StyleSheet, View, Button, TouchableOpacity } from 'react-native'
 import React, { Component } from 'react'
 
 import styles from './styles'
-import { ICHeart, ICHome, ICTime, ICUser, ICUser2 } from '../../../assets/icons'
+import { ICHeart, ICHome, ICTime, ICUser } from '../../../assets/icons'
 
 export default class Footer extends Component {
   render() {
@@ -16,7 +16,6 @@ export default class Footer extends Component {
         </TouchableOpacity>
         <TouchableOpacity style={styles.icon}>
           <ICUser/>
-          <ICUser2/>
         </TouchableOpacity>
         <TouchableOpacity style={styles.icon}>
           <ICTime/>

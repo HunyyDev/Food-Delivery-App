@@ -1,20 +1,20 @@
 import { Text, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
 
-
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row', 
-        justifyContent: 'space-evenly',
-        paddingVertical: "5%"
+        justifyContent: 'space-between',
     },
     icon: {
         alignItems: 'center',
         justifyContent: 'center',
+        width: 'auto',
+        height: 'auto',
     },
-    icuser: {
+    // icuser: {
         
-    }
+    // }
 })
 
 export default styles
