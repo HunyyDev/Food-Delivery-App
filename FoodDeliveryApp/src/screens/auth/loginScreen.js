@@ -94,9 +94,17 @@ export default class LoginScreen extends Component {
           {/* buttonSection */}
           <View style={styles.buttonSection}>
             {this.state.page === LOGIN ? (
-              <CustomButton type={'secondary'} text={'Login'} />
+              <CustomButton
+                type={'secondary'}
+                text={'Login'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
             ) : (
-              <CustomButton type={'secondary'} text={'Sign Up'} />
+              <CustomButton
+                type={'secondary'}
+                text={'Sign Up'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
             )}
           </View>
         </SafeAreaView>
