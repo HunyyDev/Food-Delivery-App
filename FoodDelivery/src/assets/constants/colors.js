@@ -3,5 +3,6 @@ const CUSTOM_COLOR = {
   White: '#FFF',
   Silver: '#C5C4C4',
   Vermilion: '#FA4A0C',
+  Black: '#000000',
 };
 export default CUSTOM_COLOR;
