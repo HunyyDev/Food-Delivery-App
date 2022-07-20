@@ -9,7 +9,7 @@ import {
 import React, {Component} from 'react';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
-import scale from '../../../responsive';
+import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
 
 export class OnboardingScreen extends Component {

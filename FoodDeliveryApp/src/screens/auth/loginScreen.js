@@ -9,7 +9,7 @@ import {
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Logo} from '../../assets/images';
-import scale from '../../../responsive';
+import scale from '../../constants/responsive';
 import CustomInput from '../../components/CustomInput';
 import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
