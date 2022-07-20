@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   ListButton: {
     maxHeight: scaleWidth(40), 
-    marginBottom: scaleWidth(45),
+    marginBottom: scaleWidth(39),
   }
 });
 

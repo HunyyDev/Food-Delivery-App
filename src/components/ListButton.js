@@ -12,6 +12,7 @@ const ListButton = props =>{
         contentContainerStyle={{paddingHorizontal:scaleWidth(89)}}>
             {props.values.map(value =>(
                 <TouchableOpacity
+                activeOpacity={1}
                 key={value}
                 onPress={()=>props.setSelectedValue(value)}
                 style={[styles.button, props.selectedValue === value && styles.selected]}>
