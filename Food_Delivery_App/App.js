@@ -5,7 +5,7 @@ import HomeScreen from './src/screens/HomeScreen';
 //import { createNavigator } from 'react-navigation';
 //import {createStackNavigator} from 'react-navigation';
 
-
+import { Text } from 'react-native';
 
 
 
@@ -13,7 +13,6 @@ const App = () => {
   return (
     <>
       <OnBoardingScreen />
-      <Text>{'Hello Quyen'}</Text>
     </>
   );
 };

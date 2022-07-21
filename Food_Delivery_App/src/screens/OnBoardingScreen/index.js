@@ -50,16 +50,6 @@ const App=()=>{
   );
 };
 
-const AppNavigator = createStackNavigator(  
-  {  
-      Home: HomeScreen,  
-      Login: Login,  
-  },  
-  {  
-      initialRouteName: "Home"  
-  }  
-);  
-
 const styles=StyleSheet.create(
 {
   container:{
