@@ -7,12 +7,12 @@ import {
   SafeAreaView,
   Dimensions,
   ImageBackground,
-  TouchableOpacity,
 } from 'react-native';
-import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
-import FONT_FAMILY from './src/constants/fonts';
-import {scaleWidth} from './src/constants/reponsive';
+import CUSTOM_COLOR from '../../constants/colors';
+import {IMG_Logo, IMG_Background} from '../../assets/images';
+import FONT_FAMILY from '../../constants/fonts';
+import {scaleWidth} from '../../constants/responsive';
+import CustomButton from '../../components/CustomButton';
 
 const OnboardingScreen = () => {
   return (
@@ -36,9 +36,9 @@ const OnboardingScreen = () => {
             source={IMG_Background}
             style={styles.background}
             resizeMode={'contain'}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>{'Get started'}</Text>
-            </TouchableOpacity>
+            <View style={styles.button}>
+              <CustomButton type={'primary'} text={'Get started'} />
+            </View>
           </ImageBackground>
         </View>
       </>
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: scaleWidth(65),
     fontFamily: FONT_FAMILY.SFPro,
-    color: CUSTOM_COLOR.white,
+    color: CUSTOM_COLOR.White,
     marginLeft: scaleWidth(49),
     fontWeight: 'bold',
   },
@@ -89,15 +89,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
 
-  button: {
-    backgroundColor: CUSTOM_COLOR.white,
-    height: scaleWidth(60),
-    width: scaleWidth(300),
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
+  button: {},
 
   text: {
     fontSize: scaleWidth(17),
