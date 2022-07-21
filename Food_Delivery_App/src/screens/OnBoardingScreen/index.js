@@ -1,15 +1,16 @@
 import React from "react";
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-
-
-
-
 import { IMG_LOGO,IMG_BACKGROUND  } from "../../assets/images";
-//import CUSTOM_COLORS from "../../constants/colors";
 import { SafeAreaView , ScrollView} from "react-native";
 import CUSTOM_COLORS from "../../constants/colors";
 import scale  from "../../constants/responsive";
 import FONT_FAMILY  from "../../constants/font";
+import Login from "../auth/Login";
+import { withNavigation } from 'react-navigation';
+import { createNavigator } from "react-navigation";
+import { createAppContainer } from "react-navigation";
+
+
 const App=()=>{
   return(
     <SafeAreaView style={styles.container}>
@@ -36,7 +37,7 @@ const App=()=>{
 
             <>{/* Button */}</>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Login')}
+              onPress={() => this.props.navigation.navigate('Login') }
               style={styles.buttonContainer}>
               <Text style={styles.buttonText}>{'Get started '}</Text>
             </TouchableOpacity>
@@ -49,11 +50,22 @@ const App=()=>{
   );
 };
 
+const AppNavigator = createStackNavigator(  
+  {  
+      Home: HomeScreen,  
+      Login: Login,  
+  },  
+  {  
+      initialRouteName: "Home"  
+  }  
+);  
+
 const styles=StyleSheet.create(
 {
   container:{
     flex: 1,
     backgroundColor: CUSTOM_COLORS.SunsetOrange,
+
   },
 
   logo:{
@@ -100,11 +112,13 @@ const styles=StyleSheet.create(
     height:scale(70),
     backgroundColor: CUSTOM_COLORS.white,
     borderRadius: 30,
-    position : "absolute",
+    position :"absolute",
     marginTop: scale(700),
     margin: scale(51),
     justifyContent:"center",
     alignContent:"center",
+    top:110,
+    //transform:scale(0),
   },
 
   buttonText: {

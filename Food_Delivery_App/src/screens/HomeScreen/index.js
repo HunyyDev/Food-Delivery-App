@@ -5,7 +5,7 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View>
-        <Text>index</Text>
+        <Text>index hung quyen </Text>
       </View>
     )
   }
