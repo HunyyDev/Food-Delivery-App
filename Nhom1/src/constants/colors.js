@@ -5,6 +5,9 @@ const CUSTOM_COLOR = {
   Black: '#000000',
   Orange: '#FA4A0C',
   SunsetOrange: '#FF4B3A',
+
+
+  Search: '#EFEEEE',
 };
 
 export default CUSTOM_COLOR;
