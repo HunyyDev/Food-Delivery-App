@@ -19,7 +19,7 @@ export class CustomInput extends Component {
     return (
       <View style={{marginTop: 25, alignSelf: 'center'}}>
         <Text style={styles.containerText}>{this.props.label}</Text>
-        {this.props.secureTextEntry === true ? (
+        {this.props.secureTextEntry ? (
           <TextInput
             style={styles.containerTextInput}
             secureTextEntry

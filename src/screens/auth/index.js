@@ -13,9 +13,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import CustomInput from '../../components/CustomInput';
 import CustomButton from '../../components/CustomButton';
 import scaleWidth from '../../constants/responsive';
-
-const LOGIN = 'Login';
-const SIGN_UP = 'Sign-up';
+import {LOGIN, SIGN_UP} from '../../constants/screen';
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -31,17 +29,8 @@ export default class LoginScreen extends Component {
         {/*Heading*/}
         <View style={styles.containerHeading}>
           <>
-            <Image
-              source={IMG_Logo}
-              style={{flex: 5, width: scaleWidth(150), height: scaleWidth(150)}}
-              resizeMode={'cover'}
-            />
-            <View
-              style={{
-                flex: 1,
-                width: '100%',
-                flexDirection: 'row',
-              }}>
+            <Image source={IMG_Logo} style={styles.img} resizeMode={'cover'} />
+            <View style={styles.containerTouch}>
               <TouchableOpacity
                 style={styles.touch}
                 onPress={() => {
@@ -74,16 +63,7 @@ export default class LoginScreen extends Component {
               <>
                 <CustomInput label="Email address" />
                 <CustomInput label="Password" secureTextEntry={true} />
-                <Text
-                  style={{
-                    color: CUSTOM_COLOR.Vermilion,
-                    fontFamily: FONT_FAMILY.Medium,
-                    fontSize: 17,
-                    marginTop: scaleWidth(30),
-                    marginLeft: 0,
-                  }}>
-                  Forgot passcode?
-                </Text>
+                <Text style={styles.loginText}>Forgot passcode?</Text>
               </>
             ) : null}
             {this.state.page === SIGN_UP ? (
@@ -116,6 +96,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  img: {
+    flex: 5,
+    width: scaleWidth(150),
+    height: scaleWidth(150),
+  },
+  containerTouch: {
+    flex: 1,
+    width: '100%',
+    flexDirection: 'row',
+  },
   containerBody: {
     flex: 2,
     marginHorizontal: scaleWidth(50),
@@ -147,5 +137,12 @@ const styles = StyleSheet.create({
   containerInput: {
     marginTop: scaleWidth(50),
     alignItems: 'center',
+  },
+  loginText: {
+    color: CUSTOM_COLOR.Vermilion,
+    fontFamily: FONT_FAMILY.Medium,
+    fontSize: 17,
+    marginTop: scaleWidth(30),
+    marginLeft: 0,
   },
 });
