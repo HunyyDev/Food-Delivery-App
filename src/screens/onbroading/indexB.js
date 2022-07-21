@@ -4,10 +4,11 @@ import type {Node} from 'react';
 import {IMG_Logo} from '../../assets/images'
 import CUSTOM_COLOR from '../../constants/colors'
 import FONT_FAMILY from '../../constants/fonts'
+import TAB_NAME from '../../constants/tabName'
 
 function LoginScreen (props)  {
-    const {navigation} = props; 
-    const [tab, setTab] = useState('login');
+    const {navigation} = props;
+    const [tab, setTab] = useState(TAB_NAME.Login);
     const isDarkMode = useColorScheme() === 'dark';
   return (
     <SafeAreaView style={styles.container} edges={['top','bottom']}>
@@ -17,44 +18,59 @@ function LoginScreen (props)  {
             <Image style={styles.logo} source={IMG_Logo} resizeMode={'contain'}/>
             <View style={styles.navigationBar}>
                 <UnderlineButton
-                    onPress={() => setTab('login')}
-                    isChoosing={tab === 'login'}>
+                    onPress={() => setTab(TAB_NAME.Login)}
+                    isChoosing={tab === TAB_NAME.Login}>
                     Login
                 </UnderlineButton>
                 <UnderlineButton
-                    onPress={() => setTab('signup')}
-                    isChoosing={tab === 'signup'}>
+                    onPress={() => setTab(TAB_NAME.SignUp)}
+                    isChoosing={tab === TAB_NAME.SignUp}>
                     Sign-up
                 </UnderlineButton>
             </View>
         </View>
       </>
-      <>
     <ScrollView style={styles.loginContainer}>
-        <View>
-            <Text style={styles.headlines}>{'Email address'}</Text>
-            <TextInput style={styles.input}/>
-        </View>
-        <View>
-            <Text style={styles.headlines}>{'Password'}</Text>
-            <TextInput style={styles.input}/>
-        </View>
+      {tab === 'login' ? (
+            <>
+            <View style={styles.input}>
+                <Text style={styles.headlines}>{'Email address'}</Text>
+                <TextInput style={styles.inputBox}/>
+            </View>
+            <View style={styles.input}>
+                <Text style={styles.headlines}>{'Password'}</Text>
+                <TextInput secureTextEntry style={styles.inputBox}/>
+            </View>
+            <View style={styles.pressable}>
+                <Pressable onPress={Holder}>
+                    {({pressed}) =>
+                          pressed ? (
+                            <Text style={[{opacity: 0.5}, styles.pressableText]}>{'Forgot passcode?'}</Text>
+                           ) : (
+                            <Text style={styles.pressableText}>{'Forgot passcode?'}</Text>
+                           )
+                    }
 
+                </Pressable>
+            </View>
+            </>
+        ) : (
+            <>
+            <View style={styles.input}>
+                 <Text style={styles.headlines}>{'Email address'}</Text>
+                 <TextInput style={styles.inputBox}/>
+            </View>
+            <View style={styles.input}>
+                  <Text style={styles.headlines}>{'Password'}</Text>
+                  <TextInput secureTextEntry style={styles.inputBox}/>
+            </View>
+            <View style={styles.input}>
+                   <Text style={styles.headlines}>{'Confirm Password'}</Text>
+                   <TextInput secureTextEntry style={styles.inputBox}/>
+            </View>
+            </>
+        )}
 
-    <>
-    <View style={styles.pressable}>
-      <Pressable onPress={Holder}>
-        {({pressed}) =>
-          pressed ? (
-            <Text style={[{opacity: 0.5}, styles.pressableText]}>{'Forgot passcode?'}</Text>
-           ) : (
-            <Text style={styles.pressableText}>{'Forgot passcode?'}</Text>
-           )
-        }
-
-      </Pressable>
-      </View>
-    </>
     <View style={styles.buttonView}>
         <Pressable style={styles.button}>
             <Text style={styles.buttonText}>
@@ -63,7 +79,6 @@ function LoginScreen (props)  {
         </Pressable>
     </View>
     </ScrollView>
-    </>
     </SafeAreaView>
   );
 };
@@ -96,7 +111,8 @@ const styles = StyleSheet.create({
           justifyContent: 'center',
           alignItems: 'center',
           position: 'absolute',
-          borderRadius: 25,
+          borderBottomLeftRadius: 25,
+          borderBottomRightRadius: 25,
 
     },
     logo: {
@@ -132,7 +148,6 @@ const styles = StyleSheet.create({
     },
     headlines: {
         marginTop: 46,
-        marginLeft: 50,
         fontFamily: FONT_FAMILY.ProTextBold,
         color: CUSTOM_COLOR.Black,
         opacity: 0.4,
@@ -140,8 +155,12 @@ const styles = StyleSheet.create({
     input: {
         marginLeft: 50,
         marginRight: 50,
-        border: 0.5,
-        backgroundColor: CUSTOM_COLOR.White,
+        borderBottomWidth: 0.5,
+        borderBottomColor: CUSTOM_COLOR.Black,
+    },
+    inputBox: {
+        color: CUSTOM_COLOR.Black,
+        fontFamily: FONT_FAMILY.ProTextBold,
     },
     pressable: {
         marginTop: 34,
@@ -152,7 +171,7 @@ const styles = StyleSheet.create({
         fontFamily: FONT_FAMILY.ProTextBold,
     },
     buttonView: {
-        marginHorizontal: 136,
+        marginTop: 68,
         alignItems: 'center',
     },
     button: ({pressed}) => ({
@@ -165,6 +184,7 @@ const styles = StyleSheet.create({
         borderRadius: 35,
         alignSelf: 'center',
         marginHorizontal: 136,
+        marginBottom: 18,
     }),
     buttonText: {
         color: CUSTOM_COLOR.White,
