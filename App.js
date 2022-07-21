@@ -7,13 +7,16 @@
  */
 
 import React from 'react';
-//import OnboardingScreen from './src/screens/onboarding';
+import OnboardingScreen from './src/screens/onboarding';
 import HomeScreen from './src/screens/home';
 //import LoginScreen from './src/screens/auth';
+import CustomButton from './src/Components/CustomButton';
+//import cu
 const App = props => {
-  //return <OnboardingScreen></OnboardingScreen>;
-  return <HomeScreen></HomeScreen>;
+  return <OnboardingScreen></OnboardingScreen>;
+  //return <HomeScreen></HomeScreen>;
   //return <LoginScreen></LoginScreen>;
+  //return <CustomButton title="Login" type="Primary"></CustomButton>;
 };
 
 export default App;

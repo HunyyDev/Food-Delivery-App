@@ -6,13 +6,13 @@ import {
   Text,
   Image,
   ImageBackground,
-  Dimensions,
 } from 'react-native';
 import {IMG_Logo, IMG_Background} from '../../assets/images/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
-
+import CustomButton from '../../Components/CustomButton';
+import {types} from '@babel/core';
 const OnboardingScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -27,9 +27,10 @@ const OnboardingScreen = () => {
         source={IMG_Background}
         resizeMode={'contain'}
       />
-      <View style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>Get started</Text>
-      </View>
+      <CustomButton
+        type="Primary"
+        style={styles.button}
+        title="Login"></CustomButton>
     </SafeAreaView>
   );
 };
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: scaleHeight(49),
+    marginTop: 49,
     marginLeft: scale(49),
   },
   logo: {
@@ -66,25 +67,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   background: {
-    width: Dimensions.get('window').width,
-    height: scaleHeight(540),
+    width: '100%',
+    height: 540,
     justifyContent: 'flex-end',
   },
-  buttonContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
-    width: scale(314),
-    height: scaleHeight(70),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
+  button: {
     alignSelf: 'center',
-    position: 'absolute',
-    bottom: scaleHeight(20),
-  },
-  buttonText: {
-    color: CUSTOM_COLOR.Vermilion,
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 17,
+    //position: 'absolute',
+    bottom: 30,
   },
 });
 
