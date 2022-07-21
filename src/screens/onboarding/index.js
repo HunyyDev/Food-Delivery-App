@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 export class Onboarding extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export class Onboarding extends Component {
             </View>
             <>{/* Button */}</>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Login')}
+              onPress={() => this.props.navigation.navigate('LoginScreen')}
               style={styles.buttonContainer}>
               <Text style={styles.buttonText}>{'Get started '}</Text>
             </TouchableOpacity>
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
 
   Text: {
     color: 'white',
-    fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(65),
+    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontSize: scale(70),
     marginLeft: scale(51),
     position: 'absolute',
-    marginTop: scale(160),
+    marginTop: scale(155),
   },
 
   backgroundContainer: {
@@ -107,8 +107,8 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: CUSTOM_COLOR.SunsetOrange,
-    fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(17),
+    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontSize: scale(18),
     fontWeight: '600',
     justifyContent: 'center',
     alignSelf: 'center',

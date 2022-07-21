@@ -6,10 +6,13 @@
       "sha1": "b116081850f9820eed953b981d88e8cca79fc97d"
     },
     {
+<<<<<<< HEAD:android/link-assets-manifest.json
       "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf",
       "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
     },
     {
+=======
+>>>>>>> 31f4ba01faae796df4f36689b4a7dcb5c450509e:FoodDelivery/android/link-assets-manifest.json
       "path": "src/assets/fonts/FontsFree-Net-SFProText-Regular.ttf",
       "sha1": "b4893462f2289df6978f9462a63db9e64bcc9342"
     },
@@ -90,6 +93,13 @@
       "sha1": "21fdb007ec60c23df8ef1fbb586b397b2f1f099a"
     },
     {
+<<<<<<< HEAD:android/link-assets-manifest.json
+=======
+      "path": "src/assets/fonts/SF-Pro-Rounded-Bold.ttf",
+      "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
+    },
+    {
+>>>>>>> 31f4ba01faae796df4f36689b4a7dcb5c450509e:FoodDelivery/android/link-assets-manifest.json
       "path": "src/assets/fonts/SF-Pro-Text-Bold.ttf",
       "sha1": "683902c971f8cf4619284dae418a13b217ff83e3"
     }
