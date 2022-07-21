@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+/* eslint-disable prettier/prettier */
+>>>>>>> Tournesol/dev_Vu
 const Prefix = 'SF-Pro-Rounded-';
 
 const FONT_FAMILY = {
