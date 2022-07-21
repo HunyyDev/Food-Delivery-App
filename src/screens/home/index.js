@@ -7,7 +7,7 @@ import {
   Image,
 } from 'react-native';
 import React from 'react';
-import {IC_SHOPPINGCART, IC_BAR, IC_VISOR} from './src/assets/icons';
+import {IC_ShoppingCart, IC_Bar, IC_Search} from '../../assets/icons';
 import CUSTOM_COLOR from './src/constants/colors';
 import FONT_FAMILY from './src/constants/fonts';
 
@@ -16,14 +16,15 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.background}>
       {/* BAR */}
       <>
-        <Image source={IC_BAR} style={styles.bar} resizeMode="contain"></Image>
+        <Image source={IC_Bar} style={styles.bar} resizeMode="contain" />
       </>
       {/* Shopping Cart */}
       <>
         <Image
-          source={IC_SHOPPINGCART}
+          source={IC_ShoppingCart}
           style={styles.shoppingCart}
-          resizeMode="contain"></Image>
+          resizeMode="contain"
+        />
       </>
       {/* Text */}
       <>
@@ -34,10 +35,7 @@ const HomeScreen = () => {
       {/* Search bar */}
       <>
         <View style={styles.searchBarContainer}>
-          <Image
-            source={IC_VISOR}
-            resizeMode="contain"
-            style={styles.visor}></Image>
+          <Image source={IC_Search} resizeMode="contain" style={styles.visor} />
           <View style={styles.searchTextContainer}>
             <Text style={styles.searchText}>{'Search'}</Text>
           </View>
@@ -86,7 +84,7 @@ const styles = StyleSheet.create({
     lineHeight: 40.57,
     fontStyle: 'normal',
     color: CUSTOM_COLOR.Black,
-    fontWeight: '700',
+    fontWeight: 'bold',
   },
   searchBarContainer: {
     flex: 1,

@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
   title: {
     color: CUSTOM_COLOR.Black,
     opacity: 0.4,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
   textInput: {
     borderBottomColor: CUSTOM_COLOR.Black,
     borderBottomWidth: 2,
     color: CUSTOM_COLOR.Black,
-    fontWeight: '600',
+    fontWeight: 'bold',
     fontSize: 17,
     fontFamily: FONT_FAMILY.ProTextRegular,
   },
