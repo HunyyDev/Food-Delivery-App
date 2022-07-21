@@ -70,9 +70,7 @@ export class Login extends Component {
             </View>
             <>{/*Button Selection*/}</>
             <TouchableOpacity
-              onPress={() =>
-                this.props.navigation.navigate('WaitingForUpgrade')
-              }
+              onPress={() => this.props.navigation.navigate('HomeScreen')}
               style={styles.buttonSelection}>
               <Text style={styles.SelectionText}>{'Login'}</Text>
             </TouchableOpacity>

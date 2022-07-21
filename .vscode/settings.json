@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+    "git.ignoreLimitWarning": true
+=======
     "cSpell.words": [
         "backgroundbutton"
     ]
+>>>>>>> 9dc01df24d9b7b0d99fa45438e26bc8b304eb9c3
 }
