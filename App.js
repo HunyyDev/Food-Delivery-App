@@ -1,8 +1,16 @@
-import {View, Text, SafeAreaView, StyleSheet, Image} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import FONT_FAMILY from './src/constants/fonts';
 import CUSTOM_COLOR from './src/constants/colors';
-import {IC_Vector, IC_ShoppingCart} from './src/assets/icons';
+import {IC_Vector, IC_ShoppingCart, IC_Search} from './src/assets/icons';
 
 const App = () => {
   return (
@@ -30,8 +38,22 @@ const App = () => {
       </View>
       {/* Rectangle */}
       <View style={styles.rectangleContainer}>
-        <Image source={IC_Search} resizeMode={'contain'} />
+        <Image
+          source={IC_Search}
+          style={styles.searchIcon}
+          resizeMode={'contain'}
+        />
+        <TextInput
+          placeholder="Search"
+          placeholderTextColor={CUSTOM_COLOR.Black}
+          style={styles.inputSearchText}
+        />
       </View>
+      <ScrollView>
+        <View />
+        <View />
+        <View />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -49,11 +71,9 @@ const styles = StyleSheet.create({
     height: 90,
     left: 50,
     top: 132,
-    backgroundColor: 'green',
   },
   foodText: {
-    fontFamily: FONT_FAMILY.Regular,
-    fontWeight: '700',
+    fontFamily: FONT_FAMILY.Bold,
     fontStyle: 'normal',
     fontSize: 34,
     lineHeight: 40.57,
@@ -65,7 +85,6 @@ const styles = StyleSheet.create({
     height: 14.67,
     left: 54.6,
     top: 74,
-    backgroundColor: 'blue',
   },
   vector: {
     borderCenterWidth: 2,
@@ -78,7 +97,6 @@ const styles = StyleSheet.create({
     height: 24,
     top: 65,
     left: 350,
-    backgroundColor: 'cyan',
   },
   shoppingCart: {
     opacity: 0.3,
@@ -92,5 +110,26 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.Gallery,
     borderColor: CUSTOM_COLOR.Gallery,
     borderRadius: 30,
+  },
+  searchIcon: {
+    position: 'absolute',
+    top: 21,
+    left: 35,
+    width: 18,
+    height: 18,
+    borderCenterWidth: 2,
+    borderColor: CUSTOM_COLOR.Black,
+    borderStyle: 'solid',
+  },
+  inputSearchText: {
+    width: 200,
+    marginTop: 8.5,
+    marginLeft: 69,
+    fontFamily: FONT_FAMILY.Bold,
+    fontStyle: 'normal',
+    fontSize: 17,
+    color: CUSTOM_COLOR.Black,
+    lineHeight: 15,
+    opacity: 0.5,
   },
 });
