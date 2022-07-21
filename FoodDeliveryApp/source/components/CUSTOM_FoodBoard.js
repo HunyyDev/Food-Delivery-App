@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../constants/color';
 import scale from '../../responsive';
@@ -9,8 +9,7 @@ export class CUSTOM_FoodBoard extends Component {
   }
   render() {
     return (
-      <View
-        style={styles.viewContainer(this.props)}>
+      <View style={styles.viewContainer(this.props)}>
         <View style={styles.viewInside}>
           <View style={styles.viewCircle}>
             <Image source={this.props.img} />
