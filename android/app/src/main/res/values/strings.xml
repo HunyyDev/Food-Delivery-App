@@ -1,7 +1,2 @@
-<resources>
-<<<<<<< HEAD
-    <string name="app_name">Tournesol</string>
-=======
-    <string name="app_name">Draft__Food__App</string>
->>>>>>> Tournesol/dev_Vu
-</resources>
+<string name="app_name">Tournesol</string>
+

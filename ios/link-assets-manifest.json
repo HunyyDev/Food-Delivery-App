@@ -2,7 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-<<<<<<< HEAD
       "path": "src/assets/fonts/SF-Pro-Display-Black.otf",
       "sha1": "89d9387a7ba9407ee3384f0b1e1ce312c4190f25"
     },
@@ -73,7 +72,8 @@
     {
       "path": "src/assets/fonts/SF-Pro-Display-UltralightItalic.otf",
       "sha1": "1db6d1e9aac6ad33bc15b06b90463dee4d2d3a60"
-=======
+    },
+    {
       "path": "src/assets/fonts/SF-Pro-Rounded-Black.otf",
       "sha1": "2da10fa4ae334947087917844e0316cbce730e69"
     },
@@ -108,7 +108,6 @@
     {
       "path": "src/assets/fonts/SF-Pro-Rounded-Ultralight.otf",
       "sha1": "f0375b7b4fff814ce30c9e43ddee6d3a5d4bd607"
->>>>>>> Tournesol/dev_Vu
     }
   ]
 }
