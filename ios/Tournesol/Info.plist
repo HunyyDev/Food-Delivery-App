@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Tournesol</string>
+	<string>Draft__Food__App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -53,6 +53,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+<<<<<<< HEAD
 		<string>SF-Pro-Display-Black.otf</string>
 		<string>SF-Pro-Display-BlackItalic.otf</string>
 		<string>SF-Pro-Display-Bold.otf</string>
@@ -71,6 +72,8 @@
 		<string>SF-Pro-Display-ThinItalic.otf</string>
 		<string>SF-Pro-Display-Ultralight.otf</string>
 		<string>SF-Pro-Display-UltralightItalic.otf</string>
+=======
+>>>>>>> Tournesol/dev
 		<string>SF-Pro-Rounded-Black.otf</string>
 		<string>SF-Pro-Rounded-Bold.otf</string>
 		<string>SF-Pro-Rounded-Heavy.otf</string>
