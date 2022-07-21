@@ -1,12 +1,3 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  Dimensions,
-  ImageBackground,
-} from 'react-native';
 import React from 'react';
 import LoginScreen from './source/screen/login';
 import Onboarding from './source/screen/onboarding';
@@ -19,14 +10,14 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding" screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Onboarding" component={Onboarding} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
+        <Stack.Navigator initialRouteName="Onboarding" screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Onboarding" component={Onboarding} />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
+  
 export default App;
-
+  
