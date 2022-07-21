@@ -4,5 +4,6 @@ export default {
     BLACK: '#000000',
     MANATEE: '#9A9A9D',
     GALLERY: '#EFEEEE',
-    WHITE: '#FFFFFF'
+    WHITE: '#FFFFFF',
+    CONCRETE: '#F2F2F2',
 }

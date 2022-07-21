@@ -6,14 +6,11 @@ export default class FoodCard extends Component {
   render() {
     return (
       <View style={styles.foodCard}>
-        <View style={styles.foodCard.imgSection}>
-          <Image
-            source={{
-              uri: `https://i.picsum.photos/id/134/300/300.jpg?grayscale&hmac=ee0aHrHql4bEj1dfr72-GXI28XPtfvzxOoHAtZsB6aE`,
-            }}
-            resizeMode="cover"
-          />
-        </View>
+        <Image
+          source={this.props.img}
+          resizeMode="cover"
+          style={styles.foodCard.imgSection}
+        />
         <View style={styles.foodCard.cardBg}>
           <Text style={styles.foodCard.cardBg.foodName}>
             {this.props.foodName}

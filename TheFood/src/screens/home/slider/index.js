@@ -15,12 +15,12 @@ const typeOfFood = ['Foods', 'Drinks', 'Snacks', 'Sauces', 'BimBim'];
 
 const foodCards = [
   {
-    img: '../../../assets/images/foods/Veggie_tomato_mix/image_2.png',
+    img: require('../../../assets/images/foods/Veggie_tomato_mix/image_2.png'),
     foodName: 'Veggie tomato mix',
     price: 'N1, 900',
   },
   {
-    img: '../../../assets/images/foods/Spicy_fish_sauce/image_2.png',
+    img: require('../../../assets/images/foods/Spicy_fish_sauce/image_2.png'),
     foodName: 'Spaghetti',
     price: 'N2, 300',
   },

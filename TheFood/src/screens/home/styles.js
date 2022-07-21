@@ -6,7 +6,7 @@ import {scaleX, scaleY} from '../../helperFunction.js';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.SILVER,
+    backgroundColor: color.CONCRETE,
   },
   header: {
     marginTop: scaleY(65),

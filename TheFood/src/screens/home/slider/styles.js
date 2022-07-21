@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
       marginTop: scaleY(54.51),
       zIndex: 1,
       objectFit: 'cover',
+      aspectRatio: 1,
     },
 
     cardBg: {
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
         height: scaleY(52),
         textAlign: 'center',
         color: colors.BLACK,
-        fontFamily: 'FontsFree-Net-SF-Pro-Rounded-Semibold'
+        fontFamily: 'FontsFree-Net-SF-Pro-Rounded-Semibold',
       },
 
       foodPrice: {
