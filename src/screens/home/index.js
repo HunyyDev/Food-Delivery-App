@@ -1,6 +1,20 @@
-import {Text, View, StyleSheet, Image, SafeAreaView} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+  ScrollView,
+  TextInput,
+} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
+import ListButton from '../../components/ListButton';
+import scaleWidth from '../../constants/responsive';
+import CustomDish from '../../components/CustomDish';
+
+import {IMG_dish1, IMG_dish2} from '../../assets/images/images';
 import {
   IMG_Menu,
   IMG_Search,
@@ -11,11 +25,15 @@ import {
   IMG_User,
 } from '../../assets/images/images';
 import FONT_FAMILY from '../../constants/fonts';
-import scale from '../../constants/responsive';
-import CustomDish from '../../components/CustomDish';
-import ListButton from '../../components/ListButton';
 
 export class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      classify: 'Foods',
+    };
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -40,61 +58,51 @@ export class HomeScreen extends Component {
           <>
             <View style={styles.Search}>
               <Image style={styles.SearchLogo} source={IMG_Search}></Image>
-              <Text style={styles.SearchText}>Search</Text>
+              <TextInput style={styles.SearchText}>Search</TextInput>
             </View>
           </>
         </>
         {/* Boding */}
         <>
-          <ListButton
-            style={styles.ListButton}
-            values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
-            selectedValue={classify}
-            setSelectedValue={setClassify}
-          />
+          <View style={styles.containerBoding}>
+            <ListButton
+              style={styles.ListButton}
+              values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
+              selectedValue={this.state.classify}
+              setSelectedValue={value => {
+                this.setState({classify: value});
+              }}
+            />
 
-          <TouchableOpacity style={styles.seemoreContainer}>
-            <Text style={styles.seemoreButton}>see more</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.seemoreContainer}>
+              <Text style={styles.seemoreButton}>see more</Text>
+            </TouchableOpacity>
 
-          <ScrollView
-            style={styles.MenuScroll}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{
-              paddingVertical: scaleWidth(5),
-              paddingHorizontal: scaleWidth(15),
-            }}>
-            <CustomDish
-              source={IMG_dish2}
-              name={'Veggie\ntomato mix'}
-              cost="N1,900"
-            />
-            <CustomDish
-              source={IMG_dish1}
-              name={'Veggie\ntomato mix'}
-              cost="N1,900"
-            />
-            <CustomDish
-              source={IMG_dish2}
-              name={'Spicy fish\nsauce'}
-              cost="N2,300.99"
-            />
-          </ScrollView>
-          {/* <View>
             <ScrollView
-              style={styles.ListText}
+              style={styles.MenuScroll}
               horizontal={true}
-              vertical={false}
-              contentContainerStyle={styles.ContainerContent}>
-              <Text style={styles.ItemText}>Foods</Text>
-              <Text style={styles.ItemText}>Drinks</Text>
-              <Text style={styles.ItemText}>Snacks</Text>
-              <Text style={styles.ItemText}>Sauce</Text>
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{
+                paddingVertical: scaleWidth(5),
+                paddingHorizontal: scaleWidth(15),
+              }}>
+              <CustomDish
+                source={IMG_dish2}
+                name={'Veggie\ntomato mix'}
+                cost="N1,900"
+              />
+              <CustomDish
+                source={IMG_dish1}
+                name={'Veggie\ntomato mix'}
+                cost="N1,900"
+              />
+              <CustomDish
+                source={IMG_dish2}
+                name={'Spicy fish\nsauce'}
+                cost="N2,300.99"
+              />
             </ScrollView>
-          </View> */}
-          <ListButton></ListButton>
-          <CustomDish></CustomDish>
+          </View>
         </>
         {/* Bottom */}
         <>
@@ -124,16 +132,16 @@ const styles = StyleSheet.create({
   },
   Menu: {
     top: 65,
-    left: scale(54.6),
+    left: scaleWidth(54.6),
   },
   ShoppingCart: {
     top: 66,
-    right: scale(42),
+    right: scaleWidth(42),
   },
   containerText: {
     width: 190,
     height: 82,
-    left: scale(50),
+    left: scaleWidth(50),
     top: 136,
   },
   Content: {
@@ -145,7 +153,7 @@ const styles = StyleSheet.create({
   },
   Search: {
     top: 242,
-    width: scale(314),
+    width: scaleWidth(314),
     height: 60,
     backgroundColor: CUSTOM_COLOR.Gallery,
     flexDirection: 'row',
@@ -156,7 +164,7 @@ const styles = StyleSheet.create({
   },
   LogoSearch: {
     flex: 0.2,
-    left: scale(35),
+    left: scaleWidth(35),
   },
   SearchText: {
     flex: 0.8,
@@ -173,11 +181,23 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'space-evenly',
   },
+  seemoreButton: {
+    fontFamily: 'SF-Pro-Rounded-Regular',
+    color: CUSTOM_COLOR.Vermilion,
+    fontSize: scaleWidth(15),
+  },
+  seemoreContainer: {
+    alignItems: 'flex-end',
+    marginRight: scaleWidth(41),
+  },
   MenuScroll: {
     maxHeight: scaleWidth(350),
   },
   ListButton: {
     maxHeight: scaleWidth(40),
     marginBottom: scaleWidth(39),
+  },
+  containerBoding: {
+    top: 230,
   },
 });

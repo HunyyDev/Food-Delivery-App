@@ -1,3 +1,20 @@
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+const designWidth = 414;
+const designHeight = 896;
+
+function scaleWidth(number) {
+  let scaleNumber;
+  scaleNumber = (number / designWidth) * width;
+  return scaleNumber;
+}
+
+function scaleHeight(number) {
+  let scaleNumber;
+  scaleNumber = (number / designHeight) * height;
+  return scaleNumber;
+}
+
 import React from 'react';
 import {
   SafeAreaView,
@@ -11,8 +28,7 @@ import {
 import {IMG_Logo, IMG_Background} from '../../assets/images/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import scale from '../../constants/responsive';
-import CustomButton from '../../constants/custombutton';
+import CustomButton from '../../components/CustomButton';
 
 const OnboardingScreen = () => {
   return (
@@ -40,14 +56,14 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     backgroundColor: CUSTOM_COLOR.White,
-    width: scale(74),
-    height: scale(74),
-    borderRadius: scale(74) / 2,
+    width: scaleWidth(74),
+    height: scaleWidth(74),
+    borderRadius: scaleWidth(74) / 2,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: scaleHeight(49),
-    marginLeft: scale(49),
+    marginLeft: scaleWidth(49),
   },
   logo: {
     width: '100%',
@@ -57,7 +73,7 @@ const styles = StyleSheet.create({
     fontSize: 65,
     color: CUSTOM_COLOR.White,
     fontFamily: FONT_FAMILY.Black,
-    marginLeft: scale(49),
+    marginLeft: scaleWidth(49),
     lineHeight: 65,
     letterSpacing: -0.5,
   },
