@@ -6,7 +6,7 @@ import { IMG_LOGO } from '../../assets/images'
 import CUSTOM_InputOne from '../../components/CUSTOM_InputOne'
 import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne'
 import CUSTOM_SwitchButton from '../../components/CUSTOM_SwitchButton'
-import { act } from 'react-test-renderer'
+//import { act } from 'react-test-renderer'
 
 const LoginScreen = ({navigation}) => {
   const [activeTab, setActiveTab] = useState('Login');
