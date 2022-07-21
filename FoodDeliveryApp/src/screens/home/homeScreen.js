@@ -19,7 +19,22 @@ import {
   IC_User,
 } from '../../assets/icons';
 import {Searchbar} from 'react-native-paper';
+import scale from '../../constants/responsive';
+const FOODS = 'FOODS';
+// const DRINKS = 'DRINKS';
+// const SNACK = 'SNACK';
+// const SAUCE = 'SAUCE';
 export class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: FOODS,
+    };
+  }
+
+  setPage = newPage => {
+    this.setPage({page: newPage});
+  };
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -52,16 +67,16 @@ export class HomeScreen extends Component {
         <View style={styles.sectionMain}>
           <View style={styles.headingMain}>
             <TouchableOpacity>
-              <Text>Foods</Text>
+              <Text style={styles.textHeadingMain}>Foods</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text>Drinks</Text>
+              <Text style={styles.textHeadingMain}>Drinks</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text>Snack</Text>
+              <Text style={styles.textHeadingMain}>Snack</Text>
             </TouchableOpacity>
             <TouchableOpacity>
-              <Text>Sauce</Text>
+              <Text style={styles.textHeadingMain}>Sauce</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -93,27 +108,29 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
   },
 
   sectionHeading: {
-    flex: 3,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    flex: 4,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     marginVertical: 30,
+    marginLeft: scale(54.6),
+    marginRight: scale(41),
   },
   sectionIcon: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 30,
     marginBottom: 10,
   },
-  menuHeading: {},
+  menuHeading: {
+    flex: 1,
+  },
   cartHeading: {},
 
   title: {
     fontFamily: FONT_FAMILY.Black,
-    fontSize: 34,
-    marginHorizontal: 30,
+    fontSize: scale(34),
     marginTop: 20,
   },
 
@@ -123,25 +140,39 @@ const styles = StyleSheet.create({
 
   textSearch: {
     borderRadius: 20,
-    marginHorizontal: 35,
     padding: 5,
-    backgroundColor: CUSTOM_COLOR.Gallery,
   },
 
   sectionMain: {
-    flex: 5,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    flex: 6,
+    backgroundColor: 'red',
   },
 
   headingMain: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    backgroundColor: 'yellow',
+  },
+
+  textHeadingMain: {
+    fontSize: scale(17),
+    opacity: 0.7,
+  },
+
+  // colorText: {
+  //   color: CUSTOM_COLOR.SunsetOrange,
+  // },
+
+  lineAndText: {
+    borderBottomWidth: 2,
+    borderBottomColor: CUSTOM_COLOR.SunsetOrange,
   },
   sectionButton: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    marginTop: 20,
+    bottom: 0,
+    alignItems: 'center',
   },
 });

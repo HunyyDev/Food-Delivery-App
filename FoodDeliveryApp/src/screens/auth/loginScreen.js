@@ -5,7 +5,6 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-  KeyboardAwareScrollView,
 } from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
