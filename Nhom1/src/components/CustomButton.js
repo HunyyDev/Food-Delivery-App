@@ -12,9 +12,9 @@ class CustomButton extends Component {
       return (
         <TouchableOpacity onPress={this.props.onPress}>
           <View
-            style={styles.ButtonContainer}
+            style={styles.buttonContainer}
             backgroundColor={CUSTOM_COLOR.White}>
-            <Text style={(styles.Text, {color: CUSTOM_COLOR.Orange})}>
+            <Text style={(styles.text, {color: CUSTOM_COLOR.Orange})}>
               {this.props.text}
             </Text>
           </View>
@@ -25,9 +25,9 @@ class CustomButton extends Component {
       return (
         <TouchableOpacity onPress={this.props.onPress}>
           <View
-            style={styles.ButtonContainer}
+            style={styles.buttonContainer}
             backgroundColor={CUSTOM_COLOR.Orange}>
-            <Text style={(styles.Text, {color: CUSTOM_COLOR.White})}>
+            <Text style={(styles.text, {color: CUSTOM_COLOR.White})}>
               {this.props.text}
             </Text>
           </View>
@@ -40,7 +40,7 @@ class CustomButton extends Component {
 export default CustomButton;
 
 const styles = StyleSheet.create({
-  ButtonContainer: {
+  buttonContainer: {
     height: scale(70),
     width: scale(314),
     borderRadius: 30,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
-  Text: {
+  text: {
     fontSize: 18,
     fontFamily: FONT_FAMILY.Black,
   },
