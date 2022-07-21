@@ -71,6 +71,13 @@
 		<string>Montserrat-SemiBoldItalic.ttf</string>
 		<string>Montserrat-Thin.ttf</string>
 		<string>Montserrat-ThinItalic.ttf</string>
+		<string>SF-Pro-Rounded-Black.ttf</string>
+		<string>SF-Pro-Rounded-Bold.ttf</string>
+		<string>SF-Pro-Rounded-Heavy.ttf</string>
+		<string>SF-Pro-Rounded-Medium.ttf</string>
+		<string>SF-Pro-Rounded-Regular.ttf</string>
+		<string>SFProText-Bold.ttf</string>
+		<string>SFProText-Regular.ttf</string>
 	</array>
 </dict>
 </plist>

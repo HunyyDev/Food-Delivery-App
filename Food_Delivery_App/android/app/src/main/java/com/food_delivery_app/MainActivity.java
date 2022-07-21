@@ -4,6 +4,7 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -14,6 +15,7 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "Food_Delivery_App";
   }
+  
 
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
@@ -44,5 +46,6 @@ public class MainActivity extends ReactActivity {
       // More on this on https://reactjs.org/blog/2022/03/29/react-v18.html
       return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }
+    
   }
 }

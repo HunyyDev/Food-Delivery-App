@@ -32,6 +32,13 @@
 		B94AAE575CDC42D98C80FFE7 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74B54B27823E4859A6E89D99 /* Montserrat-SemiBoldItalic.ttf */; };
 		11F0DB4A91FC457AABD036F6 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD732D660D404637A11EAE48 /* Montserrat-Thin.ttf */; };
 		209D13174EEA494FA915CFAE /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6A0569C9B91451CAFB1B9C3 /* Montserrat-ThinItalic.ttf */; };
+		B47337E91B3A46A69CE5FCA1 /* SF-Pro-Rounded-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 50C21CDFB314490C9848AA00 /* SF-Pro-Rounded-Black.ttf */; };
+		B21CF03B70CF460085FDCA90 /* SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF66E51EBFE74FDB927EA068 /* SF-Pro-Rounded-Bold.ttf */; };
+		AC00AAAA24604C4B8FFF1735 /* SF-Pro-Rounded-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF55E65B587245E59A9AC62C /* SF-Pro-Rounded-Heavy.ttf */; };
+		506A31647438438EAED50453 /* SF-Pro-Rounded-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5218937D69494CA286DD2463 /* SF-Pro-Rounded-Medium.ttf */; };
+		B1135F3B098D4BB3AD846545 /* SF-Pro-Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7486880E8FFB4180B7DF3DD3 /* SF-Pro-Rounded-Regular.ttf */; };
+		5EC320C553EF4364BAA09855 /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46FBE8E1243044D1B31AFEB0 /* SFProText-Bold.ttf */; };
+		13052706D64146C7BD7C2E10 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF2DBD1291BA46948FA18D30 /* SFProText-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,13 @@
 		74B54B27823E4859A6E89D99 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		FD732D660D404637A11EAE48 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; name = "Montserrat-Thin.ttf"; path = "../src/assets/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		C6A0569C9B91451CAFB1B9C3 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-ThinItalic.ttf"; path = "../src/assets/fonts/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		50C21CDFB314490C9848AA00 /* SF-Pro-Rounded-Black.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Black.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FF66E51EBFE74FDB927EA068 /* SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Bold.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF55E65B587245E59A9AC62C /* SF-Pro-Rounded-Heavy.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Heavy.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5218937D69494CA286DD2463 /* SF-Pro-Rounded-Medium.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Medium.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7486880E8FFB4180B7DF3DD3 /* SF-Pro-Rounded-Regular.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Regular.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		46FBE8E1243044D1B31AFEB0 /* SFProText-Bold.ttf */ = {isa = PBXFileReference; name = "SFProText-Bold.ttf"; path = "../src/assets/fonts/SFProText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF2DBD1291BA46948FA18D30 /* SFProText-Regular.ttf */ = {isa = PBXFileReference; name = "SFProText-Regular.ttf"; path = "../src/assets/fonts/SFProText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +220,13 @@
 				74B54B27823E4859A6E89D99 /* Montserrat-SemiBoldItalic.ttf */,
 				FD732D660D404637A11EAE48 /* Montserrat-Thin.ttf */,
 				C6A0569C9B91451CAFB1B9C3 /* Montserrat-ThinItalic.ttf */,
+				50C21CDFB314490C9848AA00 /* SF-Pro-Rounded-Black.ttf */,
+				FF66E51EBFE74FDB927EA068 /* SF-Pro-Rounded-Bold.ttf */,
+				AF55E65B587245E59A9AC62C /* SF-Pro-Rounded-Heavy.ttf */,
+				5218937D69494CA286DD2463 /* SF-Pro-Rounded-Medium.ttf */,
+				7486880E8FFB4180B7DF3DD3 /* SF-Pro-Rounded-Regular.ttf */,
+				46FBE8E1243044D1B31AFEB0 /* SFProText-Bold.ttf */,
+				AF2DBD1291BA46948FA18D30 /* SFProText-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -325,6 +346,13 @@
 				B94AAE575CDC42D98C80FFE7 /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				11F0DB4A91FC457AABD036F6 /* Montserrat-Thin.ttf in Resources */,
 				209D13174EEA494FA915CFAE /* Montserrat-ThinItalic.ttf in Resources */,
+				B47337E91B3A46A69CE5FCA1 /* SF-Pro-Rounded-Black.ttf in Resources */,
+				B21CF03B70CF460085FDCA90 /* SF-Pro-Rounded-Bold.ttf in Resources */,
+				AC00AAAA24604C4B8FFF1735 /* SF-Pro-Rounded-Heavy.ttf in Resources */,
+				506A31647438438EAED50453 /* SF-Pro-Rounded-Medium.ttf in Resources */,
+				B1135F3B098D4BB3AD846545 /* SF-Pro-Rounded-Regular.ttf in Resources */,
+				5EC320C553EF4364BAA09855 /* SFProText-Bold.ttf in Resources */,
+				13052706D64146C7BD7C2E10 /* SFProText-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

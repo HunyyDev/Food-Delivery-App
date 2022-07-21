@@ -1,0 +1,9 @@
+export {default as ICO_Bar} from './bar.png';
+export {default as ICO_Timer} from './timer.png';
+export {default as ICO_Cart} from './cart.png';
+export {default as ICO_Heart} from './heart.png';
+export {default as ICO_Head} from './head.png';
+export {default as ICO_Body} from './body.png';
+export {default as ICO_House} from './house.png';
+export {default as ICO_Visor} from './visor.png';
+export {default as ICO_User} from './user.png';

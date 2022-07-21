@@ -8,16 +8,17 @@ import {
 } from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../../constant/color';
-import {IMG_Background, IMG_LOGO} from '../../assets/images';
+import {IMG_Background, IMG_Logo} from '../../assets/images';
 import FONT_FAMILY from '../../constant/font';
+import CustomButton from '../../Components/CustomButton';
 
-export default function OnBoardingScreen() {
+export default function OnBoardingScreen({navigation}) {
   return (
-    <ScrollView>
-      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.container} edges={['top', 'bottom']}>
         {/* logo */}
         <View style={styles.logoContainer}>
-          <Image source={IMG_LOGO} style={styles.logo} />
+          <Image source={IMG_Logo} style={styles.logo} />
         </View>
         {/* title */}
         <Text style={styles.title}>{'Food for \n Evryone'}</Text>
@@ -30,11 +31,13 @@ export default function OnBoardingScreen() {
           />
         </View>
         {/* button */}
-        <View style={styles.buttonContainer}>
-          <Text style={styles.textButton}>{'Get Started'}</Text>
+        <View style={styles.button}>
+          <CustomButton
+            label={'Get Started'}
+            navigation={navigation}></CustomButton>
         </View>
-      </SafeAreaView>
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -56,8 +59,6 @@ const styles = StyleSheet.create({
   backgroundContainer: {
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
-
-  background: {},
   logo: {
     width: '100%',
     height: '100%',
@@ -68,18 +69,11 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     fontFamily: FONT_FAMILY.Black_Sf,
   },
-  buttonContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
+  button: {
     width: 314,
     height: 70,
+    alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 35,
-    alignSelf: 'center',
-  },
-  textButton: {
-    fontFamily: FONT_FAMILY.Black_Sf,
-    fontSize: 20,
-    color: CUSTOM_COLOR.Red,
   },
 });
