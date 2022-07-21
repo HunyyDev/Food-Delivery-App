@@ -1,7 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {useState} from 'react';
-import {scaleX, scaleY} from '../../helperFunction.js';
+import {scaleX, scaleY} from '../../assets/constants/helperFunction';
+import CustomButton from '../../components/CustomButton';
 
 const OnBoardingScreen = () => {
   const [mainColor, setMainColor] = useState('rgba(255,75,58,255)');
@@ -39,6 +40,7 @@ const OnBoardingScreen = () => {
             Get Started
           </Text>
         </TouchableOpacity>
+        {/* <CustomButton type="primary" title="Login" /> */}
       </View>
     </View>
   );

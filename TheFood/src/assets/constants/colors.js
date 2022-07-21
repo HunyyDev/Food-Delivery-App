@@ -1,0 +1,9 @@
+const CUSTOM_COLOR = {
+  CONCRETE: '#F2F2F2',
+  VERMILION: '#FA4A0C',
+  BLACK: '#000000',
+  MANATEE: '#9A9A9D',
+  GALLERY: '#EFEEEE',
+  WHITE: '#FFFFFF',
+};
+export default CUSTOM_COLOR;
