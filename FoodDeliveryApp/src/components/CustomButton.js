@@ -2,11 +2,7 @@ import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../constants/colors';
 import scale from '../constants/responsive';
-<<<<<<< HEAD
-import CUSTOM_FONT from '../constants/fonts';
-=======
 import FONT_FAMILY from '../constants/fonts';
->>>>>>> 941fea3f76a6f6c499497724bcbe380adf2dccf4
 
 export class CustomButton extends Component {
   constructor(props) {
@@ -79,7 +75,6 @@ const styles = StyleSheet.create({
 
   textButtonPrimary: {
     color: CUSTOM_COLOR.Orange,
-    fontFamily: CUSTOM_FONT.Black,
   },
 
   buttonSecondary: {
@@ -88,6 +83,5 @@ const styles = StyleSheet.create({
 
   textButtonSecondary: {
     color: CUSTOM_COLOR.White,
-    fontFamily: CUSTOM_FONT.Black,
   },
 });

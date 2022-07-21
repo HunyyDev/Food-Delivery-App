@@ -5,11 +5,7 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-<<<<<<< HEAD
-  KeyboardAvoidingView,
-=======
   KeyboardAwareScrollView,
->>>>>>> 941fea3f76a6f6c499497724bcbe380adf2dccf4
 } from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -120,11 +116,7 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-<<<<<<< HEAD
-    backgroundColor: CUSTOM_COLOR.Silver,
-=======
     backgroundColor: CUSTOM_COLOR.SilverWhite,
->>>>>>> 941fea3f76a6f6c499497724bcbe380adf2dccf4
   },
 
   headerSection: {
@@ -155,11 +147,7 @@ const styles = StyleSheet.create({
 
   inputSection: {
     flex: 6,
-<<<<<<< HEAD
-    backgroundColor: CUSTOM_COLOR.Silver,
-=======
     backgroundColor: CUSTOM_COLOR.SilverWhite,
->>>>>>> 941fea3f76a6f6c499497724bcbe380adf2dccf4
     margin: 30,
   },
 
