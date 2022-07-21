@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 export class Onboarding extends Component {
   constructor(props) {
@@ -37,7 +37,7 @@ export class Onboarding extends Component {
             </View>
             <>{/* Button */}</>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Login')}
+              onPress={() => this.props.navigation.navigate('LoginScreen')}
               style={styles.buttonContainer}>
               <Text style={styles.buttonText}>{'Get started '}</Text>
             </TouchableOpacity>
