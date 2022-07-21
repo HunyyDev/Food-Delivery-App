@@ -6,42 +6,50 @@ import scaleWidth from '../../constants/responsive';
 import CustomDish from '../../components/CustomDish';
 import { IMG_dish1, IMG_dish2 } from '../../assets/images/images';
 
-const HomeScreen = () => {
-  const [classify, setClassify] = useState('Foods');
-  return (
-    <View style={{ flex: 1, backgroundColor: CUSTOM_COLOR.Concrete}}>
-      {/* Đây là phần trên này */}
-      <View style={{flex:0.5}}></View>
-      <View style={{flex:0.5}}></View>
-      <View style={{flex:0.5}}></View>
-      {/* Đây là phần trên này */}
+class HomeScreen extends React.Component {
+  // const [classify, setClassify] = useState('Foods');
+  constructor(props) {
+    super(props);
+    this.state = {
+      classify: 'Foods',
+    };
+  }
+  render() {
+    return (
+      <View style={{ flex: 1, backgroundColor: CUSTOM_COLOR.Concrete }}>
+        {/* Đây là phần trên này */}
+        <View style={{ flex: 0.5 }}></View>
+        <View style={{ flex: 0.5 }}></View>
+        <View style={{ flex: 0.5 }}></View>
+        {/* Đây là phần trên này */}
 
-      {/* Phần của VH này */}
-      <ListButton
-      style={styles.ListButton}
-      values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
-      selectedValue={classify}
-      setSelectedValue={setClassify}/>
+        {/* Phần của VH này */}
+        <ListButton
+          style={styles.ListButton}
+          values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
+          selectedValue={this.state.classify}
+          setSelectedValue={(value) => { this.setState({ classify: value }) }} />
 
-      <TouchableOpacity style={styles.seemoreContainer}>
-        <Text style={styles.seemoreButton}>see more</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.seemoreContainer}>
+          <Text style={styles.seemoreButton}>see more</Text>
+        </TouchableOpacity>
 
-      <ScrollView style={styles.MenuScroll} horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{paddingVertical:scaleWidth(5), paddingHorizontal: scaleWidth(15)}}>
-          <CustomDish source={IMG_dish2} name={'Veggie\ntomato mix'} cost='N1,900'/>
-          <CustomDish source={IMG_dish1} name={'Veggie\ntomato mix'} cost='N1,900'/>
-          <CustomDish source={IMG_dish2} name={'Spicy fish\nsauce'} cost='N2,300.99'/>
-      </ScrollView>
-      {/* Phần của VH này */}
+        <ScrollView style={styles.MenuScroll} horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingVertical: scaleWidth(5), paddingHorizontal: scaleWidth(15) }}>
+          <CustomDish source={IMG_dish2} name={'Veggie\ntomato mix'} cost='N1,900' />
+          <CustomDish source={IMG_dish1} name={'Veggie\ntomato mix'} cost='N1,900' />
+          <CustomDish source={IMG_dish2} name={'Spicy fish\nsauce'} cost='N2,300.99' />
+        </ScrollView>
+        {/* Phần của VH này */}
 
-      {/* Đây là phần dưới này */}
-      <View style={{flex:0.5}}></View>
-      {/* Đây là phần dưới này */}
+        {/* Đây là phần dưới này */}
+        <View style={{ flex: 0.5 }}></View>
+        {/* Đây là phần dưới này */}
 
-    </View>
-  );
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
@@ -50,15 +58,15 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     fontSize: scaleWidth(15),
   },
-  seemoreContainer:{
-    alignItems:'flex-end',
+  seemoreContainer: {
+    alignItems: 'flex-end',
     marginRight: scaleWidth(41),
   },
   MenuScroll: {
     maxHeight: scaleWidth(350),
   },
   ListButton: {
-    maxHeight: scaleWidth(40), 
+    maxHeight: scaleWidth(40),
     marginBottom: scaleWidth(39),
   }
 });
