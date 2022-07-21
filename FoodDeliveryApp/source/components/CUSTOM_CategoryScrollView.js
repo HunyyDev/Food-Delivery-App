@@ -3,7 +3,7 @@ import React, {useMemo, useState} from 'react'
 import scale from '../../responsive';
 import FONT_FAMILY from '../constants/fonts';
 import CUSTOM_COLOR from '../constants/color';
-import UnderlineButton from './UnderlineButton';
+import CUSTOM_UnderlineButton from './CUSTOM_UnderlineButton';
 
 const CUSTOM_CategoryScrollView = () => {
     const categoryList = useMemo(
@@ -16,12 +16,12 @@ const CUSTOM_CategoryScrollView = () => {
             <View style={styles.categoryView}>
                 {categoryList.map(item => (
                     <View style={styles.categoryItem} key={item}>
-                        <UnderlineButton 
+                        <CUSTOM_UnderlineButton 
                             isChoosing={tab === item}
                             onPress={() => setTab(item)}
                             textStyle={styles.categoryText(tab === item)}>
                             {item}
-                        </UnderlineButton>
+                        </CUSTOM_UnderlineButton>
                     </View>
                 ))}
             </View>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     scrollViewContainer: {
         position: 'absolute',
         top: scale(310),
-        left: scale(80),
+        left: scale(10),
         horizontal: true,
         width: scale(414),
     },
@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
         isChoosing => ({
             color: isChoosing ? CUSTOM_COLOR.SunsetOrange : CUSTOM_COLOR.Manatee,
             fontSize: scale(17),
-            
+            fontFamily: FONT_FAMILY.SF_Pro_Rounded,
         }),
 });

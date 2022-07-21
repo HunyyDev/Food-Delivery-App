@@ -3,19 +3,20 @@ import React, { Component, useState } from 'react'
 import CUSTOM_COLOR from '../../constants/color'
 import scale from '../../../responsive'
 import { IMG_LOGO } from '../../assets/images'
-import CUSTOM_INPUT1 from '../../components/CUSTOM_INPUT1'
-import CUSTOM_BUTTON1 from '../../components/CUSTOM_BUTTON1'
-import CUSTOM_SWITCH_BUTTON from '../../components/CUSTOM_SWITCH_BUTTON'
+import CUSTOM_InputOne from '../../components/CUSTOM_InputOne'
+import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne'
+import CUSTOM_SwitchButton from '../../components/CUSTOM_SwitchButton'
+import { act } from 'react-test-renderer'
 
 const LoginScreen = ({navigation}) => {
-  const [activeTab, setActiveTab] = useState('login');
+  const [activeTab, setActiveTab] = useState('Login');
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.upperBackground}>
           <Image style={styles.Logo} source={IMG_LOGO}/>
-          <CUSTOM_SWITCH_BUTTON activeTab={activeTab} setActiveTab={setActiveTab} />
+          <CUSTOM_SwitchButton activeTab={activeTab} setActiveTab={setActiveTab} />
         </View>
-        <CUSTOM_INPUT1
+        <CUSTOM_InputOne
           text={'Email Address'}
           placeHolderText={'example@gmail.com'}
           placeholderTextColor={CUSTOM_COLOR.Black}
@@ -24,7 +25,7 @@ const LoginScreen = ({navigation}) => {
           position={'absolute'}
           entry={false}
         />
-        <CUSTOM_INPUT1
+        <CUSTOM_InputOne
             text={'Password'}
             placeHolderText={'********'}
             placeholderTextColor={CUSTOM_COLOR.Black}
@@ -34,7 +35,7 @@ const LoginScreen = ({navigation}) => {
             entry={true}
           />
         {!isLogin(activeTab) ? (
-            <CUSTOM_INPUT1
+            <CUSTOM_InputOne
               text={'Confirm password'}
               placeHolderText={'********'}
               placeholderTextColor={CUSTOM_COLOR.Black}
@@ -51,12 +52,23 @@ const LoginScreen = ({navigation}) => {
           </TouchableOpacity>
           ) : null}
 
-        <CUSTOM_BUTTON1
+        {isLogin(activeTab) ? (
+        <CUSTOM_ButtonOne
             text={'Login'}
             color={CUSTOM_COLOR.Vermilion}
             textColor={CUSTOM_COLOR.White}
             onPress={() => navigation.navigate('Home')}
           />
+          ) : null}
+
+        {!isLogin(activeTab) ? (
+        <CUSTOM_ButtonOne
+            text={'Sign-Up'}
+            color={CUSTOM_COLOR.Vermilion}
+            textColor={CUSTOM_COLOR.White}
+            onPress={() => setActiveTab('Login')}
+          />
+          ) : null}
       </SafeAreaView>
     )
 }

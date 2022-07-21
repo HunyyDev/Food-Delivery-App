@@ -3,7 +3,7 @@ import { Pressable, Text, StyleSheet, } from "react-native";
 import scale from "../../responsive";
 import CUSTOM_COLOR from "../constants/color";
 
-const UnderlineButton = props => {
+const CUSTOM_UnderlineButton = props => {
     const {isChoosing, onPress, style, textStyle, children} = props;
 
     return (
@@ -13,7 +13,7 @@ const UnderlineButton = props => {
     );
 };
 
-export default UnderlineButton;
+export default CUSTOM_UnderlineButton;
 
 const styles = StyleSheet.create({
     background: isChoosing => ({

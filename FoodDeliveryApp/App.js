@@ -1,12 +1,3 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  Image,
-  Dimensions,
-  ImageBackground,
-} from 'react-native';
 import React from 'react';
 import LoginScreen from './source/screen/login';
 import Onboarding from './source/screen/onboarding';

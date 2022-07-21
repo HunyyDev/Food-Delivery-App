@@ -1,5 +1,5 @@
 import scale from '../../responsive';
-import {StyleSheet, Text, View, TextInput} from 'react-native';
+import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
 import CUSTOM_IconButton from './CUSTOM_IconButton';
 import {ICON_GLASS} from '../assets/icons';

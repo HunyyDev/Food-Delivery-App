@@ -5,14 +5,13 @@ import {
   Image,
   View,
   Dimensions,
-  TouchableOpacity
 } from 'react-native';
 import React from 'react';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/color';
 import { IMG_BACKGROUND, IMG_LOGO } from '../../assets/images'; 
 import scale from '../../../responsive';
-import CUSTOM_BUTTON1 from '../../components/CUSTOM_BUTTON1';
+import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne';
 
 const Onboarding = ({navigation}) => {
   return (
@@ -38,7 +37,7 @@ const Onboarding = ({navigation}) => {
 
       {/* button */}
       <>
-        <CUSTOM_BUTTON1
+        <CUSTOM_ButtonOne
           text="Get started"
           color={CUSTOM_COLOR.White}
           textColor={CUSTOM_COLOR.SunsetOrange}
@@ -86,5 +85,6 @@ const styles = StyleSheet.create({
   },
   Img: {
     height: scale(499),
+    width: Dimensions.get('window').width,
   },
 });

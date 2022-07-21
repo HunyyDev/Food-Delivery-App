@@ -3,7 +3,7 @@ import {StyleSheet, Text, View, TextInput} from 'react-native';
 import CUSTOM_COLOR from '../constants/color';
 import scale from '../../responsive';
 
-class CUSTOM_INPUT1 extends React.Component {
+class CUSTOM_InputOne extends React.Component {
     constructor(props) {
         super(props);
       }
@@ -24,7 +24,7 @@ class CUSTOM_INPUT1 extends React.Component {
     }
 };
 
-export default CUSTOM_INPUT1;
+export default CUSTOM_InputOne;
 
 const styles = StyleSheet.create({
     viewContainer: props =>({

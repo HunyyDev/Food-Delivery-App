@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {Text, View, StyleSheet, Image} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../constants/color';
 import scale from '../../responsive';
@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
   viewContainer: props =>({
     width: scale(200),
     height: scale(293),
-    borderWidth: 1,
     flexDirection: 'column-reverse',
     ...props.style,
   }),
