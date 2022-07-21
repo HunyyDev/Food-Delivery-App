@@ -13,13 +13,13 @@ import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/reponsive';
 import {IMG_Logo} from '../../assets/images';
 const CustomInput = props => {
+  console.log('props', props);
   return (
     <View style={styles.contentText}>
       <Text>{props.label}</Text>
       <TextInput
         onChangeText={newText => console.log(newText)}
         style={styles.inputContainer}
-        secureTextEntry={props.secureEntry}
       />
     </View>
   );
