@@ -12,18 +12,46 @@ import { createAppContainer } from "react-navigation";
 
 
 const App=()=>{
+
+
+   const [value, setValue] = React.useState('rgba(255,75,58,255)');
+  
+
+  const changeColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    const a = Math.floor(Math.random() * 256);
+    setMainColor(`rgba(${r}, ${g}, ${b}, ${a})`);
+  };
+
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setValue(
+        ()=>{
+          const r = Math.floor(Math.random() * 255);
+          const g = Math.floor(Math.random() * 255);
+          const b = Math.floor(Math.random() * 255);
+          const a = Math.floor(Math.random() * 255);
+          return `rgba(${r}, ${g}, ${b}, ${a})`;
+        }
+      );
+    }, 1500);
+  }, []);
+
   return(
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container }>
 
         <ScrollView
           // eslint-disable-next-line react-native/no-inline-styles
           contentContainerStyle={{flexGrow: 1}}
-          style={styles.scrollView}>
+          style={[styles.scrollView,{ backgroundColor: value }]}>
 
           <View>
 
             <>{/* Logo */}</>
-            <View style={styles.logoContainer}>
+            <View style={[styles.logoContainer,{ backgroundColor: value}]}>
               <Image source={IMG_LOGO} style={styles.logo} />
             </View>
 
@@ -31,7 +59,7 @@ const App=()=>{
             <Text style={styles.Text}>{'Food for \nEveryone'}</Text>
 
             <>{/* background */}</>
-            <View style={styles.backgroundContainer}>
+            <View style={[styles.backgroundContainer,{ backgroundColor: value }]}>
               <Image source={IMG_BACKGROUND} style={styles.background} />
             </View>
 
@@ -54,8 +82,7 @@ const styles=StyleSheet.create(
 {
   container:{
     flex: 1,
-    backgroundColor: CUSTOM_COLORS.SunsetOrange,
-
+    backgroundColor:CUSTOM_COLORS.SunsetOrange,
   },
 
   logo:{
