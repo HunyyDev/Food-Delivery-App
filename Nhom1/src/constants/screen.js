@@ -1,3 +1,7 @@
-const LOGIN = 'Login';
-const SIGN_UP = 'Sign-up';
-export {LOGIN, SIGN_UP};
+
+const SCREENS = {
+    LOGIN: 'Login',
+    SIGN_UP: 'Sign-up',
+ }
+ 
+ export default SCREENS;
