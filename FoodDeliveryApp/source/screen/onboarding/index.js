@@ -5,7 +5,6 @@ import {
   Image,
   View,
   Dimensions,
-  TouchableOpacity
 } from 'react-native';
 import React from 'react';
 import FONT_FAMILY from '../../constants/fonts';

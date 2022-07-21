@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
         isChoosing => ({
             color: isChoosing ? CUSTOM_COLOR.SunsetOrange : CUSTOM_COLOR.Manatee,
             fontSize: scale(17),
-            
+            fontFamily: FONT_FAMILY.SF_Pro_Rounded,
         }),
 });
