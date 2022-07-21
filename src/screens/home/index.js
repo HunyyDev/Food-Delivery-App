@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Text, StyleSheet, View, TouchableOpacity, ScrollView } from "react-native";
 import CUSTOM_COLOR from "../../constants/colors";
 import ListButton from "../../components/ListButton";
