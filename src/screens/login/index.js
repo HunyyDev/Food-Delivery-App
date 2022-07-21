@@ -13,13 +13,13 @@ import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/reponsive';
 import {IMG_Logo} from '../../assets/images';
 const CustomInput = props => {
-  console.log('props', props);
   return (
     <View style={styles.contentText}>
       <Text>{props.label}</Text>
       <TextInput
         onChangeText={newText => console.log(newText)}
         style={styles.inputContainer}
+        secureTextEntry={props.secureEntry}
       />
     </View>
   );
@@ -39,20 +39,28 @@ export class Login extends Component {
               <Image source={IMG_Logo} style={styles.logo} />
             </View>
             <>{/*Change between Login and Sign Up*/}</>
-            <View style={styles.backgroundbuttomText}>
-              <View style={styles.buttonLogin}>
+            <View style={styles.backgroundbuttonText}>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('WaitingForUpgrade')
+                }
+                style={styles.buttonLogin}>
                 <Text style={styles.buttonText}>Login</Text>
-              </View>
-              <View style={styles.buttonLogin}>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() =>
+                  this.props.navigation.navigate('WaitingForUpgrade')
+                }
+                style={styles.buttonLogin}>
                 <Text style={styles.buttonText}>Sign-Up</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.differentBackground}>
             <>{/*Info and forgot password*/}</>
             <View style={styles.In4Container}>
-              <CustomInput label={'E-mail address:'} />
-              <CustomInput label={'Password: '} />
+              <CustomInput label={'E-mail address:'} secureEntry={false} />
+              <CustomInput label={'Password: '} secureEntry={true} />
               <TouchableOpacity
                 onPress={() =>
                   this.props.navigation.navigate('WaitingForUpgrade')
@@ -97,14 +105,14 @@ const styles = StyleSheet.create({
     marginEnd: scale(50),
     justifyContent: 'space-around',
   },
-  backgroundbuttomText: {
+  backgroundbuttonText: {
     alignContent: 'center',
     overflow: 'hidden',
     width: '100%',
-    position: 'absolute',
-    bottom: 15,
+    bottom: scale(-20),
+    alignSelf: 'center',
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   backgroundLogo: {
     alignSelf: 'center',
@@ -112,11 +120,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonLogin: {
-    backgroundColor: CUSTOM_COLOR.White,
+    height: scale(60),
+    width: '30%',
     overflow: 'hidden',
-    justifyContent: 'center',
-    borderRadius: 30,
-    flex: 1,
+    borderBottomWidth: 3,
+    borderColor: CUSTOM_COLOR.Vermilion,
   },
   buttonText: {
     color: 'black',
@@ -132,7 +140,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.SFProTextBold,
   },
   inputContainer: {
-    height: scale(40),
+    height: scale(50),
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
@@ -140,10 +148,8 @@ const styles = StyleSheet.create({
   },
   inputText: {
     color: '#000',
-    paddingRight: 5,
-    paddingLeft: 5,
-    fontSize: 14,
-    lineHeight: 23,
+    fontSize: scale(40),
+    lineHeight: 30,
     flex: 2,
   },
   forgotPassword: {
