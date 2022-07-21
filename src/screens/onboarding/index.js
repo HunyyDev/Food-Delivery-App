@@ -28,7 +28,7 @@ import {
 import {IMG_Logo, IMG_Background} from '../../assets/images/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import CustomButton from '../../constants/custombutton';
+import CustomButton from '../../components/CustomButton';
 
 const OnboardingScreen = () => {
   return (

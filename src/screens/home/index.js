@@ -6,8 +6,6 @@ import scaleWidth from "../../constants/responsive";
 import CustomDish from "../../components/CustomDish";
 import { IMG_dish1, IMG_dish2 } from "../../assets/images/images";
 
-
-
 const HomeScreen = () => {
   const [classify, setClassify] = useState('Foods');
   return (
@@ -17,7 +15,6 @@ const HomeScreen = () => {
       <View style={{flex:0.5}}></View>
       <View style={{flex:0.5}}></View>
       {/* Đây là phần trên này */}
-
 
       {/* Phần của VH này */}
       <ListButton
@@ -38,7 +35,6 @@ const HomeScreen = () => {
           <CustomDish source={IMG_dish2} name={'Spicy fish\nsauce'} cost='N2,300.99'/>
       </ScrollView>
       {/* Phần của VH này */}
-
 
       {/* Đây là phần dưới này */}
       <View style={{flex:0.5}}></View>

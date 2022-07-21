@@ -15,8 +15,8 @@ const ListButton = props =>{
                 activeOpacity={1}
                 key={value}
                 onPress={()=>props.setSelectedValue(value)}
-                style={[styles.button, props.selectedValue === value && styles.selected]}>
-                    <Text style={styles.buttonLabel}>
+                style={styles.button}>
+                    <Text style={[styles.buttonLabel, props.selectedValue === value && styles.selectedLabel]}>
                         {value}
                     </Text>
                     {props.selectedValue === value ? (
