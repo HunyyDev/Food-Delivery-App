@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     cost: {
         fontSize: scaleWidth(17),
-        color: CUSTOM_COLOR.Vermillon,
+        color: CUSTOM_COLOR.Vermilion,
         alignSelf: 'center',
         marginBottom: scaleWidth(39),
         fontFamily: 'SF-Pro-Rounded-Bold',
