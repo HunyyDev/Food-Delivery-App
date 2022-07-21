@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
     fontFamily: FONT_FAMILY.SF_Pro_Rounded,
     fontSize: scale(34),
-    fontWeight: '700',
     position: 'absolute',
     top: scale(-10),
   },

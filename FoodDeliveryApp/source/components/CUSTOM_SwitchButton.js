@@ -3,7 +3,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import scale from '../../responsive';
 import CUSTOM_COLOR from '../constants/color';
 
-const CUSTOM_SWITCH_BUTTON = props => {
+const CUSTOM_SwitchButton = props => {
   return (
     <View
       style={{
@@ -34,7 +34,7 @@ const CUSTOM_SWITCH_BUTTON = props => {
   );
 };
 
-export default CUSTOM_SWITCH_BUTTON;
+export default CUSTOM_SwitchButton;
 
 const styles = StyleSheet.create({});
 

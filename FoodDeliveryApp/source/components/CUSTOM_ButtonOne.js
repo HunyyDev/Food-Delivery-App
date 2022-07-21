@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import scale from '../../responsive';
 
-class CUSTOM_BUTTON1 extends React.Component {
+class CUSTOM_ButtonOne extends React.Component {
   constructor(props) {
       super(props);
       this.state = {};
@@ -27,7 +27,7 @@ class CUSTOM_BUTTON1 extends React.Component {
   }
 };
 
-export default CUSTOM_BUTTON1;
+export default CUSTOM_ButtonOne;
 
 const styles = StyleSheet.create({
   touchableContainer: props => (

@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
   viewContainer: props =>({
     width: scale(200),
     height: scale(293),
-    borderWidth: 1,
     flexDirection: 'column-reverse',
     ...props.style,
   }),
