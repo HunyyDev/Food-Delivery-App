@@ -5,7 +5,6 @@ import CUSTOM_COLOR from '../../src/constants/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: 'grey',
   },
   navContainer: {
     flex: 1,
@@ -52,12 +51,12 @@ const styles = StyleSheet.create({
   textLogin: {
     fontSize: scale(18),
     fontWeight: '600',
-    color: 'black',
+    color: CUSTOM_COLOR.Black,
   },
   textSignUp: {
     fontSize: scale(18),
     fontWeight: '600',
-    color: 'black',
+    color: CUSTOM_COLOR.Black,
   },
   rightLine: {
     position: 'absolute',
@@ -65,8 +64,7 @@ const styles = StyleSheet.create({
     height: scale(3),
     left: scale(-39),
     top: scale(51),
-    // top: scale(366),
-    backgroundColor: '#FA4A0C',
+    backgroundColor: CUSTOM_COLOR.Vermilion,
     borderRadius: 40,
   },
   leftLine: {
@@ -75,20 +73,18 @@ const styles = StyleSheet.create({
     height: scale(3),
     left: scale(-31),
     top: scale(51),
-    backgroundColor: '#FA4A0C',
+    backgroundColor: CUSTOM_COLOR.Vermilion,
     borderRadius: 40,
   },
   inputLogin: {
     position: 'absolute',
     top: scale(116),
     left: scale(-39),
-    // backgroundColor: 'grey',
   },
   inputSignUp: {
     position: 'absolute',
     top: scale(116),
     left: scale(-213),
-    // backgroundColor: 'grey',
   },
   button: {
     position: 'absolute',
