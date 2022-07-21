@@ -11,7 +11,11 @@ import {
 import {IMG_Logo, IMG_Background} from '../../assets/images/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
+<<<<<<< HEAD
 import scale from '../../constants/responsive';
+=======
+import CustomButton from '../../constants/custombutton';
+>>>>>>> e51852857c05cb3f560428b32216a3d2ff4ad911
 
 const OnboardingScreen = () => {
   return (
@@ -25,11 +29,9 @@ const OnboardingScreen = () => {
       <ImageBackground
         style={styles.background}
         source={IMG_Background}
-        resizeMode={'contain'}
-      />
-      <View style={styles.buttonContainer}>
-        <Text style={styles.buttonText}>Get started</Text>
-      </View>
+        resizeMode={'contain'}>
+        <CustomButton type={'primary'} text={'Get started'} />
+      </ImageBackground>
     </SafeAreaView>
   );
 };
@@ -67,9 +69,10 @@ const styles = StyleSheet.create({
   },
   background: {
     width: Dimensions.get('window').width,
-    height: scaleHeight(540),
+    height: scaleHeight(600),
     justifyContent: 'flex-end',
   },
+<<<<<<< HEAD
   buttonContainer: {
     backgroundColor: CUSTOM_COLOR.White,
     width: scale(314),
@@ -86,6 +89,8 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Medium,
     fontSize: 17,
   },
+=======
+>>>>>>> e51852857c05cb3f560428b32216a3d2ff4ad911
 });
 
 export default OnboardingScreen;
