@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Text, StyleSheet, View, TouchableOpacity, ScrollView } from "react-native";
-import CUSTOM_COLOR from "../../constants/colors";
-import ListButton from "../../components/ListButton";
-import scaleWidth from "../../constants/responsive";
-import CustomDish from "../../components/CustomDish";
-import { IMG_dish1, IMG_dish2 } from "../../assets/images/images";
+import { Text, StyleSheet, View, TouchableOpacity, ScrollView } from 'react-native';
+import CUSTOM_COLOR from '../../constants/colors';
+import ListButton from '../../components/ListButton';
+import scaleWidth from '../../constants/responsive';
+import CustomDish from '../../components/CustomDish';
+import { IMG_dish1, IMG_dish2 } from '../../assets/images/images';
 
 const HomeScreen = () => {
   const [classify, setClassify] = useState('Foods');
