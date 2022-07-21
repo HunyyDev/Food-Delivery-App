@@ -1,5 +1,5 @@
 import { Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity} from 'react-native'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import CUSTOM_COLOR from '../../constants/color'
 import scale from '../../../responsive'
 import { IMG_LOGO } from '../../assets/images'
