@@ -13,8 +13,7 @@ import CUSTOM_COLOR from '../.././constants/colors';
 import CustomInput from '../.././components/CustomInput';
 import CustomButton from '../.././components/CustomButton';
 import scale from '../.././constants/responsive';
-const LOGIN = 'Login';
-const SIGN_UP = 'Sign-up';
+import {LOGIN, SIGN_UP} from '../.././constants/screen'; 
 
 class LoginScreen extends React.Component {
   constructor(props) {
