@@ -1,1 +1,0 @@
-export {default as IMG_Item} from './MaskGroup.png';
