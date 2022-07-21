@@ -1,22 +1,22 @@
-import { Text, View, StyleSheet, Image} from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../constants/colors';
 import scaleWidth from '../constants/responsive';
 
 //Usage: <CustomDish source={'image_path'} name={'name'} cost={'cost'}/>
 const CustomDish = (props) => {
-  return (
-    <View style={styles.container}>
-        <View style = {styles.boxContainer}>
-            <Text style={styles.name}>{props.name}</Text>
-            <Text style={styles.cost}>{props.cost}</Text>
-        </View>
-        <View style = {styles.dishContainer}>
-            <Image source={props.source} resizeMode='center'/>
-        </View>
-    </View>
-  );
-}
+    return (
+      <View style={styles.container}>
+          <TouchableOpacity style = {styles.boxContainer} activeOpacity={.8}>
+              <Text style={styles.name}>{props.name}</Text>
+              <Text style={styles.cost}>{props.cost}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style = {styles.dishContainer} activeOpacity={1}>
+              <Image source={props.source} resizeMode='center'/>
+          </TouchableOpacity>
+      </View>
+    );
+  }
 
 const styles = StyleSheet.create({
     container: {
