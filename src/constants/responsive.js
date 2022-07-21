@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import {Dimensions} from 'react-native';
+
 const designWidth = 414;
 // const designHeight = 896;
 
