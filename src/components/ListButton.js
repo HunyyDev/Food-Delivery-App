@@ -16,9 +16,12 @@ const ListButton = props =>{
                 key={value}
                 onPress={()=>props.setSelectedValue(value)}
                 style={[styles.button, props.selectedValue === value && styles.selected]}>
-                    <Text style={[styles.buttonLabel, props.selectedValue === value && styles.selectedLabel]}>
+                    <Text style={styles.buttonLabel}>
                         {value}
                     </Text>
+                    {props.selectedValue === value ? (
+                        <View style={styles.line}></View>
+                    ):null}
                 </TouchableOpacity>
             ))}
         </ScrollView>
@@ -33,9 +36,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent:'center',
     },
-    selected:{
-        borderBottomColor: CUSTOM_COLOR.Vermilion,
-        borderBottomWidth: scaleWidth(3),
+    line:{
+        position: 'absolute',
+        bottom: 0,
+        height: scaleWidth(3),
+        backgroundColor: CUSTOM_COLOR.Vermilion,
+        width:scaleWidth(87),
+        borderRadius: scaleWidth(40),
     },
     buttonLabel: {
         fontFamily: 'SFProText-Regular',
