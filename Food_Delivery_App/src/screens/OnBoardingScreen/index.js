@@ -9,6 +9,7 @@ import Login from '../auth/Login';
 import {withNavigation} from 'react-navigation';
 import {createNavigator} from 'react-navigation';
 import {createAppContainer} from 'react-navigation';
+import CustomButton from '../../components/CustomButton';
 
 const App = () => {
   const [value, setValue] = React.useState('rgba(255,75,58,255)');
@@ -31,7 +32,7 @@ const App = () => {
         // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{flexGrow: 1}}
         style={[styles.scrollView, {backgroundColor: value}]}>
-        <View>
+      
           <>{/* Logo */}</>
           <View style={[styles.logoContainer, {backgroundColor: value}]}>
             <Image source={IMG_LOGO} style={styles.logo} />
@@ -46,12 +47,14 @@ const App = () => {
           </View>
 
           <>{/* Button */}</>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => this.props.navigation.navigate('Login')}
             style={styles.buttonContainer}>
             <Text style={styles.buttonText}>{'Get started '}</Text>
-          </TouchableOpacity>
-        </View>
+          </TouchableOpacity> */}
+
+        
+        <CustomButton title='Get started' type={'primary'} alert='primary' />
       </ScrollView>
     </SafeAreaView>
   );
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: CUSTOM_COLORS.SunsetOrange,
-    fontFamily: FONT_FAMILY.SFBlack,
+    fontFamily: FONT_FAMILY.SFProTextRegular,
     fontSize: scale(17),
     fontWeight: '600',
     justifyContent: 'center',
@@ -124,7 +127,7 @@ const styles = StyleSheet.create({
 
   Text: {
     color: 'white',
-    fontFamily: FONT_FAMILY.SFBlack,
+    fontFamily: FONT_FAMILY.SFHeavy,
     fontSize: scale(65),
     marginLeft: scale(51),
     position: 'absolute',

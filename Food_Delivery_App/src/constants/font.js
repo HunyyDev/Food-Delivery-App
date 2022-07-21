@@ -1,12 +1,14 @@
 const Prefix = 'Montserrat-';
 const SF = 'FontsFree-Net-SF-Pro-Rounded-';
-const SFProText = 'SF-Pro-Text-';
+const SFProText = 'FontsFree-Net-SF-Pro-Text-';
 const FONT_FAMILY = {
   Black: Prefix + 'Black',
   Light: Prefix + 'Light',
-  SFBlack: SF + 'Black',
+  SFHeavy: SF + 'Heavy',
+  SFFree:  SF + 'Regular',
   SFBold: SF + 'Bold',
-  SFProTextBold: SFProText + 'Bold',
+  SFProTextRegular: SFProText + 'Regular',
+  Inter: 'Inter-Regular',
 };
 export default FONT_FAMILY;
 

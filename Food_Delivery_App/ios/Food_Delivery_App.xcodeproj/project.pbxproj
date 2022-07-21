@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-Food_Delivery_App-Food_Delivery_AppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Food_Delivery_App-Food_Delivery_AppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CA16602E087E4CB4AE1EB306 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4182560B1DB24C8DA68D3652 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
+		24D5FF298A1E42EFBB1642A5 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B2E06D13DDC46D8982726A1 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */; };
+		DA1A2E3D3A12432D8C9E9377 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7FA3350745749EDA09ADFD2 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */; };
+		95A1381290C447A79C022D8A /* FontsFree-Net-SF-Pro-Text-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A46225220B67480F83574FE7 /* FontsFree-Net-SF-Pro-Text-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Food_Delivery_App/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Food_Delivery_App-Food_Delivery_AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food_Delivery_App-Food_Delivery_AppTests.release.xcconfig"; path = "Target Support Files/Pods-Food_Delivery_App-Food_Delivery_AppTests/Pods-Food_Delivery_App-Food_Delivery_AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		4182560B1DB24C8DA68D3652 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0B2E06D13DDC46D8982726A1 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Heavy.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B7FA3350745749EDA09ADFD2 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Regular.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A46225220B67480F83574FE7 /* FontsFree-Net-SF-Pro-Text-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Text-Regular.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Text-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B933B24F4D7D46B58A314B5D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +156,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		B933B24F4D7D46B58A314B5D /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				4182560B1DB24C8DA68D3652 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
+				0B2E06D13DDC46D8982726A1 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */,
+				B7FA3350745749EDA09ADFD2 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */,
+				A46225220B67480F83574FE7 /* FontsFree-Net-SF-Pro-Text-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +265,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CA16602E087E4CB4AE1EB306 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
+				24D5FF298A1E42EFBB1642A5 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf in Resources */,
+				DA1A2E3D3A12432D8C9E9377 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf in Resources */,
+				95A1381290C447A79C022D8A /* FontsFree-Net-SF-Pro-Text-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
