@@ -1,87 +1,78 @@
 import {
-  SafeAreaView,
   Text,
   View,
+  SafeAreaView,
   StyleSheet,
   Image,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
+import {Searchbar} from 'react-native-paper';
+import React, {Component} from 'react';
+import {IC_Menu, IC_Search, IC_Cart} from '../../assets/icons';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import React, {Component} from 'react';
-import {
-  IC_Cart,
-  IC_Menu,
-  IC_Search,
-  IC_Heart,
-  IC_Home,
-  IC_History,
-  IC_User,
-} from '../../assets/icons';
-import {Searchbar} from 'react-native-paper';
+import scale from '../../constants/responsive';
+import HeadingButton from '../../components/CustomHeadingButton';
+import {IMG_Veggie_tomato_mix} from '../../assets/images';
+
 export class HomeScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        {/* sectionHeading */}
-        <View style={styles.sectionHeading}>
-          {/* sectionIcon */}
-          <View style={styles.sectionIcon}>
-            <TouchableOpacity>
-              <Image source={IC_Menu} style={styles.menuHeading} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={IC_Cart} style={styles.cartHeading} />
-            </TouchableOpacity>
-          </View>
-          {/* title */}
-          <View>
-            <Text style={styles.title}>{'Delicous \nfood for you'}</Text>
+        {/* Top */}
+        <View style={styles.top}>
+          {/* Heading */}
+          <View style={styles.Heading}>
+            <HeadingButton ICsource={IC_Menu} />
+            <HeadingButton ICsource={IC_Cart} />
           </View>
 
-          {/* sectionSearch */}
-          <View style={styles.sectionSearch}>
-            <Searchbar
-              icon={IC_Search}
-              placeholder="Search"
-              style={styles.textSearch}
-            />
+          {/* Title */}
+
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
           </View>
+
+          {/* Search Bar */}
+
+          {/* <SearchBar placeholder="Search"></SearchBar> */}
+
+          {/* <Searchbar placeholder="Search" inlineImageLeft={IC_Search} /> */}
         </View>
-        {/* sectionMain */}
-        <View style={styles.sectionMain}>
-          <View style={styles.headingMain}>
+        {/* Mid */}
+        <View style={styles.mid}>
+          {/* Menu */}
+          <View style={styles.menuContainer}>
+            {/* Food Menu */}
             <TouchableOpacity>
-              <Text>Foods</Text>
+              <View style={styles.foodsContainer}>
+                <Text style={styles.chosenMessage}>{'Foods'}</Text>
+              </View>
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Drinks</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Snack</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Sauce</Text>
-            </TouchableOpacity>
+            <View style={styles.drinksContainer}>
+              <Text style={styles.dismissedMessage}>{'Drinks'}</Text>
+            </View>
+            <View style={styles.snacksContainer}>
+              <Text style={styles.dismissedMessage}>{'Snacks'}</Text>
+            </View>
+            <View style={styles.sauceContainer}>
+              <Text style={styles.dismissedMessage}>{'Sauce'}</Text>
+            </View>
           </View>
-        </View>
-        {/* sectionButton */}
-        <View style={styles.sectionButton}>
-          <TouchableOpacity>
-            <Image source={IC_Home} />
-          </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Image source={IC_Heart} />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Image source={IC_User} />
-          </TouchableOpacity>
-
-          <TouchableOpacity>
-            <Image source={IC_History} />
-          </TouchableOpacity>
+          <>
+            <View style={styles.optionContainer}>
+              <TouchableOpacity style={styles.optionInfo}>
+                <Image
+                  style={styles.imageMain}
+                  source={IMG_Veggie_tomato_mix}
+                  resizeMode={'cover'}></Image>
+                <View></View>
+              </TouchableOpacity>
+              <View style={styles.decriseContainer}></View>
+            </View>
+          </>
         </View>
       </SafeAreaView>
     );
@@ -93,55 +84,165 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    // backgroundColor: CUSTOM_COLOR.ConcreteSolid,
   },
-
-  sectionHeading: {
-    flex: 3,
-    backgroundColor: CUSTOM_COLOR.Silver,
-    marginVertical: 30,
+  top: {
+    flex: 1,
+    backgroundColor: CUSTOM_COLOR.ConcreteSolid,
+    // backgroundColor: '#F00',
+    marginHorizontal: scale(50),
+    justifyContent: 'space-around',
   },
-  sectionIcon: {
+  Heading: {
     flexDirection: 'row',
+    backgroundColor: CUSTOM_COLOR.ConcreteSolid,
     justifyContent: 'space-between',
-    marginHorizontal: 30,
-    marginBottom: 10,
+    marginTop: scale(10),
   },
-  menuHeading: {},
-  cartHeading: {},
-
+  titleContainer: {},
   title: {
     fontFamily: FONT_FAMILY.Black,
-    fontSize: 34,
-    marginHorizontal: 30,
-    marginTop: 20,
+    fontWeight: '700',
+    fontSize: scale(34),
   },
 
-  sectionSearch: {
-    marginTop: 20,
-  },
+  //   searchBarContainer: {
+  //     borderRadius: 45,
+  //     backgroundColor: CUSTOM_COLOR.GalleryAprox,
+  //     width: '100%',
+  //     height: scale(60),
+  //     flexDirection: 'row',
+  //     alignItems: 'center',
+  //   },
 
-  textSearch: {
-    borderRadius: 20,
-    marginHorizontal: 35,
-    padding: 5,
-    backgroundColor: CUSTOM_COLOR.Gallery,
+  searchIconContainer: {
+    backgroundColor: CUSTOM_COLOR.GalleryAprox,
+    width: scale(18),
+    height: scale(18),
+    marginLeft: scale(25),
+    // backgroundColor: '#00F',
   },
+  searchMessageContainer: {
+    width: scale(54),
+    height: scale(20),
+    marginLeft: scale(20),
+    // backgroundColor: '#F00',
+  },
+  searchMessage: {
+    fontFamily: FONT_FAMILY.Black,
+    fontWeight: '600',
+    fontSize: scale(17),
+  },
+  mid: {
+    flex: 1.75,
+    backgroundColor: CUSTOM_COLOR.ConcreteSolid,
+  },
+  menuContainer: {
+    backgroundColor: CUSTOM_COLOR.Scarlet,
+    width: '100%',
+    height: scale(50),
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: scale(60),
+  },
+  // optionContainer: {
+  //   width: scale(53),
+  //   height: scale(20),
+  //   marginLeft: scale(20),
+  //   backgroundColor: CUSTOM_COLOR.LasPalmas,
+  // },
 
-  sectionMain: {
-    flex: 5,
+  foodsContainer: {
+    width: scale(50),
+    height: scale(20),
+    marginLeft: scale(20),
+    backgroundColor: CUSTOM_COLOR.LasPalmas,
+  },
+  drinksContainer: {
+    width: scale(51),
+    height: scale(20),
+    marginLeft: scale(40),
+    backgroundColor: CUSTOM_COLOR.LasPalmas,
+  },
+  snacksContainer: {
+    width: scale(58),
+    height: scale(20),
+    marginLeft: scale(40),
+    backgroundColor: CUSTOM_COLOR.LasPalmas,
+  },
+  sauceContainer: {
+    width: scale(50),
+    height: scale(20),
+    marginLeft: scale(40),
+    backgroundColor: CUSTOM_COLOR.LasPalmas,
+  },
+  chosenMessage: {
+    fontFamily: FONT_FAMILY.SF_Pro_Rounded_Black,
+    fontWeight: '400',
+    fontSize: scale(17),
+    lineHeight: scale(20.29),
+    color: CUSTOM_COLOR.Vermilion,
+  },
+  dismissedMessage: {
+    fontFamily: FONT_FAMILY.SF_Pro_Rounded_Black,
+    fontWeight: '400',
+    fontSize: scale(17),
+    lineHeight: scale(20.29),
+    color: CUSTOM_COLOR.Manatee,
+  },
+  optionContainer: {
+    width: Dimensions.get('window').width * 0.5,
+    height: 170,
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    justifyContent: 'center',
+    alignItems: 'center',
+    //zIndex: 2,
   },
+  imageMain: {
+    borderRadius: 100,
+    //marginTop: scale(0),
+    //zIndex: 2,
+  },
+  optionInfo: {
+    //top: 0,
+    bottom: 0,
+    //height: '30%',
+    //width: '50%',
+    backgroundColor: 'yellow',
+    borderRadius: 30,
+    zIndex: 2,
+  },
+  decriseContainer: {
+    width: Dimensions.get('window').width * 0.5,
+    height: 250,
+    backgroundColor: CUSTOM_COLOR.Black,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: 50,
+    zIndex: 1,
+  },
+  // imageContainer: {
+  //   borderRadius: 30,
+  //   // width: '100%',
+  //   // height: '100%',
+  //   // backgroundColor: '#f00',
+  //   justifyContent: 'center',
+  //   alignItems: 'center',
+  //   // overflow: 'hidden',
+  //   position: 'absolute',
+  //   top: 0,
+  //   zIndex: 0,
+  // },
 
-  headingMain: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-  },
-  sectionButton: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 20,
-  },
+  //flex: 1,
+  // imagetextcontainer: {
+  //   //width: Dimensions.get('window').width * 0.5,
+  //   height: 275,
+  //   backgroundColor: CUSTOM_COLOR.Orange,
+  //   top: 75,
+  //   borderRadius: 30,
+  //   //zIndex: 2,
+  //   //p
+  // },
 });

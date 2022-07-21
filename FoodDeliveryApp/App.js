@@ -1,8 +1,8 @@
 import {StyleSheet} from 'react-native';
 import React from 'react';
 import OnboardingScreen from './src/screens/onboarding/OnboardingScreen';
-import LoginScreen from './src/screens/auth/LoginScreen';
-import HomeScreen from './src/screens/home/HomeScreen';
+import LoginScreen from './src/screens/auth/loginScreen';
+import HomeScreen from './src/screens/home/homeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
