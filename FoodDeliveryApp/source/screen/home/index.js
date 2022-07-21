@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, SafeAreaView, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import CUSTOM_IconButton from '../../components/CUSTOM_IconButton'
 import CUSTOM_COLOR from '../../constants/color';
 import CUSTOM_SearchBar from '../../components/CUSTOM_SearchBar'
@@ -16,7 +16,7 @@ import scale from '../../../responsive';
 import CUSTOM_FoodScrollView from '../../components/CUSTOM_FoodScrollView';
 import CUSTOM_CategoryScrollView from '../../components/CUSTOM_CategoryScrollView';
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <></>
