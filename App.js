@@ -24,8 +24,8 @@ import OnboardingScreen from './src/screens/onboarding';
 import HomeScreen from './src/screens/home';
 
 const App = props => {
-  return <OnboardingScreen {...props} />;
-  //return <HomeScreen></HomeScreen>;
+  //return <OnboardingScreen {...props} />;
+  return <HomeScreen></HomeScreen>;
 };
 
 export default App;

@@ -14,7 +14,6 @@ import ListButton from '../../components/ListButton';
 import scaleWidth from '../../constants/responsive';
 import CustomDish from '../../components/CustomDish';
 
-import {IMG_dish1, IMG_dish2} from '../../assets/images/images';
 import {
   IMG_Menu,
   IMG_Search,
@@ -23,6 +22,8 @@ import {
   IMG_Home,
   IMG_History,
   IMG_User,
+  IMG_dish1,
+  IMG_dish2,
 } from '../../assets/images/images';
 import FONT_FAMILY from '../../constants/fonts';
 
@@ -54,6 +55,7 @@ export class HomeScreen extends Component {
               <Text style={styles.Content}>Delicious food for you</Text>
             </View>
           </>
+
           {/* Search */}
           <>
             <View style={styles.Search}>
@@ -64,7 +66,7 @@ export class HomeScreen extends Component {
         </>
         {/* Boding */}
         <>
-          <View style={styles.containerBoding}>
+          <View styles={styles.Boding}>
             <ListButton
               style={styles.ListButton}
               values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
@@ -107,10 +109,12 @@ export class HomeScreen extends Component {
         {/* Bottom */}
         <>
           <View style={styles.BottomContainer}>
-            <Image source={IMG_Home}></Image>
-            <Image source={IMG_Heart}></Image>
-            <Image source={IMG_User}></Image>
-            <Image source={IMG_History}></Image>
+            <View style={styles.BottomContainer}>
+              <Image source={IMG_Home}></Image>
+              <Image source={IMG_Heart}></Image>
+              <Image source={IMG_User}></Image>
+              <Image source={IMG_History}></Image>
+            </View>
           </View>
         </>
       </SafeAreaView>
@@ -128,21 +132,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    position: 'absolute',
+    marginTop: 66,
+    flex: 0.5,
   },
   Menu: {
-    top: 65,
     left: scaleWidth(54.6),
+    flex: 0.5,
   },
   ShoppingCart: {
-    top: 66,
     right: scaleWidth(42),
   },
   containerText: {
     width: 190,
     height: 82,
     left: scaleWidth(50),
-    top: 136,
+    marginTop: 43.33,
   },
   Content: {
     fontSize: 34,
@@ -152,7 +156,7 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
   },
   Search: {
-    top: 242,
+    marginTop: 28,
     width: scaleWidth(314),
     height: 60,
     backgroundColor: CUSTOM_COLOR.Gallery,
@@ -160,7 +164,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    position: 'absolute',
   },
   LogoSearch: {
     flex: 0.2,
@@ -176,13 +179,11 @@ const styles = StyleSheet.create({
   },
   BottomContainer: {
     flexDirection: 'row',
-    position: 'absolute',
-    bottom: 50,
     width: '100%',
     justifyContent: 'space-evenly',
   },
   seemoreButton: {
-    fontFamily: 'SF-Pro-Rounded-Regular',
+    fontFamily: FONT_FAMILY.Regular,
     color: CUSTOM_COLOR.Vermilion,
     fontSize: scaleWidth(15),
   },
@@ -191,13 +192,11 @@ const styles = StyleSheet.create({
     marginRight: scaleWidth(41),
   },
   MenuScroll: {
-    maxHeight: scaleWidth(350),
+    maxHeight: 350,
   },
   ListButton: {
-    maxHeight: scaleWidth(40),
-    marginBottom: scaleWidth(39),
-  },
-  containerBoding: {
-    top: 230,
+    maxHeight: 40,
+    marginBottom: 58,
+    marginTop: 46,
   },
 });

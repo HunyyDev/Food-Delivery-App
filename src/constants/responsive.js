@@ -11,4 +11,4 @@ function scaleWidth(number) {
 function scaleHeight(number) {
   return (height / heightOfDesign) * number;
 }
-export {scaleWidth, scaleHeight};
+export default scaleWidth;
