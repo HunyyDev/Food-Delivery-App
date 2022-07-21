@@ -1,7 +1,7 @@
 import {Text, StyleSheet, View, TextInput} from 'react-native';
 import React, {Component} from 'react';
 import FONT_FAMILY from '../constants/fonts';
-import scaleWidth from '../responsive/ScaleWidth';
+import scale from '../responsive/responsive';
 import CUSTOM_COLOR from '../constants/colors';
 
 export default class CustomInput extends Component {
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     marginTop: 20,
     fontFamily: FONT_FAMILY.Semibold,
-    fontSize: scaleWidth(17),
+    fontSize: scale(17),
   },
   inputcontainer: {
     borderBottomColor: CUSTOM_COLOR.Black,

@@ -1,8 +1,7 @@
 import React from "react";
 import {TouchableOpacity, StyleSheet, Text, View} from "react-native";
 import CUSTOM_COLOR from '../constants/colors'
-import scaleHeight from '../responsive/ScaleHeight';
-import scaleWidth from '../responsive/ScaleWidth';
+import scale from '../responsive/responsive';
 import FONT_FAMILY from '../constants/fonts'
 
 export class CustomButton extends React.Component {
@@ -41,11 +40,11 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    height: scaleHeight(70),
-    width: scaleWidth(314),
+    height: scale(70,'h'),
+    width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: scaleWidth(30),
+    borderRadius: scale(30),
     alignSelf: 'center',
   },
 
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
   },
 
   textButton: {
-    fontSize: scaleWidth(17),
+    fontSize: scale(17),
     fontFamily: FONT_FAMILY.Bold,
   },
 
