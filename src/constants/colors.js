@@ -5,5 +5,7 @@ const CUSTOM_COLOR = {
   Black: '#000000',
   AntiFlashWhite: '#F2F2F2',
   Gallery: '#EFEEEE',
+  Manatee: '#9A9A9D',
+  Concrete: '#F2F2F2',
 };
 export default CUSTOM_COLOR;

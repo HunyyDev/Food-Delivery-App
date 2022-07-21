@@ -11,11 +11,8 @@ import {
 import {IMG_Logo, IMG_Background} from '../../assets/images/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-<<<<<<< HEAD
 import scale from '../../constants/responsive';
-=======
 import CustomButton from '../../constants/custombutton';
->>>>>>> e51852857c05cb3f560428b32216a3d2ff4ad911
 
 const OnboardingScreen = () => {
   return (
@@ -72,25 +69,6 @@ const styles = StyleSheet.create({
     height: scaleHeight(600),
     justifyContent: 'flex-end',
   },
-<<<<<<< HEAD
-  buttonContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
-    width: scale(314),
-    height: scaleHeight(70),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 30,
-    alignSelf: 'center',
-    position: 'absolute',
-    bottom: scaleHeight(20),
-  },
-  buttonText: {
-    color: CUSTOM_COLOR.Vermilion,
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 17,
-  },
-=======
->>>>>>> e51852857c05cb3f560428b32216a3d2ff4ad911
 });
 
 export default OnboardingScreen;

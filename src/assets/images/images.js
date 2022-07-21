@@ -7,3 +7,5 @@ export {default as IMG_Home} from './Home.png';
 export {default as IMG_Heart} from './Heart.png';
 export {default as IMG_User} from './user.png';
 export {default as IMG_History} from './ic_sharp-history.png';
+export {default as IMG_dish1} from './image-2.png';
+export {default as IMG_dish2} from './image-3.png';

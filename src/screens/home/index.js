@@ -12,6 +12,9 @@ import {
 } from '../../assets/images/images';
 import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
+import CustomDish from '../../components/CustomDish';
+import ListButton from '../../components/ListButton';
+
 export class HomeScreen extends Component {
   render() {
     return (
@@ -43,6 +46,41 @@ export class HomeScreen extends Component {
         </>
         {/* Boding */}
         <>
+          <ListButton
+            style={styles.ListButton}
+            values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
+            selectedValue={classify}
+            setSelectedValue={setClassify}
+          />
+
+          <TouchableOpacity style={styles.seemoreContainer}>
+            <Text style={styles.seemoreButton}>see more</Text>
+          </TouchableOpacity>
+
+          <ScrollView
+            style={styles.MenuScroll}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{
+              paddingVertical: scaleWidth(5),
+              paddingHorizontal: scaleWidth(15),
+            }}>
+            <CustomDish
+              source={IMG_dish2}
+              name={'Veggie\ntomato mix'}
+              cost="N1,900"
+            />
+            <CustomDish
+              source={IMG_dish1}
+              name={'Veggie\ntomato mix'}
+              cost="N1,900"
+            />
+            <CustomDish
+              source={IMG_dish2}
+              name={'Spicy fish\nsauce'}
+              cost="N2,300.99"
+            />
+          </ScrollView>
           {/* <View>
             <ScrollView
               style={styles.ListText}
@@ -55,6 +93,8 @@ export class HomeScreen extends Component {
               <Text style={styles.ItemText}>Sauce</Text>
             </ScrollView>
           </View> */}
+          <ListButton></ListButton>
+          <CustomDish></CustomDish>
         </>
         {/* Bottom */}
         <>
@@ -132,5 +172,12 @@ const styles = StyleSheet.create({
     bottom: 50,
     width: '100%',
     justifyContent: 'space-evenly',
+  },
+  MenuScroll: {
+    maxHeight: scaleWidth(350),
+  },
+  ListButton: {
+    maxHeight: scaleWidth(40),
+    marginBottom: scaleWidth(39),
   },
 });
