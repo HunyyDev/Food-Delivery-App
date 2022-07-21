@@ -97,7 +97,7 @@ class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#C5C4C4',
+    backgroundColor: CUSTOM_COLOR.Gray,
   },
   delicious: {
     position: 'absolute',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.SFProRH,
     fontSize: 34,
 
-    color: '#000000',
+    color: CUSTOM_COLOR.Black,
   },
   SearchView: {
     position: 'absolute',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     left: scale(50),
     top: scale(232),
 
-    backgroundColor: '#EFEEEE',
+    backgroundColor: CUSTOM_COLOR.Search,
     borderRadius: 30,
   },
   search: {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     left: scale(50),
     top: scale(20),
     fontSize: 17,
-    color: '#000000',
+    color: CUSTOM_COLOR.Black,
   },
   Space: {
     width: scale(87),
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   Text: {
-    color: '#000',
+    color: CUSTOM_COLOR.Black,
     opacity: 0.9,
     fontSize: 22,
     alignItems: 'center',
