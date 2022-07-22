@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import scale from '../responsive/responsive';
-import CUSTOM_COLOR from '../constants/colors';
-import FONT_FAMILY from '../constants/fonts';
+import scale from '../../constants/responsive';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
 
 class Label extends React.Component {
   render() {

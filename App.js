@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import OnBoardingScreen from './src/on-boarding/OnBoardingScreen';
+import OnBoardingScreen from './src/onBoarding/OnBoardingScreen';
 import LoginScreen from './src/auth/LoginScreen';
 import HomeScreen from './src/home/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';

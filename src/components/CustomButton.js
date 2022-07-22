@@ -1,7 +1,7 @@
 import React from "react";
 import {TouchableOpacity, StyleSheet, Text, View} from "react-native";
 import CUSTOM_COLOR from '../constants/colors'
-import scale from '../responsive/responsive';
+import scale from '../constants/responsive';
 import FONT_FAMILY from '../constants/fonts'
 
 export class CustomButton extends React.Component {
@@ -9,19 +9,11 @@ export class CustomButton extends React.Component {
     return (
       <>
         <View style={styles.container}>
-          {this.props.type === 'primary' ? (
-            <TouchableOpacity style={[styles.button, styles.buttonPrimary]} onPress={this.props.onPress}>
-              <Text style={[styles.textButton, styles.textButtonPrimary]}>
+            <TouchableOpacity style={[styles.button, this.props.type === 'primary' ? styles.buttonPrimary : styles.buttonSecondary]} onPress={this.props.onPress}>
+              <Text style={[styles.textButton, this.props.type === 'primary' ? styles.textButtonPrimary : styles.textButtonSecondary]}>
                 {this.props.text}
               </Text>
             </TouchableOpacity>
-          ) : (
-            <TouchableOpacity style={[styles.button, styles.buttonSecondary]} onPress={this.props.onPress}>
-              <Text style={[styles.textButton, styles.textButtonSecondary]}>
-                {this.props.text}
-              </Text>
-            </TouchableOpacity>
-          )}
         </View>
       </>
     );

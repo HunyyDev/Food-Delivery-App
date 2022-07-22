@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { TextInput } from "react-native";
 
-const InputBox = () => {
+const InputBox = (props) => {
     const [input, setInput] = useState('');
     return (
       <TextInput
@@ -11,9 +11,10 @@ const InputBox = () => {
                   marginLeft: 16,
                   overflow: 'hidden',}}
 
-        placeholder = 'Searching...'
+        placeholder = {props.placeholder}
         onChangeText = {(text) => setInput(text)}
         value = {input}
+        secureTextEntry={props.secureTextEntry}
       />
     );
   };

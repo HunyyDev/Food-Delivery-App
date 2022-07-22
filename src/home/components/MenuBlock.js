@@ -1,16 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import scale from '../responsive/responsive';
-import FONT_FAMILY from '../constants/fonts';
-import CUSTOM_COLOR from '../constants/colors';
+import {StyleSheet, Text, View} from 'react-native';
+import scale from '../../constants/responsive';
+import FONT_FAMILY from '../../constants/fonts';
+import CUSTOM_COLOR from '../../constants/colors';
 
 class MenuBlock extends React.Component {
     render() {
         return (
-            <TouchableOpacity style={styles.container}>
+            <View style={styles.container}>
                 <Text style={styles.text}>{this.props.text}</Text>
                 <Text style={styles.price}>{this.props.price}</Text>
-            </TouchableOpacity>
+            </View>
         )
     }
 }
