@@ -4,20 +4,33 @@ import CUSTOM_COLOR from '../constants/colors';
 import {scaleWidth} from '../constants/responsive';
 
 export class CustomButton extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <>
-        <TouchableOpacity style={styles.container}>
+        <View style={styles.container}>
           {this.props.type === 'primary' ? (
-            <View style={styles.buttonPrimary}>
-              <Text style={styles.textButtonPrimary}>{this.props.text}</Text>
-            </View>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonPrimary]}
+              onPress={this.props.onPress}>
+              <Text style={[styles.text, styles.textButtonPrimary]}>
+                {this.props.text}
+              </Text>
+            </TouchableOpacity>
           ) : (
-            <View style={styles.buttonSecondary}>
-              <Text style={styles.textButtonSecondary}>{this.props.text}</Text>
-            </View>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonSecondary]}
+              onPress={this.props.onPress}>
+              <Text style={[styles.text, styles.textButtonSecondary]}>
+                {this.props.text}
+              </Text>
+            </TouchableOpacity>
           )}
-        </TouchableOpacity>
+        </View>
       </>
     );
   }
@@ -43,6 +56,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
+
+  text: {},
+  button: {},
 
   textButtonPrimary: {
     fontSize: scaleWidth(17),
