@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 const Prefix = 'SF-Pro-Rounded-';
 
 const FONT_FAMILY = {
-  Bold: Prefix + 'Bold',
+Bold: Prefix + 'Bold',
   Black: Prefix + 'Black',
   Light: Prefix + 'Light',
   Heavy: Prefix + 'Heavy',
