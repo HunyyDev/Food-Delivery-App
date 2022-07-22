@@ -12,18 +12,14 @@ const CustomInput = props => {
   return (
     <View style={styles.container}>
       <Text style={styles.containerText}>{props.label}</Text>
-      {props.secureTextEntry === true ? (
+
         <TextInput
           style={styles.containerTextInput}
-          secureTextEntry
+          secureTextEntry={props.secureTextEntry}
+          value={value}
           onChangeText={text => onChangeText(text)}
         />
-      ) : (
-        <TextInput
-          style={styles.containerTextInput}
-          onChangeText={text => onChangeText(text)}
-        />
-      )}
+    
     </View>
   );
 };
@@ -48,6 +44,6 @@ const styles = StyleSheet.create({
     marginBottom: scale(24),
     alignSelf: 'center',
   },
-});
+});y
 
 export default CustomInput;
