@@ -1,10 +1,10 @@
 import {View, ScrollView, StyleSheet} from 'react-native';
 import React, {useMemo, useState} from 'react';
-import scale from '../../responsive';
-import CUSTOM_COLOR from '../constants/color';
-import CUSTOM_UnderlineButton from './CUSTOM_UnderlineButton';
+import scale from '../../../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
+import Custom_UnderlineButton from './Custom_UnderlineButton';
 
-const CUSTOM_CategoryScrollView = () => {
+const Custom_CategoryScrollView = () => {
   const categoryList = useMemo(
     () => ['Foods', 'Drinks', 'Snacks', 'Sauce'],
     [],
@@ -15,12 +15,12 @@ const CUSTOM_CategoryScrollView = () => {
       <View style={styles.categoryView}>
         {categoryList.map(item => (
           <View style={styles.categoryItem} key={item}>
-            <CUSTOM_UnderlineButton
+            <Custom_UnderlineButton
               isChoosing={tab === item}
               onPress={() => setTab(item)}
               textStyle={styles.categoryText(tab === item)}>
               {item}
-            </CUSTOM_UnderlineButton>
+            </Custom_UnderlineButton>
           </View>
         ))}
       </View>
@@ -28,32 +28,9 @@ const CUSTOM_CategoryScrollView = () => {
   );
 };
 
-export default CUSTOM_CategoryScrollView;
+export default Custom_CategoryScrollView;
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-    scrollViewContainer: {
-        position: 'absolute',
-        top: scale(310),
-        left: scale(10),
-        horizontal: true,
-        width: scale(414),
-    },
-    categoryView: {
-        flexDirection: 'row',
-    },
-    categoryItem: {
-        padding: scale(10),
-        fontSize: scale(17),
-    },
-    categoryText: 
-        isChoosing => ({
-            color: isChoosing ? CUSTOM_COLOR.SunsetOrange : CUSTOM_COLOR.Manatee,
-            fontSize: scale(17),
-            fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-        }),
-});
-=======
   scrollViewContainer: {
     position: 'absolute',
     top: scale(310),
@@ -73,4 +50,3 @@ const styles = StyleSheet.create({
     fontSize: scale(17),
   }),
 });
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47

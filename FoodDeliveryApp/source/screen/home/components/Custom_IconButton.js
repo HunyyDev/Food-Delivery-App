@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
-import CUSTOM_COLOR from '../constants/color';
+import CUSTOM_COLOR from '../../../constants/color';
 
-export default class CUSTOM_IconButton extends Component {
+export default class Custom_IconButton extends Component {
   constructor(props) {
     super(props);
     this.state = {};

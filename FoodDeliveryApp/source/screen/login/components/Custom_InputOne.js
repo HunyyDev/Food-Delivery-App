@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
-import CUSTOM_COLOR from '../constants/color';
-import scale from '../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
+import scale from '../../../../responsive';
 
-class CUSTOM_InputOne extends React.Component {
+class Custom_InputOne extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,6 +13,7 @@ class CUSTOM_InputOne extends React.Component {
         <View style={styles.viewContainer(this.props)}>
           <Text style={styles.textContainer}>{this.props.text}</Text>
           <TextInput
+            onChangeText={this.props.onChangeText}
             style={styles.textInputContainer}
             placeholder={this.props.placeHolderText}
             placeholderTextColor={this.props.placeholderTextColor}
@@ -24,20 +25,9 @@ class CUSTOM_InputOne extends React.Component {
   }
 }
 
-export default CUSTOM_InputOne;
+export default Custom_InputOne;
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-    viewContainer: props =>({
-        top: props.top,
-        left: props.left,
-        position: props.position,
-        borderBottomWidth: 0.5,
-        width: scale(314),
-        height: scale(59),
-        borderBottomColor: CUSTOM_COLOR.Black,
-      }),
-=======
   viewContainer: props => ({
     top: props.top,
     left: props.left,
@@ -47,7 +37,6 @@ const styles = StyleSheet.create({
     height: scale(59),
     borderBottomColor: CUSTOM_COLOR.Black,
   }),
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47
   textContainer: {
     color: CUSTOM_COLOR.Black,
     fontWeight: '600',
@@ -60,8 +49,4 @@ const styles = StyleSheet.create({
     marginTop: scale(-8),
     color: CUSTOM_COLOR.Black,
   },
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47

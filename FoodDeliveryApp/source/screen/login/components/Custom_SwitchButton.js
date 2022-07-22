@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import scale from '../../responsive';
-import CUSTOM_COLOR from '../constants/color';
+import scale from '../../../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
 
-class CUSTOM_SwitchButton extends React.Component {
+class Custom_SwitchButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,7 +11,7 @@ class CUSTOM_SwitchButton extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <CUSTOM_Button
+        <Custom_Button
           text={'Login'}
           topLine={scale(50)}
           leftLine={scale(50)}
@@ -19,7 +19,7 @@ class CUSTOM_SwitchButton extends React.Component {
           setActiveTab={this.props.setActiveTab}
           style={styles.buttonLogin}
         />
-        <CUSTOM_Button
+        <Custom_Button
           text={'Sign-Up'}
           topLine={scale(50)}
           leftLine={scale(232)}
@@ -32,7 +32,7 @@ class CUSTOM_SwitchButton extends React.Component {
   }
 }
 
-export default CUSTOM_SwitchButton;
+export default Custom_SwitchButton;
 
 const styles = StyleSheet.create({
   container: {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   }),
 });
 
-class CUSTOM_Button extends React.Component {
+class Custom_Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};

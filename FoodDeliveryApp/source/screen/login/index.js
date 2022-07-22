@@ -6,20 +6,21 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, {Component, useState} from 'react';
+import React, {Component, useInsertionEffect} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
 import scale from '../../../responsive';
 import {IMG_LOGO} from '../../assets/images';
-import CUSTOM_InputOne from '../../components/CUSTOM_InputOne';
-import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne';
-import CUSTOM_SwitchButton from '../../components/CUSTOM_SwitchButton';
-import {act} from 'react-test-renderer';
+import Custom_InputOne from '../login/components/Custom_InputOne';
+import Custom_ButtonOne from '../../components/Custom_ButtonOne';
+import Custom_SwitchButton from '../login/components/Custom_SwitchButton';
 
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeTab: 'Login',
+      pass: '',
+      confirmPass: '',
     };
     this.setActiveTab = this.setActiveTab.bind(this);
   }
@@ -31,12 +32,12 @@ export default class LoginScreen extends Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.upperBackground}>
           <Image style={styles.Logo} source={IMG_LOGO} />
-          <CUSTOM_SwitchButton
+          <Custom_SwitchButton
             activeTab={this.state.activeTab}
             setActiveTab={this.setActiveTab}
           />
         </View>
-        <CUSTOM_InputOne
+        <Custom_InputOne
           text={'Email Address'}
           placeHolderText={'example@gmail.com'}
           placeholderTextColor={CUSTOM_COLOR.Black}
@@ -45,10 +46,8 @@ export default class LoginScreen extends Component {
           position={'absolute'}
           entry={false}
         />
-        <CUSTOM_InputOne
-<<<<<<< HEAD
-            text={'Password'}
-=======
+        <Custom_InputOne
+          onChangeText={(pass) => this.setState({pass: pass})}
           text={'Password'}
           placeHolderText={'********'}
           placeholderTextColor={CUSTOM_COLOR.Black}
@@ -58,9 +57,9 @@ export default class LoginScreen extends Component {
           entry={true}
         />
         {!isLogin(this.state.activeTab) ? (
-          <CUSTOM_InputOne
+          <Custom_InputOne
+            onChangeText={(pass) => this.setState({confirmPass: pass})}
             text={'Confirm password'}
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47
             placeHolderText={'********'}
             placeholderTextColor={CUSTOM_COLOR.Black}
             top={scale(615)}
@@ -68,21 +67,7 @@ export default class LoginScreen extends Component {
             position={'absolute'}
             entry={true}
           />
-<<<<<<< HEAD
-        {!isLogin(activeTab) ? (
-            <CUSTOM_InputOne
-              text={'Confirm password'}
-              placeHolderText={'********'}
-              placeholderTextColor={CUSTOM_COLOR.Black}
-              top={scale(615)}
-              left={scale(50)}
-              position={'absolute'}
-              entry={true}
-            />
-          ) : null}
-=======
         ) : null}
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47
 
         {isLogin(this.state.activeTab) ? (
           <TouchableOpacity style={styles.ForgotPasscodeButton}>
@@ -92,41 +77,23 @@ export default class LoginScreen extends Component {
           </TouchableOpacity>
         ) : null}
 
-<<<<<<< HEAD
-        {isLogin(activeTab) ? (
-        <CUSTOM_ButtonOne
-=======
         {isLogin(this.state.activeTab) ? (
-          <CUSTOM_ButtonOne
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47
+          <Custom_ButtonOne
             text={'Login'}
             color={CUSTOM_COLOR.Vermilion}
             textColor={CUSTOM_COLOR.White}
             onPress={() => this.props.navigation.navigate('Home')}
           />
-<<<<<<< HEAD
-          ) : null}
-
-        {!isLogin(activeTab) ? (
-        <CUSTOM_ButtonOne
-            text={'Sign-Up'}
-            color={CUSTOM_COLOR.Vermilion}
-            textColor={CUSTOM_COLOR.White}
-            onPress={() => setActiveTab('Login')}
-          />
-          ) : null}
-=======
         ) : null}
 
         {!isLogin(this.state.activeTab) ? (
-          <CUSTOM_ButtonOne
+          <Custom_ButtonOne
             text={'Sign-Up'}
             color={CUSTOM_COLOR.Vermilion}
             textColor={CUSTOM_COLOR.White}
-            onPress={() => this.setActiveTab('Login')}
+            onPress={() => correctConFirmPassword(this.state.pass, this.state.confirmPass) ? this.props.navigation.navigate('Home') : alert('Nhap sai')}
           />
         ) : null}
->>>>>>> 5385750febbd2fcaa7a4748b2398ef6d374c0f47
       </SafeAreaView>
     );
   }
@@ -170,5 +137,11 @@ const styles = StyleSheet.create({
 
 function isLogin(props) {
   if (props === 'Login') return true;
+  return false;
+}
+
+function correctConFirmPassword(pass, confirmPass){
+  if(pass === confirmPass) 
+    return true;
   return false;
 }
