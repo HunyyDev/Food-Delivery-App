@@ -10,7 +10,7 @@ import {withNavigation} from 'react-navigation';
 import {createNavigator} from 'react-navigation';
 import {createAppContainer} from 'react-navigation';
 
-const App = () => {
+const OnBoardingScreen = () => {
   const [value, setValue] = React.useState('rgba(255,75,58,255)');
 
   React.useEffect(() => {
@@ -132,4 +132,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default OnBoardingScreen;
