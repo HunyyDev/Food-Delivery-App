@@ -1,48 +1,9 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
-import FONT_FAMILY from './src/constants/fonts';
+import OnboardingScreen from './src/screens/onboarding';
 
 const App = () => {
-  return (
-    <ScrollView style={styles.container}>
-      {/* Logo */}
-      <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-        </View>
-      </>
-      {/* Title */}
-      <>
-        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
-      </>
-      {/* Image */}
-      <>
-        <View style={styles.backgroundContainer}>
-          <ImageBackground
-            source={IMG_Background}
-            style={styles.background}
-            resizeMode={'contain'}>
-            <>
-              <View style={styles.button}>
-                <Text style={styles.buttonComment}>{'Get started'}</Text>
-              </View>
-            </>
-          </ImageBackground>
-        </View>
-      </>
-      {/* Button */}
-    </ScrollView>
-  );
+  return <OnboardingScreen></OnboardingScreen>;
 };
 
 export default App;
