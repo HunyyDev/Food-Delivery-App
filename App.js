@@ -1,7 +1,6 @@
 import {
   View,
   Text,
-  SafeAreaView,
   StyleSheet,
   Image,
   TextInput,
@@ -24,22 +23,12 @@ import {IMG_FoodImage} from './src/assets/images';
 const App = () => {
   return (
     // Background
-    <SafeAreaView style={styles.backgroundContainer}>
-      {/* Bar */}
-      <View style={styles.vectorContainer}>
-        <Image
-          source={IC_Vector}
-          style={styles.vector}
-          resizeMode={'contain'}
-        />
-      </View>
-      {/* ShoppingCart */}
-      <View style={styles.shoppingCartContainer}>
-        <Image
-          source={IC_ShoppingCart}
-          style={styles.shoppingCart}
-          resizeMode={'contain'}
-        />
+    <ScrollView style={styles.backgroundContainer}>
+      <View style={styles.navigatorContainer}>
+        {/* Bar */}
+        <Image source={IC_Vector} resizeMode={'contain'} />
+        {/* ShoppingCart */}
+        <Image source={IC_ShoppingCart} resizeMode={'contain'} />
       </View>
       {/* FoodText */}
       <View style={styles.foodTextContainer}>
@@ -108,7 +97,7 @@ const App = () => {
           <Image source={IC_Refresh} opacity={0.3} resizeMode={'cover'} />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -116,15 +105,13 @@ export default App;
 
 const styles = StyleSheet.create({
   backgroundContainer: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.Concrete,
   },
   foodTextContainer: {
-    position: 'absolute',
-    width: 230,
+    width: 190,
     height: 90,
-    left: 50,
-    top: 132,
+    marginLeft: 50,
+    marginTop: 43,
   },
   foodText: {
     fontFamily: FONT_FAMILY.Bold,
@@ -133,42 +120,27 @@ const styles = StyleSheet.create({
     lineHeight: 40.57,
     color: CUSTOM_COLOR.Black,
   },
-  vectorContainer: {
-    position: 'absolute',
-    width: 22,
-    height: 14.67,
-    left: 54.6,
-    top: 74,
-  },
-  vector: {
-    borderCenterWidth: 2,
-    borderStyle: 'solid',
-    borderColor: CUSTOM_COLOR.Black,
-  },
-  shoppingCartContainer: {
-    position: 'absolute',
-    width: 24,
-    height: 24,
-    top: 65,
-    left: 350,
-  },
-  shoppingCart: {
-    opacity: 0.3,
+  navigatorContainer: {
+    marginTop: 74,
+    marginLeft: 54,
+    marginRight: 42,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   rectangleContainer: {
-    position: 'absolute',
-    width: 314,
+    borderRadius: 30,
+    marginTop: 28,
+    marginHorizontal: 50,
     height: 60,
-    left: 50,
-    top: 242,
     backgroundColor: CUSTOM_COLOR.Gallery,
     borderColor: CUSTOM_COLOR.Gallery,
-    borderRadius: 30,
+    paddingHorizontal: 35,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   searchIcon: {
-    position: 'absolute',
-    top: 21,
-    left: 35,
     width: 18,
     height: 18,
     borderCenterWidth: 2,
@@ -177,8 +149,8 @@ const styles = StyleSheet.create({
   },
   inputSearchText: {
     width: 200,
-    marginTop: 8.5,
-    marginLeft: 69,
+    marginLeft: 16,
+    paddingTop: 20,
     fontFamily: FONT_FAMILY.Bold,
     fontStyle: 'normal',
     fontSize: 17,
@@ -187,9 +159,8 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   ScrollViewStyle: {
-    position: 'absolute',
-    top: 430,
-    height: 330,
+    marginTop: 110,
+    height: 320,
   },
   scrollViewBox: {
     alignSelf: 'flex-end',
@@ -206,7 +177,7 @@ const styles = StyleSheet.create({
   },
   foodImageContainer: {
     position: 'absolute',
-    top: -60,
+    top: -50,
   },
   foodImageStyle: {
     position: 'absolute',
@@ -240,12 +211,9 @@ const styles = StyleSheet.create({
     top: 50,
   },
   iconSection: {
-    top: 760,
-    height: 75,
-    backgroundColor: CUSTOM_COLOR.Silver,
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    marginTop: 20,
+    marginBottom: 50,
   },
 });
