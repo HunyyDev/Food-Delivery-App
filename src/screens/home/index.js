@@ -20,25 +20,16 @@ import {
 } from '../../assets/icons';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_FoodImage} from '../../assets/images';
+
 const App = () => {
   return (
     // Background
-    <SafeAreaView style={styles.backgroundContainer}>
-      {/* Bar */}
-      <View style={styles.vectorContainer}>
-        <Image
-          source={IC_Vector}
-          style={styles.vector}
-          resizeMode={'contain'}
-        />
-      </View>
-      {/* ShoppingCart */}
-      <View style={styles.shoppingCartContainer}>
-        <Image
-          source={IC_ShoppingCart}
-          style={styles.shoppingCart}
-          resizeMode={'contain'}
-        />
+    <ScrollView style={styles.backgroundContainer}>
+      <View style={styles.navigatorContainer}>
+        {/* Bar */}
+        <Image source={IC_Vector} resizeMode={'contain'} />
+        {/* ShoppingCart */}
+        <Image source={IC_ShoppingCart} resizeMode={'contain'} />
       </View>
       {/* FoodText */}
       <View style={styles.foodTextContainer}>
@@ -107,7 +98,7 @@ const App = () => {
           <Image source={IC_Refresh} opacity={0.3} resizeMode={'cover'} />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
