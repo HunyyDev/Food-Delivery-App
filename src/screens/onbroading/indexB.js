@@ -10,8 +10,8 @@ function LoginScreen (props)  {
     const [tab, setTab] = useState('login');
     const isDarkMode = useColorScheme() === 'dark';
   return (
-    <SafeAreaView style={styles.container} edges={['top','bottom']}>
-     <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <>
         <View style={styles.logoContainer}>
             <Image style={styles.logo} source={IMG_Logo} resizeMode={'contain'}/>

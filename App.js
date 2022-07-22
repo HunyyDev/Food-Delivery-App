@@ -1,52 +1,9 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  Dimensions,
-} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from './src/constants/colors';
-import {IMG_Logo, IMG_Background} from './src/assets/images';
-import FONT_FAMILY from './src/constants/fonts';
+import OnboardingScreen from './src/screens/onboarding';
 
 const App = () => {
-  return (
-    <ScrollView style={styles.container}>
-      {/* Logo */}
-      <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-        </View>
-      </>
-      {/* Title */}
-      <>
-<<<<<<< HEAD
-
-=======
-        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
->>>>>>> d406ec30369e7abcf3346fe72714b0fd7dee86ae
-      </>
-      {/* Image */}
-      <>
-        <View style={styles.backgroundContainer}>
-          <ImageBackground
-            source={IMG_Background}
-            style={styles.background}
-            resizeMode={'contain'}>
-            <>
-              <View style={styles.button}>
-                <Text style={styles.buttonComment}>{'Get started'}</Text>
-              </View>
-            </>
-          </ImageBackground>
-        </View>
-      </>
-      {/* Button */}
-    </ScrollView>
-  );
+  return <OnboardingScreen></OnboardingScreen>;
 };
 
 export default App;
@@ -74,7 +31,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 65,
     fontFamily: FONT_FAMILY.Heavy,
-    color: CUSTOM_COLOR.white,
+    color: CUSTOM_COLOR.White,
     marginLeft: 49,
   },
   backgroundContainer: {},
@@ -84,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     height: 70,
     width: 314,
     borderRadius: 35,
@@ -95,6 +52,6 @@ const styles = StyleSheet.create({
   buttonComment: {
     fontSize: 17,
     fontFamily: FONT_FAMILY.ProTextSemibold,
-    color: CUSTOM_COLOR.SunsetColor,
+    color: CUSTOM_COLOR.Vermilion,
   },
 });
