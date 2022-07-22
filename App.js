@@ -10,8 +10,16 @@ import {
 import React from 'react';
 import FONT_FAMILY from './src/constants/fonts';
 import CUSTOM_COLOR from './src/constants/colors';
-import {IC_Vector, IC_ShoppingCart, IC_Search} from './src/assets/icons';
-
+import {
+  IC_Vector,
+  IC_ShoppingCart,
+  IC_Search,
+  IC_House,
+  IC_Heart,
+  IC_User,
+  IC_Refresh,
+} from './src/assets/icons';
+import {IMG_FoodImage} from './src/assets/images';
 const App = () => {
   return (
     // Background
@@ -49,10 +57,35 @@ const App = () => {
           style={styles.inputSearchText}
         />
       </View>
-      <ScrollView>
-        <View />
-        <View />
-        <View />
+      {/* ScrollView */}
+      <ScrollView horizontal style={styles.ScrollViewStyle}>
+        <View style={styles.scrollViewBox}>
+          <View style={styles.foodImageContainer}>
+            <Image
+              source={IMG_FoodImage}
+              style={styles.foodImageStyle}
+              resizeMode={'contain'}
+            />
+          </View>
+        </View>
+        <View style={styles.scrollViewBox}>
+          <View style={styles.foodImageContainer}>
+            <Image
+              source={IMG_FoodImage}
+              style={styles.foodImageStyle}
+              resizeMode={'cover'}
+            />
+          </View>
+        </View>
+        <View style={styles.scrollViewBox}>
+          <View style={styles.foodImageContainer}>
+            <Image
+              source={IMG_FoodImage}
+              style={styles.foodImageStyle}
+              resizeMode={'cover'}
+            />
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -131,5 +164,38 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
     lineHeight: 15,
     opacity: 0.5,
+  },
+  ScrollViewStyle: {
+    position: 'absolute',
+    top: 430,
+    height: 330,
+    backgroundColor: 'red',
+  },
+  scrollViewBox: {
+    alignSelf: 'flex-end',
+    width: 220,
+    height: 270,
+    backgroundColor: CUSTOM_COLOR.white,
+    borderRadius: 30,
+    shadowColor: CUSTOM_COLOR.MineShaft,
+    shadowOffset: {width: 0, height: 30},
+    shadowRadius: 60,
+    shadowOpacity: 0.1,
+    marginHorizontal: 25,
+    justifyContent: 'center',
+  },
+  foodImageContainer: {
+    position: 'absolute',
+    top: -50,
+  },
+  foodImageStyle: {
+    position: 'absolute',
+    marginHorizontal: 24,
+    height: 164,
+    width: 164,
+    zIndex: 5,
+    elevation: 5,
+    borderRadius: 9999,
+    padding: 0,
   },
 });
