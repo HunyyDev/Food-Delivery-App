@@ -7,7 +7,7 @@ const Custom_Text_Input = props => {
   const {label, ...moreProps} = props;
   return (
     <View style={styles.background}>
-      <Text style={styles.title}>{label}</Text>
+      <Text style={styles.title}>{label}:</Text>
       <TextInput style={styles.input}>{...moreProps}</TextInput>
     </View>
   );
