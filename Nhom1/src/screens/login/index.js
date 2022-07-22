@@ -13,13 +13,13 @@ import CUSTOM_COLOR from '../.././constants/colors';
 import CustomInput from '../.././components/CustomInput';
 import CustomButton from '../.././components/CustomButton';
 import scale from '../.././constants/responsive';
-import {LOGIN, SIGN_UP} from '../.././constants/screen'; 
+import Screen from '../.././constants/screen';
 
 class LoginScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      flag: LOGIN,
+      flag: Screen.LOGIN,
     };
   }
 
@@ -35,9 +35,9 @@ class LoginScreen extends React.Component {
             onPress={() => {
               this.setState({flag: LOGIN});
             }}
-            disabled={this.state.flag === LOGIN ? true : false}>
+            disabled={this.state.flag === Screen.LOGIN ? true : false}>
             <Text style={styles.textLogin}>Login</Text>
-            {this.state.flag === LOGIN ? (
+            {this.state.flag === Screen.LOGIN ? (
               <View left={scale(50)} style={styles.lineUnder} />
             ) : null}
           </TouchableOpacity>
@@ -45,24 +45,24 @@ class LoginScreen extends React.Component {
           <TouchableOpacity
             style={styles.touch}
             onPress={() => {
-              this.setState({flag: SIGN_UP});
+              this.setState({flag: Screen.SIGN_UP});
             }}
-            disabled={this.state.flag === SIGN_UP ? true : false}>
+            disabled={this.state.flag === Screen.SIGN_UP ? true : false}>
             <Text style={styles.textSignUp}>Sign-up</Text>
-            {this.state.flag === SIGN_UP ? (
+            {this.state.flag === Screen.SIGN_UP ? (
               <View left={scale(232)} style={styles.lineUnder} />
             ) : null}
           </TouchableOpacity>
         </View>
 
-        {this.state.flag === LOGIN ? (
+        {this.state.flag === Screen.LOGIN ? (
           <View top={scale(360)}>
             <CustomInput label="Email address" />
             <CustomInput label="Password" secureTextEntry={true} />
             <Text style={styles.TextForgot}>Forgot PassCode?</Text>
           </View>
         ) : null}
-        {this.state.flag === SIGN_UP ? (
+        {this.state.flag === Screen.SIGN_UP ? (
           <View top={scale(360)}>
             <CustomInput label="Email address" />
             <CustomInput label="Password" secureTextEntry={true} />
