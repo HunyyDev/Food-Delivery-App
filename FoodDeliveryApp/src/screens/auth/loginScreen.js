@@ -5,8 +5,6 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-  KeyboardAwareScrollView,
-  KeyboardAvoidingView,
 } from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -15,15 +13,13 @@ import scale from '../../constants/responsive';
 import CustomInput from '../../components/CustomInput';
 import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
-
-const LOGIN = 'LOGIN';
-const SIGN_UP = 'SIGN_UP';
+import SCREEN from '../../constants/screens';
 
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: LOGIN,
+      page: SCREEN.LOGIN,
     };
   }
 
@@ -35,79 +31,79 @@ export default class LoginScreen extends Component {
     return (
       <>
         <SafeAreaView style={styles.container}>
-            {/* headerSection */}
-            <View style={styles.headerSection}>
-              <Image
-                source={IMG_Logo}
-                style={styles.logo}
-                resizeMode={'contain'}
-              />
+          {/* headerSection */}
+          <View style={styles.headerSection}>
+            <Image
+              source={IMG_Logo}
+              style={styles.logo}
+              resizeMode={'contain'}
+            />
 
-              <View style={styles.headerText}>
-                <TouchableOpacity
-                  style={styles.loginAndSignUp}
-                  onPress={() => {
-                    this.setPage(LOGIN);
-                  }}>
-                  <Text style={styles.text}>Login</Text>
-                  {this.state.page === LOGIN ? (
-                    <View style={styles.line}></View>
-                  ) : null}
-                </TouchableOpacity>
+            <View style={styles.headerText}>
+              <TouchableOpacity
+                style={styles.loginAndSignUp}
+                onPress={() => {
+                  this.setPage(SCREEN.LOGIN);
+                }}>
+                <Text style={styles.text}>Login</Text>
+                {this.state.page === SCREEN.LOGIN ? (
+                  <View style={styles.line}></View>
+                ) : null}
+              </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={styles.loginAndSignUp}
-                  onPress={() => {
-                    this.setPage(SIGN_UP);
-                  }}>
-                  <Text style={styles.text}>Sign-up</Text>
-                  {this.state.page === SIGN_UP ? (
-                    <View style={styles.line}></View>
-                  ) : null}
+              <TouchableOpacity
+                style={styles.loginAndSignUp}
+                onPress={() => {
+                  this.setPage(SCREEN.SIGN_UP);
+                }}>
+                <Text style={styles.text}>Sign-up</Text>
+                {this.state.page === SCREEN.SIGN_UP ? (
+                  <View style={styles.line}></View>
+                ) : null}
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          {/* inputSection */}
+
+          <View style={styles.inputSection}>
+            {this.state.page === SCREEN.LOGIN ? (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
+
+                <TouchableOpacity>
+                  <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
                 </TouchableOpacity>
               </View>
-            </View>
+            ) : (
+              <View>
+                <CustomInput label={'Email address'} />
+                {/* Password */}
+                <CustomInput label={'Password'} secureText={true} />
+                {/* Confirm Password */}
+                <CustomInput label={'Confirm Password'} secureText={true} />
+              </View>
+            )}
+          </View>
 
-            {/* inputSection */}
-
-            <View style={styles.inputSection}>
-              {this.state.page === LOGIN ? (
-                <View>
-                  <CustomInput label={'Email address'} />
-                  {/* Password */}
-                  <CustomInput label={'Password'} secureText={true} />
-
-                  <TouchableOpacity>
-                    <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
-                  </TouchableOpacity>
-                </View>
-              ) : (
-                <View>
-                  <CustomInput label={'Email address'} />
-                  {/* Password */}
-                  <CustomInput label={'Password'} secureText={true} />
-                  {/* Confirm Password */}
-                  <CustomInput label={'Confirm Password'} secureText={true} />
-                </View>
-              )}
-            </View>
-
-            {/* buttonSection */}
-            <View style={styles.buttonSection}>
-              {this.state.page === LOGIN ? (
-                <CustomButton
-                  type={'secondary'}
-                  text={'Login'}
-                  onPress={() => this.props.navigation.navigate('Home')}
-                />
-              ) : (
-                <CustomButton
-                  type={'secondary'}
-                  text={'Sign Up'}
-                  onPress={() => this.props.navigation.navigate('Home')}
-                />
-              )}
-            </View>
+          {/* buttonSection */}
+          <View style={styles.buttonSection}>
+            {this.state.page === SCREEN.LOGIN ? (
+              <CustomButton
+                type={'secondary'}
+                text={'Login'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
+            ) : (
+              <CustomButton
+                type={'secondary'}
+                text={'Sign Up'}
+                onPress={() => this.props.navigation.navigate('Home')}
+              />
+            )}
+          </View>
         </SafeAreaView>
       </>
     );

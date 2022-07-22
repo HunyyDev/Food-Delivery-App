@@ -3,84 +3,119 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
+  ScrollView,
   TouchableOpacity,
+  Image,
 } from 'react-native';
+import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
+import CustomIcon from '../../components/CustomIcon';
 import React, {Component} from 'react';
-import {
-  IC_Cart,
-  IC_Menu,
-  IC_Search,
-  IC_Heart,
-  IC_Home,
-  IC_History,
-  IC_User,
-} from '../../assets/icons';
+import scale from '../../constants/responsive';
 import {Searchbar} from 'react-native-paper';
+import {IC_HomeRaw, IC_SearchRaw} from '../../assets/icons';
+import CustomList from '../../components/HomeScreen/CustomList';
+import CustomCategory from '../../components/HomeScreen/CustomCategory';
+import SCREEN from '../../constants/screens';
 export class HomeScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        {/* sectionHeading */}
-        <View style={styles.sectionHeading}>
-          {/* sectionIcon */}
-          <View style={styles.sectionIcon}>
+        <View style={styles.headerSection}>
+          <View style={styles.iconHeaderSection}>
             <TouchableOpacity>
-              <Image source={IC_Menu} style={styles.menuHeading} />
+              <CustomIcon type="menu" fill="#000000" />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image source={IC_Cart} style={styles.cartHeading} />
+              <CustomIcon type="cart" fill="#000000" />
             </TouchableOpacity>
           </View>
-          {/* title */}
-          <View>
-            <Text style={styles.title}>{'Delicous \nfood for you'}</Text>
-          </View>
+          <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
 
-          {/* sectionSearch */}
-          <View style={styles.sectionSearch}>
-            <Searchbar
-              icon={IC_Search}
-              placeholder="Search"
-              style={styles.textSearch}
+          <Searchbar
+            placeholder="Search"
+            icon={IC_SearchRaw}
+            style={styles.searchBar}
+          />
+        </View>
+
+        <View style={styles.mainSection}>
+          <View style={styles.customCategory}>
+            <ScrollView horizontal={true}>
+              <CustomCategory
+                onPress={() => this.setOnPress(SCREEN.FOODS, true)}
+                name={'Foods'}
+                style={styles.textHeadingMain}
+              />
+
+              <CustomCategory
+                onPress={() => {
+                  this.setOnPress(SCREEN.DRINKS, true);
+                }}
+                name={'Drinks'}
+                style={styles.textHeadingMain}
+              />
+
+              <CustomCategory
+                onPress={() => this.setOnPress(SCREEN.SNACKS, true)}
+                name={'Snacks'}
+                style={styles.textHeadingMain}
+              />
+
+              <CustomCategory
+                onPress={() => this.setOnPress(SCREEN.SAUCES, true)}
+                name={'Sauces'}
+                style={styles.textHeadingMain}
+              />
+            </ScrollView>
+          </View>
+          <TouchableOpacity style={styles.seeMore}>
+            <Text
+              style={{
+                color: CUSTOM_COLOR.Orange,
+                marginBottom: scale(20),
+                textAlign: 'right',
+                fontSize: scale(15),
+                fontFamily: FONT_FAMILY.Medium
+              }}>
+              {'see more'}
+            </Text>
+          </TouchableOpacity>
+          <ScrollView
+            style={styles.scrollMenu}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}>
+            <CustomList
+              source={IMG_Veggie_tomato_mix}
+              name={'Veggie \ntomato mix'}
+              price={'N1,900'}
             />
-          </View>
+            <CustomList
+              source={IMG_Veggie_tomato_mix}
+              name={'Veggie \ntomato mix'}
+              price={'N1,900'}
+            />
+            <CustomList
+              source={IMG_Veggie_tomato_mix}
+              name={'Veggie \ntomato mix'}
+              price={'N1,900'}
+            />
+          </ScrollView>
         </View>
-        {/* sectionMain */}
-        <View style={styles.sectionMain}>
-          <View style={styles.headingMain}>
-            <TouchableOpacity>
-              <Text>Foods</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Drinks</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Snack</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Sauce</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        {/* sectionButton */}
-        <View style={styles.sectionButton}>
-          <TouchableOpacity>
-            <Image source={IC_Home} />
-          </TouchableOpacity>
 
+        <View style={styles.iconSection}>
           <TouchableOpacity>
-            <Image source={IC_Heart} />
+            <Image source={IC_HomeRaw} />
           </TouchableOpacity>
-
           <TouchableOpacity>
-            <Image source={IC_User} />
+            <CustomIcon type="heart" fill="#000000" />
           </TouchableOpacity>
-
           <TouchableOpacity>
-            <Image source={IC_History} />
+            <CustomIcon type="user" fill="#000000" />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <CustomIcon type="history" fill="#000000" />
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -93,55 +128,62 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
   },
 
-  sectionHeading: {
-    flex: 3,
-    backgroundColor: CUSTOM_COLOR.Silver,
-    marginVertical: 30,
+  headerSection: {
+    flex: 4,
   },
-  sectionIcon: {
+
+  iconHeaderSection: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 30,
-    marginBottom: 10,
+    marginHorizontal: '10%',
+    marginTop: scale(74),
   },
-  menuHeading: {},
-  cartHeading: {},
 
   title: {
     fontFamily: FONT_FAMILY.Black,
-    fontSize: 34,
-    marginHorizontal: 30,
-    marginTop: 20,
+    fontSize: scale(34),
+    marginLeft: '10%',
+    marginTop: scale(43),
+    marginBottom: scale(28),
   },
 
-  sectionSearch: {
-    marginTop: 20,
+  searchBar: {
+    borderRadius: scale(30),
+    backgroundColor: CUSTOM_COLOR.GalleryApprox,
+    marginHorizontal: scale(50),
+    height: scale(60),
   },
 
-  textSearch: {
-    borderRadius: 20,
-    marginHorizontal: 35,
-    padding: 5,
-    backgroundColor: CUSTOM_COLOR.Gallery,
-  },
-
-  sectionMain: {
+  mainSection: {
     flex: 5,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
 
-  headingMain: {
+  customCategory: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    marginLeft: scale(75),
+    justifyContent: 'space-between',
+    height: '10%',
   },
-  sectionButton: {
+
+  scrollMenu: {},
+
+  iconSection: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 20,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+
+  textHeadingMain: {
+    fontSize: scale(17),
+    opacity: 0.7,
+    marginRight: 50,
+    fontFamily: FONT_FAMILY.Black,
+  },
+  seeMore: {
+    marginHorizontal: '10%',
   },
 });

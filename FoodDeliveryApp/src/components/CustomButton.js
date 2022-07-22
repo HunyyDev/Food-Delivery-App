@@ -10,10 +10,6 @@ export class CustomButton extends Component {
     this.state = {};
   }
 
-  navigate = location => {
-    this.props.navigation.navigate(location);
-  };
-
   render() {
     return (
       <>
