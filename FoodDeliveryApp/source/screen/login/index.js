@@ -1,20 +1,40 @@
-import { Text, View, StyleSheet, SafeAreaView, Image, TouchableOpacity} from 'react-native'
-import React, { Component, useState } from 'react'
-import CUSTOM_COLOR from '../../constants/color'
-import scale from '../../../responsive'
-import { IMG_LOGO } from '../../assets/images'
-import CUSTOM_InputOne from '../../components/CUSTOM_InputOne'
-import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne'
-import CUSTOM_SwitchButton from '../../components/CUSTOM_SwitchButton'
-import { act } from 'react-test-renderer'
+import {
+  Text,
+  View,
+  StyleSheet,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import React, {Component, useState} from 'react';
+import CUSTOM_COLOR from '../../constants/color';
+import scale from '../../../responsive';
+import {IMG_LOGO} from '../../assets/images';
+import CUSTOM_InputOne from '../../components/CUSTOM_InputOne';
+import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne';
+import CUSTOM_SwitchButton from '../../components/CUSTOM_SwitchButton';
+import {act} from 'react-test-renderer';
 
-const LoginScreen = ({navigation}) => {
-  const [activeTab, setActiveTab] = useState('Login');
+export default class LoginScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: 'Login',
+    };
+    this.setActiveTab = this.setActiveTab.bind(this);
+  }
+  setActiveTab(val){
+    this.setState({activeTab: val})
+  }
+  render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.upperBackground}>
-          <Image style={styles.Logo} source={IMG_LOGO}/>
-          <CUSTOM_SwitchButton activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Image style={styles.Logo} source={IMG_LOGO} />
+          <CUSTOM_SwitchButton
+            activeTab={this.state.activeTab}
+            setActiveTab={this.setActiveTab}
+          />
         </View>
         <CUSTOM_InputOne
           text={'Email Address'}
@@ -26,54 +46,56 @@ const LoginScreen = ({navigation}) => {
           entry={false}
         />
         <CUSTOM_InputOne
-            text={'Password'}
+          text={'Password'}
+          placeHolderText={'********'}
+          placeholderTextColor={CUSTOM_COLOR.Black}
+          top={scale(536)}
+          left={scale(50)}
+          position={'absolute'}
+          entry={true}
+        />
+        {!isLogin(this.state.activeTab) ? (
+          <CUSTOM_InputOne
+            text={'Confirm password'}
             placeHolderText={'********'}
             placeholderTextColor={CUSTOM_COLOR.Black}
-            top={scale(536)}
+            top={scale(615)}
             left={scale(50)}
             position={'absolute'}
             entry={true}
           />
-        {!isLogin(activeTab) ? (
-            <CUSTOM_InputOne
-              text={'Confirm password'}
-              placeHolderText={'********'}
-              placeholderTextColor={CUSTOM_COLOR.Black}
-              top={scale(615)}
-              left={scale(50)}
-              position={'absolute'}
-              entry={true}
-            />
-          ) : null}
+        ) : null}
 
-        {isLogin(activeTab) ? (
+        {isLogin(this.state.activeTab) ? (
           <TouchableOpacity style={styles.ForgotPasscodeButton}>
-            <Text style={styles.ForgotPasscodeButtonText}>Forgot passcode? </Text>
+            <Text style={styles.ForgotPasscodeButtonText}>
+              Forgot passcode?{' '}
+            </Text>
           </TouchableOpacity>
-          ) : null}
+        ) : null}
 
-        {isLogin(activeTab) ? (
-        <CUSTOM_ButtonOne
+        {isLogin(this.state.activeTab) ? (
+          <CUSTOM_ButtonOne
             text={'Login'}
             color={CUSTOM_COLOR.Vermilion}
             textColor={CUSTOM_COLOR.White}
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => this.props.navigation.navigate('Home')}
           />
-          ) : null}
+        ) : null}
 
-        {!isLogin(activeTab) ? (
-        <CUSTOM_ButtonOne
+        {!isLogin(this.state.activeTab) ? (
+          <CUSTOM_ButtonOne
             text={'Sign-Up'}
             color={CUSTOM_COLOR.Vermilion}
             textColor={CUSTOM_COLOR.White}
-            onPress={() => setActiveTab('Login')}
+            onPress={() => this.setActiveTab('Login')}
           />
-          ) : null}
+        ) : null}
       </SafeAreaView>
-    )
+    );
+  }
 }
 
-export default LoginScreen
 
 const styles = StyleSheet.create({
   container: {
@@ -108,9 +130,9 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     fontSize: scale(16),
   },
-})
+});
 
-function isLogin(props){
+function isLogin(props) {
   if (props === 'Login') return true;
   return false;
 }

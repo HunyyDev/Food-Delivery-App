@@ -8,21 +8,21 @@ import FONT_FAMILY from '../constants/fonts';
 
 class CUSTOM_SearchBar extends React.Component {
   constructor(props) {
-      super(props);
-    }
-  render(){
-  return (
-    <View style={styles.searchContainer(this.props)}>
-      <CUSTOM_IconButton style={styles.searchImage} icon={ICON_GLASS} />
-      <TextInput
-        style={styles.searchInput}
-        placeholder={this.props.placeholderText}
-        placeholderTextColor={this.props.placeholderColor}
-      />
-    </View>
-  );
+    super(props);
   }
-};
+  render() {
+    return (
+      <View style={styles.searchContainer(this.props)}>
+        <CUSTOM_IconButton style={styles.searchImage} icon={ICON_GLASS} />
+        <TextInput
+          style={styles.searchInput}
+          placeholder={this.props.placeholderText}
+          placeholderTextColor={this.props.placeholderColor}
+        />
+      </View>
+    );
+  }
+}
 
 export default CUSTOM_SearchBar;
 
