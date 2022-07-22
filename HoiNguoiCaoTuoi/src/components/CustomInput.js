@@ -3,13 +3,22 @@ import React, {Component} from 'react';
 import FONT_FAMILY from '../constants/fonts';
 
 export class CustomInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  navigate = location => {
+    this.props.navigation.navigate(location);
+  };
+
   render() {
     return (
       <>
         <Text style={styles.textInput}>{this.props.label}</Text>
         <TextInput
           style={styles.inputContainer}
-          secureTextEntry={this.props.securityEntry}
+          secureTextEntry={this.props.secureTextEntry}
           placeholder={this.props.label}
         />
       </>
