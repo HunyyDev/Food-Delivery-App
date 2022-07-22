@@ -1,0 +1,12 @@
+const COLORS = {
+  SUNSET_ORANGE: '#FF4B3A',
+  WHITE: '#FFFFFF',
+  BLACK: '#000000',
+  SLIVER: '#C5C4C4',
+  VERMILION: '#FA4A0C',
+  GALLERY: '#EFEEEE',
+  MANATEE: '#9A9A9D',
+  CONCRETEE: '#F2F2F2',
+};
+
+export default COLORS;

@@ -1,0 +1,10 @@
+export {default as IMG_BACKGROUND} from './background.png';
+export {default as IMG_LOGO} from './logo.png';
+export {default as IMG_MENU} from './menu.png';
+export {default as IMG_MAGNIFIER} from './magnifier.png';
+export {default as IMG_VEGGIE} from './veggie.png';
+export {default as IMG_TROLLEY} from './trolley.png';
+export {default as IMG_HEART} from './heart.png';
+export {default as IMG_HOUSE} from './heroicons-solid_home.png';
+export {default as IMG_USER} from './user.png';
+export {default as IMG_HISTORY} from './ic_sharp-history.png';
