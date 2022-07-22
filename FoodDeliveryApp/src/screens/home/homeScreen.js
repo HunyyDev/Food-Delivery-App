@@ -6,16 +6,27 @@ import {
   Image,
   TouchableOpacity,
   Dimensions,
+  ScrollView,
+  TextComponent,
 } from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import React, {Component} from 'react';
-import {IC_Menu, IC_Search, IC_Cart} from '../../assets/icons';
+import {
+  IC_Menu,
+  IC_Search,
+  IC_Cart,
+  IC_Home,
+  IC_Heart,
+  IC_History,
+  IC_User,
+} from '../../assets/icons';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import HeadingButton from '../../components/CustomHeadingButton';
 import {IMG_Veggie_tomato_mix} from '../../assets/images';
-
+import Icon from 'react-native-vector-icons/';
+import CustomList from '../../components/CustomList';
 export class HomeScreen extends Component {
   render() {
     return (
@@ -34,11 +45,14 @@ export class HomeScreen extends Component {
             <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
           </View>
 
-          {/* Search Bar */}
-
-          {/* <SearchBar placeholder="Search"></SearchBar> */}
-
-          {/* <Searchbar placeholder="Search" inlineImageLeft={IC_Search} /> */}
+          <Searchbar
+            placeholder="Search"
+            icon={IC_Search}
+            style={{
+              borderRadius: scale(30),
+              backgroundColor: CUSTOM_COLOR.GalleryApprox,
+            }}
+          />
         </View>
         {/* Mid */}
         <View style={styles.mid}>
@@ -60,19 +74,44 @@ export class HomeScreen extends Component {
               <Text style={styles.dismissedMessage}>{'Sauce'}</Text>
             </View>
           </View>
+          <View style={styles.scrollMenuTitleContainer}>
+            <TouchableOpacity style={styles.scrollMenuTitle}>
+              <Text
+                style={{color: CUSTOM_COLOR.Orange, marginBottom: scale(20)}}>
+                {'see more'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <ScrollView style={styles.scrollMenu} horizontal={true}>
+            <CustomList
+              IMGSource={IMG_Veggie_tomato_mix}
+              Name={'Veggie \ntomato mix'}
+              Price={'N1,900'}></CustomList>
+            <CustomList
+              IMGSource={IMG_Veggie_tomato_mix}
+              Name={'Veggie \ntomato mix'}
+              Price={'N1,900'}></CustomList>
+            <CustomList
+              IMGSource={IMG_Veggie_tomato_mix}
+              Name={'Veggie \ntomato mix'}
+              Price={'N1,900'}></CustomList>
+          </ScrollView>
+        </View>
 
-          <>
-            <View style={styles.optionContainer}>
-              <TouchableOpacity style={styles.optionInfo}>
-                <Image
-                  style={styles.imageMain}
-                  source={IMG_Veggie_tomato_mix}
-                  resizeMode={'cover'}></Image>
-                <View></View>
-              </TouchableOpacity>
-              <View style={styles.decriseContainer}></View>
-            </View>
-          </>
+        {/* Bot */}
+        <View style={styles.bottomMenuContainer}>
+          <TouchableOpacity>
+            <Image source={IC_Home}></Image>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_Heart}></Image>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_User}></Image>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_History}></Image>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     );
@@ -88,14 +127,13 @@ const styles = StyleSheet.create({
   },
   top: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.ConcreteSolid,
-    // backgroundColor: '#F00',
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     marginHorizontal: scale(50),
     justifyContent: 'space-around',
   },
   Heading: {
     flexDirection: 'row',
-    backgroundColor: CUSTOM_COLOR.ConcreteSolid,
+    backgroundColor: CUSTOM_COLOR.SilverWhite,
     justifyContent: 'space-between',
     marginTop: scale(10),
   },
@@ -116,17 +154,15 @@ const styles = StyleSheet.create({
   //   },
 
   searchIconContainer: {
-    backgroundColor: CUSTOM_COLOR.GalleryAprox,
+    backgroundColor: CUSTOM_COLOR.Silver,
     width: scale(18),
     height: scale(18),
     marginLeft: scale(25),
-    // backgroundColor: '#00F',
   },
   searchMessageContainer: {
     width: scale(54),
     height: scale(20),
     marginLeft: scale(20),
-    // backgroundColor: '#F00',
   },
   searchMessage: {
     fontFamily: FONT_FAMILY.Black,
@@ -136,7 +172,9 @@ const styles = StyleSheet.create({
   mid: {
     flex: 1.75,
     backgroundColor: CUSTOM_COLOR.ConcreteSolid,
+    justifyContent: 'space-around',
   },
+
   menuContainer: {
     backgroundColor: CUSTOM_COLOR.Scarlet,
     width: '100%',
@@ -145,12 +183,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: scale(60),
   },
-  // optionContainer: {
-  //   width: scale(53),
-  //   height: scale(20),
-  //   marginLeft: scale(20),
-  //   backgroundColor: CUSTOM_COLOR.LasPalmas,
-  // },
 
   foodsContainer: {
     width: scale(50),
@@ -190,6 +222,13 @@ const styles = StyleSheet.create({
     lineHeight: scale(20.29),
     color: CUSTOM_COLOR.Manatee,
   },
+  scrollMenuTitleContainer: {alignItems: 'flex-end'},
+  scrollMenuTitle: {
+    //textAlign: 'right',
+    width: scale(100),
+  },
+  scrollMenu: {},
+
   optionContainer: {
     width: Dimensions.get('window').width * 0.5,
     height: 170,
@@ -208,41 +247,29 @@ const styles = StyleSheet.create({
     bottom: 0,
     //height: '30%',
     //width: '50%',
-    backgroundColor: 'yellow',
+    // backgroundColor: 'yellow',
     borderRadius: 30,
     zIndex: 2,
   },
   decriseContainer: {
     width: Dimensions.get('window').width * 0.5,
     height: 250,
-    backgroundColor: CUSTOM_COLOR.Black,
+    backgroundColor: CUSTOM_COLOR.Orange,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
     top: 50,
     zIndex: 1,
+    borderRadius: 20,
   },
-  // imageContainer: {
-  //   borderRadius: 30,
-  //   // width: '100%',
-  //   // height: '100%',
-  //   // backgroundColor: '#f00',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   // overflow: 'hidden',
-  //   position: 'absolute',
-  //   top: 0,
-  //   zIndex: 0,
-  // },
-
-  //flex: 1,
-  // imagetextcontainer: {
-  //   //width: Dimensions.get('window').width * 0.5,
-  //   height: 275,
-  //   backgroundColor: CUSTOM_COLOR.Orange,
-  //   top: 75,
-  //   borderRadius: 30,
-  //   //zIndex: 2,
-  //   //p
-  // },
+  bot: {
+    backgroundColor: CUSTOM_COLOR.Orange,
+  },
+  bottomMenuContainer: {
+    flex: 0.2,
+    // backgroundColor: '#000',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
 });
