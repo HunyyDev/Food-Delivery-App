@@ -5,5 +5,6 @@ const CUSTOM_COLOR = {
   Gallery: '#EFEEEE',
   Black: '#000000',
   MineShaft: '#393939',
+  Vermillion: '#FA4A0C',
 };
 export default CUSTOM_COLOR;
