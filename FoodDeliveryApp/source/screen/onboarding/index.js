@@ -6,49 +6,53 @@ import {
   View,
   Dimensions,
 } from 'react-native';
-import React from 'react';
+import React, {Component} from 'react';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/color';
-import { IMG_BACKGROUND, IMG_LOGO } from '../../assets/images'; 
+import {IMG_BACKGROUND, IMG_LOGO} from '../../assets/images';
 import scale from '../../../responsive';
 import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne';
 
-const Onboarding = ({navigation}) => {
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* logo */}
-      <>
-        <View style={styles.backgroundLogo}>
-          <Image style={styles.Logo} source={IMG_LOGO} />
-        </View>
-      </>
+export default class Onboarding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        {/* logo */}
+        <>
+          <View style={styles.backgroundLogo}>
+            <Image style={styles.Logo} source={IMG_LOGO} />
+          </View>
+        </>
 
-      {/* title */}
-      <>
-        <Text style={styles.Food}>Food for Everyone</Text>
-      </>
+        {/* title */}
+        <>
+          <Text style={styles.Food}>Food for Everyone</Text>
+        </>
 
-      {/* img-background */}
-      <>
-        <View style={styles.BackgroundImg}>
-          <Image style={styles.Img} source={IMG_BACKGROUND} />
-        </View>
-      </>
+        {/* img-background */}
+        <>
+          <View style={styles.BackgroundImg}>
+            <Image style={styles.Img} source={IMG_BACKGROUND} />
+          </View>
+        </>
 
-      {/* button */}
-      <>
-        <CUSTOM_ButtonOne
-          text="Get started"
-          color={CUSTOM_COLOR.White}
-          textColor={CUSTOM_COLOR.SunsetOrange}
-          onPress={() => navigation.navigate('Login')}
-        />
-      </>
-    </SafeAreaView>
-  );
-};
-
-export default Onboarding;
+        {/* button */}
+        <>
+          <CUSTOM_ButtonOne
+            text="Get started"
+            color={CUSTOM_COLOR.White}
+            textColor={CUSTOM_COLOR.SunsetOrange}
+            onPress={() => this.props.navigation.navigate('Login')}
+          />
+        </>
+      </SafeAreaView>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {

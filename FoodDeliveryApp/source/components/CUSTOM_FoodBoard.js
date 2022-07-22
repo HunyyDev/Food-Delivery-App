@@ -9,8 +9,7 @@ export class CUSTOM_FoodBoard extends Component {
   }
   render() {
     return (
-      <View
-        style={styles.viewContainer(this.props)}>
+      <View style={styles.viewContainer(this.props)}>
         <View style={styles.viewInside}>
           <View style={styles.viewCircle}>
             <Image source={this.props.img} />
