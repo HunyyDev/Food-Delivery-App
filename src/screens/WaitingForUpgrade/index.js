@@ -1,9 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import scale from '../../assets/constants/reponsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 export class WaitingForUpgrade extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ export class WaitingForUpgrade extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.Concrete,
     flexDirection: 'row',
     flex: 1,
   },

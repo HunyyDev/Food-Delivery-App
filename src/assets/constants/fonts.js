@@ -7,5 +7,6 @@ const FONT_FAMILY = {
   SFBlack: SF + 'Black',
   SFBold: SF + 'Bold',
   SFProTextBold: SFProText + 'Bold',
+  SFProRoundedBold: 'SF-Pro-Rounded-Bold',
 };
 export default FONT_FAMILY;

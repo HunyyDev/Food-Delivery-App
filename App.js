@@ -1,5 +1,5 @@
 import {Onboarding} from './src/screens/onboarding';
-import {Login} from './src/screens/login';
+import {LoginScreen} from './src/screens/login';
 import {WaitingForUpgrade} from './src/screens/WaitingForUpgrade';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -15,8 +15,8 @@ const App = props => {
         <stack.Screen name="Onboarding" options={{headerShown: false}}>
           {props => <Onboarding {...props} />}
         </stack.Screen>
-        <stack.Screen name="Login" options={{headerShown: false}}>
-          {props => <Login {...props} />}
+        <stack.Screen name="LoginScreen" options={{headerShown: false}}>
+          {props => <LoginScreen {...props} />}
         </stack.Screen>
         <stack.Screen name="WaitingForUpgrade" options={{headerShown: false}}>
           {props => <WaitingForUpgrade {...props} />}

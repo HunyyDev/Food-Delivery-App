@@ -37,9 +37,9 @@ export class Onboarding extends Component {
             </View>
             <>{/* Button */}</>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Login')}
+              onPress={() => this.props.navigation.navigate('LoginScreen')}
               style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>{'Get started '}</Text>
+              <Text style={styles.buttonText}>{'Get started'}</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -72,10 +72,10 @@ const styles = StyleSheet.create({
   Text: {
     color: 'white',
     fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(65),
+    fontSize: scale(70),
     marginLeft: scale(51),
     position: 'absolute',
-    marginTop: scale(160),
+    marginTop: scale(155),
   },
 
   backgroundContainer: {
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: CUSTOM_COLOR.SunsetOrange,
     fontFamily: FONT_FAMILY.SFBlack,
-    fontSize: scale(17),
+    fontSize: scale(18),
     fontWeight: '600',
     justifyContent: 'center',
     alignSelf: 'center',
