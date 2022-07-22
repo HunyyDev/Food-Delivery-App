@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf",
+      "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Black.otf",
+      "sha1": "94c9a8f970678781fb922ceefd77a1974feea96e"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Black.ttf",
+      "sha1": "d6efdc8c120df6af92ad5836c150bcbdac58b44e"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-BlackItalic.otf",
+      "sha1": "a1566799716a4c14fb528a219f3c29d08a51f77e"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-BlackItalic.ttf",
+      "sha1": "5ebf61d6abc52feafe972df8a4c06f120f401fe0"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-Light.ttf",
+      "sha1": "3571554641eb70658156b4f3705057a9cd380c7b"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-LightItalic.otf",
+      "sha1": "417f977540d16155558b9a22088202598b20f5da"
+    },
+    {
+      "path": "src/assets/fonts/Montserrat-LightItalic.ttf",
+      "sha1": "805aac14f1b0345f6994206413b29fcebbc1d8d6"
+    }
+  ]
+}

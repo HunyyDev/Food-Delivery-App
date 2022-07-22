@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, {Component} from 'react';
 import {
   Text,
@@ -6,6 +7,8 @@ import {
   SafeAreaView,
   Image,
   ScrollView,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
 import {
   IC_Menu,
@@ -22,20 +25,24 @@ import FONT_FAMILY from '../.././constants/fonts';
 import scale from '../.././constants/responsive';
 const Items = props => {
   return (
-    <View style={styles.Item}>
-      <IC_Menu style={styles.Image_Container} />
-      <View style={styles.TextContainer}>
-        <Text style={styles.Text}>Veggie</Text>
-        <Text style={styles.Text}>Tomato mix</Text>
+    <TouchableOpacity onPress={() => alert('Do you eat me?')}>
+      <View style={styles.Item}>
+        <IC_Menu style={styles.Image_Container} />
+        <View style={styles.TextContainer}>
+          <Text style={styles.Text}>Veggie</Text>
+          <Text style={styles.Text}>Tomato mix</Text>
+        </View>
+        <Text style={styles.Text2}>N1,900</Text>
       </View>
-      <Text style={styles.Text2}>N1,900</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 const Menus = props => {
   return (
     <View style={styles.Scroll_View_Item}>
-      <Text style={styles.MenuText}>{props.label}</Text>
+      <TouchableOpacity onPress={() => alert('None.')}>
+        <Text style={styles.MenuText}>{props.label}</Text>
+      </TouchableOpacity>
       <View style={styles.Space} />
     </View>
   );
@@ -53,16 +60,27 @@ class HomeScreen extends Component {
           <IC_MenuTask />
           <IC_Cart />
           <Text style={styles.delicious}>Delicious food for you</Text>
+
           <View style={styles.SearchView}>
             <IC_Search top={20} left={20} />
-            <Text style={styles.search}>Search</Text>
+            <TextInput placeholder="Search" style={styles.search} />
+            {/* <Text style={styles.search}>Search</Text> */}
           </View>
           <>
-            <ScrollView style={styles.Scroll_View_Navigation} horizontal={true}>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              showsHorizontalScrollIndicator={false}
+              style={styles.Scroll_View_Navigation}
+              horizontal={true}>
               <View style={[styles.Scroll_View_Item]}>
-                <Text style={[styles.MenuText, styles.OrangeText]}>Foods</Text>
+                <TouchableOpacity onPress={() => alert('Have foods.')}>
+                  <Text style={[styles.MenuText, styles.OrangeText]}>
+                    Foods
+                  </Text>
+                </TouchableOpacity>
                 <View style={[styles.Space, styles.OrangeLine]} />
               </View>
+
               <Menus label="Drinks" />
               <Menus label="Snacks" />
               <Menus label="Sauces" />
@@ -71,7 +89,11 @@ class HomeScreen extends Component {
           </>
           <Text style={styles.SeeMoreText}>see more</Text>
           <View style={styles.Scroll_View}>
-            <ScrollView style={styles.Scroll_View_Container} horizontal={true}>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              showsHorizontalScrollIndicator={false}
+              style={styles.Scroll_View_Container}
+              horizontal={true}>
               <Items />
               <Items />
               <Items />
@@ -83,10 +105,19 @@ class HomeScreen extends Component {
             </ScrollView>
           </View>
           <View style={styles.NavigationBottomBar}>
-            <Image style={styles.HomeStyle} source={IMG_Home} />
-            <Image style={styles.HeartStyle} source={IMG_Heart} />
-            <Image style={styles.UserStyle} source={IMG_User} />
-            <Image style={styles.ClockStyle} source={IMG_Clock} />
+            <TouchableOpacity onPress={() => alert('Live with me?')}>
+              <Image style={styles.HomeStyle} source={IMG_Home} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('Love me?')}>
+              <Image style={styles.HeartStyle} source={IMG_Heart} />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => alert('Buy me?')}>
+              <Image style={styles.UserStyle} source={IMG_User} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => alert('Your Time for me?')}>
+              <Image style={styles.ClockStyle} source={IMG_Clock} />
+            </TouchableOpacity>
           </View>
         </SafeAreaView>
       </>
@@ -124,9 +155,9 @@ const styles = StyleSheet.create({
   search: {
     position: 'absolute',
     width: scale(70),
-    height: scale(30),
+    height: scale(40),
     left: scale(50),
-    top: scale(20),
+    top: scale(15),
     fontSize: 17,
     color: CUSTOM_COLOR.Black,
   },
@@ -162,14 +193,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     height: 2,
-    overflow: 'visible',
-  },
-  Scroll_View_Text: {
-    position: 'absolute',
-    top: scale(200),
-    flexDirection: 'row',
-    width: '100%',
-    height: 1,
     overflow: 'visible',
   },
   Item: {
