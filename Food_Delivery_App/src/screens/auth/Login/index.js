@@ -59,7 +59,7 @@ const LoginScreen = navigation => {
       </View>
 
       <CustomButton
-        title="Login"
+        title={page}
         type="secondary"
         alert="Login button's event handle"
       />
