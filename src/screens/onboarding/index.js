@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/responsive';
+import scale from '../../assets/constants/reponsive';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 export class Onboarding extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ export class Onboarding extends Component {
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('LoginScreen')}
               style={styles.buttonContainer}>
-              <Text style={styles.buttonText}>{'Get started '}</Text>
+              <Text style={styles.buttonText}>{'Get started'}</Text>
             </TouchableOpacity>
           </View>
         </ScrollView>
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 
   Text: {
     color: 'white',
-    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontFamily: FONT_FAMILY.SFBlack,
     fontSize: scale(70),
     marginLeft: scale(51),
     position: 'absolute',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     color: CUSTOM_COLOR.SunsetOrange,
-    fontFamily: FONT_FAMILY.SFProRoundedBold,
+    fontFamily: FONT_FAMILY.SFBlack,
     fontSize: scale(18),
     fontWeight: '600',
     justifyContent: 'center',

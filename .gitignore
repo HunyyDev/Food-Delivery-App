@@ -59,14 +59,9 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
-<<<<<<< HEAD:.gitignore
 
 package-lock.json
 yarn.lock
 /package-lock.json
 ios/Podfile.lock
 .vscode/settings.json
-=======
-/vendor/bundle/
-/node_modules
->>>>>>> 31f4ba01faae796df4f36689b4a7dcb5c450509e:FoodDelivery/.gitignore
