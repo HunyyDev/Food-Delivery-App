@@ -43,30 +43,38 @@ export class HomeScreen extends Component {
           {/* Tab bar */}
           <>
             <View style={styles.TabBar}>
-              <Image style={styles.Menu} source={IMG_Menu} />
-              <Image
-                style={styles.ShoppingCart}
-                source={IMG_Shopping_cart}></Image>
-            </View>
-          </>
-          {/* Content */}
-          <>
-            <View style={styles.containerText}>
-              <Text style={styles.Content}>Delicious food for you</Text>
-            </View>
-          </>
-
-          {/* Search */}
-          <>
-            <View style={styles.Search}>
-              <Image style={styles.SearchLogo} source={IMG_Search}></Image>
-              <TextInput style={styles.SearchText}>Search</TextInput>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image style={styles.Menu} source={IMG_Menu} />
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image
+                  style={styles.ShoppingCart}
+                  source={IMG_Shopping_cart}></Image>
+              </TouchableOpacity>
             </View>
           </>
         </>
-        {/* Boding */}
-        <>
-          <View styles={styles.Boding}>
+        <ScrollView style={styles.option} showsVerticalScrollIndicator={false}>
+          <>
+            {/* Content */}
+            <>
+              <View style={styles.containerText}>
+                <Text style={styles.Content}>Delicious food for you</Text>
+              </View>
+            </>
+
+            {/* Search */}
+            <>
+              <View style={styles.Search}>
+                <Image style={styles.SearchLogo} source={IMG_Search}></Image>
+                <TextInput
+                  style={styles.SearchText}
+                  placeholder={'Search'}></TextInput>
+              </View>
+            </>
+          </>
+          {/* Boding */}
+          <>
             <ListButton
               style={styles.ListButton}
               values={['Foods', 'Drinks', 'Snacks', 'Sauce']}
@@ -104,16 +112,24 @@ export class HomeScreen extends Component {
                 cost="N2,300.99"
               />
             </ScrollView>
-          </View>
-        </>
+          </>
+        </ScrollView>
         {/* Bottom */}
         <>
           <View style={styles.BottomContainer}>
             <View style={styles.BottomContainer}>
-              <Image source={IMG_Home}></Image>
-              <Image source={IMG_Heart}></Image>
-              <Image source={IMG_User}></Image>
-              <Image source={IMG_History}></Image>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image source={IMG_Home}></Image>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image source={IMG_Heart}></Image>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image source={IMG_User}></Image>
+              </TouchableOpacity>
+              <TouchableOpacity activeOpacity={0.6}>
+                <Image source={IMG_History}></Image>
+              </TouchableOpacity>
             </View>
           </View>
         </>
@@ -132,55 +148,53 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    marginTop: 66,
-    flex: 0.5,
+    marginTop: scaleWidth(64),
+    marginBottom: scaleWidth(30),
   },
   Menu: {
-    left: scaleWidth(54.6),
-    flex: 0.5,
+    marginLeft: scaleWidth(54.6),
   },
   ShoppingCart: {
-    right: scaleWidth(42),
+    marginRight: scaleWidth(41),
   },
   containerText: {
     width: 190,
     height: 82,
-    left: scaleWidth(50),
-    marginTop: 43.33,
+    marginLeft: scaleWidth(50),
+    marginTop: scaleWidth(19.33),
   },
   Content: {
     fontSize: 34,
     lineHeight: 40.57,
-    fontFamily: FONT_FAMILY.Light,
-    fontWeight: '700',
+    fontFamily: FONT_FAMILY.Bold,
     color: CUSTOM_COLOR.Black,
   },
   Search: {
-    marginTop: 28,
+    borderRadius: scaleWidth(30),
+    marginTop: scaleWidth(26),
     width: scaleWidth(314),
-    height: 60,
+    height: scaleWidth(60),
     backgroundColor: CUSTOM_COLOR.Gallery,
     flexDirection: 'row',
     alignSelf: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  LogoSearch: {
-    flex: 0.2,
-    left: scaleWidth(35),
+  SearchLogo: {
+    marginLeft: scaleWidth(35),
   },
   SearchText: {
-    flex: 0.8,
-    left: 16,
+    marginLeft: scaleWidth(16),
     fontSize: 17,
     fontFamily: FONT_FAMILY.Medium,
     color: CUSTOM_COLOR.Black,
-    fontWeight: '600',
   },
   BottomContainer: {
+    height: 60,
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
   seemoreButton: {
     fontFamily: FONT_FAMILY.Regular,
@@ -190,13 +204,16 @@ const styles = StyleSheet.create({
   seemoreContainer: {
     alignItems: 'flex-end',
     marginRight: scaleWidth(41),
+    marginTop: scaleWidth(43),
   },
   MenuScroll: {
-    maxHeight: 350,
+    height: 355,
+    maxHeight: scaleWidth(355),
+    marginTop: scaleWidth(1),
   },
   ListButton: {
-    maxHeight: 40,
-    marginBottom: 58,
-    marginTop: 46,
+    height: scaleWidth(46),
+    maxHeight: scaleWidth(46),
+    marginTop: scaleWidth(32),
   },
 });
