@@ -17,7 +17,6 @@
 		6904FACE80DE44C0AEF9BD13 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD5D4964E32A4900B7E67951 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
 		A6B99A3B8749419793AA1CAC /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5A7493A437461489234758 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */; };
 		D911C2F0B61342DBBECDD9BA /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD18DA1A0D74438CADF38475 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */; };
-		1AC3B58B784F4182ACA9AAEF /* FontsFree-Net-SF-Pro-Rounded-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEB2C8783F6B46019FEB8F50 /* FontsFree-Net-SF-Pro-Rounded-Semibold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		DD5D4964E32A4900B7E67951 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DF5A7493A437461489234758 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Heavy.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		CD18DA1A0D74438CADF38475 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Regular.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AEB2C8783F6B46019FEB8F50 /* FontsFree-Net-SF-Pro-Rounded-Semibold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Semibold.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +161,6 @@
 				DD5D4964E32A4900B7E67951 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
 				DF5A7493A437461489234758 /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf */,
 				CD18DA1A0D74438CADF38475 /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf */,
-				AEB2C8783F6B46019FEB8F50 /* FontsFree-Net-SF-Pro-Rounded-Semibold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 				6904FACE80DE44C0AEF9BD13 /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
 				A6B99A3B8749419793AA1CAC /* FontsFree-Net-SF-Pro-Rounded-Heavy.ttf in Resources */,
 				D911C2F0B61342DBBECDD9BA /* FontsFree-Net-SF-Pro-Rounded-Regular.ttf in Resources */,
-				1AC3B58B784F4182ACA9AAEF /* FontsFree-Net-SF-Pro-Rounded-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
