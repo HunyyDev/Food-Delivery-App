@@ -18,6 +18,7 @@ const FONT_FAMILY = {
   SemiBoldItalic: Prefix + 'SemiBoldItalic',
   Thin: Prefix + 'Thin',
   ThinItalic: Prefix + 'ThinItalic',
+  SFPro: 'FontsFree-Net-SF-Pro-Rounded-Regular',
 };
 
 export default FONT_FAMILY;

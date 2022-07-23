@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import {
   StyleSheet,
   Text,
@@ -13,42 +14,53 @@ import CUSTOM_COLOR from './src/constants/colors';
 import {IMG_Logo, IMG_Background} from './src/assets/images';
 import FONT_FAMILY from './src/constants/fonts';
 import {scaleWidth} from './src/constants/responsive';
+=======
+import {StyleSheet, View} from 'react-native';
+import LoginScreen from './src/screens/auth';
+import OnboardingScreen from './src/screens/onboarding';
+>>>>>>> origin/HoiNguoiCaoTuoi/dev
 
-const App = () => {
+// import {NavigationContainer} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+// const Stack = createNativeStackNavigator();
+
+// const App = props => {
+//   return (
+//     <>
+//       <NavigationContainer>
+//         <Stack.Navigator screenOptions={{headerShow: false}}>
+//           <Stack.Screen name="Onboarding" options={{headerShown: false}}>
+//             {props => <OnboardingScreen {...props} />}
+//           </Stack.Screen>
+
+//           <Stack.Screen name="Login" options={{headerShown: false}}>
+//             {props => <LoginScreen {...props} />}
+//           </Stack.Screen>
+
+//           <Stack.Screen name="Home" options={{headerShown: false}}>
+//             {props => <HomeScreen {...props} />}
+//           </Stack.Screen>
+//         </Stack.Navigator>
+//       </NavigationContainer>
+//     </> 
+//   );
+// };
+
+const App = props => {
   return (
-    <SafeAreaView style={styles.container}>
-      {/* Logo */}
-      <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-        </View>
-      </>
-
-      {/* Title */}
-      <>
-        <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
-      </>
-
-      {/* Image */}
-      <>
-        <View style={styles.backgroundContainer}>
-          <ImageBackground
-            source={IMG_Background}
-            style={styles.background}
-            resizeMode={'contain'}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.text}>{'Get started'}</Text>
-            </TouchableOpacity>
-          </ImageBackground>
-        </View>
-      </>
-    </SafeAreaView>
+    <>
+      <View style={styles.container}>
+        <LoginScreen {...props} />
+      </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
     alignSelf: 'stretch',
     marginTop: 0,
@@ -103,6 +115,8 @@ const styles = StyleSheet.create({
     fontSize: scaleWidth(17),
     fontFamily: FONT_FAMILY.ExtraBold,
     color: CUSTOM_COLOR.SunsetOrange,
+=======
+>>>>>>> origin/HoiNguoiCaoTuoi/dev
   },
 });
 
