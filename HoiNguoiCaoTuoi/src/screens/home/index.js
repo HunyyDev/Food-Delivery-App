@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 
-class index extends Component {
+class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,4 +16,4 @@ class index extends Component {
   }
 }
 
-export default index;
+export default HomeScreen;
