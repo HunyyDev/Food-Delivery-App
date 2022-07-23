@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     marginBottom: scale(24),
     alignSelf: 'center',
   },
-});y
+});
 
 export default CustomInput;
