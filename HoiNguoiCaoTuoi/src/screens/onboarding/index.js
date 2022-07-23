@@ -37,7 +37,11 @@ const OnboardingScreen = () => {
             style={styles.background}
             resizeMode={'contain'}>
             <View style={styles.button}>
-              <CustomButton type={'primary'} text={'Get started'} />
+              <CustomButton
+                type={'primary'}
+                text={'Get started'}
+                onPress={() => this.props.navigation.navigate('Login')}
+              />
             </View>
           </ImageBackground>
         </View>

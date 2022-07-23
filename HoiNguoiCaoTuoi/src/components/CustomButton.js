@@ -15,19 +15,15 @@ export class CustomButton extends Component {
         <View style={styles.container}>
           {this.props.type === 'primary' ? (
             <TouchableOpacity
-              style={[styles.button, styles.buttonPrimary]}
+              style={styles.buttonPrimary}
               onPress={this.props.onPress}>
-              <Text style={[styles.text, styles.textButtonPrimary]}>
-                {this.props.text}
-              </Text>
+              <Text style={styles.textButtonPrimary}>{this.props.text}</Text>
             </TouchableOpacity>
           ) : (
             <TouchableOpacity
-              style={[styles.button, styles.buttonSecondary]}
+              style={styles.buttonSecondary}
               onPress={this.props.onPress}>
-              <Text style={[styles.text, styles.textButtonSecondary]}>
-                {this.props.text}
-              </Text>
+              <Text style={styles.textButtonSecondary}>{this.props.text}</Text>
             </TouchableOpacity>
           )}
         </View>
