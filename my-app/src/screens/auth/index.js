@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    marginTop: scale(90),
+    marginTop: scale(70),
     height: scale(70),
     width: scale(314),
     justifyContent: 'center',

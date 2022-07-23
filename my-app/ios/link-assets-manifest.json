@@ -1,4 +1,21 @@
 {
   "migIndex": 1,
+<<<<<<< HEAD
   "data": []
+=======
+  "data": [
+    {
+      "path": "src/assets/fonts/SFProRounded-Heavy.ttf",
+      "sha1": "98361242928114e4734d4547d6153fb2abbf6599"
+    },
+    {
+      "path": "src/assets/fonts/SFProText-Heavy.ttf",
+      "sha1": "bfc75c545dbe2a8c7c3d6d6223e42aaa5ccb9432"
+    },
+    {
+      "path": "src/assets/fonts/SFProText-Semibold.ttf",
+      "sha1": "9560ae412d73c7c9af72333db50464b4e597b0f9"
+    }
+  ]
+>>>>>>> anhtaivanhungnguoiban/dev_hao
 }
