@@ -1,13 +1,14 @@
 import React from 'react';
 import OnBoardingScreen from './src/screens/onboarding';
-import HomeScreen from './src/screens/home'
-import { View, SafeAreaView } from 'react-native';
-
+import {View} from 'react-native';
+import Login from './src/screens/auth';
+import {SafeAreaView} from 'react-native';
 const App = () => {
   return (
-    <React.Fragment>
-      <HomeScreen />
-    </React.Fragment>
+    <SafeAreaView style={{flex: 1}}>
+      {/* <OnBoardingScreen /> */}
+      <Login />
+    </SafeAreaView>
   );
 };
 
