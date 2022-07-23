@@ -9,4 +9,3 @@ const FONT_FAMILY = {
   SFProTextBold: SFProText + 'Bold',
 };
 export default FONT_FAMILY;
-
