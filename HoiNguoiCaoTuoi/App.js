@@ -12,7 +12,7 @@ import {
 import CUSTOM_COLOR from './src/constants/colors';
 import {IMG_Logo, IMG_Background} from './src/assets/images';
 import FONT_FAMILY from './src/constants/fonts';
-import {scaleWidth} from './src/constants/reponsive';
+import {scaleWidth} from './src/constants/responsive';
 
 const App = () => {
   return (
