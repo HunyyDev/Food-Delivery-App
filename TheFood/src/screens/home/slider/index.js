@@ -1,12 +1,8 @@
 import {
-  Text,
-  StyleSheet,
   View,
   ScrollView,
-  TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
-import color from '../../../assets/constants/colors';
 import FoodType from './components/FoodType';
 import FoodCard from './components/FoodCard';
 import styles from './styles';
