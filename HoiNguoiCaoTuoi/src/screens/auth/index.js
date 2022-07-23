@@ -44,7 +44,7 @@ export default class LoginScreen extends Component {
                 onPress={() => {
                   this.setPage(LOGIN);
                 }}>
-                <Text style={styles.text}>Login</Text>
+                <Text style={styles.text}>{'Login'}</Text>
                 {this.state.page === LOGIN ? (
                   <View style={styles.line} />
                 ) : null}
@@ -55,7 +55,7 @@ export default class LoginScreen extends Component {
                 onPress={() => {
                   this.setPage(SIGN_UP);
                 }}>
-                <Text style={styles.text}>Sign-up</Text>
+                <Text style={styles.text}>{'Sign-up'}</Text>
                 {this.state.page === SIGN_UP ? (
                   <View style={styles.line} />
                 ) : null}
@@ -67,21 +67,22 @@ export default class LoginScreen extends Component {
           <View style={styles.inputSection}>
             {this.state.page === LOGIN ? (
               <View>
+                {/* Email */}
                 <CustomInput label={'Email address'} />
                 {/* Password */}
-                <CustomInput label={'Password'} secureText={true} />
-
+                <CustomInput label={'Password'} secureTextEntry />
                 <TouchableOpacity>
-                  <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
+                  <Text style={styles.forgotPC}>{'Forgot passcode?'}</Text>
                 </TouchableOpacity>
               </View>
             ) : (
               <View>
+                {/* Email */}
                 <CustomInput label={'Email address'} />
                 {/* Password */}
-                <CustomInput label={'Password'} secureText={true} />
+                <CustomInput label={'Password'} secureTextEntry />
                 {/* Confirm Password */}
-                <CustomInput label={'Confirm Password'} secureText={true} />
+                <CustomInput label={'Confirm Password'} secureTextEntry />
               </View>
             )}
           </View>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,41 +14,52 @@ import FONT_FAMILY from '../../constants/fonts';
 import {scaleWidth} from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
 
-const OnboardingScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Logo */}
-      <>
-        <View style={styles.logoContainer}>
-          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-        </View>
-      </>
+class OnboardingScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-      {/* Title */}
-      <>
-        <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
-      </>
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        {/* Logo */}
+        <>
+          <View style={styles.logoContainer}>
+            <Image
+              source={IMG_Logo}
+              style={styles.logo}
+              resizeMode={'contain'}
+            />
+          </View>
+        </>
 
-      {/* Image */}
-      <>
-        <View style={styles.backgroundContainer}>
-          <ImageBackground
-            source={IMG_Background}
-            style={styles.background}
-            resizeMode={'contain'}>
-            <View style={styles.button}>
-              <CustomButton
-                type={'primary'}
-                text={'Get started'}
-                onPress={() => this.props.navigation.navigate('Login')}
-              />
-            </View>
-          </ImageBackground>
-        </View>
-      </>
-    </SafeAreaView>
-  );
-};
+        {/* Title */}
+        <>
+          <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
+        </>
+
+        {/* Image */}
+        <>
+          <View style={styles.backgroundContainer}>
+            <ImageBackground
+              source={IMG_Background}
+              style={styles.background}
+              resizeMode={'contain'}>
+              <View style={styles.button}>
+                <CustomButton
+                  type={'primary'}
+                  text={'Get started'}
+                  onPress={() => this.props.navigation.navigate('Login')}
+                />
+              </View>
+            </ImageBackground>
+          </View>
+        </>
+      </SafeAreaView>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
