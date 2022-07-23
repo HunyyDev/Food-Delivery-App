@@ -1,15 +1,28 @@
 import {Dimensions} from 'react-native';
+import {PixelRatio} from 'react-native';
+
+const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
+
+const scale = SCREEN_WIDTH / 414;
 
 export const scaleX = number => {
-  const currentDeviceWidth = parseInt(Dimensions.get('screen').width);
   const designDeviceWidth = parseInt(414);
 
-  return (number / designDeviceWidth) * currentDeviceWidth;
+  return (number / designDeviceWidth) * SCREEN_WIDTH;
 };
 
 export const scaleY = number => {
-  const currentDeviceHeight = parseInt(Dimensions.get('screen').height);
   const designDeviceHeight = parseInt(896);
 
-  return (number / designDeviceHeight) * currentDeviceHeight;
+  return (number / designDeviceHeight) * SCREEN_HEIGHT;
 };
+
+export function normalize(size) {
+  const newSize = size * scale;
+
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize));
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
+  }
+}
