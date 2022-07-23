@@ -23,14 +23,14 @@ export default Label;
 
 const styles = StyleSheet.create({
     label: {
-        fontSize: scaleWidth(17),
+        fontSize: scale(17),
         color: CUSTOM_COLOR.Manatee,
         fontFamily: FONT_FAMILY.Bold,
 
     },
     line: {
-        height: scaleHeight(3),
-        width: scaleWidth(87),
+        height: scale(3,'h'),
+        width: scale(87),
         backgroundColor: 'transparent',
     },
     label_actived: {

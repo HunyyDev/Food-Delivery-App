@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     marginTop: 20,
     fontFamily: FONT_FAMILY.Semibold,
-    fontSize: scaleWidth(17),
+    fontSize: scale(17),
   },
   inputContainer: {
     borderBottomColor: CUSTOM_COLOR.Black,

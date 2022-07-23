@@ -32,11 +32,11 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    height: scaleHeight(70),
-    width: scaleWidth(314),
+    height: scale(70,'h'),
+    width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: scaleWidth(30),
+    borderRadius: scale(30),
     alignSelf: 'center',
   },
 
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
 
   textButton: {
-    fontSize: scaleWidth(17),
+    fontSize: scale(17),
     fontFamily: FONT_FAMILY.Bold,
   },
 
