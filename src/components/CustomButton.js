@@ -1,8 +1,7 @@
 import React from "react";
 import {TouchableOpacity, StyleSheet, Text, View} from "react-native";
 import CUSTOM_COLOR from '../constants/colors'
-import scaleHeight from '../responsive/ScaleHeight';
-import scaleWidth from '../responsive/ScaleWidth';
+import scale from '../constants/responsive';
 import FONT_FAMILY from '../constants/fonts'
 
 export class CustomButton extends React.Component {
@@ -10,19 +9,11 @@ export class CustomButton extends React.Component {
     return (
       <>
         <View style={styles.container}>
-          {this.props.type === 'primary' ? (
-            <TouchableOpacity style={[styles.button, styles.buttonPrimary]} onPress={this.props.onPress}>
-              <Text style={[styles.textButton, styles.textButtonPrimary]}>
+            <TouchableOpacity style={[styles.button, this.props.type === 'primary' ? styles.buttonPrimary : styles.buttonSecondary]} onPress={this.props.onPress}>
+              <Text style={[styles.textButton, this.props.type === 'primary' ? styles.textButtonPrimary : styles.textButtonSecondary]}>
                 {this.props.text}
               </Text>
             </TouchableOpacity>
-          ) : (
-            <TouchableOpacity style={[styles.button, styles.buttonSecondary]} onPress={this.props.onPress}>
-              <Text style={[styles.textButton, styles.textButtonSecondary]}>
-                {this.props.text}
-              </Text>
-            </TouchableOpacity>
-          )}
         </View>
       </>
     );
@@ -41,11 +32,11 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    height: scaleHeight(70),
-    width: scaleWidth(314),
+    height: scale(70,'h'),
+    width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: scaleWidth(30),
+    borderRadius: scale(30),
     alignSelf: 'center',
   },
 
@@ -58,7 +49,7 @@ const styles = StyleSheet.create({
   },
 
   textButton: {
-    fontSize: scaleWidth(17),
+    fontSize: scale(17),
     fontFamily: FONT_FAMILY.Bold,
   },
 

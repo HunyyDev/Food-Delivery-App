@@ -1,9 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import scaleWidth from '../responsive/ScaleWidth';
-import scaleHeight from '../responsive/ScaleHeight';
-import CUSTOM_COLOR from '../constants/colors';
-import FONT_FAMILY from '../constants/fonts';
+import scale from '../../constants/responsive';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
 
 class Label extends React.Component {
   render() {
@@ -24,14 +23,14 @@ export default Label;
 
 const styles = StyleSheet.create({
     label: {
-        fontSize: scaleWidth(17),
+        fontSize: scale(17),
         color: CUSTOM_COLOR.Manatee,
         fontFamily: FONT_FAMILY.Bold,
 
     },
     line: {
-        height: scaleHeight(3),
-        width: scaleWidth(87),
+        height: scale(3,'h'),
+        width: scale(87),
         backgroundColor: 'transparent',
     },
     label_actived: {
