@@ -62,9 +62,15 @@ class HomeScreen extends Component {
           <Text style={styles.delicious}>Delicious food for you</Text>
 
           <View style={styles.SearchView}>
-            <IC_Search top={20} left={20} />
-            <TextInput placeholder="Search" style={styles.search} />
-            {/* <Text style={styles.search}>Search</Text> */}
+            <TouchableOpacity onPress={() => alert('Searching ...')}>
+              <IC_Search top={20} left={20} />
+            </TouchableOpacity>
+
+            <TextInput
+              placeholder="Search"
+              style={styles.search}
+              hitSlop={{top: 20, bottom: 20, left: 100, right: 50}}
+            />
           </View>
           <>
             <ScrollView
@@ -174,12 +180,13 @@ const styles = StyleSheet.create({
   },
   Scroll_View_Item: {
     position: 'relative',
-    top: scale(280),
     alignItems: 'center',
-    height: scale(30),
+    height: scale(50),
   },
   Scroll_View_Navigation: {
     marginLeft: scale(75),
+    flexGrow: 0,
+    top: scale(280),
   },
   OrangeText: {
     color: CUSTOM_COLOR.SunsetOrange,
@@ -247,7 +254,7 @@ const styles = StyleSheet.create({
     marginLeft: scale(50),
     marginRight: scale(52),
     alignItems: 'center',
-    top: scale(-20),
+    top: scale(630),
   },
   HomeStyle: {
     marginTop: 3,

@@ -1,5 +1,5 @@
 const CUSTOM_COLOR = {
-  Gray: '#C5C4C4',
+  Gray: '#E4E4E4',
   White: '#FFFFFF',
   WhiteLogin: '#F6F6F9',
   Black: '#000000',
@@ -7,5 +7,4 @@ const CUSTOM_COLOR = {
   SunsetOrange: '#FF4B3A',
   Search: '#EFEEEE',
 };
-
 export default CUSTOM_COLOR;
