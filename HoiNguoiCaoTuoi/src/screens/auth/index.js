@@ -69,7 +69,7 @@ export default class LoginScreen extends Component {
               <View>
                 <CustomInput label={'Email address'} />
                 {/* Password */}
-                <CustomInput label={'Password'} secureText={true} />
+                <CustomInput label={'Password'} secureTextEntry />
 
                 <TouchableOpacity>
                   <Text style={styles.forgotPasscode}>Forgot passcode?</Text>
@@ -79,9 +79,9 @@ export default class LoginScreen extends Component {
               <View>
                 <CustomInput label={'Email address'} />
                 {/* Password */}
-                <CustomInput label={'Password'} secureText={true} />
+                <CustomInput label={'Password'} secureTextEntry />
                 {/* Confirm Password */}
-                <CustomInput label={'Confirm Password'} secureText={true} />
+                <CustomInput label={'Confirm Password'} secureTextEntry />
               </View>
             )}
           </View>
