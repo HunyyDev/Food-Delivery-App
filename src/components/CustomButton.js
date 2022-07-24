@@ -83,4 +83,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomButton;
+export default React.memo(CustomButton);

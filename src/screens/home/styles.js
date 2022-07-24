@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     paddingHorizontal: 30,
     marginTop: 40,
+    // backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
   productItem: {
     width: 220,
@@ -96,6 +97,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     backgroundColor: 'transparent',
     justifyContent: 'flex-end',
+    // backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
   productInfo: {
     width: '100%',

@@ -23,7 +23,7 @@ const forgot = () => {
   );
 };
 
-export default forgot;
+export default React.memo(forgot);
 
 const styles = StyleSheet.create({
   forgotBackground: {

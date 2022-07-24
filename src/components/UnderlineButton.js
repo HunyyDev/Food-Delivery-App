@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UnderlineButton;
+export default React.memo(UnderlineButton);

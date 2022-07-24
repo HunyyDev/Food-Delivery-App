@@ -7,6 +7,9 @@ import {
   ScrollView,
   Image,
   TextInput,
+  Alert,
+  Pressable,
+  TouchableOpacity,
 } from 'react-native';
 import {
   ICON_33,
@@ -22,6 +25,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import ButtonHome from '../../components/ButtonHome';
 import {IMG_Background, IMG_Logo, IMG_Product_1} from '../../assets/images';
 import styles from './styles';
+import ButtonProduct from '../../components/ButtonProduct';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -30,6 +34,7 @@ export default class HomeScreen extends Component {
       tab: 'Foods',
     };
   }
+
   productList = [
     {
       id: 1,
@@ -56,6 +61,19 @@ export default class HomeScreen extends Component {
       price: 'N2,300.99',
     },
   ];
+
+  ButtonAlert = () => {
+    Alert.alert('Hello', 'Het hang!', [
+      {
+        text: 'Cancel',
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+      },
+    ]);
+  };
+
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -115,20 +133,34 @@ export default class HomeScreen extends Component {
           </View>
         </>
         <>
+          {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={styles.productWrapper}>
+              {this.productList.map(({id, source, title, price}) => (
+                <TouchableOpacity onPress={this.ButtonAlert}>
+                  <View key={id} style={styles.productItem}>
+                    <Image
+                      style={styles.imageWrapper}
+                      source={source}
+                      resizeMode="cover"
+                    />
+                    <View style={styles.productInfo}>
+                      <Text style={styles.titleText}>{title}</Text>
+                      <Text style={styles.priceText}>{price}</Text>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </ScrollView> */}
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.productWrapper}>
               {this.productList.map(({id, source, title, price}) => (
-                <View key={id} style={styles.productItem}>
-                  <Image
-                    style={styles.imageWrapper}
-                    source={source}
-                    resizeMode="cover"
-                  />
-                  <View style={styles.productInfo}>
-                    <Text style={styles.titleText}>{title}</Text>
-                    <Text style={styles.priceText}>{price}</Text>
-                  </View>
-                </View>
+                <ButtonProduct
+                  key={id}
+                  title={title}
+                  source={source}
+                  price={price}
+                />
               ))}
             </View>
           </ScrollView>

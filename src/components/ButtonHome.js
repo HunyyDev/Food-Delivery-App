@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
   }),
 });
 
-export default ButtonHome;
+export default React.memo(ButtonHome);

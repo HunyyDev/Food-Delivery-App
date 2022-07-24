@@ -16,6 +16,7 @@ const CustomInput = props => {
           // value = text;
           setValue(text);
         }}
+        value={value}
         secureTextEntry={props.secure}
       />
     </View>
@@ -47,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomInput;
+export default React.memo(CustomInput);
