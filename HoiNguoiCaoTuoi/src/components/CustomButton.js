@@ -36,14 +36,17 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: scaleWidth(60),
     width: scaleWidth(300),
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    position: 'absolute',
   },
 
   buttonPrimary: {
+    flex: 1,
     backgroundColor: CUSTOM_COLOR.White,
     height: '100%',
     width: '100%',
@@ -51,10 +54,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    position: 'absolute',
   },
-
-  text: {},
-  button: {},
 
   textButtonPrimary: {
     fontSize: scaleWidth(17),
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
   },
 
   buttonSecondary: {
+    flex: 1,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     height: '100%',
     width: '100%',
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    position: 'absolute',
   },
 
   textButtonSecondary: {

@@ -2,5 +2,10 @@
     "cSpell.words": [
         "Nguoi",
         "Tuoi"
-    ]
+    ],
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "markdown.preview.typographer": false,
+    "html.completion.attributeDefaultValue": "singlequotes",
+    "prettier.quoteProps": "consistent"
 }
