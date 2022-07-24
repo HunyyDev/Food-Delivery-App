@@ -13,15 +13,13 @@ import scale from '../../constants/responsive';
 import CustomInput from '../../components/CustomInput';
 import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
-
-const LOGIN = 'LOGIN';
-const SIGN_UP = 'SIGN_UP';
+import SCREEN from '../../constants/screens';
 
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: LOGIN,
+      page: SCREEN.LOGIN,
     };
   }
 
@@ -45,10 +43,10 @@ export default class LoginScreen extends Component {
               <TouchableOpacity
                 style={styles.loginAndSignUp}
                 onPress={() => {
-                  this.setPage(LOGIN);
+                  this.setPage(SCREEN.LOGIN);
                 }}>
                 <Text style={styles.text}>Login</Text>
-                {this.state.page === LOGIN ? (
+                {this.state.page === SCREEN.LOGIN ? (
                   <View style={styles.line}></View>
                 ) : null}
               </TouchableOpacity>
@@ -56,10 +54,10 @@ export default class LoginScreen extends Component {
               <TouchableOpacity
                 style={styles.loginAndSignUp}
                 onPress={() => {
-                  this.setPage(SIGN_UP);
+                  this.setPage(SCREEN.SIGN_UP);
                 }}>
                 <Text style={styles.text}>Sign-up</Text>
-                {this.state.page === SIGN_UP ? (
+                {this.state.page === SCREEN.SIGN_UP ? (
                   <View style={styles.line}></View>
                 ) : null}
               </TouchableOpacity>
@@ -69,7 +67,7 @@ export default class LoginScreen extends Component {
           {/* inputSection */}
 
           <View style={styles.inputSection}>
-            {this.state.page === LOGIN ? (
+            {this.state.page === SCREEN.LOGIN ? (
               <View>
                 <CustomInput label={'Email address'} />
                 {/* Password */}
@@ -92,7 +90,7 @@ export default class LoginScreen extends Component {
 
           {/* buttonSection */}
           <View style={styles.buttonSection}>
-            {this.state.page === LOGIN ? (
+            {this.state.page === SCREEN.LOGIN ? (
               <CustomButton
                 type={'secondary'}
                 text={'Login'}
@@ -164,6 +162,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
   },
+
   loginAndSignUp: {
     width: '50%',
     height: '100%',

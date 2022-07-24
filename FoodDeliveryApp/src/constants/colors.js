@@ -5,7 +5,9 @@ const CUSTOM_COLOR = {
   Silver: '#C5C4C4',
   Black: '#000000',
   Vermilion: '#FA4A0C',
-  SilverWhite: '#F2F2F2'
+  SilverWhite: '#F2F2F2',
+  GalleryApprox: '#EFEEEE',
+  Manatee: '#9A9A9D',
 };
 
 export default CUSTOM_COLOR;
