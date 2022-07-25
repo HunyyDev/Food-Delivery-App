@@ -11,7 +11,7 @@ import CUSTOM_COLOR from '../../constants/color';
 import scale from '../../../responsive';
 import {IMG_LOGO} from '../../assets/images';
 import Custom_InputOne from '../login/components/Custom_InputOne';
-import Custom_ButtonOne from '../../components/Custom_ButtonOne';
+import Custom_ButtonOne from '../../components/CUSTOM_ButtonOne';
 import Custom_SwitchButton from '../login/components/Custom_SwitchButton';
 
 export default class LoginScreen extends Component {
