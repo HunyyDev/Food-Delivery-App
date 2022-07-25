@@ -2,7 +2,7 @@ import scale from '../../../../responsive';
 import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
 import Custom_IconButton from './Custom_IconButton';
-import { ICON_GLASS } from '../../../assets/icons';
+import { IC_Glass } from '../../../assets/icons';
 import CUSTOM_COLOR from '../../../constants/color';
 import FONT_FAMILY from '../../../constants/fonts';
 
@@ -13,7 +13,7 @@ class Custom_SearchBar extends React.Component {
   render() {
     return (
       <View style={styles.searchContainer(this.props)}>
-        <Custom_IconButton style={styles.searchImage} icon={ICON_GLASS} />
+        <Custom_IconButton style={styles.searchImage} icon={IC_Glass} />
         <TextInput
           style={styles.searchInput}
           placeholder={this.props.placeholderText}
