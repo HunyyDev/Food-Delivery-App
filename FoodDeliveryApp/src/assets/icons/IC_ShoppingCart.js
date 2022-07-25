@@ -11,7 +11,7 @@ const SvgComponent = props => (
     {...props}>
     <G
       opacity={0.3}
-      stroke={props.fill}
+      stroke="#000"
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round">
