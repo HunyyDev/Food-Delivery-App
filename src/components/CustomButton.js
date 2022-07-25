@@ -1,19 +1,32 @@
-import React from "react";
-import {TouchableOpacity, StyleSheet, Text, View} from "react-native";
-import CUSTOM_COLOR from '../constants/colors'
+import React from 'react';
+import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
+import CUSTOM_COLOR from '../constants/colors';
 import scale from '../constants/responsive';
-import FONT_FAMILY from '../constants/fonts'
+import FONT_FAMILY from '../constants/fonts';
 
 export class CustomButton extends React.Component {
   render() {
     return (
       <>
         <View style={styles.container}>
-            <TouchableOpacity style={[styles.button, this.props.type === 'primary' ? styles.buttonPrimary : styles.buttonSecondary]} onPress={this.props.onPress}>
-              <Text style={[styles.textButton, this.props.type === 'primary' ? styles.textButtonPrimary : styles.textButtonSecondary]}>
-                {this.props.text}
-              </Text>
-            </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              this.props.type === 'primary'
+                ? styles.buttonPrimary
+                : styles.buttonSecondary,
+            ]}
+            onPress={this.props.onPress}>
+            <Text
+              style={[
+                styles.textButton,
+                this.props.type === 'primary'
+                  ? styles.textButtonPrimary
+                  : styles.textButtonSecondary,
+              ]}>
+              {this.props.text}
+            </Text>
+          </TouchableOpacity>
         </View>
       </>
     );
@@ -32,7 +45,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    height: scale(70,'h'),
+    height: scale(70, 'h'),
     width: scale(314),
     justifyContent: 'center',
     alignItems: 'center',

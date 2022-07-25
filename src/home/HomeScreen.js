@@ -125,10 +125,9 @@ class HomeScreen extends React.Component {
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -136,10 +135,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -147,10 +145,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -158,10 +155,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -169,10 +165,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -180,10 +175,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => alert('Thông tin món ăn:')}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
