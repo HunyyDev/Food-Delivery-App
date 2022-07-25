@@ -1,8 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text, StyleSheet, Dimensions} from 'react-native';
 import scale from '../../responsive';
 
-class CUSTOM_ButtonOne extends React.Component {
+class Custom_ButtonOne extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -26,11 +26,11 @@ class CUSTOM_ButtonOne extends React.Component {
   }
 }
 
-export default CUSTOM_ButtonOne;
+export default Custom_ButtonOne;
 
 const styles = StyleSheet.create({
   touchableContainer: props => ({
-    top: scale(730),
+    top: 0.85 * Dimensions.get('window').height,
     height: scale(65),
     position: 'absolute',
     width: scale(270),

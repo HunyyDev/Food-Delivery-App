@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput} from 'react-native';
-import CUSTOM_COLOR from '../constants/color';
-import scale from '../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
+import scale from '../../../../responsive';
 
-class CUSTOM_InputOne extends React.Component {
+class Custom_InputOne extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,6 +13,7 @@ class CUSTOM_InputOne extends React.Component {
         <View style={styles.viewContainer(this.props)}>
           <Text style={styles.textContainer}>{this.props.text}</Text>
           <TextInput
+            onChangeText={this.props.onChangeText}
             style={styles.textInputContainer}
             placeholder={this.props.placeHolderText}
             placeholderTextColor={this.props.placeholderTextColor}
@@ -24,7 +25,7 @@ class CUSTOM_InputOne extends React.Component {
   }
 }
 
-export default CUSTOM_InputOne;
+export default Custom_InputOne;
 
 const styles = StyleSheet.create({
   viewContainer: props => ({

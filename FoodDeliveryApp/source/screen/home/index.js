@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_IconButton from '../../components/CUSTOM_IconButton';
+import Custom_IconButton from '../home/components/Custom_IconButton';
 import CUSTOM_COLOR from '../../constants/color';
-import CUSTOM_SearchBar from '../../components/CUSTOM_SearchBar';
+import Custom_SearchBar from '../home/components/Custom_SearchBar';
 import FONT_FAMILY from '../../constants/fonts';
 import {
   ICON_HOUSE,
@@ -19,8 +19,8 @@ import {
   ICON_SHOPPING,
 } from '../../assets/icons';
 import scale from '../../../responsive';
-import CUSTOM_FoodScrollView from '../../components/CUSTOM_FoodScrollView';
-import CUSTOM_CategoryScrollView from '../../components/CUSTOM_CategoryScrollView';
+import Custom_FoodScrollView from '../home/components/Custom_FoodScrollView';
+import Custom_CategoryScrollView from '../home/components/Custom_CategoryScrollView';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -32,10 +32,10 @@ export default class HomeScreen extends Component {
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
         <></>
         {/* Icon Menu */}
-        <CUSTOM_IconButton style={styles.menuContainer} icon={ICON_MENU} />
+        <Custom_IconButton style={styles.menuContainer} icon={ICON_MENU} />
         <></>
         {/* Icon Shopping */}
-        <CUSTOM_IconButton
+        <Custom_IconButton
           style={styles.shoppingContainer}
           icon={ICON_SHOPPING}
         />
@@ -46,7 +46,7 @@ export default class HomeScreen extends Component {
         </View>
         <></>
         {/* Search Box */}
-        <CUSTOM_SearchBar
+        <Custom_SearchBar
           placeholderText={'Search'}
           placeholderColor={CUSTOM_COLOR.Black}
           style={styles.searchInput}
@@ -59,14 +59,14 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <></>
         {/* Foods */}
-        <CUSTOM_FoodScrollView style={{top: scale(420)}} />
-        <CUSTOM_CategoryScrollView />
+        <Custom_FoodScrollView style={{top: scale(420)}} />
+        <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
-        <CUSTOM_IconButton style={styles.homeContainer} icon={ICON_HOUSE} />
-        <CUSTOM_IconButton style={styles.heartContainer} icon={ICON_HEART} />
-        <CUSTOM_IconButton style={styles.userContainer} icon={ICON_USER} />
-        <CUSTOM_IconButton style={styles.clockContainer} icon={ICON_CLOCK} />
+        <Custom_IconButton style={styles.homeContainer} icon={ICON_HOUSE} />
+        <Custom_IconButton style={styles.heartContainer} icon={ICON_HEART} />
+        <Custom_IconButton style={styles.userContainer} icon={ICON_USER} />
+        <Custom_IconButton style={styles.clockContainer} icon={ICON_CLOCK} />
       </SafeAreaView>
     );
   }

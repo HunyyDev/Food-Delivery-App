@@ -1,9 +1,9 @@
 import {Text, View, StyleSheet, Image} from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_COLOR from '../constants/color';
-import scale from '../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
+import scale from '../../../../responsive';
 
-export class CUSTOM_FoodBoard extends Component {
+export class Custom_FoodBoard extends Component {
   constructor(props) {
     super(props);
   }
@@ -22,7 +22,7 @@ export class CUSTOM_FoodBoard extends Component {
   }
 }
 
-export default CUSTOM_FoodBoard;
+export default Custom_FoodBoard;
 
 const styles = StyleSheet.create({
   viewContainer: props =>({

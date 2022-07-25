@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
-import scale from '../../responsive';
-import CUSTOM_COLOR from '../constants/color';
+import scale from '../../../../responsive';
+import CUSTOM_COLOR from '../../../constants/color';
 
-export class CUSTOM_UnderlineButton extends Component {
+export class Custom_UnderlineButton extends Component {
   constructor(props) {
     super(props);
   }
@@ -19,7 +19,7 @@ export class CUSTOM_UnderlineButton extends Component {
   }
 }
 
-export default CUSTOM_UnderlineButton;
+export default Custom_UnderlineButton;
 
 const styles = StyleSheet.create({
   background: isChoosing => ({

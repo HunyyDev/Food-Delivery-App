@@ -11,7 +11,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/color';
 import {IMG_BACKGROUND, IMG_LOGO} from '../../assets/images';
 import scale from '../../../responsive';
-import CUSTOM_ButtonOne from '../../components/CUSTOM_ButtonOne';
+import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 
 export default class Onboarding extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ export default class Onboarding extends Component {
 
         {/* button */}
         <>
-          <CUSTOM_ButtonOne
+          <Custom_ButtonOne
             text="Get started"
             color={CUSTOM_COLOR.White}
             textColor={CUSTOM_COLOR.SunsetOrange}
