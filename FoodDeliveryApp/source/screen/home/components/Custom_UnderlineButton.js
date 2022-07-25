@@ -19,7 +19,7 @@ export class Custom_UnderlineButton extends Component {
   }
 }
 
-export default Custom_UnderlineButton;
+export default CUSTOM_UnderlineButton;
 
 const styles = StyleSheet.create({
   background: isChoosing => ({
