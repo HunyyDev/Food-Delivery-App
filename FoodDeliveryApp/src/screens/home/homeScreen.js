@@ -15,10 +15,21 @@ import React, {Component} from 'react';
 import scale from '../../constants/responsive';
 import {Searchbar} from 'react-native-paper';
 import {IC_HomeRaw, IC_SearchRaw} from '../../assets/icons';
-import CustomList from '../../components/HomeScreen/CustomList';
-import CustomCategory from '../../components/HomeScreen/CustomCategory';
+
+import CustomList from './components/CustomList';
+import CustomCategory from './components/CustomCategory';
 import SCREEN from '../../constants/screens';
 export class HomeScreen extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     page: FOODS,
+  //   };
+  // }
+
+  // setPage = newPage => {
+  //   this.setPage({page: newPage});
+  // };
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -77,7 +88,7 @@ export class HomeScreen extends Component {
                 marginBottom: scale(20),
                 textAlign: 'right',
                 fontSize: scale(15),
-                fontFamily: FONT_FAMILY.Medium
+                fontFamily: FONT_FAMILY.Medium,
               }}>
               {'see more'}
             </Text>
@@ -139,7 +150,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: '10%',
-    marginTop: scale(74),
+    marginTop: '10%',
   },
 
   title: {
