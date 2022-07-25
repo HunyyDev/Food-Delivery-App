@@ -1,8 +1,8 @@
 import React from 'react';
-import {TouchableOpacity, Text, StyleSheet, Dimensions} from 'react-native';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import scale from '../../responsive';
 
-class Custom_ButtonOne extends React.Component {
+class CUSTOM_ButtonOne extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
