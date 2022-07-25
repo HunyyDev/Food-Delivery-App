@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import OnBoardingScreen from './src/onBoarding/OnBoardingScreen';
 import LoginScreen from './src/auth/LoginScreen';
