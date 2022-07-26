@@ -3,7 +3,7 @@ import React from 'react';
 import {IC_BackButton} from '../../assets/icons';
 import {IMG_IDPicture} from '../../assets/images';
 import OptionButton from './components/OptionButton';
-import Custom_Button from '../../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
 import styles from './styles';
 const ProfileScreen = props => {
   return (
@@ -56,7 +56,7 @@ const ProfileScreen = props => {
         <OptionButton label="Help" />
       </View>
       <View style={styles.updateButtonContainer}>
-        <Custom_Button type="secondary">Update</Custom_Button>
+        <CustomButton type="secondary">Update</CustomButton>
       </View>
     </ScrollView>
   );

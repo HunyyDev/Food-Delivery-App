@@ -2,7 +2,7 @@ import {Text, Pressable} from 'react-native';
 import {secondary, primary, general} from './styles';
 import React from 'react';
 
-const Custom_Button = props => {
+const CustomButton = props => {
   const {type, children, ...moreProps} = props;
   const styles = (() => {
     switch (type) {
@@ -30,4 +30,4 @@ const Custom_Button = props => {
   );
 };
 
-export default Custom_Button;
+export default CustomButton;
