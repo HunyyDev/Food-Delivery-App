@@ -9,11 +9,12 @@
 import React from 'react';
 import OnboardingScreen from './src/screens/onboarding';
 import HomeScreen from './src/screens/home';
+import RootNavigator from './src/routers/RootNavigator';
 //import LoginScreen from './src/screens/auth';
 import CustomButton from './src/Components/CustomButton';
 //import cu
 const App = props => {
-  return <OnboardingScreen></OnboardingScreen>;
+  return <RootNavigator></RootNavigator>;
   //return <HomeScreen></HomeScreen>;
   //return <LoginScreen></LoginScreen>;
   //return <CustomButton title="Login" type="Primary"></CustomButton>;

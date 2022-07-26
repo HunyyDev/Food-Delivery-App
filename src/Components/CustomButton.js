@@ -37,14 +37,13 @@ export default class CustomButton extends Component {
     };
     return (
       <TouchableOpacity
+        activeOpacity={0.7}
         style={[
           styles.container,
           this.props.style,
           CustomStyleWithType.BackgroundButton,
         ]}
-        onPress={() => {
-          <HomeScreen></HomeScreen>;
-        }}>
+        onPress={this.props.onPress}>
         <Text style={[styles.Title, CustomStyleWithType.colorOfText]}>
           {this.props.title}
         </Text>

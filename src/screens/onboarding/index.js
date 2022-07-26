@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -13,7 +14,12 @@ import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import CustomButton from '../../Components/CustomButton';
 import {types} from '@babel/core';
-const OnboardingScreen = () => {
+import SCREEN_NAME from '../../constants/SCREEN_NAME';
+const OnboardingScreen = props => {
+  const {navigation} = props;
+  const goLoginScreen = () => {
+    navigation.navigate(SCREEN_NAME.Auth);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
@@ -30,7 +36,8 @@ const OnboardingScreen = () => {
       <CustomButton
         type="Primary"
         style={styles.button}
-        title="Login"></CustomButton>
+        title="Login"
+        onPress={goLoginScreen}></CustomButton>
     </SafeAreaView>
   );
 };
