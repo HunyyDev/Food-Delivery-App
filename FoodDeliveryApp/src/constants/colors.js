@@ -8,6 +8,8 @@ const CUSTOM_COLOR = {
   SilverWhite: '#F2F2F2',
   GalleryApprox: '#EFEEEE',
   Manatee: '#9A9A9D',
+  MidGray: '#6A6A6B',
+  AthensGray:'#F5F5F8',
 };
 
 export default CUSTOM_COLOR;
