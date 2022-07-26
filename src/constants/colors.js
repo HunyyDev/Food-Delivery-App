@@ -6,5 +6,6 @@ const CUSTOM_COLOR = {
   Black: '#000000',
   Gallery: '#EFEEEE',
   AthensGray: '#F5F5F8',
+  Transparent: 'transparent',
 };
 export default CUSTOM_COLOR;
