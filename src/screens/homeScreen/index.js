@@ -20,7 +20,7 @@ import {
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_FoodImage} from '../../assets/images';
 
-const App = () => {
+const homeScreen = () => {
   return (
     // Background
     <ScrollView style={styles.backgroundContainer}>
@@ -101,4 +101,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default homeScreen;
