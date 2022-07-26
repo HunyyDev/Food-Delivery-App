@@ -7,3 +7,4 @@ export {default as IC_User} from './IC_User';
 export {default as IC_Back} from './chevron-left.png';
 export {default as IC_Home} from './IC_Home';
 export {default as IC_SearchRaw} from './iconSearch.png';
+export {default as IC_Swipe} from './swipeIcon.png'
