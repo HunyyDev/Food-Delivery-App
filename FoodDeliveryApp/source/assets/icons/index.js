@@ -5,3 +5,5 @@ export {default as ICON_GLASS} from './Glass.png';
 export {default as ICON_MENU} from './Menu.png';
 export {default as ICON_SHOPPING} from './shopping-cart.png';
 export {default as ICON_USER} from './user.png';
+export {default as ICON_TRANSFER} from './Ellipse3.png';
+export {default as ICON_TRANSFERED} from './Ellipse4.png';
