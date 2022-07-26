@@ -10,12 +10,13 @@ import {
 } from 'react-native';
 import React, {Component} from 'react';
 
-import CUSTOM_COLOR from '../constants/colors';
-import FONT_FAMILY from '../constants/fonts';
-import {IMG_Logo} from '../assets/images/index';
-import scale from '../constants/responsive';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
+import {IMG_Logo} from '../../assets/images/index';
+import scale from '../../constants/responsive';
 import CustomInput from './components/CustomInput';
-import CustomButton from '../components/CustomButton';
+import CustomButton from '../../components/CustomButton';
+import SCREEN_NAME from '../../constants/screens';
 
 const LOGIN = 'LOGIN';
 const SIGNUP = 'SIGN_UP';
@@ -86,11 +87,13 @@ export class LoginScreen extends Component {
               <CustomInput
                 label={'Email address'}
                 onChangeText={email => this.setState({email: email})}
+                autoCap = 'none'
               />
               <CustomInput
                 label={'Password'}
                 secureText={true}
                 onChangeText={pass => this.setState({pass: pass})}
+                autoCap = 'none'
               />
             </View>
             {this.state.page === LOGIN ? (
@@ -119,7 +122,7 @@ export class LoginScreen extends Component {
                 if (this.state.email === '' || this.state.password === '') {
                   alert('Bạn chưa điền đầy đủ thông tin!')
                 } else {
-                  if (this.state.page === LOGIN) {this.props.navigation.navigate('Home')}
+                  if (this.state.page === LOGIN) {this.props.navigation.navigate(SCREEN_NAME.HOME)}
                   else {
                     if (this.correctConFirmPassword(this.state.pass, this.state.confirmPass)) {
                       alert('Bạn đã tạo tài khoản thành công!')

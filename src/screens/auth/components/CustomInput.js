@@ -1,8 +1,8 @@
 import {Text, StyleSheet, View, TextInput} from 'react-native';
 import React, {Component} from 'react';
-import FONT_FAMILY from '../../constants/fonts';
-import scale from '../../constants/responsive';
-import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../../constants/fonts';
+import scale from '../../../constants/responsive';
+import CUSTOM_COLOR from '../../../constants/colors';
 
 export default class CustomInput extends Component {
   render() {
@@ -14,7 +14,8 @@ export default class CustomInput extends Component {
             secureTextEntry={this.props.secureText}
             placeholder={this.props.label}
             style={styles.input}
-            onChangeText={this.props.onChangeText}/>
+            onChangeText={this.props.onChangeText}
+            autoCapitalize={this.props.autoCap} />
         </View>
       </>
     );

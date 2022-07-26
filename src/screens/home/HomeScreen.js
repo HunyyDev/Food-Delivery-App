@@ -8,9 +8,9 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-import scale from '../constants/responsive';
-import CUSTOM_COLOR from '../constants/colors';
-import FONT_FAMILY from '../constants/fonts';
+import scale from '../../constants/responsive';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
 import {
   IC_More,
   IC_Cart,
@@ -19,11 +19,11 @@ import {
   IC_Heart,
   IC_User,
   IC_Clock,
-} from '../assets/icons/index';
+} from '../../assets/icons/index';
 import Label from './components/Label';
 import MenuBlock from './components/MenuBlock';
-import {IMG_Dishes_1, IMG_Dishes_2} from '../assets/images/index';
-import InputBox from '../components/InputBox';
+import {IMG_Dishes_1, IMG_Dishes_2} from '../../assets/images/index';
+import InputBox from '../../components/InputBox';
 
 class HomeScreen extends React.Component {
   constructor(props) {

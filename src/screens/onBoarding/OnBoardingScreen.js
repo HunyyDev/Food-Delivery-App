@@ -9,11 +9,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from '../constants/colors';
-import {IMG_Background, IMG_Logo} from '../assets/images/index';
-import FONT_FAMILY from '../constants/fonts';
-import scale from '../constants/responsive';
-import CustomButton from '../components/CustomButton';
+import CUSTOM_COLOR from '../../constants/colors';
+import {IMG_Background, IMG_Logo} from '../../assets/images/index';
+import FONT_FAMILY from '../../constants/fonts';
+import scale from '../../constants/responsive';
+import CustomButton from '../../components/CustomButton';
+import SCREEN_NAME from '../../constants/screens'
 
 class OnBoardingScreen extends React.Component {
   render() {
@@ -44,7 +45,7 @@ class OnBoardingScreen extends React.Component {
                 <CustomButton
                   type="primary"
                   text="Get Started"
-                  onPress={() => this.props.navigation.navigate('Login')}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.LOGIN)}
                 />
               </>
             </ImageBackground>

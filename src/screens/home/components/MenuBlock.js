@@ -1,8 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import scale from '../../constants/responsive';
-import FONT_FAMILY from '../../constants/fonts';
-import CUSTOM_COLOR from '../../constants/colors';
+import scale from '../../../constants/responsive';
+import FONT_FAMILY from '../../../constants/fonts';
+import CUSTOM_COLOR from '../../../constants/colors';
 
 class MenuBlock extends React.Component {
     render() {
