@@ -2,12 +2,24 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/SFProRounded-Bold.ttf",
+      "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
+    },
+    {
       "path": "src/assets/fonts/SFProRounded-Heavy.ttf",
       "sha1": "98361242928114e4734d4547d6153fb2abbf6599"
     },
     {
+      "path": "src/assets/fonts/SFProText-Bold.ttf",
+      "sha1": "632e6cea171b276e5dd1f13b152c702fbf562cee"
+    },
+    {
       "path": "src/assets/fonts/SFProText-Heavy.ttf",
       "sha1": "bfc75c545dbe2a8c7c3d6d6223e42aaa5ccb9432"
+    },
+    {
+      "path": "src/assets/fonts/SFProText-Regular.ttf",
+      "sha1": "b4893462f2289df6978f9462a63db9e64bcc9342"
     },
     {
       "path": "src/assets/fonts/SFProText-Semibold.ttf",
