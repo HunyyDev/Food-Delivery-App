@@ -3,7 +3,7 @@ import React from 'react';
 import {useState} from 'react';
 import styles from './styles';
 
-const Custom_Text_Input = props => {
+const CustomTextInput = props => {
   const {label, ...moreProps} = props;
   const [state, setState] = useState('');
   return (
@@ -19,4 +19,4 @@ const Custom_Text_Input = props => {
   );
 };
 
-export default Custom_Text_Input;
+export default CustomTextInput;
