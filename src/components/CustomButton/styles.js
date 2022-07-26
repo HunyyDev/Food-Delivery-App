@@ -5,7 +5,7 @@ import CUSTOM_COLOR from '../../constants/colors';
 export const general = StyleSheet.create({
   button: {
     width: 314,
-    // height: 70,
+    height: 70,
     alignSelf: 'center',
     fontFamily: FONT_FAMILY.ProTextSemibold,
     fontSize: 18,
@@ -20,24 +20,24 @@ export const general = StyleSheet.create({
 
 export const primary = StyleSheet.create({
   buttonCommentContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
+    color: CUSTOM_COLOR.SunsetYellow,
     borderColor: CUSTOM_COLOR.White,
-    color: CUSTOM_COLOR.SunsetColor,
+    backgroundColor: CUSTOM_COLOR.White,
   },
   buttonPress: {
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
+    backgroundColor: CUSTOM_COLOR.SunsetYellow,
     color: CUSTOM_COLOR.White,
   },
 });
 
 export const secondary = StyleSheet.create({
   buttonCommentContainer: {
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
-    borderColor: CUSTOM_COLOR.White,
     color: CUSTOM_COLOR.White,
+    borderColor: CUSTOM_COLOR.SunsetYellow,
+    backgroundColor: CUSTOM_COLOR.SunsetYellow,
   },
   buttonPress: {
     backgroundColor: CUSTOM_COLOR.White,
-    color: CUSTOM_COLOR.SunsetColor,
+    color: CUSTOM_COLOR.SunsetYellow,
   },
 });
