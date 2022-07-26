@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     width: 220,
     height: 270,
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 30,
     shadowColor: CUSTOM_COLOR.MineShaft,
     shadowOffset: {width: 0, height: 30},
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   foodPrice: {
-    color: CUSTOM_COLOR.Vermillion,
+    color: CUSTOM_COLOR.Vermilion,
     fontFamily: FONT_FAMILY.Bold,
     fontStyle: 'Bold',
     fontSize: 17,
@@ -116,3 +116,5 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
 });
+
+export default styles;

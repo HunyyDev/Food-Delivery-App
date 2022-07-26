@@ -50,7 +50,7 @@ export default OnboardingScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
+    backgroundColor: CUSTOM_COLOR.SunsetYellow,
   },
   logo: {
     width: '100%',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 36,
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     overflow: 'hidden',
     marginTop: 6,
     marginLeft: 40,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 41,
     fontFamily: FONT_FAMILY.Regular,
-    color: CUSTOM_COLOR.white,
+    color: CUSTOM_COLOR.White,
     marginLeft: 40,
   },
   backgroundContainer: {},
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     height: 70,
     width: 314,
     borderRadius: 35,

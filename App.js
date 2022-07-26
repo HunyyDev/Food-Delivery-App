@@ -10,92 +10,52 @@ import {
 import React from 'react';
 import FONT_FAMILY from './src/constants/fonts';
 import CUSTOM_COLOR from './src/constants/colors';
-import {
-  IC_Vector,
-  IC_ShoppingCart,
-  IC_Search,
-  IC_House,
-  IC_Heart,
-  IC_User,
-  IC_Refresh,
-} from './src/assets/icons';
+import {IC_BackButton} from './src/assets/icons';
 import {IMG_FoodImage} from './src/assets/images';
 const App = () => {
   return (
-    // Background
-    <ScrollView style={styles.backgroundContainer}>
-      <View style={styles.navigatorContainer}>
-        {/* Bar */}
-        <Image source={IC_Vector} resizeMode={'contain'} />
-        {/* ShoppingCart */}
-        <Image source={IC_ShoppingCart} resizeMode={'contain'} />
-      </View>
-      {/* FoodText */}
-      <View style={styles.foodTextContainer}>
-        <Text style={styles.foodText}>Delicious food for you</Text>
-      </View>
-      {/* Rectangle */}
-      <View style={styles.rectangleContainer}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={styles.backgroundContainer}>
+      <View style={styles.headerTextContainer}>
         <Image
-          source={IC_Search}
-          style={styles.searchIcon}
+          source={IC_BackButton}
+          style={styles.backButton}
           resizeMode={'contain'}
         />
-        <TextInput
-          placeholder="Search"
-          placeholderTextColor={CUSTOM_COLOR.Black}
-          style={styles.inputSearchText}
-        />
+        <Text style={styles.headerText}>Checkout</Text>
       </View>
-      {/* ScrollView */}
-      <ScrollView horizontal style={styles.ScrollViewStyle}>
-        <View style={styles.scrollViewBox}>
-          <View style={styles.foodImageContainer}>
-            <Image
-              source={IMG_FoodImage}
-              style={styles.foodImageStyle}
-              resizeMode={'contain'}
-            />
-          </View>
-          <Text style={styles.foodName}>Veggie tomato mix</Text>
-          <Text style={styles.foodPrice}>N1,900</Text>
+      <Text style={styles.screenTheme}>Delivery</Text>
+      <View style={styles.underThemeContainer}>
+        <Text style={styles.leftUnderTheme}>Address detail</Text>
+        <Text style={styles.rightUnderTheme}>change</Text>
+      </View>
+      <View style={styles.detailContainer}>
+        <View style={styles.detailNameContainer}>
+          <Text style={styles.detailName}>Marvis Kparobo</Text>
         </View>
-        <View style={styles.scrollViewBox}>
-          <View style={styles.foodImageContainer}>
-            <Image
-              source={IMG_FoodImage}
-              style={styles.foodImageStyle}
-              resizeMode={'cover'}
-            />
-          </View>
-          <Text style={styles.foodName}>Veggie tomato mix</Text>
-          <Text style={styles.foodPrice}>N1,900</Text>
+        <View style={styles.detailAddressContainer}>
+          <Text style={styles.detailAddress}>
+            Km 5 refinery road oppsite re public road, effurun, delta state
+          </Text>
         </View>
-        <View style={styles.scrollViewBox}>
-          <View style={styles.foodImageContainer}>
-            <Image
-              source={IMG_FoodImage}
-              style={styles.foodImageStyle}
-              resizeMode={'cover'}
-            />
-          </View>
-          <Text style={styles.foodName}>Veggie tomato mix</Text>
-          <Text style={styles.foodPrice}>N1,900</Text>
+        <View style={styles.detailNumberContainer}>
+          <Text style={styles.detailNumber}>+234 9011039271</Text>
         </View>
-      </ScrollView>
-      <View style={styles.iconSection}>
-        <TouchableOpacity>
-          <Image source={IC_House} resizeMode={'cover'} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={IC_Heart} resizeMode={'cover'} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={IC_User} resizeMode={'cover'} />
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={IC_Refresh} opacity={0.3} resizeMode={'cover'} />
-        </TouchableOpacity>
+      </View>
+      <Text style={styles.option}>Delivery method.</Text>
+      <View style={styles.detailContainer}>
+        <View style={styles.option1Container}>
+          <Text style={styles.option1}>Door delivery</Text>
+          <View style={styles.underline} />
+        </View>
+        <View style={styles.option2Container}>
+          <Text style={styles.option2}>Pick up</Text>
+        </View>
+      </View>
+      <View style={styles.paymentContainer}>
+        <Text style={styles.paymentText}>Total</Text>
+        <Text style={styles.paymentNumber}>23,000</Text>
       </View>
     </ScrollView>
   );
@@ -105,115 +65,169 @@ export default App;
 
 const styles = StyleSheet.create({
   backgroundContainer: {
-    backgroundColor: CUSTOM_COLOR.Concrete,
-  },
-  foodTextContainer: {
-    width: 190,
-    height: 90,
-    marginLeft: 50,
-    marginTop: 43,
-  },
-  foodText: {
-    fontFamily: FONT_FAMILY.Bold,
-    fontStyle: 'normal',
-    fontSize: 34,
-    lineHeight: 40.57,
-    color: CUSTOM_COLOR.Black,
-  },
-  navigatorContainer: {
-    marginTop: 74,
-    marginLeft: 54,
-    marginRight: 42,
     flex: 1,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
+  },
+  headerTextContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    marginTop: 60,
   },
-  rectangleContainer: {
-    borderRadius: 30,
-    marginTop: 28,
-    marginHorizontal: 50,
-    height: 60,
-    backgroundColor: CUSTOM_COLOR.Gallery,
-    borderColor: CUSTOM_COLOR.Gallery,
-    paddingHorizontal: 35,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+  backButton: {
+    marginLeft: 41,
+    width: 24,
+    height: 24,
   },
-  searchIcon: {
-    width: 18,
-    height: 18,
-    borderCenterWidth: 2,
-    borderColor: CUSTOM_COLOR.Black,
-    borderStyle: 'solid',
-  },
-  inputSearchText: {
-    width: 200,
-    marginLeft: 16,
-    paddingTop: 20,
-    fontFamily: FONT_FAMILY.Bold,
-    fontStyle: 'normal',
-    fontSize: 17,
+  headerText: {
+    marginLeft: 96,
+    fontFamily: FONT_FAMILY.ProTextBold,
+    fontSize: 18,
+    lineHeight: 21,
+    width: 90,
+    height: 25,
     color: CUSTOM_COLOR.Black,
-    lineHeight: 15,
-    opacity: 0.5,
   },
-  ScrollViewStyle: {
-    marginTop: 110,
-    height: 320,
+  screenTheme: {
+    marginTop: 45,
+    width: 150,
+    height: 45,
+    marginLeft: 50,
+    fontFamily: FONT_FAMILY.ProTextBold,
+    fontSize: 34,
+    lineHeight: 41,
+    color: CUSTOM_COLOR.Black,
   },
-  scrollViewBox: {
-    alignSelf: 'flex-end',
-    width: 220,
-    height: 270,
-    backgroundColor: CUSTOM_COLOR.white,
-    borderRadius: 30,
-    shadowColor: CUSTOM_COLOR.MineShaft,
-    shadowOffset: {width: 0, height: 30},
-    shadowRadius: 60,
-    shadowOpacity: 0.1,
-    marginHorizontal: 25,
-    justifyContent: 'center',
+  underThemeContainer: {
+    marginTop: 45,
+    flexDirection: 'row',
   },
-  foodImageContainer: {
-    position: 'absolute',
-    top: -50,
-  },
-  foodImageStyle: {
-    position: 'absolute',
-    marginHorizontal: 24,
-    height: 164,
-    width: 164,
-    zIndex: 5,
-    elevation: 5,
-    borderRadius: 9999,
-    padding: 0,
-  },
-  foodName: {
-    position: 'relative',
-    alignSelf: 'center',
-    fontFamily: FONT_FAMILY.Bold,
-    fontSize: 22,
-    lineHeight: 22,
-    top: 30,
-    width: 130,
+  leftUnderTheme: {
+    marginLeft: 53,
+    fontFamily: FONT_FAMILY.ProTextBold,
+    width: 140,
     height: 55,
-    color: CUSTOM_COLOR.Black,
-    opacity: 0.9,
-    textAlign: 'center',
-  },
-  foodPrice: {
-    color: CUSTOM_COLOR.Vermillion,
-    fontFamily: FONT_FAMILY.Bold,
-    fontStyle: 'Bold',
     fontSize: 17,
-    alignSelf: 'center',
-    top: 50,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
   },
-  iconSection: {
+  rightUnderTheme: {
+    marginLeft: 121,
+    color: CUSTOM_COLOR.TahitiGold,
+    width: 55,
+    height: 20,
+    fontSize: 15,
+    lineHeight: 18,
+    fontFamily: FONT_FAMILY.ProTextRegular,
+  },
+  detailContainer: {
+    marginTop: 22,
+    backgroundColor: CUSTOM_COLOR.White,
+    width: 315,
+    height: 156,
+    marginHorizontal: 50,
+    borderRadius: 20,
+    shadowRadius: 40,
+    shadowOffset: {width: 0, height: 10},
+    shadowColor: CUSTOM_COLOR.Black,
+    shadowOpacity: 0.03,
+  },
+  detailNameContainer: {
+    position: 'absolute',
+    top: 25,
+    left: 30,
+    bottom: 103,
+    right: 53,
+    borderBottomWidth: 0.5,
+  },
+  detailName: {
+    fontFamily: FONT_FAMILY.ProTextBold,
+    fontSize: 17,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
+  },
+  detailAddressContainer: {
+    position: 'absolute',
+    top: 61,
+    left: 30,
+    right: 53,
+    bottom: 51,
+    borderBottomWidth: 0.5,
+  },
+  detailAddress: {
+    fontFamily: FONT_FAMILY.ProTextRegular,
+    fontSize: 15,
+    lineHeight: 18,
+    color: CUSTOM_COLOR.Black,
+  },
+  detailNumberContainer: {
+    paddingLeft: 30,
+    marginTop: 113,
+  },
+  detailNumber: {
+    color: CUSTOM_COLOR.Black,
+    fontFamily: FONT_FAMILY.ProTextRegular,
+    fontSize: 15,
+    lineHeight: 18,
+  },
+  option: {
+    fontFamily: FONT_FAMILY.ProTextBold,
+    fontSize: 17,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
+    marginTop: 42,
+    marginLeft: 56,
+  },
+  option1Container: {
+    width: 315,
+    height: 75,
+  },
+  option1: {
+    opacity: 1,
+    paddingLeft: 52,
+    paddingTop: 30,
+    fontFamily: FONT_FAMILY.ProTextRegular,
+    fontSize: 17,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
+  },
+  underline: {
+    marginTop: 25,
+    marginLeft: 52,
+    marginRight: 32,
+    height: 0,
+    borderWidth: 0.5,
+    opacity: 0.3,
+  },
+  option2Container: {
+    height: 81,
+    width: 315,
+    borderRadius: 20,
+  },
+  option2: {
+    paddingTop: 25,
+    paddingLeft: 52,
+    fontFamily: FONT_FAMILY.ProTextRegular,
+    fontSize: 17,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
+  },
+  paymentContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 20,
-    marginBottom: 50,
+    marginTop: 67,
+    marginHorizontal: 50,
+    height: 30,
+  },
+  paymentText: {
+    marginTop: 5,
+    fontFamily: FONT_FAMILY.ProTextRegular,
+    fontSize: 17,
+    lineHeight: 20,
+    color: CUSTOM_COLOR.Black,
+  },
+  paymentNumber: {
+    marginLeft: 200,
+    fontFamily: FONT_FAMILY.ProTextBold,
+    fontSize: 22,
+    lineHeight: 26,
+    color: CUSTOM_COLOR.Black,
   },
 });

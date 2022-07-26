@@ -1,10 +1,12 @@
 const CUSTOM_COLOR = {
-  SunsetColor: '#FF4B3A',
-  white: '#FFFFFF',
+  SunsetYellow: '#FF4B3A',
+  White: '#FFFFFF',
   Concrete: '#F2F2F2',
   Gallery: '#EFEEEE',
   Black: '#000000',
   MineShaft: '#393939',
-  Vermillion: '#FA4A0C',
+  Vermilion: '#FA4A0C',
+  AthensGray: '#F5F5F8',
+  TahitiGold: '#F47B0A',
 };
 export default CUSTOM_COLOR;
