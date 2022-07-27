@@ -4,8 +4,12 @@ const CUSTOM_COLOR = {
   White: '#FFFFFF',
   Black: '#000000',
   Silver: '#C5C4C4',
+<<<<<<< HEAD
   Concrete: '#F2F2F2',
   Gallery: '#EFEEEE',
   Manatee: "#9A9A9D"
+=======
+  CornflowerBlue: '#EFEEEE',
+>>>>>>> e0f302ad806d4cf4d050e2cfe5c96e36f843c481
 };
 export default CUSTOM_COLOR;
