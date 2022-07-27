@@ -29,6 +29,9 @@ export default class HomeScreen extends Component {
       nav_selected: 'Home',
     };
   }
+  navigate = location => {
+    this.props.navigation.navigate(location);
+  };
   render() {
     return (
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
@@ -40,7 +43,9 @@ export default class HomeScreen extends Component {
 
         <></>
         {/* Icon Shopping */}
-        <TouchableOpacity style={[styles.iconContainer, styles.ic_cart]}>
+        <TouchableOpacity
+          style={[styles.iconContainer, styles.ic_cart]}
+          onPress={() => this.navigate("Cart")}>
           <IC_Cart />
         </TouchableOpacity>
         <></>

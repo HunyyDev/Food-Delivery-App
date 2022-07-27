@@ -54,6 +54,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontsFree-Net-SF-Pro-Rounded-Heavy.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-Medium.ttf</string>
 	</array>
 </dict>
 </plist>
