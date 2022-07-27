@@ -5,79 +5,97 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Image,
+  TextInput,
 } from 'react-native';
 import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import CustomIcon from '../../components/CustomIcon';
 import React, {Component} from 'react';
 import scale from '../../constants/responsive';
-import {Searchbar} from 'react-native-paper';
-import {IC_HomeRaw, IC_SearchRaw} from '../../assets/icons';
+import {
+  IC_Cart,
+  IC_Home,
+  IC_Menu,
+  IC_Heart,
+  IC_User,
+  IC_History,
+  IC_Search,
+} from '../../assets/icons';
 
 import CustomList from './components/CustomList';
 import CustomCategory from './components/CustomCategory';
 import SCREEN from '../../constants/screens';
 export class HomeScreen extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     page: FOODS,
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: SCREEN.FOODS,
+      initialBottomNav: 'Home',
+    };
+  }
 
-  // setPage = newPage => {
-  //   this.setPage({page: newPage});
-  // };
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.headerSection}>
           <View style={styles.iconHeaderSection}>
-            <TouchableOpacity>
-              <CustomIcon type="menu" fill="#000000" />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Loading')}>
+              <IC_Menu />
             </TouchableOpacity>
-            <TouchableOpacity>
-              <CustomIcon type="cart" fill="#000000" />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Cart')}>
+              <IC_Cart />
             </TouchableOpacity>
           </View>
           <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
 
-          <Searchbar
-            placeholder="Search"
-            icon={IC_SearchRaw}
-            style={styles.searchBar}
-          />
+          {/* <Searchbar
+              placeholder="Search"
+              icon={IC_SearchRaw}
+              style={styles.searchBar}
+            /> */}
+          <View style={styles.searchBar}>
+            <View style={{marginLeft: scale(35), marginRight: scale(16)}}>
+              <IC_Search />
+            </View>
+            <TextInput placeholder="Search" />
+          </View>
         </View>
 
         <View style={styles.mainSection}>
           <View style={styles.customCategory}>
             <ScrollView horizontal={true}>
               <CustomCategory
-                onPress={() => this.setOnPress(SCREEN.FOODS, true)}
+                onPress={() => {
+                  this.setState({page: SCREEN.FOODS});
+                }}
                 name={'Foods'}
-                style={styles.textHeadingMain}
+                isClicked={this.state.page === SCREEN.FOODS ? 'true' : 'false'}
               />
 
               <CustomCategory
                 onPress={() => {
-                  this.setOnPress(SCREEN.DRINKS, true);
+                  this.setState({page: SCREEN.DRINKS});
                 }}
                 name={'Drinks'}
-                style={styles.textHeadingMain}
+                isClicked={this.state.page === SCREEN.DRINKS ? 'true' : 'false'}
               />
 
               <CustomCategory
-                onPress={() => this.setOnPress(SCREEN.SNACKS, true)}
+                onPress={() => {
+                  this.setState({page: SCREEN.SNACKS});
+                }}
                 name={'Snacks'}
-                style={styles.textHeadingMain}
+                isClicked={this.state.page === SCREEN.SNACKS ? 'true' : 'false'}
               />
 
               <CustomCategory
-                onPress={() => this.setOnPress(SCREEN.SAUCES, true)}
+                onPress={() => {
+                  this.setState({page: SCREEN.SAUCES});
+                }}
                 name={'Sauces'}
-                style={styles.textHeadingMain}
+                isClicked={this.state.page === SCREEN.SAUCES ? 'true' : 'false'}
               />
             </ScrollView>
           </View>
@@ -116,17 +134,47 @@ export class HomeScreen extends Component {
         </View>
 
         <View style={styles.iconSection}>
-          <TouchableOpacity>
-            <Image source={IC_HomeRaw} />
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({initialBottomNav: 'Home'});
+            }}>
+            <IC_Home
+              fill={
+                this.state.initialBottomNav === 'Home' ? '#FA4A0C' : '#ADADAF'
+              }
+            />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <CustomIcon type="heart" fill="#000000" />
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({initialBottomNav: 'Heart'});
+            }}>
+            <IC_Heart
+              fill={
+                this.state.initialBottomNav === 'Heart' ? '#FA4A0C' : '#ADADAF'
+              }
+            />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <CustomIcon type="user" fill="#000000" />
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({initialBottomNav: 'User'});
+            }}>
+            <IC_User
+              fill={
+                this.state.initialBottomNav === 'User' ? '#FA4A0C' : '#ADADAF'
+              }
+            />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <CustomIcon type="history" fill="#000000" />
+          <TouchableOpacity
+            onPress={() => {
+              this.setState({initialBottomNav: 'History'});
+            }}>
+            <IC_History
+              fill={
+                this.state.initialBottomNav === 'History'
+                  ? '#FA4A0C'
+                  : '#ADADAF'
+              }
+            />
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -162,10 +210,13 @@ const styles = StyleSheet.create({
   },
 
   searchBar: {
-    borderRadius: scale(30),
     backgroundColor: CUSTOM_COLOR.GalleryApprox,
-    marginHorizontal: scale(50),
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: '75%',
     height: scale(60),
+    alignSelf: 'center',
+    borderRadius: 30,
   },
 
   mainSection: {
