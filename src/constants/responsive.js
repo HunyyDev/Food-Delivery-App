@@ -5,10 +5,14 @@ const widthOfDesign = 414;
 const height = Dimensions.get('screen').height;
 const heightOfDesign = 414;
 
-function scaleWidth(number) {
-  return (width / widthOfDesign) * number;
-}
-function scaleHeight(number) {
-  return (height / heightOfDesign) * number;
-}
-export default scaleWidth;
+const scale = {
+  scaleWidth(number) {
+    return (width / widthOfDesign) * number;
+  },
+
+  scaleHeight(number) {
+    return (height / heightOfDesign) * number;
+  },
+};
+
+export default scale;

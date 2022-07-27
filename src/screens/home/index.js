@@ -11,7 +11,7 @@ import {
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import ListButton from '../../components/ListButton';
-import scaleWidth from '../../constants/responsive';
+import scale from '../../constants/responsive';
 import CustomDish from '../../components/CustomDish';
 
 import {
@@ -93,8 +93,8 @@ export class HomeScreen extends Component {
               horizontal={true}
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{
-                paddingVertical: scaleWidth(5),
-                paddingHorizontal: scaleWidth(15),
+                paddingVertical: scale.scaleWidth(5),
+                paddingHorizontal: scale.scaleWidth(15),
               }}>
               <CustomDish
                 source={IMG_dish2}
@@ -148,20 +148,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-    marginTop: scaleWidth(64),
-    marginBottom: scaleWidth(30),
+    marginTop: scale.scaleWidth(64),
+    marginBottom: scale.scaleWidth(30),
   },
   Menu: {
-    marginLeft: scaleWidth(54.6),
+    marginLeft: scale.scaleWidth(54.6),
   },
   ShoppingCart: {
-    marginRight: scaleWidth(41),
+    marginRight: scale.scaleWidth(41),
   },
   containerText: {
     width: 190,
     height: 82,
-    marginLeft: scaleWidth(50),
-    marginTop: scaleWidth(19.33),
+    marginLeft: scale.scaleWidth(50),
+    marginTop: scale.scaleWidth(19.33),
   },
   Content: {
     fontSize: 34,
@@ -170,10 +170,10 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
   },
   Search: {
-    borderRadius: scaleWidth(30),
-    marginTop: scaleWidth(26),
-    width: scaleWidth(314),
-    height: scaleWidth(60),
+    borderRadius: scale.scaleWidth(30),
+    marginTop: scale.scaleWidth(26),
+    width: scale.scaleWidth(314),
+    height: scale.scaleWidth(60),
     backgroundColor: CUSTOM_COLOR.Gallery,
     flexDirection: 'row',
     alignSelf: 'center',
@@ -181,10 +181,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   SearchLogo: {
-    marginLeft: scaleWidth(35),
+    marginLeft: scale.scaleWidth(35),
   },
   SearchText: {
-    marginLeft: scaleWidth(16),
+    marginLeft: scale.scaleWidth(16),
     fontSize: 17,
     fontFamily: FONT_FAMILY.Medium,
     color: CUSTOM_COLOR.Black,
@@ -199,21 +199,21 @@ const styles = StyleSheet.create({
   seemoreButton: {
     fontFamily: FONT_FAMILY.Regular,
     color: CUSTOM_COLOR.Vermilion,
-    fontSize: scaleWidth(15),
+    fontSize: scale.scaleWidth(15),
   },
   seemoreContainer: {
     alignItems: 'flex-end',
-    marginRight: scaleWidth(41),
-    marginTop: scaleWidth(43),
+    marginRight: scale.scaleWidth(41),
+    marginTop: scale.scaleWidth(43),
   },
   MenuScroll: {
     height: 355,
-    maxHeight: scaleWidth(355),
-    marginTop: scaleWidth(1),
+    maxHeight: scale.scaleWidth(355),
+    marginTop: scale.scaleWidth(1),
   },
   ListButton: {
-    height: scaleWidth(46),
-    maxHeight: scaleWidth(46),
-    marginTop: scaleWidth(32),
+    height: scale.scaleWidth(46),
+    maxHeight: scale.scaleWidth(46),
+    marginTop: scale.scaleWidth(32),
   },
 });
