@@ -5,3 +5,4 @@ export {default as IC_Glass} from './IC_Search';
 export {default as IC_Menu} from './IC_Menu';
 export {default as IC_Cart} from './IC_Cart';
 export {default as IC_User} from './IC_User';
+export {default as IC_BigSearch} from './IC_BigSearch'

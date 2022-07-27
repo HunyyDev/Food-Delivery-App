@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
-import Custom_IconButton from '../home/components/Custom_IconButton';
 import CUSTOM_COLOR from '../../constants/color';
 import Custom_SearchBar from '../home/components/Custom_SearchBar';
 import FONT_FAMILY from '../../constants/fonts';
@@ -68,10 +67,6 @@ export default class HomeScreen extends Component {
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
-        {/* <Custom_IconButton style={styles.homeContainer} icon={IC_House} />
-        <Custom_IconButton style={styles.heartContainer} icon={IC_Heart} />
-        <Custom_IconButton style={styles.userContainer} icon={IC_User} />
-        <Custom_IconButton style={styles.clockContainer} icon={IC_Clock} /> */}
         <View style={styles.footContainer}>
           <TouchableOpacity
             onPress={() => {
