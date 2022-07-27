@@ -92,7 +92,8 @@ const styles = StyleSheet.create({
   containerHeading: {
     flex: 2,
     backgroundColor: CUSTOM_COLOR.White,
-    borderRadius: 30,
+    borderBottomStartRadius: 30,
+    borderBottomEndRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
   },
