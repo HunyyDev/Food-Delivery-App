@@ -14,18 +14,18 @@ const styles = StyleSheet.create({
   backButton: {
     marginLeft: 50,
   },
-  orderTextContainer: {
-    marginLeft: 110,
-    width: 63,
+  historyTextContainer: {
+    marginLeft: 120,
+    width: 67,
     height: 21,
   },
-  ordersText: {
+  historyText: {
     fontFamily: FONT_FAMILY.ProTextBold,
     fontSize: 18,
     lineHeight: 21,
     color: CUSTOM_COLOR.Black,
   },
-  bigShoppingCart: {
+  history: {
     marginTop: 190,
     alignSelf: 'center',
   },
@@ -61,4 +61,5 @@ const styles = StyleSheet.create({
     marginBottom: 40,
   },
 });
+
 export default styles;
