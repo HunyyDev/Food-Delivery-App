@@ -5,3 +5,6 @@ export {default as ICON_heart} from './heart.png';
 export {default as ICON_user} from './user.png';
 export {default as ICON_clock} from './ic_sharp-history.png';
 export {default as ICON_33} from './Vectornew.png';
+export {default as ICON_CHEVRON} from './chevron-left.png';
+export {default as ICON_CREDIT_CARD} from './bi_credit-card-2-front-fill.png';
+export {default as ICON_DASHICONS_BANK} from './dashicons_bank.png';

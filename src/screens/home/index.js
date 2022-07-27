@@ -133,25 +133,6 @@ export default class HomeScreen extends Component {
           </View>
         </>
         <>
-          {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={styles.productWrapper}>
-              {this.productList.map(({id, source, title, price}) => (
-                <TouchableOpacity onPress={this.ButtonAlert}>
-                  <View key={id} style={styles.productItem}>
-                    <Image
-                      style={styles.imageWrapper}
-                      source={source}
-                      resizeMode="cover"
-                    />
-                    <View style={styles.productInfo}>
-                      <Text style={styles.titleText}>{title}</Text>
-                      <Text style={styles.priceText}>{price}</Text>
-                    </View>
-                  </View>
-                </TouchableOpacity>
-              ))}
-            </View>
-          </ScrollView> */}
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.productWrapper}>
               {this.productList.map(({id, source, title, price}) => (

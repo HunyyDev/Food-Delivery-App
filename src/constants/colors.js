@@ -7,6 +7,9 @@ const CUSTOM_COLOR = {
   Concrete: '#F2F2F2',
   Gallery: '#EFEEEE',
   Manatee: '#9A9A9D',
+  Tahiti_Gold: '#F47B0A',
+  Transparent: 'transparent',
+  French_Rose: '#EB4796',
 };
 
 export default CUSTOM_COLOR;
