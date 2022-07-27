@@ -3,7 +3,7 @@ import React from 'react';
 import CustomButton from '../../components/CustomButton';
 import {IC_NoConnection} from './icons';
 import styles from './styles';
-const ConnectionErrorScreen = () => {
+const ConnectionErrorScreen = props => {
   return (
     <ScrollView style={styles.container}>
       <Image source={IC_NoConnection} style={styles.noConnection} />
