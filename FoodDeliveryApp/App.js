@@ -20,7 +20,7 @@ const App = () => {
     //       <Stack.Screen name="Home" component={HomeScreen} />
     //     </Stack.Navigator>
     // </NavigationContainer>
-    <CheckOut2Screen></CheckOut2Screen>
+    <SearchScreen />
   );
 };
 
