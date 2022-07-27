@@ -2,12 +2,10 @@ import React from 'react';
 import OnBoardingScreen from './src/screens/OnBoardingScreen';
 import Login from './src/screens/auth/Login';
 import HomeScreen from './src/screens/HomeScreen';
-import { createNavigator } from 'react-navigation';
+import {createNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation';
 
-import { Text } from 'react-native';
-
-
+import {Text} from 'react-native';
 
 const App = () => {
   return (
@@ -19,12 +17,11 @@ const App = () => {
 
 export default App;
 
-
 // import React from 'react';
 // import OnBoardingScreen from './src/screens/OnBoardingScreen';
 // import Login from './src/screens/auth/Login';
 // import HomeScreen from './src/screens/HomeScreen';
-import { NavigationContainer } from 'react-navigation';
+import {NavigationContainer} from 'react-navigation';
 
 // const Stack = createNativeStackNavigator();
 
@@ -39,5 +36,5 @@ import { NavigationContainer } from 'react-navigation';
 //     </NavigationContainer>
 //   );
 // };
-  
+
 // export default App;
