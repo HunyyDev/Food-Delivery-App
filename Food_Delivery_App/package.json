@@ -13,7 +13,7 @@
     "@react-navigation/native": "^6.0.11",
     "react": "18.0.0",
     "react-native": "0.69.1",
-    "react-native-svg": "^12.4.0"
+    "react-native-svg": "^12.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
