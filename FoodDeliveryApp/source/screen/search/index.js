@@ -17,7 +17,7 @@ const SearchScreen = () => {
           hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
         />
       </>
-      {/* title */}
+      {/* title hidden*/}
       <>
       <View style={styles.viewHidden}>
         <Text style={styles.textHidden}>Found 6 results</Text>
