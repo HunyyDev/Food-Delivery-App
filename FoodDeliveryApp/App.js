@@ -2,8 +2,9 @@ import React from 'react';
 import LoginScreen from './source/screen/login';
 import Onboarding from './source/screen/onboarding';
 import HomeScreen from './source/screen/home';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CartScreen from './source/screen/cart';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CheckOut2Screen from './source/screen/checkout/checkout2';
 import SearchScreen from './source/screen/search';
 
@@ -22,6 +23,5 @@ const App = () => {
     <CheckOut2Screen></CheckOut2Screen>
   );
 };
-  
+
 export default App;
-  

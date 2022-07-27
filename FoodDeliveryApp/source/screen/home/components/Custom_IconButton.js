@@ -7,9 +7,14 @@ export default class Custom_IconButton extends Component {
     super(props);
     this.state = {};
   }
+  navigate = location => {
+    this.props.navigation.navigate(location);
+  };
   render() {
     return (
-      <TouchableOpacity style={styles.touchableContainer(this.props)}>
+      <TouchableOpacity
+        style={styles.touchableContainer(this.props)}
+        onPress={this.props.onPress}>
         <Image source={this.props.icon} style={styles.iconContainer} />
       </TouchableOpacity>
     );

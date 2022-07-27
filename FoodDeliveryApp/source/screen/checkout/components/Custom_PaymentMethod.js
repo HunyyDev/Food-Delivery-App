@@ -1,43 +1,59 @@
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../../constants/color';
 import scale from '../../../../responsive';
-import { IMG_LINE } from '../../../assets/images';
+import {IMG_LINE} from '../../../assets/images';
 
-
-const Custom_PaymentMethod = (props) => {
-    const [isSelect, setIsSelect] = useState('0');
-    return (
-      <View style={styles.viewContainer(props)}>
-            <TouchableOpacity onPress={() => {setIsSelect('1');}}  style={styles.touchContainer1}>
-                <View style={styles.selectBorder}>
-                    <View  backgroundColor={isSelect === '1' ? CUSTOM_COLOR.SunsetOrange : 'transparent'  } style={styles.select}/>
-                </View>
-                <View style={styles.selectImageView1}>
-                  <Image source={props.img1} style={styles.selectImage}/>
-                </View>
-                <Text style={styles.selectText1}>{props.selectText1}</Text>
-            </TouchableOpacity>
-            <Image source={IMG_LINE} style={styles.lineContainer}/> 
-            {/* <View  style={styles.lineContainer}/> */}
-            <TouchableOpacity onPress={() => {setIsSelect('2');}}  style={styles.touchContainer2}>
-                <View style={styles.selectBorder}>
-                    <View backgroundColor={isSelect === '2' ? CUSTOM_COLOR.SunsetOrange : 'transparent'} style={styles.select}/>
-                </View>
-                <View style={styles.selectImageView2}>
-                  <Image source={props.img2} style={styles.selectImage}/>
-                </View>
-                <Text style={styles.selectText2}>{props.selectText2}</Text>
-            </TouchableOpacity>           
-      </View>
-    );
-}
+const Custom_PaymentMethod = props => {
+  const [isSelect, setIsSelect] = useState('0');
+  return (
+    <View style={styles.viewContainer(props)}>
+      <TouchableOpacity
+        onPress={() => {
+          setIsSelect('1');
+        }}
+        style={styles.touchContainer1}>
+        <View style={styles.selectBorder}>
+          <View
+            backgroundColor={
+              isSelect === '1' ? CUSTOM_COLOR.SunsetOrange : 'transparent'
+            }
+            style={styles.select}
+          />
+        </View>
+        <View style={styles.selectImageView1}>
+          <Image source={props.img1} style={styles.selectImage} />
+        </View>
+        <Text style={styles.selectText1}>{props.selectText1}</Text>
+      </TouchableOpacity>
+      <Image source={IMG_LINE} style={styles.lineContainer} />
+      {/* <View  style={styles.lineContainer}/> */}
+      <TouchableOpacity
+        onPress={() => {
+          setIsSelect('2');
+        }}
+        style={styles.touchContainer2}>
+        <View style={styles.selectBorder}>
+          <View
+            backgroundColor={
+              isSelect === '2' ? CUSTOM_COLOR.SunsetOrange : 'transparent'
+            }
+            style={styles.select}
+          />
+        </View>
+        <View style={styles.selectImageView2}>
+          <Image source={props.img2} style={styles.selectImage} />
+        </View>
+        <Text style={styles.selectText2}>{props.selectText2}</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default Custom_PaymentMethod;
 
-
 const styles = StyleSheet.create({
-  viewContainer: props =>({
+  viewContainer: props => ({
     flexDirection: 'column',
     backgroundColor: CUSTOM_COLOR.White,
     width: scale(315),
@@ -51,7 +67,7 @@ const styles = StyleSheet.create({
     width: scale(262),
     backgroundColor: CUSTOM_COLOR.White,
     flexDirection: 'row',
-},
+  },
   lineContainer: {
     width: scale(200),
     left: scale(75),
@@ -64,7 +80,7 @@ const styles = StyleSheet.create({
     width: scale(190),
     backgroundColor: CUSTOM_COLOR.White,
     flexDirection: 'row',
-},
+  },
   selectBorder: {
     top: scale(15),
     width: scale(15),
@@ -72,7 +88,7 @@ const styles = StyleSheet.create({
     borderRadius: 360,
     borderColor: CUSTOM_COLOR.SunsetOrange,
     borderWidth: 0.5,
-    alignItems:'center',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   select: {
@@ -100,7 +116,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: scale(13),
     top: scale(13),
-    fill: CUSTOM_COLOR.White
+    fill: CUSTOM_COLOR.White,
   },
   selectText1: {
     fontSize: scale(17),
@@ -120,5 +136,4 @@ const styles = StyleSheet.create({
     left: scale(81),
     top: scale(10),
   },
- 
 });

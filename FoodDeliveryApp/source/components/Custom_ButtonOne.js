@@ -18,6 +18,7 @@ class Custom_ButtonOne extends React.Component {
         <Text
           style={{
             color: this.props.textColor,
+            ...this.props.textStyle
           }}>
           {this.props.text}
         </Text>
