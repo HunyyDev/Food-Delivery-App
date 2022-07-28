@@ -28,7 +28,7 @@ import FONT_FAMILY from '../../constants/fonts';
 const HomeScreen = props => {
   const {navigation} = props;
   const onTransitToList = () => {
-    navigation.navigate(SCREEN_NAME.PRODUCT_LIST);
+    navigation.navigate(SCREEN_NAME.PRODUCT_DETAIL);
   };
   const [onChangeText] = React.useState(null);
 

@@ -12,4 +12,5 @@ export {default as img_Mask3} from './Group_6.png';
 
 export {default as img_dish1} from './image1.png';
 
-
+export {default as ICOnBack} from './IC_OnBack';
+export {default as ICHeart} from './IC_Heart';
