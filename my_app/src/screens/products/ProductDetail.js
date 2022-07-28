@@ -59,9 +59,53 @@ const ProductDetail = props => {
           </TouchableOpacity>
         </View>
       </>
+
       <>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Veggie tomato mix'}</Text>
+        </View>
+      </>
+
+      <>
+        <View style={styles.priceContainer}>
+          <Text style={styles.titlePrice}>{'N1,900'}</Text>
+        </View>
+      </>
+
+      <>
+        <View>
+          <Text style={[styles.titleInfo, {marginTop: scale(30)}]}>
+            {'Delivery info'}
+          </Text>
+        </View>
+
+        <View style={styles.deliveryInfoContainer}>
+          <Text style={[styles.textBox]}>
+            {
+              'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm'
+            }
+          </Text>
+        </View>
+      </>
+
+      <>
+        <View>
+          <Text style={[styles.titleInfo, {marginTop: scale(15)}]}>
+            {'Return policy'}
+          </Text>
+        </View>
+
+        <View style={styles.returnPolicyContainer}>
+          <Text style={[styles.textBox]}>
+            {
+              'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.'
+            }
+          </Text>
+          <>
+            <TouchableOpacity style={styles.buttonSecondary}>
+              <Text style={styles.titleButtonSecondary}>{'Add to cart'}</Text>
+            </TouchableOpacity>
+          </>
         </View>
       </>
 
@@ -82,7 +126,7 @@ const styles = StyleSheet.create({
 
   icContainer: {
     flexDirection: 'row',
-    marginTop: scale(65),
+    marginTop: scale(35),
     marginLeft: scale(50),
     marginRight: scale(55.29),
     justifyContent: 'space-between',
@@ -90,40 +134,98 @@ const styles = StyleSheet.create({
   },
 
   backgroundImage: {
-    width: Dimensions.get('window').width,
-    height: 269.09,
+    width: scale(405.73),
+    height: scale(269.09),
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: CUSTOM_COLOR.Silver,
+    //backgroundColor: CUSTOM_COLOR.Silver,
   },
 
   ellipseContainer: {
     flexDirection: 'row',
-    marginTop: scale(65),
+    marginTop: scale(23.85),
     marginLeft: scale(172),
     marginRight: scale(174),
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    //backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
 
   titleContainer: {
     //flexDirection: 'row-reverse',
-    marginTop: scale(76.85),
+    marginTop: scale(20),
     width: scale(318),
     height: scale(52),
     marginLeft: scale(48),
     marginRight: scale(48),
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: CUSTOM_COLOR.Silver,
+    //backgroundColor: CUSTOM_COLOR.Silver,
   },
 
   title: {
-    //marginTop: scale(-10),
     fontSize: 28,
     fontFamily: FONT_FAMILY.SFProRounded_Semibold,
     color: CUSTOM_COLOR.Black,
-    //marginLeft: scale(50),
+  },
+
+  priceContainer: {
+    marginTop: scale(-10),
+    marginLeft: scale(121),
+    marginRight: scale(121),
+    height: scale(35),
+    justifyContent: 'center',
+    alignItems: 'center',
+    //backgroundColor: CUSTOM_COLOR.Silver,
+  },
+
+  titlePrice: {
+    fontSize: 22,
+    fontFamily: FONT_FAMILY.SFProRounded_Bold,
+    color: CUSTOM_COLOR.SunsetOrange,
+  },
+
+  titleInfo: {
+    marginLeft: scale(53),
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.SFProRounded_Semibold,
+    color: CUSTOM_COLOR.Black,
+  },
+
+  deliveryInfoContainer: {
+    height: scale(77),
+    marginLeft: scale(53),
+    marginRight: scale(64),
+    //backgroundColor: CUSTOM_COLOR.Silver,
+  },
+
+  returnPolicyContainer: {
+    height: scale(158),
+    marginLeft: scale(53),
+    marginRight: scale(64),
+    //backgroundColor: CUSTOM_COLOR.Silver,
+  },
+
+  textBox: {
+    fontSize: 15,
+    fontFamily: FONT_FAMILY.SFProText_Regular,
+    color: CUSTOM_COLOR.Black,
+  },
+
+  buttonSecondary: {
+    marginTop: scale(15),
+    height: scale(70),
+    width: scale(314),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 35,
+    alignSelf: 'center',
+    backgroundColor: CUSTOM_COLOR.Vermilion,
+  },
+
+  titleButtonSecondary: {
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.SFProText_Semibold,
+    color: CUSTOM_COLOR.White,
   },
 });
