@@ -7,6 +7,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CheckOut2Screen from './source/screen/checkout/checkout2';
 import SearchScreen from './source/screen/search';
+import HistoryScreen from './source/screen/history';
+import OrderScreen from './source/screen/order';
+import NoWifiScreen from './source/screen/nowifi';
+import HomeScreen2 from './source/screen/home2';
+import LoadingScreen from './source/screen/loading';
+// import FoodInfoScreen from './source/screen/foodinfo';
+// import MyInFoScreen from './source/screen/myinfo';
 
 
 const Stack = createNativeStackNavigator();
