@@ -22,23 +22,22 @@ const FoodInfoScreen = () => {
       <Text style={styles.foodName}> Veggie tomato mix </Text>
       <Text style={styles.price}> N1,900</Text>
 
-      <>
-        <Text style={styles.headers}>Delivery Info</Text>
-        <Text style={styles.description}>
-          Delivered between monday aug and thursday 20 from 8pm to 91:32 pm
-        </Text>
-        <Text style={styles.headers}>Return Policy</Text>
-        <Text style={styles.description}>
-          All our foods are double checked before leaving our stores so by any
-          case you found a broken food please contact our hotline immediately.
-        </Text>
-      </>
+      <Text style={styles.headers}>Delivery Info</Text>
+      <Text style={styles.description}>
+        Delivered between monday aug and thursday 20 from 8pm to 91:32 pm
+      </Text>
+      <Text style={styles.headers}>Return Policy</Text>
+      <Text style={styles.description}>
+        All our foods are double checked before leaving our stores so by any
+        case you found a broken food please contact our hotline immediately.
+      </Text>
+
       <Custom_ButtonOne
         text="Add to cart"
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
-        textColor={CUSTOM_COLOR.White}></Custom_ButtonOne>
-        
+        textColor={CUSTOM_COLOR.White}
+      />
     </View>
   );
 };
@@ -50,6 +49,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.AthensGray,
   },
+
   viewCircle: {
     backgroundColor: 'transparent',
     height: scale(241.21),
@@ -93,17 +93,18 @@ const styles = StyleSheet.create({
   },
   headers: {
     top: 100,
-    left: scale(23),
+    left: scale(53),
     fontSize: scale(17),
     fontFamily: FONT_FAMILY.SF_Pro_Rounded,
     color: CUSTOM_COLOR.Black,
   },
   description: {
     top: 100,
-    left: scale(23),
-    right: scale(23),
+    left: scale(53),
     fontSize: scale(15),
-    fontFamily: FONT_FAMILY.SF_Pro_Rounded,
+    opacity: scale(0.5),
     color: CUSTOM_COLOR.Black,
+    width: scale(297),
+  
   },
 });
