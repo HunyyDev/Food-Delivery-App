@@ -1,12 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import NotFoundScreen from './src/screens/notFoundScreen';
 
 const App = () => {
-  return (
-    <View>
-      <Text>App</Text>
-    </View>
-  );
+  return <NotFoundScreen></NotFoundScreen>;
 };
 
 export default App;
