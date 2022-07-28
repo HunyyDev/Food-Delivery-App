@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import LoginScreen from './src/screens/auth';
+import HomeScreen from './src/screens/home';
 import OnboardingScreen from './src/screens/onboarding';
 
 // import {NavigationContainer} from '@react-navigation/native';
@@ -34,7 +35,7 @@ const App = props => {
   return (
     <>
       <View style={styles.container}>
-        <LoginScreen {...props} />
+        <HomeScreen {...props} />
       </View>
     </>
   );
