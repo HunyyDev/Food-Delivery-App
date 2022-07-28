@@ -11,6 +11,7 @@ import HistoryScreen from './source/screen/history';
 import OrderScreen from './source/screen/order';
 import NoWifiScreen from './source/screen/nowifi';
 import HomeScreen2 from './source/screen/home2';
+import LoadingScreen from './source/screen/loading';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,7 +24,7 @@ const App = () => {
     //       <Stack.Screen name="Home" component={HomeScreen} />
     //     </Stack.Navigator>
     // </NavigationContainer>
-    <HomeScreen2></HomeScreen2>
+    <LoadingScreen></LoadingScreen>
   );
 };
 
