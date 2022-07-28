@@ -1,44 +1,68 @@
-import {StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useState} from 'react';
 import {IC_BigSearch} from '../../assets/icons';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
 import Custom_InputText from './components/Custom_InputText';
-
-const hasItem = number => {
-  if (number === 0) return 0;
-  return 1;
-};
+import Custom_FoodFlatList from './components/Custom_FoodFlatList';
+import {IC_GoBack} from '../../assets/icons';
 
 const SearchScreen = props => {
   const [count, setCount] = useState(1);
+  console.log(count);
   return (
     <SafeAreaView style={styles.container}>
+      {/* Go back button */}
+      <>
+        <View style={styles.goBackContainer}>
+          <TouchableOpacity hitSlop={styles.hitSlop}>
+            <IC_GoBack />
+          </TouchableOpacity>
+        </View>
+      </>
       {/* Search Box */}
       <>
         <Custom_InputText
-          placeholderText={'Spicy chieckns'}
+          placeholderText={'Spicy chieckn'}
           placeholderColor={CUSTOM_COLOR.Black}
           style={styles.searchInput}
           hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
         />
       </>
-
-      {hasItem(count) ? (
-        <>
-          <View style={styles.viewHidden}>
-            <Text style={styles.textHidden}>Found {count} results</Text>
+      {/*Screen in case 0 item*/}
+      <>
+        {count === 0 ? (
+          <>
+            <View style={styles.viewIcon}>
+              <IC_BigSearch />
+            </View>
+            <Text style={styles.textContainer}>Item not found {count}</Text>
+            <Text style={styles.descriptionsContainer}>
+              {'Try searching the item with \na different keyword'}{' '}
+            </Text>
+          </>
+        ) : null}
+      </>
+      {/*Screen in case has items*/}
+      <>
+        {count !== 0 ? (
+          <View style={styles.foodBox}>
+            <View style={styles.viewHidden}>
+              <Text style={styles.textHidden}>Found {count} results</Text>
+            </View>
+            <Custom_FoodFlatList countFoodNum={setCount} />
           </View>
-
-          <View style={styles.viewIcon}>
-            <IC_BigSearch />
-          </View>
-          <Text style={styles.textContainer}>Item not found</Text>
-          <Text style={styles.descriptionsContainer}>
-            {'Try searching the item with \na different keyword'}{' '}
-          </Text>
-        </>
-      ) : null}
+        ) : (
+          <Custom_FoodFlatList countFoodNum={setCount} />
+        )}
+      </>
     </SafeAreaView>
   );
 };
@@ -52,21 +76,19 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     color: CUSTOM_COLOR.Black,
-    top: scale(101),
-    left: scale(72),
+    top: scale(72),
+    left: scale(101),
     position: 'absolute',
+    width: scale(200),
   },
   viewHidden: {
     position: 'absolute',
-    width: scale(270),
-    height: scale(33),
     left: scale(72),
-    top: scale(164),
+    top: scale(35),
   },
   textHidden: {
     fontWeight: '700',
     fontSize: scale(28),
-    lineHeight: scale(33),
     color: CUSTOM_COLOR.Black,
   },
   viewIcon: {
@@ -108,4 +130,22 @@ const styles = StyleSheet.create({
     lineHeight: scale(20),
     opacity: 0.57,
   },
+  foodBox: {
+    top: scale(129),
+    backgroundColor: CUSTOM_COLOR.White,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height - scale(129),
+    borderRadius: 30,
+  },
+  goBackContainer: {
+    position: 'absolute',
+    top: scale(61),
+    left: scale(50),
+  },
+  hitSlop: {
+    top: scale(10),
+    left: scale(10),
+    right: scale(10),
+    bottom: scale(10),
+  }
 });
