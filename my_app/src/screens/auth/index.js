@@ -104,7 +104,11 @@ export class LoginScreen extends Component {
 
         {/* Button */}
         <>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              this.props.navigation.navigate('HomeScreen');
+            }}>
             <Text style={styles.titleButton}>{'Login'}</Text>
           </TouchableOpacity>
         </>
@@ -117,7 +121,7 @@ export class LoginScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.Concrete,
   },
 
   background: {

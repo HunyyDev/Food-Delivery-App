@@ -1,24 +1,12 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import OnboardingScreen from './src/screens/onboarding';
-import LoginScreen from './src/screens/auth';
-import SignUpScreen from './src/screens/auth/sign-up';
+import RootNavigator from './src/routes/RootNavigator';
 
-const {Navigator, Screen} = createNativeStackNavigator();
-
-const App = () => {
+const App = props => {
   return (
     // <OnboardingScreen />
-    <NavigationContainer>
-      <Navigator
-        screenOptions={{headerShown: false}}
-        initialRouteName="OnBoardingScreen">
-        <Screen name="OnBoardingScreen" component={OnboardingScreen} />
-        <Screen name="LoginScreen" component={LoginScreen} />
-        <Screen name="SignUpScreen" component={SignUpScreen} />
-      </Navigator>
-    </NavigationContainer>
+    <>
+      <RootNavigator {...props} />
+    </>
   );
 };
 
