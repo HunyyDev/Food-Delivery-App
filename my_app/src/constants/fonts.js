@@ -1,3 +1,4 @@
+const Prefix = 'SFProRounded_';
 const FONT_FAMILY = {
   SFProRounded_Heavy: 'SFProRounded-Heavy',
   SFProRounded_Bold: 'SFProRounded-Bold',
