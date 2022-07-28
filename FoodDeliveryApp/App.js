@@ -11,6 +11,9 @@ import HistoryScreen from './source/screen/history';
 import OrderScreen from './source/screen/order';
 import NoWifiScreen from './source/screen/nowifi';
 import HomeScreen2 from './source/screen/home2';
+import FoodInfoScreen from './source/screen/foodinfo';
+import MyInFoScreen from './source/screen/myinfo';
+
 
 const Stack = createNativeStackNavigator();
 
