@@ -12,7 +12,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import scale from '../../constants/scales';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/colors';
-import {ICHeart, ICOnBack} from '../../assets/icons';
+import {ICEllipse, ICHeart, ICOnBack} from '../../assets/icons';
 import {IMG_Veggie} from '../../assets/images';
 
 const ProductDetail = props => {
@@ -40,9 +40,30 @@ const ProductDetail = props => {
           <Image source={IMG_Veggie} resizeMode={'contain'} />
         </ImageBackground>
       </>
+
       <>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Veggie tomato mix'}</Text>
+        </View>
+      </>
+
+      <>
+        <View style={styles.ellipseContainer}>
+          <TouchableOpacity activeOpacity={0.7}>
+            <ICEllipse />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <ICEllipse />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <ICEllipse />
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <ICEllipse />
+          </TouchableOpacity>
         </View>
       </>
 
@@ -76,6 +97,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: CUSTOM_COLOR.Silver,
+  },
+
+  ellipseContainer: {
+    flexDirection: 'row',
+    marginTop: scale(65),
+    marginLeft: scale(172),
+    marginRight: scale(174),
+    justifyContent: 'spae-between',
+    alignItems: 'flex-end',
+    backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
 
   titleContainer: {

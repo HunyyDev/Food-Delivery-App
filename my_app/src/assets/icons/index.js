@@ -14,3 +14,4 @@ export {default as img_dish1} from './image1.png';
 
 export {default as ICOnBack} from './IC_OnBack';
 export {default as ICHeart} from './IC_Heart';
+export {default as ICEllipse} from './IC_Ellipse';
