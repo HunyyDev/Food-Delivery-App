@@ -40,13 +40,6 @@ const ProductDetail = props => {
           <Image source={IMG_Veggie} resizeMode={'contain'} />
         </ImageBackground>
       </>
-
-      <>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{'Veggie tomato mix'}</Text>
-        </View>
-      </>
-
       <>
         <View style={styles.ellipseContainer}>
           <TouchableOpacity activeOpacity={0.7}>
@@ -64,6 +57,11 @@ const ProductDetail = props => {
           <TouchableOpacity activeOpacity={0.7}>
             <ICEllipse />
           </TouchableOpacity>
+        </View>
+      </>
+      <>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{'Veggie tomato mix'}</Text>
         </View>
       </>
 
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
     marginTop: scale(65),
     marginLeft: scale(172),
     marginRight: scale(174),
-    justifyContent: 'spae-between',
+    justifyContent: 'space-between',
     alignItems: 'flex-end',
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
