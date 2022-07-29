@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   View,
@@ -6,14 +6,14 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  ScrollView,
+  //ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/reponsive';
-import {UnderlineButton} from '../../assets/components/UnderlineButton';
-import {CustomSwitch} from '../../assets/components/CustomSwitch';
+import { UnderlineButton } from '../../assets/components/UnderlineButton';
+import { CustomSwitch } from '../../assets/components/CustomSwitch';
 import {
   IMG_Vector,
   IMG_Cart,
@@ -22,11 +22,12 @@ import {
   IMG_Heart,
   IMG_User,
   IMG_Clock,
+  IMG_Personal,
 } from '../../assets/images';
-import {Drinks} from './DrinksForm';
-import {Foods} from './FoodsForm';
-import {Snacks} from './SnacksForm';
-import {Sauce} from './SauceForm';
+import { Drinks } from './DrinksForm';
+import { Foods } from './FoodsForm';
+import { Snacks } from './SnacksForm';
+import { Sauce } from './SauceForm';
 class Condition extends Component {
   constructor(props) {
     super(props);
@@ -72,7 +73,7 @@ class Condition extends Component {
   };
   render() {
     if (this.props.label === 'Foods') {
-      return <Foods />;
+      return <Foods {...this.props} />;
     } else {
       if (this.props.label === 'Drinks') {
         return <Drinks />;
@@ -104,7 +105,9 @@ export class HomeScreen extends Component {
         <TouchableOpacity style={styles.imageContainer}>
           <Image source={IMG_Vector} style={styles.Menu} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.cartContainer}>
+        <TouchableOpacity
+          style={styles.cartContainer}
+          onPress={() => this.props.navigation.navigate('MyProfileScreen')}>
           <Image source={IMG_Cart} />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
@@ -113,7 +116,7 @@ export class HomeScreen extends Component {
         <View style={styles.searchContainer}>
           <Image source={IMG_Search} style={styles.searchImage} />
           <TextInput
-            hitSlop={{top: '100%', left: '100%', right: '100%', bottom: '100%'}}
+            hitSlop={{ top: '100%', left: '100%', right: '100%', bottom: '100%' }}
             placeholder={'Search'}
             style={styles.searchInput}
           />
@@ -126,7 +129,7 @@ export class HomeScreen extends Component {
             <View style={styles.backgroundItem}>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({label: 'Foods'})}
+                  onPress={() => this.setState({ label: 'Foods' })}
                   style={styles.button}
                   underlineStyle={[
                     styles.underLine,
@@ -142,7 +145,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({label: 'Drinks'})}
+                  onPress={() => this.setState({ label: 'Drinks' })}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,
@@ -158,7 +161,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({label: 'Snacks'})}
+                  onPress={() => this.setState({ label: 'Snacks' })}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,
@@ -174,7 +177,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({label: 'Sauce'})}
+                  onPress={() => this.setState({ label: 'Sauce' })}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,
@@ -192,12 +195,31 @@ export class HomeScreen extends Component {
           </CustomSwitch>
         </View>
         <View style={styles.viewTaskbar}>
-          <Image style={styles.iconContainer} source={IMG_Home} />
-          <Image style={styles.iconContainer} source={IMG_Heart} />
-          <Image style={styles.iconContainer} source={IMG_User} />
-          <Image style={styles.iconContainer} source={IMG_Clock} />
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('NoInternetScreen')}
+            style={styles.taskbarButton}>
+            <Image style={styles.iconContainer} source={IMG_Home} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('NoInternetScreen')}
+            style={styles.taskbarButton}>
+            <Image style={styles.iconContainer} source={IMG_Heart} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('MyProfileScreen')}
+            style={styles.taskbarButton}>
+            <Image style={styles.iconContainer} source={IMG_User} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('HistoryScreen')}
+            style={styles.taskbarButton}>
+            <Image style={styles.iconContainer} source={IMG_Clock} />
+          </TouchableOpacity>
         </View>
-        <Condition label={this.state.label} props={this.props} />
+        <Condition
+          label={this.state.label}
+          navigation={this.props.navigation}
+        />
       </SafeAreaView>
     );
   }
@@ -291,16 +313,19 @@ const styles = StyleSheet.create({
   },
   viewTaskbar: {
     // width: scale(25),
-    height: scale(25),
+    height: scale(60),
     width: '90%',
-    bottom: scale(50.1),
+    bottom: scale(20),
     flexDirection: 'row',
     justifyContent: 'space-around',
+    alignItems: 'center',
     position: 'absolute',
+    flex: 1,
+    //backgroundColor: 'red',
   },
   iconContainer: {
-    height: scale(25),
-    width: '7%',
+    height: scale(30),
+    width: '100%',
     alignSelf: 'center',
     bottom: scale(0),
   },
@@ -321,5 +346,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignContent: 'center',
     justifyContent: 'center',
+  },
+  taskbarButton: {
+    width: scale(35),
+    height: scale(55),
+    //alignItems: 'center',
   },
 });
