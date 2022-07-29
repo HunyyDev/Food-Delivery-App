@@ -27,6 +27,7 @@ const MyInFoScreen = () => {
             No 15 uti street off ovie palace road effurun delta state
           </Text>
         </View>
+        <Text style={styles.header2}>Payment method</Text>
         <Custom_PaymentMethod2
           style={styles.paymentBox}
           img1={IMG_CARD}

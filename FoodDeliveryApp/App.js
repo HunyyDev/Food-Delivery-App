@@ -26,7 +26,7 @@ const config = {
 const App = () => {
   return (
     // 
-    <FoodInfoScreen/>
+    <MyInFoScreen/>
   );
 };
 
