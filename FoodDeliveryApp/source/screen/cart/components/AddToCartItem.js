@@ -67,7 +67,7 @@ export default AddToCartItem;
 
 const styles = StyleSheet.create({
   swipe: {
-    position: 'absolute',
+    //position: 'absolute',
   },
   container: {
     //flex: 1,

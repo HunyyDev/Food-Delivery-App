@@ -10,9 +10,7 @@ const CUSTOM_COLOR = {
   Athens_Gray: '#F5F5F8',
   BlueRibbon: '#0038FF',
   TahitiGold: '#F47B0A',
-  FrenchRose: '#EB4796',
-  AthensGray: '#F5F5F8',
+  FrenchRose: '#EB4796'
+};
 
-  };
-  
-  export default CUSTOM_COLOR;
+export default CUSTOM_COLOR;

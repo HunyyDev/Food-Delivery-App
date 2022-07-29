@@ -18,9 +18,11 @@ const MyInFoScreen = ({ navigation: { goBack } }) => {
         <Text style={styles.content}>My profile</Text>
         <Text style={styles.header1}>Information</Text>
         <View style={styles.viewInside1}>
-          <Image source={IMG_AVATAR} style={styles.avatar}/>
+          <Image source={IMG_AVATAR} style={styles.avatar} />
           <Text style={styles.description2}>Marvis Ighedosa</Text>
-          <Text style={[styles.description1, styles.mail]}>dosamarvis@gmail.com</Text>
+          <Text style={[styles.description1, styles.mail]}>
+            dosamarvis@gmail.com
+          </Text>
           <Text style={[styles.description1, styles.info]}>
             No 15 uti street off ovie palace road effurun delta state
           </Text>
@@ -36,14 +38,14 @@ const MyInFoScreen = ({ navigation: { goBack } }) => {
           selectText3={'Paypal'}
         />
       </View>
-      <Custom_ButtonOne 
+      <Custom_ButtonOne
         text="Update"
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White} />
     </SafeAreaView>
   );
-}
+};
 
 export default MyInFoScreen;
 
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     top: scale(66),
     left: scale(50),
   },
-  content:{
+  content: {
     top: scale(61),
     left: scale(161),
     position: 'absolute',
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
     height: scale(133),
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   viewInside2: {
     position: 'absolute',
@@ -144,11 +146,11 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: scale(30),
     width: scale(315),
-    height: scale(231),  
+    height: scale(231),
   },
   avatar: {
     position: 'absolute',
     top: scale(20),
     left: scale(16),
-  }
+  },
 });
