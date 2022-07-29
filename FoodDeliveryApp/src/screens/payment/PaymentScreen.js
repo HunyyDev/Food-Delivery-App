@@ -7,11 +7,20 @@ import CheckBox from 'react-native-checkbox-animated';
 import CustomButton from '../../components/CustomButton';
 import {IC_Bank, IC_Card} from '../../assets/icons';
 import CustomDeliveryMethod from '../../components/CustomDeliveryMethod';
+import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
 
-const PaymentScreen = () => {
+const PaymentScreen = props => {
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
+      <View style={styles.headerSection}>
+        <CustomHeaderGoBack
+          title="Checkout"
+          onPress={() => {
+            props.navigation.goBack();
+          }}
+        />
+      </View>
       <View style={styles.title}>
         <Text style={styles.titleText}>Payment</Text>
       </View>
@@ -68,10 +77,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SilverWhite,
+    marginHorizontal: scale(53),
+  },
+  headerSection: {
+    flex: 1,
   },
   title: {
     flex: 1,
-    marginHorizontal: scale(50),
     justifyContent: 'center',
   },
 
@@ -80,11 +92,8 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Medium,
   },
   paymentMethod: {
-    marginLeft: scale(46),
-    marginRight: scale(53),
     flex: 4,
     marginTop: scale(20),
-    // backgroundColor: 'yellow',
   },
   selectPaymentMethod: {
     marginTop: scale(15),
@@ -101,9 +110,14 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     backgroundColor: CUSTOM_COLOR.White,
+    borderBottomWidth: 1,
+    borderBottomColor: CUSTOM_COLOR.Silver,
   },
   checkBox: {
-    marginRight: scale(21),
+    height: '100%',
+    width: '20%',
+    justifyContent: 'center',
+    // backgroundColor: 'yellow',
   },
   iconCardSection: {
     height: '50%',
@@ -134,11 +148,10 @@ const styles = StyleSheet.create({
   },
 
   deliveryMethod: {
-    flex: 4,
-    backgroundColor: 'green',
+    flex: 3,
   },
   buttonSection: {
     flex: 2,
-    bottom: 15,
+    bottom: 20,
   },
 });

@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
 
   logoContainer: {
     flex: 3,
-    // backgroundColor: 'pink',
     justifyContent: 'center',
   },
 

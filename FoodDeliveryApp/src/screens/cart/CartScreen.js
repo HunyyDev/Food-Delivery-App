@@ -14,10 +14,19 @@ import CustomOrderedItem from './components/CustomOrderedItem';
 import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import {IC_Swipe} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
+import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
 
 const CartScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.headerSection}>
+        <CustomHeaderGoBack
+          title="Cart"
+          onPress={() => {
+            props.navigation.goBack();
+          }}
+        />
+      </View>
       <View style={styles.guide}>
         <Image source={IC_Swipe} />
         <Text>swipe on an item to delete</Text>
@@ -75,6 +84,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SilverWhite,
+  },
+  headerSection: {
+    flex: 1,
+    marginHorizontal: scale(53),
   },
   guide: {
     flex: 1,
