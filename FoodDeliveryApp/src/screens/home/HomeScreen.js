@@ -25,6 +25,7 @@ import {
 import CustomList from './components/CustomList';
 import CustomCategory from './components/CustomCategory';
 import SCREEN from '../../constants/screens';
+import CustomInput from '../../components/CustomInput';
 export class HomeScreen extends Component {
   constructor(props) {
     super(props);

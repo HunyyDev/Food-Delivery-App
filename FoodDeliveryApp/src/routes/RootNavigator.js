@@ -8,7 +8,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
 import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
-// import ScartScreen from './src/screens/cart/ScartScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +31,6 @@ const RootNavigator = () => {
             component={HomeScreen}
             options={{headerShown: false}}
           />
-
           <Stack.Screen
             name="Cart"
             component={CartScreen}
