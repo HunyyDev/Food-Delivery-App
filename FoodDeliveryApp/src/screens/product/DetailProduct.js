@@ -1,12 +1,31 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
-import {IC_headHeart} from '../../assets/icons';
+import {
+  IC_circleOrange,
+  IC_circleSilver,
+  IC_headHeart,
+} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
 import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
 import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
+
+// const CustomStroll = () => {
+//   return (
+//     <TouchableOpacity>
+//       <View
+//         style={{
+//           height: 10,
+//           width: 10,
+//           backgroundColor: CUSTOM_COLOR.Vermilion,
+//           borderRadius: 30,
+//           borderColor: CUSTOM_COLOR.AthensGray,
+//         }}></View>
+//     </TouchableOpacity>
+//   );
+// };
 
 const DetailProduct = props => {
   return (
@@ -31,7 +50,12 @@ const DetailProduct = props => {
               source={IMG_Veggie_tomato_mix}
             />
           </View>
-          <View style={styles.stroll}></View>
+          <View style={styles.stroll}>
+            <Image style={styles.circle} source={IC_circleOrange} />
+            <Image style={styles.circle} source={IC_circleSilver} />
+            <Image style={styles.circle} source={IC_circleSilver} />
+            <Image style={styles.circle} source={IC_circleSilver} />
+          </View>
           <View style={styles.textAndPrice}>
             <Text style={styles.name}>Veggie tomato mix</Text>
             <Text style={styles.price}>N1,900</Text>
@@ -82,7 +106,6 @@ const styles = StyleSheet.create({
   },
   imageSection: {
     flex: 5,
-    // backgroundColor: 'green',
   },
   image: {
     flex: 3,
@@ -90,7 +113,13 @@ const styles = StyleSheet.create({
   },
   stroll: {
     flex: 0.5,
-    backgroundColor: 'pink',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  circle: {
+    marginHorizontal: 5,
   },
   textAndPrice: {
     flex: 1,

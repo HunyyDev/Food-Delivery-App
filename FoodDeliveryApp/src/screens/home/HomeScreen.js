@@ -161,6 +161,7 @@ export class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({initialBottomNav: 'User'});
+              this.props.navigation.navigate('Profile');
             }}>
             <IC_User
               fill={
