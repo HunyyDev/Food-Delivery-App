@@ -25,8 +25,18 @@ const config = {
 
 const App = () => {
   return (
-    // 
-    <FoodInfoScreen/>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Onboarding" component={Onboarding} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="MyInFo" component={MyInFoScreen} />
+        <Stack.Screen name="FoodInFo" component={FoodInfoScreen} />
+        <Stack.Screen name="History" component={HistoryScreen} />
+        <Stack.Screen name="Cart" component={CartScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

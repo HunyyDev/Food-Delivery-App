@@ -14,7 +14,7 @@ import {IMG_FOOD1} from '../../assets/images';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
 
-const CartScreen = ({navigation}) => {
+const CartScreen = ({ navigation: { goBack } }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Cart</Text>
@@ -25,7 +25,9 @@ const CartScreen = ({navigation}) => {
             left: scale(10),
             right: scale(10),
             bottom: scale(10),
-          }}>
+          }}
+          onPress={() => goBack()}
+          >
           <IC_GoBack />
         </TouchableOpacity>
       </View>

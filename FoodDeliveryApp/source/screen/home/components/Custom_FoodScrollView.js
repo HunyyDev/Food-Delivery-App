@@ -36,7 +36,7 @@ export default class Custom_FoodScrollView extends Component {
       <ScrollView horizontal={true} style={{...this.props.style}} showsHorizontalScrollIndicator={false}>
         <View style={styles.viewContainer}>
           {this.state.foodBoard.map(item => (
-            <TouchableOpacity key={item.key} style={styles.touchContainer} /*onPress = {() => {this.props.screen}}*/  >
+            <TouchableOpacity key={item.key} style={styles.touchContainer}  onPress={this.props.onPress}  >
               <Custom_FoodBoard
                 img={item.img}
                 foodName={item.foodName}

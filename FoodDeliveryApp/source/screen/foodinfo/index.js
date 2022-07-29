@@ -14,13 +14,22 @@ import scale from '../../../responsive';
 import {IC_Heart, IC_SmallCircle, IC_GoBack} from '../../assets/icons';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 
-const FoodInfoScreen = () => {
+
+
+const FoodInfoScreen = ({ navigation: { goBack } }) => {
   const [isChoose, setIsChoose] = useState(false);
   const [isCircle, setIsCircle] = useState('1');
   const onPressHandler = () => {setIsChoose(!isChoose)}
   return (
     <View style={styles.container}>
-      
+      {/* Go back button */}
+      <>
+        <View style={styles.goBackContainer}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => goBack()}>
+            <IC_GoBack />
+          </TouchableOpacity>
+        </View>
+      </>
       {/* Heart button */}
       <>
       <TouchableOpacity
@@ -31,57 +40,63 @@ const FoodInfoScreen = () => {
         />
       </TouchableOpacity>
       </>
-      {/* Food */}
+      {/* Food swiper */}
       <>
-        <View style={styles.foodView}>
-          <Image style={styles.food} source={IMG_FOOD1}/>
-        </View>
+        {/* <Swiper style={styles.swiperContainer}> */}
+          {/* Food */}
+          <>
+          <View style={styles.foodView}>
+            <Image style={styles.food} source={IMG_FOOD1}/>
+          </View>
+          </>
+          {/* Select */}
+          <>
+          <View style={styles.selectView}>
+            <TouchableOpacity
+              style={[styles.iconContainer, styles.ic_smallCircle1]}
+              onPress={() => {
+                setIsCircle('1');  }}
+              >
+              <IC_SmallCircle fill={
+                isCircle === '1' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
+              }/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.iconContainer, styles.ic_smallCircle2]}
+              onPress={() => {
+                setIsCircle('2');  }}
+              >
+              <IC_SmallCircle fill={
+                isCircle === '2' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
+              }/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.iconContainer, styles.ic_smallCircle3]}
+              onPress={() => {
+                setIsCircle('3');  }}
+              >
+              <IC_SmallCircle fill={
+                isCircle === '3' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
+              }/>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.iconContainer, styles.ic_smallCircle4]}
+              onPress={() => {
+                setIsCircle('4');  }}
+              >
+              <IC_SmallCircle fill={
+                isCircle === '4' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
+              }/>
+            </TouchableOpacity>
+          </View>
+          </>
+          {/* Food name */}
+          <>
+            <Text style={styles.foodName}>Veggie tomato mix</Text>
+          </>
+        {/* </Swiper> */}
       </>
-      {/* Select */}
-      <>
-        <View style={styles.selectView}>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle1]}
-            onPress={() => {
-              setIsCircle('1');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '1' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle2]}
-            onPress={() => {
-              setIsCircle('2');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '2' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle3]}
-            onPress={() => {
-              setIsCircle('3');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '3' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle4]}
-            onPress={() => {
-              setIsCircle('4');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '4' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-        </View>
-      </>
-      {/* Food name */}
-      <>
-        <Text style={styles.foodName}>Veggie tomato mix</Text>
-      </>
+      
       {/* Food price */}
       <>
         <Text style={styles.foodPrice}>N1,900</Text>
@@ -122,10 +137,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.AthensGray,
   },
+  goBackContainer: {
+    position: 'absolute',
+    top: scale(61),
+    left: scale(50),
+  },
+  hitSlop: {
+    top: scale(10),
+    left: scale(10),
+    right: scale(10),
+    bottom: scale(10),
+  },
   heart: {
     position: 'absolute',
     left: scale(341.29),
     top: scale(42.5),
+  },
+  swiperContainer: {
+    flex:1,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   foodView: {
     position: 'absolute',
@@ -162,7 +193,7 @@ const styles = StyleSheet.create({
   },
   selectView: {
     position: 'absolute',
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: 'transparent',
     width: scale(80),
     height: scale(8),
     left: scale(168),

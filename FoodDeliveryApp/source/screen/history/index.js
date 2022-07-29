@@ -1,13 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView} from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity} from 'react-native'
 import React from 'react'
 import scale from '../../../responsive'
 import CUSTOM_COLOR from '../../constants/color'
-import { IC_Calender } from '../../assets/icons'
+import { IC_Calender, IC_GoBack } from '../../assets/icons'
 import Custom_ButtonOne from '../../components/Custom_ButtonOne'
 
-const HistoryScreen = () => {
+const HistoryScreen = ({ navigation: { goBack } }) => {
   return (
     <SafeAreaView style={styles.container}>
+      {/* Go back button */}
+      <>
+        <View style={styles.goBackContainer}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => goBack()}>
+            <IC_GoBack />
+          </TouchableOpacity>
+        </View>
+      </>
       {/* screen name */}
       <>
         <Text style={styles.screenName}>History</Text>
@@ -44,6 +52,17 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: CUSTOM_COLOR.Athens_Gray,
+    },
+    goBackContainer: {
+      position: 'absolute',
+      top: scale(61),
+      left: scale(50),
+    },
+    hitSlop: {
+      top: scale(10),
+      left: scale(10),
+      right: scale(10),
+      bottom: scale(10),
     },
     screenName: {
         textAlign: 'center',

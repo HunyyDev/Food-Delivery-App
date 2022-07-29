@@ -6,12 +6,12 @@ import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
 import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
-import {IC_GoBack} from '../../assets/icons';
+import { IC_GoBack } from '../../assets/icons';
 
-const MyInFoScreen = () => {
+const MyInFoScreen = ({ navigation: { goBack } }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.goBack}>
+      <TouchableOpacity style={styles.goBack} onPress={() => goBack()}>
         <IC_GoBack />
       </TouchableOpacity>
       <View>
@@ -27,6 +27,7 @@ const MyInFoScreen = () => {
             No 15 uti street off ovie palace road effurun delta state
           </Text>
         </View>
+        <Text style={styles.header2}>Payment method</Text>
         <Custom_PaymentMethod2
           style={styles.paymentBox}
           img1={IMG_CARD}
