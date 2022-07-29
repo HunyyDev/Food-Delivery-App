@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
@@ -10,7 +10,7 @@ import {IC_GoBack} from '../../assets/icons';
 
 const MyInFoScreen = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.goBack}>
         <IC_GoBack />
       </TouchableOpacity>
@@ -41,9 +41,8 @@ const MyInFoScreen = () => {
         text="Update"
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
-        textColor={CUSTOM_COLOR.White}
-      />
-    </View>
+        textColor={CUSTOM_COLOR.White} />
+    </SafeAreaView>
   );
 };
 

@@ -9,3 +9,4 @@ export {default as IMG_LOADING} from './loadingScreen.png';
 export {default as IMG_LOGO2} from './BellaOlonjelogo.png';
 export {default as IMG_AVATAR} from './avatar.png';
 export {default as IMG_PAYPAL} from './paypal.png';
+export {default as IMG_PENCIL} from './pencil.png';
