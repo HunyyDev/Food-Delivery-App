@@ -1,13 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React from 'react';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
 import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
+import IMG_AVATAR from '../../assets/images';
 
-function MyInFoScreen() {
+function MyInFoScreen(navigation) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View>
         <Text style={styles.content}>My profile</Text>
         <Text style={styles.header1}>Information</Text>
@@ -15,7 +16,7 @@ function MyInFoScreen() {
           <Text style={styles.description2}>Marvis Ighedosa</Text>
           <Text style={styles.description1}>dosamarvis@gmail.com</Text>
           <Text style={styles.description1}>
-            No 15 uti street off ovie palace road effurun delta state
+            {'No 15 uti street off ovie palace road \neffurun delta state'}
           </Text>
         </View>
         <View>
@@ -32,7 +33,7 @@ function MyInFoScreen() {
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White} />
-    </View>
+    </SafeAreaView>
   );
 }
 

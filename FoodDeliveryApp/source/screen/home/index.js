@@ -27,6 +27,7 @@ export default class HomeScreen extends Component {
     super(props);
     this.state = {
       nav_selected: 'Home',
+      screen: 'FoodInfo'
     };
   }
   navigate = location => {
@@ -68,7 +69,7 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <></>
         {/* Foods */}
-        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}} />
+        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}}/>
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
@@ -92,6 +93,7 @@ export default class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({nav_selected: 'User'});
+              this.navigate("MyInFo")
             }}>
             <IC_User
               fill={this.state.nav_selected === 'User' ? '#FA4A0C' : '#ADADAF'}
@@ -100,6 +102,7 @@ export default class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({nav_selected: 'Clock'});
+              this.navigate("History")
             }}>
             <IC_Clock
               fill={this.state.nav_selected === 'Clock' ? '#FA4A0C' : '#ADADAF'}
