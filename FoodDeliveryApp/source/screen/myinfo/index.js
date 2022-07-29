@@ -1,12 +1,12 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
 import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
-import {IMG_AVATAR, IMG_BANK, IMG_CARD} from '../../assets/images';
-import { IC_GoBack } from '../../assets/icons';
+import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
+import {IC_GoBack} from '../../assets/icons';
 
 const MyInFoScreen = () => {
   return (
@@ -18,30 +18,33 @@ const MyInFoScreen = () => {
         <Text style={styles.content}>My profile</Text>
         <Text style={styles.header1}>Information</Text>
         <View style={styles.viewInside1}>
-          <Image source={IMG_AVATAR} style={styles.avatar}/>
+          <Image source={IMG_AVATAR} style={styles.avatar} />
           <Text style={styles.description2}>Marvis Ighedosa</Text>
-          <Text style={[styles.description1, styles.mail]}>dosamarvis@gmail.com</Text>
+          <Text style={[styles.description1, styles.mail]}>
+            dosamarvis@gmail.com
+          </Text>
           <Text style={[styles.description1, styles.info]}>
             No 15 uti street off ovie palace road effurun delta state
           </Text>
         </View>
-        {/* <Custom_PaymentMethod2
-         style = {styles.paymentBox}
-         img1={IMG_CARD}
-         img2={IMG_BANK}
-         selectText1={'Card'}
-         selectText2={'Bank account'}
-
-         /> */}
+        <Custom_PaymentMethod2
+          style={styles.paymentBox}
+          img1={IMG_CARD}
+          img2={IMG_BANK}
+          img3={IMG_PAYPAL}
+          selectText1={'Card'}
+          selectText2={'Bank account'}
+          selectText3={'Paypal'}
+        />
       </View>
-      <Custom_ButtonOne 
+      <Custom_ButtonOne
         text="Update"
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White} />
     </SafeAreaView>
   );
-}
+};
 
 export default MyInFoScreen;
 
@@ -55,7 +58,7 @@ const styles = StyleSheet.create({
     top: scale(66),
     left: scale(50),
   },
-  content:{
+  content: {
     top: scale(61),
     left: scale(161),
     position: 'absolute',
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
     height: scale(133),
     alignItems: 'center',
     justifyContent: 'center',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   viewInside2: {
     position: 'absolute',
@@ -142,11 +145,11 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: scale(30),
     width: scale(315),
-    height: scale(231),  
+    height: scale(231),
   },
   avatar: {
     position: 'absolute',
     top: scale(20),
     left: scale(16),
-  }
+  },
 });
