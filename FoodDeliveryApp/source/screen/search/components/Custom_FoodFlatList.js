@@ -1,5 +1,5 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import {IMG_FOOD1} from '../../../assets/images';
 import Custom_FoodBoardSmall from './Custom_FoodBoardSmall';
@@ -62,8 +62,11 @@ const Custom_FoodFlatList = props => {
     }
     return true;
   };
+
   const foodNums = foods.length;
-  props.countFoodNum(foodNums);
+
+  useEffect(() => props.countFoodNum(foodNums));
+  
   if (hasItem(foodNums)) {
     return (
       <FlatList

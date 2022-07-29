@@ -14,7 +14,8 @@ import Custom_InputText from './components/Custom_InputText';
 import Custom_FoodFlatList from './components/Custom_FoodFlatList';
 import {IC_GoBack} from '../../assets/icons';
 
-const SearchScreen = props => {
+
+const SearchScreen = () => {
   const [count, setCount] = useState(1);
   console.log(count);
   return (
