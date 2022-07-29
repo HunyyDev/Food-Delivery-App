@@ -120,6 +120,9 @@ export class HomeScreen extends Component {
               source={IMG_Veggie_tomato_mix}
               name={'Veggie \ntomato mix'}
               price={'N1,900'}
+              onPress={() => {
+                this.props.navigation.navigate('DetailProduct');
+              }}
             />
             <CustomList
               source={IMG_Veggie_tomato_mix}

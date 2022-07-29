@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
   },
   right: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   },
   text: {
     fontFamily: FONT_FAMILY.Bold,
