@@ -8,6 +8,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
 import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
+import MyProfileScreen from '../screens/profile/MyProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,12 @@ const RootNavigator = () => {
           <Stack.Screen
             name="Loading"
             component={LoadingScreen}
+            options={{headerShown: false}}
+          />
+
+          <Stack.Screen
+            name="Profile"
+            component={MyProfileScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

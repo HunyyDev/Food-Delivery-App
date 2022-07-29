@@ -10,3 +10,4 @@ export {default as IC_SearchRaw} from './iconSearch.png';
 export {default as IC_Swipe} from './swipeIcon.png';
 export {default as IC_Bank} from './bankAccount.png';
 export {default as IC_Card} from './cardIcon.png';
+export {default as IC_Forward} from './forward.png';
