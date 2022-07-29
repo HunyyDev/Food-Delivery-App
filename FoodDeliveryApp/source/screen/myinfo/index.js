@@ -39,7 +39,7 @@ const MyInFoScreen = () => {
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White} />
-    </View>
+    </SafeAreaView>
   );
 }
 
