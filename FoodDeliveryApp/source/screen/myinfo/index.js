@@ -10,7 +10,7 @@ import { IC_GoBack } from '../../assets/icons';
 
 const MyInFoScreen = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.goBack}>
         <IC_GoBack />
       </TouchableOpacity>
