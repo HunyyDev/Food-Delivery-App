@@ -16,7 +16,7 @@ const PaymentScreen = props => {
       <View style={styles.headerSection}>
         <CustomHeaderGoBack
           title="Checkout"
-          onPress={() => {
+          leftOnPress={() => {
             props.navigation.goBack();
           }}
         />
@@ -63,6 +63,28 @@ const PaymentScreen = props => {
       <View style={styles.deliveryMethod}>
         <Text style={styles.textMethod}>Delivery method</Text>
         <CustomDeliveryMethod />
+      </View>
+
+      <View style={styles.total}>
+        <View
+          style={{
+            justifyContent: 'center',
+          }}>
+          <Text style={{fontSize: scale(17), fontFamily: FONT_FAMILY.Medium}}>
+            Total
+          </Text>
+        </View>
+        <View
+          style={{
+            width: '90%',
+            justifyContent: 'center',
+
+            alignItems: 'flex-end',
+          }}>
+          <Text style={{fontSize: scale(17), fontFamily: FONT_FAMILY.Medium}}>
+            23,000
+          </Text>
+        </View>
       </View>
       <View style={styles.buttonSection}>
         <CustomButton type={'secondary'} text={'Proceed to payment'} />
@@ -117,7 +139,6 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '20%',
     justifyContent: 'center',
-    // backgroundColor: 'yellow',
   },
   iconCardSection: {
     height: '50%',
@@ -150,6 +171,11 @@ const styles = StyleSheet.create({
   deliveryMethod: {
     flex: 3,
   },
+  total: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+
   buttonSection: {
     flex: 2,
     bottom: 20,

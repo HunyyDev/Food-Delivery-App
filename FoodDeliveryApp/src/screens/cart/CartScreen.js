@@ -19,60 +19,62 @@ import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
 const CartScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.headerSection}>
-        <CustomHeaderGoBack
-          title="Cart"
-          onPress={() => {
-            props.navigation.goBack();
-          }}
-        />
-      </View>
-      <View style={styles.guide}>
-        <Image source={IC_Swipe} />
-        <Text>swipe on an item to delete</Text>
-      </View>
-      <View style={styles.main}>
-        <ScrollView>
-          <View style={styles.listItem}>
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Veggie tomato mix..."
-              price={'1900'}
-            />
+      <View style={styles.subContainer}>
+        <View style={styles.headerSection}>
+          <CustomHeaderGoBack
+            title="Cart"
+            leftOnPress={() => {
+              props.navigation.goBack();
+            }}
+          />
+        </View>
+        <View style={styles.guide}>
+          <Image source={IC_Swipe} />
+          <Text>swipe on an item to delete</Text>
+        </View>
+        <View style={styles.main}>
+          <ScrollView>
+            <View style={styles.listItem}>
+              <CustomOrderedItem
+                img={IMG_Veggie_tomato_mix}
+                text="Veggie tomato mix..."
+                price={'1900'}
+              />
 
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={'1900'}
-            />
+              <CustomOrderedItem
+                img={IMG_Veggie_tomato_mix}
+                text="Fishwith mix orange..."
+                price={'1900'}
+              />
 
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={'1900'}
-            />
+              <CustomOrderedItem
+                img={IMG_Veggie_tomato_mix}
+                text="Fishwith mix orange..."
+                price={'1900'}
+              />
 
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={'1900'}
-            />
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={'1900'}
-            />
-          </View>
-        </ScrollView>
-      </View>
-      <View style={styles.button}>
-        <CustomButton
-          type={'secondary'}
-          text={'Complete order'}
-          onPress={() => {
-            props.navigation.navigate('Payment');
-          }}
-        />
+              <CustomOrderedItem
+                img={IMG_Veggie_tomato_mix}
+                text="Fishwith mix orange..."
+                price={'1900'}
+              />
+              <CustomOrderedItem
+                img={IMG_Veggie_tomato_mix}
+                text="Fishwith mix orange..."
+                price={'1900'}
+              />
+            </View>
+          </ScrollView>
+        </View>
+        <View style={styles.button}>
+          <CustomButton
+            type={'secondary'}
+            text={'Complete order'}
+            onPress={() => {
+              props.navigation.navigate('Payment');
+            }}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -84,10 +86,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SilverWhite,
+    alignItems: 'center',
+  },
+  subContainer: {
+    flex: 1,
+    width: '80%',
   },
   headerSection: {
     flex: 1,
-    marginHorizontal: scale(53),
   },
   guide: {
     flex: 1,
@@ -104,7 +110,7 @@ const styles = StyleSheet.create({
 
   button: {
     flex: 2,
-    bottom: 15,
+    bottom: 20,
   },
 
   listItem: {
