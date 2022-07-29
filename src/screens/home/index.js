@@ -23,7 +23,13 @@ import {
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import ButtonHome from '../../components/ButtonHome';
-import {IMG_Background, IMG_Logo, IMG_Product_1} from '../../assets/images';
+import {
+  IMG_Background,
+  IMG_Logo,
+  IMG_Product_1,
+  IMG_Product_2,
+  IMG_Product_3,
+} from '../../assets/images';
 import styles from './styles';
 import ButtonProduct from '../../components/ButtonProduct';
 
@@ -44,15 +50,15 @@ export default class HomeScreen extends Component {
     },
     {
       id: 2,
-      source: IMG_Product_1,
-      title: 'Spicy fish sauce',
-      price: 'N2,300.99',
+      source: IMG_Product_2,
+      title: 'Egg and cucmber...',
+      price: 'N1,900',
     },
     {
       id: 3,
-      source: IMG_Product_1,
-      title: 'Veggie tomato mix',
-      price: 'N1,900',
+      source: IMG_Product_3,
+      title: 'Fried chicken m.',
+      price: 'N2,300.99',
     },
     {
       id: 4,
@@ -80,7 +86,11 @@ export default class HomeScreen extends Component {
         <>
           <View style={styles.MenuContainer}>
             <Image source={ICON_Menu} style={styles.IconMenu} />
-            <Image source={ICON_shop} style={styles.IconShop} />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Delivery')}
+              style={styles.IconShop}>
+              <Image source={ICON_shop} />
+            </TouchableOpacity>
           </View>
         </>
         <>
@@ -150,7 +160,10 @@ export default class HomeScreen extends Component {
           <View style={styles.footer}>
             <Image style={styles.chosenIcon} source={ICON_home} />
             <Image source={ICON_heart} />
-            <Image source={ICON_user} />
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('Information')}>
+              <Image source={ICON_user} />
+            </TouchableOpacity>
             <Image source={ICON_clock} />
           </View>
         </>

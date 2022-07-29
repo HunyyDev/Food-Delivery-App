@@ -10,6 +10,8 @@ const CUSTOM_COLOR = {
   Tahiti_Gold: '#F47B0A',
   Transparent: 'transparent',
   French_Rose: '#EB4796',
+  Vermilion: '#FA4A0C',
+  Blue_Ribbon: '#0038FF',
 };
 
 export default CUSTOM_COLOR;

@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: '82%',
     alignSelf: 'flex-end',
+    // marginLeft: '82%',
   },
   Text: {
     color: CUSTOM_COLOR.Black,

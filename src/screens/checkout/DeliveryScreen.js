@@ -6,6 +6,7 @@ import {
   View,
   Image,
   Pressable,
+  TouchableOpacity,
 } from 'react-native';
 import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -15,11 +16,17 @@ import CustomButton from '../../components/CustomButton';
 import styles from './styles';
 import RadioButton from '../../components/RadioButton';
 
-const DeliveryScreen = () => {
+const DeliveryScreen = props => {
+  const {navigation} = props;
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
-        <Image source={ICON_CHEVRON} style={styles.Chevron} />
+        <TouchableOpacity
+          onPress={() => props.navigation.goBack()}
+          style={styles.Chevron}>
+          <Image source={ICON_CHEVRON} />
+        </TouchableOpacity>
+
         <Text style={styles.Checkout}>Checkout</Text>
       </View>
       <View style={styles.titleContainer}>
@@ -30,7 +37,20 @@ const DeliveryScreen = () => {
         <Text style={styles.changeText}>change</Text>
       </View>
       <View style={styles.BoxContainer}>
-        <View style={styles.whiteBox} />
+        <View style={styles.whiteBox}>
+          <View style={[styles.TextBox, styles.flex]}>
+            <Text style={styles.addressText1}>Marvis Kparobo</Text>
+          </View>
+          <View style={[styles.TextBox, styles.flex]}>
+            <Text style={styles.addressText2}>
+              Km 5 refinery road oppsite re{'\n'}public road, effurun, delta
+              state
+            </Text>
+          </View>
+          <View style={[styles.TextBox, styles.flex, styles.Underline]}>
+            <Text style={styles.addressText2}>+234 9011039271</Text>
+          </View>
+        </View>
       </View>
       <View style={styles.DeliveryMethod}>
         <Text style={styles.AddressText}>Delivery method.</Text>
@@ -52,7 +72,11 @@ const DeliveryScreen = () => {
         <Text style={styles.priceText}>23,000</Text>
       </View>
       <View style={styles.ButtonContainer}>
-        <CustomButton text={'Proceed to payment'} label={'secondary'} />
+        <CustomButton
+          text={'Proceed to payment'}
+          label={'secondary'}
+          onPress={() => navigation.navigate('Payment')}
+        />
       </View>
     </ScrollView>
   );

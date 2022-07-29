@@ -1,17 +1,7 @@
-import {
-  Dimensions,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Pressable,
-} from 'react-native';
-import React, {useState} from 'react';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import {ICON_CHEVRON} from '../../assets/icons';
-import CustomButton from '../../components/CustomButton';
 
 const styles = StyleSheet.create({
   container: {
@@ -25,11 +15,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titleContainer: {
-    height: Dimensions.get('window').height * 0.14,
+    height: Dimensions.get('window').height * 0.1,
     backgroundColor: CUSTOM_COLOR.Transparent,
     paddingLeft: 50,
     alignItems: 'flex-start',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    marginTop: 10,
   },
   AddressDetails: {
     height: Dimensions.get('window').height * 0.08,
@@ -39,10 +30,17 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
   },
   BoxContainer: {
-    height: Dimensions.get('window').height * 0.22,
+    height: Dimensions.get('window').height * 0.18,
     backgroundColor: CUSTOM_COLOR.Transparent,
     paddingLeft: 50,
     paddingRight: 49,
+  },
+  PaymentBoxContainer: {
+    height: Dimensions.get('window').height * 0.35,
+    backgroundColor: CUSTOM_COLOR.Transparent,
+    paddingLeft: 50,
+    paddingRight: 49,
+    marginBottom: 110,
   },
   TotalContainer: {
     backgroundColor: CUSTOM_COLOR.Transparent,
@@ -51,70 +49,69 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   ButtonContainer: {
-    height: Dimensions.get('window').height * 0.22,
+    height: Dimensions.get('window').height * 0.2,
     backgroundColor: CUSTOM_COLOR.Transparent,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 20,
   },
-  TotalText: {
-    fontSize: 17,
-    // fontWeight: 400,
-    fontFamily: FONT_FAMILY.TextBold,
-    color: CUSTOM_COLOR.Black,
-    position: 'absolute',
-    left: 50,
-  },
-  priceText: {
-    fontSize: 22,
-    fontFamily: FONT_FAMILY.TextBold,
-    color: CUSTOM_COLOR.Black,
-    position: 'absolute',
-    right: 49,
-  },
-  DeliveryMethod: {
-    height: Dimensions.get('window').height * 0.08,
-    backgroundColor: CUSTOM_COLOR.Transparent,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-end',
-    paddingLeft: 50,
-    marginBottom: 20,
-  },
-  Checkout: {
+  profileText: {
     fontSize: 18,
     fontFamily: FONT_FAMILY.TextBold,
     color: CUSTOM_COLOR.Black,
   },
-  Chevron: {
+  ChevronIcon: {
     alignSelf: 'flex-start',
     position: 'absolute',
     bottom: 2,
     left: 50,
     top: 66,
   },
-  DeliveryText: {
-    fontFamily: FONT_FAMILY.TextBold,
-    fontSize: 34,
-    color: CUSTOM_COLOR.Black,
-  },
-  AddressText: {
+  InformationText: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 17,
     color: CUSTOM_COLOR.Black,
   },
-  changeText: {
-    fontSize: 15,
-    color: CUSTOM_COLOR.Tahiti_Gold,
-    fontFamily: FONT_FAMILY.TextRegular,
-    position: 'absolute',
-    right: 57,
+  PersonalText: {
+    fontFamily: FONT_FAMILY.TextBold,
+    fontSize: 17,
+    color: CUSTOM_COLOR.Black,
+    marginBottom: 8,
   },
   whiteBox: {
     borderRadius: 20,
     backgroundColor: CUSTOM_COLOR.White,
     flex: 1,
   },
+  MarvisIMG: {
+    marginTop: 25,
+    marginLeft: 16,
+    width: 60,
+    height: 60,
+  },
+  TextBox: {
+    // marginLeft: 15,
+    // alignItems: 'center',
+    justifyContent: 'flex-start',
+    // marginTop: 20,
+    position: 'absolute',
+    left: 91,
+    top: 20,
+    right: 33,
+  },
+  MarvisText: {
+    fontSize: 18,
+    fontFamily: FONT_FAMILY.TextBold,
+    color: CUSTOM_COLOR.Black,
+  },
+  otherText: {
+    color: CUSTOM_COLOR.Black,
+    opacity: 0.5,
+    fontFamily: FONT_FAMILY.TextRegular,
+    fontSize: 13,
+    marginTop: 8,
+  },
   Box: {
-    height: '50%',
     borderBottomWidth: 0.5,
     backgroundColor: CUSTOM_COLOR.Transparent,
     // borderColor: CUSTOM_COLOR.Black,
@@ -129,35 +126,27 @@ const styles = StyleSheet.create({
   Underline: {
     borderColor: CUSTOM_COLOR.Transparent,
   },
-  borderRadio: {
-    height: 24,
-    width: 24,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: CUSTOM_COLOR.SunsetOrange,
-    alignItems: 'center',
-    justifyContent: 'center',
+  PaymentMethod: {
+    height: Dimensions.get('window').height * 0.08,
+    backgroundColor: CUSTOM_COLOR.Transparent,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    paddingLeft: 50,
+    marginBottom: 20,
   },
-  borderNoPress: {
-    height: 24,
-    width: 24,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: CUSTOM_COLOR.Silver,
-    alignItems: 'center',
-    justifyContent: 'center',
+  PaymentText: {
+    fontSize: 17,
+    fontFamily: FONT_FAMILY.TextBold,
+    color: CUSTOM_COLOR.Black,
   },
-  doorDelivery: {
+  flex: {
+    flex: 1,
+  },
+  radioText: {
     fontSize: 17,
     fontFamily: FONT_FAMILY.TextRegular,
     color: CUSTOM_COLOR.Black,
     marginLeft: 15,
-  },
-  radio: {
-    height: 12,
-    width: 12,
-    borderRadius: 6,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
   rectangle: {
     width: Dimensions.get('window').width * 0.12,
@@ -171,32 +160,21 @@ const styles = StyleSheet.create({
   rectangleColor: {
     backgroundColor: CUSTOM_COLOR.French_Rose,
   },
-  flex: {
-    flex: 1,
+  rectangleColorBlue: {
+    backgroundColor: CUSTOM_COLOR.Blue_Ribbon,
   },
-  TextBox: {
-    borderBottomWidth: 0.5,
-    backgroundColor: CUSTOM_COLOR.Transparent,
-    borderColor: CUSTOM_COLOR.Black,
-    borderRadius: 20,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    paddingLeft: 30,
-    flexDirection: 'row',
-  },
-  addressText1: {
-    fontSize: 17,
-    // fontWeight: 400,
+  MyProfileText: {
     fontFamily: FONT_FAMILY.TextBold,
+    fontSize: 34,
     color: CUSTOM_COLOR.Black,
   },
-  addressText2: {
+  changeText: {
     fontSize: 15,
-    // fontWeight: 400,
+    color: CUSTOM_COLOR.Tahiti_Gold,
     fontFamily: FONT_FAMILY.TextRegular,
-    color: CUSTOM_COLOR.Black,
+    position: 'absolute',
+    right: 57,
+    bottom: 10,
   },
 });
 
