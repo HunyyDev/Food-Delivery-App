@@ -1,6 +1,6 @@
 import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import CustomButton from '../../components/CustomButton';
+import LargeButton from '../../components/LargeButton';
 import {
   ICON_CHEVRON,
   ICON_CREDIT_CARD,
@@ -60,7 +60,7 @@ const PaymentScreen = () => {
         <Text style={styles.priceText}>23,000</Text>
       </View>
       <View style={styles.ButtonContainer}>
-        <CustomButton text={'Proceed to payment'} label={'secondary'} />
+        <LargeButton text={'Proceed to payment'} label={'secondary'} />
       </View>
     </ScrollView>
   );

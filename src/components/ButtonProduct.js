@@ -1,20 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Image,
-  Alert,
-  TouchableOpacity,
-  Pressable,
-} from 'react-native';
 import React from 'react';
-import {IMG_Product_1} from '../assets/images';
+import {Alert, Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from '../screens/home/styles';
-import CUSTOM_COLOR from '../constants/colors';
 
 const ButtonProduct = props => {
-  // eslint-disable-next-line no-undef
   const ButtonAlert = (title, announce) => {
     Alert.alert(title, announce, [
       {
@@ -28,7 +16,6 @@ const ButtonProduct = props => {
   };
   return (
     <>
-      {/* <View style={styles.productWrapper}> */}
       <TouchableOpacity onPress={() => ButtonAlert(props.title, 'Het hang!')}>
         <View style={styles.productItem}>
           <Image
@@ -42,7 +29,6 @@ const ButtonProduct = props => {
           </View>
         </View>
       </TouchableOpacity>
-      {/* </View> */}
     </>
   );
 };

@@ -1,10 +1,9 @@
 import {Text, StyleSheet, View, Dimensions, TextInput} from 'react-native';
 import React, {Component, useState} from 'react';
-import CUSTOM_COLOR from '../constants/colors';
+import COLORS from '../constants/colors';
 import FONT_FAMILY from '../constants/fonts';
 
-const CustomInput = props => {
-  console.log('props', props);
+const UnderlinedInput = props => {
   const [value, setValue] = useState('');
   return (
     <View style={styles.SignInContainer}>
@@ -12,8 +11,6 @@ const CustomInput = props => {
       <TextInput
         style={styles.TextInput}
         onChangeText={text => {
-          console.log('value', text);
-          // value = text;
           setValue(text);
         }}
         value={value}
@@ -30,22 +27,22 @@ const styles = StyleSheet.create({
     width: '75%',
     height: '8%',
     borderBottomWidth: 1,
-    borderColor: CUSTOM_COLOR.Black,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    borderColor: COLORS.Black,
+    backgroundColor: COLORS.Concrete,
     alignSelf: 'center',
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     justifyContent: 'center',
   },
   Text: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     opacity: 0.4,
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 10,
   },
   TextInput: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     fontFamily: FONT_FAMILY.TextBold,
   },
 });
 
-export default React.memo(CustomInput);
+export default React.memo(UnderlinedInput);
