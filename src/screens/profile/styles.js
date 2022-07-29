@@ -35,6 +35,29 @@ const styles = StyleSheet.create({
     paddingLeft: 50,
     paddingRight: 49,
   },
+  PersonalBox: {
+    height: Dimensions.get('window').height * 0.27,
+    backgroundColor: CUSTOM_COLOR.Transparent,
+    paddingLeft: 50,
+    paddingRight: 49,
+  },
+  phoneBox: {
+    backgroundColor: CUSTOM_COLOR.Transparent,
+    borderColor: CUSTOM_COLOR.Black,
+    opacity: 0.5,
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
+    width: '100%',
+    height: '25%',
+    alignItems: 'flex-start',
+    paddingLeft: -8,
+    marginLeft: 8,
+    marginTop: 5,
+  },
+  position: {
+    position: 'absolute',
+    left: 0,
+  },
   PaymentBoxContainer: {
     height: Dimensions.get('window').height * 0.35,
     backgroundColor: CUSTOM_COLOR.Transparent,
@@ -89,6 +112,12 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
   },
+  MarvisIMG1: {
+    marginTop: 25,
+    marginLeft: 16,
+    width: 80,
+    height: 90,
+  },
   TextBox: {
     // marginLeft: 15,
     // alignItems: 'center',
@@ -99,10 +128,21 @@ const styles = StyleSheet.create({
     top: 20,
     right: 33,
   },
+  TextBox1: {
+    // marginLeft: 15,
+    // alignItems: 'center',
+    justifyContent: 'flex-start',
+    // marginTop: 20,
+    position: 'absolute',
+    left: 100,
+    top: 20,
+    right: 33,
+  },
   MarvisText: {
     fontSize: 18,
     fontFamily: FONT_FAMILY.TextBold,
     color: CUSTOM_COLOR.Black,
+    marginLeft: 8,
   },
   otherText: {
     color: CUSTOM_COLOR.Black,
@@ -110,6 +150,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.TextRegular,
     fontSize: 13,
     marginTop: 8,
+    marginLeft: 8,
   },
   Box: {
     borderBottomWidth: 0.5,
