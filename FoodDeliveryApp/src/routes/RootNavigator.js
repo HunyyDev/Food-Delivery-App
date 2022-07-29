@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 import OnboardingScreen from '../screens/onboarding/OnboardingScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
@@ -12,7 +12,7 @@ import PaymentScreen from '../screens/payment/PaymentScreen';
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigator = props => {
+const RootNavigator = () => {
   return (
     <>
       <NavigationContainer>

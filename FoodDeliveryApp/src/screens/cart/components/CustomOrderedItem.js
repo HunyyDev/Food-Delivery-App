@@ -102,5 +102,6 @@ const styles = StyleSheet.create({
   whiteText: {
     color: CUSTOM_COLOR.White,
     fontFamily: FONT_FAMILY.Bold,
+    fontSize: scale(15),
   },
 });
