@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Image,
-  TextInput,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {IC_BackButton} from './src/assets/icons';
 import CustomButton from './src/assets/components/CustomButton';
