@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
   textDoorDelivery: {
     flex: 1,
     justifyContent: 'center',
-    marginHorizontal: scale(21),
+    marginRight: scale(50),
     borderBottomWidth: 1,
     borderBottomColor: CUSTOM_COLOR.Silver,
   },
   textPickUp: {
     flex: 1,
     justifyContent: 'center',
-    marginLeft: scale(21),
+    marginRight: scale(50),
   },
 });
