@@ -44,7 +44,9 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{headerShown: false}} 
+      >
         <Stack.Screen name="OBS" component={OnBoardingScreen} />
         <Stack.Screen name="LG" component={Login} />
         <Stack.Screen name="HS" component={HomeScreen} />
