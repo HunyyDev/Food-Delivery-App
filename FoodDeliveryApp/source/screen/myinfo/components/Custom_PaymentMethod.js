@@ -4,7 +4,7 @@ import CUSTOM_COLOR from '../../../constants/color';
 import scale from '../../../../responsive';
 import {IMG_LINE} from '../../../assets/images';
 
-const Custom_PaymentMethod = props => {
+const Custom_PaymentMethod2 = props => {
   const [isSelect, setIsSelect] = useState('0');
   return (
     <View style={styles.viewContainer(props)}>
@@ -46,40 +46,22 @@ const Custom_PaymentMethod = props => {
         </View>
         <Text style={styles.selectText2}>{props.selectText2}</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          setIsSelect('3');
-        }}
-        style={styles.touchContainer3}>
-        <View style={styles.selectBorder}>
-          <View
-            backgroundColor={
-              isSelect === '3' ? CUSTOM_COLOR.SunsetOrange : 'transparent'
-            }
-            style={styles.select}
-          />
-        </View>
-        <View style={styles.selectImageView3}>
-          <Image source={props.img3} style={styles.selectImage} />
-        </View>
-        <Text style={styles.selectText3}>{props.selectText3}</Text>
-      </TouchableOpacity>
     </View>
   );
 };
 
-export default Custom_PaymentMethod;
+export default Custom_PaymentMethod2;
 
 const styles = StyleSheet.create({
   viewContainer: props => ({
-    //flexDirection: 'column',
+    flexDirection: 'column',
     backgroundColor: CUSTOM_COLOR.White,
     width: scale(315),
     borderRadius: scale(20),
     ...props.style,
   }),
   touchContainer1: {
-    //marginHorizontal: scale(30),
+    marginHorizontal: scale(30),
     left: scale(21),
     top: scale(30),
     width: scale(262),
@@ -92,7 +74,7 @@ const styles = StyleSheet.create({
     top: scale(75),
   },
   touchContainer2: {
-    //marginHorizontal: scale(30),
+    marginHorizontal: scale(30),
     left: scale(21),
     top: scale(100),
     width: scale(190),
@@ -121,8 +103,6 @@ const styles = StyleSheet.create({
     left: scale(30),
     backgroundColor: '#F47B0A',
     borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   selectImageView2: {
     position: 'absolute',
@@ -131,10 +111,11 @@ const styles = StyleSheet.create({
     left: scale(30),
     backgroundColor: '#EB4796',
     borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   selectImage: {
+    position: 'absolute',
+    left: scale(13),
+    top: scale(13),
     fill: CUSTOM_COLOR.White,
   },
   selectText1: {
@@ -154,32 +135,5 @@ const styles = StyleSheet.create({
     lineHeight: scale(20),
     left: scale(81),
     top: scale(10),
-  },
-  touchContainer3: {
-    //marginHorizontal: scale(30),
-    left: scale(21),
-    top: scale(120),
-    width: scale(190),
-    backgroundColor: CUSTOM_COLOR.White,
-    flexDirection: 'row',
-  },
-  selectText3: {
-    fontSize: scale(17),
-    fontWeight: '400',
-    color: CUSTOM_COLOR.Black,
-    //fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-    lineHeight: scale(20),
-    left: scale(81),
-    top: scale(10),
-  },
-  selectImageView3: {
-    position: 'absolute',
-    width: scale(40),
-    height: scale(40),
-    left: scale(30),
-    backgroundColor: '#EB4796',
-    borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
