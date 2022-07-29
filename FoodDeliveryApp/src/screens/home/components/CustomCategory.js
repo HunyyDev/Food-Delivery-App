@@ -1,7 +1,6 @@
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../../constants/colors';
-import SCREEN from '../../../constants/screens';
 import scale from '../../../constants/responsive';
 import FONT_FAMILY from '../../../constants/fonts';
 
@@ -33,7 +32,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Black,
   },
 
-    textHeadingMain: {
+  textHeadingMain: {
     fontSize: scale(17),
     opacity: 0.7,
     marginRight: 50,

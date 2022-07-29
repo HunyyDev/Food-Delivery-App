@@ -5,14 +5,13 @@ import LoginScreen from '../screens/auth/LoginScreen';
 import HomeScreen from '../screens/home/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SCREEN from '../constants/screens';
 import CartScreen from '../screens/cart/CartScreen';
 import LoadingScreen from '../screens/loading/LoadingScreen';
-
+import PaymentScreen from '../screens/payment/PaymentScreen';
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigator = props => {
+const RootNavigator = () => {
   return (
     <>
       <NavigationContainer>
@@ -37,6 +36,12 @@ const RootNavigator = props => {
             component={CartScreen}
             options={{headerShown: true}}
           />
+          <Stack.Screen
+            name="Payment"
+            component={PaymentScreen}
+            options={{headerShown: true}}
+          />
+
           <Stack.Screen
             name="Loading"
             component={LoadingScreen}

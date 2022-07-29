@@ -15,7 +15,7 @@ import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import {IC_Swipe} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
 
-const CartScreen = () => {
+const CartScreen = props => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.guide}>
@@ -27,40 +27,43 @@ const CartScreen = () => {
           <View style={styles.listItem}>
             <CustomOrderedItem
               img={IMG_Veggie_tomato_mix}
-              text="Veggie tomato mix"
-              price={1900}
+              text="Veggie tomato mix..."
+              price={'1900'}
             />
 
             <CustomOrderedItem
               img={IMG_Veggie_tomato_mix}
               text="Fishwith mix orange..."
-              price={1900}
+              price={'1900'}
+            />
+
+            <CustomOrderedItem
+              img={IMG_Veggie_tomato_mix}
+              text="Fishwith mix orange..."
+              price={'1900'}
+            />
+
+            <CustomOrderedItem
+              img={IMG_Veggie_tomato_mix}
+              text="Fishwith mix orange..."
+              price={'1900'}
             />
             <CustomOrderedItem
               img={IMG_Veggie_tomato_mix}
               text="Fishwith mix orange..."
-              price={1900}
-            />
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={1900}
-            />
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={1900}
-            />
-            <CustomOrderedItem
-              img={IMG_Veggie_tomato_mix}
-              text="Fishwith mix orange..."
-              price={1900}
+              price={'1900'}
             />
           </View>
         </ScrollView>
       </View>
       <View style={styles.button}>
-        <CustomButton type="secondary" text="Complete order" />
+        <CustomButton
+          type={'secondary'}
+          text={'Complete order'}
+          onPress={() => {
+            props.navigation.navigate('Payment');
+          }}
+        />
       </View>
     </SafeAreaView>
   );
@@ -77,8 +80,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: FONT_FAMILY.Light,
     fonSize: scale(10),
-    flexDirection: 'row',
     alignItems: 'flex-end',
+    flexDirection: 'row',
     justifyContent: 'center',
   },
 
@@ -92,11 +95,6 @@ const styles = StyleSheet.create({
   },
 
   listItem: {
-    flex: 1,
     alignItems: 'center',
-  },
-
-  item: {
-    height: '20%',
   },
 });

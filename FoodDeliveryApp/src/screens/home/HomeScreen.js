@@ -56,8 +56,7 @@ export class HomeScreen extends Component {
               icon={IC_SearchRaw}
               style={styles.searchBar}
             /> */}
-          <View
-            style={styles.searchBar}>
+          <View style={styles.searchBar}>
             <View style={{marginLeft: scale(35), marginRight: scale(16)}}>
               <IC_Search />
             </View>
