@@ -1,16 +1,16 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import CUSTOM_COLOR from '../../constants/colors';
+import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
   },
   logoBackground: {
     width: '100%',
     height: Dimensions.get('window').height * 0.4,
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderBottomRightRadius: 30,
     borderBottomLeftRadius: 30,
     alignItems: 'center',
@@ -35,18 +35,18 @@ const styles = StyleSheet.create({
     height: '8%',
     margin: 30,
     marginBottom: 10,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     alignSelf: 'center',
   },
   forgot: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 14,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
   },
   forgotPressed: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 14,
-    color: CUSTOM_COLOR.White,
+    color: COLORS.White,
   },
 });
 

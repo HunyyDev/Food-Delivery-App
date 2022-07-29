@@ -1,8 +1,8 @@
 import {Text, View, ScrollView, Image, Pressable, Alert} from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Logo} from '../../assets/images';
-import CustomButton from '../../components/CustomButton';
-import CustomInput from '../../components/CustomInput';
+import LargeButton from '../../components/LargeButton';
+import UnderlinedInput from '../../components/UnderlinedInput';
 import UnderlineButton from '../../components/UnderlineButton';
 import styles from './styles';
 
@@ -48,8 +48,8 @@ export default class LoginScreen extends Component {
         </>
         {this.state.tab === 'login' ? (
           <>
-            <CustomInput label={'Email address'} secure={false} />
-            <CustomInput label={'Password'} secure={true} />
+            <UnderlinedInput label={'Email address'} secure={false} />
+            <UnderlinedInput label={'Password'} secure={true} />
 
             <Pressable
               onPress={this.createButtonAlert}
@@ -68,7 +68,7 @@ export default class LoginScreen extends Component {
               }
             </Pressable>
             <>
-              <CustomButton
+              <LargeButton
                 label={'secondary'}
                 text={'Login'}
                 onPress={() => this.props.navigation.navigate('Home')}
@@ -77,11 +77,11 @@ export default class LoginScreen extends Component {
           </>
         ) : (
           <>
-            <CustomInput label={'Email address'} secure={false} />
-            <CustomInput label={'Password'} secure={true} />
-            <CustomInput label={'Confirm Password'} secure={true} />
+            <UnderlinedInput label={'Email address'} secure={false} />
+            <UnderlinedInput label={'Password'} secure={true} />
+            <UnderlinedInput label={'Confirm Password'} secure={true} />
             <>
-              <CustomButton
+              <LargeButton
                 label={'secondary'}
                 text={'Sign up'}
                 onPress={() => this.props.navigation.navigate('Home')}

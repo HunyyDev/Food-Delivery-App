@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
-import CUSTOM_COLOR from '../../constants/colors';
+import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flexDirection: 'column',
   },
   MenuContainer: {
     height: Dimensions.get('window').height * 0.1,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flexDirection: 'column',
     // alignItems: 'flex-end',
     justifyContent: 'flex-end',
@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
   TextContainer: {
     height: Dimensions.get('window').height * 0.22,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     padding: 30,
     paddingLeft: 50,
   },
   SearchContainer: {
     height: Dimensions.get('window').height * 0.08,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     paddingLeft: 50,
     paddingRight: 50,
     alignItems: 'center',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 36,
     paddingHorizontal: 75,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flex: 1,
   },
   navigationBar: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   ImageContainer: {
     height: Dimensions.get('window').height * 0.5,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Black,
+    backgroundColor: COLORS.Black,
   },
   HomeContainer: {
     height: Dimensions.get('window').height * 0.15,
@@ -64,14 +64,14 @@ const styles = StyleSheet.create({
     // marginLeft: '82%',
   },
   Text: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     fontFamily: FONT_FAMILY.RoundedHeavy,
     fontSize: 34,
   },
   Search: {
     width: '100%',
     height: '100%',
-    backgroundColor: CUSTOM_COLOR.Gallery,
+    backgroundColor: COLORS.Gallery,
     flexDirection: 'row',
     borderRadius: 40,
     alignItems: 'center',
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
   TextSearch: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     opacity: 0.5,
     fontSize: 17,
   },
@@ -103,9 +103,9 @@ const styles = StyleSheet.create({
   productInfo: {
     width: '100%',
     height: '80%',
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 30,
-    shadowColor: CUSTOM_COLOR.Black,
+    shadowColor: COLORS.Black,
     shadowOffset: {
       width: 0,
       height: -30,
@@ -123,18 +123,18 @@ const styles = StyleSheet.create({
     elevation: 5,
     borderRadius: 9999,
     padding: 0,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    backgroundColor: COLORS.SunsetOrange,
   },
   titleText: {
     fontFamily: FONT_FAMILY.RoundedBold,
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     textAlign: 'center',
     fontSize: 20,
     marginHorizontal: 45,
   },
   priceText: {
     fontFamily: FONT_FAMILY.RoundedBold,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
     textAlign: 'center',
     fontSize: 15,
     margin: 30,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   chosenIcon: {
-    shadowColor: CUSTOM_COLOR.SunsetOrange,
+    shadowColor: COLORS.SunsetOrange,
     shadowOffset: {
       width: 0,
       height: 0,
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   TextSeeMore: {
     fontFamily: FONT_FAMILY.RoundedRegular,
     fontSize: 15,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
   },
 });
 
