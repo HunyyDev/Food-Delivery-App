@@ -1,35 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
+import LoginScreen from './src/screens/auth/index.js';
+import OnboardingScreen from './src/screens/onboarding/index.js';
+import HomeScreen from './src/screens/home/index.js';
+import RootNavigator from './src/routes/RootNavigator.js';
+import DeliveryScreen from './src/screens/checkout/DeliveryScreen.js';
+import PaymentScreen from './src/screens/checkout/PaymentScreen.js';
+import InformationScreen from './src/screens/profile/InformationScreen.js';
+import MyProfileScreen from './src/screens/profile/MyProfileScreen.js';
 
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import LINKS from './src/constants/links';
-import HomeScreen from './src/screens/Home';
-import AuthenticationScreen from './src/screens/Authentication';
-import OnBoardingScreen from './src/screens/OnBoarding';
-
-const Stack = createNativeStackNavigator();
-
-const App = () => {
+const App = props => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name={LINKS.ON_BOARDING} component={OnBoardingScreen} />
-        <Stack.Screen
-          name={LINKS.AUTHENTICATION}
-          component={AuthenticationScreen}
-        />
-        <Stack.Screen name={LINKS.HOME} component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <DeliveryScreen />
+    // <PaymentScreen />
+    // <InformationScreen />
+    // <MyProfileScreen />
+    <RootNavigator {...props} />
   );
 };
 

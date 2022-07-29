@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.food_delivery_app">
+  package="com.firstapp_21520963">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
