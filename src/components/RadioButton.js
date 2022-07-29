@@ -1,6 +1,6 @@
 import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
-import CUSTOM_COLOR from '../constants/colors';
+import COLORS from '../constants/colors';
 
 const RadioButton = () => {
   const [value, setValue] = useState(0);
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width: 24,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: CUSTOM_COLOR.Silver,
+    borderColor: COLORS.Silver,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     width: 24,
     borderRadius: 100,
     borderWidth: 2,
-    borderColor: value ? CUSTOM_COLOR.Vermilion : CUSTOM_COLOR.Silver,
+    borderColor: value ? COLORS.Vermilion : COLORS.Silver,
     alignItems: 'center',
     justifyContent: 'center',
   }),
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     width: 12,
     height: 12,
     borderRadius: 50,
-    backgroundColor: CUSTOM_COLOR.Vermilion,
+    backgroundColor: COLORS.Vermilion,
   },
 });
