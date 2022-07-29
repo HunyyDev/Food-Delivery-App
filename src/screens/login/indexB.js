@@ -15,11 +15,15 @@ import React, {useState} from 'react';
 import {IMG_Logo} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
+import SCREEN_NAME from '../../constants/screens';
 
 function LoginScreen(props) {
   const {navigation} = props;
   const [tab, setTab] = useState('login');
   const isDarkMode = useColorScheme() === 'dark';
+  const onTransitToHome = () => {
+    navigation.navigate(SCREEN_NAME.ONBOARDING);
+  };
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -69,7 +73,7 @@ function LoginScreen(props) {
             </View>
           </>
           <View style={styles.buttonView}>
-            <Pressable style={styles.button}>
+            <Pressable style={styles.button} onPress={onTransitToHome}>
               <Text style={styles.buttonText}>Login</Text>
             </Pressable>
           </View>

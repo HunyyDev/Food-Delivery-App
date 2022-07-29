@@ -6,7 +6,7 @@ import FONT_FAMILY from '../../constants/fonts';
 export const onboardingStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetColor,
+    backgroundColor: CUSTOM_COLOR.SunsetYellow,
   },
   logo: {
     width: '100%',
@@ -18,7 +18,7 @@ export const onboardingStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 36,
-    backgroundColor: CUSTOM_COLOR.white,
+    backgroundColor: CUSTOM_COLOR.White,
     overflow: 'hidden',
     marginTop: 56,
     marginLeft: 49,

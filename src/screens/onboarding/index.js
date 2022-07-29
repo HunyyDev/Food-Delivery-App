@@ -10,8 +10,13 @@ import {
 import React from 'react';
 import {onboardingStyles} from './styles';
 import {IMG_Logo, IMG_Background} from '../../assets/images';
-import Custom_Button from '../../components/CustomButton';
-const OnboardingScreen = () => {
+import CustomButton from '../../components/CustomButton';
+import SCREEN_NAME from '../../constants/screens';
+const OnboardingScreen = props => {
+  const {navigation} = props;
+  const onTransitToLogin = () => {
+    navigation.navigate(SCREEN_NAME.LOGIN);
+  };
   return (
     <ScrollView style={onboardingStyles.container}>
       {/* Logo */}
@@ -35,7 +40,9 @@ const OnboardingScreen = () => {
             source={IMG_Background}
             style={onboardingStyles.background}
             resizeMode={'contain'}></ImageBackground>
-          <Custom_Button type="primary">Get Started</Custom_Button>
+          <CustomButton type="primary" onPress={onTransitToLogin}>
+            Get Started
+          </CustomButton>
         </View>
       </>
     </ScrollView>
