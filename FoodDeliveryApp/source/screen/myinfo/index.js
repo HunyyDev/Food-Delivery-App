@@ -1,17 +1,17 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
 import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
-import {IMG_AVATAR, IMG_BANK, IMG_CARD} from '../../assets/images';
+import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
 import { IC_GoBack } from '../../assets/icons';
 
-const MyInFoScreen = () => {
+const MyInFoScreen = ({ navigation: { goBack } }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.goBack}>
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={styles.goBack} onPress={() => goBack()}>
         <IC_GoBack />
       </TouchableOpacity>
       <View>
@@ -25,14 +25,16 @@ const MyInFoScreen = () => {
             No 15 uti street off ovie palace road effurun delta state
           </Text>
         </View>
-        {/* <Custom_PaymentMethod2
-         style = {styles.paymentBox}
-         img1={IMG_CARD}
-         img2={IMG_BANK}
-         selectText1={'Card'}
-         selectText2={'Bank account'}
-
-         /> */}
+        <Text style={styles.header2}>Payment method</Text>
+        <Custom_PaymentMethod2
+          style={styles.paymentBox}
+          img1={IMG_CARD}
+          img2={IMG_BANK}
+          img3={IMG_PAYPAL}
+          selectText1={'Card'}
+          selectText2={'Bank account'}
+          selectText3={'Paypal'}
+        />
       </View>
       <Custom_ButtonOne 
         text="Update"

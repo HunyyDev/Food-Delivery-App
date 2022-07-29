@@ -5,9 +5,10 @@ import scale from '../../../../responsive';
 import {IMG_LINE} from '../../../assets/images';
 
 const Custom_PaymentMethod2 = props => {
-  const [isSelect, setIsSelect] = useState('0');
+  const [isSelect, setIsSelect] = useState('1');
   return (
     <View style={styles.viewContainer(props)}>
+      {/*section one */}
       <TouchableOpacity
         onPress={() => {
           setIsSelect('1');
@@ -26,8 +27,8 @@ const Custom_PaymentMethod2 = props => {
         </View>
         <Text style={styles.selectText1}>{props.selectText1}</Text>
       </TouchableOpacity>
-      <Image source={IMG_LINE} style={styles.lineContainer} />
-      {/* <View  style={styles.lineContainer}/> */}
+      <View style={styles.firstLine}/>
+      {/*section two */}
       <TouchableOpacity
         onPress={() => {
           setIsSelect('2');
@@ -46,6 +47,26 @@ const Custom_PaymentMethod2 = props => {
         </View>
         <Text style={styles.selectText2}>{props.selectText2}</Text>
       </TouchableOpacity>
+      <View style={styles.secondLine}/>
+      {/*section three */}
+      <TouchableOpacity
+        onPress={() => {
+          setIsSelect('3');
+        }}
+        style={styles.touchContainer3}>
+        <View style={styles.selectBorder}>
+          <View
+            backgroundColor={
+              isSelect === '3' ? CUSTOM_COLOR.SunsetOrange : 'transparent'
+            }
+            style={styles.select}
+          />
+        </View>
+        <View style={styles.selectImageView3}>
+          <Image source={props.img3} style={styles.selectImage} />
+        </View>
+        <Text style={styles.selectText3}>{props.selectText3}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -61,28 +82,43 @@ const styles = StyleSheet.create({
     ...props.style,
   }),
   touchContainer1: {
-    marginHorizontal: scale(30),
-    left: scale(21),
-    top: scale(30),
-    width: scale(262),
+    position: 'absolute',
+    top: scale(20),
+    width: scale(315),
+    height: scale(40),
     backgroundColor: CUSTOM_COLOR.White,
     flexDirection: 'row',
+    alignItems: 'center',
   },
-  lineContainer: {
-    width: scale(200),
-    left: scale(75),
+  firstLine: {
+    position: 'absolute',
+    width: scale(232),
+    left: scale(51),
     top: scale(75),
+    height: 1,
+    backgroundColor: CUSTOM_COLOR.Black,
+    opacity: 0.3,
+  },
+  secondLine: {
+    position: 'absolute',
+    width: scale(232),
+    left: scale(51),
+    top: scale(145),
+    height: 1,
+    backgroundColor: CUSTOM_COLOR.Black,
+    opacity: 0.3,
   },
   touchContainer2: {
-    marginHorizontal: scale(30),
-    left: scale(21),
-    top: scale(100),
-    width: scale(190),
+    position: 'absolute',
+    top: scale(90),
+    width: scale(315),
+    height: scale(40),
     backgroundColor: CUSTOM_COLOR.White,
     flexDirection: 'row',
+    alignItems: 'center',
   },
   selectBorder: {
-    top: scale(15),
+    left: scale(21),
     width: scale(15),
     height: scale(15),
     borderRadius: 360,
@@ -100,40 +136,60 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: scale(40),
     height: scale(40),
-    left: scale(30),
-    backgroundColor: '#F47B0A',
+    left: scale(51),
+    backgroundColor: CUSTOM_COLOR.TahitiGold,
     borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   selectImageView2: {
     position: 'absolute',
     width: scale(40),
     height: scale(40),
-    left: scale(30),
-    backgroundColor: '#EB4796',
+    left: scale(51),
+    backgroundColor: CUSTOM_COLOR.FrenchRose,
     borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   selectImage: {
-    position: 'absolute',
-    left: scale(13),
-    top: scale(13),
     fill: CUSTOM_COLOR.White,
   },
   selectText1: {
     fontSize: scale(17),
     fontWeight: '400',
     color: CUSTOM_COLOR.Black,
-    //fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-    lineHeight: scale(20),
-    left: scale(81),
-    top: scale(10),
+    left: scale(102),
   },
   selectText2: {
     fontSize: scale(17),
     fontWeight: '400',
     color: CUSTOM_COLOR.Black,
-    //fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-    lineHeight: scale(20),
-    left: scale(81),
-    top: scale(10),
+    left: scale(102),
+  },
+  touchContainer3: {
+    position: 'absolute',
+    top: scale(160),
+    width: scale(315),
+    backgroundColor: CUSTOM_COLOR.White,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  selectImageView3: {
+    position: 'absolute',
+    width: scale(40),
+    height: scale(40),
+    left: scale(51),
+    backgroundColor: CUSTOM_COLOR.BlueRibbon,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  selectText3: {
+    fontSize: scale(17),
+    fontWeight: '400',
+    color: CUSTOM_COLOR.Black,
+    left: scale(102),
   },
 });
+

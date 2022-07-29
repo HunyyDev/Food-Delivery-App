@@ -13,7 +13,7 @@ class Custom_SearchBar extends React.Component {
   render() {
     return (
       <View style={styles.searchContainer(this.props)}>
-        <Custom_IconButton style={styles.searchImage} icon={IC_Glass} />
+        <Custom_IconButton style={styles.searchImage} icon={IC_Glass}  onPress={this.props.onPress} />
         <TextInput
           style={styles.searchInput}
           placeholder={this.props.placeholderText}
