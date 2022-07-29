@@ -1,40 +1,56 @@
-import React from 'react';
+
+
+
+
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OnBoardingScreen from './src/screens/OnBoardingScreen';
 import Login from './src/screens/auth/Login';
 import HomeScreen from './src/screens/HomeScreen';
-import {createNavigator} from 'react-navigation';
-import {createStackNavigator} from 'react-navigation';
 
-import {Text} from 'react-native';
 
-const App = () => {
+
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Home Screen</Text>
+//       <Button
+//         title="Go to Details"
+//         onPress={() => navigation.navigate('Details')}
+//       /> 
+//     </View>
+//   );
+// }
+// function DetailsScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Details Screen</Text>
+//       <Button
+//         title="Go to Details... again"
+//         onPress={() => navigation.navigate('Details')}
+//       />
+//       <Text>HomeScreen</Text>
+//       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+//       <Text>goBack</Text>
+//       <Button title="Go back" onPress={() => navigation.goBack()} />
+//     </View>
+//   );
+// }
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <>
-      <Login />
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="OBS" component={OnBoardingScreen} />
+        <Stack.Screen name="LG" component={Login} />
+        <Stack.Screen name="HS" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
+}
 
 export default App;
-
-// import React from 'react';
-// import OnBoardingScreen from './src/screens/OnBoardingScreen';
-// import Login from './src/screens/auth/Login';
-// import HomeScreen from './src/screens/HomeScreen';
-import {NavigationContainer} from 'react-navigation';
-
-// const Stack = createNativeStackNavigator();
-
-// const App = () => {
-//   return (
-//     <NavigationContainer>
-//         <Stack.Navigator initialRouteName="Onboarding" screenOptions={{headerShown: false}}>
-//           <Stack.Screen name="Onboarding" component={OnBoardingScreen} />
-//           <Stack.Screen name="Login" component={Login} />
-//           {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
-//         </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
-
-// export default App;

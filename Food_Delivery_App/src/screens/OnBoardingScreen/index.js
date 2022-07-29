@@ -11,7 +11,7 @@ import {createNavigator} from 'react-navigation';
 import {createAppContainer} from 'react-navigation';
 import CustomButton from '../../components/CustomButton';
 
-const App = () => {
+const App = ({navigation}) => {
   const [value, setValue] = React.useState('rgba(255,75,58,255)');
 
   React.useEffect(() => {
@@ -47,14 +47,8 @@ const App = () => {
           </View>
 
           <>{/* Button */}</>
-          {/* <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('Login')}
-            style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>{'Get started '}</Text>
-          </TouchableOpacity> */}
-
-        
-        <CustomButton title='Get started' type={'primary'} alert='primary' />
+          
+        <CustomButton title='Get started' type={'primary'} alert='primary' navigationnn={navigation} name='LG' />
       </ScrollView>
     </SafeAreaView>
   );

@@ -15,7 +15,7 @@ import CUSTOM_COLOR from '../../../constants/colors';
 
 const Login = 'Login';
 const signUp = 'Sign-up';
-const LoginScreen = navigation => {
+const LoginScreen = ({navigation}) => {
   const [page, setPage] = useState(Login);
   return (
     <SafeAreaView style={styles.container}>
@@ -62,6 +62,8 @@ const LoginScreen = navigation => {
         title={page}
         type="secondary"
         alert="Login button's event handle"
+        name='HS'
+        navigationnn={navigation}
       />
     </SafeAreaView>
   );
