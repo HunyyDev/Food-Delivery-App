@@ -1,0 +1,13 @@
+export {default as IC_More} from './IC_More';
+export {default as IC_Cart} from './IC_Cart';
+export {default as IC_Search} from './IC_Search';
+export {default as IC_Divider} from './IC_Divider';
+export {default as IC_Home} from './IC_Home';
+export {default as IC_Heart} from './IC_Heart';
+export {default as IC_User} from './IC_User';
+export {default as IC_Clock} from './IC_Clock';
+export {default as IC_History} from './IC_History';
+export {default as IC_Order} from './IC_Order';
+export {default as IC_NoConnect} from './IC_NoConnect';
+export {default as IC_NotFound} from './IC_NotFound';
+export {default as IC_BackButton} from './IC_BackButton';

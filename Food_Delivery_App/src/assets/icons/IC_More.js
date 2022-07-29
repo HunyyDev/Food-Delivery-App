@@ -6,7 +6,7 @@ const SvgComponent = (props) => (
   <Svg
     width={25}
     height={17}
-    fill= "black"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
