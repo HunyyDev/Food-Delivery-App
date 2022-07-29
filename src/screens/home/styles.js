@@ -1,66 +1,3 @@
-<<<<<<< HEAD
-import {StyleSheet} from 'react-native';
-
-import COLORS from '../../constants/colors';
-import FONT_FAMILY from '../../constants/fonts';
-
-const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: COLORS.SILVER,
-  },
-  navigationBar: {
-    marginTop: 74,
-    marginLeft: 54,
-    marginRight: 42,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  headerWrapper: {
-    marginTop: 43,
-    marginLeft: 50,
-    width: 220,
-  },
-  headerText: {
-    color: COLORS.BLACK,
-    fontSize: 34,
-    fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-  },
-  searchWrapper: {
-    borderRadius: 30,
-    marginTop: 28,
-    marginHorizontal: 50,
-    height: 60,
-    backgroundColor: COLORS.GALLERY,
-    paddingHorizontal: 35,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  searchIcon: {},
-  searchInput: {
-    flex: 1,
-    marginLeft: 16,
-    paddingTop: 20,
-    fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-    fontSize: 17,
-    color: COLORS.BLACK,
-    opacity: 0.5,
-  },
-  categoryWrapper: {
-    marginTop: 36,
-    marginHorizontal: 75,
-    flexDirection: 'row',
-  },
-  categoryItem: {
-    padding: 20,
-    fontSize: 17,
-  },
-  categoryText: isChoosing => ({
-    color: isChoosing ? COLORS.SUNSET_ORANGE : COLORS.MANATEE,
-    fontSize: 17,
-  }),
-=======
 import React, {Component} from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -148,7 +85,6 @@ const styles = StyleSheet.create({
     opacity: 0.5,
     fontSize: 17,
   },
->>>>>>> ChimCanhCut/dev_khangnt
   productWrapper: {
     flexDirection: 'row',
     paddingBottom: 50,

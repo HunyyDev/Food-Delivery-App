@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-const COLORS = {
-  SUNSET_ORANGE: '#FF4B3A',
-  WHITE: 'white',
-  SILVER: '#F2F2F2',
-  BLACK: '#000',
-  GALLERY: '#EFEEEE',
-  LIGHT_BLACK: 'rgba(0, 0, 0, 0.4)',
-  MANATEE: '#9A9A9D',
-};
-
-export default COLORS;
-=======
 const CUSTOM_COLOR = {
   SunsetOrange: '#FF4B3A',
   White: '#FFFFFF',
@@ -28,4 +15,3 @@ const CUSTOM_COLOR = {
 };
 
 export default CUSTOM_COLOR;
->>>>>>> ChimCanhCut/dev_khangnt

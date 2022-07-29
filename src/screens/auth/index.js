@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-import {Text, StyleSheet, View, ScrollView, Image} from 'react-native';
-import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../constant/color';
-import {IMG_Logo} from '../../assets/images';
-
-export default class LonginScreen extends Component {
-  render() {
-    return (
-      <ScrollView>
-        {/* Top */}
-        <View style={styles.containerTop}>
-          <Image source={IMG_Logo} style={styles.image}></Image>
-        </View>
-        {/* Body */}
-        <View></View>
-        {/* Bottom */}
-        <View></View>
-=======
 import {Text, View, ScrollView, Image, Pressable, Alert} from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Logo} from '../../assets/images';
@@ -108,7 +89,6 @@ export default class LoginScreen extends Component {
             </>
           </>
         )}
->>>>>>> ChimCanhCut/dev_khangnt
       </ScrollView>
     );
   }
