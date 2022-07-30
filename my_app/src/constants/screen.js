@@ -5,9 +5,12 @@ const SCREEN_NAME = {
   SIGNUP: 'SignUpScreen',
   PRODUCT_LIST: 'ProductListScreen',
   PRODUCT_DETAIL: 'ProductDetailScreen',
-  SPLASH: 'Splash',
-  PROFILE: 'Profile',
-  MYPROFILE: 'MyProfile',
+  SPLASH: 'SplashScreen',
+  PROFILE: 'ProfileScreen',
+  MYPROFILE: 'MyProfileScreen',
+  SEARCH: 'SearchScreen',
+  DISCONNECT: 'DisconnectScreen',
+  HISTORY: 'HistoryScreen',
 };
 
 export default SCREEN_NAME;

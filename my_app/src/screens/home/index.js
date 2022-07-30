@@ -34,6 +34,14 @@ const HomeScreen = props => {
     navigation.navigate(SCREEN_NAME.MYPROFILE);
   };
 
+  const onSearchScreen = () => {
+    navigation.navigate(SCREEN_NAME.SEARCH);
+  };
+
+  const onHistoryScreen = () => {
+    navigation.navigate(SCREEN_NAME.HISTORY);
+  };
+
   const [onChangeText] = React.useState(null);
 
   return (
@@ -59,9 +67,12 @@ const HomeScreen = props => {
       <>
         <View style={styles.barSearchContainer}>
           <View style={styles.barSearchShape}>
-            <View style={{marginLeft: 35, marginRight: 16}}>
-              <Image source={ic_Search} />
-            </View>
+            <TouchableOpacity activeOpacity={0.7} onPress={onSearchScreen}>
+              <View style={{marginLeft: 35, marginRight: 16}}>
+                <Image source={ic_Search} />
+              </View>
+            </TouchableOpacity>
+
             <View style={{flex: 5}}>
               <TextInput
                 style={styles.titleSearch}
@@ -134,7 +145,7 @@ const HomeScreen = props => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity activeOpacity={0.7}>
+          <TouchableOpacity activeOpacity={0.7} onPress={onHistoryScreen}>
             <View>
               <Image source={ic_heart} />
             </View>
@@ -229,18 +240,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     //backgroundColor:CUSTOM_COLOR.CornflowerBlue,
   },
-  ImgSpace: {
-    flex: 1,
-  },
+  // ImgSpace: {
+  //   flex: 1,
+  // },
   ImgMask: {
     height: scale(321),
     width: scale(220),
     resizeMode: 'contain',
   },
-  BottomContainer: {
-    justifyContent: 'flex-end',
-    // flex: 1,
-  },
+  // BottomContainer: {
+  //   justifyContent: 'flex-end',
+  //   //flex: 1,
+  //   backgroundColor: CUSTOM_COLOR.SunsetOrange,
+  // },
 
   icTabContainer: {
     flexDirection: 'row',
