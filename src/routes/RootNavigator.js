@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SCREEN_NAME from '../constants/screens';
 import OnboardingScreen from '../screens/onboarding';
 import LoginScreen from '../screens/login/indexB';
+import CartScreen from '../../App';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,11 @@ const RootNavigator = props => {
           options={{headerShown: false}}
         />
       </Stack.Navigator>
+      <Stack.Screen
+        name={SCREEN_NAME.CART}
+        component={CartScreen}
+        options={{headerShown: false}}
+      />
     </NavigationContainer>
   );
 };
