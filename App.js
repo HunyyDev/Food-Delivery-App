@@ -9,6 +9,8 @@ import {OdersScreen} from './src/screens/OdersScreen';
 import NoInternetScreen from './src/screens/noInternet';
 import MyProfileScreen from './src/screens/Profile';
 import HistoryScreen from './src/screens/History';
+import LoadingScreen from './src/screens/loading';
+import PleaseNoteScreen from './src/screens/PleaseNote';
 
 const stack = createNativeStackNavigator();
 
@@ -39,6 +41,12 @@ const App = props => {
         </stack.Screen>
         <stack.Screen name="HistoryScreen" options={{headerShown: false}}>
           {props => <HistoryScreen {...props} />}
+        </stack.Screen>
+        <stack.Screen name="LoadingScreen" options={{headerShown: false}}>
+          {props => <LoadingScreen {...props} />}
+        </stack.Screen>
+        <stack.Screen name="PleaseNoteScreen" options={{headerShown: false}}>
+          {props => <PleaseNoteScreen {...props} />}
         </stack.Screen>
       </stack.Navigator>
     </NavigationContainer>

@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import React, { Component } from 'react';
-import { Icon_Back, Image_History, IMG_Food } from '../../assets/images';
+import React, {Component} from 'react';
+import {Icon_Back, Image_History, IMG_Food} from '../../assets/images';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import scale from '../../assets/constants/reponsive';
 import FONT_FAMILY from '../../assets/constants/fonts';

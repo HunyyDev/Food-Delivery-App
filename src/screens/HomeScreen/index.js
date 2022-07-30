@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   View,
@@ -12,8 +12,8 @@ import {
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/reponsive';
-import { UnderlineButton } from '../../assets/components/UnderlineButton';
-import { CustomSwitch } from '../../assets/components/CustomSwitch';
+import {UnderlineButton} from '../../assets/components/UnderlineButton';
+import {CustomSwitch} from '../../assets/components/CustomSwitch';
 import {
   IMG_Vector,
   IMG_Cart,
@@ -24,10 +24,10 @@ import {
   IMG_Clock,
   IMG_Personal,
 } from '../../assets/images';
-import { Drinks } from './DrinksForm';
-import { Foods } from './FoodsForm';
-import { Snacks } from './SnacksForm';
-import { Sauce } from './SauceForm';
+import {Drinks} from './DrinksForm';
+import {Foods} from './FoodsForm';
+import {Snacks} from './SnacksForm';
+import {Sauce} from './SauceForm';
 class Condition extends Component {
   constructor(props) {
     super(props);
@@ -107,7 +107,7 @@ export class HomeScreen extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.cartContainer}
-          onPress={() => this.props.navigation.navigate('MyProfileScreen')}>
+          onPress={() => this.props.navigation.navigate('PleaseNoteScreen')}>
           <Image source={IMG_Cart} />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
@@ -116,7 +116,7 @@ export class HomeScreen extends Component {
         <View style={styles.searchContainer}>
           <Image source={IMG_Search} style={styles.searchImage} />
           <TextInput
-            hitSlop={{ top: '100%', left: '100%', right: '100%', bottom: '100%' }}
+            hitSlop={{top: '100%', left: '100%', right: '100%', bottom: '100%'}}
             placeholder={'Search'}
             style={styles.searchInput}
           />
@@ -129,7 +129,7 @@ export class HomeScreen extends Component {
             <View style={styles.backgroundItem}>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({ label: 'Foods' })}
+                  onPress={() => this.setState({label: 'Foods'})}
                   style={styles.button}
                   underlineStyle={[
                     styles.underLine,
@@ -145,7 +145,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({ label: 'Drinks' })}
+                  onPress={() => this.setState({label: 'Drinks'})}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,
@@ -161,7 +161,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({ label: 'Snacks' })}
+                  onPress={() => this.setState({label: 'Snacks'})}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,
@@ -177,7 +177,7 @@ export class HomeScreen extends Component {
               </View>
               <View style={styles.backgroundTitle}>
                 <UnderlineButton
-                  onPress={() => this.setState({ label: 'Sauce' })}
+                  onPress={() => this.setState({label: 'Sauce'})}
                   style={styles.buttonText}
                   underlineStyle={[
                     styles.underLine,

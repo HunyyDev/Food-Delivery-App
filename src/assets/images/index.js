@@ -18,3 +18,6 @@ export {default as IMG_NoInternet} from './eva_wifi-off-fill.png';
 export {default as IMG_Personal} from './Rectangle6.png';
 export {default as Icon_Go} from './chevron-left.png';
 export {default as Image_History} from './HistoryImage.png';
+export {default as Image_LoadingBackground} from './Loading.png';
+export {default as Image_PaymentBackground} from './PaymentBackGround.png';
+
