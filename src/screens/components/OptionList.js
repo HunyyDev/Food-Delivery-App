@@ -28,7 +28,6 @@ const styles=StyleSheet.create({
         marginTop: 10,
         width: 15,
         height: 15,
-        backgroundColor: 'black',
         borderRadius: 360,
         borderColor: CUSTOM_COLOR.Black,
         backgroundColor: isChoosing ? CUSTOM_COLOR.SunsetYellow : CUSTOM_COLOR.Transparent,
