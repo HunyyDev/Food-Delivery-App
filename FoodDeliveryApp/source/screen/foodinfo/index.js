@@ -55,14 +55,16 @@ const FoodInfoScreen = ({navigation: {goBack}}) => {
       </>
       {/* Food swiper */}
       <>
-        <View style={styles.wrap}>
-          <ScrollView
-            onScroll={({nativeEvent}) => onchange(nativeEvent)}
-            showHorizontalScrollIndicator={false}
-            pagingEnabled
-            horizontal
-            style={styles.foodView}>
-            {images.map((e, index) => (
+      <View style={styles.wrap}>
+        <ScrollView 
+          onScroll={({nativeEvent}) => onchange(nativeEvent)}
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled
+          horizontal
+          style={styles.foodView}
+        >
+          {
+            images.map((e, index) => 
               <Image
                 key={e}
                 resizeMode="stretch"
@@ -137,6 +139,7 @@ const styles = StyleSheet.create({
   wrap: {
     width: '100%',
     height: '100%',
+    left: scale(25),
   },
   wrapDot: {
     position: 'absolute',

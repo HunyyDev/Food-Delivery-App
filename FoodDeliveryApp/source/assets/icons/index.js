@@ -13,4 +13,5 @@ export {default as IC_SwipeHand} from './IC_SwipeHand';
 export {default as IC_GoBack} from './IC_GoBack';
 export {default as IC_SmallCircle} from './IC_SmallCircle';
 export {default as IC_Next} from './IC_Next';
+export {default as IC_Pencil} from './IC_Pencil';
 

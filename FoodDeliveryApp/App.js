@@ -22,6 +22,7 @@ import MyProfileScreen from './source/screen/myprofile';
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 const config = {
@@ -49,7 +50,7 @@ const closeConfig = {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding" 
+      <Stack.Navigator initialRouteName="Loading" 
       screenOptions={{ headerShown: false,
       gestureEnabled: true,
       gestureDirection: 'horizontal',
@@ -65,6 +66,7 @@ const App = () => {
         <Stack.Screen name="Cart" component={CartScreen} />
         <Stack.Screen name="Search" component={SearchScreen} />
         <Stack.Screen name="MyProfile" component={MyProfileScreen} />
+        <Stack.Screen name="Loading" component={LoadingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

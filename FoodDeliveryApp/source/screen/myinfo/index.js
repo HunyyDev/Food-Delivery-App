@@ -13,8 +13,8 @@ import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
 import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
-import {IC_GoBack} from '../../assets/icons';
-import {useNavigation} from '@react-navigation/native';
+import { IC_GoBack, IC_Pencil } from '../../assets/icons';
+import { useNavigation } from '@react-navigation/native';
 
 const MyInFoScreen = ({navigation: {goBack}}) => {
   const navigation = useNavigation();
@@ -26,16 +26,19 @@ const MyInFoScreen = ({navigation: {goBack}}) => {
       <View>
         <Text style={styles.content}>My profile</Text>
         <Text style={styles.header1}>Information</Text>
-        <View style={styles.viewInside1}>
-          <Image source={IMG_AVATAR} style={styles.avatar} />
-          <Text style={styles.description2}>Marvis Ighedosa</Text>
-          <Text style={[styles.description1, styles.mail]}>
-            dosamarvis@gmail.com
-          </Text>
-          <Text style={[styles.description1, styles.info]}>
-            No 15 uti street off ovie palace road effurun delta state
-          </Text>
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('MyProfile')}>
+          <View style={styles.viewInside1}>
+            <Image source={IMG_AVATAR} style={styles.avatar} />
+            <IC_Pencil style={styles.pencil}/>
+            <Text style={styles.description2}>Marvis Ighedosa</Text>
+            <Text style={[styles.description1, styles.mail]}>
+              dosamarvis@gmail.com
+            </Text>
+            <Text style={[styles.description1, styles.info]}>
+              No 15 uti street off ovie palace road effurun delta state
+            </Text>
+          </View>
+        </TouchableOpacity>
         <Text style={styles.header2}>Payment method</Text>
         <Custom_PaymentMethod2
           style={styles.paymentBox}
@@ -52,8 +55,8 @@ const MyInFoScreen = ({navigation: {goBack}}) => {
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White}
-        onPress={() => navigation.navigate('MyProfile')}
-      />
+         
+        />
     </SafeAreaView>
   );
 };
@@ -69,6 +72,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: scale(66),
     left: scale(50),
+  },
+  pencil: {
+    left: scale(110),
+    top: scale(-15),
   },
   content: {
     top: scale(61),
