@@ -5,5 +5,7 @@ const CUSTOM_COLOR = {
   Vermilion: '#FA4A0C',
   Black: '#000000',
   Concrete: '#F2F2F2',
+  FrenchRose: '#EB4796',
+  BlueRibbon: '#0038FF',
 };
 export default CUSTOM_COLOR;

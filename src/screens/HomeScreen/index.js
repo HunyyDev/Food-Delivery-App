@@ -13,7 +13,6 @@ import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/reponsive';
 import {UnderlineButton} from '../../assets/components/UnderlineButton';
-import {CustomSwitch} from '../../assets/components/CustomSwitch';
 import {
   IMG_Vector,
   IMG_Cart,
@@ -118,79 +117,78 @@ export class HomeScreen extends Component {
             style={styles.searchInput}
           />
         </View>
-        <View style={styles.scrollView}>
-          <CustomSwitch
-            flexGrow={1}
-            justifyContent={'center'}
-            flexDirection={'row'}>
-            <View style={styles.backgroundItem}>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({label: 'Foods'})}
-                  style={styles.button}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === this.props.label
-                          ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Foods</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({label: 'Drinks'})}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === this.props.label
-                          ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Drinks</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({label: 'Snacks'})}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === this.props.label
-                          ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Snacks</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({label: 'Sauce'})}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === this.props.label
-                          ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Sauce</Text>
-                </UnderlineButton>
-              </View>
-            </View>
-          </CustomSwitch>
-        </View>
+        <ScrollView
+          style={styles.scrollView}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.contentContainer}>
+          {/* <View style={styles.backgroundItem}> */}
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Foods'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Foods'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Foods</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Drinks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Drinks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Drinks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Snacks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Snacks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Snacks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Sauce'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Sauce'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Sauce</Text>
+            </UnderlineButton>
+          </View>
+          {/* </View> */}
+        </ScrollView>
         <View style={styles.viewTaskbar}>
           <Image style={styles.iconContainer} source={IMG_Home} />
           <Image style={styles.iconContainer} source={IMG_Heart} />
@@ -208,6 +206,12 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.Concrete,
     flex: 1,
     alignItems: 'center',
+  },
+  contentContainer: {
+    paddingVertical: 3,
+    width: scale(550),
+    height: scale(50),
+    justifyContent: 'space-around',
   },
   imageContainer: {
     width: scale(28),
@@ -268,10 +272,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   scrollView: {
-    width: scale(450),
-    height: scale(50),
-    top: scale(400),
-    // backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    // width: scale(450),
+    top: scale(350),
+    marginLeft: scale(100),
+    left: scale(10),
+    //backgroundColor: CUSTOM_COLOR.SunsetOrange,
     position: 'absolute',
   },
   backgroundItem: {
@@ -279,7 +284,7 @@ const styles = StyleSheet.create({
     height: scale(50),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: CUSTOM_COLOR.Black,
     position: 'absolute',
   },
   text1: {
@@ -305,7 +310,7 @@ const styles = StyleSheet.create({
     bottom: scale(0),
   },
   underLine: {
-    width: scale(134),
+    width: scale(100),
     height: scale(4),
     alignSelf: 'center',
     position: 'absolute',

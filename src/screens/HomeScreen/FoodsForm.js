@@ -29,21 +29,21 @@ export class Foods extends Component {
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
+              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
             </View>
             <View style={styles.listContainer}>
               <Image style={styles.foodImage} source={IMG_Food} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
+              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
             </View>
             <View style={styles.listContainer}>
               <Image style={styles.foodImage} source={IMG_Food3} />
               <Text style={styles.textFoodContainer}>
                 {'Spicy \nfish sauce'}
               </Text>
-              <Text style={styles.textPriceContainer}>{'N2,300'}</Text>
+              <Text style={styles.textPriceContainer}>{'$2,300'}</Text>
             </View>
           </ScrollView>
         </SafeAreaView>

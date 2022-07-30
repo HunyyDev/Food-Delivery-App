@@ -5,7 +5,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from './src/screens/HomeScreen';
-
+import ProductDetail from './src/screens/ProductDetail';
 const stack = createNativeStackNavigator();
 
 const App = props => {
@@ -23,6 +23,9 @@ const App = props => {
         </stack.Screen>
         <stack.Screen name="HomeScreen" options={{headerShown: false}}>
           {props => <HomeScreen {...props} />}
+        </stack.Screen>
+        <stack.Screen name="ProductDetail" options={{headerShown: false}}>
+          {props => <ProductDetail {...props} />}
         </stack.Screen>
       </stack.Navigator>
     </NavigationContainer>
