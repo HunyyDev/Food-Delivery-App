@@ -4,7 +4,7 @@ import OnBoardingScreen from './src/screens/onboarding';
 import LoginScreen from './src/screens/auth';
 // import HomeScreen from './src/screens/home';
 import {SafeAreaView} from 'react-native';
-import RootNavigator from './src/routes/RootNavigator';
+import RootNavigator from './src/routes/RootNavigator.js';
 
 const App = () => {
   return (
