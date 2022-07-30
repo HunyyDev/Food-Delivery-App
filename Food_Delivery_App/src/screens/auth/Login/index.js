@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import {IMG_LOGO} from '../../../assets/images';
 import React, {useState} from 'react';
@@ -30,7 +31,7 @@ const LoginScreen = navigation => {
               setPage(Login);
             }}
             disabled={page === Login ? true : false}>
-            <Text style={styles.textLogin}>Login</Text>
+            <Text style={styles.textLogin}>{Login}</Text>
             {page === Login ? <View style={styles.rightLine} /> : null}
             {page === Login ? (
               <View style={styles.inputLogin}>
@@ -45,7 +46,7 @@ const LoginScreen = navigation => {
               setPage(signUp);
             }}
             disabled={page === signUp ? true : false}>
-            <Text style={styles.textSignUp}>Sign-up</Text>
+            <Text style={styles.textSignUp}>{signUp}</Text>
             {page === signUp ? <View style={styles.leftLine} /> : null}
             {page === signUp ? (
               <View style={styles.inputSignUp}>
