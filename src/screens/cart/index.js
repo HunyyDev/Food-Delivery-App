@@ -6,12 +6,16 @@ import {IMG_Fishwith, IMG_Instruction, IMG_VeggieTomato} from './images';
 import CartItem from './components/CartItem';
 import CustomButton from '../../components/CustomButton';
 
-const CartScreen = () => {
+const CartScreen = props => {
+  const {navigation} = props;
+  const onBack = () => {
+    navigation.goBack();
+  };
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.backButton}>
-          <BackButton />
+          <BackButton onPress={onBack} />
         </View>
         <View style={styles.headerContainer}>
           <Text style={styles.cart}>Cart</Text>

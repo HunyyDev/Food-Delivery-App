@@ -9,5 +9,8 @@ const CUSTOM_COLOR = {
   AthensGray: '#F5F5F8',
   AlizarinCrimson: '#DF2C2C',
   Transparent: 'transparent',
+  Concrete: '#F2F2F2',
+  MineShaft: '#393939',
+  Porcelain: '#F5F5F8',
 };
 export default CUSTOM_COLOR;

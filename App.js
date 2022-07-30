@@ -1,8 +1,9 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import CartScreen from './src/screens/cart';
+import HomeScreen from './src/screens/home';
+import RootNavigator from './src/routes/RootNavigator';
 const App = () => {
-  return <CartScreen></CartScreen>;
+  return <RootNavigator></RootNavigator>;
 };
 
 export default App;

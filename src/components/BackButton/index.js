@@ -2,16 +2,14 @@ import {Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {IC_BackButton} from '../../assets/icons';
 import styles from './styles';
+import SCREEN_NAME from '../../constants/screens';
 const BackButton = props => {
-  const {navigation} = props;
-  const onBack = () => {
-    navigation.goBack();
-  };
+  const {navigation, ...moreProps} = props;
   return (
     <TouchableOpacity
       style={styles.container}
       hitSlop={styles.hitSlop}
-      onPress={onBack}>
+      {...moreProps}>
       <Image
         source={IC_BackButton}
         style={styles.backButton}

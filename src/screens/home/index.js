@@ -1,110 +1,148 @@
-// import {
-//   StyleSheet,
-//   Text,
-//   View,
-//   SafeAreaView,
-//   ScrollView,
-//   Image,
-// } from 'react-native';
-// import React from 'react';
-// import {IC_ShoppingCart, IC_Bar, IC_Search} from '../../assets/icons';
-// import CUSTOM_COLOR from './src/constants/colors';
-// import FONT_FAMILY from './src/constants/fonts';
+import React, {useMemo, useState} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  TextInput,
+  ScrollView,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
+import styles from './styles';
+import {
+  IC_House,
+  IC_Vector,
+  IC_ShoppingCart,
+  IC_Search,
+  IC_Heart,
+  IC_User,
+  IC_Refresh,
+} from '../../assets/icons';
+import CUSTOM_COLOR from '../../constants/colors';
+import {IMG_FoodImage} from '../../assets/images';
+import UnderlineButton from '../../components/UnderlineButton';
+import TAB_NAME from '../../constants/tabName';
+import SCREEN_NAME from '../../constants/screens';
+const HomeScreen = props => {
+  const categoryList = useMemo(
+    () => ['Foods', 'Drinks', 'Snacks', 'Sauce'],
+    [],
+  );
+  const {navigation} = props;
+  const [tab, setTab] = useState(categoryList[0]);
+  const onTransitToCart = () => {
+    navigation.navigate(SCREEN_NAME.CART);
+  };
+  return (
+    // Background
+    <SafeAreaView edges={['top', 'bottom']}>
+      <ScrollView style={styles.backgroundContainer}>
+        <View style={styles.navigatorContainer}>
+          {/* Bar */}
+          <TouchableOpacity>
+            <Image source={IC_Vector} resizeMode={'contain'} />
+          </TouchableOpacity>
+          {/* ShoppingCart */}
+          <TouchableOpacity onPress={onTransitToCart}>
+            <Image source={IC_ShoppingCart} resizeMode={'contain'} />
+          </TouchableOpacity>
+        </View>
 
-// const HomeScreen = () => {
-//   return (
-//     <SafeAreaView style={styles.background}>
-//       {/* BAR */}
-//       <>
-//         <Image source={IC_Bar} style={styles.bar} resizeMode="contain" />
-//       </>
-//       {/* Shopping Cart */}
-//       <>
-//         <Image
-//           source={IC_ShoppingCart}
-//           style={styles.shoppingCart}
-//           resizeMode="contain"
-//         />
-//       </>
-//       {/* Text */}
-//       <>
-//         <View style={styles.foodTextContainer}>
-//           <Text style={styles.foodText}>{'Delicious \nfood for you'}</Text>
-//         </View>
-//       </>
-//       {/* Search bar */}
-//       <>
-//         <View style={styles.searchBarContainer}>
-//           <Image source={IC_Search} resizeMode="contain" style={styles.visor} />
-//           <View style={styles.searchTextContainer}>
-//             <Text style={styles.searchText}>{'Search'}</Text>
-//           </View>
-//         </View>
-//       </>
-//       {/* Menu bar */}
-//       <>
-//         <ScrollView></ScrollView>
-//       </>
-//       {/* Food */}
-//       <>
-//         <ScrollView></ScrollView>
-//       </>
-//     </SafeAreaView>
-//   );
-// };
+        {/* FoodText */}
+        <View style={styles.foodTextContainer}>
+          <Text style={styles.foodText}>Delicious food for you</Text>
+        </View>
+        {/* Rectangle */}
+        <View style={styles.rectangleContainer}>
+          <Image
+            source={IC_Search}
+            style={styles.searchIcon}
+            resizeMode={'contain'}
+          />
+          <TextInput
+            placeholder="Search"
+            placeholderTextColor={CUSTOM_COLOR.Black}
+            style={styles.inputSearchText}
+          />
+        </View>
+        {/*ScrollTab*/}
+        <ScrollView horizontal style={styles.ScrollTab}>
+          <UnderlineButton
+            onPress={() => setTab(categoryList[0])}
+            isChoosing={tab === categoryList[0]}>
+            Foods
+          </UnderlineButton>
+          <UnderlineButton
+            onPress={() => setTab(categoryList[1])}
+            isChoosing={tab === categoryList[1]}>
+            Drinks
+          </UnderlineButton>
+          <UnderlineButton
+            onPress={() => setTab(categoryList[2])}
+            isChoosing={tab === categoryList[2]}>
+            Snacks
+          </UnderlineButton>
+          <UnderlineButton
+            onPress={() => setTab(categoryList[3])}
+            isChoosing={tab === categoryList[3]}>
+            Sauce
+          </UnderlineButton>
+        </ScrollView>
+        {/* ScrollView */}
+        <ScrollView horizontal style={styles.ScrollViewStyle}>
+          <View style={styles.scrollViewBox}>
+            <View style={styles.foodImageContainer}>
+              <Image
+                source={IMG_FoodImage}
+                style={styles.foodImageStyle}
+                resizeMode={'contain'}
+              />
+            </View>
+            <Text style={styles.foodName}>Veggie tomato mix</Text>
+            <Text style={styles.foodPrice}>N1,900</Text>
+          </View>
+          <View style={styles.scrollViewBox}>
+            <View style={styles.foodImageContainer}>
+              <Image
+                source={IMG_FoodImage}
+                style={styles.foodImageStyle}
+                resizeMode={'cover'}
+              />
+            </View>
+            <Text style={styles.foodName}>Veggie tomato mix</Text>
+            <Text style={styles.foodPrice}>N1,900</Text>
+          </View>
+          <View style={styles.scrollViewBox}>
+            <View style={styles.foodImageContainer}>
+              <Image
+                source={IMG_FoodImage}
+                style={styles.foodImageStyle}
+                resizeMode={'cover'}
+              />
+            </View>
+            <Text style={styles.foodName}>Veggie tomato mix</Text>
+            <Text style={styles.foodPrice}>N1,900</Text>
+          </View>
+        </ScrollView>
+      </ScrollView>
+      <>
+        <View style={styles.iconSection}>
+          <TouchableOpacity>
+            <Image source={IC_House} resizeMode={'center'} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_Heart} resizeMode={'center'} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_User} resizeMode={'center'} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IC_Refresh} opacity={0.3} resizeMode={'center'} />
+          </TouchableOpacity>
+        </View>
+      </>
+    </SafeAreaView>
+  );
+};
 
-// export default HomeScreen;
-
-// const styles = StyleSheet.create({
-//   background: {
-//     flex: 1,
-//     backgroundColor: CUSTOM_COLOR.Silver,
-//   },
-//   bar: {
-//     position: 'absolute',
-//     top: 74,
-//     left: 55,
-//   },
-//   shoppingCart: {
-//     position: 'absolute',
-//     left: 350,
-//     top: 65,
-//   },
-//   foodTextContainer: {
-//     flex: 1,
-//     width: 206,
-//     height: 87,
-//     position: 'absolute',
-//     top: 132,
-//     left: 50,
-//   },
-//   foodText: {
-//     fontSize: 34,
-//     fontFamily: FONT_FAMILY.Regular,
-//     lineHeight: 40.57,
-//     fontStyle: 'normal',
-//     color: CUSTOM_COLOR.Black,
-//     fontWeight: 'bold',
-//   },
-//   searchBarContainer: {
-//     flex: 1,
-//     width: 314,
-//     height: 60,
-//     position: 'absolute',
-//     top: 242,
-//     left: 50,
-//     backgroundColor: CUSTOM_COLOR.SunsetColor,
-//     borderRadius: 35,
-//   },
-//   visor: {
-//     position: 'absolute',
-//     top: 21,
-//     left: 35,
-//   },
-//   searchTextContainer: {
-//     position: 'absolute',
-//     top: 20,
-//     left: 70,
-//   },
-//   searchText: {},
-// });
+export default HomeScreen;

@@ -22,7 +22,7 @@ function LoginScreen(props) {
   const [tab, setTab] = useState('login');
   const isDarkMode = useColorScheme() === 'dark';
   const onTransitToHome = () => {
-    navigation.navigate(SCREEN_NAME.ONBOARDING);
+    navigation.navigate(SCREEN_NAME.HOME);
   };
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
