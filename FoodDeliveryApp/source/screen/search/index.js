@@ -18,7 +18,6 @@ import { useNavigation } from '@react-navigation/native';
 
 const SearchScreen = ({ navigation: { goBack } }) => {
   const [count, setCount] = useState(1);
-  console.log(count);
   const navigation = useNavigation();
 
   return (
