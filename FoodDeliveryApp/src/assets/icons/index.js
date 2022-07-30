@@ -10,11 +10,7 @@ export {default as IC_SearchRaw} from './iconSearch.png';
 export {default as IC_Swipe} from './swipeIcon.png';
 export {default as IC_Bank} from './bankAccount.png';
 export {default as IC_Card} from './cardIcon.png';
-<<<<<<< HEAD
-export {default as IC_Forward} from './forward.png';
-=======
 export {default as IC_headHeart} from './heart.png';
 export {default as IC_Forward} from './forward.png';
 export {default as IC_circleOrange} from './circleOrange.png';
 export {default as IC_circleSilver} from './circleSilver.png';
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
