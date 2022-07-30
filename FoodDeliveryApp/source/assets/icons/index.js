@@ -12,4 +12,5 @@ export {default as IC_NoWifi} from './IC_NoWifi';
 export {default as IC_SwipeHand} from './IC_SwipeHand';
 export {default as IC_GoBack} from './IC_GoBack';
 export {default as IC_SmallCircle} from './IC_SmallCircle';
+export {default as IC_Next} from './IC_Next';
 
