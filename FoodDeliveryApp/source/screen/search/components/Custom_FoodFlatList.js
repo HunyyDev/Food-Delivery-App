@@ -74,7 +74,7 @@ const Custom_FoodFlatList = props => {
         horizontal={false}
         data={foods}
         renderItem={({item}) => (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={props.onPress}>
             <Custom_FoodBoardSmall category={item} />
           </TouchableOpacity>
         )}
