@@ -19,7 +19,7 @@ export default class Custom_FoodScrollView extends Component {
         {
           img: IMG_VEGETABLE,
           key: '2',
-          foodName: 'Veggie \ntomato mix',
+          foodName: 'Spicy \nfish sauce',
           foodPrice: '1,900',
         },
         {
