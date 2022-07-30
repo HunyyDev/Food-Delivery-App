@@ -113,10 +113,12 @@ const styles = StyleSheet.create({
     height: scale(12),
     fontWeight: '600',
     fontSize: scale(10),
+    color: CUSTOM_COLOR.White,
   },
   count: {
     fontWeight: '600',
     fontSize: scale(13),
+    color: CUSTOM_COLOR.White,
   },
   minus: {
     top: scale(-1),
@@ -125,5 +127,6 @@ const styles = StyleSheet.create({
     height: scale(15),
     fontWeight: '600',
     fontSize: scale(10),
+    color: CUSTOM_COLOR.White,
   },
 });
