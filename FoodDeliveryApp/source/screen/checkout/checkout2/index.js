@@ -2,11 +2,11 @@ import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React, { useState } from 'react';
 import CUSTOM_COLOR from '../../../constants/color';
 import scale from '../../../../responsive';
-import Custom_DeliveryMethod from '../components/Custom_DeliveryMethod';
-import Custom_PaymentMethod from '../components/Custom_PaymentMethod';
+import Custom_DeliveryMethod from '../checkout2/components/Custom_DeliveryMethod';
+import Custom_PaymentMethod from '../checkout2/components/Custom_PaymentMethod';
 import Custom_ButtonOne from '../../../components/Custom_ButtonOne';
 import {IMG_CARD, IMG_BANK} from '../../../assets/images';
-import PopUp from '../components/Custom_PopUp';
+import PopUp from '../checkout2/components/Custom_PopUp';
 
 const CheckOut2Screen = () => {
   const [visible, setVisible] = useState(false);

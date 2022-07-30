@@ -1,8 +1,8 @@
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import CUSTOM_COLOR from '../../../constants/color';
-import scale from '../../../../responsive';
-import {IMG_LINE} from '../../../assets/images';
+import CUSTOM_COLOR from '../../../../constants/color';
+import scale from '../../../../../responsive';
+import {IMG_LINE} from '../../../../assets/images';
 
 const Custom_DeliveryMethod = props => {
   const [isSelect, setIsSelect] = useState('0');

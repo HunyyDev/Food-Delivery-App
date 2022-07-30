@@ -1,10 +1,10 @@
 import {Modal, StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
-import scale from '../../../../responsive';
-import CUSTOM_COLOR from '../../../constants/color';
-import FONT_FAMILY from '../../../constants/fonts';
+import scale from '../../../../../responsive';
+import CUSTOM_COLOR from '../../../../constants/color';
+import FONT_FAMILY from '../../../../constants/fonts';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Custom_ButtonOne from '../../../components/Custom_ButtonOne';
+import Custom_ButtonOne from '../../../../components/Custom_ButtonOne';
 
 const PopUp = (props) => {
   const [showModal, setShowModal] = useState(props.visible);

@@ -48,9 +48,6 @@ const closeConfig = {
 
 const App = () => {
   return (
-<<<<<<< HEAD
-
-=======
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Onboarding" 
       screenOptions={{ headerShown: false,
@@ -70,7 +67,6 @@ const App = () => {
         <Stack.Screen name="MyProfile" component={MyProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
->>>>>>> 7357939fbcfbdfb287566593fdefeeea7a79fa2b
   );
 };
 

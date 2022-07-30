@@ -112,7 +112,12 @@ export default class LoginScreen extends Component {
                 color={CUSTOM_COLOR.Vermilion}
                 textColor={CUSTOM_COLOR.White}
                 onPress={() => {
-                  if (this.state.pass.length < 8) {
+                  if (this.state.mail === '') {
+                    Alert.alert('', 'Empty email. Please enter again', [
+                      {Text: 'OK'},
+                    ]);
+                  }
+                  else if (this.state.pass.length < 8) {
                     Alert.alert(
                       '',
                       'Password must have more than 8 character',
