@@ -35,12 +35,12 @@ const RootNavigator = () => {
           <Stack.Screen
             name="Cart"
             component={CartScreen}
-            options={{headerShown: true}}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Payment"
             component={PaymentScreen}
-            options={{headerShown: true}}
+            options={{headerShown: false}}
           />
 
           <Stack.Screen

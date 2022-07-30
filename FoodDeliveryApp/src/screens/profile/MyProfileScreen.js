@@ -1,6 +1,6 @@
 import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import React from 'react';
-import CustomHeader from '../../components/CustomHeader';
+import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
 import CustomButton from '../../components/CustomButton';
 import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
@@ -28,7 +28,7 @@ const MyProfileScreen = props => {
     <View style={styles.container}>
       <View style={styles.subContainer}>
         <View style={styles.header}>
-          <CustomHeader leftOnPress={() => props.navigation.goBack()} />
+          <CustomHeaderGoBack leftOnPress={() => props.navigation.goBack()} rightIcon={IC_Heart}/>
         </View>
 
         <View style={styles.main}>
@@ -61,7 +61,7 @@ const MyProfileScreen = props => {
               </View>
               <View style={styles.detail.personalCard.info}>
                 <Text>
-                    
+
                 </Text>
               </View>
             </View>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
       },
       info: {
         flex: 2,
-        backgroundColor:'purple',
+
       },
     },
   },
