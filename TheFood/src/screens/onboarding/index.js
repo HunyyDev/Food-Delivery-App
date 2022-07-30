@@ -1,22 +1,22 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {useState} from 'react';
-import {scaleX, scaleY} from '../../assets/constants/helperFunction';
+import {scaleX, scaleY} from '../../helperFunction';
 import CustomButton from '../../components/CustomButton';
+import SCREEN_NAME from '../../assets/constants/screens';
+import CUSTOM_COLOR from '../../assets/constants/colors';
 
-const OnBoardingScreen = () => {
-  const [mainColor, setMainColor] = useState('rgba(255,75,58,255)');
+const OnBoardingScreen = props => {
+  const {navigation} = props;
 
-  const changeColor = () => {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const a = Math.floor(Math.random() * 256);
-    setMainColor(`rgba(${r}, ${g}, ${b}, ${a})`);
+  const onTransitToLogin = () => {
+    navigation.navigate(SCREEN_NAME.LOGIN_SCREEN);
   };
-
+  // const onBack = () => {
+  //   navigation.goBack();
+  // };
   return (
-    <View style={[styles.container, {backgroundColor: `${mainColor}`}]}>
+    <View style={[styles.container]}>
       <View style={styles.headerSection}>
         <Image
           source={require('../../assets/images/logo.png')}
@@ -34,11 +34,8 @@ const OnBoardingScreen = () => {
       <View style={styles.buttonSection}>
         <TouchableOpacity
           style={styles.buttonSection.button}
-          onPress={changeColor}>
-          <Text
-            style={[styles.buttonSection.button.text, {color: `${mainColor}`}]}>
-            Get Started
-          </Text>
+          onPress={onTransitToLogin}>
+          <Text style={[styles.buttonSection.button.text]}>Get Started</Text>
         </TouchableOpacity>
         {/* <CustomButton type="primary" title="Login" /> */}
       </View>
@@ -49,6 +46,7 @@ const OnBoardingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: CUSTOM_COLOR.VERMILION,
   },
 
   headerSection: {
@@ -86,7 +84,7 @@ const styles = StyleSheet.create({
     marginHorizontal: scaleY(51),
 
     button: {
-      backgroundColor: '#fff',
+      backgroundColor: CUSTOM_COLOR.WHITE,
       paddingHorizontal: scaleX(105),
       paddingVertical: scaleY(25),
       width: '100%',
@@ -98,6 +96,7 @@ const styles = StyleSheet.create({
 
       text: {
         fontWeight: '600',
+        color: CUSTOM_COLOR.VERMILION,
       },
     },
   },

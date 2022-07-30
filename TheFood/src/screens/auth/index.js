@@ -11,11 +11,11 @@ import React, {Component} from 'react';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import CUSTOM_COLOR from '../../assets/constants/colors';
-import {scaleX, scaleY, normalize} from '../../assets/constants/helperFunction';
+import {scaleX, scaleY, normalize} from '../../helperFunction';
 import {useState} from 'react';
 
 const IMAGE = '../../assets/images/BellaOlonjeLogo111.png';
-class Login extends Component {
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -138,13 +138,13 @@ class Login extends Component {
           </View>
         </View>
         {(this.state.isCheckedA && (
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => alert('Mã xác nhận đã được gửi về Email')}>
             <Text style={styles.forgotPassword}>Forgot passcode?</Text>
           </TouchableOpacity>
         )) || (
           <View style={styles.input.inputPassword}>
             <CustomInput
-              // marginBottom={20}
               label="Comfirm Password"
               type="password"
               secureTextEntry={true}
@@ -157,7 +157,7 @@ class Login extends Component {
         <View
           style={
             ([styles.buttonLogin],
-            {marginTop: this.state.isCheckedA ? scaleY(55) : scaleY(20)})
+            {marginTop: this.state.isCheckedA ? scaleY(55) : scaleY(-3)})
           }>
           <CustomButton type="secondary" title="Login" />
         </View>
@@ -205,10 +205,10 @@ const styles = StyleSheet.create({
   input: {
     marginTop: scaleY(54),
     inputEmail: {
-      marginBottom: scaleY(36),
+      marginBottom: scaleY(30),
     },
     inputPassword: {
-      marginBottom: scaleY(24),
+      marginBottom: scaleY(20),
     },
   },
   forgotPassword: {
@@ -216,8 +216,8 @@ const styles = StyleSheet.create({
     fontSize: normalize(21),
     fontWeight: 'bold',
     marginLeft: scaleX(50),
-    paddingBottom: scaleY(50),
+    paddingBottom: scaleY(20),
   },
 });
 
-export default Login;
+export default LoginScreen;

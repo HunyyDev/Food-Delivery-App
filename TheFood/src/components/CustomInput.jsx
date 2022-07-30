@@ -1,6 +1,6 @@
 import {Text, TextInput, View, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
-import {scaleX, scaleY, normalize} from '../assets/constants/helperFunction';
+import {scaleX, scaleY, normalize} from '../helperFunction';
 import CUSTOM_COLOR from '../assets/constants/colors';
 
 class CustomInput extends Component {

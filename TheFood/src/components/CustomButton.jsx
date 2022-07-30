@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
-import {scaleX, scaleY, normalize} from '../assets/constants/helperFunction';
+import {scaleX, scaleY, normalize} from '../helperFunction';
 import CUSTOM_COLOR from '../assets/constants/colors';
 
 class CustomButton extends Component {
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     width: scaleX(314),
     alignItems: 'center',
     alignSelf: 'center',
-    paddingVertical: scaleY(25),
+    paddingVertical: scaleY(20),
     overflow: 'hidden',
     borderRadius: normalize(35),
   },
