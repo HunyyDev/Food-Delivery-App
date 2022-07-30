@@ -6,6 +6,8 @@ import SCREEN_NAME from '../assets/constants/screens';
 import OnBoardingScreen from '../screens/onboarding';
 import LoginScreen from '../screens/auth';
 import LoaderScreen from '../screens/loader';
+import NoFoundItemScreen from '../screens/notFoundItem';
+import NoInternetScreen from '../screens/noInternet';
 // import HomeScreen from '../screens/home';
 
 const Stack = createNativeStackNavigator();
@@ -14,6 +16,14 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.NO_INTERNET}
+          component={NoInternetScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.NO_FOUND_ITEM_SCREEN}
+          component={NoFoundItemScreen}
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.LOADING_SCREEN}
           component={LoaderScreen}

@@ -5,5 +5,6 @@ const CUSTOM_COLOR = {
   MANATEE: '#9A9A9D',
   GALLERY: '#EFEEEE',
   WHITE: '#FFFFFF',
+  SILVER: '#C7C7C7',
 };
 export default CUSTOM_COLOR;

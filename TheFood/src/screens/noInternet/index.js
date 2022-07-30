@@ -3,29 +3,24 @@ import React from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
-import {ICNoSearch, ICOnBack} from '../../assets/icons';
+import {ICNoInternet} from '../../assets/icons';
+import CustomButton from '../../components/CustomButton';
 
-const NoFoundItemScreen = props => {
-  const {navigation} = props;
-
-  const onBack = () => {
-    navigation.goBack();
-  };
-
+const NoInternetScreen = props => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.breadcrumb} onPress={onBack}>
-        <ICOnBack />
-        <Text style={styles.breadcrumb.textBreadcrumb}>Go back</Text>
-      </TouchableOpacity>
       <View style={styles.icnosearch}>
-        <ICNoSearch />
+        <ICNoInternet />
       </View>
       <View style={styles.text}>
-        <Text style={styles.text.error}>Item not found</Text>
+        <Text style={styles.text.error}>No internet Connection</Text>
         <Text style={styles.text.solve}>
-          Try searching the item with a different keyword.
+          Your internet connection is currently not available please check or
+          try again.
         </Text>
+      </View>
+      <View style={styles.button}>
+        <CustomButton type="secondary" title="Try again" />
       </View>
     </View>
   );
@@ -40,13 +35,13 @@ const styles = StyleSheet.create({
   icnosearch: {
     position: 'absolute',
     alignSelf: 'center',
-    top: scaleY(300),
+    top: scaleY(260),
   },
   text: {
     alignSelf: 'center',
     alignItems: 'center',
-    width: scaleX(200),
-    marginTop: scaleY(120),
+    width: scaleX(260),
+    marginTop: scaleY(220),
     fontFamily: 'FontsFree-Net-Abel-Regular',
     error: {
       color: CUSTOM_COLOR.BLACK,
@@ -57,23 +52,12 @@ const styles = StyleSheet.create({
       textAlign: 'center',
       color: CUSTOM_COLOR.SILVER,
       fontSize: normalize(17),
-      marginTop: scaleY(14),
+      marginVertical: scaleY(10),
     },
   },
-  breadcrumb: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignContent: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
-    top: scaleY(70),
-    left: scaleX(50),
-    textBreadcrumb: {
-      color: CUSTOM_COLOR.BLACK,
-      fontSize: normalize(17),
-      marginLeft: scaleX(40),
-    },
+  button: {
+    marginTop: scaleY(50),
   },
 });
 
-export default NoFoundItemScreen;
+export default NoInternetScreen;
