@@ -1,4 +1,4 @@
-const CUSTOM_COLOR = {
+const COLORS = {
   SunsetOrange: '#FF4B3A',
   White: '#FFFFFF',
   Black: '#000000',
@@ -14,4 +14,4 @@ const CUSTOM_COLOR = {
   Blue_Ribbon: '#0038FF',
 };
 
-export default CUSTOM_COLOR;
+export default COLORS;

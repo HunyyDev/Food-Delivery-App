@@ -1,23 +1,13 @@
-import {
-  Dimensions,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Pressable,
-  TouchableOpacity,
-} from 'react-native';
-import React, {useState} from 'react';
-import CUSTOM_COLOR from '../../constants/colors';
-import FONT_FAMILY from '../../constants/fonts';
+import React from 'react';
+import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {ICON_CHEVRON} from '../../assets/icons';
-import CustomButton from '../../components/CustomButton';
-import styles from './styles';
+import LargeButton from '../../components/LargeButton';
 import RadioButton from '../../components/RadioButton';
+import styles from './styles';
 
 const DeliveryScreen = props => {
   const {navigation} = props;
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
@@ -72,7 +62,7 @@ const DeliveryScreen = props => {
         <Text style={styles.priceText}>23,000</Text>
       </View>
       <View style={styles.ButtonContainer}>
-        <CustomButton
+        <LargeButton
           text={'Proceed to payment'}
           label={'secondary'}
           onPress={() => navigation.navigate('Payment')}

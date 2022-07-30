@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import {StyleSheet, Dimensions} from 'react-native';
-import CUSTOM_COLOR from '../../constants/colors';
+import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flexDirection: 'column',
   },
   MenuContainer: {
     height: Dimensions.get('window').height * 0.1,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flexDirection: 'column',
     // alignItems: 'flex-end',
     justifyContent: 'flex-end',
@@ -19,14 +19,14 @@ const styles = StyleSheet.create({
   TextContainer: {
     height: Dimensions.get('window').height * 0.22,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     padding: 30,
     paddingLeft: 50,
   },
   SearchContainer: {
     height: Dimensions.get('window').height * 0.08,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     paddingLeft: 50,
     paddingRight: 50,
     alignItems: 'center',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 36,
     paddingHorizontal: 75,
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: COLORS.Concrete,
     flex: 1,
   },
   navigationBar: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   ImageContainer: {
     height: Dimensions.get('window').height * 0.5,
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.Black,
+    backgroundColor: COLORS.Black,
   },
   HomeContainer: {
     height: Dimensions.get('window').height * 0.15,
@@ -64,14 +64,14 @@ const styles = StyleSheet.create({
     // marginLeft: '82%',
   },
   Text: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     fontFamily: FONT_FAMILY.RoundedHeavy,
     fontSize: 34,
   },
   Search: {
     width: '100%',
     height: '100%',
-    backgroundColor: CUSTOM_COLOR.Gallery,
+    backgroundColor: COLORS.Gallery,
     flexDirection: 'row',
     borderRadius: 40,
     alignItems: 'center',
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     marginLeft: 35,
   },
   TextSearch: {
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
     opacity: 0.5,
     fontSize: 17,
   },
@@ -90,22 +90,17 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     paddingHorizontal: 30,
     marginTop: 40,
-<<<<<<< HEAD
-=======
     // backgroundColor: CUSTOM_COLOR.SunsetOrange,
->>>>>>> ChimCanhCut/dev_khangnt
   },
   productItem: {
     width: 220,
     height: 330,
     marginHorizontal: 15,
-<<<<<<< HEAD
   },
   productInfo: {
     backgroundColor: COLORS.WHITE,
     borderRadius: 50,
     shadowColor: COLORS.BLACK,
-=======
     backgroundColor: 'transparent',
     justifyContent: 'flex-end',
     // backgroundColor: CUSTOM_COLOR.SunsetOrange,
@@ -113,15 +108,14 @@ const styles = StyleSheet.create({
   productInfo: {
     width: '100%',
     height: '80%',
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 30,
     shadowColor: CUSTOM_COLOR.Black,
->>>>>>> ChimCanhCut/dev_khangnt
+    shadowColor: COLORS.Black,
     shadowOffset: {
       width: 0,
       height: -30,
     },
-<<<<<<< HEAD
     shadowOpacity: 0.3,
     shadowRadius: 20,
     elevation: 20,
@@ -129,42 +123,38 @@ const styles = StyleSheet.create({
     height: 270,
     marginTop: 60,
     paddingTop: 145,
-=======
     shadowOpacity: '0.8',
     justifyContent: 'flex-end',
->>>>>>> ChimCanhCut/dev_khangnt
   },
   imageWrapper: {
     position: 'absolute',
     left: 31,
-<<<<<<< HEAD
-=======
     bottom: 160,
->>>>>>> ChimCanhCut/dev_khangnt
     height: 164,
     width: 164,
     zIndex: 5,
     elevation: 5,
     borderRadius: 9999,
     padding: 0,
-<<<<<<< HEAD
   },
   titleText: {
     fontFamily: FONT_FAMILY.SF_Pro_Rounded_Secondary,
     color: COLORS.BLACK,
-=======
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
   titleText: {
     fontFamily: FONT_FAMILY.RoundedBold,
     color: CUSTOM_COLOR.Black,
->>>>>>> ChimCanhCut/dev_khangnt
+    backgroundColor: COLORS.SunsetOrange,
+  },
+  titleText: {
+    fontFamily: FONT_FAMILY.RoundedBold,
+    color: COLORS.Black,
     textAlign: 'center',
     fontSize: 20,
     marginHorizontal: 45,
   },
   priceText: {
-<<<<<<< HEAD
     fontFamily: FONT_FAMILY.SF_Pro_Rounded_Secondary,
     color: COLORS.SUNSET_ORANGE,
     textAlign: 'center',
@@ -179,9 +169,8 @@ const styles = StyleSheet.create({
   },
   chosenIcon: {
     shadowColor: COLORS.SUNSET_ORANGE,
-=======
     fontFamily: FONT_FAMILY.RoundedBold,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
     textAlign: 'center',
     fontSize: 15,
     margin: 30,
@@ -196,7 +185,7 @@ const styles = StyleSheet.create({
   },
   chosenIcon: {
     shadowColor: CUSTOM_COLOR.SunsetOrange,
->>>>>>> ChimCanhCut/dev_khangnt
+    shadowColor: COLORS.SunsetOrange,
     shadowOffset: {
       width: 0,
       height: 0,
@@ -205,8 +194,6 @@ const styles = StyleSheet.create({
     shadowRadius: 16.0,
     elevation: 24,
   },
-<<<<<<< HEAD
-=======
   SeeMore: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -218,9 +205,8 @@ const styles = StyleSheet.create({
   TextSeeMore: {
     fontFamily: FONT_FAMILY.RoundedRegular,
     fontSize: 15,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
   },
->>>>>>> ChimCanhCut/dev_khangnt
 });
 
 export default styles;

@@ -1,6 +1,6 @@
 import {Dimensions, StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import CUSTOM_COLOR from '../constants/colors';
+import COLORS from '../constants/colors';
 import FONT_FAMILY from '../constants/fonts';
 import {ICON_CHEVRON_RIGHT} from '../assets/icons';
 
@@ -23,13 +23,13 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     paddingLeft: 50,
     paddingRight: 49,
-    backgroundColor: CUSTOM_COLOR.Transparent,
+    backgroundColor: COLORS.Transparent,
     marginTop: 27,
   },
   whiteBox: {
     height: '100%',
     width: '100%',
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 20,
     paddingLeft: 23,
     alignItems: 'flex-start',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 18,
     fontFamily: FONT_FAMILY.TextRegular,
-    color: CUSTOM_COLOR.Black,
+    color: COLORS.Black,
   },
   chevron: {
     position: 'absolute',
