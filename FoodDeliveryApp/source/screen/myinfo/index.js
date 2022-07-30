@@ -8,7 +8,7 @@ import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
 import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
 import { IC_GoBack } from '../../assets/icons';
 
-const MyInFoScreen = ({ navigation: { goBack } }) => {
+const MyInFoScreen = ({ navigation: { goBack } }, props) => {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity style={styles.goBack} onPress={() => goBack()}>
@@ -43,7 +43,7 @@ const MyInFoScreen = ({ navigation: { goBack } }) => {
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White}
-        // onPress={() => this.navigate('MyProfile')} 
+        //onPress={() => props.navigation.navigate('MyProfile')} 
         />
     </SafeAreaView>
   );
