@@ -14,6 +14,7 @@ import Splash from '../screens/onboarding/Splash';
 import Search from '../screens/home/search';
 import Disconnect from '../screens/auth/disconnect';
 import History from '../screens/home/history';
+import DeliveryScreen from '../screens/checkout/delivery';
 
 //const {Navigator, Screen} = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -24,7 +25,7 @@ const RootNavigator = props => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName={SCREEN_NAME.HOME}>
+        initialRouteName={SCREEN_NAME.DELIVERY}>
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING}
           component={OnboardingScreen}
@@ -44,6 +45,7 @@ const RootNavigator = props => {
         <Stack.Screen name={SCREEN_NAME.SEARCH} component={Search} />
         <Stack.Screen name={SCREEN_NAME.HISTORY} component={History} />
         <Stack.Screen name={SCREEN_NAME.DISCONNECT} component={Disconnect} />
+        <Stack.Screen name={SCREEN_NAME.DELIVERY} component={DeliveryScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

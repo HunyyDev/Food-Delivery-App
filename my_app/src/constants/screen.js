@@ -11,6 +11,7 @@ const SCREEN_NAME = {
   SEARCH: 'SearchScreen',
   DISCONNECT: 'DisconnectScreen',
   HISTORY: 'HistoryScreen',
+  DELIVERY: 'DeliveryScreen',
 };
 
 export default SCREEN_NAME;
