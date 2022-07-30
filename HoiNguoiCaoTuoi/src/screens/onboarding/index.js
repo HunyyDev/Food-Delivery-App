@@ -1,65 +1,52 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
+  Dimensions,
+  Image,
+  ImageBackground,
+  SafeAreaView,
   StyleSheet,
   Text,
   View,
-  Image,
-  SafeAreaView,
-  Dimensions,
-  ImageBackground,
 } from 'react-native';
+import {IMG_Background, IMG_Logo} from '../../assets/images';
+import CustomButton from '../../components/CustomButton';
 import CUSTOM_COLOR from '../../constants/colors';
-import {IMG_Logo, IMG_Background} from '../../assets/images';
 import FONT_FAMILY from '../../constants/fonts';
 import {scaleWidth} from '../../constants/responsive';
-import CustomButton from '../../components/CustomButton';
 
-class OnboardingScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const OnboardingScreen = ({navigation}) => (
+  <SafeAreaView style={styles.container}>
+    {/* Logo */}
+    <>
+      <View style={styles.logoContainer}>
+        <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
+      </View>
+    </>
 
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        {/* Logo */}
-        <>
-          <View style={styles.logoContainer}>
-            <Image
-              source={IMG_Logo}
-              style={styles.logo}
-              resizeMode={'contain'}
+    {/* Title */}
+    <>
+      <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
+    </>
+
+    {/* Image */}
+    <>
+      <View style={styles.backgroundContainer}>
+        <ImageBackground
+          source={IMG_Background}
+          style={styles.background}
+          resizeMode={'contain'}>
+          <View style={styles.button}>
+            <CustomButton
+              type={'primary'}
+              text={'Get started'}
+              onPress={() => navigation.navigate('Login')}
             />
           </View>
-        </>
-
-        {/* Title */}
-        <>
-          <Text style={styles.titleText}>{'Food for \nEveryone'}</Text>
-        </>
-
-        {/* Image */}
-        <>
-          <View style={styles.backgroundContainer}>
-            <ImageBackground
-              source={IMG_Background}
-              style={styles.background}
-              resizeMode={'contain'}>
-              <View style={styles.button}>
-                <CustomButton
-                  type={'primary'}
-                  text={'Get started'}
-                  onPress={() => this.props.navigation.navigate('Login')}
-                />
-              </View>
-            </ImageBackground>
-          </View>
-        </>
-      </SafeAreaView>
-    );
-  }
-}
+        </ImageBackground>
+      </View>
+    </>
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -112,5 +99,4 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.SunsetOrange,
   },
 });
-
 export default OnboardingScreen;

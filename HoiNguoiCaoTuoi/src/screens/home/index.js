@@ -1,109 +1,102 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
   Image,
+  SafeAreaView,
   ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 
 import CUSTOM_COLOR from '../../constants/colors';
 // import CustomFood from '../../components/CustomFood';
-import {scaleWidth} from '../../constants/responsive';
-import {IMG_Food1, IMG_Food2} from '../../assets/images/index';
-import FONT_FAMILY from '../../constants/fonts';
+import {TextInput} from 'react-native-gesture-handler';
 import {
   IMG_giohang,
+  IMG_heart,
+  IMG_house,
   IMG_Logo1,
   IMG_search,
-  IMG_house,
-  IMG_heart,
-  IMG_user,
   IMG_time,
+  IMG_user,
 } from '../../assets/icons';
-import {TextInput} from 'react-native-gesture-handler';
+import {IMG_Food1, IMG_Food2} from '../../assets/images/index';
+import FONT_FAMILY from '../../constants/fonts';
+import {scaleWidth} from '../../constants/responsive';
 
-class HomeScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const HomeScreen = ({navigation}) => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View>
+        <View style={styles.header}>
+          <TouchableOpacity>
+            <Image source={IMG_Logo1} style={styles.icon1} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IMG_giohang} style={styles.icon2} />
+          </TouchableOpacity>
+        </View>
 
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
+        <Text style={styles.tittle}>{'Delicious \nfood for you'} </Text>
+
         <View>
-          <View style={styles.header}>
-            <TouchableOpacity>
-              <Image source={IMG_Logo1} style={styles.icon1} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={IMG_giohang} style={styles.icon2} />
-            </TouchableOpacity>
-          </View>
-
-          <Text style={styles.tittle}>{'Delicious \nfood for you'} </Text>
-
-          <View>
-            <View style={styles.Searchbar}>
-              <Image source={IMG_search} style={styles.search} />
-              <TextInput style={styles.searchText} placeholder="Search" />
-            </View>
-          </View>
-
-          <View style={styles.list}>
-            <Text style={styles.TextMenu}> {'Foods'} </Text>
-            <Text style={styles.TextMenu}> {'Drinks'} </Text>
-            <Text style={styles.TextMenu}> {'Snacks'} </Text>
-            <Text style={styles.TextMenu}> {'Sauces'} </Text>
-          </View>
-
-          <View>
-            <Text style={styles.seemore}>{'see more'}</Text>
-          </View>
-
-          <ScrollView
-            style={styles.scrollMenu}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}>
-            <View style={styles.dish}>
-              <Image source={IMG_Food2} style={styles.img} />
-              <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
-              <Text style={styles.TextMenu1}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.dish}>
-              <Image source={IMG_Food2} style={styles.img} />
-              <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
-              <Text style={styles.TextMenu1}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.dish}>
-              <Image source={IMG_Food1} style={styles.img} />
-              <Text style={styles.TextMenu}> {'Spicy fish\nsauce'} </Text>
-              <Text style={styles.TextMenu1}>{'N2,300.99'}</Text>
-            </View>
-          </ScrollView>
-
-          <View style={styles.list1}>
-            <TouchableOpacity>
-              <Image source={IMG_house} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={IMG_heart} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={IMG_user} />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Image source={IMG_time} />
-            </TouchableOpacity>
+          <View style={styles.Searchbar}>
+            <Image source={IMG_search} style={styles.search} />
+            <TextInput style={styles.searchText} placeholder="Search" />
           </View>
         </View>
-      </SafeAreaView>
-    );
-  }
-}
+
+        <View style={styles.list}>
+          <Text style={styles.TextMenu}> {'Foods'} </Text>
+          <Text style={styles.TextMenu}> {'Drinks'} </Text>
+          <Text style={styles.TextMenu}> {'Snacks'} </Text>
+          <Text style={styles.TextMenu}> {'Sauces'} </Text>
+        </View>
+
+        <View>
+          <Text style={styles.seemore}>{'see more'}</Text>
+        </View>
+
+        <ScrollView
+          style={styles.scrollMenu}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}>
+          <View style={styles.dish}>
+            <Image source={IMG_Food2} style={styles.img} />
+            <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
+            <Text style={styles.TextMenu1}>{'N1,900'}</Text>
+          </View>
+          <View style={styles.dish}>
+            <Image source={IMG_Food2} style={styles.img} />
+            <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
+            <Text style={styles.TextMenu1}>{'N1,900'}</Text>
+          </View>
+          <View style={styles.dish}>
+            <Image source={IMG_Food1} style={styles.img} />
+            <Text style={styles.TextMenu}> {'Spicy fish\nsauce'} </Text>
+            <Text style={styles.TextMenu1}>{'N2,300.99'}</Text>
+          </View>
+        </ScrollView>
+
+        <View style={styles.list1}>
+          <TouchableOpacity>
+            <Image source={IMG_house} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IMG_heart} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IMG_user} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Image source={IMG_time} />
+          </TouchableOpacity>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

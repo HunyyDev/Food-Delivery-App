@@ -1,4 +1,3 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -8,8 +7,7 @@ import ProductList from '../screens/products/ProductList';
 import ProductDetail from '../screens/products/ProductDetail';
 
 const MainNavigator = props => {
-
-    const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator();
 
   return (
     <>
@@ -36,5 +34,3 @@ const MainNavigator = props => {
 };
 
 export default MainNavigator;
-
-const styles = StyleSheet.create({});
