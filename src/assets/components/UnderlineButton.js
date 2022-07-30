@@ -6,15 +6,12 @@ export class UnderlineButton extends Component {
     super(props);
     this.state = {};
   }
-  onPress() {
-    this.props.onPress();
-  }
   render() {
     return (
       // eslint-disable-next-line react-native/no-inline-styles
       <View style={{height: '100%'}}>
         <TouchableOpacity
-          onPress={() => this.onPress()}
+          onPress={() => this.props.onPress()}
           style={this.props.style}>
           {this.props.children}
         </TouchableOpacity>

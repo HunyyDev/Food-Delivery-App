@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
 
 export class WaitingForUpgrade extends Component {

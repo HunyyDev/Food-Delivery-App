@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {CustomInput} from '../../assets/components/CustomInput';
 
 export class Login extends Component {
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     justifyContent: 'center',
-    marginTop: scale(50),
+    marginTop: scale(41),
     alignSelf: 'center',
   },
 });

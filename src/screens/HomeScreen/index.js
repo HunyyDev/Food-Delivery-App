@@ -6,12 +6,11 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {UnderlineButton} from '../../assets/components/UnderlineButton';
 import {CustomSwitch} from '../../assets/components/CustomSwitch';
 import {
@@ -32,13 +31,6 @@ class Condition extends Component {
     super(props);
     this.state = {};
   }
-  // render() {
-  //   return this.props.label === 'Foods' ? (
-  //     <Foods {...this.props.props} />
-  //   ) : (
-  //     <Drinks {...this.props.props} />
-  //   );
-  // }
   checkSwitch = props => {
     switch (props.label) {
       case 'Foods':
@@ -72,15 +64,15 @@ class Condition extends Component {
   };
   render() {
     if (this.props.label === 'Foods') {
-      return <Foods />;
+      return <Foods navigation={this.props.navigation} />;
     } else {
       if (this.props.label === 'Drinks') {
-        return <Drinks />;
+        return <Drinks navigation={this.props.navigation} />;
       } else {
         if (this.props.label === 'Snacks') {
-          return <Snacks />;
+          return <Snacks navigation={this.props.navigation} />;
         } else {
-          return <Sauce />;
+          return <Sauce navigation={this.props.navigation} />;
         }
       }
     }
@@ -104,7 +96,11 @@ export class HomeScreen extends Component {
         <TouchableOpacity style={styles.imageContainer}>
           <Image source={IMG_Vector} style={styles.Menu} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.cartContainer}>
+        <TouchableOpacity
+          style={styles.cartContainer}
+          onPress={() => {
+            this.props.navigation.navigate('CartScreen');
+          }}>
           <Image source={IMG_Cart} />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
@@ -132,9 +128,9 @@ export class HomeScreen extends Component {
                     styles.underLine,
                     {
                       backgroundColor:
-                        this.state.label === this.props.label
+                        this.state.label === 'Foods'
                           ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
+                          : 'transparent',
                     },
                   ]}>
                   <Text style={styles.buttonText}>Foods</Text>
@@ -148,9 +144,9 @@ export class HomeScreen extends Component {
                     styles.underLine,
                     {
                       backgroundColor:
-                        this.state.label === this.props.label
+                        this.state.label === 'Drinks'
                           ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
+                          : 'transparent',
                     },
                   ]}>
                   <Text style={styles.buttonText}>Drinks</Text>
@@ -164,9 +160,9 @@ export class HomeScreen extends Component {
                     styles.underLine,
                     {
                       backgroundColor:
-                        this.state.label === this.props.label
+                        this.state.label === 'Snacks'
                           ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
+                          : 'transparent',
                     },
                   ]}>
                   <Text style={styles.buttonText}>Snacks</Text>
@@ -180,9 +176,9 @@ export class HomeScreen extends Component {
                     styles.underLine,
                     {
                       backgroundColor:
-                        this.state.label === this.props.label
+                        this.state.label === 'Sauce'
                           ? CUSTOM_COLOR.Vermilion
-                          : CUSTOM_COLOR.Concrete,
+                          : 'transparent',
                     },
                   ]}>
                   <Text style={styles.buttonText}>Sauce</Text>
@@ -197,7 +193,10 @@ export class HomeScreen extends Component {
           <Image style={styles.iconContainer} source={IMG_User} />
           <Image style={styles.iconContainer} source={IMG_Clock} />
         </View>
-        <Condition label={this.state.label} props={this.props} />
+        <Condition
+          label={this.state.label}
+          navigation={this.props.navigation}
+        />
       </SafeAreaView>
     );
   }
@@ -222,7 +221,7 @@ const styles = StyleSheet.create({
   },
   cartContainer: {
     width: 'auto',
-    height: 'auto',
+    height: scale(50),
     top: scale(66),
     right: scale(42),
     position: 'absolute',
@@ -243,7 +242,7 @@ const styles = StyleSheet.create({
   backgroundTitle: {
     width: '20%',
     height: 'auto',
-    // backgroundColor: 'black',
+    marginTop: scale(0),
   },
   searchContainer: {
     width: scale(380),
@@ -290,23 +289,22 @@ const styles = StyleSheet.create({
     marginRight: scale(91),
   },
   viewTaskbar: {
-    // width: scale(25),
-    height: scale(25),
+    height: scale(60),
     width: '90%',
-    bottom: scale(50.1),
+    bottom: scale(10),
     flexDirection: 'row',
     justifyContent: 'space-around',
     position: 'absolute',
   },
   iconContainer: {
-    height: scale(25),
-    width: '7%',
+    height: scale(33),
+    width: scale(36),
     alignSelf: 'center',
     bottom: scale(0),
   },
   underLine: {
-    width: scale(134),
-    height: scale(4),
+    width: scale(90),
+    height: scale(3),
     alignSelf: 'center',
     position: 'absolute',
     borderRadius: 30,
@@ -315,7 +313,7 @@ const styles = StyleSheet.create({
     height: '70%',
   },
   buttonText: {
-    color: 'black',
+    color: CUSTOM_COLOR.Black,
     fontSize: 18,
     fontFamily: FONT_FAMILY.SFBlack,
     alignSelf: 'center',

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {IMG_Background, IMG_Logo} from '../../assets/images';
 export class Onboarding extends Component {
   constructor(props) {

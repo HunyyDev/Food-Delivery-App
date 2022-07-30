@@ -8,5 +8,6 @@ const FONT_FAMILY = {
   SFBold: SF + 'Bold',
   SFProTextBold: SFProText + 'Bold',
   SFProRoundedBold: 'SF-Pro-Rounded-Bold',
+  AbelRe: 'FontsFree-Net-Abel-Regular',
 };
 export default FONT_FAMILY;

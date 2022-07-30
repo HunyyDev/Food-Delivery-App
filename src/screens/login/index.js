@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, StyleSheet, View, SafeAreaView, Image} from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import {IMG_Bella, IMG_Vector1} from '../../assets/images';
 import {Login} from './LoginForm';
 import {Signup} from './SignupForm';
