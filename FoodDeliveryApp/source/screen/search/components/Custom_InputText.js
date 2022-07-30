@@ -14,7 +14,8 @@ class Custom_InputText extends React.Component {
           style={styles.searchInput}
           placeholder={this.props.placeholderText}
           placeholderTextColor={this.props.placeholderColor}
-        />
+          >abcd
+          </TextInput>
       </View>
     );
   }

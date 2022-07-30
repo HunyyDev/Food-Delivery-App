@@ -13,8 +13,65 @@ import scale from '../../../responsive';
 import {IMG_FOOD1} from '../../assets/images';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
+import { FlatList } from 'react-native-gesture-handler';
 
+<<<<<<< HEAD
+const CartScreen = ({navigation}) => {
+
+  const Foods = [
+    {
+      img: IMG_FOOD1,
+      key: '1',
+      foodName: 'Veggie \ntomato mix',
+      foodPrice: '1,900',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '2',
+      foodName: 'Veggie \ntomato mix',
+      foodPrice: '1,900',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '3',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '4',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '5',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '6',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '7',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+    {
+      img: IMG_FOOD1,
+      key: '8',
+      foodName: 'Spicy fish \nsauce',
+      foodPrice: '2,300.99',
+    },
+  ];
+
+=======
 const CartScreen = ({ navigation: { goBack } }) => {
+>>>>>>> 7357939fbcfbdfb287566593fdefeeea7a79fa2b
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Cart</Text>
@@ -31,12 +88,19 @@ const CartScreen = ({ navigation: { goBack } }) => {
           <IC_GoBack />
         </TouchableOpacity>
       </View>
-
+      <FlatList 
+        horizontal= {false}
+        data={Foods}
+        keyExtractor={item => `${item.key}`}
+        renderItem={({item}) => <AddToCartItem category={item} />}
+      />
       <View style={styles.swipeNotice}>
         <IC_SwipeHand />
         <Text style={styles.swipeText}>swipe on an item to delete</Text>
       </View>
-      <AddToCartItem img={IMG_FOOD1} />
+      
+      
+
       <Custom_ButtonOne
         color={CUSTOM_COLOR.Vermilion}
         textColor={CUSTOM_COLOR.White}
