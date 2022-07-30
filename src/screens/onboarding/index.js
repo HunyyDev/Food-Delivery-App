@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.SunsetOrange,
     fontFamily: FONT_FAMILY.SFBlack,
     fontSize: scale(18),
-    fontWeight: '600',
     justifyContent: 'center',
     alignSelf: 'center',
   },

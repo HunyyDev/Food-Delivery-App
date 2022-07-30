@@ -192,12 +192,23 @@ export class HomeScreen extends Component {
           </CustomSwitch>
         </View>
         <View style={styles.viewTaskbar}>
-          <Image style={styles.iconContainer} source={IMG_Home} />
-          <Image style={styles.iconContainer} source={IMG_Heart} />
-          <Image style={styles.iconContainer} source={IMG_User} />
-          <Image style={styles.iconContainer} source={IMG_Clock} />
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_Home} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_Heart} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_User} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_Clock} />
+          </TouchableOpacity>
         </View>
         <Condition label={this.state.label} props={this.props} />
+        <TouchableOpacity style={styles.textContainer}>
+          <Text style={styles.text2}>{'see more'}</Text>
+        </TouchableOpacity>
       </SafeAreaView>
     );
   }
@@ -290,8 +301,7 @@ const styles = StyleSheet.create({
     marginRight: scale(91),
   },
   viewTaskbar: {
-    // width: scale(25),
-    height: scale(25),
+    height: scale(0),
     width: '90%',
     bottom: scale(50.1),
     flexDirection: 'row',
@@ -299,7 +309,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   iconContainer: {
-    height: scale(25),
+    height: scale(30),
     width: '7%',
     alignSelf: 'center',
     bottom: scale(0),
@@ -321,5 +331,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignContent: 'center',
     justifyContent: 'center',
+  },
+  text2: {
+    fontFamily: FONT_FAMILY.SFBlack,
+    fontSize: scale(15),
+    color: CUSTOM_COLOR.Vermilion,
+  },
+  textContainer: {
+    top: scale(426),
+    left: scale(400),
+    position: 'absolute',
   },
 });

@@ -12,3 +12,7 @@ export {default as IMG_User} from './user.png';
 export {default as IMG_Clock} from './clock.png';
 export {default as IMG_Bella} from './Bella.png';
 export {default as IMG_Vector} from './Vector.png';
+export {default as IMG_Vector2} from './backButton.png';
+export {default as IMG_Vector3} from './Vector2.png';
+export {default as IMG_Profile} from './profile.png';
+export {default as IMG_Line} from './Line.png';
