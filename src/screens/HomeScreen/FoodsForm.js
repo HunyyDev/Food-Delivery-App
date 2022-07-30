@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import {
   Text,
   StyleSheet,
-  View,
   SafeAreaView,
   Image,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import {IMG_Food, IMG_Food2, IMG_Food3} from '../../assets/images';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 
 export class Foods extends Component {
   constructor(props) {
@@ -24,27 +24,31 @@ export class Foods extends Component {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.contentContainer}>
-            <View style={styles.listContainer}>
+            <TouchableOpacity
+              style={styles.listContainer}
+              onPress={() => {
+                this.props.navigation.navigate('ProductDetail');
+              }}>
               <Image style={styles.foodImage} source={IMG_Food2} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.listContainer}>
               <Image style={styles.foodImage} source={IMG_Food} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.listContainer}>
               <Image style={styles.foodImage} source={IMG_Food3} />
               <Text style={styles.textFoodContainer}>
                 {'Spicy \nfish sauce'}
               </Text>
               <Text style={styles.textPriceContainer}>{'N2,300'}</Text>
-            </View>
+            </TouchableOpacity>
           </ScrollView>
         </SafeAreaView>
       </>
@@ -57,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    marginTop: scale(430),
+    marginTop: scale(400),
     backgroundColor: CUSTOM_COLOR.Concrete,
     height: scale(370),
   },

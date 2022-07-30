@@ -8,7 +8,7 @@ export class CustomSwitch extends Component {
   render() {
     return (
       <View style={styles.buttonContainer}>
-        <View
+        <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -24,7 +24,7 @@ export class CustomSwitch extends Component {
             flexDirection: this.props.flexDirection,
           }}>
           {this.props.children}
-        </View>
+        </ScrollView>
       </View>
     );
   }

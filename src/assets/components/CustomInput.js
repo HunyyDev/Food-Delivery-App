@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, TextInput} from 'react-native';
 import FONT_FAMILY from '../constants/fonts';
-import scale from '../constants/reponsive';
+import scale from '../constants/responsive';
 import CUSTOM_COLOR from '../constants/colors';
 
 export class CustomInput extends Component {

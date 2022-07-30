@@ -3,7 +3,7 @@ import {StyleSheet, Text, SafeAreaView} from 'react-native';
 
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 
 export class Drinks extends Component {
   constructor(props) {
