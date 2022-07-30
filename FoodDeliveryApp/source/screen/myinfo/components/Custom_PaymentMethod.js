@@ -192,3 +192,4 @@ const styles = StyleSheet.create({
     left: scale(102),
   },
 });
+

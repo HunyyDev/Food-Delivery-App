@@ -15,6 +15,7 @@ import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
 import { FlatList } from 'react-native-gesture-handler';
 
+<<<<<<< HEAD
 const CartScreen = ({navigation}) => {
 
   const Foods = [
@@ -68,6 +69,9 @@ const CartScreen = ({navigation}) => {
     },
   ];
 
+=======
+const CartScreen = ({ navigation: { goBack } }) => {
+>>>>>>> 7357939fbcfbdfb287566593fdefeeea7a79fa2b
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Cart</Text>
@@ -78,7 +82,9 @@ const CartScreen = ({navigation}) => {
             left: scale(10),
             right: scale(10),
             bottom: scale(10),
-          }}>
+          }}
+          onPress={() => goBack()}
+          >
           <IC_GoBack />
         </TouchableOpacity>
       </View>

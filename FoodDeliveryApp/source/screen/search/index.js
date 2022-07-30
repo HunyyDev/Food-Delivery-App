@@ -15,7 +15,7 @@ import Custom_FoodFlatList from './components/Custom_FoodFlatList';
 import {IC_GoBack} from '../../assets/icons';
 
 
-const SearchScreen = () => {
+const SearchScreen = ({ navigation: { goBack } }) => {
   const [count, setCount] = useState(1);
   console.log(count);
   return (
@@ -23,7 +23,7 @@ const SearchScreen = () => {
       {/* Go back button */}
       <>
         <View style={styles.goBackContainer}>
-          <TouchableOpacity hitSlop={styles.hitSlop}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => goBack()}>
             <IC_GoBack />
           </TouchableOpacity>
         </View>
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     color: CUSTOM_COLOR.Black,
-    top: scale(72),
+    top: scale(42),
     left: scale(101),
     position: 'absolute',
     width: scale(200),

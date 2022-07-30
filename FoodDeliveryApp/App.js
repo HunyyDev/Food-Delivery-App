@@ -3,7 +3,7 @@ import LoginScreen from './source/screen/login';
 import Onboarding from './source/screen/onboarding';
 import HomeScreen from './source/screen/home';
 import CartScreen from './source/screen/cart';
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, CommonActions} from '@react-navigation/native';
 import {createNativeStackNavigator, TransitionSpecs, HeaderStyleInterpolators} from '@react-navigation/native-stack';
 // import 'react-native-gesture-handler';
 import CheckOut2Screen from './source/screen/checkout/checkout2';
@@ -15,18 +15,64 @@ import HomeScreen2 from './source/screen/home2';
 import LoadingScreen from './source/screen/loading';
 import FoodInfoScreen from './source/screen/foodinfo';
 import MyInFoScreen from './source/screen/myinfo';
+import { Easing } from 'react-native-reanimated';
+import { CardStyleInterpolators } from '@react-navigation/stack';
+import CheckOut1Screen from './source/screen/checkout/checkout1';
+import MyProfileScreen from './source/screen/myprofile';
+
 
 
 const Stack = createNativeStackNavigator();
 
 const config = {
-  animation: 'instant',
+  animation: 'spring',
+  config: {
+    stiffness: 1000,
+    damping: 50,
+    mass: 3,
+    overshootClamping: false,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  }
 }
+
+const closeConfig = {
+  Animation: 'timing',
+  config: {
+    duration: 500,
+    easing: Easing.linear,
+  }
+}
+
+
 
 const App = () => {
   return (
+<<<<<<< HEAD
 
+=======
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding" 
+      screenOptions={{ headerShown: false,
+      gestureEnabled: true,
+      gestureDirection: 'horizontal',
+      transitionSpec:{open: config, close: closeConfig},
+      cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
+      }}>
+        <Stack.Screen name="Onboarding" component={Onboarding} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="MyInFo" component={MyInFoScreen} />
+        <Stack.Screen name="FoodInFo" component={FoodInfoScreen} />
+        <Stack.Screen name="History" component={HistoryScreen} />
+        <Stack.Screen name="Cart" component={CartScreen} />
+        <Stack.Screen name="Search" component={SearchScreen} />
+        <Stack.Screen name="MyProfile" component={MyProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+>>>>>>> 7357939fbcfbdfb287566593fdefeeea7a79fa2b
   );
 };
 
 export default App;
+

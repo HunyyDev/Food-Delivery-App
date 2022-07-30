@@ -4,23 +4,50 @@ import {
   Text,
   Image,
   View,
+  StatusBar,
   Dimensions,
-  TouchableOpacity
+  TouchableOpacity, ScrollView
 } from 'react-native';
 import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
-import {IMG_FOOD1} from '../../assets/images';
+import {IMG_FOOD1, IMG_FOOD2, IMG_FOOD3} from '../../assets/images';
 import scale from '../../../responsive';
 import {IC_Heart, IC_SmallCircle, IC_GoBack} from '../../assets/icons';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 
-const FoodInfoScreen = () => {
+const images = [
+  IMG_FOOD1,
+  IMG_FOOD2,
+  IMG_FOOD3
+]
+
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
+
+const FoodInfoScreen = ({ navigation: { goBack } }) => {
   const [isChoose, setIsChoose] = useState(false);
-  const [isCircle, setIsCircle] = useState('1');
-  const onPressHandler = () => {setIsChoose(!isChoose)}
+  const onPressHandler = () => {setIsChoose(!isChoose)};
+  const [imgActive, setImgActive] = useState(0);
+
+  onchange = (nativeEvent) => {
+    if(nativeEvent) {
+      const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
+      if(slide != imgActive) {
+        setImgActive(slide);
+      }
+    }
+  };
   return (
-    <View style={styles.container}>
-      
+    <SafeAreaView style={styles.container}>
+      {/* Go back button */}
+      <>
+        <View style={styles.goBackContainer}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => goBack()}>
+            <IC_GoBack />
+          </TouchableOpacity>
+        </View>
+      </>
       {/* Heart button */}
       <>
       <TouchableOpacity
@@ -31,56 +58,45 @@ const FoodInfoScreen = () => {
         />
       </TouchableOpacity>
       </>
-      {/* Food */}
+      {/* Food swiper */}
       <>
-        <View style={styles.foodView}>
-          <Image style={styles.food} source={IMG_FOOD1}/>
+      <View style={styles.wrap}>
+        <ScrollView 
+          onScroll={({nativeEvent}) => onchange(nativeEvent)}
+          showHorizontalScrollIndicator={false}
+          pagingEnabled
+          horizontal
+          style={styles.foodView}
+        >
+          {
+            images.map((e, index) => 
+              <Image
+                key={e}
+                resizeMode='stretch'
+                style={styles.food}
+                source={e} 
+              />
+            )
+          }
+        </ScrollView>
+        <View style={styles.wrapDot}>
+          {
+            images.map((e,index) => 
+              <Text
+                key={e}
+                style={imgActive == index ? styles.dotActive : styles.dot}
+              >
+                ●
+              </Text>
+            )
+          }
         </View>
-      </>
-      {/* Select */}
-      <>
-        <View style={styles.selectView}>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle1]}
-            onPress={() => {
-              setIsCircle('1');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '1' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle2]}
-            onPress={() => {
-              setIsCircle('2');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '2' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle3]}
-            onPress={() => {
-              setIsCircle('3');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '3' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.iconContainer, styles.ic_smallCircle4]}
-            onPress={() => {
-              setIsCircle('4');  }}
-            >
-            <IC_SmallCircle fill={
-              isCircle === '4' ? CUSTOM_COLOR.SunsetOrange : '#C4C4C4'
-            }/>
-          </TouchableOpacity>
-        </View>
+      </View>
+
       </>
       {/* Food name */}
       <>
-        <Text style={styles.foodName}>Veggie tomato mix</Text>
+        <Text style={styles.foodNameActive}>Veggie tomato mix</Text>
       </>
       {/* Food price */}
       <>
@@ -111,7 +127,7 @@ const FoodInfoScreen = () => {
           //onPress={() => this.props.navigation.navigate('Login')}
         />
       </>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -122,6 +138,37 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.AthensGray,
   },
+  wrap: {
+    width: '100%',
+    height: '100%',
+  },
+  wrapDot: {
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    alignSelf:'center',
+    left: scale(168),
+    top: scale(315),
+  },
+  dotActive: {
+    margin: 3,
+    color: CUSTOM_COLOR.SunsetOrange,
+  },
+  dot: {
+    margin: 3,
+    color: '#C4C4C4',
+  },
+  goBackContainer: {
+    position: 'absolute',
+    top: scale(61),
+    left: scale(50),
+  },
+  hitSlop: {
+    top: scale(10),
+    left: scale(10),
+    right: scale(10),
+    bottom: scale(10),
+  },
   heart: {
     position: 'absolute',
     left: scale(341.29),
@@ -129,7 +176,7 @@ const styles = StyleSheet.create({
   },
   foodView: {
     position: 'absolute',
-    width: scale(241),
+    width: scale(207),
     height: scale(241),
     borderRadius: 360,
     left: scale(86),
@@ -137,46 +184,35 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   food: {
-    width: '100%',
-    height: '100%',
+    width: WIDTH*0.5,
+    height:HEIGHT*0.25,
+    borderRadius: 360,
   },
-  iconContainer: {
-    width: '100%',
-    height: '100%',
-  },
-  ic_smallCircle1: {
-    position: 'absolute',
-    marginLeft: scale(0),
-  },
-  ic_smallCircle2: {
-    position: 'absolute',
-    marginLeft: scale(20),
-  },
-  ic_smallCircle3: {
-    position: 'absolute',
-    marginLeft: scale(40),
-  },
-  ic_smallCircle4: {
-    position: 'absolute',
-    marginLeft: scale(60),
-  },
-  selectView: {
-    position: 'absolute',
-    backgroundColor: CUSTOM_COLOR.White,
-    width: scale(80),
-    height: scale(8),
-    left: scale(168),
-    top: scale(350),
-  },
-  foodName: {
+  foodNameActive: {
     position: 'absolute',
     left: scale(82),
     top: scale(370),
+    // flexDirection: 'row',
+    // alignSelf:'center',
+    // margin: 3,
     fontWeight: '400',
     fontSize: scale(28),
     lineHeight: scale(36),
     textAlign: 'center',
     color: CUSTOM_COLOR.Black,
+  },
+  foodName: {
+    position: 'absolute',
+    left: scale(82),
+    top: scale(370),
+    // flexDirection: 'row',
+    // alignSelf:'center',
+    // margin: 3,
+    fontWeight: '400',
+    fontSize: scale(28),
+    lineHeight: scale(36),
+    textAlign: 'center',
+    color: 'transparent',
   },
   foodPrice: {
     color: CUSTOM_COLOR.Vermilion,

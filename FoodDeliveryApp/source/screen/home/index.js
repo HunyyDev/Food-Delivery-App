@@ -61,6 +61,7 @@ export default class HomeScreen extends Component {
           placeholderColor={CUSTOM_COLOR.Black}
           style={styles.searchInput}
           hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
+          onPress={() => {this.props.navigation.navigate("Search")}}
         />
         <></>
         {/* See more */}
@@ -69,7 +70,7 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <></>
         {/* Foods */}
-        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}}/>
+        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}} onPress={() => {this.props.navigation.navigate("FoodInFo")}}/>
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
