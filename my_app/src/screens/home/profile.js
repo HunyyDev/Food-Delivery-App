@@ -205,9 +205,11 @@ const styles = StyleSheet.create({
   textBackground: {
     marginLeft: scale(23),
     width: scale(151),
-    height: scale(23),
+    height: scale(30),
+    fontSize: 18,
     fontFamily: FONT_FAMILY.Abel_Regular,
     color: CUSTOM_COLOR.Black,
+    // backgroundColor: CUSTOM_COLOR.Silver,
   },
 
   buttonSecondary: {
