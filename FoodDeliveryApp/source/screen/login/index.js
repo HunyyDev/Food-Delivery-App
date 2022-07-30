@@ -102,6 +102,9 @@ export default class LoginScreen extends Component {
                       [{Text: 'OK'}],
                     );
                   }
+                  else {
+                    this.props.navigation.navigate('Home');
+                  }
                 }}
               />
             ) : null}
