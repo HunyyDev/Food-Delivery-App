@@ -52,7 +52,7 @@ export default MyInFoScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Athens_Gray,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
   },
   goBack: {
     position: 'absolute',

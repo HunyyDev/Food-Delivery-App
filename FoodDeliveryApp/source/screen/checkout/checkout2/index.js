@@ -70,7 +70,7 @@ export default CheckOut2Screen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Athens_Gray,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
   },
   screenName: {
     top: scale(50),

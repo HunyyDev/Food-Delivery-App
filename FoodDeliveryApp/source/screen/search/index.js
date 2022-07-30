@@ -73,7 +73,7 @@ export default SearchScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.Athens_Gray,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
   },
   searchInput: {
     color: CUSTOM_COLOR.Black,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     top: scale(285),
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: CUSTOM_COLOR.Athens_Gray,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
   },
   searchIcon: {
     position: 'absolute',

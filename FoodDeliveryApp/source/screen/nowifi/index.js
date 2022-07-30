@@ -40,7 +40,7 @@ export default NoWifiScreen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: CUSTOM_COLOR.Athens_Gray,
+        backgroundColor: CUSTOM_COLOR.AthensGray,
     },
     viewIcon: {
         position: 'absolute',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         top: scale(272.01),
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: CUSTOM_COLOR.Athens_Gray,
+        backgroundColor: CUSTOM_COLOR.AthensGray,
     },
     textContainer: {
         textAlign: 'center',
