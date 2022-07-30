@@ -42,7 +42,9 @@ const MyInFoScreen = ({ navigation: { goBack } }) => {
         text="Update"
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
-        textColor={CUSTOM_COLOR.White} />
+        textColor={CUSTOM_COLOR.White}
+        // onPress={() => this.navigate('MyProfile')} 
+        />
     </SafeAreaView>
   );
 };
