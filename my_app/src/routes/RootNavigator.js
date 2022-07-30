@@ -10,6 +10,7 @@ import ProductList from '../screens/products/ProductList';
 import ProductDetail from '../screens/products/ProductDetail';
 import WaitingScreen from '../screens/onboarding/Waiting';
 import Profile from '../screens/home/profile';
+import MyProfile from '../screens/home/MyProfile';
 
 //const {Navigator, Screen} = createNativeStackNavigator();
 const Stack = createNativeStackNavigator();
@@ -20,7 +21,7 @@ const RootNavigator = props => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName={SCREEN_NAME.PROFILE}>
+        initialRouteName={SCREEN_NAME.MYPROFILE}>
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING}
           component={OnboardingScreen}
@@ -36,6 +37,7 @@ const RootNavigator = props => {
 
         <Stack.Screen name={SCREEN_NAME.WAITING} component={WaitingScreen} />
         <Stack.Screen name={SCREEN_NAME.PROFILE} component={Profile} />
+        <Stack.Screen name={SCREEN_NAME.MYPROFILE} component={MyProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

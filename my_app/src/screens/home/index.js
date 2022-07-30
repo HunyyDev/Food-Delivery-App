@@ -14,7 +14,6 @@ import {
   ic_heart,
   ic_House,
   ic_Search,
-  ic_sharp_history,
   ic_Shopping_cart,
   ic_User,
   ic_Vector,
@@ -30,6 +29,11 @@ const HomeScreen = props => {
   const onTransitToList = () => {
     navigation.navigate(SCREEN_NAME.PRODUCT_DETAIL);
   };
+
+  const onProfileScreen = () => {
+    navigation.navigate(SCREEN_NAME.PROFILE);
+  };
+
   const [onChangeText] = React.useState(null);
 
   return (
@@ -68,11 +72,7 @@ const HomeScreen = props => {
           </View>
         </View>
       </>
-      {/* </View> */}
 
-      {/* Mid */}
-      {/* <View styles={styles.MidContainer}> */}
-      {/* Content */}
       {/* TextContent */}
       <>
         <View style={styles.TextContent}>
@@ -100,22 +100,12 @@ const HomeScreen = props => {
                 <Text style={styles.TextStyle}>{'Sauce'}</Text>
               </View>
             </TouchableOpacity>
-            {/*
-            <View style={styles.TextSpace}>
-              <Text style={styles.TextStyle}>{'Drinks'}</Text>
-            </View>
-            <View style={styles.TextSpace}>
-              <Text style={styles.TextStyle}>{'Snacks'}</Text>
-            </View>
-            <View style={styles.TextSpace}>
-              <Text style={styles.TextStyle}>{'Sauce'}</Text>
-            </View> */}
           </ScrollView>
         </View>
       </>
+
       {/* ImageContent */}
       <>
-        {/* <SafeAreaView style={styles.ImageContent}> */}
         <ScrollView horizontal={true}>
           <TouchableOpacity activeOpacity={0.7} onPress={onTransitToList}>
             <View style={styles.ImgSpace}>
@@ -138,41 +128,29 @@ const HomeScreen = props => {
       <View style={styles.BottomContainer}>
         {/* Icon Tab */}
         <View style={styles.icTabContainer}>
-          {/* <TouchableOpacity activeOpacity={0.7}>
-            <View style={styles.icTab}>
+          <TouchableOpacity activeOpacity={0.7}>
+            <View>
               <Image source={ic_House} />
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.7}>
-            <View style={styles.icTab}>
+            <View>
               <Image source={ic_heart} />
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity activeOpacity={0.7}>
-            <View style={styles.icTab}>
+          <TouchableOpacity activeOpacity={0.7} onPress={onProfileScreen}>
+            <View>
               <Image source={ic_User} />
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.7}>
-            <View style={styles.icTab}>
+            <View>
               <Image source={ic_Shopping_cart} />
             </View>
-          </TouchableOpacity> */}
-          <View style={styles.icTab}>
-            <Image source={ic_House} />
-          </View>
-          <View style={styles.icTab}>
-            <Image source={ic_heart} />
-          </View>
-          <View style={styles.icTab}>
-            <Image source={ic_User} />
-          </View>
-          <View style={styles.icTab}>
-            <Image source={ic_sharp_history} />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -184,7 +162,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //justifyContent:'space-between',
     backgroundColor: CUSTOM_COLOR.Silver,
   },
 
@@ -229,12 +206,6 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
   },
 
-  //   MidContainer: {
-  //     marginTop: scale(46),
-  //     justifyContent: 'flex-start',
-  //     alignSelf: 'flex-start',
-  //     flex: 1,
-  //   },
   ContentContainer: {},
   TextContent: {
     marginTop: scale(46),
@@ -242,6 +213,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: CUSTOM_COLOR.Silver,
   },
+
   TextSpace: {
     //marginTop: scale(46),
     marginLeft: scale(41),
@@ -267,16 +239,15 @@ const styles = StyleSheet.create({
   },
   BottomContainer: {
     justifyContent: 'flex-end',
-    flex: 1,
+    // flex: 1,
   },
+
   icTabContainer: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    marginLeft: scale(52),
+    marginRight: scale(52),
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginLeft: scale(53.12),
     marginBottom: scale(50.1),
-  },
-  icTab: {
-    flex: 1,
   },
 });

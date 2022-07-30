@@ -7,6 +7,7 @@ const SCREEN_NAME = {
   PRODUCT_DETAIL: 'ProductDetailScreen',
   WAITING: 'WaitingScreen',
   PROFILE: 'Profile',
+  MYPROFILE: 'MyProfile',
 };
 
 export default SCREEN_NAME;
