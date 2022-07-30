@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { ImageBackground, SafeAreaView, View, Image, Text, StyleSheet, ActivityIndicator } from "react-native";
 import CUSTOM_COLOR from "../../constants/color";
 import scale from "../../../responsive";
 import { IMG_LOADING, IMG_LOGO2 } from "../../assets/images";
+import { useNavigation } from "@react-navigation/native";
 
 
 const LoadingScreen = () => {
+    function navi() {
+        navigation.navigate("Onboarding");
+    }
+    const navigation = useNavigation();
+    const myTimeout = setTimeout(navi, 5000);
+    useEffect(() => {
+        myTimeout;
+        
+      }, []);
+    
     return (
         < SafeAreaView style={styles.container}>
             <ImageBackground source={IMG_LOADING} resizeMode={'cover'} style={styles.backGround}>

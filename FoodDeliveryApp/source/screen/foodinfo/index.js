@@ -63,7 +63,7 @@ const FoodInfoScreen = ({ navigation: { goBack } }) => {
       <View style={styles.wrap}>
         <ScrollView 
           onScroll={({nativeEvent}) => onchange(nativeEvent)}
-          showHorizontalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           pagingEnabled
           horizontal
           style={styles.foodView}
@@ -141,6 +141,7 @@ const styles = StyleSheet.create({
   wrap: {
     width: '100%',
     height: '100%',
+    left: scale(25),
   },
   wrapDot: {
     position: 'absolute',
