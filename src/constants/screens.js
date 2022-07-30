@@ -3,6 +3,7 @@ const SCREEN_NAME = {
   LOGIN: 'LoginScreen',
   ONBOARDING: 'OnboardingScreen',
   CART: 'CartScreen',
+  PAYMENT_PROFILE: 'PaymentProfileScreens',
 };
 
 export default SCREEN_NAME;
