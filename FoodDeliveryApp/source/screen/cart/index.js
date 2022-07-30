@@ -13,57 +13,56 @@ import scale from '../../../responsive';
 import {IMG_FOOD1} from '../../assets/images';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
-import { FlatList } from 'react-native-gesture-handler';
+import {FlatList} from 'react-native-gesture-handler';
 
-const CartScreen = ({navigation}) => {
-
+const CartScreen = ({ navigation: { goBack } }) => {
   const Foods = [
     {
       img: IMG_FOOD1,
       key: '1',
-      foodName: 'Veggie \ntomato mix',
+      foodName: 'Veggie tomato mix',
       foodPrice: '1,900',
     },
     {
       img: IMG_FOOD1,
       key: '2',
-      foodName: 'Veggie \ntomato mix',
+      foodName: 'Veggie tomato mix',
       foodPrice: '1,900',
     },
     {
       img: IMG_FOOD1,
       key: '3',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
     {
       img: IMG_FOOD1,
       key: '4',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
     {
       img: IMG_FOOD1,
       key: '5',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
     {
       img: IMG_FOOD1,
       key: '6',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
     {
       img: IMG_FOOD1,
       key: '7',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
     {
       img: IMG_FOOD1,
       key: '8',
-      foodName: 'Spicy fish \nsauce',
+      foodName: 'Spicy fish sauce',
       foodPrice: '2,300.99',
     },
   ];
@@ -79,23 +78,23 @@ const CartScreen = ({navigation}) => {
             right: scale(10),
             bottom: scale(10),
           }}
-          onPress={() => goBack()}
-          >
+          onPress={() => goBack()}>
           <IC_GoBack />
         </TouchableOpacity>
       </View>
-      <FlatList 
-        horizontal= {false}
-        data={Foods}
-        keyExtractor={item => `${item.key}`}
-        renderItem={({item}) => <AddToCartItem category={item} />}
-      />
+      <View style={styles.foodList} >
+        <FlatList
+          horizontal={false}
+          data={Foods}
+          keyExtractor={item => `${item.key}`}
+          renderItem={({item}) => <AddToCartItem category={item} />}
+        />
+      </View>
+
       <View style={styles.swipeNotice}>
         <IC_SwipeHand />
         <Text style={styles.swipeText}>swipe on an item to delete</Text>
       </View>
-      
-      
 
       <Custom_ButtonOne
         color={CUSTOM_COLOR.Vermilion}
@@ -136,5 +135,10 @@ const styles = StyleSheet.create({
   swipeText: {
     color: CUSTOM_COLOR.Black,
     fontSize: scale(10),
+  },
+  foodList: {
+    top: scale(178),
+    alignItems: 'center',
+    height: scale(520),
   },
 });

@@ -2,7 +2,7 @@ import scale from '../../../../responsive';
 import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
 import Custom_IconButton from './Custom_IconButton';
-import { IC_Glass } from '../../../assets/icons';
+import {IC_Glass} from '../../../assets/icons';
 import CUSTOM_COLOR from '../../../constants/color';
 import FONT_FAMILY from '../../../constants/fonts';
 
@@ -12,13 +12,17 @@ class Custom_SearchBar extends React.Component {
   }
   render() {
     return (
-      <View style={styles.searchContainer(this.props)} >
-        <Custom_IconButton style={styles.searchImage} icon={IC_Glass}  onPress={this.props.onPress} />
+      <View style={styles.searchContainer(this.props)}>
+        <Custom_IconButton
+          style={styles.searchImage}
+          icon={IC_Glass}
+          onPress={this.props.onPress}
+        />
         <TextInput
           style={styles.searchInput}
           placeholder={this.props.placeholderText}
           placeholderTextColor={this.props.placeholderColor}
-          
+          onChangeText={this.props.onChangeText}
         />
       </View>
     );
@@ -34,23 +38,21 @@ const styles = StyleSheet.create({
     top: scale(242),
     left: scale(50),
     borderRadius: scale(30),
-    backgroundColor: CUSTOM_COLOR.Search,
+    backgroundColor: CUSTOM_COLOR.Gallery,
     borderWidth: 1,
     ...props.style,
   }),
   searchInput: {
-    top: scale(6),
+    position: 'absolute',
+    top: scale(10),
     left: scale(50),
-    width: scale(100),
-    height: scale(50),
+    width: scale(250),
     placeholder: 'Search',
-    fontWeight: '600',
     fontSize: scale(17),
     fontFamily: FONT_FAMILY.SF_Pro_Rounded,
-    position: 'absolute',
     placeholderTextColor: CUSTOM_COLOR.Black,
-    opacity: scale(0.5),
     color: CUSTOM_COLOR.Black,
+    opacity: 0.5,
   },
   searchImage: {
     width: scale(18),

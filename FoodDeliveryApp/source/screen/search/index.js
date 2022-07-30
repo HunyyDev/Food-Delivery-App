@@ -13,11 +13,12 @@ import CUSTOM_COLOR from '../../constants/color';
 import Custom_InputText from './components/Custom_InputText';
 import Custom_FoodFlatList from './components/Custom_FoodFlatList';
 import {IC_GoBack} from '../../assets/icons';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-
-const SearchScreen = ({ navigation: { goBack } }) => {
+const SearchScreen = ({navigation: {goBack}, route}) => {
   const [count, setCount] = useState(1);
+  console.log(count);
+  const {searchKey} = route.params;
   const navigation = useNavigation();
 
   return (
@@ -33,11 +34,16 @@ const SearchScreen = ({ navigation: { goBack } }) => {
       {/* Search Box */}
       <>
         <Custom_InputText
-          placeholderText={'Spicy chieckn'}
-          placeholderColor={CUSTOM_COLOR.Black}
+          placeholderText={'Search...'}
+          placeholderColor={CUSTOM_COLOR.Silver}
           style={styles.searchInput}
-          hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
-        />
+          hitSlop={{
+            top: '100%',
+            bottom: '100%',
+            left: '100%',
+            right: '100%',
+          }}
+          searchKey={searchKey} />
       </>
       {/*Screen in case 0 item*/}
       <>
@@ -60,7 +66,10 @@ const SearchScreen = ({ navigation: { goBack } }) => {
             <View style={styles.viewHidden}>
               <Text style={styles.textHidden}>Found {count} results</Text>
             </View>
-            <Custom_FoodFlatList countFoodNum={setCount} onPress={() => navigation.navigate('FoodInFo')}/>
+            <Custom_FoodFlatList
+              countFoodNum={setCount}
+              onPress={() => navigation.navigate('FoodInFo')}
+            />
           </View>
         ) : (
           <Custom_FoodFlatList countFoodNum={setCount} />
@@ -150,5 +159,5 @@ const styles = StyleSheet.create({
     left: scale(10),
     right: scale(10),
     bottom: scale(10),
-  }
+  },
 });

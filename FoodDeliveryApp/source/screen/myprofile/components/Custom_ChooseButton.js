@@ -14,11 +14,10 @@ const Custom_ChooseButton = props => {
         top: props.top,
         borderRadius: 20,
         backgroundColor: CUSTOM_COLOR.White,
-
       }}>
       <Text style={styles.text1}>{props.text}</Text>
       <View style={styles.viewIC}>
-        <IC_Next></IC_Next>
+        <IC_Next />
       </View>
     </TouchableOpacity>
   );

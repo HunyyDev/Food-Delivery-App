@@ -17,17 +17,38 @@ import {
   IC_Cart,
   IC_Menu,
 } from '../../assets/icons';
-//import { IC_Cart, IC_Menu } from '../../assets/icons/index';
 import scale from '../../../responsive';
 import Custom_FoodScrollView from '../home/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../home/components/Custom_CategoryScrollView';
+import { IMG_FOOD1, IMG_FOOD3, IMG_FOOD4 } from '../../assets/images';
 
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       nav_selected: 'Home',
-      screen: 'FoodInfo'
+      screen: 'FoodInfo',
+      searchKey: '',
+      foodBoard: [
+        {
+          img: IMG_FOOD1,
+          key: '1',
+          foodName: 'Veggie \ntomato mix',
+          foodPrice: '1,900',
+        },
+        {
+          img: IMG_FOOD4,
+          key: '2',
+          foodName: 'Fried \nchicken',
+          foodPrice: '1,900',
+        },
+        {
+          img: IMG_FOOD3,
+          key: '3',
+          foodName: 'Spicy fish \nsauce',
+          foodPrice: '2,300.99',
+        },
+      ],
     };
   }
   navigate = location => {
@@ -46,7 +67,7 @@ export default class HomeScreen extends Component {
         {/* Icon Shopping */}
         <TouchableOpacity
           style={[styles.iconContainer, styles.ic_cart]}
-          onPress={() => this.navigate("Cart")}>
+          onPress={() => this.navigate('Cart')}>
           <IC_Cart />
         </TouchableOpacity>
         <></>
@@ -61,7 +82,14 @@ export default class HomeScreen extends Component {
           placeholderColor={CUSTOM_COLOR.Black}
           style={styles.searchInput}
           hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
-          onPress={() => {this.props.navigation.navigate("Search")}}
+          onPress={() => {
+            this.props.navigation.navigate('Search', {
+              searchKey: this.state.searchKey,
+            });
+          }}
+          onChangeText={key => {
+            this.setState({searchKey: key});
+          }}
         />
         <></>
         {/* See more */}
@@ -70,7 +98,11 @@ export default class HomeScreen extends Component {
         </TouchableOpacity>
         <></>
         {/* Foods */}
-        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}} onPress={() => {this.props.navigation.navigate("FoodInFo")}}/>
+        <Custom_FoodScrollView
+          style={{top: scale(435), position: 'absolute'}}
+          foodData={this.state.foodBoard}
+          onPress={() => {this.props.navigation.navigate("FoodInFo")}}
+        />
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
@@ -94,7 +126,7 @@ export default class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({nav_selected: 'User'});
-              this.navigate("MyInFo")
+              this.navigate('MyInFo');
             }}>
             <IC_User
               fill={this.state.nav_selected === 'User' ? '#FA4A0C' : '#ADADAF'}
@@ -103,14 +135,13 @@ export default class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({nav_selected: 'Clock'});
-              this.navigate("History")
+              this.navigate('History');
             }}>
             <IC_Clock
               fill={this.state.nav_selected === 'Clock' ? '#FA4A0C' : '#ADADAF'}
             />
           </TouchableOpacity>
         </View>
-
       </SafeAreaView>
     );
   }
@@ -124,8 +155,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     height: scale(25),
   },
-  icon_menu: 
-  {
+  icon_menu: {
     position: 'absolute',
     marginTop: scale(74),
     marginLeft: scale(55),
@@ -163,7 +193,6 @@ const styles = StyleSheet.create({
     top: scale(-10),
   },
   searchInput: {
-    opacity: 0.5,
     color: CUSTOM_COLOR.Black,
     top: scale(242),
     left: scale(50),
