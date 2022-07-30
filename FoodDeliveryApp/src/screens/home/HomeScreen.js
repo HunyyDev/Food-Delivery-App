@@ -44,7 +44,8 @@ export class HomeScreen extends Component {
               <IC_Menu />
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Cart')}>
+              onPress={() => this.props.navigation.navigate('Cart')}
+              hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
               <IC_Cart />
             </TouchableOpacity>
           </View>
@@ -119,6 +120,9 @@ export class HomeScreen extends Component {
               source={IMG_Veggie_tomato_mix}
               name={'Veggie \ntomato mix'}
               price={'N1,900'}
+              onPress={() => {
+                this.props.navigation.navigate('DetailProduct');
+              }}
             />
             <CustomList
               source={IMG_Veggie_tomato_mix}

@@ -11,7 +11,9 @@ export class CustomList extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <TouchableOpacity style={styles.optionContainer}>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={this.props.onPress}>
           <View style={styles.optionInfo}>
             <Image
               style={styles.imageMain}
