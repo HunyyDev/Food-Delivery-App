@@ -11,6 +11,8 @@ const FONT_FAMILY = {
   RoundedHeavy: Rounded + 'Heavy',
   TextRegular: Text + 'Regular',
   TextBold: Text + 'Bold',
+  PoppinsMedium: 'Poppins-Medium',
+  PoppinsSemiBold: 'Poppins-SemiBold',
 };
 
 export default FONT_FAMILY;
