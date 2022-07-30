@@ -25,8 +25,7 @@ const config = {
 
 const App = () => {
   return (
-    // 
-    <MyInFoScreen/>
+
   );
 };
 
