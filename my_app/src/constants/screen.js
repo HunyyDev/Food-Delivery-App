@@ -5,6 +5,8 @@ const SCREEN_NAME = {
   SIGNUP: 'SignUpScreen',
   PRODUCT_LIST: 'ProductListScreen',
   PRODUCT_DETAIL: 'ProductDetailScreen',
+  WAITING: 'WaitingScreen',
+  PROFILE: 'Profile',
 };
 
 export default SCREEN_NAME;

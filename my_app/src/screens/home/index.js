@@ -77,12 +77,30 @@ const HomeScreen = props => {
       <>
         <View style={styles.TextContent}>
           <ScrollView horizontal={true}>
-            <TouchableOpacity activeOpacity={0.7} onPress={onTransitToList}>
+            <TouchableOpacity activeOpacity={0.7}>
               <View style={styles.TextSpace}>
                 <Text style={styles.TextStyle}>{'Foods'}</Text>
               </View>
             </TouchableOpacity>
 
+            <TouchableOpacity activeOpacity={0.7}>
+              <View style={styles.TextSpace}>
+                <Text style={styles.TextStyle}>{'Drinks'}</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.7}>
+              <View style={styles.TextSpace}>
+                <Text style={styles.TextStyle}>{'Snacks'}</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.7}>
+              <View style={styles.TextSpace}>
+                <Text style={styles.TextStyle}>{'Sauce'}</Text>
+              </View>
+            </TouchableOpacity>
+            {/*
             <View style={styles.TextSpace}>
               <Text style={styles.TextStyle}>{'Drinks'}</Text>
             </View>
@@ -91,7 +109,7 @@ const HomeScreen = props => {
             </View>
             <View style={styles.TextSpace}>
               <Text style={styles.TextStyle}>{'Sauce'}</Text>
-            </View>
+            </View> */}
           </ScrollView>
         </View>
       </>
@@ -99,9 +117,12 @@ const HomeScreen = props => {
       <>
         {/* <SafeAreaView style={styles.ImageContent}> */}
         <ScrollView horizontal={true}>
-          <View style={styles.ImgSpace}>
-            <Image style={styles.ImgMask} source={img_Mask} />
-          </View>
+          <TouchableOpacity activeOpacity={0.7} onPress={onTransitToList}>
+            <View style={styles.ImgSpace}>
+              <Image style={styles.ImgMask} source={img_Mask} />
+            </View>
+          </TouchableOpacity>
+
           <View style={styles.ImgSpace}>
             <Image style={styles.ImgMask} source={img_Mask} />
           </View>
@@ -117,6 +138,29 @@ const HomeScreen = props => {
       <View style={styles.BottomContainer}>
         {/* Icon Tab */}
         <View style={styles.icTabContainer}>
+          {/* <TouchableOpacity activeOpacity={0.7}>
+            <View style={styles.icTab}>
+              <Image source={ic_House} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <View style={styles.icTab}>
+              <Image source={ic_heart} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <View style={styles.icTab}>
+              <Image source={ic_User} />
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity activeOpacity={0.7}>
+            <View style={styles.icTab}>
+              <Image source={ic_Shopping_cart} />
+            </View>
+          </TouchableOpacity> */}
           <View style={styles.icTab}>
             <Image source={ic_House} />
           </View>

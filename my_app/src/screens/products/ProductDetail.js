@@ -4,7 +4,6 @@ import {
   TouchableOpacity,
   View,
   Image,
-  Dimensions,
   ImageBackground,
 } from 'react-native';
 import React from 'react';
@@ -12,7 +11,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import scale from '../../constants/scales';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/colors';
-import {ICEllipse, ICHeart, ICOnBack} from '../../assets/icons';
+import {ICEllipse, ICEllipseColor, ICHeart, ICOnBack} from '../../assets/icons';
 import {IMG_Veggie} from '../../assets/images';
 
 const ProductDetail = props => {
@@ -43,7 +42,7 @@ const ProductDetail = props => {
       <>
         <View style={styles.ellipseContainer}>
           <TouchableOpacity activeOpacity={0.7}>
-            <ICEllipse />
+            <ICEllipseColor />
           </TouchableOpacity>
 
           <TouchableOpacity activeOpacity={0.7}>
@@ -74,7 +73,7 @@ const ProductDetail = props => {
 
       <>
         <View>
-          <Text style={[styles.titleInfo, {marginTop: scale(30)}]}>
+          <Text style={[styles.titleInfo, {marginTop: scale(20)}]}>
             {'Delivery info'}
           </Text>
         </View>
@@ -90,7 +89,7 @@ const ProductDetail = props => {
 
       <>
         <View>
-          <Text style={[styles.titleInfo, {marginTop: scale(15)}]}>
+          <Text style={[styles.titleInfo, {marginTop: scale(10)}]}>
             {'Return policy'}
           </Text>
         </View>
@@ -165,7 +164,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 28,
-    fontFamily: FONT_FAMILY.SFProRounded_Semibold,
+    fontFamily: FONT_FAMILY.SFProRounded_Bold,
     color: CUSTOM_COLOR.Black,
   },
 
@@ -188,7 +187,7 @@ const styles = StyleSheet.create({
   titleInfo: {
     marginLeft: scale(53),
     fontSize: 17,
-    fontFamily: FONT_FAMILY.SFProRounded_Semibold,
+    fontFamily: FONT_FAMILY.SFProRounded_Bold,
     color: CUSTOM_COLOR.Black,
   },
 
