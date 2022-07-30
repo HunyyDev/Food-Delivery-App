@@ -13,17 +13,14 @@ import CUSTOM_COLOR from '../../constants/color';
 import Custom_InputText from './components/Custom_InputText';
 import Custom_FoodFlatList from './components/Custom_FoodFlatList';
 import {IC_GoBack} from '../../assets/icons';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const SearchScreen = ({navigation: {goBack}, route}) => {
   const [count, setCount] = useState(1);
   console.log(count);
-<<<<<<< HEAD
   const {searchKey} = route.params;
-=======
   const navigation = useNavigation();
 
->>>>>>> 110f96c46177333cf6d10748a1da7db9d786d635
   return (
     <SafeAreaView style={styles.container}>
       {/* Go back button */}
@@ -69,7 +66,10 @@ const SearchScreen = ({navigation: {goBack}, route}) => {
             <View style={styles.viewHidden}>
               <Text style={styles.textHidden}>Found {count} results</Text>
             </View>
-            <Custom_FoodFlatList countFoodNum={setCount} onPress={() => navigation.navigate('FoodInFo')}/>
+            <Custom_FoodFlatList
+              countFoodNum={setCount}
+              onPress={() => navigation.navigate('FoodInFo')}
+            />
           </View>
         ) : (
           <Custom_FoodFlatList countFoodNum={setCount} />

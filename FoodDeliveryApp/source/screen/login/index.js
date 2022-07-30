@@ -101,8 +101,7 @@ export default class LoginScreen extends Component {
                       'Password must have more than 8 character',
                       [{Text: 'OK'}],
                     );
-                  }
-                  else {
+                  } else {
                     this.props.navigation.navigate('Home');
                   }
                 }}
@@ -119,8 +118,7 @@ export default class LoginScreen extends Component {
                     Alert.alert('', 'Empty email. Please enter again', [
                       {Text: 'OK'},
                     ]);
-                  }
-                  else if (this.state.pass.length < 8) {
+                  } else if (this.state.pass.length < 8) {
                     Alert.alert(
                       '',
                       'Password must have more than 8 character',

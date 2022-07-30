@@ -1,4 +1,11 @@
-import {StyleSheet, Text, TouchableOpacity, View, Image, SafeAreaView} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 import React from 'react';
 import scale from '../../../responsive';
 import CUSTOM_COLOR from '../../constants/color';
@@ -6,10 +13,10 @@ import FONT_FAMILY from '../../constants/fonts';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_PaymentMethod2 from './components/Custom_PaymentMethod';
 import {IMG_AVATAR, IMG_BANK, IMG_CARD, IMG_PAYPAL} from '../../assets/images';
-import { IC_GoBack } from '../../assets/icons';
-import { useNavigation } from '@react-navigation/native';
+import {IC_GoBack} from '../../assets/icons';
+import {useNavigation} from '@react-navigation/native';
 
-const MyInFoScreen = ({ navigation: { goBack } }) => {
+const MyInFoScreen = ({navigation: {goBack}}) => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
@@ -45,8 +52,8 @@ const MyInFoScreen = ({ navigation: { goBack } }) => {
         fontSize={17}
         color={CUSTOM_COLOR.SunsetOrange}
         textColor={CUSTOM_COLOR.White}
-        onPress={() => navigation.navigate('MyProfile')} 
-        />
+        onPress={() => navigation.navigate('MyProfile')}
+      />
     </SafeAreaView>
   );
 };

@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     height: scale(102),
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 20,
+    marginBottom: scale(15),
   },
   imgContainer: {
     borderRadius: 360,

@@ -20,6 +20,7 @@ import {
 import scale from '../../../responsive';
 import Custom_FoodScrollView from '../home/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../home/components/Custom_CategoryScrollView';
+import { IMG_FOOD1, IMG_FOOD3, IMG_FOOD4 } from '../../assets/images';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -28,6 +29,26 @@ export default class HomeScreen extends Component {
       nav_selected: 'Home',
       screen: 'FoodInfo',
       searchKey: '',
+      foodBoard: [
+        {
+          img: IMG_FOOD1,
+          key: '1',
+          foodName: 'Veggie \ntomato mix',
+          foodPrice: '1,900',
+        },
+        {
+          img: IMG_FOOD4,
+          key: '2',
+          foodName: 'Fried \nchicken',
+          foodPrice: '1,900',
+        },
+        {
+          img: IMG_FOOD3,
+          key: '3',
+          foodName: 'Spicy fish \nsauce',
+          foodPrice: '2,300.99',
+        },
+      ],
     };
   }
   navigate = location => {
@@ -79,9 +100,8 @@ export default class HomeScreen extends Component {
         {/* Foods */}
         <Custom_FoodScrollView
           style={{top: scale(435), position: 'absolute'}}
-          onPress={() => {
-            this.props.navigation.navigate('FoodInFo');
-          }}
+          foodData={this.state.foodBoard}
+          onPress={() => {this.props.navigation.navigate("FoodInFo")}}
         />
         <Custom_CategoryScrollView />
         <></>

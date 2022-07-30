@@ -2,7 +2,7 @@ import scale from '../../../../responsive';
 import {StyleSheet, View, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Custom_IconButton from './Custom_IconButton';
-import { IC_Glass } from '../../../assets/icons';
+import {IC_Glass} from '../../../assets/icons';
 import CUSTOM_COLOR from '../../../constants/color';
 import FONT_FAMILY from '../../../constants/fonts';
 

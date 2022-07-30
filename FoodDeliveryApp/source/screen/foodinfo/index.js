@@ -4,9 +4,9 @@ import {
   Text,
   Image,
   View,
-  StatusBar,
   Dimensions,
-  TouchableOpacity, ScrollView
+  TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
@@ -15,25 +15,24 @@ import scale from '../../../responsive';
 import {IC_Heart, IC_SmallCircle, IC_GoBack} from '../../assets/icons';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 
-const images = [
-  IMG_FOOD1,
-  IMG_FOOD2,
-  IMG_FOOD3
-]
+const images = [IMG_FOOD1, IMG_FOOD2, IMG_FOOD3];
 
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-
-const FoodInfoScreen = ({ navigation: { goBack } }) => {
+const FoodInfoScreen = ({navigation: {goBack}}) => {
   const [isChoose, setIsChoose] = useState(false);
-  const onPressHandler = () => {setIsChoose(!isChoose)};
+  const onPressHandler = () => {
+    setIsChoose(!isChoose);
+  };
   const [imgActive, setImgActive] = useState(0);
 
-  onchange = (nativeEvent) => {
-    if(nativeEvent) {
-      const slide = Math.ceil(nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width);
-      if(slide != imgActive) {
+  onchange = nativeEvent => {
+    if (nativeEvent) {
+      const slide = Math.ceil(
+        nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
+      );
+      if (slide != imgActive) {
         setImgActive(slide);
       }
     }
@@ -50,49 +49,38 @@ const FoodInfoScreen = ({ navigation: { goBack } }) => {
       </>
       {/* Heart button */}
       <>
-      <TouchableOpacity
-        style={styles.heart}
-        onPress={onPressHandler}>
-        <IC_Heart
-          fill={isChoose === true ? '#FA4A0C' : 'transparent'}
-        />
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.heart} onPress={onPressHandler}>
+          <IC_Heart fill={isChoose === true ? '#FA4A0C' : 'transparent'} />
+        </TouchableOpacity>
       </>
       {/* Food swiper */}
       <>
-      <View style={styles.wrap}>
-        <ScrollView 
-          onScroll={({nativeEvent}) => onchange(nativeEvent)}
-          showHorizontalScrollIndicator={false}
-          pagingEnabled
-          horizontal
-          style={styles.foodView}
-        >
-          {
-            images.map((e, index) => 
+        <View style={styles.wrap}>
+          <ScrollView
+            onScroll={({nativeEvent}) => onchange(nativeEvent)}
+            showHorizontalScrollIndicator={false}
+            pagingEnabled
+            horizontal
+            style={styles.foodView}>
+            {images.map((e, index) => (
               <Image
                 key={e}
-                resizeMode='stretch'
+                resizeMode="stretch"
                 style={styles.food}
-                source={e} 
+                source={e}
               />
-            )
-          }
-        </ScrollView>
-        <View style={styles.wrapDot}>
-          {
-            images.map((e,index) => 
+            ))}
+          </ScrollView>
+          <View style={styles.wrapDot}>
+            {images.map((e, index) => (
               <Text
                 key={e}
-                style={imgActive == index ? styles.dotActive : styles.dot}
-              >
+                style={imgActive == index ? styles.dotActive : styles.dot}>
                 ●
               </Text>
-            )
-          }
+            ))}
+          </View>
         </View>
-      </View>
-
       </>
       {/* Food name */}
       <>
@@ -106,17 +94,25 @@ const FoodInfoScreen = ({ navigation: { goBack } }) => {
       <>
         <Text style={styles.deliveryInfo}>Delivery info</Text>
       </>
-       {/* Delivery description */}
-       <>
-        <Text style={styles.deliveryDescription}>{'Delivered between monday aug and thursday 20 \nfrom 8pm to 91:32 pm'}</Text>
+      {/* Delivery description */}
+      <>
+        <Text style={styles.deliveryDescription}>
+          {
+            'Delivered between monday aug and thursday 20 \nfrom 8pm to 91:32 pm'
+          }
+        </Text>
       </>
       {/* Return policy */}
       <>
         <Text style={styles.returnPolicy}>Return policy</Text>
       </>
-       {/* Return policy description */}
-       <>
-        <Text style={styles.returnPolicyDescription}>{'All our foods are double checked before leaving \nour stores so by any case you found a broken \nfood please contact our hotline immediately.'}</Text>
+      {/* Return policy description */}
+      <>
+        <Text style={styles.returnPolicyDescription}>
+          {
+            'All our foods are double checked before leaving \nour stores so by any case you found a broken \nfood please contact our hotline immediately.'
+          }
+        </Text>
       </>
       {/* button */}
       <>
@@ -146,7 +142,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     flexDirection: 'row',
-    alignSelf:'center',
+    alignSelf: 'center',
     left: scale(168),
     top: scale(315),
   },
@@ -184,8 +180,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   food: {
-    width: WIDTH*0.5,
-    height:HEIGHT*0.25,
+    width: WIDTH * 0.5,
+    height: HEIGHT * 0.25,
     borderRadius: 360,
   },
   foodNameActive: {
@@ -219,7 +215,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: scale(170),
     top: scale(420),
-    fontWeight:'400',
+    fontWeight: '400',
     fontSize: scale(22),
     lineHeight: scale(28),
     textAlign: 'center',

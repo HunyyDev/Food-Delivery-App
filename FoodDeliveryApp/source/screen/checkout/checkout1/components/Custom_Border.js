@@ -13,9 +13,9 @@ const Custom_Border = props => {
         borderColor: CUSTOM_COLOR.Black,
         borderBottomWidth: 0.5,
         top: props.top,
-      }}></View>
+      }}
+    />
   );
 };
 
 export default Custom_Border;
-

@@ -9,13 +9,7 @@ import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
 import Custom_SearchBar from '../home/components/Custom_SearchBar';
 import FONT_FAMILY from '../../constants/fonts';
-import {
-  IC_Clock,
-  IC_Home,
-  IC_User,
-  IC_Cart,
-  IC_Menu,
-} from '../../assets/icons';
+import {IC_Clock, IC_Home, IC_User, IC_Cart, IC_Menu} from '../../assets/icons';
 import scale from '../../../responsive';
 import Custom_FoodScrollView from '../home2/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../home2/components/Custom_CategoryScrollView';
@@ -61,7 +55,9 @@ export default class HomeScreen2 extends Component {
         </TouchableOpacity>
         <></>
         {/* Foods */}
-        <Custom_FoodScrollView style={{top: scale(435), position: 'absolute'}} />
+        <Custom_FoodScrollView
+          style={{top: scale(435), position: 'absolute'}}
+        />
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
@@ -99,7 +95,6 @@ export default class HomeScreen2 extends Component {
             />
           </TouchableOpacity>
         </View>
-
       </SafeAreaView>
     );
   }
@@ -113,8 +108,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     height: scale(25),
   },
-  icon_menu: 
-  {
+  icon_menu: {
     position: 'absolute',
     marginTop: scale(74),
     marginLeft: scale(55),
