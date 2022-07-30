@@ -1,39 +1,25 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../../constants/color';
 import scale from '../../../../responsive';
-import {PanGestureHandler} from 'react-native-gesture-handler';
-import Animated, {
-  useAnimatedGestureHandler,
-  useAnimatedStyle,
-  useSharedValue,
-} from 'react-native-reanimated';
-
+import {Swipeable} from 'react-native-gesture-handler';
 
 const AddToCartItem = props => {
-  const translateX = useSharedValue(0);
-
-  const panGesture = useAnimatedGestureHandler({
-    onActive: event => {
-      translateX.value = event.translationX;
-    },
-  });
-  const rStyle = useAnimatedStyle(() => ({
-    transform: [{translateX: translateX.value}]
-  }))
-
+  const {category} = props
   const [count, setCount] = useState(1);
   return (
-    <PanGestureHandler onGestureEvent={panGesture}>
-      <Animated.View style={[styles.container, rStyle]}>
+    <Swipeable
+    //renderRightActions={}
+    >
+      <View style={styles.container}>
         {/*Food Image*/}
         <View style={styles.imgContainer}>
-          <Image source={props.img} style={styles.image} />
+          <Image source={category.img} style={styles.image} />
         </View>
         {/*Food Name*/}
-        <Text style={styles.text}>Vergie Tomato mix</Text>
+        <Text style={styles.text}>{category.foodName}</Text>
         {/*Food Price*/}
-        <Text style={styles.price}>#1900</Text>
+        <Text style={styles.price}>#{category.foodPrice}</Text>
         {/*Food Price*/}
         <View style={styles.countBox}>
           <TouchableOpacity
@@ -58,8 +44,8 @@ const AddToCartItem = props => {
             <Text style={styles.minus}>-</Text>
           </TouchableOpacity>
         </View>
-      </Animated.View>
-    </PanGestureHandler>
+      </View>
+    </Swipeable>
   );
 };
 
@@ -70,16 +56,10 @@ const styles = StyleSheet.create({
     //position: 'absolute',
   },
   container: {
-    //flex: 1,
-    //flexDirection: 'row',
-    //position: 'absolute',
     width: scale(315),
     height: scale(102),
-    left: scale(50),
-    top: scale(178),
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 20,
-    //justifyContent: 'center',
   },
   imgContainer: {
     borderRadius: 360,
