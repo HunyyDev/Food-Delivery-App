@@ -14,10 +14,10 @@ import Custom_InputText from './components/Custom_InputText';
 import Custom_FoodFlatList from './components/Custom_FoodFlatList';
 import {IC_GoBack} from '../../assets/icons';
 
-
-const SearchScreen = ({ navigation: { goBack } }) => {
+const SearchScreen = ({navigation: {goBack}, route}) => {
   const [count, setCount] = useState(1);
   console.log(count);
+  const {searchKey} = route.params;
   return (
     <SafeAreaView style={styles.container}>
       {/* Go back button */}
@@ -31,11 +31,16 @@ const SearchScreen = ({ navigation: { goBack } }) => {
       {/* Search Box */}
       <>
         <Custom_InputText
-          placeholderText={'Spicy chieckn'}
-          placeholderColor={CUSTOM_COLOR.Black}
+          placeholderText={'Search...'}
+          placeholderColor={CUSTOM_COLOR.Silver}
           style={styles.searchInput}
-          hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
-        />
+          hitSlop={{
+            top: '100%',
+            bottom: '100%',
+            left: '100%',
+            right: '100%',
+          }}
+          searchKey={searchKey} />
       </>
       {/*Screen in case 0 item*/}
       <>
@@ -148,5 +153,5 @@ const styles = StyleSheet.create({
     left: scale(10),
     right: scale(10),
     bottom: scale(10),
-  }
+  },
 });
