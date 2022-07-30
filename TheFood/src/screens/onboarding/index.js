@@ -37,7 +37,6 @@ const OnBoardingScreen = props => {
           onPress={onTransitToLogin}>
           <Text style={[styles.buttonSection.button.text]}>Get Started</Text>
         </TouchableOpacity>
-        {/* <CustomButton type="primary" title="Login" /> */}
       </View>
     </View>
   );

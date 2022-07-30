@@ -17,6 +17,10 @@ const RootNavigator = props => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name={SCREEN_NAME.ONBOARDING_SCREEN}
+          component={OnBoardingScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
           name={SCREEN_NAME.NO_INTERNET}
           component={NoInternetScreen}
           options={{headerShown: false}}></Stack.Screen>
@@ -27,10 +31,6 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.LOADING_SCREEN}
           component={LoaderScreen}
-          options={{headerShown: false}}></Stack.Screen>
-        <Stack.Screen
-          name={SCREEN_NAME.ONBOARDING_SCREEN}
-          component={OnBoardingScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.LOGIN_SCREEN}

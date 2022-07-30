@@ -21,10 +21,9 @@ class LoginScreen extends Component {
     this.state = {
       isCheckedA: true,
       isCheckedB: false,
-      loginInfo: {
-        email: '',
-        password: '',
-      },
+      email: '',
+      password: '',
+      confirmPassword: '',
     };
   }
 
@@ -63,35 +62,9 @@ class LoginScreen extends Component {
     }
   };
 
-  setLoginEmail = email => {
-    this.setState({
-      ...this.state,
-      loginInfo: {
-        ...this.state.loginInfo,
-        email: email,
-      },
-    });
+  handleChangeInput = (text, name) => {
+    this.setState({...this.state, [name]: text});
   };
-
-  setLoginPassword = pw => {
-    this.setState({
-      ...this.state,
-      loginInfo: {
-        ...this.state.loginInfo,
-        password: pw,
-      },
-    });
-  };
-
-  // clear = () => {
-  //   this.setState({
-  //     ...this.state,
-  //     loginInfo: {
-  //       email: '',
-  //       password: '',
-  //     },
-  //   });
-  // };
 
   render() {
     return (
@@ -125,7 +98,9 @@ class LoginScreen extends Component {
             <CustomInput
               label="Email address"
               placeholder="Email address"
-              action={this.setLoginEmail}
+              action={this.handleChangeInput}
+              name='email'
+              value={this.state.email}
             />
           </View>
           <View style={styles.input.inputPassword}>
@@ -133,7 +108,9 @@ class LoginScreen extends Component {
               label="Password"
               secureTextEntry={true}
               placeholder="Password"
-              action={this.setLoginPassword}
+              action={this.handleChangeInput}
+              name='password'
+              value={this.state.password}
             />
           </View>
         </View>
@@ -147,9 +124,11 @@ class LoginScreen extends Component {
             <CustomInput
               label="Comfirm Password"
               type="password"
+              name="confirmPassword"
               secureTextEntry={true}
               placeholder="Comfirm Password"
-              action={this.setLoginPassword}
+              action={this.handleChangeInput}
+              value={this.state.confirmPassword}
             />
           </View>
         )}
@@ -159,7 +138,10 @@ class LoginScreen extends Component {
             ([styles.buttonLogin],
             {marginTop: this.state.isCheckedA ? scaleY(55) : scaleY(-3)})
           }>
-          <CustomButton type="secondary" title="Login" />
+          <CustomButton
+            type="secondary"
+            title={this.state.isCheckedA ? 'Login' : 'Sign-up'}
+          />
         </View>
       </ScrollView>
     );

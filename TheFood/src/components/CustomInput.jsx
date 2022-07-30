@@ -15,8 +15,10 @@ class CustomInput extends Component {
         <TextInput
           style={styles.customInputText}
           secureTextEntry={this.props.secureTextEntry || false}
-          onChangeText={text => this.props.action(text)}
-          placeholder={this.props.placeholder}></TextInput>
+          placeholder={this.props.placeholder}
+          name={this.props.name}
+          onChangeText={(text) => this.props.action(text, this.props.name)}
+          value={this.props.value}></TextInput>
         <View
           style={{
             borderBottomColor: CUSTOM_COLOR.BLACK,
