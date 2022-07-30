@@ -8,7 +8,8 @@ import LoginScreen from '../screens/auth';
 import LoaderScreen from '../screens/loader';
 import NoFoundItemScreen from '../screens/notFoundItem';
 import NoInternetScreen from '../screens/noInternet';
-// import HomeScreen from '../screens/home';
+import HomeScreen from '../screens/home';
+import ProfileScreen from '../screens/profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,18 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.PROFILE_SCREEN}
+          component={ProfileScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.ONBOARDING_SCREEN}
+          component={OnBoardingScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.HOME_SCREEN}
+          component={HomeScreen}
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.NO_INTERNET}
           component={NoInternetScreen}
@@ -27,10 +40,6 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.LOADING_SCREEN}
           component={LoaderScreen}
-          options={{headerShown: false}}></Stack.Screen>
-        <Stack.Screen
-          name={SCREEN_NAME.ONBOARDING_SCREEN}
-          component={OnBoardingScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.LOGIN_SCREEN}

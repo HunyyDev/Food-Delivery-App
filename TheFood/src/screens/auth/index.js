@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Button,
   ScrollView,
+  Alert,
 } from 'react-native';
 import React, {Component} from 'react';
 import CustomButton from '../../components/CustomButton';
@@ -13,6 +14,7 @@ import CustomInput from '../../components/CustomInput';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
 import {useState} from 'react';
+import SCREEN_NAME from '../../assets/constants/screens';
 
 const IMAGE = '../../assets/images/BellaOlonjeLogo111.png';
 class LoginScreen extends Component {
@@ -92,8 +94,11 @@ class LoginScreen extends Component {
   //     },
   //   });
   // };
-
   render() {
+    const {navigation} = this.props;
+    const onTransitToHome = () => {
+      navigation.navigate(SCREEN_NAME.HOME_SCREEN);
+    };
     return (
       <ScrollView style={styles.container}>
         <View style={styles.header}>
@@ -159,7 +164,18 @@ class LoginScreen extends Component {
             ([styles.buttonLogin],
             {marginTop: this.state.isCheckedA ? scaleY(55) : scaleY(-3)})
           }>
-          <CustomButton type="secondary" title="Login" />
+          <CustomButton
+            type="secondary"
+            title={this.state.isCheckedA ? 'Login' : 'Sign up'}
+            onPress={
+              this.state.isCheckedA
+                ? onTransitToHome
+                : () => {
+                    Alert.alert('Thông báo', 'Đăng kí thành công');
+                    this.setCheckedA();
+                  }
+            }
+          />
         </View>
       </ScrollView>
     );

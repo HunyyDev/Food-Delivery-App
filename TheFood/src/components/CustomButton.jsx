@@ -21,7 +21,8 @@ class CustomButton extends Component {
                 ? CUSTOM_COLOR.WHITE
                 : CUSTOM_COLOR.VERMILION,
           },
-        ]}>
+        ]}
+        onPress={this.props.onPress}>
         <Text
           style={{
             color:
