@@ -38,6 +38,7 @@ export class Foods extends Component {
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
+<<<<<<< HEAD
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
 <<<<<<< HEAD
@@ -47,10 +48,16 @@ export class Foods extends Component {
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
 >>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+=======
+              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
+            </View>
+            <View style={styles.listContainer}>
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
               <Image style={styles.foodImage} source={IMG_Food} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
+<<<<<<< HEAD
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
 <<<<<<< HEAD
@@ -60,12 +67,22 @@ export class Foods extends Component {
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
 >>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+=======
+              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
+            </View>
+            <View style={styles.listContainer}>
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
               <Image style={styles.foodImage} source={IMG_Food3} />
               <Text style={styles.textFoodContainer}>
                 {'Spicy \nfish sauce'}
               </Text>
+<<<<<<< HEAD
               <Text style={styles.textPriceContainer}>{'N2,300'}</Text>
             </TouchableOpacity>
+=======
+              <Text style={styles.textPriceContainer}>{'$2,300'}</Text>
+            </View>
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
           </ScrollView>
         </SafeAreaView>
       </>

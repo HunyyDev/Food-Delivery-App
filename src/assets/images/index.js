@@ -17,6 +17,7 @@ export {default as IMG_User} from './user.png';
 export {default as IMG_Clock} from './clock.png';
 export {default as IMG_Vector} from './Vector.png';
 <<<<<<< HEAD
+<<<<<<< HEAD
 export {default as IMG_Cart} from './cart.png';
 export {default as IMG_Search} from './Search.png';
 export {default as IMG_Back} from './BackButton.png';
@@ -36,3 +37,11 @@ export {default as IMG_Personal} from './Rectangle6.png';
 export {default as Icon_Go} from './chevron-left.png';
 export {default as Image_History} from './HistoryImage.png';
 >>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+=======
+export {default as IMG_GoBack} from './gobackButton.png';
+export {default as IMG_BlackHeart} from './blackHeart.png';
+export {default as IMG_Avatar} from './Avatar.png';
+export {default as IMG_Card} from './Card.png';
+export {default as IMG_Bank} from './Bank.png';
+export {default as IMG_Paypal} from './Paypal.png';
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33

@@ -5,11 +5,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from './src/screens/HomeScreen';
+<<<<<<< HEAD
 import {OdersScreen} from './src/screens/OdersScreen';
 import NoInternetScreen from './src/screens/noInternet';
 import MyProfileScreen from './src/screens/Profile';
 import HistoryScreen from './src/screens/History';
 
+=======
+import ProductDetail from './src/screens/ProductDetail';
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
 const stack = createNativeStackNavigator();
 
 const App = props => {
@@ -28,6 +32,7 @@ const App = props => {
         <stack.Screen name="HomeScreen" options={{headerShown: false}}>
           {props => <HomeScreen {...props} />}
         </stack.Screen>
+<<<<<<< HEAD
         <stack.Screen name="OdersScreen" options={{headerShown: false}}>
           {props => <OdersScreen {...props} />}
         </stack.Screen>
@@ -39,6 +44,10 @@ const App = props => {
         </stack.Screen>
         <stack.Screen name="HistoryScreen" options={{headerShown: false}}>
           {props => <HistoryScreen {...props} />}
+=======
+        <stack.Screen name="ProductDetail" options={{headerShown: false}}>
+          {props => <ProductDetail {...props} />}
+>>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
         </stack.Screen>
       </stack.Navigator>
     </NavigationContainer>
