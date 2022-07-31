@@ -7,5 +7,6 @@ const CUSTOM_COLOR = {
   Concrete: '#F2F2F2',
   UFOGreen: '#44E868',
   Scarlet: '#FF240C',
+  BrightGray: '#EDEDED',
 };
 export default CUSTOM_COLOR;

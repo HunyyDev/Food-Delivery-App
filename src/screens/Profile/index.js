@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   text4Container: {
-    top: scale(52),
+    top: scale(50),
     left: scale(130),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 12,
