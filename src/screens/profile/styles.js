@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
   },
   PersonalBox: {
     height: Dimensions.get('window').height * 0.27,
-    backgroundColor: CUSTOM_COLOR.Transparent,
+    backgroundColor: COLORS.Transparent,
     paddingLeft: 50,
     paddingRight: 49,
   },
   phoneBox: {
-    backgroundColor: CUSTOM_COLOR.Transparent,
-    borderColor: CUSTOM_COLOR.Black,
+    backgroundColor: COLORS.Transparent,
+    borderColor: COLORS.Black,
     opacity: 0.5,
     borderTopWidth: 0.5,
     borderBottomWidth: 0.5,
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: FONT_FAMILY.TextBold,
     color: COLORS.Black,
+    marginLeft: 8,
   },
   otherText: {
     color: COLORS.Black,
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
   Box: {
     borderBottomWidth: 0.5,
     backgroundColor: COLORS.Transparent,
-    // borderColor: CUSTOM_COLOR.Black,
+    // borderColor: COLORS.Black,
     borderRadius: 20,
     borderBottomLeftRadius: 60,
     borderBottomRightRadius: 60,
