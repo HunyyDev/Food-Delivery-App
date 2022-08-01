@@ -9,14 +9,7 @@ export default class CustomHeaderGoBack extends Component {
   render() {
     return (
       <View style={styles.container}>
-<<<<<<< HEAD
         <TouchableOpacity style={styles.left} onPress={this.props.leftOnPress}>
-=======
-        <TouchableOpacity
-          style={styles.left}
-          onPress={this.props.leftOnPress}
-          hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}>
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
           <Image
             source={
               this.props.leftIcon !== undefined ? this.props.leftIcon : IC_Back
@@ -60,19 +53,12 @@ const styles = StyleSheet.create({
   },
   right: {
     flex: 1,
-<<<<<<< HEAD
-=======
     justifyContent: 'center',
     alignItems: 'flex-end',
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
   },
   text: {
     fontFamily: FONT_FAMILY.Bold,
     fontSize: scale(18),
     color: CUSTOM_COLOR.Black,
   },
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1

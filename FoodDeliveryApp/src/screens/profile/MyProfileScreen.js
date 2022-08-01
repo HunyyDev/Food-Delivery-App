@@ -28,11 +28,7 @@ const MyProfileScreen = props => {
     <View style={styles.container}>
       <View style={styles.subContainer}>
         <View style={styles.header}>
-<<<<<<< HEAD
-          <CustomHeaderGoBack leftOnPress={() => props.navigation.goBack()} rightIcon={IC_Heart}/>
-=======
           <CustomHeaderGoBack leftOnPress={() => props.navigation.goBack()} />
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
         </View>
 
         <View style={styles.main}>
@@ -123,21 +119,13 @@ const styles = StyleSheet.create({
       height: '85%',
       backgroundColor: CUSTOM_COLOR.White,
       borderRadius: scale(20),
-<<<<<<< HEAD
-      flexDirection:'row',
-=======
       flexDirection: 'row',
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
       avatar: {
         flex: 1,
       },
       info: {
         flex: 2,
-<<<<<<< HEAD
-
-=======
         backgroundColor: 'purple',
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
       },
     },
   },

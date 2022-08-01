@@ -8,13 +8,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
 import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
-<<<<<<< HEAD
-import MyProfileScreen from '../screens/profile/MyProfileScreen';
-
-=======
 import DetailProduct from '../screens/product/DetailProduct';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
@@ -55,15 +50,12 @@ const RootNavigator = () => {
           />
 
           <Stack.Screen
-<<<<<<< HEAD
-=======
             name="DetailProduct"
             component={DetailProduct}
             options={{headerShown: false}}
           />
 
           <Stack.Screen
->>>>>>> 90518c2a0fc3ae70636c2eafca18b8407cdd2cf1
             name="Profile"
             component={MyProfileScreen}
             options={{headerShown: false}}
