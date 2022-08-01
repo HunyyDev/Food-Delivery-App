@@ -6,3 +6,6 @@ export {default as IC_Heart} from './heart.png';
 export {default as IC_Refresh} from './refresh.png';
 export {default as IC_User} from './user.png';
 export {default as IC_BackButton} from './back-button.png';
+export {default as IC_BiCreditCard} from './bi_credit-card-2-front-fill.png';
+export {default as IC_Bank} from './bank.png';
+export {default as IC_BoldHeart} from './bold-heart.png';

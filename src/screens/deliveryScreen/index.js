@@ -4,7 +4,7 @@ import {IC_BackButton} from './src/assets/icons';
 import CustomButton from './src/assets/components/CustomButton';
 import styles from './styles';
 
-const deliveryScreen = () => {
+const DeliveryScreen = () => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -56,4 +56,4 @@ const deliveryScreen = () => {
   );
 };
 
-export default deliveryScreen;
+export default DeliveryScreen;

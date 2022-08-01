@@ -8,5 +8,6 @@ const CUSTOM_COLOR = {
   Vermilion: '#FA4A0C',
   AthensGray: '#F5F5F8',
   TahitiGold: '#F47B0A',
+  FrenchRose: '#EB4796',
 };
 export default CUSTOM_COLOR;

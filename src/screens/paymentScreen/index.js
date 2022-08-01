@@ -3,7 +3,7 @@ import React from 'react';
 import {IC_BackButton, IC_BiCreditCard, IC_Bank} from './src/assets/icons';
 import CustomButton from './src/assets/components/CustomButton';
 import styles from './styles';
-const paymentScreen = () => {
+const PaymentScreen = () => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -63,4 +63,4 @@ const paymentScreen = () => {
   );
 };
 
-export default paymentScreen;
+export default PaymentScreen;
