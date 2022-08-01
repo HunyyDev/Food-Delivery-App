@@ -17,7 +17,7 @@ import {scaleHeight, scaleWidth} from '../../constants/responsive';
 const LoginScreen = ({navigation}) => {
   const LOGIN = 'LOGIN';
   const SIGN_UP = 'SIGN_UP';
-  const [state, setPage] = useState({page: LOGIN});
+  const [state, setPage] = useState(LOGIN);
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -31,7 +31,7 @@ const LoginScreen = ({navigation}) => {
                 setPage(LOGIN);
               }}>
               <Text style={styles.text}>{'Login'}</Text>
-              {state.page === LOGIN ? <View style={styles.line} /> : null}
+              {state === LOGIN ? <View style={styles.line} /> : null}
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -40,14 +40,14 @@ const LoginScreen = ({navigation}) => {
                 setPage(SIGN_UP);
               }}>
               <Text style={styles.text}>{'Sign-up'}</Text>
-              {state.page === SIGN_UP ? <View style={styles.line} /> : null}
+              {state === SIGN_UP ? <View style={styles.line} /> : null}
             </TouchableOpacity>
           </View>
         </View>
 
         {/* input */}
         <View style={styles.inputSection}>
-          {state.page === LOGIN ? (
+          {state === LOGIN ? (
             <View>
               {/* Email */}
               <CustomInput label={'Email address'} />
@@ -71,7 +71,7 @@ const LoginScreen = ({navigation}) => {
 
         {/* button */}
         <View style={styles.buttonSection}>
-          {state.page === LOGIN ? (
+          {state === LOGIN ? (
             <CustomButton
               type={'secondary'}
               text={'Login'}
@@ -80,7 +80,7 @@ const LoginScreen = ({navigation}) => {
           ) : (
             <CustomButton
               type={'secondary'}
-              text={'Sign Up'}
+              text={'Sign-up'}
               onPress={() => navigation.navigate('Home')}
             />
           )}
