@@ -3,20 +3,20 @@ import Svg, {Path} from 'react-native-svg';
 
 const SvgComponent = props => (
   <Svg
-    width="102"
-    height="102"
-    viewBox="0 0 102 102"
+    width="122"
+    height="122"
+    viewBox="0 0 122 122"
     fill="none"
     xmlns="http://www.w3.org/2000/svg">
     <Path
-      d="M45.9167 86.5833C68.3763 86.5833 86.5833 68.3763 86.5833 45.9167C86.5833 23.4571 68.3763 5.25 45.9167 5.25C23.4571 5.25 5.25 23.4571 5.25 45.9167C5.25 68.3763 23.4571 86.5833 45.9167 86.5833Z"
+      d="M55.9167 96.5833C78.3763 96.5833 96.5833 78.3763 96.5833 55.9167C96.5833 33.4571 78.3763 15.25 55.9167 15.25C33.4571 15.25 15.25 33.4571 15.25 55.9167C15.25 78.3763 33.4571 96.5833 55.9167 96.5833Z"
       stroke="#C7C7C7"
       stroke-width="10"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
     <Path
-      d="M96.75 96.7499L74.6375 74.6375"
+      d="M106.75 106.75L84.6375 84.6375"
       stroke="#C7C7C7"
       stroke-width="10"
       stroke-linecap="round"
