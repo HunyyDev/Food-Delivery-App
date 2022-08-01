@@ -42,7 +42,7 @@ const paymentProfile = () => {
         <Option
             onPress={() => setOption(OPTION_NAME.BankAccount)}
             isChoosing={option === OPTION_NAME.BankAccount}>
-            BankAccount
+            Bank Account
         </Option>
         <Option
             onPress={() => setOption(OPTION_NAME.PayPal)}
