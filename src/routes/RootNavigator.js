@@ -9,6 +9,8 @@ import HomeScreen from '../screens/home';
 import PaymentProfileScreen from '../screens/paymentProfile';
 import ProfileScreen from '../screens/myProfile';
 import HistoryScreen from '../screens/historyScreen';
+import DeliveryScreen from '../screens/delivery';
+import PaymentScreen from '../screens/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +51,16 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.HISTORY}
           component={HistoryScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={SCREEN_NAME.DELIVERY}
+          component={DeliveryScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name={SCREEN_NAME.PAYMENT}
+          component={PaymentScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

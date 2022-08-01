@@ -5,11 +5,15 @@ import {styles} from './styles';
 import {IMG_Fishwith, IMG_Instruction, IMG_VeggieTomato} from './images';
 import CartItem from './components/CartItem';
 import CustomButton from '../../components/CustomButton';
+import SCREEN_NAME from '../../constants/screens';
 
 const CartScreen = props => {
   const {navigation} = props;
   const onBack = () => {
     navigation.goBack();
+  };
+  const onTransitToDelivery = () => {
+    navigation.navigate(SCREEN_NAME.DELIVERY);
   };
   return (
     <ScrollView style={styles.container}>
@@ -50,7 +54,9 @@ const CartScreen = props => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <CustomButton type="secondary">Complete order</CustomButton>
+        <CustomButton type="secondary" onPress={onTransitToDelivery}>
+          Complete order
+        </CustomButton>
       </View>
     </ScrollView>
   );

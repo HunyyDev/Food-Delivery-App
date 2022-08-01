@@ -7,3 +7,6 @@ export {default as IC_House} from './house.png';
 export {default as IC_Heart} from './heart.png';
 export {default as IC_Refresh} from './refresh.png';
 export {default as IC_User} from './user.png';
+export {default as IC_BiCreditCard} from './bi_credit-card-2-front-fill.png';
+export {default as IC_Bank} from './bank.png';
+export {default as IC_PayPal} from './paypal.png';

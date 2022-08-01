@@ -12,9 +12,10 @@ import {IMG_IDPicture} from '../../assets/images';
 import styles from './styles';
 import Option from '../../components/OptionList';
 import OPTION_NAME from '../../constants/optionName';
+import CUSTOM_COLOR from '../../constants/colors';
 import BackButton from '../../components/BackButton';
 import SCREEN_NAME from '../../constants/screens';
-
+import {IC_Bank, IC_BiCreditCard, IC_PayPal} from '../../assets/icons';
 const PaymentProfileScreen = props => {
   const {navigation} = props;
   const [option, setOption] = useState();
@@ -52,17 +53,23 @@ const PaymentProfileScreen = props => {
         <View style={styles.optionContainer}>
           <Option
             onPress={() => setOption(OPTION_NAME.Card)}
-            isChoosing={option === OPTION_NAME.Card}>
+            isChoosing={option === OPTION_NAME.Card}
+            iconBackground={CUSTOM_COLOR.UniversityOfTennesseeOrange}
+            icon={IC_BiCreditCard}>
             Card
           </Option>
           <Option
             onPress={() => setOption(OPTION_NAME.BankAccount)}
-            isChoosing={option === OPTION_NAME.BankAccount}>
+            isChoosing={option === OPTION_NAME.BankAccount}
+            iconBackground={CUSTOM_COLOR.RaspberryPink}
+            icon={IC_Bank}>
             BankAccount
           </Option>
           <Option
             onPress={() => setOption(OPTION_NAME.PayPal)}
-            isChoosing={option === OPTION_NAME.PayPal}>
+            isChoosing={option === OPTION_NAME.PayPal}
+            iconBackground={CUSTOM_COLOR.Blue}
+            icon={IC_PayPal}>
             PayPal
           </Option>
         </View>

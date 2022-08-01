@@ -13,5 +13,8 @@ const CUSTOM_COLOR = {
   MineShaft: '#393939',
   Porcelain: '#F5F5F8',
   UFOGreen: '#44E868',
+  UniversityOfTennesseeOrange: '#F47B0A',
+  RaspberryPink: '#EB4796',
+  Blue: '#0038FF',
 };
 export default CUSTOM_COLOR;

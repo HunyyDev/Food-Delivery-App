@@ -72,7 +72,10 @@ const HomeScreen = props => {
           />
         </View>
         {/*ScrollTab*/}
-        <ScrollView horizontal style={styles.ScrollTab}>
+        <ScrollView
+          horizontal
+          style={styles.ScrollTab}
+          showsHorizontalScrollIndicator={false}>
           <UnderlineButton
             onPress={() => setTab(categoryList[0])}
             isChoosing={tab === categoryList[0]}>
@@ -95,7 +98,10 @@ const HomeScreen = props => {
           </UnderlineButton>
         </ScrollView>
         {/* ScrollView */}
-        <ScrollView horizontal style={styles.ScrollViewStyle}>
+        <ScrollView
+          horizontal
+          style={styles.ScrollViewStyle}
+          showsHorizontalScrollIndicator={false}>
           <View style={styles.scrollViewBox}>
             <View style={styles.foodImageContainer}>
               <Image
