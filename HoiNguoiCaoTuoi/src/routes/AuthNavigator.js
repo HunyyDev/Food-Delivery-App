@@ -1,4 +1,3 @@
-import {StyleSheet} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import SCREEN_NAME from '../constants/screens';
@@ -26,5 +25,3 @@ const AuthNavigator = props => {
 };
 
 export default AuthNavigator;
-
-const styles = StyleSheet.create({});

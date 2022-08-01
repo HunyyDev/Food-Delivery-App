@@ -1,113 +1,94 @@
+import React, {useState} from 'react';
 import {
-  Text,
-  StyleSheet,
-  View,
   Image,
-  TouchableOpacity,
   SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Logo} from '../../assets/images';
-import {scaleWidth, scaleHeight} from '../../constants/responsive';
-import CustomInput from '../../components/CustomInput';
-import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
+import CustomInput from '../../components/CustomInput';
+import CUSTOM_COLOR from '../../constants/colors';
+import FONT_FAMILY from '../../constants/fonts';
+import {scaleHeight, scaleWidth} from '../../constants/responsive';
 
-const LOGIN = 'LOGIN';
-const SIGN_UP = 'SIGN_UP';
+const LoginScreen = ({navigation}) => {
+  const LOGIN = 'LOGIN';
+  const SIGN_UP = 'SIGN_UP';
+  const [state, setPage] = useState(LOGIN);
+  return (
+    <>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.headerSection}>
+          <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
 
-export default class LoginScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {page: LOGIN};
-  }
+          <View style={styles.headerText}>
+            <TouchableOpacity
+              style={styles.loginAndSignUp}
+              onPress={() => {
+                setPage(LOGIN);
+              }}>
+              <Text style={styles.text}>{'Login'}</Text>
+              {state === LOGIN ? <View style={styles.line} /> : null}
+            </TouchableOpacity>
 
-  setPage = newPage => {
-    this.setState({page: newPage});
-  };
+            <TouchableOpacity
+              style={styles.loginAndSignUp}
+              onPress={() => {
+                setPage(SIGN_UP);
+              }}>
+              <Text style={styles.text}>{'Sign-up'}</Text>
+              {state === SIGN_UP ? <View style={styles.line} /> : null}
+            </TouchableOpacity>
+          </View>
+        </View>
 
-  render() {
-    return (
-      <>
-        <SafeAreaView style={styles.container}>
-          <View style={styles.headerSection}>
-            <Image
-              source={IMG_Logo}
-              style={styles.logo}
-              resizeMode={'contain'}
-            />
-
-            <View style={styles.headerText}>
-              <TouchableOpacity
-                style={styles.loginAndSignUp}
-                onPress={() => {
-                  this.setPage(LOGIN);
-                }}>
-                <Text style={styles.text}>{'Login'}</Text>
-                {this.state.page === LOGIN ? (
-                  <View style={styles.line} />
-                ) : null}
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={styles.loginAndSignUp}
-                onPress={() => {
-                  this.setPage(SIGN_UP);
-                }}>
-                <Text style={styles.text}>{'Sign-up'}</Text>
-                {this.state.page === SIGN_UP ? (
-                  <View style={styles.line} />
-                ) : null}
+        {/* input */}
+        <View style={styles.inputSection}>
+          {state === LOGIN ? (
+            <View>
+              {/* Email */}
+              <CustomInput label={'Email address'} />
+              {/* Password */}
+              <CustomInput label={'Password'} secureTextEntry />
+              <TouchableOpacity>
+                <Text style={styles.forgotPC}>{'Forgot passcode?'}</Text>
               </TouchableOpacity>
             </View>
-          </View>
+          ) : (
+            <View>
+              {/* Email */}
+              <CustomInput label={'Email address'} />
+              {/* Password */}
+              <CustomInput label={'Password'} secureTextEntry />
+              {/* Confirm Password */}
+              <CustomInput label={'Confirm Password'} secureTextEntry />
+            </View>
+          )}
+        </View>
 
-          {/* input */}
-          <View style={styles.inputSection}>
-            {this.state.page === LOGIN ? (
-              <View>
-                {/* Email */}
-                <CustomInput label={'Email address'} />
-                {/* Password */}
-                <CustomInput label={'Password'} secureTextEntry />
-                <TouchableOpacity>
-                  <Text style={styles.forgotPC}>{'Forgot passcode?'}</Text>
-                </TouchableOpacity>
-              </View>
-            ) : (
-              <View>
-                {/* Email */}
-                <CustomInput label={'Email address'} />
-                {/* Password */}
-                <CustomInput label={'Password'} secureTextEntry />
-                {/* Confirm Password */}
-                <CustomInput label={'Confirm Password'} secureTextEntry />
-              </View>
-            )}
-          </View>
-
-          {/* button */}
-          <View style={styles.buttonSection}>
-            {this.state.page === LOGIN ? (
-              <CustomButton
-                type={'secondary'}
-                text={'Login'}
-                onPress={() => this.props.navigation.navigate('Home')}
-              />
-            ) : (
-              <CustomButton
-                type={'secondary'}
-                text={'Sign Up'}
-                onPress={() => this.props.navigation.navigate('Home')}
-              />
-            )}
-          </View>
-        </SafeAreaView>
-      </>
-    );
-  }
-}
+        {/* button */}
+        <View style={styles.buttonSection}>
+          {state === LOGIN ? (
+            <CustomButton
+              type={'secondary'}
+              text={'Login'}
+              onPress={() => navigation.navigate('Home')}
+            />
+          ) : (
+            <CustomButton
+              type={'secondary'}
+              text={'Sign-up'}
+              onPress={() => navigation.navigate('Home')}
+            />
+          )}
+        </View>
+      </SafeAreaView>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -143,7 +124,6 @@ const styles = StyleSheet.create({
 
   inputSection: {
     flex: 6,
-    backgroundColor: CUSTOM_COLOR.Silver,
     margin: 30,
     height: 30,
   },
@@ -176,3 +156,4 @@ const styles = StyleSheet.create({
     fontSize: scaleWidth(17),
   },
 });
+export default LoginScreen;
