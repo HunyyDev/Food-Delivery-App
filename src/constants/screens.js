@@ -4,6 +4,8 @@ const SCREEN_NAME = {
   ONBOARDING: 'OnboardingScreen',
   CART: 'CartScreen',
   PAYMENT_PROFILE: 'PaymentProfileScreens',
+  PROFILE: 'ProfileScreen',
+  HISTORY: 'HistoryScreen',
 };
 
 export default SCREEN_NAME;

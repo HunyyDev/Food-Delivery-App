@@ -36,6 +36,9 @@ const HomeScreen = props => {
   const onTrainsitToPaymentProfile = () => {
     navigation.navigate(SCREEN_NAME.PAYMENT_PROFILE);
   };
+  const onTrainsitToHistory = () => {
+    navigation.navigate(SCREEN_NAME.HISTORY);
+  };
   return (
     // Background
     <SafeAreaView edges={['top', 'bottom']}>
@@ -139,7 +142,7 @@ const HomeScreen = props => {
           <TouchableOpacity onPress={onTrainsitToPaymentProfile}>
             <Image source={IC_User} resizeMode={'center'} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={onTrainsitToHistory}>
             <Image source={IC_Refresh} opacity={0.3} resizeMode={'center'} />
           </TouchableOpacity>
         </View>

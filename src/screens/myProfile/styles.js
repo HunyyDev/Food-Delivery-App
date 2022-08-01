@@ -7,15 +7,10 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.AthensGray,
   },
   backButtonContainer: {
-    width: 24,
-    height: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
     marginTop: 60,
     marginLeft: 41,
   },
   textMyProfileContainer: {
-    width: 168,
     height: 41,
     marginLeft: 50,
     marginTop: 40,

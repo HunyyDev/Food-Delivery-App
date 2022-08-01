@@ -1,4 +1,11 @@
-import {Text, View, SafeAreaView, Image, Pressable} from 'react-native';
+import {
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  Pressable,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import {useState} from 'react';
 import {IMG_IDPicture} from '../../assets/images';
@@ -6,12 +13,16 @@ import styles from './styles';
 import Option from '../../components/OptionList';
 import OPTION_NAME from '../../constants/optionName';
 import BackButton from '../../components/BackButton';
+import SCREEN_NAME from '../../constants/screens';
 
 const PaymentProfileScreen = props => {
   const {navigation} = props;
   const [option, setOption] = useState();
   const onBack = () => {
     navigation.goBack();
+  };
+  const onTransitToProfile = () => {
+    navigation.navigate(SCREEN_NAME.PROFILE);
   };
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
@@ -23,7 +34,9 @@ const PaymentProfileScreen = props => {
       </>
       <>
         <Text style={styles.header}>{'Information'}</Text>
-        <View style={styles.infoContainer}>
+        <TouchableOpacity
+          style={styles.infoContainer}
+          onPress={onTransitToProfile}>
           <Image source={IMG_IDPicture} style={styles.profilePic} />
           <View style={styles.infoBox}>
             <Text style={styles.nameInfo}>{'Marvis Ighedosa'}</Text>
@@ -32,7 +45,7 @@ const PaymentProfileScreen = props => {
               {'No 15 uti street off ovie palace road effurun delta state'}
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </>
       <>
         <Text style={styles.header}>{'Payment Method'}</Text>

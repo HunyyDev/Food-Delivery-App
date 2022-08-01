@@ -7,7 +7,7 @@ const CartItem = props => {
   const {food, name, price, amount, ...moreProps} = props;
   return (
     <View style={styles.container} {...moreProps}>
-      <ScrollView horizontal>
+      <ScrollView horizontal pagingEnabled={true}>
         <View style={styles.foodContainer}>
           <Image source={food} style={styles.food} resizeMode="contain" />
           <Text style={styles.name}>{name}</Text>

@@ -16,8 +16,11 @@ const styles = StyleSheet.create({
   },
   historyTextContainer: {
     marginLeft: 120,
-    width: 67,
-    height: 21,
+    width: 75,
+    height: 25,
+  },
+  historyItem: {
+    marginTop: 18,
   },
   historyText: {
     fontFamily: FONT_FAMILY.ProTextBold,

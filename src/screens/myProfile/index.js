@@ -4,17 +4,17 @@ import {IC_BackButton} from '../../assets/icons';
 import {IMG_IDPicture} from '../../assets/images';
 import OptionButton from './components/OptionButton';
 import CustomButton from '../../components/CustomButton';
+import BackButton from '../../components/BackButton';
 import styles from './styles';
+
 const ProfileScreen = props => {
+  const {navigation} = props;
+  const onBack = () => {
+    navigation.goBack();
+  };
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.backButtonContainer}>
-        <Image
-          source={IC_BackButton}
-          style={styles.backButton}
-          resizeMode={'contain'}
-        />
-      </View>
+      <BackButton style={styles.backButtonContainer} onPress={onBack} />
       <View style={styles.textMyProfileContainer}>
         <Text style={styles.textMyProfile}>My Profile</Text>
       </View>
