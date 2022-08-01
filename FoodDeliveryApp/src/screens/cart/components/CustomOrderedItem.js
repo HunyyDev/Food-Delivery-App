@@ -24,8 +24,8 @@ const CustomOrderedItem = props => {
       <View style={styles.infoSection}>
         <Text style={styles.foodName}>{props.text}</Text>
         <Text style={styles.price}>#{props.price}</Text>
-        <View style={styles.quatitySection}>
-          <View style={styles.quatity}>
+        <View style={styles.quantitySection}>
+          <View style={styles.quantity}>
             <TouchableOpacity
               onPress={countItem < 0 ? setCountItem(0) : decrementCount}
               hitSlop={{top: 5, bottom: 5, left: 10, right: 10}}>
@@ -86,11 +86,11 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     fontSize: scale(15),
   },
-  quatitySection: {
+  quantitySection: {
     height: '30%',
     alignItems: 'flex-end',
   },
-  quatity: {
+  quantity: {
     height: '75%',
     width: '50%',
     backgroundColor: CUSTOM_COLOR.Vermilion,

@@ -7,11 +7,20 @@ import CheckBox from 'react-native-checkbox-animated';
 import CustomButton from '../../components/CustomButton';
 import {IC_Bank, IC_Card} from '../../assets/icons';
 import CustomDeliveryMethod from '../../components/CustomDeliveryMethod';
+import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
 
-const PaymentScreen = () => {
+const PaymentScreen = props => {
   const [checked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
+      <View style={styles.headerSection}>
+        <CustomHeaderGoBack
+          title="Checkout"
+          leftOnPress={() => {
+            props.navigation.goBack();
+          }}
+        />
+      </View>
       <View style={styles.title}>
         <Text style={styles.titleText}>Payment</Text>
       </View>
@@ -28,10 +37,12 @@ const PaymentScreen = () => {
               />
             </View>
 
-            <View style={styles.iconCardSection}>
-              <Image source={IC_Card} />
+            <View style={styles.iconAndTextCard}>
+              <View style={styles.iconCardSection}>
+                <Image source={IC_Card} />
+              </View>
+              <Text>Card</Text>
             </View>
-            <Text>Card</Text>
           </View>
 
           <View style={styles.bankSection}>
@@ -43,17 +54,40 @@ const PaymentScreen = () => {
                 checkedBackgroundColor={CUSTOM_COLOR.Vermilion}
               />
             </View>
-
-            <View style={styles.iconBankSection}>
-              <Image source={IC_Bank} />
+            <View style={styles.iconAndTextBank}>
+              <View style={styles.iconBankSection}>
+                <Image source={IC_Bank} />
+              </View>
+              <Text>Bank account</Text>
             </View>
-            <Text>Bank account</Text>
           </View>
         </View>
       </View>
       <View style={styles.deliveryMethod}>
         <Text style={styles.textMethod}>Delivery method</Text>
         <CustomDeliveryMethod />
+      </View>
+
+      <View style={styles.total}>
+        <View
+          style={{
+            justifyContent: 'center',
+          }}>
+          <Text style={{fontSize: scale(17), fontFamily: FONT_FAMILY.Medium}}>
+            Total
+          </Text>
+        </View>
+        <View
+          style={{
+            width: '90%',
+            justifyContent: 'center',
+
+            alignItems: 'flex-end',
+          }}>
+          <Text style={{fontSize: scale(17), fontFamily: FONT_FAMILY.Medium}}>
+            23,000
+          </Text>
+        </View>
       </View>
       <View style={styles.buttonSection}>
         <CustomButton type={'secondary'} text={'Proceed to payment'} />
@@ -68,10 +102,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SilverWhite,
+    marginHorizontal: scale(53),
+  },
+  headerSection: {
+    flex: 1,
   },
   title: {
     flex: 1,
-    marginHorizontal: scale(50),
     justifyContent: 'center',
   },
 
@@ -80,13 +117,11 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Medium,
   },
   paymentMethod: {
-    marginLeft: scale(46),
-    marginRight: scale(53),
     flex: 4,
     marginTop: scale(20),
-    // backgroundColor: 'yellow',
   },
   selectPaymentMethod: {
+    flex: 1,
     marginTop: scale(15),
   },
   textMethod: {
@@ -94,20 +129,40 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Bold,
   },
   cardSection: {
-    flexDirection: 'row',
-    height: '40%',
-    width: '100%',
-    alignItems: 'center',
+    flex: 1,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
     backgroundColor: CUSTOM_COLOR.White,
   },
+  iconAndTextCard: {
+    height: '100%',
+    width: '70%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+    position: 'absolute',
+    borderBottomWidth: 1,
+    borderBottomColor: CUSTOM_COLOR.Silver,
+  },
+
+  iconAndTextBank: {
+    height: '100%',
+    width: '70%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+    position: 'absolute',
+  },
   checkBox: {
-    marginRight: scale(21),
+    height: '100%',
+    width: '20%',
+    justifyContent: 'center',
+    // backgroundColor: 'blue',
+    zIndex: 1,
   },
   iconCardSection: {
     height: '50%',
-    width: '10%',
+    width: '20%',
     backgroundColor: CUSTOM_COLOR.TahitiGold,
     justifyContent: 'center',
     alignItems: 'center',
@@ -116,7 +171,7 @@ const styles = StyleSheet.create({
   },
   iconBankSection: {
     height: '50%',
-    width: '10%',
+    width: '20%',
     backgroundColor: CUSTOM_COLOR.FrenchRose,
     justifyContent: 'center',
     alignItems: 'center',
@@ -124,21 +179,22 @@ const styles = StyleSheet.create({
     marginRight: scale(21),
   },
   bankSection: {
-    flexDirection: 'row',
-    height: '40%',
-    width: '100%',
+    flex: 1,
     backgroundColor: CUSTOM_COLOR.White,
-    alignItems: 'center',
     borderBottomEndRadius: 20,
     borderBottomStartRadius: 20,
   },
 
   deliveryMethod: {
-    flex: 4,
-    backgroundColor: 'green',
+    flex: 3,
   },
+  total: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+
   buttonSection: {
     flex: 2,
-    bottom: 15,
+    bottom: 20,
   },
 });

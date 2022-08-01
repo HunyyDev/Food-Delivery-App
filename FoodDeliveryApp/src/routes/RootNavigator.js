@@ -8,8 +8,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
 import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
+import DetailProduct from '../screens/product/DetailProduct';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
-
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
@@ -35,17 +35,23 @@ const RootNavigator = () => {
           <Stack.Screen
             name="Cart"
             component={CartScreen}
-            options={{headerShown: true}}
+            options={{headerShown: false}}
           />
           <Stack.Screen
             name="Payment"
             component={PaymentScreen}
-            options={{headerShown: true}}
+            options={{headerShown: false}}
           />
 
           <Stack.Screen
             name="Loading"
             component={LoadingScreen}
+            options={{headerShown: false}}
+          />
+
+          <Stack.Screen
+            name="DetailProduct"
+            component={DetailProduct}
             options={{headerShown: false}}
           />
 
