@@ -66,13 +66,6 @@ export default class HomeScreen extends Component {
     var navigation = this.props;
     return (
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-        <></>
-        {/* <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={OnBoardingScreen} />
-        <Drawer.Screen name="Login" component={Login} />
-      </Drawer.Navigator>
-    </NavigationContainer> */}
         {/* Icon Menu */}
         <Custom_IconButton
           style={styles.menuContainer}
@@ -117,30 +110,28 @@ export default class HomeScreen extends Component {
         <Custom_CategoryScrollView />
         <></>
         {/* Button Line */}
-        <Custom_IconButton
-          style={styles.homeContainer}
-          icon={ICON_HOUSE}
-          navigationnn={this.props.navigation}
-          name={'HIS'}
-        />
-        <Custom_IconButton
-          style={styles.heartContainer}
-          icon={ICON_HEART}
-          navigationnn={this.props.navigation}
-          name={'HIS'}
-        />
-        <Custom_IconButton
-          style={styles.userContainer}
-          icon={ICON_USER}
-          navigationnn={this.props.navigation}
-          name={'MPS'}
-        />
-        <Custom_IconButton
-          style={styles.clockContainer}
-          icon={ICON_CLOCK}
-          navigationnn={this.props.navigation}
-          name={'HIS'}
-        />
+        <View style={styles.buttonContainer}>
+          <Custom_IconButton
+            icon={ICON_HOUSE}
+            navigationnn={this.props.navigation}
+            name={'HIS'}
+          />
+          <Custom_IconButton
+            icon={ICON_HEART}
+            navigationnn={this.props.navigation}
+            name={'HIS'}
+          />
+          <Custom_IconButton
+            icon={ICON_USER}
+            navigationnn={this.props.navigation}
+            name={'MPS'}
+          />
+          <Custom_IconButton
+            icon={ICON_CLOCK}
+            navigationnn={this.props.navigation}
+            name={'HIS'}
+          />
+        </View>
       </SafeAreaView>
     );
   }
@@ -196,24 +187,9 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.SF_Pro_Rounded,
     fontWeight: '400',
   },
-  homeContainer: {
-    position: 'absolute',
-    left: scale(50),
-    bottom: scale(50),
-  },
-  heartContainer: {
-    position: 'absolute',
-    left: scale(159),
-    bottom: scale(50),
-  },
-  userContainer: {
-    position: 'absolute',
-    left: scale(245),
-    bottom: scale(50),
-  },
-  clockContainer: {
-    position: 'absolute',
-    left: scale(333),
-    bottom: scale(50),
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginBottom: scale(50),
   },
 });
