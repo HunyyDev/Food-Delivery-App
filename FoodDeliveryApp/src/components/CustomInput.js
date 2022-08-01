@@ -2,7 +2,6 @@ import {Text, TextInput, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../constants/colors';
 import FONT_FAMILY from '../constants/fonts';
-import scale from '../constants/responsive';
 
 export class CustomInput extends Component {
   render() {
@@ -11,7 +10,7 @@ export class CustomInput extends Component {
         <Text style={styles.textInput}>{this.props.label}</Text>
         <TextInput
           secureTextEntry={this.props.secureText}
-          placeholder={'Enter ' + this.props.label}
+          placeholder={this.props.label}
           style={styles.inputContainer}
         />
       </>
