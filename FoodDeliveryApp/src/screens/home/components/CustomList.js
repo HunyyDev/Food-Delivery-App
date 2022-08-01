@@ -1,8 +1,8 @@
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
-import CUSTOM_COLOR from '../../constants/colors';
+import CUSTOM_COLOR from '../../../constants/colors';
 import React, {Component} from 'react';
-import scale from '../../constants/responsive';
-import FONT_FAMILY from '../../constants/fonts';
+import scale from '../../../constants/responsive';
+import FONT_FAMILY from '../../../constants/fonts';
 
 export class CustomList extends Component {
   constructor(props) {
@@ -11,7 +11,9 @@ export class CustomList extends Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <TouchableOpacity style={styles.optionContainer}>
+        <TouchableOpacity
+          style={styles.optionContainer}
+          onPress={this.props.onPress}>
           <View style={styles.optionInfo}>
             <Image
               style={styles.imageMain}

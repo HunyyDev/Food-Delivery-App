@@ -14,24 +14,26 @@ export class CustomButton extends Component {
     return (
       <>
         <View style={styles.container}>
-          {this.props.type === 'primary' ? (
-            <TouchableOpacity
-              style={[styles.button, styles.buttonPrimary]}
-              onPress={this.props.onPress}>
-              <Text style={[styles.text, styles.textButtonPrimary]}>
-                {this.props.text}
-              </Text>
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              style={[styles.button, styles.buttonSecondary]}
-              onPress={this.props.onPress}>
-              <Text style={[styles.text, styles.textButtonSecondary]}>
-                {this.props.text}
-              </Text>
-            </TouchableOpacity>
-          )}
+          <TouchableOpacity
+            style={[
+              styles.button,
+              this.props.type === 'primary'
+                ? styles.buttonPrimary
+                : styles.buttonSecondary,
+            ]}
+            onPress={this.props.onPress}>
+            <Text
+              style={[
+                styles.text,
+                this.props.type === 'primary'
+                  ? styles.textButtonPrimary
+                  : styles.textButtonSecondary,
+              ]}>
+              {this.props.text}
+            </Text>
+          </TouchableOpacity>
         </View>
+
       </>
     );
   }

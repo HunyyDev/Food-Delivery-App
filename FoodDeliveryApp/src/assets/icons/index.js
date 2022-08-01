@@ -4,12 +4,13 @@ export {default as IC_Search} from './IC_Search';
 export {default as IC_History} from './IC_History';
 export {default as IC_Heart} from './IC_Heart';
 export {default as IC_User} from './IC_User';
-export {default as IC_SearchRaw} from './iconSearch.png'
-export {default as IC_HomeRaw} from './iconHome.png'
-export {default as IC_Back} from './IC_Back'
-export {default as IC_Back2} from './iconBack.png'
-export {default as IC_EmptyHistory} from './iconEmptyHistory.png'
-export {default as IC_ItemNotFound} from './iconItemNotFound.png'
-export {default as IC_NoOrder} from './iconNoOrder.png'
-export {default as IC_NoInternet} from './iconNoInternet.png'
-//export {default as IC_EmptyHistory} from 
+export {default as IC_Back} from './chevron-left.png';
+export {default as IC_Home} from './IC_Home';
+export {default as IC_SearchRaw} from './iconSearch.png';
+export {default as IC_Swipe} from './swipeIcon.png';
+export {default as IC_Bank} from './bankAccount.png';
+export {default as IC_Card} from './cardIcon.png';
+export {default as IC_headHeart} from './heart.png';
+export {default as IC_Forward} from './forward.png';
+export {default as IC_circleOrange} from './circleOrange.png';
+export {default as IC_circleSilver} from './circleSilver.png';

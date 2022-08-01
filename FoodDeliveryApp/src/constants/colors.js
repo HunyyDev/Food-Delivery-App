@@ -8,8 +8,9 @@ const CUSTOM_COLOR = {
   SilverWhite: '#F2F2F2',
   GalleryApprox: '#EFEEEE',
   Manatee: '#9A9A9D',
-  MidGray: '#6A6A6B',
-  AthensGray:'#F5F5F8',
+  TahitiGold: '#F47B0A',
+  FrenchRose: '#EB4796',
+  AthensGray: '#F6F6F9',
 };
 
 export default CUSTOM_COLOR;

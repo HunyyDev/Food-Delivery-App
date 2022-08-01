@@ -1,33 +1,21 @@
 import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../constants/colors';
-import SCREEN from '../../constants/screens';
-import scale from '../../constants/responsive';
-import FONT_FAMILY from '../../constants/fonts';
+import CUSTOM_COLOR from '../../../constants/colors';
+import scale from '../../../constants/responsive';
+import FONT_FAMILY from '../../../constants/fonts';
 
 export class CustomCategory extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: SCREEN.FOODS,
-      clicked: false,
-    };
-  }
-
-  setOnPress = (newPage, isClicked) => {
-    this.setState({page: newPage, clicked: true});
-  };
-
   render() {
-    return this.state.clicked === true ? (
-      <TouchableOpacity>
-        <Text style={[this.props.style, styles.styleText]}>
+    return (
+      <TouchableOpacity onPress={this.props.onPress}>
+        <Text
+          style={
+            this.props.isClicked === 'true'
+              ? styles.styleText
+              : styles.textHeadingMain
+          }>
           {this.props.name}
         </Text>
-      </TouchableOpacity>
-    ) : (
-      <TouchableOpacity>
-        <Text style={[this.props.style]}>{this.props.name}</Text>
       </TouchableOpacity>
     );
   }
@@ -37,8 +25,18 @@ export default CustomCategory;
 
 const styles = StyleSheet.create({
   styleText: {
-    color: CUSTOM_COLOR.Manatee,
+    color: CUSTOM_COLOR.Vermilion,
     fontSize: scale(17),
+    opacity: 0.7,
+    marginRight: 50,
     fontFamily: FONT_FAMILY.Black,
+  },
+
+  textHeadingMain: {
+    fontSize: scale(17),
+    opacity: 0.7,
+    marginRight: 50,
+    fontFamily: FONT_FAMILY.Black,
+    color: CUSTOM_COLOR.Manatee,
   },
 });
