@@ -2,6 +2,14 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/Abel-Regular.ttf",
+      "sha1": "5a10c588371618fdcd5555b126121a0fb9ec4c26"
+    },
+    {
+      "path": "src/assets/fonts/FontsFree-Net-Abel-Regular.ttf",
+      "sha1": "3ccc61028c66b2866400315e38301ce5df27e06a"
+    },
+    {
       "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf",
       "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
     },
@@ -16,6 +24,10 @@
     {
       "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Semibold.ttf",
       "sha1": "543ab6e5c840d17d63bfc8eb4233c05a049b683e"
+    },
+    {
+      "path": "src/assets/fonts/OFL.txt",
+      "sha1": "68d52f80d1d8ba3d82ce49453e6868a0f41a4a1f"
     }
   ]
 }

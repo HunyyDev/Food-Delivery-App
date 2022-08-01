@@ -8,6 +8,8 @@ import LoginScreen from '../screens/auth';
 import LoaderScreen from '../screens/loader';
 import NoFoundItemScreen from '../screens/notFoundItem';
 import NoInternetScreen from '../screens/noInternet';
+import CartScreen from '../screens/cart';
+import colors from '../assets/constants/colors';
 // import HomeScreen from '../screens/home';
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +18,23 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.CART_SCREEN}
+          component={CartScreen}
+          options={{
+            // title: 'Cart',
+            // headerStyle: {
+            //   backgroundColor: colors.ATHENS_GRAY,
+            // },
+            // headerTintColor: '#000',
+            // headerTitleStyle: {
+            //   fontWeight: 'normal',
+            //   fontFamily: 'FontsFree-Net-Abel-Regular'
+            // },
+            // headerTitleAlign: 'center',
+            // headerShadowVisible: false,
+            headerShown: false,
+          }}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING_SCREEN}
           component={OnBoardingScreen}

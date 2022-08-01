@@ -4,6 +4,7 @@ const SCREEN_NAME = {
   LOGIN_SCREEN: 'LoginScreen',
   NO_FOUND_ITEM_SCREEN: 'NoFoundItemScreen',
   NO_INTERNET: 'NoInternetScreen',
+  CART_SCREEN: 'CartScreen',
 };
 
 export default SCREEN_NAME;
