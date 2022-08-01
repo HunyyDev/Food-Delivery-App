@@ -12,14 +12,7 @@ const CustomButton = props => {
   });
 
   const PressHandler = () => {
-    Alert.alert(props.title, props.alert, [
-      {
-        text: 'CLOSE',
-      },
-      {
-        text: 'CLOSE too',
-      },
-    ]);
+    props.navigationnn.navigate(props.name);
   };
   return (
     <Text
@@ -28,7 +21,7 @@ const CustomButton = props => {
         styles.buttonStyle,
         {backgroundColor: buttonColor.background, color: buttonColor.text},
       ]}
-      onPress={PressHandler}>
+      onPress={(PressHandler)}>
       {props.title}
     </Text>
   );
@@ -50,7 +43,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 50,
     right: 50,
-    bottom: 41,
+    bottom:41,
   },
 });
 

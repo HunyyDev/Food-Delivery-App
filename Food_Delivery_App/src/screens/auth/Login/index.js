@@ -5,18 +5,17 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
-  ScrollView,
 } from 'react-native';
 import {IMG_LOGO} from '../../../assets/images';
 import React, {useState} from 'react';
 import CustomButton from '../../../components/CustomButton';
 import CustomInput from '../../../components/CustomInput';
 import scale from '../../../components/scale';
-import CUSTOM_COLOR from '../../../constants/colors';
+import CUSTOM_COLORS from '../../../constants/colors';
 
 const Login = 'Login';
 const signUp = 'Sign-up';
-const LoginScreen = navigation => {
+const LoginScreen = ({navigation}) => {
   const [page, setPage] = useState(Login);
   return (
     <SafeAreaView style={styles.container}>
@@ -31,7 +30,7 @@ const LoginScreen = navigation => {
               setPage(Login);
             }}
             disabled={page === Login ? true : false}>
-            <Text style={styles.textLogin}>{Login}</Text>
+            <Text style={styles.textLogin}>Login</Text>
             {page === Login ? <View style={styles.rightLine} /> : null}
             {page === Login ? (
               <View style={styles.inputLogin}>
@@ -46,7 +45,7 @@ const LoginScreen = navigation => {
               setPage(signUp);
             }}
             disabled={page === signUp ? true : false}>
-            <Text style={styles.textSignUp}>{signUp}</Text>
+            <Text style={styles.textSignUp}>Sign-up</Text>
             {page === signUp ? <View style={styles.leftLine} /> : null}
             {page === signUp ? (
               <View style={styles.inputSignUp}>
@@ -63,6 +62,8 @@ const LoginScreen = navigation => {
         title={page}
         type="secondary"
         alert="Login button's event handle"
+        name='HS'
+        navigationnn={navigation}
       />
     </SafeAreaView>
   );
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
   },
   navContainer: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: CUSTOM_COLORS.White,
     position: 'absolute',
     width: scale(414),
     height: scale(382),
@@ -117,12 +118,12 @@ const styles = StyleSheet.create({
   textLogin: {
     fontSize: scale(18),
     fontWeight: '600',
-    color: CUSTOM_COLOR.Black,
+    color: CUSTOM_COLORS.Black,
   },
   textSignUp: {
     fontSize: scale(18),
     fontWeight: '600',
-    color: CUSTOM_COLOR.Black,
+    color: CUSTOM_COLORS.Black,
   },
   rightLine: {
     position: 'absolute',
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
     height: scale(3),
     left: scale(-39),
     top: scale(51),
-    backgroundColor: CUSTOM_COLOR.Vermilion,
+    backgroundColor: CUSTOM_COLORS.Vermilion,
     borderRadius: 40,
   },
   leftLine: {
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     height: scale(3),
     left: scale(-31),
     top: scale(51),
-    backgroundColor: CUSTOM_COLOR.Vermilion,
+    backgroundColor: CUSTOM_COLORS.Vermilion,
     borderRadius: 40,
   },
   inputLogin: {

@@ -1,22 +1,67 @@
-import {SafeAreaView, StyleSheet, Text, Image} from 'react-native';
-import React from 'react';
-import LoginScreen from './src/screens/auth/Login';
 
-const App = () => {
+
+
+
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import OnBoardingScreen from './src/screens/OnBoardingScreen';
+import Login from './src/screens/auth/Login';
+import HomeScreen from './src/screens/HomeScreen';
+import FoodInfoScreen from './src/screens/foodinfo';
+import MyProScreen from './src/screens/myprofile/MyProfile';
+import HistoryScreen from './src/screens/history';
+import CartScreen from './src/screens/Cart';
+import SearchScreen from './src/screens/search';
+
+
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Home Screen</Text>
+//       <Button
+//         title="Go to Details"
+//         onPress={() => navigation.navigate('Details')}
+//       /> 
+//     </View>
+//   );
+// }
+// function DetailsScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//       <Text>Details Screen</Text>
+//       <Button
+//         title="Go to Details... again"
+//         onPress={() => navigation.navigate('Details')}
+//       />
+//       <Text>HomeScreen</Text>
+//       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+//       <Text>goBack</Text>
+//       <Button title="Go back" onPress={() => navigation.goBack()} />
+//     </View>
+//   );
+// }
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <LoginScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator
+      screenOptions={{headerShown: false}} 
+      >
+        <Stack.Screen name="OBS" component={OnBoardingScreen} />
+        <Stack.Screen name="LG" component={Login} />
+        <Stack.Screen name="HS" component={HomeScreen} />
+        <Stack.Screen name="FIS" component={FoodInfoScreen}/>
+        <Stack.Screen name="MPS" component={MyProScreen}/>
+        <Stack.Screen name="HIS" component={HistoryScreen}/>
+        <Stack.Screen name="CS" component={CartScreen}/>
+        <Stack.Screen name="SS" component={SearchScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    resizeMode: 'cover',
-  },
-});
+}
 
 export default App;
