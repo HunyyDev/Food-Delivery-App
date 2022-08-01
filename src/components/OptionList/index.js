@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 10,
     marginTop: 20,
-    backgroundColor: CUSTOM_COLOR.Black, //Khong hien mau nhu khi truyen doi so
+    backgroundColor: iconColor, //Khong hien mau nhu khi truyen doi so
   }),
   nameContainer: {
     height: 75,

@@ -54,21 +54,21 @@ const PaymentProfileScreen = props => {
           <Option
             onPress={() => setOption(OPTION_NAME.Card)}
             isChoosing={option === OPTION_NAME.Card}
-            iconBackground={CUSTOM_COLOR.UniversityOfTennesseeOrange}
+            iconColor={CUSTOM_COLOR.UniversityOfTennesseeOrange}
             icon={IC_BiCreditCard}>
             Card
           </Option>
           <Option
             onPress={() => setOption(OPTION_NAME.BankAccount)}
             isChoosing={option === OPTION_NAME.BankAccount}
-            iconBackground={CUSTOM_COLOR.RaspberryPink}
+            iconColor={CUSTOM_COLOR.RaspberryPink}
             icon={IC_Bank}>
             BankAccount
           </Option>
           <Option
             onPress={() => setOption(OPTION_NAME.PayPal)}
             isChoosing={option === OPTION_NAME.PayPal}
-            iconBackground={CUSTOM_COLOR.Blue}
+            iconColor={CUSTOM_COLOR.Blue}
             icon={IC_PayPal}>
             PayPal
           </Option>
