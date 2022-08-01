@@ -3,9 +3,8 @@ import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import {IMG_NoInternet} from '../../assets/images';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
-
 export class NoInternetScreen extends Component {
   render() {
     return (

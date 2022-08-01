@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   View,
@@ -6,23 +6,13 @@ import {
   StyleSheet,
   Text,
   TextInput,
-<<<<<<< HEAD
-=======
-  //ScrollView,
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+  ScrollView,
   TouchableOpacity,
 } from 'react-native';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-<<<<<<< HEAD
 import scale from '../../assets/constants/responsive';
 import {UnderlineButton} from '../../assets/components/UnderlineButton';
-import {CustomSwitch} from '../../assets/components/CustomSwitch';
-=======
-import scale from '../../assets/constants/reponsive';
-import { UnderlineButton } from '../../assets/components/UnderlineButton';
-import { CustomSwitch } from '../../assets/components/CustomSwitch';
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
 import {
   IMG_Vector,
   IMG_Cart,
@@ -31,17 +21,23 @@ import {
   IMG_Heart,
   IMG_User,
   IMG_Clock,
-  IMG_Personal,
 } from '../../assets/images';
-import { Drinks } from './DrinksForm';
-import { Foods } from './FoodsForm';
-import { Snacks } from './SnacksForm';
-import { Sauce } from './SauceForm';
+import {Drinks} from './DrinksForm';
+import {Foods} from './FoodsForm';
+import {Snacks} from './SnacksForm';
+import {Sauce} from './SauceForm';
 class Condition extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+  // render() {
+  //   return this.props.label === 'Foods' ? (
+  //     <Foods {...this.props.props} />
+  //   ) : (
+  //     <Drinks {...this.props.props} />
+  //   );
+  // }
   checkSwitch = props => {
     switch (props.label) {
       case 'Foods':
@@ -75,19 +71,15 @@ class Condition extends Component {
   };
   render() {
     if (this.props.label === 'Foods') {
-<<<<<<< HEAD
-      return <Foods navigation={this.props.navigation} />;
-=======
-      return <Foods {...this.props} />;
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+      return <Foods />;
     } else {
       if (this.props.label === 'Drinks') {
-        return <Drinks navigation={this.props.navigation} />;
+        return <Drinks />;
       } else {
         if (this.props.label === 'Snacks') {
-          return <Snacks navigation={this.props.navigation} />;
+          return <Snacks />;
         } else {
-          return <Sauce navigation={this.props.navigation} />;
+          return <Sauce />;
         }
       }
     }
@@ -111,15 +103,7 @@ export class HomeScreen extends Component {
         <TouchableOpacity style={styles.imageContainer}>
           <Image source={IMG_Vector} style={styles.Menu} />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.cartContainer}
-<<<<<<< HEAD
-          onPress={() => {
-            this.props.navigation.navigate('CartScreen');
-          }}>
-=======
-          onPress={() => this.props.navigation.navigate('MyProfileScreen')}>
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+        <TouchableOpacity style={styles.cartContainer}>
           <Image source={IMG_Cart} />
         </TouchableOpacity>
         <View style={styles.titleContainer}>
@@ -128,110 +112,90 @@ export class HomeScreen extends Component {
         <View style={styles.searchContainer}>
           <Image source={IMG_Search} style={styles.searchImage} />
           <TextInput
-            hitSlop={{ top: '100%', left: '100%', right: '100%', bottom: '100%' }}
+            hitSlop={{top: '100%', left: '100%', right: '100%', bottom: '100%'}}
             placeholder={'Search'}
             style={styles.searchInput}
           />
         </View>
-        <View style={styles.scrollView}>
-          <CustomSwitch
-            flexGrow={1}
-            justifyContent={'center'}
-            flexDirection={'row'}>
-            <View style={styles.backgroundItem}>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({ label: 'Foods' })}
-                  style={styles.button}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === 'Foods'
-                          ? CUSTOM_COLOR.Vermilion
-                          : 'transparent',
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Foods</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({ label: 'Drinks' })}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === 'Drinks'
-                          ? CUSTOM_COLOR.Vermilion
-                          : 'transparent',
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Drinks</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({ label: 'Snacks' })}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === 'Snacks'
-                          ? CUSTOM_COLOR.Vermilion
-                          : 'transparent',
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Snacks</Text>
-                </UnderlineButton>
-              </View>
-              <View style={styles.backgroundTitle}>
-                <UnderlineButton
-                  onPress={() => this.setState({ label: 'Sauce' })}
-                  style={styles.buttonText}
-                  underlineStyle={[
-                    styles.underLine,
-                    {
-                      backgroundColor:
-                        this.state.label === 'Sauce'
-                          ? CUSTOM_COLOR.Vermilion
-                          : 'transparent',
-                    },
-                  ]}>
-                  <Text style={styles.buttonText}>Sauce</Text>
-                </UnderlineButton>
-              </View>
-            </View>
-          </CustomSwitch>
-        </View>
+        <ScrollView
+          style={styles.scrollView}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.contentContainer}>
+          {/* <View style={styles.backgroundItem}> */}
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Foods'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Foods'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Foods</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Drinks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Drinks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Drinks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Snacks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Snacks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Snacks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Sauce'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Sauce'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Sauce</Text>
+            </UnderlineButton>
+          </View>
+          {/* </View> */}
+        </ScrollView>
         <View style={styles.viewTaskbar}>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-            style={styles.taskbarButton}>
-            <Image style={styles.iconContainer} source={IMG_Home} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-            style={styles.taskbarButton}>
-            <Image style={styles.iconContainer} source={IMG_Heart} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('MyProfileScreen')}
-            style={styles.taskbarButton}>
-            <Image style={styles.iconContainer} source={IMG_User} />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('HistoryScreen')}
-            style={styles.taskbarButton}>
-            <Image style={styles.iconContainer} source={IMG_Clock} />
-          </TouchableOpacity>
+          <Image style={styles.iconContainer} source={IMG_Home} />
+          <Image style={styles.iconContainer} source={IMG_Heart} />
+          <Image style={styles.iconContainer} source={IMG_User} />
+          <Image style={styles.iconContainer} source={IMG_Clock} />
         </View>
-        <Condition
-          label={this.state.label}
-          navigation={this.props.navigation}
-        />
+        <Condition label={this.state.label} props={this.props} />
       </SafeAreaView>
     );
   }
@@ -242,6 +206,12 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.Concrete,
     flex: 1,
     alignItems: 'center',
+  },
+  contentContainer: {
+    paddingVertical: 3,
+    width: scale(550),
+    height: scale(50),
+    justifyContent: 'space-around',
   },
   imageContainer: {
     width: scale(28),
@@ -256,7 +226,7 @@ const styles = StyleSheet.create({
   },
   cartContainer: {
     width: 'auto',
-    height: scale(50),
+    height: 'auto',
     top: scale(66),
     right: scale(42),
     position: 'absolute',
@@ -277,7 +247,7 @@ const styles = StyleSheet.create({
   backgroundTitle: {
     width: '20%',
     height: 'auto',
-    marginTop: scale(0),
+    // backgroundColor: 'black',
   },
   searchContainer: {
     width: scale(380),
@@ -302,10 +272,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   scrollView: {
-    width: scale(450),
-    height: scale(50),
-    top: scale(400),
-    // backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    // width: scale(450),
+    top: scale(350),
+    marginLeft: scale(100),
+    left: scale(10),
+    //backgroundColor: CUSTOM_COLOR.SunsetOrange,
     position: 'absolute',
   },
   backgroundItem: {
@@ -313,7 +284,7 @@ const styles = StyleSheet.create({
     height: scale(50),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: CUSTOM_COLOR.Concrete,
+    backgroundColor: CUSTOM_COLOR.Black,
     position: 'absolute',
   },
   text1: {
@@ -324,37 +295,23 @@ const styles = StyleSheet.create({
     marginRight: scale(91),
   },
   viewTaskbar: {
-<<<<<<< HEAD
-    height: scale(60),
-    width: '90%',
-    bottom: scale(10),
-=======
     // width: scale(25),
-    height: scale(60),
+    height: scale(25),
     width: '90%',
-    bottom: scale(20),
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+    bottom: scale(50.1),
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center',
     position: 'absolute',
-    flex: 1,
-    //backgroundColor: 'red',
   },
   iconContainer: {
-<<<<<<< HEAD
-    height: scale(33),
-    width: scale(36),
-=======
-    height: scale(30),
-    width: '100%',
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
+    height: scale(25),
+    width: '7%',
     alignSelf: 'center',
     bottom: scale(0),
   },
   underLine: {
-    width: scale(90),
-    height: scale(3),
+    width: scale(100),
+    height: scale(4),
     alignSelf: 'center',
     position: 'absolute',
     borderRadius: 30,
@@ -363,16 +320,11 @@ const styles = StyleSheet.create({
     height: '70%',
   },
   buttonText: {
-    color: CUSTOM_COLOR.Black,
+    color: 'black',
     fontSize: 18,
     fontFamily: FONT_FAMILY.SFBlack,
     alignSelf: 'center',
     alignContent: 'center',
     justifyContent: 'center',
-  },
-  taskbarButton: {
-    width: scale(35),
-    height: scale(55),
-    //alignItems: 'center',
   },
 });

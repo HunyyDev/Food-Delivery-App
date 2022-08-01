@@ -21,7 +21,7 @@ const App = props => {
         <stack.Screen name="Onboarding" options={{headerShown: false}}>
           {props => <Onboarding {...props} />}
         </stack.Screen>
-        {/* <stack.Screen name="LoginScreen" options={{headerShown: false}}>
+        <stack.Screen name="LoginScreen" options={{headerShown: false}}>
           {props => <LoginScreen {...props} />}
         </stack.Screen>
         <stack.Screen name="WaitingForUpgrade" options={{headerShown: false}}>
@@ -44,7 +44,7 @@ const App = props => {
         </stack.Screen>
         <stack.Screen name="HistoryScreen" options={{headerShown: false}}>
           {props => <HistoryScreen {...props} />}
-        </stack.Screen> */}
+        </stack.Screen>
       </stack.Navigator>
     </NavigationContainer>
   );

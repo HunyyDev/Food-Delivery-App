@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import React, { Component } from 'react';
-import { Icon_Back, Image_History, IMG_Food } from '../../assets/images';
+import React, {Component} from 'react';
+import {Icon_Back, IMG_Food, Image_History} from '../../assets/images';
 import CUSTOM_COLOR from '../../assets/constants/colors';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
 
 export class HistoryScreen extends Component {

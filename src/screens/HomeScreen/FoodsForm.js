@@ -25,41 +25,28 @@ export class Foods extends Component {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.contentContainer}>
             <TouchableOpacity
-<<<<<<< HEAD
               style={styles.listContainer}
               onPress={() => {
                 this.props.navigation.navigate('ProductDetail');
               }}>
-=======
-              onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-              style={styles.listContainer}>
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
               <Image style={styles.foodImage} source={IMG_Food2} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
-<<<<<<< HEAD
-            <TouchableOpacity style={styles.listContainer}>
-=======
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
               <Image style={styles.foodImage} source={IMG_Food} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
               </Text>
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
-<<<<<<< HEAD
-            <TouchableOpacity style={styles.listContainer}>
-=======
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
               <Image style={styles.foodImage} source={IMG_Food3} />
               <Text style={styles.textFoodContainer}>
                 {'Spicy \nfish sauce'}

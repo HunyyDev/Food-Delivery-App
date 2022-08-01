@@ -1,10 +1,10 @@
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import CUSTOM_COLOR from '../../assets/constants/colors';
-import scale from '../../assets/constants/reponsive';
-import {Icon_Back, Icon_Go, IMG_Personal} from '../../assets/images';
-import FONT_FAMILY from '../../assets/constants/fonts';
+import CUSTOM_COLOR from '../../../assets/constants/colors';
+import scale from '../../../assets/constants/responsive';
+import {Icon_Back, Icon_Go, IMG_Personal} from '../../../assets/images';
+import FONT_FAMILY from '../../../assets/constants/fonts';
 export class MyProfileScreen extends Component {
   render() {
     return (
@@ -21,7 +21,7 @@ export class MyProfileScreen extends Component {
           style={styles.buttonContainer}>
           <Text style={styles.text2Container}>{'change'}</Text>
         </TouchableOpacity>
-        <View style={styles.rectanglContainer}>
+        <View style={styles.rectangleContainer}>
           <Image style={styles.imageContainer} source={IMG_Personal} />
           <Text style={styles.text3Container}>{'Marvis Ighedosa'}</Text>
           <Text style={styles.text4Container}>{'Dosamarvis@gmail.com'}</Text>
@@ -30,17 +30,11 @@ export class MyProfileScreen extends Component {
             {'No 15 uti street off ovie palace\nroad effurun delta state'}
           </Text>
         </View>
-        {/* <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('MyProfileScreen')}
-          style={styles.button2Container}>
-          <Text style={styles.text7Container}>{'Oders'}</Text>
-          <Image style={styles.iconContainer} source={Icon_Go} />
-        </TouchableOpacity> */}
         <View style={styles.fourButtonView}>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('MyProfileScreen')}
             style={styles.button2Container}>
-            <Text style={styles.text7Container}>{'Oders'}</Text>
+            <Text style={styles.text7Container}>{'Orders'}</Text>
             <Image style={styles.iconContainer} source={Icon_Go} />
           </TouchableOpacity>
           <TouchableOpacity
@@ -115,7 +109,7 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     position: 'absolute',
   },
-  rectanglContainer: {
+  rectangleContainer: {
     width: scale(378),
     height: scale(207),
     top: scale(180),

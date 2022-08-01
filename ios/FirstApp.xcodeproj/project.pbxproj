@@ -33,12 +33,6 @@
 		A316B63CED6A456FA7D7673F /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D909849BFB04622BDB3F3F7 /* Montserrat-SemiBoldItalic.ttf */; };
 		4F0A56641840499D8C532F57 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D7E54CBB13C4F5FA419D8B9 /* Montserrat-Thin.ttf */; };
 		DE7882A9126C4FB8A9B4D0E0 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C8207CCA2374114A847E21D /* Montserrat-ThinItalic.ttf */; };
-		33EBFE513A6542F58B3D1D3F /* FontsFree-Net-Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6479C90C66DA49BA82D484F7 /* FontsFree-Net-Abel-Regular.ttf */; };
-		718CE9F6486C4BB395A730DC /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56A56A63DD8545CAAE8C163D /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */; };
-		3831BF40E0E34D6AABB6773D /* FontsFree-Net-SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA9F03475D8043B5B20E8C19 /* FontsFree-Net-SFProText-Regular.ttf */; };
-		28092315D10743D1B4D976AA /* FontsFree-Net-SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53079BCC0A7E408EAB9E18CF /* FontsFree-Net-SFProText-Semibold.ttf */; };
-		4D82459A639742C5B779475D /* SF-Pro-Rounded-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDC3817DD40C4A55A631358B /* SF-Pro-Rounded-Bold.ttf */; };
-		A6E3E91761EB4DB9ADF0B755 /* SF-Pro-Text-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8B3611FB2CF48B1B6B44FE5 /* SF-Pro-Text-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,12 +82,6 @@
 		6D909849BFB04622BDB3F3F7 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3D7E54CBB13C4F5FA419D8B9 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; name = "Montserrat-Thin.ttf"; path = "../src/assets/fonts/Montserrat-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0C8207CCA2374114A847E21D /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Montserrat-ThinItalic.ttf"; path = "../src/assets/fonts/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6479C90C66DA49BA82D484F7 /* FontsFree-Net-Abel-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-Abel-Regular.ttf"; path = "../src/assets/fonts/FontsFree-Net-Abel-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		56A56A63DD8545CAAE8C163D /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; path = "../src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AA9F03475D8043B5B20E8C19 /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SFProText-Regular.ttf"; path = "../src/assets/fonts/FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		53079BCC0A7E408EAB9E18CF /* FontsFree-Net-SFProText-Semibold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SFProText-Semibold.ttf"; path = "../src/assets/fonts/FontsFree-Net-SFProText-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DDC3817DD40C4A55A631358B /* SF-Pro-Rounded-Bold.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Rounded-Bold.ttf"; path = "../src/assets/fonts/SF-Pro-Rounded-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A8B3611FB2CF48B1B6B44FE5 /* SF-Pro-Text-Bold.ttf */ = {isa = PBXFileReference; name = "SF-Pro-Text-Bold.ttf"; path = "../src/assets/fonts/SF-Pro-Text-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,12 +209,6 @@
 				6D909849BFB04622BDB3F3F7 /* Montserrat-SemiBoldItalic.ttf */,
 				3D7E54CBB13C4F5FA419D8B9 /* Montserrat-Thin.ttf */,
 				0C8207CCA2374114A847E21D /* Montserrat-ThinItalic.ttf */,
-				6479C90C66DA49BA82D484F7 /* FontsFree-Net-Abel-Regular.ttf */,
-				56A56A63DD8545CAAE8C163D /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf */,
-				AA9F03475D8043B5B20E8C19 /* FontsFree-Net-SFProText-Regular.ttf */,
-				53079BCC0A7E408EAB9E18CF /* FontsFree-Net-SFProText-Semibold.ttf */,
-				DDC3817DD40C4A55A631358B /* SF-Pro-Rounded-Bold.ttf */,
-				A8B3611FB2CF48B1B6B44FE5 /* SF-Pro-Text-Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -347,12 +329,6 @@
 				A316B63CED6A456FA7D7673F /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				4F0A56641840499D8C532F57 /* Montserrat-Thin.ttf in Resources */,
 				DE7882A9126C4FB8A9B4D0E0 /* Montserrat-ThinItalic.ttf in Resources */,
-				33EBFE513A6542F58B3D1D3F /* FontsFree-Net-Abel-Regular.ttf in Resources */,
-				718CE9F6486C4BB395A730DC /* FontsFree-Net-SF-Pro-Rounded-Bold.ttf in Resources */,
-				3831BF40E0E34D6AABB6773D /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
-				28092315D10743D1B4D976AA /* FontsFree-Net-SFProText-Semibold.ttf in Resources */,
-				4D82459A639742C5B779475D /* SF-Pro-Rounded-Bold.ttf in Resources */,
-				A6E3E91761EB4DB9ADF0B755 /* SF-Pro-Text-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
