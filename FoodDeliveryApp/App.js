@@ -7,5 +7,4 @@ const App = props => {
 };
 
 export default App;
-
 const styles = StyleSheet.create({});
