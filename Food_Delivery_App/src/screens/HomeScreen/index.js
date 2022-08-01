@@ -55,19 +55,33 @@ import {
 
 import Custom_FoodScrollView from '../HomeScreen/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../HomeScreen/components/Custom_CategoryScrollView';
+import OnBoardingScreen from '../OnBoardingScreen';
+import Login from '../auth/Login';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-  export default class HomeScreen extends Component {
+export default class HomeScreen extends Component {
     constructor(props) {
       super(props);
       this.state = {};
     }
     render() {
+      //const Drawer = createDrawerNavigator();
       var navigation=this.props;
       return (
         <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
           <></>
+          {/* <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Home">
+        <Drawer.Screen name="Home" component={OnBoardingScreen} />
+        <Drawer.Screen name="Login" component={Login} />
+      </Drawer.Navigator>
+    </NavigationContainer> */}
           {/* Icon Menu */}
-          <Custom_IconButton style={styles.menuContainer} icon={ICON_MENU} />
+          <Custom_IconButton style={styles.menuContainer} icon={ICON_MENU} 
+          navigationnn={this.props.navigation} 
+          name={'HIS'} />
           <></>
           {/* Icon Shopping */}
           <Custom_IconButton
