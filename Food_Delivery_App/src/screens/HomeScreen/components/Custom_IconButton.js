@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import CUSTOM_COLORS from '../../../constants/colors';
+import scale from '../../../constants/responsive';
 
 export default class Custom_IconButton extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export default class Custom_IconButton extends Component {
         style={styles.touchableContainer(this.props)}
         // onPress={this.props.onPress}
         onPress={() => {
-          this.props.navigationnn.navigate(this.props.name);
+          this.props.navigation.navigate(this.props.name);
         }}>
         <Image source={this.props.icon} style={styles.iconContainer} />
       </TouchableOpacity>
@@ -26,8 +27,8 @@ export default class Custom_IconButton extends Component {
 
 const styles = StyleSheet.create({
   touchableContainer: props => ({
-    width: 31,
-    height: 31,
+    width: scale(31),
+    height: scale(31),
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: CUSTOM_COLORS.Concreate,
