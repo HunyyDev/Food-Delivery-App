@@ -27,53 +27,55 @@ const ProfileScreen = props => {
   };
 
   return (
-    <View style={styles.container}>
+    <>
       <CustomBreadcrumbNavigation title="My Profile" onBack={onBack} />
-      <View style={styles.information}>
-        <Text style={styles.information.text}>Information</Text>
-        <View style={styles.information.profile}>
-          <Image
-            style={styles.information.profile.avatar}
-            source={require('../../assets/images/ProfileInfomationAvatar.png')}
-          />
-          <View style={styles.information.profile.info}>
-            <Text style={styles.information.profile.info.name}>
-              Marvis Ighedosa
-            </Text>
-            <Text style={styles.information.profile.info.email}>
-              dosamarvis@gmail.com
-            </Text>
-            <Text style={styles.information.profile.info.bio}>
-              No 15 street off ovie palace road effurun delta state
-            </Text>
-          </View>
-        </View>
-      </View>
-      <View style={styles.paymentMethod}>
-        <Text style={styles.paymentMethod.text}>Payment Method</Text>
-        <View>
-          <View>
-            <RadioForm
-              radio_props={radio_props}
-              initial={0}
-              buttonColor={CUSTOM_COLOR.VERMILION}
-              buttonSize={10}
-              buttonOuterSize={20}
-              selectedButtonColor={CUSTOM_COLOR.VERMILION}
-              // labelColor={'#50C900'}
-              onPress={() => {}}
+      <View style={styles.container}>
+        <View style={styles.information}>
+          <Text style={styles.information.text}>Information</Text>
+          <View style={styles.information.profile}>
+            <Image
+              style={styles.information.profile.avatar}
+              source={require('../../assets/images/ProfileInfomationAvatar.png')}
             />
+            <View style={styles.information.profile.info}>
+              <Text style={styles.information.profile.info.name}>
+                Marvis Ighedosa
+              </Text>
+              <Text style={styles.information.profile.info.email}>
+                dosamarvis@gmail.com
+              </Text>
+              <Text style={styles.information.profile.info.bio}>
+                No 15 street off ovie palace road effurun delta state
+              </Text>
+            </View>
           </View>
-          <TouchableOpacity>
-            <Text>Bank account</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Paypal</Text>
-          </TouchableOpacity>
         </View>
+        <View style={styles.paymentMethod}>
+          <Text style={styles.paymentMethod.text}>Payment Method</Text>
+          <View>
+            <View>
+              <RadioForm
+                radio_props={radio_props}
+                initial={0}
+                buttonColor={CUSTOM_COLOR.VERMILION}
+                buttonSize={10}
+                buttonOuterSize={20}
+                selectedButtonColor={CUSTOM_COLOR.VERMILION}
+                // labelColor={'#50C900'}
+                onPress={() => {}}
+              />
+            </View>
+            <TouchableOpacity>
+              <Text>Bank account</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text>Paypal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <CustomButton type="secondary" title="Update" />
       </View>
-      <CustomButton type="secondary" title="Update" />
-    </View>
+    </>
   );
 };
 

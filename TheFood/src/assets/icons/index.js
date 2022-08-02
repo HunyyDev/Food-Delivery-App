@@ -8,3 +8,4 @@ export {default as ICUser} from './ICUser';
 export {default as ICNoInternet} from './ICNoInternet';
 export {default as ICNoSearch} from './ICNoSearch';
 export {default as ICOnBack} from './ICOnBack';
+export {default as ICSwipe} from './ICSwipe';
