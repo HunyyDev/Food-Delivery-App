@@ -1,0 +1,10 @@
+export {default as IMG_Background} from './background.png';
+export {default as IMG_Food3} from './EggAndCucumber.png';
+export {default as IMG_Feather_search} from './feather_search.png';
+export {default as IMG_Food4} from './FriedChickenM.png';
+export {default as IMG_History} from './History.png';
+export {default as IMG_Logo} from './logo.png';
+export {default as IMG_Moi_moi} from './Moi-moi.png';
+export {default as IMG_Food1} from './SpicyFishSauce.png';
+export {default as IMG_Food2} from './VeggieTomatoMix.png';
+export {default as IMG_Wifi_off} from './Wifi-off-fill.png';
