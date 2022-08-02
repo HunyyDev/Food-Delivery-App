@@ -39,8 +39,7 @@ export class HomeScreen extends Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.headerSection}>
           <View style={styles.iconHeaderSection}>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Loading')}>
+            <TouchableOpacity>
               <IC_Menu />
             </TouchableOpacity>
             <TouchableOpacity
