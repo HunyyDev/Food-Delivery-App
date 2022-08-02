@@ -6,6 +6,8 @@ const SCREEN_NAME = {
   NO_FOUND_ITEM_SCREEN: 'NoFoundItemScreen',
   NO_INTERNET: 'NoInternetScreen',
   PROFILE_SCREEN: 'ProfileScreen',
+  MYPROFILE_SCREEN: 'MyProfileScreen',
+  HISTORY_SCREEN: 'HistoryScreen',
 };
 
 export default SCREEN_NAME;

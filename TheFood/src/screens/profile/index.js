@@ -3,10 +3,9 @@ import React from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
-import {ICOnBack} from '../../assets/icons';
+import {ICCard, ICBankAccount, ICPaypal} from '../../assets/icons';
 import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigation';
 import CustomButton from '../../components/CustomButton';
-import {ImageBackground} from 'react-native-web';
 import RadioForm, {
   RadioButton,
   RadioButtonInput,
@@ -15,9 +14,9 @@ import RadioForm, {
 
 const ProfileScreen = props => {
   var radio_props = [
-    {label: 'Card', value: 1},
-    {label: 'Bank account', value: 0},
-    {label: 'Paypal', value: 0},
+    {id: 0, label: 'Card', value: 0},
+    {id: 1, label: 'Bank account', value: 0},
+    {id: 2, label: 'Paypal', value: 0},
   ];
 
   const {navigation} = props;
@@ -25,7 +24,7 @@ const ProfileScreen = props => {
   const onBack = () => {
     navigation.goBack();
   };
-
+  var check = 0;
   return (
     <View style={styles.container}>
       <CustomBreadcrumbNavigation title="My Profile" onBack={onBack} />
@@ -51,28 +50,73 @@ const ProfileScreen = props => {
       </View>
       <View style={styles.paymentMethod}>
         <Text style={styles.paymentMethod.text}>Payment Method</Text>
-        <View>
-          <View>
-            <RadioForm
-              radio_props={radio_props}
-              initial={0}
-              buttonColor={CUSTOM_COLOR.VERMILION}
-              buttonSize={10}
-              buttonOuterSize={20}
-              selectedButtonColor={CUSTOM_COLOR.VERMILION}
-              // labelColor={'#50C900'}
-              onPress={() => {}}
-            />
-          </View>
-          <TouchableOpacity>
-            <Text>Bank account</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text>Paypal</Text>
-          </TouchableOpacity>
+        <View style={styles.paymentMethod.cards}>
+          <RadioForm animation={true} style={styles.paymentMethod.cards.card}>
+            {radio_props.map((obj, i) => (
+              <React.Fragment>
+                <RadioButton labelHorizontal={true} key={obj.id}>
+                  <RadioButtonInput
+                    obj={obj}
+                    index={obj.id}
+                    isSelected={{}}
+                    borderWidth={2}
+                    initial={0}
+                    buttonSize={normalize(15)}
+                    buttonOuterSize={normalize(25)}
+                    buttonColor={CUSTOM_COLOR.VERMILION}
+                    buttonInnerColor={CUSTOM_COLOR.VERMILION}
+                    buttonOuterColor={CUSTOM_COLOR.VERMILION}
+                    selectedButtonColor={CUSTOM_COLOR.VERMILION}
+                    buttonWrapStyle={{
+                      marginLeft: scaleX(20),
+                      marginTop: scaleY(20),
+                    }}
+                    onPress={() => {}}
+                  />
+                  <View style={styles.icon} key={i}>
+                    {obj.id === 0 ? (
+                      <View style={styles.icon.iconCard}>
+                        <ICCard></ICCard>
+                      </View>
+                    ) : obj.id === 1 ? (
+                      <View style={styles.icon.iconBank}>
+                        <ICBankAccount></ICBankAccount>
+                      </View>
+                    ) : (
+                      <View style={styles.icon.iconPaypal}>
+                        <ICPaypal></ICPaypal>
+                      </View>
+                    )}
+                  </View>
+                  <RadioButtonLabel
+                    obj={obj}
+                    index={obj.id}
+                    labelHorizontal={true}
+                    labelStyle={{
+                      fontSize: normalize(17),
+                      marginTop: scaleY(15),
+                      paddingBottom: scaleY(25),
+                      color: CUSTOM_COLOR.BLACK,
+                      paddingLeft: scaleY(20),
+                    }}
+                  />
+                </RadioButton>
+                <View
+                  // key={obj.id}
+                  style={{
+                    borderBottomWidth: obj.id !== 2 ? 1 : 0,
+                    borderColor: 'rgba(0, 0, 0, 0.3)',
+                    width: scaleX(200),
+                    alignSelf: 'center',
+                  }}></View>
+              </React.Fragment>
+            ))}
+          </RadioForm>
         </View>
       </View>
-      <CustomButton type="secondary" title="Update" />
+      <View style={styles.btnUpdate}>
+        <CustomButton type="secondary" title="Update" />
+      </View>
     </View>
   );
 };
@@ -82,6 +126,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: scaleY(60),
     backgroundColor: CUSTOM_COLOR.ATHENS_GRAY,
+    position: 'relative',
   },
   information: {
     width: normalize(300),
@@ -90,7 +135,7 @@ const styles = StyleSheet.create({
       color: CUSTOM_COLOR.BLACK,
       fontSize: normalize(20),
       marginTop: scaleY(60),
-      marginBottom: scaleY(10),
+      marginBottom: scaleY(20),
     },
     profile: {
       display: 'flex',
@@ -98,7 +143,7 @@ const styles = StyleSheet.create({
       paddingHorizontal: scaleY(16),
       paddingTop: scaleY(20),
       paddingBottom: scaleY(30),
-      backgroundColor: CUSTOM_COLOR.VERMILION,
+      backgroundColor: CUSTOM_COLOR.WHITE,
       borderRadius: normalize(20),
       info: {
         width: scaleX(190),
@@ -125,13 +170,56 @@ const styles = StyleSheet.create({
   paymentMethod: {
     width: normalize(300),
     alignSelf: 'center',
+    marginTop: scaleY(48),
     text: {
       color: CUSTOM_COLOR.BLACK,
       fontSize: normalize(20),
+      marginBottom: scaleY(20),
+    },
+    cards: {
+      paddingHorizontal: scaleY(16),
+      paddingTop: scaleY(20),
+      paddingBottom: scaleY(30),
+      backgroundColor: CUSTOM_COLOR.WHITE,
+      borderRadius: normalize(20),
+      card: {
+        height: scaleY(200),
+        justifyContent: 'space-between',
+      },
     },
   },
-  radioButton: {
-    width: '20%',
+  icon: {
+    marginTop: scaleY(10),
+    marginLeft: scaleX(15),
+    iconCard: {
+      width: normalize(40),
+      height: normalize(40),
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: CUSTOM_COLOR.TAHITI_GOLD,
+      borderRadius: normalize(10),
+    },
+    iconBank: {
+      width: normalize(40),
+      height: normalize(40),
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: CUSTOM_COLOR.FRENCH_ROSE,
+      borderRadius: normalize(10),
+    },
+    iconPaypal: {
+      width: normalize(40),
+      height: normalize(40),
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: CUSTOM_COLOR.BLUE_RIBBON,
+      borderRadius: normalize(10),
+    },
+  },
+  btnUpdate: {
+    position: 'absolute',
+    bottom: scaleY(36),
+    alignSelf: 'center',
   },
 });
 

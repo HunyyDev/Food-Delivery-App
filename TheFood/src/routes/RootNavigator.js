@@ -10,6 +10,8 @@ import NoFoundItemScreen from '../screens/notFoundItem';
 import NoInternetScreen from '../screens/noInternet';
 import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
+import MyProfileScreen from '../screens/myProfile';
+import HistoryScreen from '../screens/history';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,14 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.HISTORY_SCREEN}
+          component={HistoryScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.MYPROFILE_SCREEN}
+          component={MyProfileScreen}
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.PROFILE_SCREEN}
           component={ProfileScreen}
