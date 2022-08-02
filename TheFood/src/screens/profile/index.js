@@ -26,7 +26,7 @@ const ProfileScreen = props => {
   };
   var check = 0;
   return (
-    <View style={styles.container}>
+    <>
       <CustomBreadcrumbNavigation title="My Profile" onBack={onBack} />
       <View style={styles.information}>
         <Text style={styles.information.text}>Information</Text>
@@ -113,11 +113,35 @@ const ProfileScreen = props => {
             ))}
           </RadioForm>
         </View>
+        <View style={styles.paymentMethod}>
+          <Text style={styles.paymentMethod.text}>Payment Method</Text>
+          <View>
+            <View>
+              <RadioForm
+                radio_props={radio_props}
+                initial={0}
+                buttonColor={CUSTOM_COLOR.VERMILION}
+                buttonSize={10}
+                buttonOuterSize={20}
+                selectedButtonColor={CUSTOM_COLOR.VERMILION}
+                // labelColor={'#50C900'}
+                onPress={() => {}}
+              />
+            </View>
+            <TouchableOpacity>
+              <Text>Bank account</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text>Paypal</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <CustomButton type="secondary" title="Update" />
       </View>
       <View style={styles.btnUpdate}>
         <CustomButton type="secondary" title="Update" />
       </View>
-    </View>
+    </>
   );
 };
 
