@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   breadcrumb: {
     textBreadcrumb: {
       color: CUSTOM_COLOR.BLACK,
-      fontFamily: "FontsFree-Net-Abel-Regular",
+      fontFamily: 'FontsFree-Net-Abel-Regular',
       fontSize: normalize(23),
     },
   },

@@ -10,4 +10,5 @@ export default {
   ATHENS_GRAY: '#F5F5F8',
   FRENCH_ROSE: '#EB4796',
   BLUE_RIBBON: '#0038FF',
+  PASTEL_GREEN: '#44E868',
 };

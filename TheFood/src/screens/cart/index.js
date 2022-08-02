@@ -52,20 +52,31 @@ const CartScreen = () => {
           data={data}
           keyExtractor={item => item._id}
           renderItem={({item, index}) => {
-            // console.log(item.icon);
             return (
-              <TouchableOpacity style={styles.cartItem} onPress={() => {console.log("4");}}>
+              <TouchableOpacity
+                style={styles.cartItem}
+                onPress={() => {
+                  console.log('4');
+                }}>
                 <Image source={item.icon} style={styles.cartItem.img} />
                 <View style={styles.cartItem.info}>
                   <Text style={styles.cartItem.name}>{item.name}</Text>
                   <Text style={styles.cartItem.price}>#{item.price}</Text>
 
                   <TouchableOpacity style={styles.cartItem.button}>
-                    <TouchableOpacity style={{paddingHorizontal: scaleY(10)}} onPress={() => {console.log("2");}}>
+                    <TouchableOpacity
+                      style={{paddingHorizontal: scaleY(10)}}
+                      onPress={() => {
+                        console.log('2');
+                      }}>
                       <Text>-</Text>
                     </TouchableOpacity>
                     <Text>{item.quantity}</Text>
-                    <TouchableOpacity style={{paddingHorizontal: scaleY(10)}} onPress={() => {console.log("3");}}>
+                    <TouchableOpacity
+                      style={{paddingHorizontal: scaleY(10)}}
+                      onPress={() => {
+                        console.log('3');
+                      }}>
                       <Text>+</Text>
                     </TouchableOpacity>
                   </TouchableOpacity>
