@@ -3,11 +3,12 @@ import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
-import CheckBox from 'react-native-checkbox-animated';
 import CustomButton from '../../components/CustomButton';
 import {IC_Bank, IC_Card} from '../../assets/icons';
 import CustomDeliveryMethod from '../../components/CustomDeliveryMethod';
 import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+// import CheckBox from 'react-native-checkbox-animated';
 
 const PaymentScreen = props => {
   const [checked, setChecked] = useState(false);
@@ -29,12 +30,24 @@ const PaymentScreen = props => {
         <View style={styles.selectPaymentMethod}>
           <View style={styles.cardSection}>
             <View style={styles.checkBox}>
-              <CheckBox
-                label=""
+              {/* <CheckBox
+                size={20}
+                checked={checked}
                 onValueChange={value => setChecked(value)}
                 rounded={true}
                 checkedBackgroundColor={CUSTOM_COLOR.Vermilion}
-              />
+                boxStyle={styles.boxStyle}
+                checkMarkSize={10}
+              /> */}
+              <TouchableOpacity
+                style={{
+                  height: scale(20),
+                  width: scale(20),
+                  // backgroundColor: 'blue',
+                  borderRadius: scale(20) / 2,
+                  borderColor: CUSTOM_COLOR.Vermilion,
+                  borderWidth: 1,
+                }}></TouchableOpacity>
             </View>
 
             <View style={styles.iconAndTextCard}>
@@ -47,12 +60,12 @@ const PaymentScreen = props => {
 
           <View style={styles.bankSection}>
             <View style={styles.checkBox}>
-              <CheckBox
+              {/* <CheckBox
                 label=""
                 onValueChange={value => setChecked(value)}
                 rounded={true}
                 checkedBackgroundColor={CUSTOM_COLOR.Vermilion}
-              />
+              /> */}
             </View>
             <View style={styles.iconAndTextBank}>
               <View style={styles.iconBankSection}>
@@ -157,8 +170,13 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '20%',
     justifyContent: 'center',
+    alignItems: 'center',
     // backgroundColor: 'blue',
     zIndex: 1,
+  },
+  boxStyle: {
+    // backgroundColor: CUSTOM_COLOR.Vermilion,
+    borderColor: CUSTOM_COLOR.Vermilion,
   },
   iconCardSection: {
     height: '50%',
