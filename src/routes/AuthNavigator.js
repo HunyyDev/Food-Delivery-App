@@ -13,8 +13,15 @@ import OnboardingScreen from '../screens/onboarding';
 import FirstTimeScreen from '../screens/onboarding/FirstTimeScreen';
 import InformationScreen from '../screens/profile/InformationScreen';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import DrawerHome from './DrawerHome';
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const DrawerRoutes = props => {
+  return <DrawerHome />;
+};
 
 const AuthNavigator = props => {
   return (
@@ -26,7 +33,7 @@ const AuthNavigator = props => {
         name={SCREEN_NAME.ONBOARDING}
         component={OnboardingScreen}
       />
-      <Stack.Screen name={SCREEN_NAME.HOME} component={HomeScreen} />
+      <Stack.Screen name={SCREEN_NAME.HOME} component={DrawerRoutes} />
       <Stack.Screen name={SCREEN_NAME.DELIVERY} component={DeliveryScreen} />
       <Stack.Screen name={SCREEN_NAME.PAYMENT} component={PaymentScreen} />
       <Stack.Screen

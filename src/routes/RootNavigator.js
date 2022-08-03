@@ -16,6 +16,8 @@ import MyProfileScreen from '../screens/profile/MyProfileScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import MainNavigator from './MainNavigator';
 import AuthNavigator from './AuthNavigator';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import DrawerHome from './DrawerHome';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,41 +27,14 @@ const RootNavigator = props => {
   const getInfo = async () => {
     const name = await AsyncStorage.getItem('USERNAME');
     const pass = await AsyncStorage.getItem('PASSWORD');
-    console.log('name', name);
-    console.log('pass', pass);
     setUsername(name);
     setPassword(pass);
-    console.log('username', username);
-    console.log('password', password);
   };
   useEffect(() => {
     getInfo();
   }, [username, password]);
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen
-          name={SCREEN_NAME.FIRST_TIME}
-          component={FirstTimeScreen}
-        />
-        <Stack.Screen
-          name={SCREEN_NAME.ONBOARDING}
-          component={OnboardingScreen}
-        />
-        <Stack.Screen name={SCREEN_NAME.LOGIN} component={LoginScreen} />
-        <Stack.Screen name={SCREEN_NAME.HOME} component={HomeScreen} />
-        <Stack.Screen name={SCREEN_NAME.DELIVERY} component={DeliveryScreen} />
-        <Stack.Screen name={SCREEN_NAME.PAYMENT} component={PaymentScreen} />
-        <Stack.Screen
-          name={SCREEN_NAME.INFORMATION}
-          component={InformationScreen}
-        />
-        <Stack.Screen
-          name={SCREEN_NAME.MY_PROFILE}
-          component={MyProfileScreen}
-        />
-        <Stack.Screen name={SCREEN_NAME.CART} component={CartScreen} />
-      </Stack.Navigator> */}
       {username != undefined && password != undefined ? (
         <MainNavigator {...props} />
       ) : (

@@ -14,6 +14,7 @@ import UnderlinedInput from '../../components/UnderlinedInput';
 import UnderlineButton from '../../components/UnderlineButton';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {or} from 'react-native-reanimated';
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -59,6 +60,13 @@ export default class LoginScreen extends Component {
       ],
     );
 
+  Login = async () => {
+    await AsyncStorage.setItem('SIGN_OUT', '0');
+    const isSignOut = await AsyncStorage.getItem('SIGN_OUT');
+    // console.log('isSignOut', isSignOut);
+    this.props.navigation.navigate('Home');
+  };
+
   onLogin = async () => {
     const name = this.state.username;
     const pass = this.state.password;
@@ -67,7 +75,7 @@ export default class LoginScreen extends Component {
     const username = await AsyncStorage.getItem('USERNAME');
     const password = await AsyncStorage.getItem('PASSWORD');
     name === username && pass === password && name != '' && pass != ''
-      ? this.props.navigation.navigate('Home')
+      ? this.Login()
       : this.AlertFailed();
   };
   onSignUp = async () => {
@@ -77,7 +85,7 @@ export default class LoginScreen extends Component {
     await AsyncStorage.setItem('USERNAME', name);
     await AsyncStorage.setItem('PASSWORD', pass);
     name != '' && pass != '' && confirm === pass
-      ? this.props.navigation.navigate('Home')
+      ? this.Login()
       : this.AlertSignUpFailed();
   };
   getData = async () => {
