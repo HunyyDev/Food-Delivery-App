@@ -5,9 +5,7 @@ import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
 import {IC_Bank, IC_Card} from '../../assets/icons';
-import CustomDeliveryMethod from '../../components/CustomDeliveryMethod';
 import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import CustomSelection from '../../components/CustomSelection';
 
 const PaymentScreen = props => {

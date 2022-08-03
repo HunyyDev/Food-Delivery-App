@@ -6,11 +6,12 @@ import HomeScreen from '../screens/home/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
-import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
 import DetailProduct from '../screens/product/DetailProduct';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
 import UserScreen from '../screens/user/UserScreen';
+import HistoryScreen from '../screens/history/HistoryScreen';
+
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
@@ -33,6 +34,13 @@ const RootNavigator = () => {
             component={HomeScreen}
             options={{headerShown: false}}
           />
+
+          <Stack.Screen
+            name="History"
+            component={HistoryScreen}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="Cart"
             component={CartScreen}

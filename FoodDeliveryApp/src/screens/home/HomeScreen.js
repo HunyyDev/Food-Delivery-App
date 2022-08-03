@@ -171,6 +171,7 @@ export class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({initialBottomNav: 'History'});
+              this.props.navigation.navigate('History');
             }}>
             <IC_History
               fill={
