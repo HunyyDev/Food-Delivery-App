@@ -10,7 +10,8 @@ export class CustomInput extends Component {
         <Text style={styles.textInput}>{this.props.label}</Text>
         <TextInput
           secureTextEntry={this.props.secureText}
-          placeholder={this.props.label}
+          onChangeText={this.props.onChangeText}
+          placeholder={"Enter " + this.props.label.toLowerCase()}
           style={styles.inputContainer}
         />
       </>

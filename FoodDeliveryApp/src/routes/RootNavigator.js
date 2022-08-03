@@ -10,6 +10,7 @@ import LoadingScreen from '../screens/loading/LoadingScreen';
 import PaymentScreen from '../screens/payment/PaymentScreen';
 import DetailProduct from '../screens/product/DetailProduct';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
+import UserScreen from '../screens/user/UserScreen';
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
@@ -44,12 +45,6 @@ const RootNavigator = () => {
           />
 
           <Stack.Screen
-            name="Loading"
-            component={LoadingScreen}
-            options={{headerShown: false}}
-          />
-
-          <Stack.Screen
             name="DetailProduct"
             component={DetailProduct}
             options={{headerShown: false}}
@@ -58,6 +53,12 @@ const RootNavigator = () => {
           <Stack.Screen
             name="Profile"
             component={MyProfileScreen}
+            options={{headerShown: false}}
+          />
+
+          <Stack.Screen
+            name="User"
+            component={UserScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

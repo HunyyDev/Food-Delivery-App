@@ -11,7 +11,7 @@ import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
 import {IMG_Veggie_tomato_mix} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
-
+//const AddItem = ()
 // const CustomStroll = () => {
 //   return (
 //     <TouchableOpacity>

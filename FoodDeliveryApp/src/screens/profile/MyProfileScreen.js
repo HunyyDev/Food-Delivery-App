@@ -6,7 +6,7 @@ import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IC_Forward} from '../../assets/icons';
-import { IMG_Avatar } from '../../assets/images';
+import {IMG_Avatar} from '../../assets/images';
 
 const Selection = props => {
   return (
@@ -23,12 +23,13 @@ const Selection = props => {
   );
 };
 
-const MyProfileScreen = props => {
+const MyProfileScreen = ({navigation, route}) => {
+  const {name, email, address} = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.subContainer}>
         <View style={styles.header}>
-          <CustomHeaderGoBack leftOnPress={() => props.navigation.goBack()} />
+          <CustomHeaderGoBack leftOnPress={() => navigation.goBack()} />
         </View>
 
         <View style={styles.main}>
@@ -57,11 +58,41 @@ const MyProfileScreen = props => {
             </View>
             <View style={styles.detail.personalCard}>
               <View style={styles.detail.personalCard.avatar}>
-                <Image source={IMG_Avatar} style={{alignSelf:'center', marginTop: scale(16)}}/>
+                <Image
+                  source={IMG_Avatar}
+                  style={{alignSelf: 'center', marginTop: scale(16)}}
+                />
               </View>
               <View style={styles.detail.personalCard.info}>
-                <Text>
-
+                <Text
+                  style={{
+                    fontFamily: FONT_FAMILY.Bold,
+                    fontSize: scale(18),
+                  }}>
+                  {name}
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: FONT_FAMILY.Light,
+                    fontSize: scale(15),
+                  }}>
+                  {email}
+                </Text>
+                <View style={styles.line}/>
+                <Text
+                  style={{
+                    fontFamily: FONT_FAMILY.Light,
+                    fontSize: scale(15),
+                  }}>
+                  {'+234 9011039271'}
+                </Text>
+                <View style={styles.line}/>
+                <Text
+                  style={{
+                    fontFamily: FONT_FAMILY.Light,
+                    fontSize: scale(15),
+                  }}>
+                  {address}
                 </Text>
               </View>
             </View>
@@ -124,8 +155,9 @@ const styles = StyleSheet.create({
         flex: 1,
       },
       info: {
+        marginTop: scale(16),
         flex: 2,
-        backgroundColor: 'purple',
+        marginLeft: 10,
       },
     },
   },
@@ -152,5 +184,13 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     bottom: 15,
+  },
+
+  line: {
+    height: 1,
+    width: '90%',
+    backgroundColor: CUSTOM_COLOR.Black,
+    opacity: 0.3,
+    marginVertical: scale(7),
   },
 });
