@@ -1,11 +1,15 @@
-const CUSTOM_COLOR = {
-  SunsetOrange: '#FF4B3A',
-  White: '#FFF',
-  Vermilion: '#FF460A',
-  Black: '#000000',
-  AntiFlashWhite: '#F2F2F2',
-  Gallery: '#EFEEEE',
-  Manatee: '#9A9A9D',
-  Concrete: '#F2F2F2',
+const COLOR = {
+    vermilion: '#FF460A',
+    white: '#FFF',
+    black: '#000',
+    sunsetOrange: '#FF4B3A',
+    concrete: '#F2F2F2',
+    athensGray: '#F4F4F8',
+    gallery: '#EFEEEE',
+    silverChalice: '#9F9F9F',
+    pink: '#FFC0CB',
+    frenchRose: '#EB4796',
+    blueRibbon: '#0038FF'
 };
-export default CUSTOM_COLOR;
+
+export default COLOR;

@@ -1,149 +1,83 @@
 import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
+    View,
+    SafeAreaView,
+    Image,
+    ScrollView,
+    Alert
 } from 'react-native';
-import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../constants/colors';
-import {IMG_Logo} from '../../assets/images/images';
-import FONT_FAMILY from '../../constants/fonts';
-import CustomInput from '../../components/CustomInput';
+import React, { useState, createContext, useContext } from 'react';
+
+import { IMG_logo } from '../../assets/images/images';
+import SwitchButton from '../../components/SwitchButton';
+import styles from './styles';
+import SignInScreen from './SignInScreen';
+import SignUpScreen from './SignUpScreen';
 import CustomButton from '../../components/CustomButton';
-import scaleWidth from '../../constants/responsive';
-import {LOGIN, SIGN_UP} from '../../constants/screen';
+import useKeyboard from '../../Hooks/useKeyboard';
+import { AuthContext } from '../../routes/RootNavigator';
+import isValidEmail from './isValidEmail';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import scale from '../../constants/responsive';
 
-export default class LoginScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: LOGIN,
-    };
-  }
+export const LoginContext = createContext();
 
-  render() {
+const LoginScreen = props => {
+    const [status, setStatus] = useState('Login');
+    const keyboardisShown = useKeyboard();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPass, setConfirmPass] = useState('');
+    const { signIn, loading } = useContext(AuthContext);
+
+    const loginContext = {
+        email: email,
+        password: password,
+        confirmPass: confirmPass,
+        setEmail: (mail) => setEmail(mail),
+        setPassword: (pass) => setPassword(pass),
+        setConfirmPass: (cfPass) => setConfirmPass(cfPass),
+    }
+
+    const onLogin = async () => {
+        if (isValidEmail(email) && password.length != 0 && (status === 'Sign-up' ? confirmPass === password : 1)) {
+            await AsyncStorage.setItem('LoggedIn', 'loading');
+            await AsyncStorage.setItem('Email', email);
+            // signIn();
+            loading();
+        }
+        else
+            Alert.alert('Try again!', 'Something is wrong.');
+    }
+
     return (
-      <SafeAreaView style={styles.container}>
-        {/*Heading*/}
-        <View style={styles.containerHeading}>
-          <>
-            <Image source={IMG_Logo} style={styles.img} resizeMode={'cover'} />
-            <View style={styles.containerTouch}>
-              <TouchableOpacity
-                style={styles.touch}
-                onPress={() => {
-                  this.setState({page: LOGIN});
-                }}
-                disabled={this.state.page === LOGIN ? true : false}>
-                <Text style={styles.headingText}>Login</Text>
-                {this.state.page === LOGIN ? (
-                  <View style={styles.line} />
-                ) : null}
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.touch}
-                onPress={() => {
-                  this.setState({page: SIGN_UP});
-                }}
-                disabled={this.state.page === SIGN_UP ? true : false}>
-                <Text style={styles.headingText}>Sign-up</Text>
-                {this.state.page === SIGN_UP ? (
-                  <View style={styles.line} />
-                ) : null}
-              </TouchableOpacity>
+        <SafeAreaView style={styles.container} pointerEvents={props.pointerEvents}>
+            <View style={styles.header}>
+                <Image source={IMG_logo} style={styles.logoContainer} resizeMode='contain' />
+                <SwitchButton
+                    values={['Login', 'Sign-up']}
+                    selectedValue={status}
+                    setSelectedValue={setStatus} />
             </View>
-          </>
-        </View>
-        {/* Body*/}
-        <View style={styles.containerBody}>
-          <View>
-            {this.state.page === LOGIN ? (
-              <>
-                <CustomInput label="Email address" />
-                <CustomInput label="Password" secureTextEntry={true} />
-                <Text style={styles.loginText}>Forgot passcode?</Text>
-              </>
-            ) : null}
-            {this.state.page === SIGN_UP ? (
-              <>
-                <CustomInput label="Email address" />
-                <CustomInput label="Password" secureTextEntry={true} />
-                <CustomInput label="Confirm Password" secureTextEntry={true} />
-              </>
-            ) : null}
-          </View>
-        </View>
-        {/* Bottom */}
-        <View style={styles.containerBottom}>
-          <CustomButton type={'secondary'} text={'Login'} />
-        </View>
-      </SafeAreaView>
+            <View style={{ flex: 4 }}>
+                <ScrollView style={styles.body} showsVerticalScrollIndicator={false}>
+                    <LoginContext.Provider value={loginContext}>
+                        {status === 'Login' ?
+                            <SignInScreen navigation={props.navigation} /> : <SignUpScreen navigation={props.navigation} />
+                        }
+                    </LoginContext.Provider>
+                    <View style={{ height: scale.scaleHeight(80) }} />
+                </ScrollView>
+            </View>
+            {keyboardisShown === 0 ?
+                <CustomButton
+                    style={styles.button}
+                    content={'Login'}
+                    type='secondary'
+                    onPress={() => onLogin()} /> : null}
+        </SafeAreaView>
     );
-  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.Grey,
-  },
-  containerHeading: {
-    flex: 2,
-    backgroundColor: CUSTOM_COLOR.White,
-    borderBottomStartRadius: 30,
-    borderBottomEndRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  img: {
-    flex: 5,
-    width: scaleWidth(150),
-    height: scaleWidth(150),
-  },
-  containerTouch: {
-    flex: 1,
-    width: '100%',
-    flexDirection: 'row',
-  },
-  containerBody: {
-    flex: 2,
-    marginHorizontal: scaleWidth(50),
-  },
-  containerBottom: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  touch: {
-    width: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  headingText: {
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 18,
-    lineHeight: 21,
-    color: CUSTOM_COLOR.Black,
-  },
-  line: {
-    position: 'absolute',
-    bottom: 0,
-    height: 3,
-    width: scaleWidth(134),
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
-    borderRadius: 40,
-  },
-  containerInput: {
-    marginTop: scaleWidth(50),
-    alignItems: 'center',
-  },
-  loginText: {
-    color: CUSTOM_COLOR.Vermilion,
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 17,
-    marginTop: scaleWidth(30),
-    marginLeft: 0,
-  },
-});
+
+
+export default LoginScreen;

@@ -1,11 +1,13 @@
-export {default as IMG_Logo} from './logo.png';
-export {default as IMG_Background} from './background.png';
-export {default as IMG_Menu} from './Menu.png';
-export {default as IMG_Search} from './Search.png';
-export {default as IMG_Shopping_cart} from './shopping-cart.png';
-export {default as IMG_Home} from './Home.png';
-export {default as IMG_Heart} from './Heart.png';
-export {default as IMG_User} from './user.png';
-export {default as IMG_History} from './ic_sharp-history.png';
-export {default as IMG_dish1} from './image-2.png';
-export {default as IMG_dish2} from './image-3.png';
+export {default as IMG_logo} from '../images/logo.png';
+export {default as IMG_background} from '../images/bgr.png';
+export {default as IMG_dish1} from '../images/image-2.png';
+export {default as IMG_dish2} from '../images/image-3.png';
+export {default as IMG_search} from '../images/search.png';
+export {default as IMG_offline} from '../images/offline.png';
+export {default as IMG_avatar} from '../images/avatar.png';
+export {default as IMG_loadingBgr} from '../images/loadingBgr.jpg';
+export {default as IMG_logoFull} from '../images/logoFull.png';
+
+
+
+

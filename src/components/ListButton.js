@@ -1,7 +1,8 @@
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
-import CUSTOM_COLOR from '../constants/colors';
-import scaleWidth from '../constants/responsive';
+import COLOR from '../constants/colors';
+import scale from '../constants/responsive';
+import font_family from '../constants/fonts';
 
 
 const ListButton = props =>{
@@ -9,7 +10,7 @@ const ListButton = props =>{
         <ScrollView style={props.style}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{paddingHorizontal:scaleWidth(89)}}>
+        contentContainerStyle={{paddingHorizontal:scale.scaleWidth(89)}}>
             {props.values.map(value =>(
                 <TouchableOpacity
                 activeOpacity={1}
@@ -30,27 +31,27 @@ const ListButton = props =>{
 
 const styles = StyleSheet.create({
     button: {
-        marginHorizontal: scaleWidth(5),
-        width: scaleWidth(87),
-        height: scaleWidth(40),
+        marginHorizontal: scale.scaleWidth(5),
+        width: scale.scaleWidth(87),
+        height: scale.scaleWidth(40),
         alignItems: 'center',
         justifyContent:'center',
     },
     line:{
         position: 'absolute',
         bottom: 0,
-        height: scaleWidth(3),
-        backgroundColor: CUSTOM_COLOR.Vermilion,
-        width:scaleWidth(87),
-        borderRadius: scaleWidth(40),
+        height: scale.scaleWidth(3),
+        backgroundColor: COLOR.vermilion,
+        width:scale.scaleWidth(87),
+        borderRadius: scale.scaleWidth(40),
     },
     buttonLabel: {
-        fontFamily: 'SFProText-Regular',
-        color: CUSTOM_COLOR.Manatee,
-        fontSize: scaleWidth(17),
+        fontFamily: font_family.SFProText.regular,
+        color: COLOR.black,
+        fontSize: scale.scaleWidth(17),
     },
     selectedLabel: {
-        color: CUSTOM_COLOR.Vermilion
+        color: COLOR.vermilion
     }
 });
 

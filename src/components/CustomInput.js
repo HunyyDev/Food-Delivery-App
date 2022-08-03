@@ -1,58 +1,51 @@
-import {Text, TextInput, View, StyleSheet} from 'react-native';
-import React, {Component} from 'react';
-import CUSTOM_COLOR from '../constants/colors';
-import FONT_FAMILY from '../constants/fonts';
+import { 
+    StyleSheet, 
+    Text, 
+    TextInput, 
+} from 'react-native'
+import React from 'react'
+import isValidEmail from '../screens/Auth/isValidEmail'
+import font_family from '../constants/fonts'
+import scale from '../constants/responsive'
+import COLOR from '../constants/colors'
 
-export class CustomInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-  }
 
-  setValue = text => {
-    this.state.value = text;
-  };
-
-  render() {
+const CustomInput = props => {
     return (
-      <View style={{marginTop: 25, alignSelf: 'center'}}>
-        <Text style={styles.containerText}>{this.props.label}</Text>
-        {this.props.secureTextEntry ? (
-          <TextInput
-            style={styles.containerTextInput}
-            secureTextEntry
-            onChangeText={text => this.setValue(text)}
-          />
-        ) : (
-          <TextInput
-            style={styles.containerTextInput}
-            onChangeText={text => this.setValue(text)}
-          />
-        )}
-      </View>
-    );
-  }
+        <>
+            <Text style={[styles.title, props.type === 'email' && {marginTop: 0 }, props.style]}>{props.title}</Text>
+            <TextInput
+                style={styles.input}
+                value={props.value}
+                placeholder={props.placeholder}
+                onChangeText={props.setValue}
+                secureTextEntry={props.type === 'secure'}/>
+            
+            {props.type === 'email' && (!isValidEmail(props.value) && props.value !== '') ?  
+            <Text style={styles.alert}>Invalid email</Text>
+        : null}
+        </>
+    )
 }
 
-const styles = StyleSheet.create({
-  containerText: {
-    color: CUSTOM_COLOR.Black,
-    opacity: 0.4,
-    fontSize: 15,
-    fontFamily: FONT_FAMILY.Medium,
-  },
-  containerTextInput: {
-    color: CUSTOM_COLOR.Black,
-    height: 40,
-    width: 314,
-    fontFamily: FONT_FAMILY.Medium,
-    fontSize: 15,
-    lineHeight: 20,
-    borderBottomWidth: 0.5,
-    borderBottomColor: CUSTOM_COLOR.Black,
-  },
-});
+export default CustomInput
 
-export default CustomInput;
+const styles = StyleSheet.create({
+    title: {
+        fontFamily: font_family.SFProText.semibold,
+        fontSize: scale.scaleWidth(15),
+        opacity: 0.6,
+        marginTop: scale.scaleHeight(25),
+    },
+    input: {
+        height: scale.scaleWidth(50),
+        borderBottomColor: COLOR.black,
+        borderBottomWidth: 0.5,
+        paddingHorizontal: 5,
+    },
+    alert: {
+        color: COLOR.vermilion,
+        fontSize: 12,
+        marginTop: 5,
+    }
+})

@@ -1,56 +1,47 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { 
+    Text,
+    StyleSheet, 
+    TouchableOpacity
+} from 'react-native';
 import React from 'react';
-import FONT_FAMILY from '../constants/fonts';
-import CUSTOM_COLOR from '../constants/colors';
-import {Component} from 'react';
+import scale from '../constants/responsive';
+import COLOR from '../constants/colors';
+import font_family from '../constants/fonts';
 
-class CustomButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    if (this.props.type === 'primary') {
-      return (
-        <TouchableOpacity>
-          <View
-            style={styles.ButtonContainer}
-            backgroundColor={CUSTOM_COLOR.White}>
-            <Text style={(styles.Text, {color: CUSTOM_COLOR.Vermilion})}>
-              {this.props.text}
-            </Text>
-          </View>
-        </TouchableOpacity>
-      );
-    }
-    if (this.props.type === 'secondary') {
-      return (
-        <TouchableOpacity>
-          <View
-            style={styles.ButtonContainer}
-            backgroundColor={CUSTOM_COLOR.Vermilion}>
-            <Text style={(styles.Text, {color: CUSTOM_COLOR.White})}>
-              {this.props.text}
-            </Text>
-          </View>
-        </TouchableOpacity>
-      );
-    }
-  }
+const CustomButton = props => {
+    return (
+      <TouchableOpacity 
+      style = {[styles.container, props.style, props.type === 'secondary' && styles.secondary]}
+      activeOpacity={0.9}
+      onPress={props.onPress}>
+        <Text style={[styles.text, props.type === 'secondary' && styles.textSecondary]}>
+            {props.content}
+        </Text>
+      </TouchableOpacity>
+    );
 }
 
-export default CustomButton;
-
 const styles = StyleSheet.create({
-  ButtonContainer: {
-    height: 70,
-    width: 314,
-    borderRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center',
-  },
-  Text: {
-    fontSize: 18,
-    fontFamily: FONT_FAMILY.Black,
-  },
+    container: {
+        width: scale.scaleWidth(314),
+        height: scale.scaleHeight(70),
+        borderRadius: scale.scaleWidth(30),
+        alignSelf: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLOR.white,
+    },
+    secondary: {
+        backgroundColor: COLOR.vermilion,
+    },
+    text: {
+        fontFamily: font_family.SFProText.semibold,
+        fontSize: scale.scaleWidth(17),
+        color: COLOR.vermilion,
+    },
+    textSecondary: {
+        color: COLOR.white,
+    }
 });
+
+export default CustomButton

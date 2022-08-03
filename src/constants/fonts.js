@@ -1,14 +1,24 @@
-const Prefix = 'SF-Pro-Rounded-';
+const sfProText = 'SFProText-';
+const sfProRounded = 'SF-Pro-Rounded-';
+const poppins = 'Poppins-';
 
-const FONT_FAMILY = {
-  Black: Prefix + 'Black',
-  Bold: Prefix + 'Bold',
-  Heavy: Prefix + 'Heavy',
-  Light: Prefix + 'Light',
-  Medium: Prefix + 'Medium',
-  Regular: Prefix + 'Regular',
-  Thin: Prefix + 'Thin',
-  Ultralight: Prefix + 'Ultralight',
+const font_family = {
+    SFProText : {
+        regular: sfProText + 'Regular',
+        semibold: sfProText + 'Semibold',
+    },
+    sfProRounded : {
+        bold: sfProRounded + 'Bold',
+        heavy: sfProRounded + 'Heavy',
+        regular: sfProRounded + 'Regular',
+        semibold: sfProRounded + 'Semibold',
+    },
+    Poppins: {
+        semibold: poppins + 'SemiBold',
+    },
+    abel: {
+        regular: 'Abel-Regular',
+    }
 };
 
-export default FONT_FAMILY;
+export default font_family;

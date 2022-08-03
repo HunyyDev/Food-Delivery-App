@@ -1,90 +1,66 @@
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
-const designWidth = 414;
-const designHeight = 896;
-
-function scaleWidth(number) {
-  let scaleNumber;
-  scaleNumber = (number / designWidth) * width;
-  return scaleNumber;
-}
-
-function scaleHeight(number) {
-  let scaleNumber;
-  scaleNumber = (number / designHeight) * height;
-  return scaleNumber;
-}
-
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  ImageBackground,
-  Dimensions,
-} from 'react-native';
-import {IMG_Logo, IMG_Background} from '../../assets/images/images';
-import CUSTOM_COLOR from '../../constants/colors';
-import FONT_FAMILY from '../../constants/fonts';
+import { 
+    SafeAreaView, 
+    StyleSheet,
+    Image,
+    View,
+    Text,
+    ImageBackground
+} from 'react-native'
+import React from 'react'
+import COLOR from '../../constants/colors';
+import {IMG_logo, IMG_background} from '../../assets/images/images'
+import scale from '../../constants/responsive';
+import font_family from '../../constants/fonts';
 import CustomButton from '../../components/CustomButton';
+import Screens from '../../constants/screen';
 
-const OnboardingScreen = () => {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image source={IMG_Logo} style={styles.logo} resizeMode={'contain'} />
-      </View>
-      <>
-        <Text style={styles.title}>{'Food for \nEveryone'}</Text>
-      </>
-      <ImageBackground
-        style={styles.background}
-        source={IMG_Background}
-        resizeMode={'contain'}>
-        <CustomButton type={'primary'} text={'Get started'} />
-      </ImageBackground>
-    </SafeAreaView>
-  );
-};
+const Onboarding = ({navigation}) => {
+    return (
+      <SafeAreaView style={styles.container}>
+        <View style={styles.logoContainer}>
+            <Image source={IMG_logo} style={styles.logoImage} resizeMode='center'/>
+        </View>
+        <Text style={styles.title}>
+            {'Food for\nEveryone'}
+        </Text>
+        <ImageBackground
+        source={IMG_background}
+        style={styles.imgBgr}
+        resizeMode='contain'>
+            <CustomButton content='Get started' onPress={()=> navigation.navigate(Screens.LOGIN)}/>
+        </ImageBackground>
+      </SafeAreaView>
+    );
+}
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
-  },
-  logoContainer: {
-    backgroundColor: CUSTOM_COLOR.White,
-    width: scaleWidth(74),
-    height: scaleWidth(74),
-    borderRadius: scaleWidth(74) / 2,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: scaleHeight(49),
-    marginLeft: scaleWidth(49),
-  },
-  logo: {
-    width: '100%',
-    height: '100%',
-  },
-  title: {
-    fontSize: 65,
-    color: CUSTOM_COLOR.White,
-    fontFamily: FONT_FAMILY.Black,
-    marginLeft: scaleWidth(49),
-    lineHeight: 65,
-    letterSpacing: -0.5,
-  },
-  backgroundContainer: {
-    justifyContent: 'center',
-  },
-  background: {
-    width: Dimensions.get('window').width,
-    height: scaleHeight(600),
-    justifyContent: 'flex-end',
-  },
-});
+    container: {
+        flex: 1,
+        backgroundColor: COLOR.sunsetOrange,
+    },
+    logoContainer: {
+        width: scale.scaleWidth(73),
+        borderRadius: scale.scaleWidth(73/2),
+        backgroundColor: COLOR.white,
+        justifyContent: 'center',
+        alignItems: 'center',
+        overflow: 'hidden',
+        marginTop: scale.scaleHeight(56),
+        marginLeft: scale.scaleWidth(49),
+    },
+    title: {
+        fontFamily: font_family.sfProRounded.heavy,
+        color: COLOR.white,
+        fontSize: scale.scaleWidth(65),
+        letterSpacing: -0.03,
+        lineHeight: scale.scaleHeight(73),
+        marginTop: scale.scaleHeight(31),
+        marginLeft: scale.scaleWidth(49),
+    },
+    imgBgr: {
+        height: scale.scaleHeight(535),
+        justifyContent: 'flex-end',
+    },
+})
 
-export default OnboardingScreen;
+export default Onboarding;
