@@ -8,6 +8,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import {IMG_Avatar} from '../../assets/images';
 import CustomSelection from '../../components/CustomSelection';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const UserScreen = props => {
   const [page, setPage] = useState('Card');
