@@ -25,6 +25,7 @@ import {
 import CustomList from './components/CustomList';
 import CustomCategory from './components/CustomCategory';
 import SCREEN from '../../constants/screens';
+
 export class HomeScreen extends Component {
   constructor(props) {
     super(props);
@@ -39,7 +40,8 @@ export class HomeScreen extends Component {
       <SafeAreaView style={styles.container}>
         <View style={styles.headerSection}>
           <View style={styles.iconHeaderSection}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.openDrawer()}>
               <IC_Menu />
             </TouchableOpacity>
             <TouchableOpacity
