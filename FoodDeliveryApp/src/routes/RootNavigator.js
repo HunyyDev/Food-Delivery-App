@@ -45,12 +45,6 @@ const RootNavigator = () => {
           />
 
           <Stack.Screen
-            name="Loading"
-            component={LoadingScreen}
-            options={{headerShown: false}}
-          />
-
-          <Stack.Screen
             name="DetailProduct"
             component={DetailProduct}
             options={{headerShown: false}}
