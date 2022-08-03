@@ -11,6 +11,7 @@ import DetailProduct from '../screens/product/DetailProduct';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
 import UserScreen from '../screens/user/UserScreen';
 import HistoryScreen from '../screens/history/HistoryScreen';
+import DeliveryScreen from '../screens/delivery/DeliveryScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,13 @@ const RootNavigator = () => {
             component={CartScreen}
             options={{headerShown: false}}
           />
+
+          <Stack.Screen
+            name="Delivery"
+            component={DeliveryScreen}
+            options={{headerShown: false}}
+          />
+
           <Stack.Screen
             name="Payment"
             component={PaymentScreen}

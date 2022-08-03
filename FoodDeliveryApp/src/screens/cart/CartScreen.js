@@ -21,7 +21,10 @@ const CartScreen = props => {
     <SafeAreaView style={styles.container}>
       <View style={{flex: 1, width: '80%'}}>
         <View style={styles.header}>
-          <CustomHeaderGoBack title="Cart" leftOnPress={() => props.navigation.goBack()}/>
+          <CustomHeaderGoBack
+            title="Cart"
+            leftOnPress={() => props.navigation.goBack()}
+          />
         </View>
         <View style={styles.center}>
           <View style={styles.center.guide}>
@@ -74,7 +77,7 @@ const CartScreen = props => {
             type={'secondary'}
             text={'Complete order'}
             onPress={() => {
-              props.navigation.navigate('Payment');
+              props.navigation.navigate('Delivery');
             }}
           />
         </View>
@@ -89,7 +92,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SilverWhite,
-    alignItems:'center',
+    alignItems: 'center',
   },
 
   header: {
@@ -99,13 +102,12 @@ const styles = StyleSheet.create({
   center: {
     flex: 8,
     guide: {
-      height:'5%',
+      height: '5%',
       fontFamily: FONT_FAMILY.Light,
       fonSize: scale(10),
       alignItems: 'flex-end',
       flexDirection: 'row',
       justifyContent: 'center',
-      // backgroundColor: 'red',
     },
     main: {
       flex: 1,
