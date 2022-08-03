@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     textBreadcrumb: {
       color: CUSTOM_COLOR.BLACK,
       fontFamily: 'FontsFree-Net-Abel-Regular',
-      fontSize: normalize(23),
+      fontSize: normalize(21),
     },
   },
 });

@@ -16,6 +16,7 @@ class CustomButton extends Component {
         style={[
           styles.customInputContainer,
           {
+            height: scaleY(70),
             backgroundColor:
               this.props.type === 'primary'
                 ? CUSTOM_COLOR.WHITE
@@ -25,12 +26,12 @@ class CustomButton extends Component {
         onPress={this.props.onPress}>
         <Text
           style={{
+            fontFamily: 'FontsFree-Net-Abel-Regular',
             color:
               this.props.type === 'primary'
                 ? CUSTOM_COLOR.VERMILION
                 : CUSTOM_COLOR.WHITE,
-            fontSize: normalize(21),
-            fontWeight: 'bold',
+            fontSize: normalize(17),
           }}>
           {this.props.title}
         </Text>
@@ -44,9 +45,11 @@ const styles = StyleSheet.create({
     width: scaleX(314),
     alignItems: 'center',
     alignSelf: 'center',
-    paddingVertical: scaleY(20),
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     overflow: 'hidden',
-    borderRadius: normalize(35),
+    borderRadius: normalize(30),
   },
 });
 

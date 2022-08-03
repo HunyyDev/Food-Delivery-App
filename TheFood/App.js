@@ -9,9 +9,6 @@ import RootNavigator from './src/routes/RootNavigator.js';
 const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
-      {/* <OnBoardingScreen /> */}
-      {/* // <LoginScreen /> */}
-      {/* <HomeScreen /> */}
       <RootNavigator />
     </SafeAreaView>
   );

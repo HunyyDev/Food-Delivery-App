@@ -13,6 +13,7 @@ import ProfileScreen from '../screens/profile';
 import MyProfileScreen from '../screens/myProfile';
 import HistoryScreen from '../screens/history';
 import CartScreen from '../screens/cart';
+import CheckoutDeliveryScreen from '../screens/delivery';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,10 @@ const RootNavigator = props => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name={SCREEN_NAME.CHECKOUT_DELIVERY_SCREEN}
+          component={CheckoutDeliveryScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
           name={SCREEN_NAME.HISTORY_SCREEN}
           component={HistoryScreen}
           options={{headerShown: false}}></Stack.Screen>
@@ -28,7 +33,7 @@ const RootNavigator = props => {
           name={SCREEN_NAME.MYPROFILE_SCREEN}
           component={MyProfileScreen}
           options={{headerShown: false}}></Stack.Screen>
-          <Stack.Screen
+        <Stack.Screen
           name={SCREEN_NAME.CART_SCREEN}
           component={CartScreen}
           options={{headerShown: false}}></Stack.Screen>
