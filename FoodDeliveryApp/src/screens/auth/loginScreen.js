@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   TextInput,
 } from 'react-native';
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_Logo} from '../../assets/images';
 import scale from '../../constants/responsive';
@@ -21,6 +21,7 @@ export default class LoginScreen extends Component {
   state = {
      email:null,
      password: null,
+     confirm:null,
      page: "",
    };
   constructor(props) {
@@ -53,10 +54,12 @@ export default class LoginScreen extends Component {
       }
       if (password !== null){
         this.setState({password})
+
       }
     } catch(e) {
     }
   };
+
   render() {
     return (
       <>
@@ -120,11 +123,31 @@ export default class LoginScreen extends Component {
               </View>
             ) : (
               <View>
-                <CustomInput label={'Email address'} />
+                {/* <CustomInput label={'Email address'} /> */}
+                <Text style={styles.textInput}>{this.props.label}</Text>
+                <TextInput
+                  placeholder={'Email address'}
+                  style={styles.inputContainer}
+                  onChangeText = {val => this.setState({email:val})}
+                />
                 {/* Password */}
-                <CustomInput label={'Password'} secureText={true} />
+                {/* <CustomInput label={'Password'} secureText={true} /> */}
+                <Text style={styles.textInput}>{this.props.label}</Text>
+                <TextInput
+                  secureText={true}
+                  placeholder={'Password'}
+                  style={styles.inputContainer}
+                  onChangeText = {val => this.setState({password:val})}
+                />
                 {/* Confirm Password */}
-                <CustomInput label={'Confirm Password'} secureText={true} />
+                {/* <CustomInput label={'Confirm Password'} secureText={true} /> */}
+                <Text style={styles.textInput}>{this.props.label}</Text>
+                <TextInput
+                  secureText={true}
+                  placeholder={'Confirm Password'}
+                  style={styles.inputContainer}
+                  onChangeText = {val => this.setState({confirm:val})}
+                />
               </View>
             )}
           </View>
@@ -142,12 +165,16 @@ export default class LoginScreen extends Component {
                 type={'secondary'}
                 text={'Login'}
               />)
-            ) : (
-              <CustomButton
+            ) : ((this.state.email!==null && this.state.password !==null  && this.state.password===this.state.confirm)?
+              (<CustomButton
                 type={'secondary'}
                 text={'Sign Up'}
                 onPress={() => this.props.navigation.navigate('Home')}
-              />
+              />):
+              (<CustomButton
+                type={'secondary'}
+                text={'Sign Up'}
+              />)
             )}
           </View>
         </SafeAreaView>
