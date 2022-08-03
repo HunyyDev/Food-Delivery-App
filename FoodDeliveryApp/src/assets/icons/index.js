@@ -15,5 +15,6 @@ export {default as IC_circleSilver} from './circleSilver.png';
 export {default as IC_Paypal} from './IC_Paypal.png';
 export {default as IC_Bank} from './IC_Bank.png';
 export {default as IC_Card} from './IC_Card.png';
-export {default as IC_NonSelect} from './IC_NonSelect.png'
-export {default as IC_Select} from './IC_Select.png'
+export {default as IC_NonSelect} from './IC_NonSelect.png';
+export {default as IC_Select} from './IC_Select.png';
+export {default as IC_EmptyHistory} from './iconEmptyHistory.png';
