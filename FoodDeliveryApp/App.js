@@ -1,4 +1,3 @@
-import {Text, View} from 'react-native';
 import React, {Component} from 'react';
 import LoadingScreen from './src/screens/loading/LoadingScreen';
 import RootNavigator from './src/routes/RootNavigator';
