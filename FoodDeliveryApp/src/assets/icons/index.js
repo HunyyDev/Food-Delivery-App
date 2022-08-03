@@ -8,9 +8,12 @@ export {default as IC_Back} from './chevron-left.png';
 export {default as IC_Home} from './IC_Home';
 export {default as IC_SearchRaw} from './iconSearch.png';
 export {default as IC_Swipe} from './swipeIcon.png';
-export {default as IC_Bank} from './bankAccount.png';
-export {default as IC_Card} from './cardIcon.png';
 export {default as IC_headHeart} from './heart.png';
 export {default as IC_Forward} from './forward.png';
 export {default as IC_circleOrange} from './circleOrange.png';
 export {default as IC_circleSilver} from './circleSilver.png';
+export {default as IC_Paypal} from './IC_Paypal.png';
+export {default as IC_Bank} from './IC_Bank.png';
+export {default as IC_Card} from './IC_Card.png';
+export {default as IC_NonSelect} from './IC_NonSelect.png'
+export {default as IC_Select} from './IC_Select.png'

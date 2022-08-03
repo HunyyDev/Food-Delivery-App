@@ -11,6 +11,7 @@ const CUSTOM_COLOR = {
   TahitiGold: '#F47B0A',
   FrenchRose: '#EB4796',
   AthensGray: '#F6F6F9',
+  Blue: '#0038FF',
 };
 
 export default CUSTOM_COLOR;
