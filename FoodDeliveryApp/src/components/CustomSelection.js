@@ -1,5 +1,5 @@
 import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import {IC_NonSelect, IC_Select} from '../assets/icons/index';
 import scale from '../constants/responsive';
 import FONT_FAMILY from '../constants/fonts';
@@ -16,10 +16,12 @@ const CustomSelection = props => {
       ) : (
         <Image source={IC_NonSelect} style={styles.dot} />
       )}
+      {props.icon !== undefined ? (
+        <View style={[styles.iconContainer, {backgroundColor: props.color}]}>
+          <Image source={props.icon} />
+        </View>
+      ) : null}
 
-      <View style={[styles.iconContainer, {backgroundColor: props.color}]}>
-        <Image source={props.icon} />
-      </View>
       <Text style={{fontSize: scale(17), fontFamily: FONT_FAMILY.Medium}}>
         {props.label}
       </Text>

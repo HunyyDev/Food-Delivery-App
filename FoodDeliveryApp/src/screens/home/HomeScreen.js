@@ -34,7 +34,12 @@ export class HomeScreen extends Component {
       initialBottomNav: 'Home',
     };
   }
-
+  shouldComponentUpdate() {
+    if (this.state.initialBottomNav !== 'Home') {
+      return true;
+    }
+    return false;
+  }
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -52,16 +57,11 @@ export class HomeScreen extends Component {
           </View>
           <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
 
-          {/* <Searchbar
-              placeholder="Search"
-              icon={IC_SearchRaw}
-              style={styles.searchBar}
-            /> */}
           <View style={styles.searchBar}>
             <View style={{marginLeft: scale(35), marginRight: scale(16)}}>
               <IC_Search />
             </View>
-            <TextInput placeholder="Search" />
+            <TextInput placeholder="Search" style={{flex: 1}} />
           </View>
         </View>
 
@@ -173,6 +173,7 @@ export class HomeScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({initialBottomNav: 'History'});
+              this.props.navigation.navigate('History');
             }}>
             <IC_History
               fill={

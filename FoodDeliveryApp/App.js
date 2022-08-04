@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import React from 'react';
+import React, {Component} from 'react';
+import LoadingScreen from './src/screens/loading/LoadingScreen';
 import RootNavigator from './src/routes/RootNavigator';
 import DrawerNavigator from './src/routes/DrawerNav';
 

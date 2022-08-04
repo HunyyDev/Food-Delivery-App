@@ -23,3 +23,4 @@ export {default as IC_OfferPromo} from './IC_OfferPromo';
 export {default as IC_PrivacyPolicy} from './IC_PrivacyPolicy';
 export {default as IC_Security} from './IC_Security';
 export {default as IC_Arrow} from './IC_Arrow';
+export {default as IC_EmptyHistory} from './iconEmptyHistory.png';

@@ -8,7 +8,6 @@ import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import {IMG_Avatar} from '../../assets/images';
 import CustomSelection from '../../components/CustomSelection';
-import AsyncStorage from '@react-native-community/async-storage';
 
 const UserScreen = props => {
   const [page, setPage] = useState('Card');
@@ -40,7 +39,13 @@ const UserScreen = props => {
             </Text>
             <TouchableOpacity
               style={styles.main.infoContainer.user}
-              onPress={() => props.navigation.navigate('Profile', {name: name, email: email, address: address})}>
+              onPress={() =>
+                props.navigation.navigate('Profile', {
+                  name: name,
+                  email: email,
+                  address: address,
+                })
+              }>
               <View style={styles.main.infoContainer.user.avatar}>
                 <Image
                   source={IMG_Avatar}
