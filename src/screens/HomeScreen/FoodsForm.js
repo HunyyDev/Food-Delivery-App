@@ -25,15 +25,10 @@ export class Foods extends Component {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.contentContainer}>
             <TouchableOpacity
-<<<<<<< HEAD
               style={styles.listContainer}
               onPress={() => {
                 this.props.navigation.navigate('ProductDetail');
               }}>
-=======
-              onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-              style={styles.listContainer}>
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
               <Image style={styles.foodImage} source={IMG_Food2} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
@@ -41,18 +36,18 @@ export class Foods extends Component {
 <<<<<<< HEAD
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
-<<<<<<< HEAD
-            <TouchableOpacity style={styles.listContainer}>
-=======
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
+<<<<<<< HEAD
 >>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
 =======
               <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
             </View>
             <View style={styles.listContainer}>
 >>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
+=======
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
               <Image style={styles.foodImage} source={IMG_Food} />
               <Text style={styles.textFoodContainer}>
                 {'Veggie \ntomato mix'}
@@ -60,18 +55,18 @@ export class Foods extends Component {
 <<<<<<< HEAD
               <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
             </TouchableOpacity>
-<<<<<<< HEAD
-            <TouchableOpacity style={styles.listContainer}>
-=======
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate('NoInternetScreen')}
               style={styles.listContainer}>
+<<<<<<< HEAD
 >>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
 =======
               <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
             </View>
             <View style={styles.listContainer}>
 >>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
+=======
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
               <Image style={styles.foodImage} source={IMG_Food3} />
               <Text style={styles.textFoodContainer}>
                 {'Spicy \nfish sauce'}

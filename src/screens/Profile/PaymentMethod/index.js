@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable react-native/no-inline-styles */
+=======
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
 import {
   StyleSheet,
   Text,
@@ -9,7 +12,11 @@ import {
   FlatList,
 } from 'react-native';
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import scale from '../../../assets/constants/reponsive';
+=======
+import scale from '../../../assets/constants/responsive';
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
 import CUSTOM_COLOR from '../../../assets/constants/colors';
 import FONT_FAMILY from '../../../assets/constants/fonts';
 import {
@@ -58,7 +65,11 @@ const Payment = props => {
   };
   return (
     <SafeAreaView style={styles.container}>
+<<<<<<< HEAD
       {/* <View style={styles.titleContainer}>
+=======
+      <View style={styles.titleContainer}>
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
         <Text style={styles.textTitle}>{'My profile'}</Text>
         <TouchableOpacity style={styles.backButton} onPress={onBack}>
           <Image source={IMG_GoBack} style={styles.iconBack} />
@@ -80,6 +91,7 @@ const Payment = props => {
       <View style={styles.backgroundInfoPayment}>
         <Text style={styles.division}>{'Payment Method'}</Text>
         <View style={styles.IndexPayment}>
+<<<<<<< HEAD
           <View style={styles.backgroundLeft}> */}
       <FlatList
         data={DATA}
@@ -88,6 +100,16 @@ const Payment = props => {
         extraData={selectedId}
       />
       {/* </View>
+=======
+          <View style={styles.backgroundLeft}>
+            <FlatList
+              data={DATA}
+              renderDot={renderDot}
+              keyExtractor={dot => dot.id}
+              extraData={selectedId}
+            />
+          </View>
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
           <View style={styles.backgroundRight}>
             <View style={styles.backgroundMethod}>
               <View style={styles.Method}>
@@ -107,6 +129,10 @@ const Payment = props => {
             </View>
             <View style={styles.backgroundMethod}>
               <View
+<<<<<<< HEAD
+=======
+                // eslint-disable-next-line react-native/no-inline-styles
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
                 style={{
                   alignSelf: 'flex-start',
                   justifyContent: 'center',
@@ -129,7 +155,11 @@ const Payment = props => {
           style={styles.buttonSelection}>
           <Text style={styles.SelectionText}>{'Update'}</Text>
         </TouchableOpacity>
+<<<<<<< HEAD
       </View> */}
+=======
+      </View>
+>>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
     </SafeAreaView>
   );
 };

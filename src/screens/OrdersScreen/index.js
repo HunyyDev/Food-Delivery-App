@@ -2,12 +2,12 @@ import {Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CUSTOM_COLOR from '../../assets/constants/colors';
-import {IMG_Oders} from '../../assets/images';
-import scale from '../../assets/constants/reponsive';
+import {IMG_Orders} from '../../assets/images';
+import scale from '../../assets/constants/responsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
 import Icon_Back from '../../assets/images';
 
-export class OdersScreen extends Component {
+export class OrdersScreen extends Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -16,8 +16,8 @@ export class OdersScreen extends Component {
           onPress={() => this.props.navigation.navigate('HomeScreen')}>
           <Image source={Icon_Back} />
         </TouchableOpacity>
-        <Text style={styles.headerContainer}>{'Oders'}</Text>
-        <Image style={styles.imageContainer} source={IMG_Oders} />
+        <Text style={styles.headerContainer}>{'Orders'}</Text>
+        <Image style={styles.imageContainer} source={IMG_Orders} />
         <Text style={styles.textContainer}>{'No orders yet'}</Text>
         <Text style={styles.smallTextContainer}>
           {'Hit the orange button down\nbelow to Create an order'}
@@ -27,12 +27,12 @@ export class OdersScreen extends Component {
   }
 }
 
-export default OdersScreen;
+export default OrdersScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundcolor: CUSTOM_COLOR.White,
+    backgroundColor: CUSTOM_COLOR.White,
     justifyContent: 'center',
     alignItems: 'center',
   },
