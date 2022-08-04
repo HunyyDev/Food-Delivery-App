@@ -12,6 +12,7 @@ import MyProfileScreen from '../screens/profile/MyProfileScreen';
 import UserScreen from '../screens/user/UserScreen';
 import HistoryScreen from '../screens/history/HistoryScreen';
 import DeliveryScreen from '../screens/delivery/DeliveryScreen';
+import SearchScreen from '../screens/search/SearchScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,12 @@ const RootNavigator = () => {
           <Stack.Screen
             name="Profile"
             component={MyProfileScreen}
+            options={{headerShown: false}}
+          />
+
+          <Stack.Screen
+            name="Search"
+            component={SearchScreen}
             options={{headerShown: false}}
           />
 
