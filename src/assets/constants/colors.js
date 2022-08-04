@@ -7,5 +7,7 @@ const CUSTOM_COLOR = {
   Concrete: '#F2F2F2',
   GoldDrop: '#F47B0A',
   RaspberryPink: '#EB4796',
+  UFOGreen: '#44E868',
+  BrightGray: '#EDEDED',
 };
 export default CUSTOM_COLOR;
