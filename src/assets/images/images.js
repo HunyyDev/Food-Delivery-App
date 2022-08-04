@@ -7,7 +7,3 @@ export {default as IMG_offline} from '../images/offline.png';
 export {default as IMG_avatar} from '../images/avatar.png';
 export {default as IMG_loadingBgr} from '../images/loadingBgr.jpg';
 export {default as IMG_logoFull} from '../images/logoFull.png';
-
-
-
-

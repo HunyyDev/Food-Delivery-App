@@ -15,10 +15,3 @@ export {default as ICON_back} from './Back.png';
 export {default as ICON_card} from './card.png';
 export {default as ICON_bank} from './bank.png';
 export {default as ICON_paypal} from './paypal.png';
-
-
-
-
-
-
-
