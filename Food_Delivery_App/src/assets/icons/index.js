@@ -6,3 +6,5 @@ export {default as ICON_GLASS} from './Glass.png';
 export {default as ICON_MENU} from './Menu.png';
 export {default as ICON_SHOPPING} from './shopping-cart.png';
 export {default as ICON_USER} from './user.png';
+export {default as IC_History} from './IC_History';
+export {default as IC_GoBack} from './IC_GoBack';

@@ -12,7 +12,7 @@ const CustomButton = props => {
   });
 
   const PressHandler = () => {
-    props.navigationnn.navigate(props.name);
+    props.navigation.navigate(props.name);
   };
   return (
     <Text

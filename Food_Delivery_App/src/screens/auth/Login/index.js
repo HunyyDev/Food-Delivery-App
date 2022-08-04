@@ -61,9 +61,8 @@ const LoginScreen = ({navigation}) => {
       <CustomButton
         title={page}
         type="secondary"
-        alert="Login button's event handle"
         name='HS'
-        navigationnn={navigation}
+        navigation={navigation}
       />
     </SafeAreaView>
   );

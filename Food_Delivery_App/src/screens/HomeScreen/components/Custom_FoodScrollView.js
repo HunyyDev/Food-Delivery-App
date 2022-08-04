@@ -46,7 +46,7 @@ export default class Custom_FoodScrollView extends Component {
                 style={styles.touchContainer}
                 // onPress = {() => {alert('Tên món ăn: '+item.foodName);}}
                 onPress={() => {
-                  this.props.navigationnn.navigate('FIS');
+                  this.props.navigation.navigate('FIS');
                 }}>
                 <Custom_FoodBoard
                   img={item.img}

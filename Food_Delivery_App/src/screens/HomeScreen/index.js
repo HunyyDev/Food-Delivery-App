@@ -70,7 +70,7 @@ export default class HomeScreen extends Component {
         <Custom_IconButton
           style={styles.menuContainer}
           icon={ICON_MENU}
-          navigationnn={this.props.navigation}
+          navigation={this.props.navigation}
           name={'HIS'}
         />
         <></>
@@ -78,7 +78,7 @@ export default class HomeScreen extends Component {
         <Custom_IconButton
           style={styles.shoppingContainer}
           icon={ICON_SHOPPING}
-          navigationnn={this.props.navigation}
+          navigation={this.props.navigation}
           name={'CS'}
         />
         <></>
@@ -93,8 +93,8 @@ export default class HomeScreen extends Component {
           placeholderColor={CUSTOM_COLORS.Black}
           style={styles.searchInput}
           hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
-          navigationnnn={this.props.navigation}
-          namee={'SS'}
+          navigation={this.props.navigation}
+          name={'SS'}
         />
         <></>
         {/* See more */}
@@ -105,7 +105,7 @@ export default class HomeScreen extends Component {
         {/* Foods */}
         <Custom_FoodScrollView
         style={{top: scale(420)}}
-        navigationnn={this.props.navigation}
+        navigation={this.props.navigation}
       />
       <Custom_CategoryScrollView />
       <></>
@@ -113,22 +113,22 @@ export default class HomeScreen extends Component {
       <View style={styles.buttonContainer}>
         <Custom_IconButton
           icon={ICON_HOUSE}
-          navigationnn={this.props.navigation}
+          navigation={this.props.navigation}
           name={'HIS'}
         />
         <Custom_IconButton
           icon={ICON_HEART}
-          navigationnn={this.props.navigation}
+          navigation={this.props.navigation}
           name={'HIS'}
         />
         <Custom_IconButton
           icon={ICON_USER}
-          navigationnn={this.props.navigation}
-          name={'MPS'}
+          navigation={this.props.navigation}
+          name={'MyInforScreen'}
         />
         <Custom_IconButton
           icon={ICON_CLOCK}
-          navigationnn={this.props.navigation}
+          navigation={this.props.navigation}
           name={'HIS'}
         />
       </View>

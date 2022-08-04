@@ -16,7 +16,7 @@ export default class Custom_IconButton extends Component {
         style={styles.touchableContainer(this.props)}
         // onPress={this.props.onPress}
         onPress={() => {
-          this.props.navigationnn.navigate(this.props.name);
+          this.props.navigation.navigate(this.props.name);
         }}>
         <Image source={this.props.icon} style={styles.iconContainer} />
       </TouchableOpacity>

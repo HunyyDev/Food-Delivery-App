@@ -48,7 +48,7 @@ const App = ({navigation}) => {
 
           <>{/* Button */}</>
           
-        <CustomButton title='Get started' type={'primary'} alert='primary' navigationnn={navigation} name='LG' />
+        <CustomButton title='Get started' type={'primary'} alert='primary' navigation={navigation} name='LG' />
       </ScrollView>
     </SafeAreaView>
   );

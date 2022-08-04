@@ -9,6 +9,7 @@ const FONT_FAMILY = {
   SFBold: SF + 'Bold',
   SFProTextRegular: SFProText + 'Regular',
   Inter: 'Inter-Regular',
+  Abel:'Abel-Regular',
 };
 export default FONT_FAMILY;
 
