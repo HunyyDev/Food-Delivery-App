@@ -32,23 +32,28 @@ const App = ({navigation}) => {
         // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{flexGrow: 1}}
         style={[styles.scrollView, {backgroundColor: value}]}>
-      
-          <>{/* Logo */}</>
-          <View style={[styles.logoContainer, {backgroundColor: value}]}>
-            <Image source={IMG_LOGO} style={styles.logo} />
-          </View>
+        <>{/* Logo */}</>
+        <View style={[styles.logoContainer, {backgroundColor: value}]}>
+          <Image source={IMG_LOGO} style={styles.logo} />
+        </View>
 
-          <>{/* Title */}</>
-          <Text style={styles.Text}>{'Food for \nEveryone'}</Text>
+        <>{/* Title */}</>
+        <Text style={styles.Text}>{'Food for \nEveryone'}</Text>
 
-          <>{/* background */}</>
-          <View style={[styles.backgroundContainer, {backgroundColor: value}]}>
-            <Image source={IMG_BACKGROUND} style={styles.background} />
-          </View>
+        <>{/* background */}</>
+        <View style={[styles.backgroundContainer, {backgroundColor: value}]}>
+          <Image source={IMG_BACKGROUND} style={styles.background} />
+        </View>
 
-          <>{/* Button */}</>
-          
-        <CustomButton title='Get started' type={'primary'} alert='primary' navigationnn={navigation} name='LG' />
+        <>{/* Button */}</>
+
+        <CustomButton
+          title="Get started"
+          type={'primary'}
+          alert="primary"
+          navigation={navigation}
+          name="LG"
+        />
       </ScrollView>
     </SafeAreaView>
   );

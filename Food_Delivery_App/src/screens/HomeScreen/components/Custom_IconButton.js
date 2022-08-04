@@ -6,7 +6,6 @@ import scale from '../../../constants/responsive';
 export default class Custom_IconButton extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
   navigate = location => {
     this.props.navigation.navigate(location);

@@ -12,7 +12,7 @@ const CustomButton = props => {
   });
 
   const PressHandler = () => {
-    props.navigationnn.navigate(props.name);
+    props.navigation.navigate(props.name);
   };
   return (
     <Text
@@ -21,7 +21,7 @@ const CustomButton = props => {
         styles.buttonStyle,
         {backgroundColor: buttonColor.background, color: buttonColor.text},
       ]}
-      onPress={(PressHandler)}>
+      onPress={PressHandler}>
       {props.title}
     </Text>
   );
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     left: 50,
     right: 50,
-    bottom:41,
+    bottom: 41,
   },
 });
 

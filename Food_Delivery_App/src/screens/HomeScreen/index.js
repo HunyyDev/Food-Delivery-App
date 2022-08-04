@@ -20,14 +20,24 @@ import {
   ICON_USER,
   ICON_MENU,
   ICON_SHOPPING,
+  ICON_PROFILELOGO,
+  ICON_CART2,
+  ICON_TAG,
+  ICON_PAPER,
+  ICON_SHIELD,
+  ICON_LEFTTORIGHTARROW,
 } from '../../assets/icons';
+import {IMG_BIGUSER} from '../../assets/images';
 
 import scale from '../../constants/responsive';
 import foodBoard from './foodBoard';
 import Custom_FoodScrollView from '../HomeScreen/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../HomeScreen/components/Custom_CategoryScrollView';
+
 import OnBoardingScreen from '../OnBoardingScreen';
 import Login from '../auth/Login';
+import MyProScreen from '../myprofile/MyProfile';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
@@ -37,6 +47,89 @@ import {
 import {cos} from 'react-native-reanimated';
 
 const Drawer = createDrawerNavigator();
+
+const CustomDrawerButton = props => {
+  return (
+    <View style={styles.customDrawerButtonContainer}>
+      <Pressable
+        style={({pressed}) =>
+          pressed
+            ? [styles.pressed, styles.pressContainer]
+            : styles.pressContainer
+        }
+        onPress={() => {
+          return props.navigation.navigate(props.name);
+        }}>
+        <Image source={props.source} style={styles.customDrawerImage} />
+        <View style={styles.customDrawerTextContainer}>
+          <Text style={styles.customDrawerText}>{props.text}</Text>
+        </View>
+      </Pressable>
+    </View>
+  );
+};
+
+const CustomDrawer = props => {
+  return (
+    <DrawerContentScrollView contentContainerStyle={styles.drawerContainer}>
+      {/* AVATAR */}
+      <Pressable
+        style={({pressed}) => {
+          if (pressed) return styles.pressed;
+        }}
+        onPress={() => {
+          return props.navigation.navigate('MPS');
+        }}>
+        <Image source={IMG_BIGUSER} style={styles.bigUser} />
+      </Pressable>
+
+      {/* CUSTOMDRAWERBUTTON */}
+      <CustomDrawerButton
+        source={ICON_PROFILELOGO}
+        text="Profile"
+        name={'MPS'}
+        navigation={props.navigation}
+      />
+      <CustomDrawerButton
+        source={ICON_CART2}
+        text="orders"
+        name={'CS'}
+        navigation={props.navigation}
+      />
+      <CustomDrawerButton
+        source={ICON_TAG}
+        text="offer and promo"
+        name={'MPS'}
+        navigation={props.navigation}
+      />
+      <CustomDrawerButton
+        source={ICON_PAPER}
+        text="Privacy policy"
+        name={'MPS'}
+        navigation={props.navigation}
+      />
+      <CustomDrawerButton
+        source={ICON_SHIELD}
+        text="Security"
+        name={'MPS'}
+        navigation={props.navigation}
+      />
+
+      {/* SIGNOUT */}
+      <Pressable
+        style={({pressed}) => {
+          if (pressed) return [styles.pressed, styles.signOutContainer];
+          else return styles.signOutContainer;
+        }}
+        onPress={() => {
+          return props.navigation.navigate('LG');
+        }}>
+        <Text style={styles.customDrawerText}>{'Sign-out'}</Text>
+        <Image source={ICON_LEFTTORIGHTARROW} />
+      </Pressable>
+    </DrawerContentScrollView>
+  );
+};
 
 const MainHomeScreen = props => {
   return (
@@ -75,7 +168,7 @@ const MainHomeScreen = props => {
       <TouchableOpacity style={styles.seeMore}>
         <Text style={styles.textSeeMore}>{'see more'}</Text>
       </TouchableOpacity>
-      <></>
+
       {/* Foods */}
       <Custom_FoodScrollView
         style={{top: scale(420)}}
@@ -115,15 +208,6 @@ export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
   }
-
-  customDrawer() {
-    return (
-      <DrawerContentScrollView contentContainerStyle={styles.drawerContainer}>
-        <Text>hello</Text>
-      </DrawerContentScrollView>
-    );
-  }
-
   render() {
     return (
       <Drawer.Navigator
@@ -133,12 +217,8 @@ export default class HomeScreen extends Component {
           drawerStyle: {width: scale(259)},
           swipeEdgeWidth: scale(50),
         }}
-        drawerContent={this.customDrawer}>
-        <Drawer.Screen
-          name="Home"
-          component={MainHomeScreen}
-          // options={{navigation: this.props.navigation}}
-        />
+        drawerContent={CustomDrawer}>
+        <Drawer.Screen name="MainHomeScreen" component={MainHomeScreen} />
       </Drawer.Navigator>
     );
   }
@@ -214,5 +294,60 @@ const styles = StyleSheet.create({
     flex: 1,
     flexGrow: 1,
     backgroundColor: CUSTOM_COLORS.SunsetOrange,
+    alignItems: 'center',
+  },
+
+  bigUser: {
+    marginTop: scale(65),
+    marginBottom: scale(21),
+  },
+
+  // {customDrawerButton}
+  customDrawerButtonContainer: {
+    width: '100%',
+    overflow: 'hidden',
+  },
+
+  pressContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  pressed: {
+    opacity: 0.75,
+  },
+
+  customDrawerImage: {
+    width: scale(22),
+    height: scale(22),
+  },
+
+  customDrawerTextContainer: {
+    width: scale(132),
+    height: scale(78),
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+
+    borderBottomColor: CUSTOM_COLORS.Athens_Gray,
+    borderBottomWidth: 1,
+  },
+
+  customDrawerText: {
+    textAlign: 'center',
+    color: CUSTOM_COLORS.White,
+    fontSize: scale(17),
+    lineHeight: scale(25.5),
+  },
+
+  // SIGNOUT
+  signOutContainer: {
+    width: scale(110),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    position: 'absolute',
+    left: scale(40),
+    bottom: scale(36),
   },
 });
