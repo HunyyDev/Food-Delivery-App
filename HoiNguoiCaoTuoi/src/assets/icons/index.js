@@ -16,4 +16,4 @@ export {default as IMG_security} from './Security.png';
 export {default as IMG_swipe} from './Swipe.png';
 export {default as IMG_time} from './time.png';
 export {default as IMG_user} from './user.png';
-// export {default as IMG_Logo1} from './Vector.png';
+export {default as IMG_Logo1} from './Vector.png';
