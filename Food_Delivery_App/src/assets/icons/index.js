@@ -8,3 +8,10 @@ export {default as ICON_SHOPPING} from './shopping-cart.png';
 export {default as ICON_USER} from './user.png';
 export {default as IC_History} from './IC_History';
 export {default as IC_GoBack} from './IC_GoBack';
+//HomeScreenDrawer icon
+export {default as ICON_PROFILELOGO} from './profileLogo.png';
+export {default as ICON_CART2} from './Cart2.png';
+export {default as ICON_SHIELD} from './Shield.png';
+export {default as ICON_TAG} from './Tag.png';
+export {default as ICON_PAPER} from './Paper.png';
+export {default as ICON_LEFTTORIGHTARROW} from './ToRight.png';

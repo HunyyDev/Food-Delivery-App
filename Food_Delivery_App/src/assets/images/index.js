@@ -6,3 +6,4 @@ export {default as IMG_LINE} from './line-3.png';
 export {default as IMG_BANK} from './bank.png';
 export {default as IMG_CARD} from './card.png';
 export {default as IMG_AVATAR} from './avatar.png';
+export {default as IMG_BIGUSER} from './biguser.png';
