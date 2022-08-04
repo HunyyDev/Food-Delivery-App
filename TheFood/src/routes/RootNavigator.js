@@ -14,6 +14,7 @@ import MyProfileScreen from '../screens/myProfile';
 import HistoryScreen from '../screens/history';
 import CartScreen from '../screens/cart';
 import CheckoutDeliveryScreen from '../screens/delivery';
+import CheckoutPaymentScreen from '../screens/payment';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,10 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.CHECKOUT_PAYMENT_SCREEN}
+          component={CheckoutPaymentScreen}
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.CHECKOUT_DELIVERY_SCREEN}
           component={CheckoutDeliveryScreen}

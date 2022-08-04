@@ -14,7 +14,7 @@ import RadioForm, {
 
 const ProfileScreen = props => {
   var radio_props = [
-    {id: 0, label: 'Card', value: 0},
+    {id: 0, label: 'Card', value: 1},
     {id: 1, label: 'Bank account', value: 0},
     {id: 2, label: 'Paypal', value: 0},
   ];
@@ -58,18 +58,18 @@ const ProfileScreen = props => {
                   <RadioButtonInput
                     obj={obj}
                     index={obj.id}
-                    isSelected={{}}
+                    isSelected={obj.value}
                     borderWidth={2}
                     initial={0}
-                    buttonSize={normalize(15)}
-                    buttonOuterSize={normalize(25)}
+                    buttonSize={normalize(10)}
+                    buttonOuterSize={normalize(20)}
                     buttonColor={CUSTOM_COLOR.VERMILION}
                     buttonInnerColor={CUSTOM_COLOR.VERMILION}
                     buttonOuterColor={CUSTOM_COLOR.VERMILION}
                     selectedButtonColor={CUSTOM_COLOR.VERMILION}
                     buttonWrapStyle={{
-                      marginLeft: scaleX(20),
-                      marginTop: scaleY(20),
+                      marginLeft: scaleX(21),
+                      marginTop: scaleY(31),
                     }}
                     onPress={() => {}}
                   />
@@ -93,50 +93,26 @@ const ProfileScreen = props => {
                     index={obj.id}
                     labelHorizontal={true}
                     labelStyle={{
+                      fontFamily: 'FontsFree-Net-Abel-Regular',
                       fontSize: normalize(17),
-                      marginTop: scaleY(15),
-                      paddingBottom: scaleY(25),
+                      marginTop: scaleY(20),
                       color: CUSTOM_COLOR.BLACK,
-                      paddingLeft: scaleY(20),
+                      marginLeft: scaleX(11),
                     }}
                   />
                 </RadioButton>
                 <View
-                  // key={obj.id}
                   style={{
                     borderBottomWidth: obj.id !== 2 ? 1 : 0,
                     borderColor: 'rgba(0, 0, 0, 0.3)',
-                    width: scaleX(200),
+                    width: scaleX(232),
+                    marginTop: scaleY(8),
                     alignSelf: 'center',
                   }}></View>
               </React.Fragment>
             ))}
           </RadioForm>
         </View>
-        <View style={styles.paymentMethod}>
-          <Text style={styles.paymentMethod.text}>Payment Method</Text>
-          <View>
-            <View>
-              <RadioForm
-                radio_props={radio_props}
-                initial={0}
-                buttonColor={CUSTOM_COLOR.VERMILION}
-                buttonSize={10}
-                buttonOuterSize={20}
-                selectedButtonColor={CUSTOM_COLOR.VERMILION}
-                // labelColor={'#50C900'}
-                onPress={() => {}}
-              />
-            </View>
-            <TouchableOpacity>
-              <Text>Bank account</Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text>Paypal</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-        <CustomButton type="secondary" title="Update" />
       </View>
       <View style={styles.btnUpdate}>
         <CustomButton type="secondary" title="Update" />
@@ -148,72 +124,77 @@ const ProfileScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: scaleY(60),
     backgroundColor: CUSTOM_COLOR.ATHENS_GRAY,
     position: 'relative',
   },
   information: {
-    width: normalize(300),
+    width: normalize(315),
     alignSelf: 'center',
     text: {
+      fontFamily: 'FontsFree-Net-Abel-Regular',
       color: CUSTOM_COLOR.BLACK,
-      fontSize: normalize(20),
-      marginTop: scaleY(60),
-      marginBottom: scaleY(20),
+      fontSize: normalize(17),
+      marginTop: scaleY(54),
+      marginBottom: scaleY(10),
     },
     profile: {
       display: 'flex',
       flexDirection: 'row',
-      paddingHorizontal: scaleY(16),
-      paddingTop: scaleY(20),
-      paddingBottom: scaleY(30),
       backgroundColor: CUSTOM_COLOR.WHITE,
       borderRadius: normalize(20),
+      avatar: {
+        marginLeft: scaleX(16),
+        marginTop: scaleY(20),
+        width: normalize(60),
+        height: normalize(60),
+      },
       info: {
         width: scaleX(190),
         marginLeft: scaleX(15),
-        height: scaleY(100),
-        justifyContent: 'space-between',
+        height: scaleY(133),
         name: {
+          fontFamily: 'FontsFree-Net-Abel-Regular',
           color: CUSTOM_COLOR.BLACK,
-          fontSize: normalize(20),
+          marginTop: scaleY(20),
+          fontSize: normalize(18),
         },
         email: {
+          fontFamily: 'FontsFree-Net-Abel-Regular',
           color: CUSTOM_COLOR.BLACK,
-          fontSize: normalize(15),
+          fontSize: normalize(13),
+          marginTop: scaleY(7),
           opacity: 0.5,
         },
         bio: {
+          width: scaleX(191),
+          fontFamily: 'FontsFree-Net-Abel-Regular',
+          marginTop: scaleY(8),
           color: CUSTOM_COLOR.BLACK,
-          fontSize: normalize(15),
+          fontSize: normalize(13),
           opacity: 0.5,
         },
       },
     },
   },
   paymentMethod: {
-    width: normalize(300),
+    width: normalize(315),
     alignSelf: 'center',
     marginTop: scaleY(48),
     text: {
+      fontFamily: 'FontsFree-Net-Abel-Regular',
       color: CUSTOM_COLOR.BLACK,
-      fontSize: normalize(20),
+      fontSize: normalize(17),
       marginBottom: scaleY(20),
     },
     cards: {
-      paddingHorizontal: scaleY(16),
-      paddingTop: scaleY(20),
-      paddingBottom: scaleY(30),
+      height: scaleY(231),
       backgroundColor: CUSTOM_COLOR.WHITE,
       borderRadius: normalize(20),
-      card: {
-        height: scaleY(200),
-        justifyContent: 'space-between',
-      },
+      card: {},
     },
   },
   icon: {
-    marginTop: scaleY(10),
+    marginTop: scaleY(20),
     marginLeft: scaleX(15),
     iconCard: {
       width: normalize(40),
@@ -242,7 +223,7 @@ const styles = StyleSheet.create({
   },
   btnUpdate: {
     position: 'absolute',
-    bottom: scaleY(36),
+    bottom: scaleY(41),
     alignSelf: 'center',
   },
 });

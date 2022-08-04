@@ -10,6 +10,7 @@ const SCREEN_NAME = {
   MYPROFILE_SCREEN: 'MyProfileScreen',
   HISTORY_SCREEN: 'HistoryScreen',
   CHECKOUT_DELIVERY_SCREEN: 'CheckoutDeliveryScreen',
+  CHECKOUT_PAYMENT_SCREEN: 'CheckoutPaymentScreen',
 };
 
 export default SCREEN_NAME;
