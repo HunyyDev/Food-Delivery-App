@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 /* eslint-disable react-native/no-inline-styles */
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
 import {
   StyleSheet,
   Text,
@@ -12,20 +9,17 @@ import {
   FlatList,
 } from 'react-native';
 import React, {useState} from 'react';
-<<<<<<< HEAD
-import scale from '../../../assets/constants/reponsive';
-=======
 import scale from '../../../assets/constants/responsive';
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
 import CUSTOM_COLOR from '../../../assets/constants/colors';
 import FONT_FAMILY from '../../../assets/constants/fonts';
 import {
   IMG_Avatar,
   IMG_Bank,
   IMG_Card,
-  IMG_GoBack,
+  IMG_Back,
   IMG_Paypal,
 } from '../../../assets/images';
+
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -37,7 +31,7 @@ const DATA = [
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
   },
 ];
-const Dot = ({onPress, backgroundColor, borderColor}) => (
+const Item = ({onPress, backgroundColor, borderColor}) => (
   <TouchableOpacity onPress={onPress} style={[styles.DotOutStyle, borderColor]}>
     <View style={[styles.DotInStyle, backgroundColor]} />
   </TouchableOpacity>
@@ -49,15 +43,15 @@ const Payment = props => {
   };
   const [selectedId, setSelectedId] = useState(null);
 
-  const renderDot = ({dot}) => {
+  const renderItem = ({item}) => {
     const backgroundColor =
-      dot.id === selectedId ? CUSTOM_COLOR.Concrete : CUSTOM_COLOR.Vermilion;
+      item.id === selectedId ? CUSTOM_COLOR.Vermilion : CUSTOM_COLOR.Concrete;
     const borderColor =
-      dot.id === selectedId ? CUSTOM_COLOR.Black : CUSTOM_COLOR.Vermilion;
+      item.id === selectedId ? CUSTOM_COLOR.Vermilion : CUSTOM_COLOR.Black;
     return (
-      <Dot
-        dot={dot}
-        onPress={() => setSelectedId(dot.id)}
+      <Item
+        item={item}
+        onPress={() => setSelectedId(item.id)}
         backgroundColor={{backgroundColor}}
         borderColor={{borderColor}}
       />
@@ -65,14 +59,10 @@ const Payment = props => {
   };
   return (
     <SafeAreaView style={styles.container}>
-<<<<<<< HEAD
-      {/* <View style={styles.titleContainer}>
-=======
       <View style={styles.titleContainer}>
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
         <Text style={styles.textTitle}>{'My profile'}</Text>
         <TouchableOpacity style={styles.backButton} onPress={onBack}>
-          <Image source={IMG_GoBack} style={styles.iconBack} />
+          <Image source={IMG_Back} style={styles.iconBack} />
         </TouchableOpacity>
       </View>
       <View style={styles.backgroundInfo}>
@@ -91,25 +81,14 @@ const Payment = props => {
       <View style={styles.backgroundInfoPayment}>
         <Text style={styles.division}>{'Payment Method'}</Text>
         <View style={styles.IndexPayment}>
-<<<<<<< HEAD
-          <View style={styles.backgroundLeft}> */}
-      <FlatList
-        data={DATA}
-        renderDot={renderDot}
-        keyExtractor={dot => dot.id}
-        extraData={selectedId}
-      />
-      {/* </View>
-=======
           <View style={styles.backgroundLeft}>
             <FlatList
               data={DATA}
-              renderDot={renderDot}
+              renderItem={renderItem}
               keyExtractor={dot => dot.id}
               extraData={selectedId}
             />
           </View>
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
           <View style={styles.backgroundRight}>
             <View style={styles.backgroundMethod}>
               <View style={styles.Method}>
@@ -129,10 +108,6 @@ const Payment = props => {
             </View>
             <View style={styles.backgroundMethod}>
               <View
-<<<<<<< HEAD
-=======
-                // eslint-disable-next-line react-native/no-inline-styles
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
                 style={{
                   alignSelf: 'flex-start',
                   justifyContent: 'center',
@@ -155,11 +130,7 @@ const Payment = props => {
           style={styles.buttonSelection}>
           <Text style={styles.SelectionText}>{'Update'}</Text>
         </TouchableOpacity>
-<<<<<<< HEAD
-      </View> */}
-=======
       </View>
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
     </SafeAreaView>
   );
 };
@@ -171,8 +142,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderRadius: 30,
     borderWidth: 2,
-    width: 100,
-    height: 300,
   },
   titleContainer: {
     top: scale(60),
@@ -213,7 +182,7 @@ const styles = StyleSheet.create({
   Index: {
     position: 'absolute',
     width: '100%',
-    height: scale(133),
+    height: scale(160),
     top: scale(40),
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 20,
@@ -329,10 +298,8 @@ const styles = StyleSheet.create({
   backgroundLeft: {
     height: '100%',
     width: '20%',
-    alignSelf: 'flex-start',
-    justifyContent: 'space-around',
+    flexDirection: 'row',
     position: 'absolute',
-    backgroundColor: 'blue',
   },
   backgroundRight: {
     height: '100%',
@@ -348,6 +315,8 @@ const styles = StyleSheet.create({
     borderRadius: 90,
     borderWidth: 2,
     justifyContent: 'center',
+    marginTop: scale(50),
+    bottom: scale(20),
   },
   DotInStyle: {
     alignSelf: 'center',

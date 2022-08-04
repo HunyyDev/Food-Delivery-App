@@ -1,47 +1,9 @@
-<<<<<<< HEAD
-import * as React from 'react';
-import {Button, View} from 'react-native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
-
-function HomeScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button
-        onPress={() => navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
-    </View>
-  );
-}
-
-function NotificationsScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-const Drawer = createDrawerNavigator();
-
-export default function Test() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
-}
-=======
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import React, {Component} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CUSTOM_COLOR from '../../../assets/constants/colors';
 import scale from '../../../assets/constants/responsive';
-import {Icon_Back, Icon_Go, IMG_Personal} from '../../../assets/images';
+import {IMG_Back, IMG_Go, IMG_Personal} from '../../../assets/images';
 import FONT_FAMILY from '../../../assets/constants/fonts';
 export class MyProfileScreen extends Component {
   render() {
@@ -50,16 +12,16 @@ export class MyProfileScreen extends Component {
         <TouchableOpacity
           onPress={() => this.props.navigation.goBack()}
           style={styles.backButton}>
-          <Image source={Icon_Back} />
+          <Image source={IMG_Back} />
         </TouchableOpacity>
         <Text style={styles.titleContainer}>{'My profile'}</Text>
         <Text style={styles.text1Container}>{'Personal details'}</Text>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('MyProfileScreen')}
+          onPress={() => this.props.navigation.navigate('Payment')}
           style={styles.buttonContainer}>
           <Text style={styles.text2Container}>{'change'}</Text>
         </TouchableOpacity>
-        <View style={styles.rectangleContainer}>
+        <View style={styles.rectanglContainer}>
           <Image style={styles.imageContainer} source={IMG_Personal} />
           <Text style={styles.text3Container}>{'Marvis Ighedosa'}</Text>
           <Text style={styles.text4Container}>{'Dosamarvis@gmail.com'}</Text>
@@ -70,28 +32,28 @@ export class MyProfileScreen extends Component {
         </View>
         <View style={styles.fourButtonView}>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('MyProfileScreen')}
+            onPress={() => this.props.navigation.navigate('OrdersScreen')}
             style={styles.button2Container}>
-            <Text style={styles.text7Container}>{'Orders'}</Text>
-            <Image style={styles.iconContainer} source={Icon_Go} />
+            <Text style={styles.text7Container}>{'Oders'}</Text>
+            <Image style={styles.iconContainer} source={IMG_Go} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('MyProfileScreen')}
             style={styles.button2Container}>
             <Text style={styles.text7Container}>{'Pending reviews'}</Text>
-            <Image style={styles.iconContainer} source={Icon_Go} />
+            <Image style={styles.iconContainer} source={IMG_Go} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('MyProfileScreen')}
             style={styles.button2Container}>
             <Text style={styles.text7Container}>{'Faq'}</Text>
-            <Image style={styles.iconContainer} source={Icon_Go} />
+            <Image style={styles.iconContainer} source={IMG_Go} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate('MyProfileScreen')}
             style={styles.button2Container}>
             <Text style={styles.text7Container}>{'Help'}</Text>
-            <Image style={styles.iconContainer} source={Icon_Go} />
+            <Image style={styles.iconContainer} source={IMG_Go} />
           </TouchableOpacity>
         </View>
         <TouchableOpacity
@@ -108,19 +70,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.Concrete,
-    justifyContent: 'center',
     alignItems: 'center',
   },
   backButton: {
     width: scale(24),
     height: scale(24),
-    top: scale(20),
-    left: scale(41),
+    top: scale(40),
+    left: scale(82),
     position: 'absolute',
+    alignSelf: 'baseline',
   },
   titleContainer: {
     top: scale(70),
-    left: scale(50),
+    left: scale(82),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 30,
     lineHeight: 43.33,
@@ -129,7 +91,7 @@ const styles = StyleSheet.create({
   },
   text1Container: {
     top: scale(139),
-    left: scale(42),
+    left: scale(82),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 14,
     lineHeight: 22.94,
@@ -137,8 +99,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   buttonContainer: {
-    top: scale(-305),
-    left: scale(124),
+    marginTop: scale(142),
+    right: scale(132),
+    backgroundColor: 'pink',
+    position: 'absolute',
   },
   text2Container: {
     fontFamily: FONT_FAMILY.AbelRengula,
@@ -147,14 +111,14 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     position: 'absolute',
   },
-  rectangleContainer: {
+  rectanglContainer: {
     width: scale(378),
     height: scale(207),
     top: scale(180),
-    left: scale(42),
     position: 'absolute',
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 20,
+    alignSelf: 'center',
   },
   imageContainer: {
     width: scale(91),
@@ -175,7 +139,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   text4Container: {
-    top: scale(52),
+    top: scale(50),
     left: scale(130),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 12,
@@ -209,17 +173,16 @@ const styles = StyleSheet.create({
   },
   button2Container: {
     width: scale(378),
-    height: scale(70),
+    justifyContent: 'center',
     borderRadius: 20,
     backgroundColor: CUSTOM_COLOR.White,
     flex: 1,
-    marginTop: 15,
+    marginTop: scale(10),
   },
   text7Container: {
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 17,
     lineHeight: 22.94,
-    top: scale(25),
     left: scale(30),
     position: 'absolute',
     color: CUSTOM_COLOR.Black,
@@ -233,9 +196,8 @@ const styles = StyleSheet.create({
   },
   fourButtonView: {
     width: scale(378),
-    height: scale(400),
+    height: scale(340),
     top: scale(390),
-    left: scale(42),
     position: 'absolute',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -244,21 +206,19 @@ const styles = StyleSheet.create({
   SelectionText: {
     color: CUSTOM_COLOR.White,
     fontSize: 15,
-    fontFamily: FONT_FAMILY.AbelRengula,
+    fontFamily: FONT_FAMILY.SFProTextBold,
     alignSelf: 'center',
   },
   buttonSelection: {
-    width: scale(378),
+    width: scale(314),
     height: scale(70),
     borderRadius: 30,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     justifyContent: 'center',
-    left: scale(42),
-    top: scale(810),
+    bottom: scale(41),
     alignSelf: 'center',
     position: 'absolute',
   },
 });
 
 export default MyProfileScreen;
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae

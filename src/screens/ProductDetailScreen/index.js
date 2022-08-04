@@ -5,31 +5,83 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Image,
+  Dimensions,
+  ScrollView,
 } from 'react-native';
-import React from 'react';
-import scale from '../../assets/constants/reponsive';
+import React, {useState} from 'react';
+import scale from '../../assets/constants/responsive';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import {IMG_Food, IMG_GoBack, IMG_BlackHeart} from '../../assets/images';
+import {IMG_Food, IMG_Back, IMG_BlackHeart} from '../../assets/images';
+
+const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+
+const data = [
+  {source: IMG_Food, id: 0},
+  {source: IMG_Food, id: 1},
+];
 
 const ProductDetail = props => {
   const {navigation} = props;
   const onBack = () => {
     navigation.goBack();
   };
+  const [dotActive, setDotActive] = useState(0);
+  const onchange = nativeEvent => {
+    if (nativeEvent) {
+      const slide = Math.ceil(
+        nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
+      );
+      if (slide !== dotActive) {
+        setDotActive(slide);
+      }
+      console.log(slide, dotActive);
+    }
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
-        <Text style={styles.textTitle}>My profile</Text>
         <TouchableOpacity style={styles.backButton} onPress={onBack}>
-          <Image source={IMG_GoBack} style={styles.iconBack} />
+          <Image source={IMG_Back} style={styles.iconBack} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.HeartButton}>
           <Image source={IMG_BlackHeart} style={styles.iconBack} />
         </TouchableOpacity>
       </View>
-      <View style={styles.backgroundImage}>
-        <Image source={IMG_Food} style={styles.Image} />
+      <View style={styles.wrap}>
+        <ScrollView
+          onScrollEndDrag={({nativeEvent}) => onchange(nativeEvent)}
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled
+          horizontal>
+          {data.map(item => (
+            <View style={styles.imageFood}>
+              <Image
+                key={item.id}
+                resizeMode="stretch"
+                style={styles.food}
+                source={item.source}
+              />
+            </View>
+          ))}
+        </ScrollView>
+        <View style={styles.wrapDot}>
+          {data.map(item => (
+            <Text
+              key={item.id}
+              style={{
+                color:
+                  dotActive === item.id
+                    ? CUSTOM_COLOR.SunsetOrange
+                    : 'tranperant',
+                padding: scale(1),
+              }}>
+              ●
+            </Text>
+          ))}
+        </View>
       </View>
       <View>
         <View style={styles.backgroundName}>
@@ -44,17 +96,16 @@ const ProductDetail = props => {
         <Text style={styles.content}>
           {'Delivered between monday aug and thursday 20 from 8pm to 91:32 pm.'}
         </Text>
-        <Text> </Text>
-        <Text> </Text>
         <Text style={styles.division}>Return policy</Text>
         <Text style={styles.content}>
-          All our foods are double checked before leaving our stores so by any
-          case you found a broken food please contact our hotline immediately.
+          {
+            'All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.'
+          }
         </Text>
       </View>
       <View>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('HomeScreen')}
+          onPress={() => navigation.navigate('CartScreen')}
           style={styles.buttonSelection}>
           <Text style={styles.SelectionText}>{'Add to cart'}</Text>
         </TouchableOpacity>
@@ -70,22 +121,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleContainer: {
-    top: scale(60),
+    top: scale(30),
     height: scale(40),
     width: '100%',
-    position: 'absolute',
-  },
-  textTitle: {
-    marginTop: scale(7),
-    fontSize: scale(23),
-    fontFamily: FONT_FAMILY.SFProTextBold,
-    color: CUSTOM_COLOR.Black,
-    width: scale(150),
-    left: scale(150),
-    height: '100%',
-    justifyContent: 'center',
-    alignSelf: 'center',
-    position: 'absolute',
   },
   backButton: {
     height: '100%',
@@ -98,40 +136,49 @@ const styles = StyleSheet.create({
   HeartButton: {
     height: '100%',
     width: scale(50),
-    position: 'absolute',
     right: scale(60),
     marginTop: scale(10),
+    position: 'absolute',
   },
   iconBack: {
     justifyContent: 'center',
     alignSelf: 'center',
   },
-  backgroundImage: {
-    width: '100%',
-    height: scale(269.09),
-    top: scale(100),
+  wrap: {
+    width: WIDTH,
+    height: HEIGHT * 0.32,
+    alignItems: 'center',
     justifyContent: 'center',
-    position: 'absolute',
+    marginTop: scale(20),
   },
-  Image: {
-    height: scale(225),
-    width: scale(225),
-    borderRadius: 90,
+  imageFood: {
+    width: WIDTH,
+    height: HEIGHT * 0.32,
+    justifyContent: 'center',
+  },
+  food: {
+    borderRadius: scale(105),
     alignSelf: 'center',
+  },
+  wrapDot: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: 0,
+    position: 'absolute',
+    flexDirection: 'row',
   },
   backgroundName: {
     width: '60%',
-    height: scale(50),
+    height: scale(40),
     alignSelf: 'center',
     justifyContent: 'center',
-    top: scale(400),
+    marginTop: scale(20),
   },
   backgroundPrice: {
     width: '40%',
-    height: scale(50),
+    height: scale(40),
     alignSelf: 'center',
     justifyContent: 'center',
-    top: scale(400),
   },
   textFoodContainer: {
     fontFamily: FONT_FAMILY.SFBlack,
@@ -139,7 +186,6 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
     lineHeight: 22,
     alignSelf: 'center',
-    position: 'absolute',
   },
   textPriceContainer: {
     color: CUSTOM_COLOR.Vermilion,
@@ -147,16 +193,15 @@ const styles = StyleSheet.create({
     fontSize: 15,
     alignSelf: 'center',
     lineHeight: 20,
-    position: 'absolute',
   },
   backgroundInfo: {
     width: '80%',
-    height: scale(200),
+    height: scale(100),
     alignSelf: 'center',
-    position: 'absolute',
-    top: scale(525),
+    marginTop: scale(10),
   },
   division: {
+    marginTop: scale(20),
     fontFamily: FONT_FAMILY.SFBlack,
     fontSize: 16,
     color: CUSTOM_COLOR.Black,
@@ -171,8 +216,8 @@ const styles = StyleSheet.create({
   },
   SelectionText: {
     color: CUSTOM_COLOR.White,
-    fontSize: 17,
-    fontFamily: FONT_FAMILY.SFBlack,
+    fontSize: 15,
+    fontFamily: FONT_FAMILY.SFProTextBold,
     alignSelf: 'center',
   },
   buttonSelection: {
@@ -181,8 +226,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     justifyContent: 'center',
-    top: scale(775),
+    marginTop: scale(180),
     alignSelf: 'center',
-    position: 'absolute',
   },
 });

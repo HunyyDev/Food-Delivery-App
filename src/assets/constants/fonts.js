@@ -11,5 +11,6 @@ const FONT_FAMILY = {
   AbelRe: 'FontsFree-Net-Abel-Regular',
   SFProTextRengula: 'FontsFree-Net-SFProText-Regular',
   AbelRengula: 'FontsFree-Net-Abel-Regular',
+  PoppinsBold: 'Poppins-Bold',
 };
 export default FONT_FAMILY;

@@ -12,13 +12,6 @@ export {default as IMG_Heart} from './Heart.png';
 export {default as IMG_User} from './user.png';
 export {default as IMG_Clock} from './clock.png';
 export {default as IMG_Vector} from './Vector.png';
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-export {default as IMG_Cart} from './cart.png';
-export {default as IMG_Search} from './Search.png';
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
 export {default as IMG_Back} from './BackButton.png';
 export {default as IMG_Hand} from './Hand.png';
 export {default as IMG_BodyArrow} from './BodyArrow.png';
@@ -29,20 +22,8 @@ export {default as IMG_Card} from './card.png';
 export {default as IMG_FishWith} from './fishwith.png';
 export {default as IMG_Viggie} from './viggie.png';
 export {default as IMG_Orders} from './Orders.png';
-export {default as Icon_Back} from './backIcon.png';
 export {default as IMG_NoInternet} from './eva_wifi-off-fill.png';
 export {default as IMG_Personal} from './Rectangle6.png';
-export {default as Icon_Go} from './chevron-left.png';
-export {default as Image_History} from './HistoryImage.png';
-<<<<<<< HEAD
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
-=======
-export {default as IMG_GoBack} from './gobackButton.png';
-export {default as IMG_BlackHeart} from './blackHeart.png';
-export {default as IMG_Avatar} from './Avatar.png';
-export {default as IMG_Card} from './Card.png';
-export {default as IMG_Bank} from './Bank.png';
-export {default as IMG_Paypal} from './Paypal.png';
->>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
+export {default as IMG_Go} from './chevron-left.png';
+export {default as IMG_History} from './HistoryImage.png';
+export {default as IMG_BlackHeart} from './BlackHeart.png';

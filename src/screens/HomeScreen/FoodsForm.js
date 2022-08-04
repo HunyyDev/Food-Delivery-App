@@ -4,7 +4,7 @@ import {
   StyleSheet,
   SafeAreaView,
   Image,
-  ScrollView,
+  FlatList,
   TouchableOpacity,
 } from 'react-native';
 import {IMG_Food, IMG_Food2, IMG_Food3} from '../../assets/images';
@@ -12,73 +12,62 @@ import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
 import scale from '../../assets/constants/responsive';
 
+const DATA = [
+  {
+    id: 1,
+    title: 'Veggie tomato mix',
+    cost: 'N1,900',
+    source: IMG_Food,
+  },
+  {
+    id: 2,
+    title: 'Veggie tomato mix',
+    cost: 'N1,900',
+    source: IMG_Food2,
+  },
+  {
+    id: 3,
+    title: 'Spicy fish sauce',
+    cost: 'N1,900',
+    source: IMG_Food3,
+  },
+];
+
+const Item = ({title, source, cost, navigation}) => (
+  <TouchableOpacity
+    style={styles.listContainer}
+    onPress={() => {
+      navigation.navigate('ProductDetail');
+    }}>
+    <Image style={styles.foodImage} source={source} />
+    <Text style={styles.textFoodContainer}>{title}</Text>
+    <Text style={styles.textPriceContainer}>{cost}</Text>
+  </TouchableOpacity>
+);
+
 export class Foods extends Component {
   constructor(props) {
     super(props);
   }
+  renderItem = ({item}) => (
+    <Item
+      source={item.source}
+      title={item.title}
+      cost={item.cost}
+      navigation={this.props.navigation}
+    />
+  );
   render() {
     return (
       <>
         <SafeAreaView style={styles.scrollView}>
-          <ScrollView
-            horizontal={true}
+          <FlatList
+            data={DATA}
+            renderItem={this.renderItem}
+            keyExtractor={item => item.id}
+            horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.contentContainer}>
-            <TouchableOpacity
-              style={styles.listContainer}
-              onPress={() => {
-                this.props.navigation.navigate('ProductDetail');
-              }}>
-              <Image style={styles.foodImage} source={IMG_Food2} />
-              <Text style={styles.textFoodContainer}>
-                {'Veggie \ntomato mix'}
-              </Text>
-<<<<<<< HEAD
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-              style={styles.listContainer}>
-<<<<<<< HEAD
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
-=======
-              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
->>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
-              <Image style={styles.foodImage} source={IMG_Food} />
-              <Text style={styles.textFoodContainer}>
-                {'Veggie \ntomato mix'}
-              </Text>
-<<<<<<< HEAD
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('NoInternetScreen')}
-              style={styles.listContainer}>
-<<<<<<< HEAD
->>>>>>> 80c1fa024402783905f09125366466ac97a2d8a7
-=======
-              <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
->>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
-              <Image style={styles.foodImage} source={IMG_Food3} />
-              <Text style={styles.textFoodContainer}>
-                {'Spicy \nfish sauce'}
-              </Text>
-<<<<<<< HEAD
-              <Text style={styles.textPriceContainer}>{'N2,300'}</Text>
-            </TouchableOpacity>
-=======
-              <Text style={styles.textPriceContainer}>{'$2,300'}</Text>
-            </View>
->>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
-          </ScrollView>
+          />
         </SafeAreaView>
       </>
     );
@@ -90,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollView: {
-    marginTop: scale(400),
+    marginTop: scale(410),
     backgroundColor: CUSTOM_COLOR.Concrete,
     height: scale(370),
   },
@@ -117,6 +106,7 @@ const styles = StyleSheet.create({
     marginRight: scale(20),
     borderRadius: scale(40),
     resizeMode: 'stretch',
+    elevation: 10,
   },
   foodImage: {
     width: scale(150),

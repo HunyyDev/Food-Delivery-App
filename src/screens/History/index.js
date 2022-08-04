@@ -7,7 +7,7 @@ import {
   Image,
 } from 'react-native';
 import React, {Component} from 'react';
-import {Icon_Back, IMG_Food, Image_History} from '../../assets/images';
+import {IMG_Back, IMG_Food, IMG_History} from '../../assets/images';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import scale from '../../assets/constants/responsive';
 import FONT_FAMILY from '../../assets/constants/fonts';
@@ -16,12 +16,16 @@ export class HistoryScreen extends Component {
   render() {
     return (
       <SafeAreaView>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.goBack()}
-          style={styles.backButton}>
-          <Image source={Icon_Back} />
-        </TouchableOpacity>
-        <Text style={styles.headerContainer}>{'History'}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.textTitle}>History</Text>
+          <TouchableOpacity
+            style={styles.backButton}
+            onPress={() => {
+              this.props.navigation.goBack();
+            }}>
+            <Image source={IMG_Back} style={styles.iconBack} />
+          </TouchableOpacity>
+        </View>
         <View style={styles.rectangleContainer}>
           <Image style={styles.food1Image} source={IMG_Food} />
           <Image style={styles.food2Image} source={IMG_Food} />
@@ -30,7 +34,7 @@ export class HistoryScreen extends Component {
           <Text style={styles.textOrderStatusContainer}>{'Processing'}</Text>
           <Text style={styles.textPriceContainer}>{'$1,900'}</Text>
         </View>
-        <Image style={styles.imageHistoryContainer} source={Image_History} />
+        <Image style={styles.imageHistoryContainer} source={IMG_History} />
         <Text style={styles.bigTextContainer}>{'No history yet'}</Text>
         <Text style={styles.smallTextContainer}>
           {'Hit the orange button down\nbelow to Create an order'}
@@ -38,7 +42,7 @@ export class HistoryScreen extends Component {
         <TouchableOpacity
           onPress={() => this.props.navigation.navigate('NoInternetScreen')}
           style={styles.buttonSelection}>
-          <Text style={styles.SelectionText}>{'Login'}</Text>
+          <Text style={styles.SelectionText}>{'Start ordering'}</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
@@ -50,12 +54,33 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.Concrete,
   },
-  backButton: {
-    width: scale(24),
-    height: scale(24),
-    top: scale(61),
-    left: scale(41),
+  titleContainer: {
+    top: scale(30),
+    height: scale(40),
+    width: '100%',
     position: 'absolute',
+  },
+  textTitle: {
+    marginTop: scale(7),
+    fontSize: scale(23),
+    fontFamily: FONT_FAMILY.SFProTextBold,
+    color: CUSTOM_COLOR.Black,
+    height: '100%',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    position: 'absolute',
+  },
+  backButton: {
+    height: '100%',
+    width: scale(50),
+    justifyContent: 'center',
+    position: 'absolute',
+    left: scale(60),
+    marginTop: scale(3),
+  },
+  iconBack: {
+    justifyContent: 'center',
+    alignSelf: 'center',
   },
   headerContainer: {
     fontFamily: FONT_FAMILY.AbelRengula,
@@ -127,11 +152,11 @@ const styles = StyleSheet.create({
   imageHistoryContainer: {
     width: scale(136.5),
     height: scale(148.33),
-    top: scale(272.92),
+    marginTop: scale(272.92),
     alignSelf: 'center',
   },
   bigTextContainer: {
-    top: scale(300),
+    marginTop: scale(10),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 26,
     lineHeight: 35.68,
@@ -139,7 +164,7 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Black,
   },
   smallTextContainer: {
-    top: scale(318),
+    marginTop: scale(5),
     fontFamily: FONT_FAMILY.AbelRengula,
     fontSize: 15,
     lineHeight: 21.67,
@@ -150,17 +175,17 @@ const styles = StyleSheet.create({
   },
   SelectionText: {
     color: CUSTOM_COLOR.White,
-    fontSize: 17,
-    fontFamily: FONT_FAMILY.AbelRengula,
+    fontSize: 15,
+    fontFamily: FONT_FAMILY.SFProTextBold,
     alignSelf: 'center',
   },
   buttonSelection: {
-    width: scale(354),
-    height: scale(90),
+    width: scale(314),
+    height: scale(70),
     borderRadius: 30,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     justifyContent: 'center',
-    marginTop: scale(480),
+    marginTop: scale(180),
     alignSelf: 'center',
   },
 });
