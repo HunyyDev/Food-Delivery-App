@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-import {StyleSheet, Text, View} from 'react-native';
-=======
->>>>>>> 5845717fc457df84f8cd9c78a691baf700e45c7e
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -11,12 +7,7 @@ import ProductList from '../screens/products/ProductList';
 import ProductDetail from '../screens/products/ProductDetail';
 
 const MainNavigator = props => {
-<<<<<<< HEAD
-
-    const Stack = createNativeStackNavigator();
-=======
   const Stack = createNativeStackNavigator();
->>>>>>> 5845717fc457df84f8cd9c78a691baf700e45c7e
 
   return (
     <>
@@ -43,8 +34,3 @@ const MainNavigator = props => {
 };
 
 export default MainNavigator;
-<<<<<<< HEAD
-
-const styles = StyleSheet.create({});
-=======
->>>>>>> 5845717fc457df84f8cd9c78a691baf700e45c7e

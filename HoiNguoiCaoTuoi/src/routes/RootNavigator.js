@@ -52,11 +52,6 @@ const RootNavigator = () => {
             component={noInternet}
             options={{headerShown: false}}
           />
-          {/* <Stack.Screen
-            name="App"
-            component={App}
-            options={{headerShown: false}}
-          /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </>
