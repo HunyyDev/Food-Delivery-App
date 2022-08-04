@@ -12,6 +12,7 @@ import CUSTOM_COLOR from '../../constants/colors';
 import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
 import FONT_FAMILY from '../../constants/fonts';
+import LinearGradient from 'react-native-linear-gradient';
 
 export class OnboardingScreen extends Component {
   render() {
@@ -36,10 +37,16 @@ export class OnboardingScreen extends Component {
               source={IMG_Background}
               style={styles.centerImage}
               resizeMode={'contain'}>
-              <View
-                style={styles.buttonSection}
-                >
-                <CustomButton type={'primary'} text={'Get Started'} onPress={() => this.props.navigation.navigate('Login')}/>
+              <LinearGradient
+                style={[styles.centerImage, {height: '60%', bottom: 0}]}
+                colors={['transparent', CUSTOM_COLOR.Orange]}
+              />
+              <View style={styles.buttonSection}>
+                <CustomButton
+                  type={'primary'}
+                  text={'Get Started'}
+                  onPress={() => this.props.navigation.navigate('Login')}
+                />
               </View>
             </ImageBackground>
           </View>
@@ -84,33 +91,12 @@ const styles = StyleSheet.create({
   },
 
   centerImage: {
-    position: 'absolute',
     width: Dimensions.get('window').width,
     height: '100%',
-    justifyContent: 'flex-end',
+    position: 'absolute',
   },
 
   buttonSection: {
     bottom: 20,
-  },
-
-  buttonContainer: {
-    width: scale(314),
-    height: scale(70),
-    backgroundColor: 'white',
-    borderRadius: 30,
-    marginLeft: scale(51),
-    justifyContent: 'center',
-    alignSelf: 'center',
-
-  },
-
-  buttonText: {
-    color: CUSTOM_COLOR.SunsetOrange,
-    // fontFamily: CUSTOM_FONT.Regular,
-    fontSize: scale(17),
-    // fontWeight: '600',
-    justifyContent: 'center',
-    alignSelf: 'center',
   },
 });

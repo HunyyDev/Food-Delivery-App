@@ -21,13 +21,15 @@ export class CustomList extends Component {
               resizeMode={'cover'}></Image>
             <View></View>
           </View>
-          <View style={styles.describeContainer}>
+          <TouchableOpacity
+            style={styles.describeContainer}
+            onPress={this.props.onPress}>
             <View style={styles.dontUse}></View>
             <View style={styles.textContainer}>
               <Text style={styles.name}>{this.props.name}</Text>
               <Text style={styles.price}>{this.props.price}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </TouchableOpacity>
       </View>
     );

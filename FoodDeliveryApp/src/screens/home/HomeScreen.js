@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import {IMG_Veggie_tomato_mix} from '../../assets/images';
+import {IMG_Chicken, IMG_Egg, IMG_Veggie_tomato_mix} from '../../assets/images';
 import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import React, {Component} from 'react';
@@ -33,12 +33,7 @@ export class HomeScreen extends Component {
       initialBottomNav: 'Home',
     };
   }
-  shouldComponentUpdate() {
-    if (this.state.initialBottomNav !== 'Home') {
-      return true;
-    }
-    return false;
-  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -59,7 +54,11 @@ export class HomeScreen extends Component {
             <View style={{marginLeft: scale(35), marginRight: scale(16)}}>
               <IC_Search />
             </View>
-            <TextInput placeholder="Search" style={{flex: 1}} />
+            <TextInput
+              placeholder="Search"
+              style={{flex: 1}}
+              onChangeText={() => this.props.navigation.navigate('Search')}
+            />
           </View>
         </View>
 
@@ -124,13 +123,13 @@ export class HomeScreen extends Component {
               }}
             />
             <CustomList
-              source={IMG_Veggie_tomato_mix}
-              name={'Veggie \ntomato mix'}
+              source={IMG_Egg}
+              name={'Egg and cucmber...'}
               price={'N1,900'}
             />
             <CustomList
-              source={IMG_Veggie_tomato_mix}
-              name={'Veggie \ntomato mix'}
+              source={IMG_Chicken}
+              name={'Fried chicken m.'}
               price={'N1,900'}
             />
           </ScrollView>

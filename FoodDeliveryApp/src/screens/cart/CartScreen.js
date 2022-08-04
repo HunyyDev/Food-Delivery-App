@@ -11,7 +11,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import CUSTOM_COLOR from '../../constants/colors';
 import CustomOrderedItem from './components/CustomOrderedItem';
-import {IMG_Veggie_tomato_mix} from '../../assets/images';
+import {IMG_Chicken, IMG_Egg, IMG_Veggie_tomato_mix} from '../../assets/images';
 import {IC_Swipe} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
 import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
@@ -41,14 +41,14 @@ const CartScreen = props => {
                 />
 
                 <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Fishwith mix orange..."
+                  img={IMG_Egg}
+                  text="Egg and cucmber..."
                   price={'1900'}
                 />
 
                 <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Fishwith mix orange..."
+                  img={IMG_Chicken}
+                  text="Fried chicken m."
                   price={'1900'}
                 />
 

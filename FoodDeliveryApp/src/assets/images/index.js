@@ -4,3 +4,5 @@ export {default as IMG_Veggie_tomato_mix} from './IMG_Veggie_tomato_mix.png';
 export {default as IMG_LoadingBackGround} from './breakfast-fruits.jpg';
 export {default as IMG_BellaLogo} from './BellaOlonjeLogo.png';
 export {default as IMG_Avatar} from './avatar.png';
+export {default as IMG_Egg} from './item2.png';
+export {default as IMG_Chicken} from './item3.png';
