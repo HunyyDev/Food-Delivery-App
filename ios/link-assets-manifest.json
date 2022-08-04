@@ -94,6 +94,10 @@
       "sha1": "21fdb007ec60c23df8ef1fbb586b397b2f1f099a"
     },
     {
+      "path": "src/assets/fonts/Poppins-Bold.ttf",
+      "sha1": "974b66074f1e265c0d203a4e2989c6120af3bc55"
+    },
+    {
       "path": "src/assets/fonts/SF-Pro-Rounded-Bold.ttf",
       "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
     },
