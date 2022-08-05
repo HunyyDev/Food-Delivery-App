@@ -34,7 +34,8 @@ const OnBoardingScreen = props => {
       <View style={styles.buttonSection}>
         <TouchableOpacity
           style={styles.buttonSection.button}
-          onPress={onTransitToLogin}>
+          onPress={onTransitToLogin}
+          >
           <Text style={[styles.buttonSection.button.text]}>Get Started</Text>
         </TouchableOpacity>
       </View>

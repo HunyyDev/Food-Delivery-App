@@ -7,8 +7,12 @@ const SCREEN_NAME = {
   NO_INTERNET: 'NoInternetScreen',
   CART_SCREEN: 'CartScreen',
   PROFILE_SCREEN: 'ProfileScreen',
+<<<<<<< HEAD
   MYPROFILE_SCREEN: 'MyProfileScreen',
   HISTORY_SCREEN: 'HistoryScreen',
+=======
+  SEARCH_SCREEN: 'SearchScreen',
+>>>>>>> 5changhiepsimongmo/luu2
 };
 
 export default SCREEN_NAME;

@@ -9,8 +9,10 @@ import {
 import React from 'react';
 import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigation';
 import {normalize, scaleX, scaleY} from '../../helperFunction';
-import {ICSwipe} from '../../assets/icons';
+import {ICHeartSmall, ICSwipe} from '../../assets/icons';
 import colors from '../../assets/constants/colors';
+import {useState} from 'react';
+import {SwipeListView, SwipeRow} from 'react-native-swipe-list-view';
 
 const data = [
   {
@@ -19,6 +21,7 @@ const data = [
     price: '1,900',
     quantity: 0,
     icon: require('../../assets/images/foods/Veggie_tomato_mix/image_2.png'),
+    active: true,
   },
   {
     _id: 1,
@@ -26,6 +29,7 @@ const data = [
     price: '1,900',
     quantity: 0,
     icon: require('../../assets/images/foods/Veggie_tomato_mix/image_2.png'),
+    active: true,
   },
   {
     _id: 2,
@@ -33,12 +37,27 @@ const data = [
     price: '1,900',
     quantity: 0,
     icon: require('../../assets/images/foods/Veggie_tomato_mix/image_2.png'),
+    active: true,
   },
 ];
 
 const CartScreen = () => {
+  const [st, setSt] = useState(0);
+  const [slted, setSlted] = useState();
+
+  const onMinus = (index, sign) => {
+    if (sign === '-') {
+      data[index].quantity -= 1;
+    } else data[index].quantity += 1;
+  };
+
+  const onDelelteItem = () => {
+    data.splice(slted, 1);
+    setSt(st + 1);
+  };
+
   return (
-    <View>
+    <>
       <CustomBreadcrumbNavigation title={'Cart'} />
       <View style={styles.container}>
         <View style={styles.swipeNoticeContainer}>
@@ -48,34 +67,86 @@ const CartScreen = () => {
           </Text>
         </View>
 
-        <FlatList
+        <SwipeListView
+          style={styles.flatList}
           data={data}
           keyExtractor={item => item._id}
           renderItem={({item, index}) => {
-            // console.log(item.icon);
             return (
-              <TouchableOpacity style={styles.cartItem} onPress={() => {console.log("4");}}>
+              <View
+                style={styles.cartItem}
+                onTouchStart={() => setSlted(index)}>
                 <Image source={item.icon} style={styles.cartItem.img} />
                 <View style={styles.cartItem.info}>
                   <Text style={styles.cartItem.name}>{item.name}</Text>
                   <Text style={styles.cartItem.price}>#{item.price}</Text>
 
-                  <TouchableOpacity style={styles.cartItem.button}>
-                    <TouchableOpacity style={{paddingHorizontal: scaleY(10)}} onPress={() => {console.log("2");}}>
+                  <View style={styles.cartItem.button}>
+                    <TouchableOpacity
+                      style={{paddingHorizontal: scaleY(10)}}
+                      onPress={() => {
+                        onMinus(index, '-');
+                        setSt(st - 1);
+                      }}>
                       <Text>-</Text>
                     </TouchableOpacity>
-                    <Text>{item.quantity}</Text>
-                    <TouchableOpacity style={{paddingHorizontal: scaleY(10)}} onPress={() => {console.log("3");}}>
+                    <Text>{data[index].quantity}</Text>
+                    <TouchableOpacity
+                      style={{paddingHorizontal: scaleY(10)}}
+                      onPress={() => {
+                        onMinus(index, '+');
+                        setSt(st + 1);
+                      }}>
                       <Text>+</Text>
                     </TouchableOpacity>
-                  </TouchableOpacity>
+                  </View>
                 </View>
-              </TouchableOpacity>
+              </View>
             );
           }}
+          renderHiddenItem={({item, index}) => {
+            return (
+              <View style={styles.hiddenCartItem} onTouchStart>
+                <View style={styles.hiddenCartItem.container}>
+                  <TouchableOpacity
+                    style={[
+                      styles.hiddenCartItem.icon,
+                      {marginRight: scaleX(15)},
+                    ]}>
+                    <ICHeartSmall />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.hiddenCartItem.icon}>
+                    <ICHeartSmall />
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.hiddenCartItem.container}>
+                  <TouchableOpacity
+                    style={[
+                      styles.hiddenCartItem.icon,
+                      {marginRight: scaleX(15)},
+                    ]}>
+                    <ICHeartSmall />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.hiddenCartItem.icon}>
+                    <ICHeartSmall />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            );
+          }}
+          leftOpenValue={scaleX(130)}
+          leftActivationValue={scaleX(130) + 50}
+          rightOpenValue={scaleX(-130)}
+          rightActivationValue={scaleX(-130) - 50}
+          onLeftActionStatusChange={onDelelteItem}
+          onRightActionStatusChange={onDelelteItem}
         />
+
+        <TouchableOpacity style={styles.completeButton}>
+          <Text style={styles.completeButton.text}>Complete order</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+    </>
   );
 };
 
@@ -83,11 +154,11 @@ export default CartScreen;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: scaleX(50),
-    display: 'flex',
+    // marginHorizontal: scaleX(50),
     alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1,
   },
+
   swipeNoticeContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -99,12 +170,19 @@ const styles = StyleSheet.create({
     },
   },
 
+  flatList: {
+    width: '100%',
+    marginTop: scaleY(22),
+  },
+
   cartItem: {
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: colors.WHITE,
     padding: Math.max(scaleX(16), scaleY(16)),
     marginBottom: scaleY(14),
+    borderRadius: normalize(20),
+    marginHorizontal: scaleX(50),
 
     img: {
       width: Math.max(scaleX(70), scaleY(70)),
@@ -145,6 +223,43 @@ const styles = StyleSheet.create({
       paddingVertical: scaleY(2),
       borderRadius: normalize(30),
       zIndex: 1,
+    },
+  },
+
+  completeButton: {
+    backgroundColor: colors.VERMILION,
+    paddingVertical: scaleY(25),
+    borderRadius: normalize(30),
+    paddingHorizontal: scaleX(100),
+    position: 'absolute',
+    bottom: 0,
+    marginBottom: scaleY(40),
+
+    text: {
+      fontFamily: 'FontsFree-Net-Abel-Regular',
+      width: '100%',
+    },
+  },
+
+  hiddenCartItem: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: scaleY(14),
+    borderRadius: normalize(20),
+    marginHorizontal: scaleX(50),
+
+    container: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+    },
+
+    icon: {
+      padding: scaleY(16),
+      backgroundColor: colors.VERMILION,
+      borderRadius: 100,
+      marginVertical: scaleY(25),
     },
   },
 });
