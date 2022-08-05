@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {StyleSheet, Text, Alert} from 'react-native';
 import React from 'react';
 import {scaleX, scaleY} from '../../helperFunction.js';
+import {CommonActions} from '@react-navigation/native';
 
 const CustomButton = props => {
   const [buttonColor, setbuttonColor] = useState(() => {
@@ -12,6 +13,11 @@ const CustomButton = props => {
   });
 
   const PressHandler = () => {
+    props.navigation.dispatch(
+      CommonActions.navigate({
+        name: 'OBS',
+      }),
+    );
     props.navigation.navigate(props.name);
   };
   return (
