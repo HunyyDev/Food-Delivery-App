@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
   },
   textInput: {
-    fontFamily: FONT_FAMILY.Black,
+    fontFamily: FONT_FAMILY.Light,
     marginTop: 12,
   },
 });

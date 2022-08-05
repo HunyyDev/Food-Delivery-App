@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import CUSTOM_COLOR from '../constants/colors';
 import {scaleWidth} from '../constants/responsive';
+import FONT_FAMILY from '../constants/fonts';
 
 export class CustomButton extends Component {
   constructor(props) {
@@ -36,7 +37,6 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     height: scaleWidth(60),
     width: scaleWidth(300),
     justifyContent: 'center',
@@ -46,7 +46,6 @@ const styles = StyleSheet.create({
   },
 
   buttonPrimary: {
-    flex: 1,
     backgroundColor: CUSTOM_COLOR.White,
     height: '100%',
     width: '100%',
@@ -60,10 +59,10 @@ const styles = StyleSheet.create({
   textButtonPrimary: {
     fontSize: scaleWidth(17),
     color: CUSTOM_COLOR.Vermilion,
+    fontFamily: FONT_FAMILY.SFPro,
   },
 
   buttonSecondary: {
-    flex: 1,
     backgroundColor: CUSTOM_COLOR.Vermilion,
     height: '100%',
     width: '100%',
@@ -71,11 +70,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    position: 'absolute',
   },
 
   textButtonSecondary: {
     fontSize: scaleWidth(17),
     color: CUSTOM_COLOR.White,
+    fontFamily: FONT_FAMILY.SFPro,
   },
 });

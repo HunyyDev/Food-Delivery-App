@@ -35,7 +35,7 @@ const OnboardingScreen = ({navigation}) => (
           source={IMG_Background}
           style={styles.background}
           resizeMode={'contain'}>
-          <View style={styles.button}>
+          <View style={{margin:30}}>
             <CustomButton
               type={'primary'}
               text={'Get started'}
@@ -52,15 +52,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
-    alignSelf: 'stretch',
-    marginTop: 0,
   },
 
   logoContainer: {
     width: scaleWidth(74),
     height: scaleWidth(74),
     borderRadius: scaleWidth(74) / 2,
-    backgroundColor: CUSTOM_COLOR.Bold,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
@@ -74,11 +71,11 @@ const styles = StyleSheet.create({
   },
 
   titleText: {
-    fontSize: scaleWidth(65),
-    fontFamily: FONT_FAMILY.SFPro,
+    fontSize: scaleWidth(55),
+    fontFamily: FONT_FAMILY.ExtraBold,
     color: CUSTOM_COLOR.White,
     marginLeft: scaleWidth(49),
-    fontWeight: 'bold',
+    marginVertical: 30,
   },
 
   backgroundContainer: {
@@ -90,8 +87,6 @@ const styles = StyleSheet.create({
     height: 430,
     justifyContent: 'flex-end',
   },
-
-  button: {},
 
   text: {
     fontSize: scaleWidth(17),

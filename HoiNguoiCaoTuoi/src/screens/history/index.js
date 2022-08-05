@@ -13,12 +13,6 @@ import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_chevron_left} from '../../assets/icons';
 
 const History = ({navigation}) => {
-  //  constructor(props)
-  //   {
-  //     super(props);
-  //     this.state = {};
-  //   }
-  //   render() {
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       <></>
@@ -68,7 +62,7 @@ const History = ({navigation}) => {
     </SafeAreaView>
   );
   //   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -82,7 +76,7 @@ const styles = StyleSheet.create({
     left: scaleWidth(50),
   },
   title: {
-    fontFamily: FONT_FAMILY.Bold,
+    fontFamily: FONT_FAMILY.Light,
     fontSize: scaleWidth(25),
     alignSelf: 'center',
     top: scaleWidth(40),

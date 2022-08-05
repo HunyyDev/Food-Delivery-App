@@ -12,7 +12,7 @@ import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_chevron_left} from '../../assets/icons';
 
-const notFound = ({navigation}) => {
+const NotFound = ({navigation}) => {
   //  constructor(props)
   //   {
   //     super(props);
@@ -63,7 +63,7 @@ const notFound = ({navigation}) => {
     </SafeAreaView>
   );
   //   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default notFound;
+export default NotFound;

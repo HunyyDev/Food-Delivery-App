@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
 
   headerSection: {
-    flex: 5,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'flex-end',
     borderRadius: 30,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: scaleWidth(18),
-    fontFamily: FONT_FAMILY.ExtraBold,
+    fontFamily: FONT_FAMILY.SemiBold,
   },
 
   logo: {
@@ -123,13 +123,13 @@ const styles = StyleSheet.create({
   },
 
   inputSection: {
-    flex: 6,
+    flex: 2,
     margin: 30,
     height: 30,
   },
 
   buttonSection: {
-    flex: 2,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     height: 30,
@@ -152,8 +152,8 @@ const styles = StyleSheet.create({
   forgotPC: {
     marginTop: -12,
     color: CUSTOM_COLOR.SunsetOrange,
-    fontFamily: FONT_FAMILY.Bold,
-    fontSize: scaleWidth(17),
+    fontFamily: FONT_FAMILY.Medium,
+    fontSize: scaleWidth(16),
   },
 });
 export default LoginScreen;
