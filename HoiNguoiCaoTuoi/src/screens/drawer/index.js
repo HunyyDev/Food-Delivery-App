@@ -1,38 +1,37 @@
 import React, {useRef, useState} from 'react';
 import {
-  Button,
   DrawerLayoutAndroid,
-  Text,
-  StyleSheet,
-  View,
   Image,
   SafeAreaView,
   ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from 'react-native';
+import {TextInput} from 'react-native-gesture-handler';
 import {
   IMG_avatar,
-  IMG_offer_and_promo,
-  IMG_orders,
-  IMG_privacy_policy,
-  IMG_security,
-  IMG_user,
   IMG_giohang,
   IMG_heart,
   IMG_house,
   IMG_Logo1,
+  IMG_offer_and_promo,
+  IMG_orders,
+  IMG_privacy_policy,
   IMG_search,
+  IMG_security,
   IMG_time,
+  IMG_user,
 } from '../../assets/icons';
-import CUSTOM_COLOR from '../../constants/colors';
-import {scaleWidth} from '../../constants/responsive';
-import {TextInput} from 'react-native-gesture-handler';
 import {IMG_Food1, IMG_Food2} from '../../assets/images/index';
+import CUSTOM_COLOR from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
+import {scaleWidth} from '../../constants/responsive';
 
 const Drawer = () => {
   const drawer = useRef(null);
-  const [drawerPosition, setDrawerPosition] = useState('left');
+  const [drawerPosition] = useState('left');
   const navigationView = () => (
     <SafeAreaView style={styles.containerDrawer}>
       <View style={styles.navigationContainer}>

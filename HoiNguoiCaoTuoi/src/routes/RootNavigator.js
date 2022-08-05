@@ -1,15 +1,13 @@
-import {StyleSheet} from 'react-native';
-import React from 'react';
-import LoginScreen from '../screens/auth';
-import HomeScreen from '../screens/home';
-import OnboardingScreen from '../screens/onboarding';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import History from '../screens/noInternet';
-import noInternet from '../screens/noInternet';
-import notFound from '../screens/notFound';
+import React from 'react';
+import {StyleSheet} from 'react-native';
+import LoginScreen from '../screens/auth';
 import Drawer from '../screens/drawer';
-import App from '../screens/test';
+import HomeScreen from '../screens/home';
+import {default as History, default as noInternet} from '../screens/noInternet';
+import notFound from '../screens/notFound';
+import OnboardingScreen from '../screens/onboarding';
 
 const RootNavigator = () => {
   const Stack = createNativeStackNavigator();
