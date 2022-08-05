@@ -11,6 +11,7 @@ import NoInternetScreen from '../screens/noInternet';
 import HomeScreen from '../screens/home';
 import ProfileScreen from '../screens/profile';
 import CartScreen from '../screens/cart';
+import SearchScreen from '../screens/search';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,10 @@ const RootNavigator = props => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name={SCREEN_NAME.SEARCH_SCREEN}
+          component={SearchScreen}
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.CART_SCREEN}
           component={CartScreen}

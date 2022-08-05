@@ -231,8 +231,6 @@ const styles = StyleSheet.create({
     paddingVertical: scaleY(25),
     borderRadius: normalize(30),
     paddingHorizontal: scaleX(100),
-    // width: "100%",
-    // marginHorizontal: scaleX(50),
     position: 'absolute',
     bottom: 0,
     marginBottom: scaleY(40),
