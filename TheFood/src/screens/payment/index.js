@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   Modal,
+  Pressable,
 } from 'react-native';
 import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
@@ -38,7 +39,6 @@ const CheckoutPaymentScreen = props => {
   var check = 0;
   return (
     <ScrollView style={styles.container}>
-      <Modal visible={modalVisible}></Modal>
       <CustomBreadcrumbNavigation title="Checkout" onBack={onBack} />
       <Text style={styles.title}>Payment</Text>
       <View style={styles.paymentMethod}>
@@ -113,7 +113,7 @@ const CheckoutPaymentScreen = props => {
         <View style={styles.delivery.cards}>
           <RadioForm animation={true} style={styles.delivery.cards.card}>
             {radio_delivery_props.map((obj, i) => (
-              <React.Fragment>
+              <React.Fragment key={obj.id}>
                 <RadioButton labelHorizontal={true} key={obj.id}>
                   <RadioButtonInput
                     obj={obj}
@@ -165,8 +165,32 @@ const CheckoutPaymentScreen = props => {
         <Text style={styles.total.cost}>23,000</Text>
       </View>
       <View style={styles.btnUpdate}>
-        <CustomButton type="secondary" title="Proceed to payment" />
+        <CustomButton
+          type="secondary"
+          title="Proceed to payment"
+          onPress={() => {
+            setModalVisible(true);
+          }}
+        />
       </View>
+      <Modal
+        animationType={'fade'}
+        transparent={true}
+        visible={modalVisible}
+        onBackdropPress={() => setModalVisible(true)}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}>
+        <View style={styles.modalVisible}>
+          <View style={styles.modalVisible.pleaseNote}>
+            <View style={styles.modalVisible.pleaseNote.text}>
+              <Text style={styles.modalVisible.pleaseNote.text.content}>
+                Please Note
+              </Text>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 };
@@ -320,6 +344,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: scaleY(46),
     marginBottom: scaleY(41),
+  },
+  modalVisible: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    pleaseNote: {
+      height: scaleY(322),
+      width: scaleX(315),
+      backgroundColor: CUSTOM_COLOR.WHITE,
+      borderRadius: normalize(30),
+      overflow: 'hidden',
+      text: {
+        backgroundColor: CUSTOM_COLOR.GALLERY,
+        height: scaleY(66),
+        content: {
+          marginTop: scaleX(17),
+          marginLeft: scaleY(46),
+          fontSize: scaleY(20),
+          color: CUSTOM_COLOR.BLACK,
+          fontFamily: 'Poppins-Regular',
+        },
+      },
+    },
   },
 });
 
