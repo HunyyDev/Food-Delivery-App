@@ -112,7 +112,6 @@ const MyProfileScreen = props => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingVertical: scaleY(60),
     backgroundColor: CUSTOM_COLOR.ATHENS_GRAY,
     position: 'relative',
   },
@@ -121,7 +120,7 @@ const styles = StyleSheet.create({
     fontSize: normalize(34),
     width: normalize(300),
     alignSelf: 'center',
-    marginVertical: normalize(36),
+    marginVertical: normalize(46),
   },
   information: {
     width: normalize(300),
@@ -129,8 +128,6 @@ const styles = StyleSheet.create({
     title: {
       display: 'flex',
       flexDirection: 'row',
-      //   marginTop: scaleY(60),
-      //   marginBottom: scaleY(20),
       marginBottom: scaleY(9),
 
       justifyContent: 'space-between',

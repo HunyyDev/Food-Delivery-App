@@ -11,4 +11,5 @@ export default {
   FRENCH_ROSE: '#EB4796',
   BLUE_RIBBON: '#0038FF',
   ALABASTER: '#F9F9F9',
+  PASTEL_GREEN: '#44E868',
 };

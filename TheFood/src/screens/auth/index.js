@@ -124,7 +124,7 @@ class LoginScreen extends Component {
               label="Email address"
               placeholder="Email address"
               action={this.handleChangeInput}
-              name='email'
+              name="email"
               value={this.state.email}
             />
           </View>
@@ -134,7 +134,7 @@ class LoginScreen extends Component {
               secureTextEntry={true}
               placeholder="Password"
               action={this.handleChangeInput}
-              name='password'
+              name="password"
               value={this.state.password}
             />
           </View>

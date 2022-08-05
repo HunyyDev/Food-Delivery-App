@@ -1,9 +1,16 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
-import {ICCard, ICBankAccount, ICPaypal} from '../../assets/icons';
+import {ICCard, ICBankAccount, ICPaypal, ICOnBack} from '../../assets/icons';
 import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigation';
 import CustomButton from '../../components/CustomButton';
 import RadioForm, {
@@ -12,11 +19,10 @@ import RadioForm, {
   RadioButtonLabel,
 } from 'react-native-simple-radio-button';
 
-const ProfileScreen = props => {
+const CheckoutDeliveryScreen = props => {
   var radio_props = [
-    {id: 0, label: 'Card', value: 1},
-    {id: 1, label: 'Bank account', value: 0},
-    {id: 2, label: 'Paypal', value: 0},
+    {id: 0, label: 'Door delivery', value: 1},
+    {id: 1, label: 'Pick up', value: 0},
   ];
 
   const {navigation} = props;
@@ -26,30 +32,32 @@ const ProfileScreen = props => {
   };
   var check = 0;
   return (
-    <>
-      <CustomBreadcrumbNavigation title="My Profile" onBack={onBack} />
+    <View style={styles.container}>
+      <CustomBreadcrumbNavigation title="Checkout" onBack={onBack} />
+      <Text style={styles.title}>Delivery</Text>
       <View style={styles.information}>
-        <Text style={styles.information.text}>Information</Text>
+        <View style={styles.information.title}>
+          <Text style={styles.information.title.text}>Address Details</Text>
+          <TouchableOpacity style={styles.information.title.button}>
+            <Text style={styles.information.title.button.text}>change</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.information.profile}>
-          <Image
-            style={styles.information.profile.avatar}
-            source={require('../../assets/images/ProfileInfomationAvatar.png')}
-          />
           <View style={styles.information.profile.info}>
             <Text style={styles.information.profile.info.name}>
-              Marvis Ighedosa
+              Marvis Kparobo
             </Text>
-            <Text style={styles.information.profile.info.email}>
-              dosamarvis@gmail.com
+            <Text style={styles.information.profile.info.address}>
+              Km 5 refinery road oppsite re public road, effurun, delta state
             </Text>
-            <Text style={styles.information.profile.info.bio}>
-              No 15 street off ovie palace road effurun delta state
+            <Text style={styles.information.profile.info.phone}>
+              +234 9011039271
             </Text>
           </View>
         </View>
       </View>
       <View style={styles.paymentMethod}>
-        <Text style={styles.paymentMethod.text}>Payment Method</Text>
+        <Text style={styles.paymentMethod.text}>Delivery Method</Text>
         <View style={styles.paymentMethod.cards}>
           <RadioForm animation={true} style={styles.paymentMethod.cards.card}>
             {radio_props.map((obj, i) => (
@@ -73,21 +81,6 @@ const ProfileScreen = props => {
                     }}
                     onPress={() => {}}
                   />
-                  <View style={styles.icon} key={i}>
-                    {obj.id === 0 ? (
-                      <View style={styles.icon.iconCard}>
-                        <ICCard></ICCard>
-                      </View>
-                    ) : obj.id === 1 ? (
-                      <View style={styles.icon.iconBank}>
-                        <ICBankAccount></ICBankAccount>
-                      </View>
-                    ) : (
-                      <View style={styles.icon.iconPaypal}>
-                        <ICPaypal></ICPaypal>
-                      </View>
-                    )}
-                  </View>
                   <RadioButtonLabel
                     obj={obj}
                     index={obj.id}
@@ -95,29 +88,33 @@ const ProfileScreen = props => {
                     labelStyle={{
                       fontFamily: 'FontsFree-Net-Abel-Regular',
                       fontSize: normalize(17),
-                      marginTop: scaleY(20),
                       color: CUSTOM_COLOR.BLACK,
-                      marginLeft: scaleX(11),
+                      marginLeft: scaleY(10),
+                      marginTop: scaleY(30),
                     }}
                   />
                 </RadioButton>
                 <View
                   style={{
-                    borderBottomWidth: obj.id !== 2 ? 1 : 0,
-                    borderColor: 'rgba(0, 0, 0, 0.3)',
-                    width: scaleX(232),
-                    marginTop: scaleY(8),
                     alignSelf: 'center',
+                    borderBottomWidth: obj.id !== 1 ? 1 : 0,
+                    paddingTop: scaleY(16),
+                    borderColor: 'rgba(0, 0, 0, 0.5)',
+                    width: scaleX(232),
                   }}></View>
               </React.Fragment>
             ))}
           </RadioForm>
         </View>
       </View>
-      <View style={styles.btnUpdate}>
-        <CustomButton type="secondary" title="Update" />
+      <View style={styles.total}>
+        <Text style={styles.total.text}>Total</Text>
+        <Text style={styles.total.cost}>23,000</Text>
       </View>
-    </>
+      <View style={styles.btnUpdate}>
+        <CustomButton type="secondary" title="Proceed to payment" />
+      </View>
+    </View>
   );
 };
 
@@ -127,105 +124,112 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.ATHENS_GRAY,
     position: 'relative',
   },
+  title: {
+    fontFamily: 'FontsFree-Net-Abel-Regular',
+    color: CUSTOM_COLOR.BLACK,
+    fontSize: normalize(34),
+    width: normalize(315),
+    alignSelf: 'center',
+    marginVertical: normalize(46),
+  },
   information: {
     width: normalize(315),
     alignSelf: 'center',
-    text: {
-      fontFamily: 'FontsFree-Net-Abel-Regular',
-      color: CUSTOM_COLOR.BLACK,
-      fontSize: normalize(17),
-      marginTop: scaleY(54),
-      marginBottom: scaleY(10),
+    title: {
+      display: 'flex',
+      flexDirection: 'row',
+      marginBottom: scaleY(18),
+      justifyContent: 'space-between',
+      text: {
+        color: CUSTOM_COLOR.BLACK,
+        fontSize: normalize(17),
+        fontFamily: 'FontsFree-Net-Abel-Regular',
+      },
+      button: {
+        text: {
+          fontFamily: 'FontsFree-Net-Abel-Regular',
+          color: CUSTOM_COLOR.VERMILION,
+        },
+      },
     },
     profile: {
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'column',
+      height: scaleY(156),
+      justifyContent: 'center',
       backgroundColor: CUSTOM_COLOR.WHITE,
       borderRadius: normalize(20),
-      avatar: {
-        marginLeft: scaleX(16),
-        marginTop: scaleY(20),
-        width: normalize(60),
-        height: normalize(60),
-      },
       info: {
-        width: scaleX(190),
-        marginLeft: scaleX(15),
-        height: scaleY(133),
+        marginLeft: scaleX(30),
+        height: scaleY(100),
+        justifyContent: 'space-between',
         name: {
           fontFamily: 'FontsFree-Net-Abel-Regular',
           color: CUSTOM_COLOR.BLACK,
-          marginTop: scaleY(20),
-          fontSize: normalize(18),
+          fontSize: normalize(17),
+          borderBottomWidth: 1,
+          paddingBottom: scaleY(6),
+          marginBottom: scaleY(8),
+          borderColor: 'rgba(0, 0, 0, 0.5)',
+          width: scaleX(232),
         },
-        email: {
+        phone: {
           fontFamily: 'FontsFree-Net-Abel-Regular',
           color: CUSTOM_COLOR.BLACK,
-          fontSize: normalize(13),
-          marginTop: scaleY(7),
-          opacity: 0.5,
+          fontSize: normalize(15),
         },
-        bio: {
-          width: scaleX(191),
+        address: {
           fontFamily: 'FontsFree-Net-Abel-Regular',
-          marginTop: scaleY(8),
           color: CUSTOM_COLOR.BLACK,
-          fontSize: normalize(13),
-          opacity: 0.5,
+          fontSize: normalize(15),
+          borderBottomWidth: 1,
+          paddingBottom: scaleY(6),
+          marginBottom: scaleY(8),
+          borderColor: 'rgba(0, 0, 0, 0.5)',
+          width: scaleX(232),
         },
       },
     },
   },
   paymentMethod: {
-    width: normalize(315),
+    width: scaleX(315),
     alignSelf: 'center',
-    marginTop: scaleY(48),
+    marginTop: scaleY(42),
     text: {
       fontFamily: 'FontsFree-Net-Abel-Regular',
       color: CUSTOM_COLOR.BLACK,
       fontSize: normalize(17),
-      marginBottom: scaleY(20),
+      marginBottom: scaleY(18),
     },
     cards: {
-      height: scaleY(231),
+      height: scaleY(156),
       backgroundColor: CUSTOM_COLOR.WHITE,
       borderRadius: normalize(20),
-      card: {},
     },
   },
-  icon: {
-    marginTop: scaleY(20),
-    marginLeft: scaleX(15),
-    iconCard: {
-      width: normalize(40),
-      height: normalize(40),
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: CUSTOM_COLOR.TAHITI_GOLD,
-      borderRadius: normalize(10),
+  total: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: normalize(315),
+    alignSelf: 'center',
+    marginTop: scaleY(40),
+    text: {
+      color: CUSTOM_COLOR.BLACK,
+      fontSize: normalize(17),
+      fontFamily: 'FontsFree-Net-Abel-Regular',
     },
-    iconBank: {
-      width: normalize(40),
-      height: normalize(40),
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: CUSTOM_COLOR.FRENCH_ROSE,
-      borderRadius: normalize(10),
-    },
-    iconPaypal: {
-      width: normalize(40),
-      height: normalize(40),
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: CUSTOM_COLOR.BLUE_RIBBON,
-      borderRadius: normalize(10),
+    cost: {
+      fontSize: normalize(22),
+      fontFamily: 'FontsFree-Net-Abel-Regular',
+      color: CUSTOM_COLOR.BLACK,
     },
   },
   btnUpdate: {
-    position: 'absolute',
     bottom: scaleY(41),
     alignSelf: 'center',
+    position: 'absolute',
   },
 });
 
-export default ProfileScreen;
+export default CheckoutDeliveryScreen;

@@ -80,7 +80,6 @@ const CartScreen = () => {
                 <View style={styles.cartItem.info}>
                   <Text style={styles.cartItem.name}>{item.name}</Text>
                   <Text style={styles.cartItem.price}>#{item.price}</Text>
-
                   <View style={styles.cartItem.button}>
                     <TouchableOpacity
                       style={{paddingHorizontal: scaleY(10)}}
