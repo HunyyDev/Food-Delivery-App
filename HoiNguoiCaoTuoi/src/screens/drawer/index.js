@@ -1,6 +1,5 @@
 import React, {useRef, useState} from 'react';
 import {
-  Button,
   DrawerLayoutAndroid,
   Text,
   StyleSheet,
@@ -27,10 +26,10 @@ import {
 import CUSTOM_COLOR from '../../constants/colors';
 import {scaleWidth} from '../../constants/responsive';
 import {TextInput} from 'react-native-gesture-handler';
-import {IMG_Food1, IMG_Food2} from '../../assets/images/index';
+import {IMG_Food1, IMG_Food2} from '../../assets/images';
 import FONT_FAMILY from '../../constants/fonts';
 
-const Drawer = () => {
+const Drawer = ({navigation}) => {
   const drawer = useRef(null);
   const [drawerPosition, setDrawerPosition] = useState('left');
   const navigationView = () => (
@@ -38,37 +37,53 @@ const Drawer = () => {
       <View style={styles.navigationContainer}>
         <Image source={IMG_avatar} style={styles.avartar} />
         <View style={styles.options}>
-          <View style={styles.line_options}>
-            <Image source={IMG_user} />
-            <Text style={styles.paragraph}>{'Profile'}</Text>
-          </View>
+          <TouchableOpacity style={styles.button}>
+            <View style={styles.line_options}>
+              <Image source={IMG_user} />
+              <Text style={styles.paragraph}>{'Profile'}</Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.paragraph}>{'________________'}</Text>
-          <View style={styles.line_options}>
-            <Image source={IMG_orders} />
-            <Text style={styles.paragraph}>{'Orders'}</Text>
-          </View>
+
+          <TouchableOpacity style={styles.button}>
+            <View style={styles.line_options}>
+              <Image source={IMG_orders} />
+              <Text style={styles.paragraph}>{'Orders'}</Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.paragraph}>{'________________'}</Text>
-          <View style={styles.line_options}>
-            <Image source={IMG_offer_and_promo} />
-            <Text style={styles.paragraph}>{'Offer and promo'}</Text>
-          </View>
+          <TouchableOpacity style={styles.button}>
+            <View style={styles.line_options}>
+              <Image source={IMG_offer_and_promo} />
+              <Text style={styles.paragraph}>{'Offer and promo'}</Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.paragraph}>{'________________'}</Text>
-          <View style={styles.line_options}>
-            <Image source={IMG_privacy_policy} />
-            <Text style={styles.paragraph}>{'Privacy policy'}</Text>
-          </View>
+          <TouchableOpacity style={styles.button}>
+            <View style={styles.line_options}>
+              <Image source={IMG_privacy_policy} />
+              <Text style={styles.paragraph}>{'Privacy policy'}</Text>
+            </View>
+          </TouchableOpacity>
           <Text style={styles.paragraph}>{'________________'}</Text>
-          <View style={styles.line_options}>
-            <Image source={IMG_security} />
-            <Text style={styles.paragraph}>{'Security'}</Text>
-          </View>
+          <TouchableOpacity style={styles.button}>
+            <View style={styles.line_options}>
+              <Image source={IMG_security} />
+              <Text style={styles.paragraph}>{'Security'}</Text>
+            </View>
+          </TouchableOpacity>
         </View>
 
         <TouchableOpacity
-          title="Sign-out"
-          onPress={() => drawer.current.closeDrawer()}
-          style={styles.signout}
-        />
+          style={{
+            marginTop: scaleWidth(169),
+            width: scaleWidth(177),
+            height: scaleWidth(50),
+            justifyContent: 'center',
+          }}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.signout}>{'Sign-out'}</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -164,6 +179,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: CUSTOM_COLOR.White,
     left: scaleWidth(10),
+    fontFamily: FONT_FAMILY.SemiBold,
   },
   avartar: {
     top: scaleWidth(65),
@@ -172,12 +188,19 @@ const styles = StyleSheet.create({
     top: scaleWidth(100),
     width: scaleWidth(177),
   },
+  button: {
+    justifyContent: 'center',
+    alignContent: 'center',
+    height: scaleWidth(50),
+    marginTop: scaleWidth(10),
+  },
   line_options: {
     flexDirection: 'row',
-    marginTop: scaleWidth(20),
   },
   signout: {
+    fontSize: scaleWidth(17),
     color: CUSTOM_COLOR.White,
+    fontFamily: FONT_FAMILY.SemiBold,
   },
   container: {
     flex: 1,
@@ -263,7 +286,7 @@ const styles = StyleSheet.create({
   dish: {
     borderRadius: scaleWidth(50),
     backgroundColor: CUSTOM_COLOR.White,
-    height: scaleWidth(270),
+    height: scaleWidth(200),
     width: scaleWidth(150),
   },
 

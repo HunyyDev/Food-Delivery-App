@@ -68,7 +68,7 @@ const History = ({navigation}) => {
     </SafeAreaView>
   );
   //   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -26,6 +26,8 @@ import FONT_FAMILY from '../../constants/fonts';
 import {scaleWidth} from '../../constants/responsive';
 
 const HomeScreen = ({navigation}) => {
+  const HISTORY = 'History';
+  const [] = useState(HISTORY);
   return (
     <SafeAreaView style={styles.container}>
       <View>
@@ -42,7 +44,10 @@ const HomeScreen = ({navigation}) => {
 
         <View>
           <View style={styles.Searchbar}>
-            <Image source={IMG_search} style={styles.search} />
+            <Image
+              source={IMG_search}
+              style={{height: scaleWidth(17), width: scaleWidth(17)}}
+            />
             <TextInput style={styles.searchText} placeholder="Search" />
           </View>
         </View>
@@ -89,7 +94,7 @@ const HomeScreen = ({navigation}) => {
           <TouchableOpacity>
             <Image source={IMG_user} />
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('History')}>
             <Image source={IMG_time} />
           </TouchableOpacity>
         </View>
@@ -141,14 +146,10 @@ const styles = StyleSheet.create({
     width: scaleWidth(150),
   },
 
-  search: {
-    width: scaleWidth(18),
-    height: scaleWidth(18),
-  },
-
   searchText: {
     fontSize: scaleWidth(17),
     fontFamily: FONT_FAMILY.SFPro,
+    top: scaleWidth(5),
   },
 
   TextMenu1: {
@@ -164,6 +165,7 @@ const styles = StyleSheet.create({
   Searchbar: {
     marginTop: scaleWidth(20),
     flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: scaleWidth(10),
     borderRadius: scaleWidth(20),
     height: scaleWidth(60),
@@ -183,7 +185,7 @@ const styles = StyleSheet.create({
   dish: {
     borderRadius: scaleWidth(50),
     backgroundColor: CUSTOM_COLOR.White,
-    height: scaleWidth(270),
+    height: scaleWidth(200),
     width: scaleWidth(150),
   },
 

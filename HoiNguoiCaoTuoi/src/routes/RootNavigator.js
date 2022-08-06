@@ -5,11 +5,11 @@ import LoginScreen from '../screens/auth';
 import HomeScreen from '../screens/home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import History from '../screens/noInternet';
+import History from '../screens/history';
 import noInternet from '../screens/noInternet';
 import notFound from '../screens/notFound';
 import Drawer from '../screens/drawer';
-import App from '../screens/test';
+import Information from '../screens/infor';
 
 const RootNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -17,7 +17,7 @@ const RootNavigator = () => {
     <>
       <NavigationContainer style={styles.container}>
         <Stack.Navigator>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
             options={{headerShown: false}}
@@ -26,12 +26,12 @@ const RootNavigator = () => {
             name="Login"
             component={LoginScreen}
             options={{headerShown: false}}
-          />
-          <Stack.Screen
+          /> */}
+          {/* <Stack.Screen
             name="Drawer"
             component={Drawer}
             options={{headerShown: false}}
-          />
+          /> */}
           <Stack.Screen
             name="Home"
             component={HomeScreen}
@@ -42,16 +42,17 @@ const RootNavigator = () => {
             component={History}
             options={{headerShown: false}}
           />
-          <Stack.Screen
+          {/* <Stack.Screen
             name="NotFound"
             component={notFound}
             options={{headerShown: false}}
-          />
-          <Stack.Screen
+          /> */}
+          {/* <Stack.Screen
             name="NoInternet"
             component={noInternet}
             options={{headerShown: false}}
-          />
+          /> */}
+          
         </Stack.Navigator>
       </NavigationContainer>
     </>
