@@ -17,7 +17,10 @@ import {IMG_Food, IMG_Back, IMG_BlackHeart} from '../../assets/images';
 const WIDTH = Dimensions.get('window').width;
 const HEIGHT = Dimensions.get('window').height;
 
-const data = [IMG_Food, IMG_Food];
+const data = [
+  {source: IMG_Food, id: 0},
+  {source: IMG_Food, id: 1},
+];
 
 const ProductDetail = props => {
   const {navigation} = props;
@@ -33,6 +36,7 @@ const ProductDetail = props => {
       if (slide !== dotActive) {
         setDotActive(slide);
       }
+      console.log(slide, dotActive);
     }
   };
 
@@ -48,28 +52,28 @@ const ProductDetail = props => {
       </View>
       <View style={styles.wrap}>
         <ScrollView
-          onScroll={({nativeEvent}) => onchange(nativeEvent)}
+          onScrollEndDrag={({nativeEvent}) => onchange(nativeEvent)}
           showsHorizontalScrollIndicator={false}
           pagingEnabled
           horizontal>
-          {data.map((e, index) => (
+          {data.map(item => (
             <View style={styles.imageFood}>
               <Image
-                key={index}
+                key={item.id}
                 resizeMode="stretch"
                 style={styles.food}
-                source={e}
+                source={item.source}
               />
             </View>
           ))}
         </ScrollView>
         <View style={styles.wrapDot}>
-          {data.map((e, index) => (
+          {data.map(item => (
             <Text
-              key={index}
+              key={item.id}
               style={{
                 color:
-                  dotActive === index
+                  dotActive === item.id
                     ? CUSTOM_COLOR.SunsetOrange
                     : 'tranperant',
                 padding: scale(1),
@@ -101,7 +105,7 @@ const ProductDetail = props => {
       </View>
       <View>
         <TouchableOpacity
-          onPress={() => this.props.navigation.navigate('HomeScreen')}
+          onPress={() => navigation.navigate('CartScreen')}
           style={styles.buttonSelection}>
           <Text style={styles.SelectionText}>{'Add to cart'}</Text>
         </TouchableOpacity>
