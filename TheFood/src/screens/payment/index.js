@@ -188,6 +188,47 @@ const CheckoutPaymentScreen = props => {
                 Please Note
               </Text>
             </View>
+            <View style={styles.modalVisible.pleaseNote.queries}>
+              <View style={styles.modalVisible.pleaseNote.queries.query}>
+                <Text
+                  style={styles.modalVisible.pleaseNote.queries.query.method}>
+                  Delivery to mainland
+                </Text>
+                <Text
+                  style={styles.modalVisible.pleaseNote.queries.query.value}>
+                  N1000 - N2000
+                </Text>
+              </View>
+              <View style={styles.modalVisible.pleaseNote.queries.line}></View>
+              <View style={styles.modalVisible.pleaseNote.queries.query}>
+                <Text
+                  style={styles.modalVisible.pleaseNote.queries.query.method}>
+                  Delivery to island
+                </Text>
+                <Text
+                  style={styles.modalVisible.pleaseNote.queries.query.value}>
+                  N2000 - N3000
+                </Text>
+              </View>
+            </View>
+            <View style={styles.modalVisible.pleaseNote.buttons}>
+              <TouchableOpacity
+                style={styles.modalVisible.pleaseNote.buttons.cancelBtn}>
+                <Text
+                  style={styles.modalVisible.pleaseNote.buttons.cancelBtn.text}>
+                  Cancel
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.modalVisible.pleaseNote.buttons.proceedBtn}>
+                <Text
+                  style={
+                    styles.modalVisible.pleaseNote.buttons.proceedBtn.text
+                  }>
+                  Proceed
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </Modal>
@@ -364,7 +405,55 @@ const styles = StyleSheet.create({
           marginLeft: scaleY(46),
           fontSize: scaleY(20),
           color: CUSTOM_COLOR.BLACK,
-          fontFamily: 'Poppins-Regular',
+          fontFamily: 'Poppins-SemiBold',
+        },
+      },
+      queries: {
+        marginLeft: scaleX(46),
+        marginTop: scaleY(18),
+        query: {
+          method: {
+            color: CUSTOM_COLOR.BLACK,
+            opacity: 0.5,
+            fontFamily: 'Poppins-Regular',
+            textTransform: 'uppercase',
+            fontSize: normalize(15),
+          },
+          value: {
+            fontSize: normalize(17),
+            color: CUSTOM_COLOR.BLACK,
+            fontFamily: 'Poppins-Regular',
+          },
+        },
+        line: {
+          borderBottomWidth: 1,
+          width: scaleX(240),
+          opacity: 0.5,
+          marginVertical: scaleY(17),
+        },
+      },
+      buttons: {
+        marginLeft: scaleX(46),
+        marginTop: scaleY(34),
+        display: 'flex',
+        flexDirection: 'row',
+        cancelBtn: {
+          marginRight: scaleX(30),
+          text: {
+            color: CUSTOM_COLOR.BLACK,
+            opacity: 0.5,
+            fontSize: normalize(17),
+            fontFamily: 'Poppins-SemiBold',
+          },
+        },
+        proceedBtn: {
+          marginTop: scaleY(-15),
+          backgroundColor: CUSTOM_COLOR.VERMILION,
+          paddingVertical: scaleY(17),
+          paddingHorizontal: scaleY(43),
+          borderRadius: 30,
+          text: {color: CUSTOM_COLOR.WHITE, fontFamily: 'Poppins-SemiBold'},
+          fontSize: normalize(17),
         },
       },
     },

@@ -13,11 +13,4 @@ export {default as ICBankAccount} from './ICBankAccount';
 export {default as ICPaypal} from './ICPaypal';
 export {default as ICHistory} from './ICHistory';
 export {default as ICSwipe} from './ICSwipe';
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5changhiepsimongmo/luu2
-=======
 export {default as ICHeartSmall} from './ICHeartSmall';
->>>>>>> 5changhiepsimongmo/luu2
-=======
->>>>>>> 5changhiepsimongmo/kiet
