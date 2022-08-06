@@ -6,7 +6,7 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {Component} from 'react';
 import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -15,8 +15,43 @@ import {IMG_Chicken, IMG_Egg, IMG_Veggie_tomato_mix} from '../../assets/images';
 import {IC_Swipe} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
 import CustomHeaderGoBack from '../../components/CustomHeaderGoBack';
+import { SwipeListView } from 'react-native-swipe-list-view';
+import { FlatList } from 'react-native-gesture-handler';
 
 const CartScreen = props => {
+  const listCart=[
+    {
+      id: 1,
+      img:IMG_Veggie_tomato_mix,
+      name:"Veggie tomato mix...",
+      price:"1900",
+    },
+    {
+      id: 2,
+      img:IMG_Egg,
+      name:"Egg and cucumber...",
+      price:"1900",
+    },
+    {
+      id: 3,
+      img:IMG_Chicken,
+      name:"Fried chicken m...",
+      price:"1900",
+    },
+    {
+      id: 4,
+      img:IMG_Veggie_tomato_mix,
+      name:"Fish with mix orange...",
+      price:"1900",
+    },
+  ];
+  const listMember = ({item}) =>(
+    <CustomOrderedItem
+      img={item.img}
+      text={item.name}
+      price={item.price}
+    />
+  )
   return (
     <SafeAreaView style={styles.container}>
       <View style={{flex: 1, width: '80%'}}>
@@ -32,44 +67,11 @@ const CartScreen = props => {
             <Text>swipe on an item to delete</Text>
           </View>
           <View style={styles.center.main}>
-            <ScrollView>
-              <View style={styles.listItem}>
-                <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Veggie tomato mix..."
-                  price={'1900'}
-                />
-
-                <CustomOrderedItem
-                  img={IMG_Egg}
-                  text="Egg and cucmber..."
-                  price={'1900'}
-                />
-
-                <CustomOrderedItem
-                  img={IMG_Chicken}
-                  text="Fried chicken m."
-                  price={'1900'}
-                />
-
-                <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Fishwith mix orange..."
-                  price={'1900'}
-                />
-                <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Fishwith mix orange..."
-                  price={'1900'}
-                />
-
-                <CustomOrderedItem
-                  img={IMG_Veggie_tomato_mix}
-                  text="Veggie tomato mix..."
-                  price={'1900'}
-                />
-              </View>
-            </ScrollView>
+            <FlatList
+              data={listCart}
+              renderItem={listMember}
+            />
+            
           </View>
         </View>
         <View style={styles.button}>
