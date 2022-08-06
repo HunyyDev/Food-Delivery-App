@@ -16,9 +16,11 @@ class CustomInput extends Component {
           style={styles.customInputText}
           secureTextEntry={this.props.secureTextEntry || false}
           placeholder={this.props.placeholder}
+          placeholderTextColor="#999"
           name={this.props.name}
-          onChangeText={(text) => this.props.action(text, this.props.name)}
-          value={this.props.value}></TextInput>
+          onChangeText={text => this.props.action(text, this.props.name)}
+          value={this.props.value}
+        />
         <View
           style={{
             borderBottomColor: CUSTOM_COLOR.BLACK,
@@ -38,8 +40,11 @@ const styles = StyleSheet.create({
     fontSize: normalize(20),
     color: CUSTOM_COLOR.BLACK,
     opacity: 0.4,
+    fontFamily: 'FontsFree-Net-Abel-Regular',
   },
   customInputText: {
+    fontFamily: 'FontsFree-Net-Abel-Regular',
+    color: CUSTOM_COLOR.BLACK,
     fontSize: normalize(21),
     fontWeight: 'bold',
     marginLeft: scaleX(-5),

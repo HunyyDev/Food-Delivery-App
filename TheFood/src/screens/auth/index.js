@@ -34,6 +34,9 @@ class LoginScreen extends Component {
       this.setState({
         isCheckedA: !this.state.isCheckedA,
         isCheckedB: !this.state.isCheckedB,
+        email: '',
+        password: '',
+        confirmPassword: '',
       });
     }
   };
@@ -42,6 +45,9 @@ class LoginScreen extends Component {
       this.setState({
         isCheckedA: !this.state.isCheckedA,
         isCheckedB: !this.state.isCheckedB,
+        email: '',
+        password: '',
+        confirmPassword: '',
       });
     }
   };
@@ -78,20 +84,20 @@ class LoginScreen extends Component {
     });
   };
 
-  // clear = () => {
-  //   this.setState({
-  //     ...this.state,
-  //     loginInfo: {
-  //       email: '',
-  //       password: '',
-  //     },
-  //   });
-  // };
+  clear = () => {
+    this.setState({
+      ...this.state,
+      loginInfo: {
+        email: '',
+        password: '',
+      },
+    });
+  };
   render() {
     const {navigation} = this.props;
-    const onTransitToHome = () => {
-      navigation.navigate(SCREEN_NAME.HOME_SCREEN);
-    };
+    // const onTransitToHome = () => {
+    //   navigation.navigate(SCREEN_NAME.HOME_SCREEN);
+    // };
     return (
       <ScrollView style={styles.container}>
         <View style={styles.header}>
@@ -141,6 +147,7 @@ class LoginScreen extends Component {
         </View>
         {(this.state.isCheckedA && (
           <TouchableOpacity
+            style={styles.forgotPasswords}
             onPress={() => alert('Mã xác nhận đã được gửi về Email')}>
             <Text style={styles.forgotPassword}>Forgot passcode?</Text>
           </TouchableOpacity>
@@ -166,21 +173,31 @@ class LoginScreen extends Component {
           <CustomButton
             type="secondary"
             title={this.state.isCheckedA ? 'Login' : 'Sign up'}
-            onPress={
-              this.state.isCheckedA
-                ? onTransitToHome
-                : () => {
-                    Alert.alert('Thông báo', 'Đăng kí thành công');
-                    this.setCheckedA();
-                  }
-            }
+            onPress={() => {
+              if (this.state.isCheckedA) {
+                if (this.state.password !== '' && this.state.email !== '') {
+                  navigation.navigate(SCREEN_NAME.HOME_SCREEN);
+                } else
+                  Alert.alert('Wrong credentials', 'Invalid email or password');
+              } else {
+                if (
+                  this.state.password !== '' &&
+                  this.state.email !== '' &&
+                  this.state.confirmPassword !== ''
+                ) {
+                  Alert.alert('Thông báo', 'Đăng kí thành công');
+                  this.setCheckedA();
+                } else {
+                  Alert.alert('Wrong credentials', 'Invalid email or password');
+                }
+              }
+            }}
           />
         </View>
       </ScrollView>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
@@ -205,6 +222,8 @@ const styles = StyleSheet.create({
       bottom: scaleY(-2),
       alignSelf: 'center',
       flexDirection: 'row',
+      fontFamily: 'FontsFree-Net-Abel-Regular',
+
       button: {
         textAlign: 'center',
         width: scaleX(122),
@@ -233,6 +252,7 @@ const styles = StyleSheet.create({
     marginLeft: scaleX(50),
     paddingBottom: scaleY(20),
   },
+  forgotPasswords: {},
 });
 
 export default LoginScreen;

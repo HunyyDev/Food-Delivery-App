@@ -46,11 +46,11 @@ const CheckoutPaymentScreen = props => {
         <View style={styles.paymentMethod.cards}>
           <RadioForm animation={true} style={styles.paymentMethod.cards.card}>
             {radio_payment_props.map((obj, i) => (
-              <React.Fragment>
-                <RadioButton labelHorizontal={true} key={obj.id}>
+              <React.Fragment key={i}>
+                <RadioButton labelHorizontal={true}>
                   <RadioButtonInput
                     obj={obj}
-                    index={obj.id}
+                    index={i}
                     isSelected={obj.value}
                     borderWidth={2}
                     initial={0}
@@ -66,7 +66,7 @@ const CheckoutPaymentScreen = props => {
                     }}
                     onPress={() => {}}
                   />
-                  <View style={styles.icon} key={i}>
+                  <View style={styles.icon}>
                     {obj.id === 0 ? (
                       <View style={styles.icon.iconCard}>
                         <ICCard></ICCard>
@@ -83,7 +83,7 @@ const CheckoutPaymentScreen = props => {
                   </View>
                   <RadioButtonLabel
                     obj={obj}
-                    index={obj.id}
+                    index={i}
                     labelHorizontal={true}
                     labelStyle={{
                       fontFamily: 'FontsFree-Net-Abel-Regular',
@@ -95,7 +95,6 @@ const CheckoutPaymentScreen = props => {
                   />
                 </RadioButton>
                 <View
-                  key={obj.id}
                   style={{
                     borderBottomWidth: obj.id !== 2 ? 1 : 0,
                     borderColor: 'rgba(0, 0, 0, 0.3)',
@@ -113,8 +112,8 @@ const CheckoutPaymentScreen = props => {
         <View style={styles.delivery.cards}>
           <RadioForm animation={true} style={styles.delivery.cards.card}>
             {radio_delivery_props.map((obj, i) => (
-              <React.Fragment key={obj.id}>
-                <RadioButton labelHorizontal={true} key={obj.id}>
+              <React.Fragment key={i}>
+                <RadioButton labelHorizontal={true}>
                   <RadioButtonInput
                     obj={obj}
                     index={obj.id}
@@ -135,7 +134,7 @@ const CheckoutPaymentScreen = props => {
                   />
                   <RadioButtonLabel
                     obj={obj}
-                    index={obj.id}
+                    index={i}
                     labelHorizontal={true}
                     labelStyle={{
                       fontFamily: 'FontsFree-Net-Abel-Regular',
@@ -147,7 +146,6 @@ const CheckoutPaymentScreen = props => {
                   />
                 </RadioButton>
                 <View
-                  key={obj.id}
                   style={{
                     alignSelf: 'center',
                     borderBottomWidth: obj.id !== 1 ? 1 : 0,

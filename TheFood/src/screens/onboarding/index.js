@@ -31,13 +31,12 @@ const OnBoardingScreen = props => {
           style={styles.imageSection.img}
         />
       </View>
-      <View style={styles.buttonSection}>
-        <TouchableOpacity
-          style={styles.buttonSection.button}
+      <View style={styles.btnUpdate}>
+        <CustomButton
+          type="primary"
+          title="Get Started"
           onPress={onTransitToLogin}
-          >
-          <Text style={[styles.buttonSection.button.text]}>Get Started</Text>
-        </TouchableOpacity>
+        />
       </View>
     </View>
   );
@@ -76,29 +75,11 @@ const styles = StyleSheet.create({
       height: '100%',
     },
   },
-
-  buttonSection: {
-    flex: 1,
-    alignItems: 'center',
+  btnUpdate: {
     overflow: 'visible',
-    marginHorizontal: scaleY(51),
-
-    button: {
-      backgroundColor: CUSTOM_COLOR.WHITE,
-      paddingHorizontal: scaleX(105),
-      paddingVertical: scaleY(25),
-      width: '100%',
-      borderRadius: 30,
-      alignItems: 'center',
-      fontSize: 17,
-      position: 'absolute',
-      bottom: scaleY(36),
-
-      text: {
-        fontWeight: '600',
-        color: CUSTOM_COLOR.VERMILION,
-      },
-    },
+    bottom: scaleY(41),
+    alignSelf: 'center',
+    position: 'absolute',
   },
 });
 

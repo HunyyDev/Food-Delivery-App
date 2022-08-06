@@ -2,6 +2,7 @@ import {Text, StyleSheet, View} from 'react-native';
 import React, {Component} from 'react';
 import {scaleX, scaleY, normalize} from '../../../helperFunction';
 import colors from '../../../assets/constants/colors';
+import CUSTOM_COLOR from '../../../assets/constants/colors';
 
 const styles = StyleSheet.create({
   container: {},
@@ -13,6 +14,8 @@ const styles = StyleSheet.create({
       foodType: {
         paddingBottom: scaleY(10),
         fontSize: normalize(17),
+        color: CUSTOM_COLOR.BLACK,
+        fontFamily: 'FontsFree-Net-Abel-Regular',
       },
     },
   },
@@ -60,14 +63,14 @@ const styles = StyleSheet.create({
         height: scaleY(52),
         textAlign: 'center',
         color: colors.BLACK,
-        fontFamily: 'FontsFree-Net-SF-Pro-Rounded-Semibold',
+        fontFamily: 'FontsFree-Net-Abel-Regular',
       },
 
       foodPrice: {
         marginTop: scaleY(15),
         fontSize: normalize(17),
         color: colors.VERMILION,
-        fontFamily: 'FontsFree-Net-SF-Pro-Rounded-Bold',
+        fontFamily: 'FontsFree-Net-Abel-Regular',
       },
     },
   },

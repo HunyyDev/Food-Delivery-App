@@ -12,11 +12,14 @@ import CUSTOM_COLOR from '../assets/constants/colors';
 import colors from '../assets/constants/colors';
 
 const CustomBreadcrumbNavigation = ({
-  onBack,
   title = null,
   RightIcon = null,
   searchField = null,
+  navigation,
 }) => {
+  const onBack = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.breadcrumb} onPress={onBack}>
@@ -29,7 +32,8 @@ const CustomBreadcrumbNavigation = ({
 
       {searchField ? (
         <View style={styles.searchFieldContainer}>
-          <TextInput style={[styles.searchFieldContainer.searchField]}></TextInput>
+          <TextInput
+            style={[styles.searchFieldContainer.searchField]}></TextInput>
         </View>
       ) : (
         <></>
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     marginHorizontal: scaleX(44),
 
     searchField: {
-      fontFamily: "FontsFree-Net-Abel-Regular",
+      fontFamily: 'FontsFree-Net-Abel-Regular',
       fontSize: normalize(17),
       color: colors.BLACK,
     },

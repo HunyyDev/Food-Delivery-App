@@ -47,7 +47,10 @@ const CartScreen = () => {
 
   const onMinus = (index, sign) => {
     if (sign === '-') {
-      data[index].quantity -= 1;
+      data[index].quantity - 1 >= 0
+        ? (data[index].quantity -= 1)
+        : (data[index].quantity = 0);
+      setSt(data[index].quantity);
     } else data[index].quantity += 1;
   };
 
@@ -85,7 +88,7 @@ const CartScreen = () => {
                       style={{paddingHorizontal: scaleY(10)}}
                       onPress={() => {
                         onMinus(index, '-');
-                        setSt(st - 1);
+                        // setSt(st - 1);
                       }}>
                       <Text>-</Text>
                     </TouchableOpacity>
@@ -148,8 +151,6 @@ const CartScreen = () => {
     </>
   );
 };
-
-export default CartScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -262,3 +263,5 @@ const styles = StyleSheet.create({
     },
   },
 });
+
+export default CartScreen;

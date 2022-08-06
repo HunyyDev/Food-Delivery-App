@@ -1,5 +1,6 @@
 import {Text, StyleSheet, View} from 'react-native';
 import React, {Component} from 'react';
+import SCREEN_NAME from '../../assets/constants/screens';
 
 import Header from './header';
 import Title from './title';
@@ -8,35 +9,47 @@ import Slider from './slider';
 import Footer from './footer';
 import styles from './styles';
 
-export default class HomeScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {/* Header Section */}
-        <View style={styles.header}>
-          <Header />
-        </View>
-
-        {/* Title Section */}
-        <View style={styles.title}>
-          <Title />
-        </View>
-
-        {/* Seach Section */}
-        <View style={styles.search}>
-          <Search />
-        </View>
-
-        {/* Slider Section */}
-        <View style={styles.slider}>
-          <Slider />
-        </View>
-
-        {/* Footer Section */}
-        <View style={styles.footer}>
-          <Footer />
-        </View>
+const HomeScreen = props => {
+  const onTransitToCart = () => {
+    props.navigation.navigate(SCREEN_NAME.CART_SCREEN);
+  };
+  const onTransitToProfile = () => {
+    props.navigation.navigate(SCREEN_NAME.PROFILE_SCREEN);
+  };
+  const onTransitToHistory = () => {
+    props.navigation.navigate(SCREEN_NAME.HISTORY_SCREEN);
+  };
+  return (
+    <View style={styles.container}>
+      {/* Header Section */}
+      <View style={styles.header}>
+        <Header onPress={onTransitToCart} />
       </View>
-    );
-  }
-}
+
+      {/* Title Section */}
+      <View style={styles.title}>
+        <Title />
+      </View>
+
+      {/* Seach Section */}
+      <View style={styles.search}>
+        <Search />
+      </View>
+
+      {/* Slider Section */}
+      <View style={styles.slider}>
+        <Slider />
+      </View>
+
+      {/* Footer Section */}
+      <View style={styles.footer}>
+        <Footer
+          onPressProfile={onTransitToProfile}
+          onPressHistory={onTransitToHistory}
+        />
+      </View>
+    </View>
+  );
+};
+
+export default HomeScreen;

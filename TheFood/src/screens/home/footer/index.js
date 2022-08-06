@@ -5,6 +5,8 @@ import styles from './styles';
 import {ICHeart, ICHome, ICTime, ICUser} from '../../../assets/icons';
 import colors from '../../../assets/constants/colors';
 
+import SCREEN_NAME from '../../../assets/constants/screens';
+
 const iconListComponent = [<ICHome />, <ICHeart />, <ICUser />, <ICTime />];
 
 export default class Footer extends Component {
@@ -13,6 +15,12 @@ export default class Footer extends Component {
 
     this.state = {
       selected: 0,
+      button: {
+        Home: 1,
+        Heart: 0,
+        User: 0,
+        Time: 0,
+      },
     };
   }
 
@@ -21,6 +29,10 @@ export default class Footer extends Component {
   };
 
   render() {
+    const {navigation} = this.props;
+    const onTransitToHome = () => {
+      navigation.navigate(SCREEN_NAME.HOME_SCREEN);
+    };
     return (
       <View style={styles.container}>
         {iconListComponent.map((Component, index) => {

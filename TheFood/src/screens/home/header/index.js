@@ -1,25 +1,28 @@
-import { Text, StyleSheet, View, TouchableOpacity } from 'react-native'
-import React, { Component } from 'react'
+import {Text, StyleSheet, View, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
 
-import {ICCart, ICMenu} from '../../../assets/icons'
-import styles from './styles'
+import {ICCart, ICMenu} from '../../../assets/icons';
+import styles from './styles';
+import SCREEN_NAME from '../../../assets/constants/screens';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
+    const {navigation} = this;
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.icmenuContainer}>
-            <ICMenu style={styles.icmenuContainer.icmenu}/>
+          <ICMenu style={styles.icmenuContainer.icmenu} />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.iccarttyreContainer}>
-            <View style={styles.iccarttyreContainer.iccarttyre}>
-                <ICCart/>
-            </View>
+        <TouchableOpacity
+          style={styles.iccarttyreContainer}
+          onPress={this.props.onPress}>
+          <View style={styles.iccarttyreContainer.iccarttyre}>
+            <ICCart />
+          </View>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }
 
-
-
+export default Header;

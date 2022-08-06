@@ -24,6 +24,14 @@ const RootNavigator = props => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name={SCREEN_NAME.LOADING_SCREEN}
+          component={LoaderScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.ONBOARDING_SCREEN}
+          component={OnBoardingScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
           name={SCREEN_NAME.CHECKOUT_PAYMENT_SCREEN}
           component={CheckoutPaymentScreen}
           options={{headerShown: false}}></Stack.Screen>
@@ -39,7 +47,7 @@ const RootNavigator = props => {
           name={SCREEN_NAME.MYPROFILE_SCREEN}
           component={MyProfileScreen}
           options={{headerShown: false}}></Stack.Screen>
-          <Stack.Screen
+        <Stack.Screen
           name={SCREEN_NAME.SEARCH_SCREEN}
           component={SearchScreen}
           options={{headerShown: false}}></Stack.Screen>
@@ -56,20 +64,12 @@ const RootNavigator = props => {
           component={NoFoundItemScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
-          name={SCREEN_NAME.ONBOARDING_SCREEN}
-          component={OnBoardingScreen}
-          options={{headerShown: false}}></Stack.Screen>
-        <Stack.Screen
           name={SCREEN_NAME.HOME_SCREEN}
           component={HomeScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.NO_INTERNET}
           component={NoInternetScreen}
-          options={{headerShown: false}}></Stack.Screen>
-        <Stack.Screen
-          name={SCREEN_NAME.LOADING_SCREEN}
-          component={LoaderScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.LOGIN_SCREEN}

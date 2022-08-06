@@ -1,10 +1,27 @@
-import {StyleSheet, Text, View, ImageBackground, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  Image,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
+import {useEffect, useRef} from 'react';
 
-const LoaderScreen = () => {
+const LoaderScreen = props => {
+  const timerRef = useRef(null); // you can also import useRef() directly from 'react'
+  const {navigation} = props;
+  useEffect(() => {
+    timerRef.current = setTimeout(() => {
+      navigation.navigate(SCREEN_NAME.ONBOARDING_SCREEN);
+    }, 5000);
+
+    return () => clearTimeout(timerRef.current);
+  }, []);
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -18,6 +35,12 @@ const LoaderScreen = () => {
           style={styles.mainImage}
         />
         <Text style={styles.mainText}>Food for everyone</Text>
+      </View>
+      <View style={styles.loadingAction}>
+        <ActivityIndicator
+          size={normalize(28)}
+          color={CUSTOM_COLOR.VERMILION}
+        />
       </View>
     </View>
   );
@@ -51,8 +74,15 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.VERMILION,
     fontSize: 10,
     textAlign: 'center',
-    marginTop: scaleY(90),
+    marginTop: scaleY(110),
     fontFamily: 'Abel-Regular',
+    marginBottom: scaleY(26),
+  },
+  loadingAction: {
+    position: 'absolute',
+    width: scaleX(27),
+    alignSelf: 'center',
+    top: scaleY(430),
   },
 });
 

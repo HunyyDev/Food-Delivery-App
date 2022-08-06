@@ -1,11 +1,11 @@
 import {Text, StyleSheet, View} from 'react-native';
 import React, {Component} from 'react';
 import {normalize, scaleX, scaleY} from '../../../helperFunction';
-import colors from '../../../assets/constants/colors';
+import CUSTOM_COLOR from '../../../assets/constants/colors';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.GALLERY,
+    backgroundColor: CUSTOM_COLOR.GALLERY,
     flexDirection: 'row',
     marginHorizontal: scaleX(50),
     borderRadius: normalize(30),
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
   },
   input: {
     width: '100%',
-    fontFamily: 'FontsFree-Net-SF-Pro-Rounded-Semibold',
+    fontFamily: 'FontsFree-Net-Abel-Regular',
+    color: CUSTOM_COLOR.BLACK,
   },
 });
 
