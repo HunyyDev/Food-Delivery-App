@@ -7,9 +7,14 @@ const ProductItem = props => {
 
   const onDetail = () => {};
   return (
-    <TouchableOpacity onPress={onDetail}>
-      <Text>{item?.name}</Text>
-    </TouchableOpacity>
+    <>
+      <View style={{alignSelf: 'center', top: 100}}>
+        <Text>Product Item Screen</Text>
+      </View>
+      <TouchableOpacity onPress={onDetail}>
+        <Text>{item?.name}</Text>
+      </TouchableOpacity>
+    </>
   );
 };
 

@@ -5,9 +5,14 @@ import {StyleSheet} from 'react-native';
 import LoginScreen from '../screens/auth';
 import Drawer from '../screens/drawer';
 import HomeScreen from '../screens/home';
-import {default as History, default as noInternet} from '../screens/noInternet';
-import notFound from '../screens/notFound';
+import {default as NoInternet} from '../screens/noInternet';
+import {default as History} from '../screens/history';
+import {default as NotFound} from '../screens/notFound';
 import OnboardingScreen from '../screens/onboarding';
+import {default as ProductList} from '../screens/products/ProductList';
+import {default as ProductDetail} from '../screens/products/ProductDetail';
+import {default as ProductItem} from '../screens/products/components/ProductItem';
+import {default as ForgotPasswordScreen} from '../screens/auth/ForgotPasswordScreen';
 
 const RootNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -42,12 +47,32 @@ const RootNavigator = () => {
           />
           <Stack.Screen
             name="NotFound"
-            component={notFound}
+            component={NotFound}
             options={{headerShown: false}}
           />
           <Stack.Screen
             name="NoInternet"
-            component={noInternet}
+            component={NoInternet}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={'ProductList'}
+            component={ProductList}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={'ProductDetail'}
+            component={ProductDetail}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={'ProductItem'}
+            component={ProductItem}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name={'ForgotPasswordScreen'}
+            component={ForgotPasswordScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

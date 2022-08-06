@@ -7,12 +7,6 @@ import CUSTOM_COLOR from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 
 const NoInternet = ({navigation}) => {
-  //  constructor(props)
-  //   {
-  //     super(props);
-  //     this.state = {};
-  //   }
-  //   render() {
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Logo */}

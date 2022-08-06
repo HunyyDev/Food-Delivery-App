@@ -94,7 +94,7 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity
               hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
-              onPress={() => navigation.navigate('History')}>
+              onPress={() => navigation.navigate('ProductItem')}>
               <Image source={IMG_giohang} style={styles.icon2} />
             </TouchableOpacity>
           </View>
@@ -144,7 +144,7 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('ProductList')}>
             <Text style={styles.seemore}>{'see more'}</Text>
           </TouchableOpacity>
 
@@ -153,22 +153,34 @@ const HomeScreen = ({navigation}) => {
             horizontal={true}
             showsHorizontalScrollIndicator={false}>
             <View style={styles.dish}>
-              <Image source={IMG_Food2} style={styles.img} />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProductDetail')}>
+                <Image source={IMG_Food2} style={styles.img} />
+              </TouchableOpacity>
               <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
               <Text style={styles.TextMenu1}>{'N1,900'}</Text>
             </View>
             <View style={styles.dish}>
-              <Image source={IMG_Food2} style={styles.img} />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProductDetail')}>
+                <Image source={IMG_Food2} style={styles.img} />
+              </TouchableOpacity>
               <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
               <Text style={styles.TextMenu1}>{'N1,900'}</Text>
             </View>
             <View style={styles.dish}>
-              <Image source={IMG_Food2} style={styles.img} />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProductDetail')}>
+                <Image source={IMG_Food2} style={styles.img} />
+              </TouchableOpacity>
               <Text style={styles.TextMenu}>{'Veggie\ntomato mix'}</Text>
               <Text style={styles.TextMenu1}>{'N1,900'}</Text>
             </View>
             <View style={styles.dish}>
-              <Image source={IMG_Food1} style={styles.img1} />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ProductDetail')}>
+                <Image source={IMG_Food1} style={styles.img1} />
+              </TouchableOpacity>
               <Text style={styles.TextMenu}> {'Spicy fish\nsauce'} </Text>
               <Text style={styles.TextMenu1}>{'N2,300.99'}</Text>
             </View>
@@ -184,7 +196,7 @@ const HomeScreen = ({navigation}) => {
             <TouchableOpacity>
               <Image source={IMG_user} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('History')}>
               <Image source={IMG_time} />
             </TouchableOpacity>
           </View>

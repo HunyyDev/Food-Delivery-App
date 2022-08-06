@@ -53,7 +53,8 @@ const LoginScreen = ({navigation}) => {
               <CustomInput label={'Email address'} />
               {/* Password */}
               <CustomInput label={'Password'} secureTextEntry />
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('ForgotPasswordScreen')}>
                 <Text style={styles.forgotPC}>{'Forgot passcode?'}</Text>
               </TouchableOpacity>
             </View>

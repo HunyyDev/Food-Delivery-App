@@ -3,8 +3,8 @@ import React from 'react';
 
 const ProductDetail = props => {
   return (
-    <View>
-      <Text>ProductDetail</Text>
+    <View style={{alignSelf: 'center', top: 100}}>
+    <Text>Product Detail Screen</Text>
     </View>
   );
 };

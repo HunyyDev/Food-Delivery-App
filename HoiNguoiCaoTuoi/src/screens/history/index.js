@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  View,
   StyleSheet,
 } from 'react-native';
 import {IMG_History} from '../../assets/images';
@@ -11,54 +12,42 @@ import {scaleWidth} from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/fonts';
 import CUSTOM_COLOR from '../../constants/colors';
 import {IMG_chevron_left} from '../../assets/icons';
+import CustomButton from '../../components/CustomButton';
 
 const History = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
-      <></>
       {/* back button */}
       <TouchableOpacity
         style={styles.backContainer}
-        hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
+        hitSlop={{top: 30, bottom: 30, left: 30, right: 30}}
         onPress={() => {
-          console.log(this.props);
-          this.props.navigation.goBack();
+          navigation.navigate('Home');
         }}>
         <Image source={IMG_chevron_left} />
       </TouchableOpacity>
-      <></>
       {/* title */}
-      <Text style={styles.title}>{'History'}</Text>
-      <></>
+      <Text style={{top: scaleWidth(55), textAlign: 'center'}}>
+        {'History'}
+      </Text>
       {/* Logo */}
       <Image
         source={IMG_History}
         style={{alignSelf: 'center', marginTop: scaleWidth(200)}}
       />
-      <Text
-        style={{
-          fontFamily: FONT_FAMILY.Bold,
-          fontSize: scaleWidth(40),
-          alignSelf: 'center',
-          color: CUSTOM_COLOR.Black,
-        }}>
-        {'No history yet'}
-      </Text>
-      <Text
-        style={{
-          fontFamily: FONT_FAMILY.Regular,
-          fontSize: scaleWidth(20),
-          alignSelf: 'center',
-          width: scaleWidth(240),
-          textAlign: 'center',
-        }}>
+      <Text style={styles.title}>{'No history yet'}</Text>
+      <Text style={styles.text}>
         {'Hit the orange button down below to Create an order.'}
       </Text>
       <></>
       {/* Button */}
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>{'Start ordering'}</Text>
-      </TouchableOpacity>
+      <View style={{marginTop: scaleWidth(50)}}>
+        <CustomButton
+          type={'secondary'}
+          text={'Start ordering'}
+          onPress={() => navigation.navigate('Home')}
+        />
+      </View>
     </SafeAreaView>
   );
   //   }
@@ -76,28 +65,18 @@ const styles = StyleSheet.create({
     left: scaleWidth(50),
   },
   title: {
-    fontFamily: FONT_FAMILY.Light,
-    fontSize: scaleWidth(25),
+    fontFamily: FONT_FAMILY.SFPro,
+    fontSize: scaleWidth(28),
     alignSelf: 'center',
-    top: scaleWidth(40),
     color: CUSTOM_COLOR.Black,
+    marginVertical: 20,
   },
-  button: {
-    backgroundColor: CUSTOM_COLOR.Vermilion,
-    width: scaleWidth(314),
-    height: scaleWidth(70),
+  text: {
+    fontFamily: FONT_FAMILY.Light,
+    fontSize: scaleWidth(15),
     alignSelf: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: scaleWidth(30),
-    bottom: scaleWidth(41),
-    position: 'absolute',
-  },
-  buttonText: {
-    fontFamily: FONT_FAMILY.Regular,
-    fontSize: scaleWidth(20),
-    alignSelf: 'center',
-    color: CUSTOM_COLOR.White,
+    width: scaleWidth(250),
+    textAlign: 'center',
   },
 });
 

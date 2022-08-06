@@ -3,11 +3,10 @@ import {
   Text,
   SafeAreaView,
   TouchableOpacity,
-  View,
   FlatList,
 } from 'react-native';
 import React from 'react';
-import SCREEN_NAME from '../../constants/screens';
+// import SCREEN_NAME from '../../constants/screens';
 import ProductItem from './components/ProductItem';
 
 const dummyData = [
@@ -22,11 +21,9 @@ const dummyData = [
   },
 ];
 
-const ProductList = props => {
-  const {navigation} = props;
-
+const ProductList = ({navigation}) => {
   const onBack = () => {
-    navigation.navigate(SCREEN_NAME.HOME);
+    navigation.navigate('Home');
   };
 
   const renderProductItem = ({item, index}) => {
