@@ -90,22 +90,12 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     paddingHorizontal: 30,
     marginTop: 40,
-<<<<<<< HEAD
-=======
     // backgroundColor: CUSTOM_COLOR.SunsetOrange,
->>>>>>> ChimCanhCut/dev_khangnt
   },
   productItem: {
     width: 220,
     height: 330,
     marginHorizontal: 15,
-<<<<<<< HEAD
-  },
-  productInfo: {
-    backgroundColor: COLORS.WHITE,
-    borderRadius: 50,
-    shadowColor: COLORS.BLACK,
-=======
     backgroundColor: 'transparent',
     justifyContent: 'flex-end',
     // backgroundColor: CUSTOM_COLOR.SunsetOrange,
@@ -116,70 +106,33 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.White,
     borderRadius: 30,
     shadowColor: CUSTOM_COLOR.Black,
->>>>>>> ChimCanhCut/dev_khangnt
     shadowOffset: {
       width: 0,
       height: -30,
     },
-<<<<<<< HEAD
-    shadowOpacity: 0.3,
-    shadowRadius: 20,
-    elevation: 20,
-    width: 220,
-    height: 270,
-    marginTop: 60,
-    paddingTop: 145,
-=======
     shadowOpacity: '0.8',
     justifyContent: 'flex-end',
->>>>>>> ChimCanhCut/dev_khangnt
   },
   imageWrapper: {
     position: 'absolute',
     left: 31,
-<<<<<<< HEAD
-=======
     bottom: 160,
->>>>>>> ChimCanhCut/dev_khangnt
     height: 164,
     width: 164,
     zIndex: 5,
     elevation: 5,
     borderRadius: 9999,
     padding: 0,
-<<<<<<< HEAD
-  },
-  titleText: {
-    fontFamily: FONT_FAMILY.SF_Pro_Rounded_Secondary,
-    color: COLORS.BLACK,
-=======
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
   titleText: {
     fontFamily: FONT_FAMILY.RoundedBold,
     color: CUSTOM_COLOR.Black,
->>>>>>> ChimCanhCut/dev_khangnt
     textAlign: 'center',
     fontSize: 20,
     marginHorizontal: 45,
   },
   priceText: {
-<<<<<<< HEAD
-    fontFamily: FONT_FAMILY.SF_Pro_Rounded_Secondary,
-    color: COLORS.SUNSET_ORANGE,
-    textAlign: 'center',
-    fontSize: 15,
-    marginHorizontal: 45,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 20,
-    marginBottom: 50,
-  },
-  chosenIcon: {
-    shadowColor: COLORS.SUNSET_ORANGE,
-=======
     fontFamily: FONT_FAMILY.RoundedBold,
     color: CUSTOM_COLOR.SunsetOrange,
     textAlign: 'center',
@@ -196,7 +149,6 @@ const styles = StyleSheet.create({
   },
   chosenIcon: {
     shadowColor: CUSTOM_COLOR.SunsetOrange,
->>>>>>> ChimCanhCut/dev_khangnt
     shadowOffset: {
       width: 0,
       height: 0,
@@ -205,8 +157,6 @@ const styles = StyleSheet.create({
     shadowRadius: 16.0,
     elevation: 24,
   },
-<<<<<<< HEAD
-=======
   SeeMore: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
@@ -220,7 +170,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     color: CUSTOM_COLOR.SunsetOrange,
   },
->>>>>>> ChimCanhCut/dev_khangnt
 });
 
 export default styles;
