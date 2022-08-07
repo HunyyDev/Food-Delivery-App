@@ -50,24 +50,25 @@ export default CustomOrderedItem;
 const styles = StyleSheet.create({
   container: {
     height: scale(102),
-    width: scale(305),
+    width: scale(330),
     backgroundColor: CUSTOM_COLOR.White,
-    borderRadius: 30,
+    borderRadius: 40,
     overflow: 'hidden',
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: scale(14),
+    //marginVertical: scale(14),
   },
   imgSection: {
     height: '90%',
     width: '40%',
     alignItems: 'center',
     borderRadius: 20,
+    //backgroundColor:'black'
   },
   img: {
     height: '100%',
     width: '70%',
-    borderRadius: 40,
+    borderRadius: 60,
   },
 
   infoSection: {
@@ -103,5 +104,72 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.White,
     fontFamily: FONT_FAMILY.Bold,
     fontSize: scale(15),
+  },
+  backTextWhite: {
+    color: '#FFF',
+  },
+  rowFront: {
+    backgroundColor: '#FFF',
+    borderRadius: 5,
+    height: 60,
+    margin: 5,
+    marginBottom: 15,
+    shadowColor: '#999',
+    shadowOffset: {width: 0, height: 1},
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
+  },
+  rowFrontVisible: {
+    backgroundColor: '#FFF',
+    borderRadius: 5,
+    height: 60,
+    padding: 10,
+    marginBottom: 15,
+  },
+  rowBack: {
+    alignItems: 'center',
+    backgroundColor: '#DDD',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 15,
+    margin: 5,
+    marginBottom: 15,
+    borderRadius: 5,
+  },
+  backRightBtn: {
+    alignItems: 'flex-end',
+    bottom: 0,
+    justifyContent: 'center',
+    position: 'absolute',
+    top: 0,
+    width: 75,
+    paddingRight: 17,
+  },
+  backRightBtnLeft: {
+    backgroundColor: '#1f65ff',
+    right: 75,
+  },
+  backRightBtnRight: {
+    backgroundColor: 'red',
+    right: 0,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
+  },
+  trash: {
+    height: 25,
+    width: 25,
+    marginRight: 7,
+  },
+  title: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 5,
+    color: '#666',
+  },
+  details: {
+    fontSize: 12,
+    color: '#999',
   },
 });
