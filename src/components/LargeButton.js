@@ -1,38 +1,41 @@
-import {Text, StyleSheet, View, Dimensions, Pressable} from 'react-native';
-import React, {Component, useState} from 'react';
-import CUSTOM_COLOR from '../constants/colors';
+import React from 'react';
+import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
+import COLORS from '../constants/colors';
 
 import FONT_FAMILY from '../constants/fonts';
 
-const CustomButton = props => {
+const LargeButton = props => {
+  const {label, text, style, onPress, check, ...rest} = props;
   return (
     <Pressable
-      onPress={props.onPress}
+      onPress={onPress}
       style={({pressed}) => [
         {
           backgroundColor: pressed ? 'rgb(210, 230, 255)' : 'white',
         },
         styles.buttonBackground,
-      ]}>
-      {props.label === 'primary'
+        style,
+      ]}
+      {...rest}>
+      {label === 'primary'
         ? ({pressed}) =>
             pressed ? (
               <View style={styles.buttonOrange}>
-                <Text style={styles.TextButtonOrange}>{props.text}</Text>
+                <Text style={styles.TextButtonOrange}>{text}</Text>
               </View>
             ) : (
               <View style={styles.buttonWhite}>
-                <Text style={styles.TextButtonWhite}>{props.text}</Text>
+                <Text style={styles.TextButtonWhite}>{text}</Text>
               </View>
             )
         : ({pressed}) =>
             pressed ? (
               <View style={styles.buttonWhite}>
-                <Text style={styles.TextButtonWhite}>{props.text}</Text>
+                <Text style={styles.TextButtonWhite}>{text}</Text>
               </View>
             ) : (
               <View style={styles.buttonOrange}>
-                <Text style={styles.TextButtonOrange}>{props.text}</Text>
+                <Text style={styles.TextButtonOrange}>{text}</Text>
               </View>
             )}
     </Pressable>
@@ -41,7 +44,7 @@ const CustomButton = props => {
 
 const styles = StyleSheet.create({
   buttonWhite: {
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 35,
     height: Dimensions.get('window').height * 0.08,
     padding: 20,
@@ -55,10 +58,10 @@ const styles = StyleSheet.create({
   TextButtonWhite: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 15,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
   },
   buttonOrange: {
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    backgroundColor: COLORS.SunsetOrange,
     borderRadius: 35,
     height: Dimensions.get('window').height * 0.08,
     padding: 20,
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
   TextButtonOrange: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 15,
-    color: CUSTOM_COLOR.White,
+    color: COLORS.White,
   },
   buttonBackground: {
     backgroundColor: 'transparent',
@@ -83,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default React.memo(CustomButton);
+export default React.memo(LargeButton);

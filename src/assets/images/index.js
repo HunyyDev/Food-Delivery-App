@@ -5,3 +5,8 @@ export {default as IMG_Product_1} from './image2.png';
 export {default as IMG_Marvis} from './Rectangle6.png';
 export {default as IMG_Product_2} from './egg.png';
 export {default as IMG_Product_3} from './chicken.png';
+export {default as IMG_FIRST_TIME_BACKGROUND} from './firstTimeBackground.png';
+export {default as IMG_FIRST_TIME_LOGO} from './firstTimeLogo.png';
+export {default as IMG_LOADING} from './loading.png';
+export {default as IMG_INSTRUCTION} from './instruction.png';
+export {default as IMG_FISH} from './Fish.png';

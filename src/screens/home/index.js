@@ -1,15 +1,13 @@
+import {DrawerActions} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {
-  Text,
-  StyleSheet,
-  View,
-  Dimensions,
-  ScrollView,
-  Image,
-  TextInput,
   Alert,
-  Pressable,
+  Image,
+  ScrollView,
+  Text,
+  TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import {
   ICON_33,
@@ -20,18 +18,13 @@ import {
   ICON_shop,
   ICON_user,
 } from '../../assets/icons';
-import CUSTOM_COLOR from '../../constants/colors';
-import FONT_FAMILY from '../../constants/fonts';
+import {IMG_Product_1, IMG_Product_2, IMG_Product_3} from '../../assets/images';
 import ButtonHome from '../../components/ButtonHome';
-import {
-  IMG_Background,
-  IMG_Logo,
-  IMG_Product_1,
-  IMG_Product_2,
-  IMG_Product_3,
-} from '../../assets/images';
-import styles from './styles';
 import ButtonProduct from '../../components/ButtonProduct';
+import COLORS from '../../constants/colors';
+import SCREEN_NAME from '../../constants/screens';
+import styles from './styles';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -51,7 +44,7 @@ export default class HomeScreen extends Component {
     {
       id: 2,
       source: IMG_Product_2,
-      title: 'Egg and cucmber...',
+      title: 'Egg and cucumber...',
       price: 'N1,900',
     },
     {
@@ -85,9 +78,15 @@ export default class HomeScreen extends Component {
       <ScrollView style={styles.container}>
         <>
           <View style={styles.MenuContainer}>
-            <Image source={ICON_Menu} style={styles.IconMenu} />
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('Delivery')}
+              onPress={() =>
+                this.props.navigation.dispatch(DrawerActions.openDrawer())
+              }>
+              <Image style={styles.IconMenu} source={ICON_Menu} />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate(SCREEN_NAME.CART)}
               style={styles.IconShop}>
               <Image source={ICON_shop} />
             </TouchableOpacity>
@@ -102,11 +101,10 @@ export default class HomeScreen extends Component {
           <View style={styles.SearchContainer}>
             <View style={styles.Search}>
               <Image source={ICON_33} style={styles.IconSearch} />
-              {/* <Text style={styles.TextSearch}>Search</Text> */}
               <TextInput
                 style={styles.TextSearch}
                 placeholder={'Search'}
-                placeholderTextColor={CUSTOM_COLOR.Light_Black}
+                placeholderTextColor={COLORS.Light_Black}
               />
             </View>
           </View>

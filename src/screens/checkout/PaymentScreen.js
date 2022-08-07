@@ -1,6 +1,13 @@
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
-import CustomButton from '../../components/CustomButton';
+import LargeButton from '../../components/LargeButton';
 import {
   ICON_CHEVRON,
   ICON_CREDIT_CARD,
@@ -9,11 +16,15 @@ import {
 import RadioButton from '../../components/RadioButton';
 import styles from './styles';
 
-const PaymentScreen = () => {
+const PaymentScreen = props => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
-        <Image source={ICON_CHEVRON} style={styles.Chevron} />
+        <TouchableOpacity
+          onPress={() => props.navigation.goBack()}
+          style={styles.Chevron}>
+          <Image source={ICON_CHEVRON} />
+        </TouchableOpacity>
         <Text style={styles.Checkout}>Checkout</Text>
       </View>
       <View style={styles.titleContainer}>
@@ -60,7 +71,7 @@ const PaymentScreen = () => {
         <Text style={styles.priceText}>23,000</Text>
       </View>
       <View style={styles.ButtonContainer}>
-        <CustomButton text={'Proceed to payment'} label={'secondary'} />
+        <LargeButton text={'Proceed to payment'} label={'secondary'} />
       </View>
     </ScrollView>
   );

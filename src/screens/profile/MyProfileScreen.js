@@ -15,7 +15,7 @@ import {
   ICON_PAYPAL,
 } from '../../assets/icons';
 import {IMG_Marvis} from '../../assets/images';
-import CustomButton from '../../components/CustomButton';
+import LargeButton from '../../components/LargeButton';
 import RadioButton from '../../components/RadioButton';
 import RoundedWhiteBox from '../../components/RoundedWhiteBox';
 
@@ -36,14 +36,17 @@ const MyProfileScreen = props => {
         <Text style={styles.PersonalText}>Personal details</Text>
         <Text style={styles.changeText}>change</Text>
       </View>
-      <View style={styles.BoxContainer}>
+      <View style={styles.PersonalBox}>
         <View style={styles.whiteBox}>
           <View>
-            <Image source={IMG_Marvis} style={styles.MarvisIMG} />
+            <Image source={IMG_Marvis} style={styles.MarvisIMG1} />
           </View>
-          <View style={styles.TextBox}>
+          <View style={styles.TextBox1}>
             <Text style={styles.MarvisText}>Marvis Ighedosa</Text>
             <Text style={styles.otherText}>dosamarvis@gmail.com</Text>
+            <View style={styles.phoneBox}>
+              <Text style={styles.otherText}>+234 9011039271</Text>
+            </View>
             <Text style={styles.otherText}>
               No 15 uti street off ovie palace road effurun delta state
             </Text>
@@ -57,7 +60,7 @@ const MyProfileScreen = props => {
         <RoundedWhiteBox label={'Help'} />
       </View>
       <View style={styles.ButtonContainer}>
-        <CustomButton text={'Update'} label={'secondary'} />
+        <LargeButton text={'Update'} label={'secondary'} />
       </View>
     </ScrollView>
   );

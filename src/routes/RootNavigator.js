@@ -1,34 +1,47 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React, {useEffect, useState} from 'react';
+
+import SCREEN_NAME from '../constants/screens';
+
 import LoginScreen from '../screens/auth';
-import OnboardingScreen from '../screens/onboarding';
-import HomeScreen from '../screens/home';
+import CartScreen from '../screens/checkout/CartScreen';
 import DeliveryScreen from '../screens/checkout/DeliveryScreen';
 import PaymentScreen from '../screens/checkout/PaymentScreen';
+import HomeScreen from '../screens/home';
+import OnboardingScreen from '../screens/onboarding';
+import FirstTimeScreen from '../screens/onboarding/FirstTimeScreen';
 import InformationScreen from '../screens/profile/InformationScreen';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import MainNavigator from './MainNavigator';
+import AuthNavigator from './AuthNavigator';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import DrawerHome from './DrawerHome';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = props => {
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const getInfo = async () => {
+    const name = await AsyncStorage.getItem('USERNAME');
+    const pass = await AsyncStorage.getItem('PASSWORD');
+    setUsername(name);
+    setPassword(pass);
+  };
+  useEffect(() => {
+    getInfo();
+  }, [username, password]);
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
-        <Stack.Screen
-          name="Login"
-          component={LoginScreen}
-          // options={{title: 'Welcome'}}
-        />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name={'Delivery'} component={DeliveryScreen} />
-        <Stack.Screen name={'Payment'} component={PaymentScreen} />
-        <Stack.Screen name="Information" component={InformationScreen} />
-        <Stack.Screen name="MyProfile" component={MyProfileScreen} />
-      </Stack.Navigator>
+      {username != undefined && password != undefined ? (
+        <MainNavigator {...props} />
+      ) : (
+        <AuthNavigator {...props} />
+      )}
     </NavigationContainer>
+    // </SafeAreaView>
   );
 };
 

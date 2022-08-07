@@ -1,11 +1,11 @@
 import {StyleSheet, Dimensions} from 'react-native';
-import CUSTOM_COLOR from '../../constants/colors';
+import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: CUSTOM_COLOR.SunsetOrange,
+    backgroundColor: COLORS.SunsetOrange,
   },
   logo: {
     width: '100%',
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     height: 73,
     left: 49,
     top: 56,
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 37,
     alignItems: 'center',
     overflow: 'hidden',
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 65,
-    color: CUSTOM_COLOR.White,
+    color: COLORS.White,
     fontFamily: FONT_FAMILY.RoundedHeavy,
     marginTop: 55,
     marginLeft: 51,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    backgroundColor: CUSTOM_COLOR.White,
+    backgroundColor: COLORS.White,
     borderRadius: 999,
     height: 70,
     width: 314,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   textButton: {
     fontFamily: FONT_FAMILY.TextBold,
     fontSize: 17,
-    color: CUSTOM_COLOR.SunsetOrange,
+    color: COLORS.SunsetOrange,
   },
 });
 
