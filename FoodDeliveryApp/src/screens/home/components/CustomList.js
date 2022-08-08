@@ -19,7 +19,6 @@ export class CustomList extends Component {
               style={styles.imageMain}
               source={this.props.source}
               resizeMode={'cover'}></Image>
-            <View></View>
           </View>
           <TouchableOpacity
             style={styles.describeContainer}
@@ -58,8 +57,8 @@ const styles = StyleSheet.create({
   },
 
   describeContainer: {
-    width: scale(210),
-    height: scale(280),
+    width: scale(180),
+    height: scale(230),
     backgroundColor: CUSTOM_COLOR.White,
     justifyContent: 'center',
     alignItems: 'center',

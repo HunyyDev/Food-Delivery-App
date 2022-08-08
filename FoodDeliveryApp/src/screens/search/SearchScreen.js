@@ -1,11 +1,15 @@
 import {StyleSheet, Text, View, FlatList, TextInput} from 'react-native';
 import React, {useState} from 'react';
+import scale from '../../constants/responsive';
+import CustomList from '../home/components/CustomList';
+import {IMG_Chicken, IMG_Egg, IMG_Veggie_tomato_mix} from '../../assets/images';
+import CUSTOM_COLOR from '../../constants/colors';
 
 const data = [
-  {id: 1, name: 'Veggie tomato mix'},
-  {id: 2, name: 'Egg and cucmber...'},
-  {id: 3, name: 'Fried chicken m.'},
-  {id: 4, name: 'Moi-moi and ekpa.'},
+  {id: 1, name: 'Veggie tomato mix', price: 'N1,900'},
+  {id: 2, name: 'Egg and cucmber...', price: 'N1,900'},
+  {id: 3, name: 'Fried chicken m.', price: 'N1,900'},
+  {id: 4, name: 'Moi-moi and ekpa.', price: 'N1,900'},
 ];
 
 const SearchScreen = () => {
@@ -13,8 +17,42 @@ const SearchScreen = () => {
 
   const item = ({item}) => {
     return (
-      <View style={{backgroundColor: 'green'}}>
-        <Text style={{fontSize: 20}}>{item.name}</Text>
+      <View style={{flexDirection: 'row'}}>
+        <View
+          style={{
+            width: '50%',
+            alignItems: 'center',
+          }}>
+          <View>
+            <CustomList
+              source={IMG_Chicken}
+              name={item.name}
+              price={item.price}
+            />
+
+            <CustomList source={IMG_Egg} name={item.name} price={item.price} />
+            <CustomList
+              source={IMG_Veggie_tomato_mix}
+              name={item.name}
+              price={item.price}
+            />
+          </View>
+        </View>
+
+        <View
+          style={{
+            width: '50%',
+            marginTop: scale(30),
+            alignItems: 'center',
+          }}>
+          <View>
+            <CustomList
+              source={IMG_Chicken}
+              name={item.name}
+              price={item.price}
+            />
+          </View>
+        </View>
       </View>
     );
   };
@@ -29,20 +67,35 @@ const SearchScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.header}>
         <TextInput
-          style={{fontSize: 30}}
+          style={{
+            flex: 1,
+            width: '100%',
+            fontSize: scale(17),
+            backgroundColor: CUSTOM_COLOR.Silver,
+          }}
           placeholder="Search..."
           onChangeText={input => {
             searchName(input);
           }}
         />
       </View>
-      <FlatList
-        data={dataFromState}
-        renderItem={item}
-        keyExtractor={(item, index) => index.toString()}
-      />
+
+      <View style={styles.main}>
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text style={{fontSize: scale(28)}}>Found 6 results</Text>
+        </View>
+        <FlatList
+          data={dataFromState}
+          renderItem={item}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </View>
     </View>
   );
 };
@@ -52,7 +105,15 @@ export default SearchScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: CUSTOM_COLOR.Silver,
+  },
+  header: {
+    flex: 1,
+  },
+  main: {
+    flex: 9,
+    backgroundColor: CUSTOM_COLOR.AthensGray,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
   },
 });

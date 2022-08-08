@@ -110,12 +110,14 @@ const styles = StyleSheet.create({
   image: {
     flex: 3,
     alignItems: 'center',
+    backgroundColor: 'pink',
   },
   stroll: {
     flex: 0.5,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'blue',
   },
 
   circle: {

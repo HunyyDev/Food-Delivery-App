@@ -57,7 +57,7 @@ export class HomeScreen extends Component {
             <TextInput
               placeholder="Search"
               style={{flex: 1}}
-              onChangeText={() => this.props.navigation.navigate('Search')}
+              onPressIn={() => this.props.navigation.navigate('Search')}
             />
           </View>
         </View>
