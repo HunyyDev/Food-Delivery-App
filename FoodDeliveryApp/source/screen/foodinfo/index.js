@@ -71,7 +71,7 @@ const FoodInfoScreen = ({navigation: {goBack}}) => {
                 style={styles.food}
                 source={e}
               />
-            ))}
+            )}
           </ScrollView>
           <View style={styles.wrapDot}>
             {images.map((e, index) => (

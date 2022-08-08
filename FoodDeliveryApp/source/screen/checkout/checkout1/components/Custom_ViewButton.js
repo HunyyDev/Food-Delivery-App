@@ -1,7 +1,8 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import React, {useState} from 'react';
 import scale from '../../../../../responsive';
 import CUSTOM_COLOR from '../../../../constants/color';
+import { IMG_LINE } from '../../../../assets/images';
 
 const Custom_ViewButton = props => {
   const [isSelect, setIsSelect] = useState('0');
@@ -45,6 +46,7 @@ const Custom_ViewButton = props => {
         </TouchableOpacity>
       </>
       <>
+      <Image source={IMG_LINE} style={styles.lineContainer} />
         <TouchableOpacity
           onPress={() => {
             setIsSelect(props.text2);
@@ -97,6 +99,11 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  lineContainer: {
+    width: scale(190),
+    left: scale(50),
+    top: scale(17),
   },
   switch: props => ({
     width: scale(10),

@@ -37,16 +37,16 @@ export default class HomeScreen extends Component {
           foodPrice: '1,900',
         },
         {
-          img: IMG_FOOD4,
+          img: IMG_FOOD1,
           key: '2',
-          foodName: 'Fried \nchicken',
+          foodName: 'Veggie \ntomato mix',
           foodPrice: '1,900',
         },
         {
-          img: IMG_FOOD3,
+          img: IMG_FOOD1,
           key: '3',
-          foodName: 'Spicy fish \nsauce',
-          foodPrice: '2,300.99',
+          foodName: 'Veggie \ntomato mix',
+          foodPrice: '1,900',
         },
       ],
     };
