@@ -34,7 +34,7 @@ export class Login extends Component {
             </View>
             <>{/*Button Selection*/}</>
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate('CustomDrawer')}
+              onPress={() => this.props.navigation.navigate('OptionsDrawer')}
               style={styles.buttonSelection}>
               <Text style={styles.SelectionText}>{'Login'}</Text>
             </TouchableOpacity>

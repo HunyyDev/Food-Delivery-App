@@ -93,7 +93,9 @@ export class HomeScreen extends Component {
         onPressHandle={() => {
           this.getData();
         }}>
-        <TouchableOpacity style={styles.imageContainer}>
+        <TouchableOpacity
+          style={styles.imageContainer}
+          onPress={() => this.props.navigation.openDrawer()}>
           <Image source={IMG_Vector} style={styles.Menu} />
         </TouchableOpacity>
         <TouchableOpacity
@@ -106,14 +108,14 @@ export class HomeScreen extends Component {
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
         </View>
-        <View style={styles.searchContainer}>
+        <TouchableOpacity style={styles.searchContainer}>
           <Image source={IMG_Search} style={styles.searchImage} />
-          <TextInput
-            hitSlop={{top: '100%', left: '100%', right: '100%', bottom: '100%'}}
-            placeholder={'Search'}
+          <Text
             style={styles.searchInput}
-          />
-        </View>
+            onPress={() => this.props.navigation.navigate('SearchScreen')}>
+            {'Search'}
+          </Text>
+        </TouchableOpacity>
         <ScrollView
           style={styles.scrollView}
           horizontal={true}

@@ -13,7 +13,9 @@ import HistoryScreen from '../screens/History';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import DeliveryScreen from '../screens/Checkout/DeliveryScreen';
 import Payment from '../screens/Profile/PaymentMethod';
-import CustomDrawer from '../screens/drawer';
+import OptionsDrawer from './OptionsDrawer';
+import SearchScreen from '../screens/Search';
+
 const stack = createNativeStackNavigator();
 
 const RootNavigation = () => {
@@ -43,7 +45,7 @@ const RootNavigation = () => {
       <stack.Screen name="PaymentScreen">
         {props => <PaymentScreen {...props} />}
       </stack.Screen>
-      <stack.Screen name="CustomDrawer" component={CustomDrawer} />
+      <stack.Screen name="OptionsDrawer" component={OptionsDrawer} />
       <stack.Screen name="OrdersScreen">
         {props => <OrdersScreen {...props} />}
       </stack.Screen>
@@ -58,6 +60,9 @@ const RootNavigation = () => {
       </stack.Screen>
       <stack.Screen name="HistoryScreen">
         {props => <HistoryScreen {...props} />}
+      </stack.Screen>
+      <stack.Screen name="SearchScreen">
+        {props => <SearchScreen {...props} />}
       </stack.Screen>
     </stack.Navigator>
   );
