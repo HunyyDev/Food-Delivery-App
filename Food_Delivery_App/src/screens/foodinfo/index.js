@@ -25,22 +25,17 @@ const arrayImage=[
 ]
 const FoodInfoScreen = ({navigation})=>
 {
-  const [isChoose, setIsChoose] = useState(false);
-    const onPressHandler = () => {
-      setIsChoose(!isChoose);
-    };
-    const [imgActive, setImgActive] = useState(0);
+    const [indexDot, setIndexDot] = useState(0);
   
-    onchange = nativeEvent => {
-      if (nativeEvent) {
-        const slide = Math.ceil(
-          nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
-        );
-        if (slide != imgActive) {
-          setImgActive(slide);
-        }
-      }
-    };
+    const viewabilityConfigCallbackPairs = React.useRef([
+      {
+        viewabilityConfig: {
+          viewAreaCoveragePercentThreshold: 50,
+        },
+        onViewableItemsChanged: ({changed})=>setIndexDot(changed[0].index),
+      },
+    ]);
+    
     return(
     <View style={styles.viewStyle}>
       {/* Go back button */}
@@ -53,13 +48,14 @@ const FoodInfoScreen = ({navigation})=>
         <FlatList 
         data={arrayImage}
         showsHorizontalScrollIndicator={false}
-        onScroll={({nativeEvent}) => onchange(nativeEvent)}
         pagingEnabled={true}
         horizontal
 
         // onScroll={(info)=>{console.log(info._dispatchInstances);}}
         // onViewableItemsChanged={onViewableItemsChanged}
-        
+        viewabilityConfigCallbackPairs={
+          viewabilityConfigCallbackPairs.current
+        }
         
         style={styles.foodView}
         renderItem={({item})=> {
@@ -73,8 +69,8 @@ const FoodInfoScreen = ({navigation})=>
       <View style={styles.wrapDot}>
       {arrayImage.map((e, index) => (
         <Text
-          key={e}
-          style={imgActive == index ? styles.dotActive : styles.dot}>
+          key={index}
+          style={indexDot == index ? styles.dotActive : styles.dot}>
         ●
         </Text>
       ))}
@@ -249,15 +245,15 @@ export default FoodInfoScreen;
 //     const onPressHandler = () => {
 //       setIsChoose(!isChoose);
 //     };
-//     const [imgActive, setImgActive] = useState(0);
+//     const [indexDot, setIndexDot] = useState(0);
   
 //     onchange = nativeEvent => {
 //       if (nativeEvent) {
 //         const slide = Math.ceil(
 //           nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
 //         );
-//         if (slide != imgActive) {
-//           setImgActive(slide);
+//         if (slide != indexDot) {
+//           setIndexDot(slide);
 //         }
 //       }
 //     };
@@ -302,7 +298,7 @@ export default FoodInfoScreen;
 //               {images.map((e, index) => (
 //                 <Text
 //                   key={e}
-//                   style={imgActive == index ? styles.dotActive : styles.dot}>
+//                   style={indexDot == index ? styles.dotActive : styles.dot}>
 //                   ●
 //                 </Text>
 //               ))}
@@ -622,15 +618,15 @@ export default FoodInfoScreen;
 //   const onPressHandler = () => {
 //     setIsChoose(!isChoose);
 //   };
-//   const [imgActive, setImgActive] = useState(0);
+//   const [indexDot, setIndexDot] = useState(0);
 
 //   onchange = nativeEvent => {
 //     if (nativeEvent) {
 //       const slide = Math.ceil(
 //         nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width,
 //       );
-//       if (slide != imgActive) {
-//         setImgActive(slide);
+//       if (slide != indexDot) {
+//         setIndexDot(slide);
 //       }
 //     }
 //   };
@@ -674,7 +670,7 @@ export default FoodInfoScreen;
 //             {images.map((e, index) => (
 //               <Text
 //                 key={e}
-//                 style={imgActive == index ? styles.dotActive : styles.dot}>
+//                 style={indexDot == index ? styles.dotActive : styles.dot}>
 //                 ●
 //               </Text>
 //             ))}
