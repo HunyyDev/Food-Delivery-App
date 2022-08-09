@@ -1,7 +1,7 @@
 import {Text, View, StyleSheet, Image} from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../../constants/color';
-import scale from '../../../../responsive';
+import CUSTOM_COLOR from '../../../../constants/color';
+import scale from '../../../../../responsive';
 
 export class Custom_FoodBoard extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ export class Custom_FoodBoard extends Component {
     return (
       <View style={styles.viewContainer(this.props)}>
         <View style={styles.viewInside}>
-          <View style={styles.viewRectangle}>
+          <View style={styles.viewCircle}>
             <Image source={this.props.img} />
           </View>
           <Text style={styles.textName}>{this.props.foodName}</Text>
@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
     borderRadius: scale(30),
     alignItems: 'center',
   },
-  viewRectangle: {
+  viewCircle: {
     backgroundColor: 'transparent',
     height: scale(140),
     width: scale(140),
-    borderRadius: 20,
+    borderRadius: 360,
     top: scale(-41),
     alignItems: 'center',
     justifyContent: 'center',

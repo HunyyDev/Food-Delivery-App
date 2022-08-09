@@ -1,10 +1,10 @@
-import scale from '../../../../responsive';
+import scale from '../../../../../responsive';
 import {StyleSheet, View, TextInput} from 'react-native';
 import React from 'react';
 import Custom_IconButton from './Custom_IconButton';
-import {IC_Glass} from '../../../assets/icons';
-import CUSTOM_COLOR from '../../../constants/color';
-import FONT_FAMILY from '../../../constants/fonts';
+import {IC_Glass} from '../../../../assets/icons';
+import CUSTOM_COLOR from '../../../../constants/color';
+import FONT_FAMILY from '../../../../constants/fonts';
 
 class Custom_SearchBar extends React.Component {
   constructor(props) {

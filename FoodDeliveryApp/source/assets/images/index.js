@@ -13,4 +13,9 @@ export {default as IMG_FOOD2} from './chicken.png';
 export {default as IMG_FOOD3} from './eggRice.png';
 export {default as IMG_FOOD4} from './fried.png';
 export {default as IMG_AVATAR} from './avatar.png';
-
+export {default as IMG_Cart2} from './CartIcon.png';
+export {default as IMG_Paper} from './PaperIcon.png';
+export {default as IMG_ProfileLogo} from './ProfileIcon.png';
+export {default as IMG_Tag} from './TagIcon.png';
+export {default as IMG_Shield} from './SecurityIcon.png';
+export {default as IMG_ToRightArrow} from './ToRight.png';

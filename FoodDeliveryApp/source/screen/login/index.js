@@ -102,7 +102,7 @@ export default class LoginScreen extends Component {
                       [{Text: 'OK'}],
                     );
                   } else {
-                    this.props.navigation.navigate('Home');
+                    this.props.navigation.navigate('MyDrawer');
                   }
                 }}
               />
@@ -137,7 +137,7 @@ export default class LoginScreen extends Component {
                       [{Text: 'OK'}],
                     );
                   } else {
-                    this.props.navigation.navigate('Home');
+                    this.props.navigation.navigate('MyDrawer');
                   }
                 }}
               />
