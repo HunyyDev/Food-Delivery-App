@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
-import CUSTOM_COLOR from '../../constants/color';
+import CUSTOM_COLOR from '../../../constants/color';
 import Custom_SearchBar from '../home/components/Custom_SearchBar';
-import FONT_FAMILY from '../../constants/fonts';
+import FONT_FAMILY from '../../../constants/fonts';
 import {
   IC_Clock,
   IC_Home,
@@ -16,11 +16,11 @@ import {
   IC_Heart,
   IC_Cart,
   IC_Menu,
-} from '../../assets/icons';
-import scale from '../../../responsive';
+} from '../../../assets/icons';
+import scale from '../../../../responsive';
 import Custom_FoodScrollView from '../home/components/Custom_FoodScrollView';
 import Custom_CategoryScrollView from '../home/components/Custom_CategoryScrollView';
-import { IMG_FOOD1, IMG_FOOD3, IMG_FOOD4 } from '../../assets/images';
+import { IMG_FOOD1, IMG_FOOD3, IMG_FOOD4 } from '../../../assets/images';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -59,7 +59,8 @@ export default class HomeScreen extends Component {
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
         <></>
         {/* Icon Menu */}
-        <TouchableOpacity style={[styles.iconContainer, styles.icon_menu]}>
+        <TouchableOpacity style={[styles.iconContainer, styles.icon_menu]}
+        onPress={() => this.props.navigation.openDrawer()}>
           <IC_Menu />
         </TouchableOpacity>
 

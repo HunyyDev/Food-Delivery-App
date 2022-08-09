@@ -2,7 +2,7 @@ import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
 import {IMG_FOOD1, IMG_FOOD3, IMG_FOOD4} from '../../../assets/images';
 import Custom_FoodBoard from './Custom_FoodBoard';
-import scale from '../../../../responsive';
+import scale from '../../../../../responsive';
 
 export default class Custom_FoodScrollView extends Component {
   constructor(props) {

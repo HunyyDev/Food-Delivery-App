@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Pressable, Text, StyleSheet} from 'react-native';
-import scale from '../../../../responsive';
-import CUSTOM_COLOR from '../../../constants/color';
+import scale from '../../../../../responsive';
+import CUSTOM_COLOR from '../../../../constants/color';
 
 export class Custom_UnderlineButton extends Component {
   constructor(props) {

@@ -1,7 +1,7 @@
 import {View, ScrollView, StyleSheet} from 'react-native';
 import React, {useMemo, useState} from 'react';
-import scale from '../../../../responsive';
-import CUSTOM_COLOR from '../../../constants/color';
+import scale from '../../../../../responsive';
+import CUSTOM_COLOR from '../../../../constants/color';
 import Custom_UnderlineButton from './Custom_UnderlineButton';
 
 const Custom_CategoryScrollView = () => {
