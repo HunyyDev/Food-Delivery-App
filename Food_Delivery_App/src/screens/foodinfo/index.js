@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { Text, Image, Dimensions } from "react-native";
-import { StyleSheet , TouchableOpacity } from "react-native";
-import { View } from "react-native";
-import { ScrollView } from "react-native";
-import { IMG_VEGETABLE } from "../../assets/images";
-import scale from "../../components/scale";
-import { FlatList } from "react-native";
-import CUSTOM_COLORS from "../../constants/colors";
-import { stopClock } from "react-native-reanimated";
-import { IC_GoBack } from "../../assets/icons";
-import CustomButton from "../../components/CustomButton";
+import React, {useState} from 'react';
+import {Text, Image, Dimensions} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
+import {ScrollView} from 'react-native';
+import {IMG_VEGETABLE} from '../../assets/images';
+import scale from '../../components/scale';
+import {FlatList} from 'react-native';
+import CUSTOM_COLORS from '../../constants/colors';
+import {stopClock} from 'react-native-reanimated';
+import {IC_GoBack} from '../../assets/icons';
+import CustomButton from '../../components/CustomButton';
 
 const widthDevice = Dimensions.get('window').width;
 
-const arrayImage=[
+const arrayImage = [
   IMG_VEGETABLE,
   IMG_VEGETABLE,
   IMG_VEGETABLE,
@@ -21,96 +21,121 @@ const arrayImage=[
   IMG_VEGETABLE,
   IMG_VEGETABLE,
   IMG_VEGETABLE,
-  IMG_VEGETABLE
-]
-const FoodInfoScreen = ({navigation})=>
-{
-  const [index, setIndex] = useState(0);
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+  IMG_VEGETABLE,
+];
+const FoodInfoScreen = ({navigation}) => {
+  const [indexDot, setIndexDot] = useState(0);
   let temp;
 
-  const onViewableItemsChanged = ({ viewableItems, changed }) => {
-    console.log(viewableItems[0].index);
-    temp = viewableItems[0].index;
-    // console.log(changed);
+  const onViewableItemsChanged = ({viewableItems, changed}) => {
+    console.log('viewableItems: ' + viewableItems[0].index);
+    console.log('changed: ' + changed[0].index);
+    console.log('undefine');
+    setIndexDot(changed[0].index);
   };
+  const viewabilityConfig = React.useRef({
+    viewAreaCoveragePercentThreshold: 50,
+  });
+  const viewabilityConfigCallbackPairs = React.useRef([
+    {
+      viewabilityConfig: {
+        viewAreaCoveragePercentThreshold: 50,
+      },
+      onViewableItemsChanged: onViewableItemsChanged,
+    },
+  ]);
 
   // setIndex(() => {if (temp != index) return temp;});
 
-    return(
+  return (
     <View style={styles.viewStyle}>
       {/* Go back button */}
       <View style={styles.goBackContainer}>
-          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => {navigation.goBack()}}>
-            <IC_GoBack />
-          </TouchableOpacity>
-          </View>
-       <View style={styles.viewFlatlist} >
-        <FlatList 
-        data={arrayImage}
-        showsHorizontalScrollIndicator={false}
-        pagingEnabled={true}
-        horizontal
-
-        // onScroll={(info)=>{console.log(info._dispatchInstances);}}
-        // onViewableItemsChanged={onViewableItemsChanged}
-        
-        
-        style={styles.foodView}
-        renderItem={({item})=> {
-          return <View style={styles.viewImage}>
-            <Image source={item} style={styles.image} resizeMode="contain" />
-            </View>
-        } }
-
+        <TouchableOpacity
+          hitSlop={styles.hitSlop}
+          onPress={() => {
+            navigation.goBack();
+          }}>
+          <IC_GoBack />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.viewFlatlist}>
+        <FlatList
+          data={arrayImage}
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled={true}
+          horizontal
+          // onScroll={({nativeEvent}) => onchange(nativeEvent)}
+          // onViewableItemsChanged={onViewableItemsChanged}
+          // viewabilityConfig={viewabilityConfig.current}
+          viewabilityConfigCallbackPairs={
+            viewabilityConfigCallbackPairs.current
+          }
+          style={styles.foodView}
+          renderItem={({item, index}) => {
+            return (
+              <View style={[styles.viewImage]}>
+                <Image
+                  source={item}
+                  style={styles.image}
+                  resizeMode="contain"
+                />
+              </View>
+            );
+          }}
         />
       </View>
 
-      <Text style={styles.textStyle}>{index}</Text>
-        
+      <Text style={styles.textStyle}>{indexDot}</Text>
     </View>
-    );
-
+  );
 };
-const styles=StyleSheet.create({
+const styles = StyleSheet.create({
   goBackContainer: {
     position: 'absolute',
     top: scale(61),
     left: scale(50),
   },
-    viewStyle:{
-        flex: 1,
-        backgroundColor: CUSTOM_COLORS.White,
-    },
-    textStyle:{
-        flex: 1,
-        fontSize:50,
-        color: 'black'
+  viewStyle: {
+    flex: 1,
+    backgroundColor: CUSTOM_COLORS.White,
+  },
+  textStyle: {
+    flex: 1,
+    fontSize: 50,
+    color: 'black',
+  },
+  viewFlatlist: {
+    marginTop: scale(80),
+  },
+  foodView: {
+    // // width: '100%',
+    // height: scale(269),
+    overflow: 'hidden',
 
-    },
-    viewFlatlist: {
-      marginTop: scale(80),
-    },
-    foodView: {
-      // // width: '100%',
-      // height: scale(269),
-      overflow: 'hidden',
+    // backgroundColor: CUSTOM_COLORS.Black,
+  },
+  viewImage: {
+    height: scale(269),
+    width: widthDevice,
+    alignItems: 'center',
 
-      // backgroundColor: CUSTOM_COLORS.Black,
-    },
-    viewImage:{
-      width: widthDevice,
-      height: scale(269),
-      alignItems: 'center',
-      
-       backgroundColor: CUSTOM_COLORS.White,
-    },
-    image: {
-      height: '100%',
-      width: '100%',
-    }
+    backgroundColor: CUSTOM_COLORS.White,
+  },
+  image: {
+    height: '100%',
+    width: '100%',
+  },
 });
 export default FoodInfoScreen;
-
 
 // import {
 //     SafeAreaView,
@@ -133,7 +158,6 @@ export default FoodInfoScreen;
 //   const images = [IMG_VEGETABLE, IMG_FOOD2, IMG_FOOD3];
 //   const WIDTH = Dimensions.get('window').width;
 //   const HEIGHT = Dimensions.get('window').height;
-  
 
 //   const FoodInfoScreen = ({navigation: {goBack}}) => {
 
@@ -142,7 +166,7 @@ export default FoodInfoScreen;
 //       setIsChoose(!isChoose);
 //     };
 //     const [imgActive, setImgActive] = useState(0);
-  
+
 //     onchange = nativeEvent => {
 //       if (nativeEvent) {
 //         const slide = Math.ceil(
@@ -172,7 +196,7 @@ export default FoodInfoScreen;
 //         {/* Food swiper */}
 //         <>
 //         <View style={styles.wrap}>
-//           <ScrollView 
+//           <ScrollView
 //             onScroll={({nativeEvent}) => onchange(nativeEvent)}
 //             showsHorizontalScrollIndicator={false}
 //             pagingEnabled
@@ -180,7 +204,7 @@ export default FoodInfoScreen;
 //             style={styles.foodView}
 //           >
 //             {
-//               images.map((e, index) => 
+//               images.map((e, index) =>
 //                 <Image
 //                   key={e}
 //                   resizeMode="stretch"
@@ -245,7 +269,7 @@ export default FoodInfoScreen;
 //       </SafeAreaView>
 //     );
 //   };
-  
+
 //   const styles = StyleSheet.create({
 //     container: {
 //       flex: 1,
@@ -377,7 +401,7 @@ export default FoodInfoScreen;
 //       color: CUSTOM_COLORS.Black,
 //     },
 //   });
-  
+
 //   export default FoodInfoScreen;
 
 // import React from 'react';
@@ -486,7 +510,6 @@ export default FoodInfoScreen;
 
 // });
 
-
 // import {
 //   SafeAreaView,
 //   StyleSheet,
@@ -545,7 +568,7 @@ export default FoodInfoScreen;
 //       {/* Food swiper */}
 //       <>
 //       <View style={styles.wrap}>
-//         <ScrollView 
+//         <ScrollView
 //           onScroll={({nativeEvent}) => onchange(nativeEvent)}
 //           showsHorizontalScrollIndicator={false}
 //           pagingEnabled
@@ -553,7 +576,7 @@ export default FoodInfoScreen;
 //           style={styles.foodView}
 //         >
 //           {
-//             images.map((e, index) => 
+//             images.map((e, index) =>
 //               <Image
 //                 key={e}
 //                 resizeMode="stretch"
@@ -751,4 +774,3 @@ export default FoodInfoScreen;
 //     color: CUSTOM_COLORS.Black,
 //   },
 // });
-
