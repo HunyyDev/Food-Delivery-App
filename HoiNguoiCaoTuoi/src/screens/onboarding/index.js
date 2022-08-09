@@ -35,7 +35,7 @@ const OnboardingScreen = ({navigation}) => (
           source={IMG_Background}
           style={styles.background}
           resizeMode={'contain'}>
-          <View style={{margin:30}}>
+          <View style={{margin: 50}}>
             <CustomButton
               type={'primary'}
               text={'Get started'}
@@ -71,14 +71,16 @@ const styles = StyleSheet.create({
   },
 
   titleText: {
+    flex: 1,
     fontSize: scaleWidth(55),
     fontFamily: FONT_FAMILY.ExtraBold,
     color: CUSTOM_COLOR.White,
     marginLeft: scaleWidth(49),
-    marginVertical: 30,
+    marginVertical: 20,
   },
 
   backgroundContainer: {
+    flex: 4,
     backgroundColor: CUSTOM_COLOR.SunsetOrange,
   },
 

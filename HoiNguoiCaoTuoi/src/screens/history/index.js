@@ -27,7 +27,12 @@ const History = ({navigation}) => {
         <Image source={IMG_chevron_left} />
       </TouchableOpacity>
       {/* title */}
-      <Text style={{top: scaleWidth(55), textAlign: 'center'}}>
+      <Text
+        style={{
+          fontFamily: FONT_FAMILY.SemiBold,
+          top: scaleWidth(55),
+          textAlign: 'center',
+        }}>
         {'History'}
       </Text>
       {/* Logo */}
