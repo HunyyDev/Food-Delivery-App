@@ -1,5 +1,14 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Alert,
+  TouchableHighlight,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
@@ -14,93 +23,101 @@ import RadioForm, {
 
 const ProfileScreen = props => {
   var radio_props = [
-    {id: 0, label: 'Card', value: 1},
-    {id: 1, label: 'Bank account', value: 0},
-    {id: 2, label: 'Paypal', value: 0},
+    {id: 0, label: 'Card'},
+    {id: 1, label: 'Bank account'},
+    {id: 2, label: 'Paypal'},
   ];
 
-  const {navigation} = props;
+  const [radioPaymentMethod, setRadioPaymentMethod] = useState(0);
 
-  const onBack = () => {
-    navigation.goBack();
-  };
-  var check = 0;
+  const {navigation} = props;
   return (
     <>
-      <CustomBreadcrumbNavigation title="My Profile" onBack={onBack} />
-      <View style={styles.information}>
-        <Text style={styles.information.text}>Information</Text>
-        <View style={styles.information.profile}>
-          <Image
-            style={styles.information.profile.avatar}
-            source={require('../../assets/images/ProfileInfomationAvatar.png')}
-          />
-          <View style={styles.information.profile.info}>
-            <Text style={styles.information.profile.info.name}>
-              Marvis Ighedosa
-            </Text>
-            <Text style={styles.information.profile.info.email}>
-              dosamarvis@gmail.com
-            </Text>
-            <Text style={styles.information.profile.info.bio}>
-              No 15 street off ovie palace road effurun delta state
-            </Text>
+      <CustomBreadcrumbNavigation
+        title="My Profile"
+        onBack={() => navigation.goBack()}
+      />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate(SCREEN_NAME.MYPROFILE_SCREEN);
+        }}>
+        <View style={styles.information}>
+          <Text style={styles.information.text}>Information</Text>
+          <View style={styles.information.profile}>
+            <Image
+              style={styles.information.profile.avatar}
+              source={require('../../assets/images/ProfileInfomationAvatar.png')}
+            />
+            <View style={styles.information.profile.info}>
+              <Text style={styles.information.profile.info.name}>
+                Marvis Ighedosa
+              </Text>
+              <Text style={styles.information.profile.info.email}>
+                dosamarvis@gmail.com
+              </Text>
+              <Text style={styles.information.profile.info.bio}>
+                No 15 street off ovie palace road effurun delta state
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
       <View style={styles.paymentMethod}>
         <Text style={styles.paymentMethod.text}>Payment Method</Text>
         <View style={styles.paymentMethod.cards}>
           <RadioForm animation={true} style={styles.paymentMethod.cards.card}>
             {radio_props.map((obj, i) => (
-              <React.Fragment>
-                <RadioButton labelHorizontal={true} key={obj.id}>
-                  <RadioButtonInput
-                    obj={obj}
-                    index={obj.id}
-                    isSelected={obj.value}
-                    borderWidth={2}
-                    initial={0}
-                    buttonSize={normalize(10)}
-                    buttonOuterSize={normalize(20)}
-                    buttonColor={CUSTOM_COLOR.VERMILION}
-                    buttonInnerColor={CUSTOM_COLOR.VERMILION}
-                    buttonOuterColor={CUSTOM_COLOR.VERMILION}
-                    selectedButtonColor={CUSTOM_COLOR.VERMILION}
-                    buttonWrapStyle={{
-                      marginLeft: scaleX(21),
-                      marginTop: scaleY(31),
-                    }}
-                    onPress={() => {}}
-                  />
-                  <View style={styles.icon} key={i}>
-                    {obj.id === 0 ? (
-                      <View style={styles.icon.iconCard}>
-                        <ICCard></ICCard>
-                      </View>
-                    ) : obj.id === 1 ? (
-                      <View style={styles.icon.iconBank}>
-                        <ICBankAccount></ICBankAccount>
-                      </View>
-                    ) : (
-                      <View style={styles.icon.iconPaypal}>
-                        <ICPaypal></ICPaypal>
-                      </View>
-                    )}
-                  </View>
-                  <RadioButtonLabel
-                    obj={obj}
-                    index={obj.id}
-                    labelHorizontal={true}
-                    labelStyle={{
-                      fontFamily: 'FontsFree-Net-Abel-Regular',
-                      fontSize: normalize(17),
-                      marginTop: scaleY(20),
-                      color: CUSTOM_COLOR.BLACK,
-                      marginLeft: scaleX(11),
-                    }}
-                  />
-                </RadioButton>
+              <React.Fragment key={i}>
+                <TouchableOpacity onPress={() => setRadioPaymentMethod(i)}>
+                  <RadioButton labelHorizontal={true} key={obj.id}>
+                    <RadioButtonInput
+                      obj={obj}
+                      index={obj.id}
+                      isSelected={radioPaymentMethod === i}
+                      borderWidth={2}
+                      initial={0}
+                      buttonSize={normalize(10)}
+                      buttonOuterSize={normalize(20)}
+                      buttonColor={CUSTOM_COLOR.VERMILION}
+                      buttonInnerColor={CUSTOM_COLOR.VERMILION}
+                      buttonOuterColor={CUSTOM_COLOR.VERMILION}
+                      selectedButtonColor={CUSTOM_COLOR.VERMILION}
+                      buttonWrapStyle={{
+                        marginLeft: scaleX(21),
+                        marginTop: scaleY(31),
+                      }}
+                      onPress={() => setRadioPaymentMethod(i)}
+                    />
+                    <View style={styles.icon} key={i}>
+                      {obj.id === 0 ? (
+                        <View style={styles.icon.iconCard}>
+                          <ICCard></ICCard>
+                        </View>
+                      ) : obj.id === 1 ? (
+                        <View style={styles.icon.iconBank}>
+                          <ICBankAccount></ICBankAccount>
+                        </View>
+                      ) : (
+                        <View style={styles.icon.iconPaypal}>
+                          <ICPaypal></ICPaypal>
+                        </View>
+                      )}
+                    </View>
+                    <RadioButtonLabel
+                      obj={obj}
+                      index={obj.id}
+                      labelHorizontal={true}
+                      labelStyle={{
+                        fontFamily: 'FontsFree-Net-Abel-Regular',
+                        fontSize: normalize(17),
+                        marginTop: scaleY(20),
+                        color: CUSTOM_COLOR.BLACK,
+                        marginLeft: scaleX(11),
+                      }}
+                      onPress={() => setRadioPaymentMethod(i)}
+                    />
+                  </RadioButton>
+                </TouchableOpacity>
                 <View
                   style={{
                     borderBottomWidth: obj.id !== 2 ? 1 : 0,
@@ -115,7 +132,13 @@ const ProfileScreen = props => {
         </View>
       </View>
       <View style={styles.btnUpdate}>
-        <CustomButton type="secondary" title="Update" />
+        <CustomButton
+          type="secondary"
+          title="Update"
+          onPress={() => {
+            Alert.alert('Update Information', 'sucessfully update');
+          }}
+        />
       </View>
     </>
   );

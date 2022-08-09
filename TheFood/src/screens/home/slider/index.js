@@ -1,6 +1,9 @@
 import {
   View,
   ScrollView,
+  Alert,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import React, {Component} from 'react';
 import FoodType from './components/FoodType';
@@ -66,6 +69,7 @@ export default class Slider extends Component {
                 foodName={food.foodName}
                 price={food.price}
                 img={food.img}
+                onNav={this.props.onNavigation}
               />
             );
           })}

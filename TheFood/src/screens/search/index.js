@@ -78,10 +78,14 @@ const data = [
   },
 ];
 
-const SearchScreen = () => {
+const SearchScreen = props => {
+  const {navigation} = props;
   return (
     <View>
-      <CustomBreadcrumbNavigation searchField={true} />
+      <CustomBreadcrumbNavigation
+        searchField={true}
+        onBack={() => navigation.goBack()}
+      />
       <View style={styles.container}>
         <Text style={styles.textFound}>Found {5} results</Text>
         <FlatList

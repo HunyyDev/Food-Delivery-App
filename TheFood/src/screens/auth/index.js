@@ -95,9 +95,6 @@ class LoginScreen extends Component {
   };
   render() {
     const {navigation} = this.props;
-    // const onTransitToHome = () => {
-    //   navigation.navigate(SCREEN_NAME.HOME_SCREEN);
-    // };
     return (
       <ScrollView style={styles.container}>
         <View style={styles.header}>

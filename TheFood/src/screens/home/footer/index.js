@@ -1,13 +1,41 @@
-import {Text, StyleSheet, View, Button, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  View,
+  Button,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import React, {Component} from 'react';
 
 import styles from './styles';
 import {ICHeart, ICHome, ICTime, ICUser} from '../../../assets/icons';
-import colors from '../../../assets/constants/colors';
+import CUSTOM_COLOR from '../../../assets/constants/colors';
 
 import SCREEN_NAME from '../../../assets/constants/screens';
 
-const iconListComponent = [<ICHome />, <ICHeart />, <ICUser />, <ICTime />];
+const iconListComponent = [
+  {
+    id: 0,
+    icon: <ICHome />,
+    onNavigation: SCREEN_NAME.HOME_SCREEN,
+  },
+  {
+    id: 1,
+    icon: <ICHeart />,
+    onNavigation: '',
+  },
+  {
+    id: 2,
+    icon: <ICUser />,
+    onNavigation: SCREEN_NAME.PROFILE_SCREEN,
+  },
+  {
+    id: 3,
+    icon: <ICTime />,
+    onNavigation: SCREEN_NAME.HISTORY_SCREEN,
+  },
+];
 
 export default class Footer extends Component {
   constructor(props) {
@@ -15,12 +43,6 @@ export default class Footer extends Component {
 
     this.state = {
       selected: 0,
-      button: {
-        Home: 1,
-        Heart: 0,
-        User: 0,
-        Time: 0,
-      },
     };
   }
 
@@ -29,10 +51,6 @@ export default class Footer extends Component {
   };
 
   render() {
-    const {navigation} = this.props;
-    const onTransitToHome = () => {
-      navigation.navigate(SCREEN_NAME.HOME_SCREEN);
-    };
     return (
       <View style={styles.container}>
         {iconListComponent.map((Component, index) => {
@@ -40,9 +58,17 @@ export default class Footer extends Component {
             <TouchableOpacity
               style={styles.icon}
               key={index}
-              onPress={() => this.onSelectButton(index)}>
-              {React.cloneElement(Component, {
-                fill: this.state.selected === index ? colors.VERMILION : 'none',
+              onPress={() => {
+                this.onSelectButton(Component.id);
+                Component.onNavigation === ''
+                  ? Alert.alert('Thông báo', 'Tính năng chưa được hỗ trợ')
+                  : this.props.onNavigation.navigate(Component.onNavigation);
+              }}>
+              {React.cloneElement(Component.icon, {
+                fill:
+                  this.state.selected === index
+                    ? CUSTOM_COLOR.VERMILION
+                    : 'none',
               })}
             </TouchableOpacity>
           );

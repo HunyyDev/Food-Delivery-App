@@ -9,13 +9,12 @@ import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigat
 const NoFoundItemScreen = props => {
   const {navigation} = props;
 
-  const onBack = () => {
-    navigation.goBack();
-  };
-
   return (
     <View style={styles.container}>
-      <CustomBreadcrumbNavigation title="Spicy chieckns" onBack={onBack} />
+      <CustomBreadcrumbNavigation
+        title="Spicy chieckns"
+        onBack={() => navigation.goBack()}
+      />
       <View style={styles.info}>
         <View style={styles.icnosearch}>
           <ICNoSearch />

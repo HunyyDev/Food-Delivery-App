@@ -15,11 +15,8 @@ const CustomBreadcrumbNavigation = ({
   title = null,
   RightIcon = null,
   searchField = null,
-  navigation,
+  onBack,
 }) => {
-  const onBack = () => {
-    navigation.goBack();
-  };
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.breadcrumb} onPress={onBack}>

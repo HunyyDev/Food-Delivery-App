@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import SCREEN_NAME from '../../assets/constants/screens';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
@@ -21,19 +21,18 @@ import RadioForm, {
 
 const CheckoutDeliveryScreen = props => {
   var radio_props = [
-    {id: 0, label: 'Door delivery', value: 1},
-    {id: 1, label: 'Pick up', value: 0},
+    {id: 0, label: 'Door delivery'},
+    {id: 1, label: 'Pick up'},
   ];
+  const [valueRadioDelivery, setValueRadioDelivery] = useState(0);
 
   const {navigation} = props;
-
-  const onBack = () => {
-    navigation.goBack();
-  };
-  var check = 0;
   return (
     <View style={styles.container}>
-      <CustomBreadcrumbNavigation title="Checkout" onBack={onBack} />
+      <CustomBreadcrumbNavigation
+        title="Checkout"
+        onBack={() => navigation.goBack()}
+      />
       <Text style={styles.title}>Delivery</Text>
       <View style={styles.information}>
         <View style={styles.information.title}>
@@ -61,12 +60,12 @@ const CheckoutDeliveryScreen = props => {
         <View style={styles.paymentMethod.cards}>
           <RadioForm animation={true} style={styles.paymentMethod.cards.card}>
             {radio_props.map((obj, i) => (
-              <React.Fragment>
+              <React.Fragment key={i}>
                 <RadioButton labelHorizontal={true} key={obj.id}>
                   <RadioButtonInput
                     obj={obj}
                     index={obj.id}
-                    isSelected={obj.value}
+                    isSelected={valueRadioDelivery === i}
                     borderWidth={2}
                     initial={0}
                     buttonSize={normalize(10)}
@@ -79,7 +78,7 @@ const CheckoutDeliveryScreen = props => {
                       marginLeft: scaleX(21),
                       marginTop: scaleY(31),
                     }}
-                    onPress={() => {}}
+                    onPress={() => setValueRadioDelivery(i)}
                   />
                   <RadioButtonLabel
                     obj={obj}
@@ -92,6 +91,7 @@ const CheckoutDeliveryScreen = props => {
                       marginLeft: scaleY(10),
                       marginTop: scaleY(30),
                     }}
+                    onPress={() => setValueRadioDelivery(i)}
                   />
                 </RadioButton>
                 <View
@@ -112,7 +112,13 @@ const CheckoutDeliveryScreen = props => {
         <Text style={styles.total.cost}>23,000</Text>
       </View>
       <View style={styles.btnUpdate}>
-        <CustomButton type="secondary" title="Proceed to payment" />
+        <CustomButton
+          type="secondary"
+          title="Proceed to payment"
+          onPress={() =>
+            navigation.navigate(SCREEN_NAME.CHECKOUT_PAYMENT_SCREEN)
+          }
+        />
       </View>
     </View>
   );

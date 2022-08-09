@@ -15,7 +15,7 @@ class Header extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.iccarttyreContainer}
-          onPress={this.props.onPress}>
+          onPress={this.props.onTransitToCart}>
           <View style={styles.iccarttyreContainer.iccarttyre}>
             <ICCart />
           </View>

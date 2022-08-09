@@ -18,7 +18,7 @@ const LoaderScreen = props => {
   useEffect(() => {
     timerRef.current = setTimeout(() => {
       navigation.navigate(SCREEN_NAME.ONBOARDING_SCREEN);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timerRef.current);
   }, []);

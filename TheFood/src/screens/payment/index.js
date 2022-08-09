@@ -23,23 +23,26 @@ import RadioForm, {
 
 const CheckoutPaymentScreen = props => {
   var radio_payment_props = [
-    {id: 0, label: 'Card', value: 1},
-    {id: 1, label: 'Bank account', value: 0},
+    {id: 0, label: 'Card'},
+    {id: 1, label: 'Bank account'},
   ];
+  const [valueRadioPayment, setValueRadioPayment] = useState(0);
   var radio_delivery_props = [
-    {id: 0, label: 'Door delivery', value: 1},
-    {id: 1, label: 'Pick up', value: 0},
+    {id: 0, label: 'Door delivery'},
+    {id: 1, label: 'Pick up'},
   ];
-
+  const [valueRadioDelivery, setValueRadioDelivery] = useState(0);
   const {navigation} = props;
   const [modalVisible, setModalVisible] = useState(false);
-  const onBack = () => {
-    navigation.goBack();
+  const hideModalVisible = () => {
+    setModalVisible(false);
   };
-  var check = 0;
   return (
     <ScrollView style={styles.container}>
-      <CustomBreadcrumbNavigation title="Checkout" onBack={onBack} />
+      <CustomBreadcrumbNavigation
+        title="Checkout"
+        onBack={() => navigation.goBack()}
+      />
       <Text style={styles.title}>Payment</Text>
       <View style={styles.paymentMethod}>
         <Text style={styles.paymentMethod.text}>Payment Method</Text>
@@ -51,7 +54,7 @@ const CheckoutPaymentScreen = props => {
                   <RadioButtonInput
                     obj={obj}
                     index={i}
-                    isSelected={obj.value}
+                    isSelected={valueRadioPayment === i}
                     borderWidth={2}
                     initial={0}
                     buttonSize={normalize(10)}
@@ -64,7 +67,7 @@ const CheckoutPaymentScreen = props => {
                       marginLeft: scaleX(21),
                       marginTop: scaleY(31),
                     }}
-                    onPress={() => {}}
+                    onPress={() => setValueRadioPayment(i)}
                   />
                   <View style={styles.icon}>
                     {obj.id === 0 ? (
@@ -92,6 +95,7 @@ const CheckoutPaymentScreen = props => {
                       color: CUSTOM_COLOR.BLACK,
                       marginLeft: scaleX(11),
                     }}
+                    onPress={() => setValueRadioPayment(i)}
                   />
                 </RadioButton>
                 <View
@@ -117,7 +121,7 @@ const CheckoutPaymentScreen = props => {
                   <RadioButtonInput
                     obj={obj}
                     index={obj.id}
-                    isSelected={obj.value}
+                    isSelected={valueRadioDelivery === i}
                     borderWidth={2}
                     initial={0}
                     buttonSize={normalize(10)}
@@ -130,7 +134,7 @@ const CheckoutPaymentScreen = props => {
                       marginLeft: scaleX(21),
                       marginTop: scaleY(31),
                     }}
-                    onPress={() => {}}
+                    onPress={() => setValueRadioDelivery(i)}
                   />
                   <RadioButtonLabel
                     obj={obj}
@@ -143,6 +147,7 @@ const CheckoutPaymentScreen = props => {
                       marginLeft: scaleY(10),
                       marginTop: scaleY(30),
                     }}
+                    onPress={() => setValueRadioDelivery(i)}
                   />
                 </RadioButton>
                 <View
@@ -211,7 +216,8 @@ const CheckoutPaymentScreen = props => {
             </View>
             <View style={styles.modalVisible.pleaseNote.buttons}>
               <TouchableOpacity
-                style={styles.modalVisible.pleaseNote.buttons.cancelBtn}>
+                style={styles.modalVisible.pleaseNote.buttons.cancelBtn}
+                onPress={setModalVisible}>
                 <Text
                   style={styles.modalVisible.pleaseNote.buttons.cancelBtn.text}>
                   Cancel

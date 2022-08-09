@@ -16,6 +16,7 @@ import CartScreen from '../screens/cart';
 import SearchScreen from '../screens/search';
 import CheckoutDeliveryScreen from '../screens/delivery';
 import CheckoutPaymentScreen from '../screens/payment';
+import DetailScreen from '../screens/detailItem';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,10 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING_SCREEN}
           component={OnBoardingScreen}
+          options={{headerShown: false}}></Stack.Screen>
+        <Stack.Screen
+          name={SCREEN_NAME.DETAIL_SCREEN}
+          component={DetailScreen}
           options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.CHECKOUT_PAYMENT_SCREEN}

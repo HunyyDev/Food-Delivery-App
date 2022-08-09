@@ -3,6 +3,7 @@ const SCREEN_NAME = {
   ONBOARDING_SCREEN: 'OnBoardingScreen',
   LOGIN_SCREEN: 'LoginScreen',
   HOME_SCREEN: 'HomeScreen',
+  DETAIL_SCREEN: 'DetailScreen',
   NO_FOUND_ITEM_SCREEN: 'NoFoundItemScreen',
   NO_INTERNET: 'NoInternetScreen',
   CART_SCREEN: 'CartScreen',

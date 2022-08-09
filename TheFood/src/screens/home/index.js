@@ -10,20 +10,15 @@ import Footer from './footer';
 import styles from './styles';
 
 const HomeScreen = props => {
+  const {navigation} = props;
   const onTransitToCart = () => {
     props.navigation.navigate(SCREEN_NAME.CART_SCREEN);
-  };
-  const onTransitToProfile = () => {
-    props.navigation.navigate(SCREEN_NAME.PROFILE_SCREEN);
-  };
-  const onTransitToHistory = () => {
-    props.navigation.navigate(SCREEN_NAME.HISTORY_SCREEN);
   };
   return (
     <View style={styles.container}>
       {/* Header Section */}
       <View style={styles.header}>
-        <Header onPress={onTransitToCart} />
+        <Header onTransitToCart={onTransitToCart} />
       </View>
 
       {/* Title Section */}
@@ -38,15 +33,12 @@ const HomeScreen = props => {
 
       {/* Slider Section */}
       <View style={styles.slider}>
-        <Slider />
+        <Slider onNavigation={navigation} />
       </View>
 
       {/* Footer Section */}
       <View style={styles.footer}>
-        <Footer
-          onPressProfile={onTransitToProfile}
-          onPressHistory={onTransitToHistory}
-        />
+        <Footer onNavigation={navigation} />
       </View>
     </View>
   );

@@ -13,6 +13,8 @@ import {ICHeartSmall, ICSwipe} from '../../assets/icons';
 import colors from '../../assets/constants/colors';
 import {useState} from 'react';
 import {SwipeListView, SwipeRow} from 'react-native-swipe-list-view';
+import SCREEN_NAME from '../../assets/constants/screens';
+import CustomButton from '../../components/CustomButton';
 
 const data = [
   {
@@ -41,7 +43,7 @@ const data = [
   },
 ];
 
-const CartScreen = () => {
+const CartScreen = props => {
   const [st, setSt] = useState(0);
   const [slted, setSlted] = useState();
 
@@ -59,9 +61,13 @@ const CartScreen = () => {
     setSt(st + 1);
   };
 
+  const {navigation} = props;
   return (
     <>
-      <CustomBreadcrumbNavigation title={'Cart'} />
+      <CustomBreadcrumbNavigation
+        title={'Cart'}
+        onBack={() => navigation.goBack()}
+      />
       <View style={styles.container}>
         <View style={styles.swipeNoticeContainer}>
           <ICSwipe />
@@ -144,9 +150,15 @@ const CartScreen = () => {
           onRightActionStatusChange={onDelelteItem}
         />
 
-        <TouchableOpacity style={styles.completeButton}>
-          <Text style={styles.completeButton.text}>Complete order</Text>
-        </TouchableOpacity>
+        <View style={styles.button}>
+          <CustomButton
+            type="secondary"
+            title="Complete order"
+            onPress={() =>
+              navigation.navigate(SCREEN_NAME.CHECKOUT_DELIVERY_SCREEN)
+            }
+          />
+        </View>
       </View>
     </>
   );
@@ -154,7 +166,6 @@ const CartScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // marginHorizontal: scaleX(50),
     alignItems: 'center',
     flex: 1,
   },
@@ -261,6 +272,11 @@ const styles = StyleSheet.create({
       borderRadius: 100,
       marginVertical: scaleY(25),
     },
+  },
+  button: {
+    position: 'absolute',
+    bottom: scaleY(36),
+    alignSelf: 'center',
   },
 });
 

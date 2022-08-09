@@ -32,10 +32,14 @@ const HistoryScreen = props => {
     //   icon: require('../../assets/images/foods/Rice/image_3.png'),
     // },
   ];
+  const {navigation} = props;
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <CustomBreadcrumbNavigation onPress={props.onBack} title="History" />
+        <CustomBreadcrumbNavigation
+          onBack={() => navigation.goBack()}
+          title="History"
+        />
       </View>
       <FlatList
         styles={styles.listItem}
