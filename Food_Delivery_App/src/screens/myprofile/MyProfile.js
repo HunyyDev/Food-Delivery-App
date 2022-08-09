@@ -16,8 +16,15 @@ import { IMG_BANK } from "../../assets/images";
 import { IMG_LINE } from "../../assets/images";
 import { IMG_PAYPAL } from "../../assets/images";
 import { useState } from "react";
+
+
+
 const MyProScreen = ({navigation})=>
 { 
+  const onPressMyprofile=()=>
+  {
+       navigation.navigate('MyInforScreen');
+  }
   const [isSelect, setIsSelect] = useState('1');
     return(
 
@@ -26,7 +33,7 @@ const MyProScreen = ({navigation})=>
          {/* Go back button */}
       
          <View style={styles.goBackContainer}>
-          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => {navigation.navigate('HS')}}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => {navigation.goBack()}}>
             <IC_GoBack />
           </TouchableOpacity>
           </View>
@@ -36,13 +43,17 @@ const MyProScreen = ({navigation})=>
           {/*Information */}
           <>
           <Text style={styles.textInformation}>Information</Text>
-          <View style={styles.viewInfomation}>
+
+          <TouchableOpacity style={styles.viewInfomation} onPress={(onPressMyprofile)} >
+          <View >
             <Image source={IMG_AVATAR} style={styles.avatar}>
             </Image>
             <Text style={styles.textName}>Nguyen Hung Quyen</Text>
             <Text style={styles.textEmail}>abc@gmail.com</Text>
             <Text style={styles.textviewInformation} >No 15 uti street off ovie palace road effurun delta state</Text>
           </View>
+          </TouchableOpacity>
+          
            </>
            {/*PaymentMethod */}
            <>
@@ -182,18 +193,18 @@ const styles=StyleSheet.create({
   },
 
   avatar:{
-    position: "absolute",
+   // position: "absolute",
     left:scale(16),
-    bottom:scale(53),
+    bottom:scale(-10),
     borderRadius:scale(10),
     width:scale(60),
     height:scale(60),
   },
 
   textName:{
-    position:"absolute",
+    //position:"absolute",
     left:scale(91),
-    bottom:scale(90),
+    bottom:scale(50),
     fontFamily:FONT_FAMILY.Abel,
     fontSize:scale(18),
     color:CUSTOM_COLORS.Black,
