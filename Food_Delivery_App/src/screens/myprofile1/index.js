@@ -20,7 +20,7 @@ const MyInforScreen = ({navigation})=>
 
             {/* Go back button */}
          <View style={styles.goBackContainer}>
-          <TouchableOpacity hitSlop={styles.hitSlop}  onPress={() => {navigation.navigate('HS')}}>
+          <TouchableOpacity hitSlop={styles.hitSlop}  onPress={() => {navigation.goBack()}}>
             <IC_GoBack />
           </TouchableOpacity>
           </View>

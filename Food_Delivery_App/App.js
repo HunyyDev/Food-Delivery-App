@@ -14,6 +14,7 @@ import SearchScreen from './src/screens/search';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import MyInforScreen from './src/screens/myprofile1';
+import NoInternetScreen from './src/screens/NoInternet';
 //import { NavigationContainer } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator();
@@ -33,7 +34,9 @@ function App() {
         <Stack.Screen name="HIS" component={HistoryScreen}/>
         <Stack.Screen name="CS" component={CartScreen}/>
         <Stack.Screen name="SS" component={SearchScreen}/>  
-        <Stack.Screen name="MyInforScreen" component={MyInforScreen}/>  
+        <Stack.Screen name="MyInforScreen" component={MyInforScreen}/>
+        <Stack.Screen name="NoInternetScreen" component={NoInternetScreen}/>
+          
 
         </Stack.Navigator>
     </NavigationContainer>
