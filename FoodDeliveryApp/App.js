@@ -67,6 +67,8 @@ const App = () => {
         <Stack.Screen name="MyProfile" component={MyProfileScreen} />
         <Stack.Screen name="Loading" component={LoadingScreen} />
         <Stack.Screen name="MyDrawer" component={MyDrawer} />
+        <Stack.Screen name="CheckOut1" component={CheckOut1Screen} />
+        <Stack.Screen name="CheckOut2" component={CheckOut2Screen} />
       </Stack.Navigator>
     </NavigationContainer>
     

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
+import {StyleSheet, Text, View, SafeAreaView, TouchableOpacity} from 'react-native';
 import React, { useState } from 'react';
 import CUSTOM_COLOR from '../../../constants/color';
 import scale from '../../../../responsive';
@@ -7,11 +7,20 @@ import Custom_PaymentMethod from '../checkout2/components/Custom_PaymentMethod';
 import Custom_ButtonOne from '../../../components/Custom_ButtonOne';
 import {IMG_CARD, IMG_BANK} from '../../../assets/images';
 import PopUp from '../checkout2/components/Custom_PopUp';
+import { IC_GoBack } from '../../../assets/icons';
 
-const CheckOut2Screen = () => {
+const CheckOut2Screen = ({navigation: {goBack}}) => {
   const [visible, setVisible] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
+      {/* Go back button */}
+      <>
+        <View style={styles.goBackContainer}>
+          <TouchableOpacity hitSlop={styles.hitSlop} onPress={() => goBack()}>
+            <IC_GoBack />
+          </TouchableOpacity>
+        </View>
+      </>
       {/* Screen name */}
       <>
         <Text style={styles.screenName}>Check out</Text>
@@ -72,6 +81,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLOR.Athens_Gray,
   },
+  goBackContainer: {
+    position: 'absolute',
+    top: scale(61),
+    left: scale(50),
+  },
+  hitSlop: {top: scale(10),
+    left: scale(10),
+    right: scale(10),
+    bottom: scale(10),},
   screenName: {
     top: scale(50),
     fontSize: scale(18),

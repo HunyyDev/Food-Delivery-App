@@ -9,13 +9,16 @@ import Custom_ButtonOne from '../../../components/Custom_ButtonOne';
 import Custom_Text2 from './components/Custom_Text2';
 import {IC_GoBack} from '../../../assets/icons';
 import Custom_ViewButton from './components/Custom_ViewButton';
+import { useNavigation } from '@react-navigation/native';
 
-const CheckOut1Screen = () => {
+
+const CheckOut1Screen = ({navigation: {goBack}}) => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <>
         <View>
-          <TouchableOpacity style={styles.IC}>
+          <TouchableOpacity style={styles.IC} onPress={() => goBack()}>
             <IC_GoBack />
           </TouchableOpacity>
           <Text style={styles.text1}>CheckOut</Text>
@@ -50,7 +53,7 @@ const CheckOut1Screen = () => {
 
       <>
         <View style={styles.view2}>
-          <Custom_TextHead text="Delivery method." />
+          <Custom_TextHead text="Delivery method" />
           <View style={styles.view2a}>
             {/* <Text2 text="Door delivery" fontWeight="400"></Text2> */}
             <View style={styles.view1b}>
@@ -72,6 +75,7 @@ const CheckOut1Screen = () => {
           text={'Proceed to payment'}
           color={CUSTOM_COLOR.Vermilion}
           textColor={CUSTOM_COLOR.White}
+          onPress={() => navigation.navigate('CheckOut2')}
         />
       </>
     </SafeAreaView>

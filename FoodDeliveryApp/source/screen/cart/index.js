@@ -14,6 +14,7 @@ import {IMG_FOOD1} from '../../assets/images';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
 import {FlatList} from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const CartScreen = ({ navigation: { goBack } }) => {
   const Foods = [
@@ -66,7 +67,7 @@ const CartScreen = ({ navigation: { goBack } }) => {
       foodPrice: '2,300.99',
     },
   ];
-
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Cart</Text>
@@ -100,6 +101,7 @@ const CartScreen = ({ navigation: { goBack } }) => {
         color={CUSTOM_COLOR.Vermilion}
         textColor={CUSTOM_COLOR.White}
         text={'Complete Order'}
+        onPress={() => navigation.navigate('CheckOut1')}
       />
     </SafeAreaView>
   );
