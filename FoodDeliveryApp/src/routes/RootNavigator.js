@@ -13,6 +13,11 @@ import UserScreen from '../screens/user/UserScreen';
 import HistoryScreen from '../screens/history/HistoryScreen';
 import DeliveryScreen from '../screens/delivery/DeliveryScreen';
 import SearchScreen from '../screens/search/SearchScreen';
+import DrawerNavigator from './DrawerNavigator';
+import {OrderScreen} from '../screens/orders/OrderSceen';
+import {OfferScreen} from '../screens/offers/OffersScreen';
+import PrivacyPolicyScreen from '../screens/privacy/PrivacyPolicyScreen';
+import SecurityScreen from '../screens/security/SecurityScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,10 +37,15 @@ const RootNavigator = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
+            name="DrawerNavigator"
+            component={DrawerNavigator}
+            options={{headerShown: false}}
+          />
+          {/* <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{headerShown: false}}
-          />
+          /> */}
 
           <Stack.Screen
             name="History"
@@ -82,6 +92,26 @@ const RootNavigator = () => {
           <Stack.Screen
             name="User"
             component={UserScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Orders"
+            component={OrderScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Offers"
+            component={OfferScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Privacy"
+            component={PrivacyPolicyScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Security"
+            component={SecurityScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

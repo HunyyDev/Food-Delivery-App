@@ -143,7 +143,7 @@ export default class LoginScreen extends Component {
                 text={'Login'}
                 onPress={
                   this.state.email !== null && this.state.password
-                    ? () => this.props.navigation.navigate('Home')
+                    ? () => this.props.navigation.navigate('DrawerNavigator')
                     : null
                 }
               />
@@ -155,7 +155,7 @@ export default class LoginScreen extends Component {
                   this.state.email !== null &&
                   this.state.password !== null &&
                   this.state.password === this.state.confirm
-                    ? () => this.props.navigation.navigate('Home')
+                    ? () => this.props.navigation.navigate('DrawerNavigator')
                     : null
                 }
               />
