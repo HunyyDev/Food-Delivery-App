@@ -13,8 +13,8 @@ const CustomButton = props => {
   });
 
   const PressHandler = () => {
-    if (props.name == 'goBack') {
-      props.navigation.navigate.goBack();
+    if (props.name == 'goBack' || props.name == '') {
+      props.navigation.goBack();
       return;
     }
     props.navigation.navigate(props.name);

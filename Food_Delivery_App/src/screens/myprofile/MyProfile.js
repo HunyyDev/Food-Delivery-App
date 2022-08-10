@@ -123,7 +123,7 @@ const MyProScreen = ({navigation}) => {
       <CustomButton
         title="Update"
         type="secondary"
-        name="MPS"
+        name="goBack"
         navigation={navigation}
       />
     </SafeAreaView>
