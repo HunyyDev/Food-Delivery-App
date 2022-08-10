@@ -11,20 +11,14 @@ import FONT_FAMILY from '../../constants/font';
 import {Image} from 'react-native';
 import {IMG_AVATAR} from '../../assets/images';
 import CustomButton from '../../components/CustomButton';
+import GoBack from '../HomeScreen/components/GoBack';
 
 const MyInforScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Go back button */}
-      <View style={styles.goBackContainer}>
-        <TouchableOpacity
-          hitSlop={styles.hitSlop}
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <IC_GoBack />
-        </TouchableOpacity>
-      </View>
+      <GoBack navigation={navigation} />
+
       {/* Text: My Profile */}
       <Text style={styles.textMyProfile}>My Profile</Text>
 
@@ -71,17 +65,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLORS.Athens_Gray,
   },
-  goBackContainer: {
-    position: 'absolute',
-    top: scale(61),
-    left: scale(50),
-  },
-  hitSlop: {
-    top: scale(10),
-    left: scale(10),
-    right: scale(10),
-    bottom: scale(10),
-  },
+
   textMyProfile: {
     fontFamily: FONT_FAMILY.Abel,
     fontSize: scale(34),

@@ -58,6 +58,7 @@ const CustomDrawerButton = props => {
             : styles.pressContainer
         }
         onPress={() => {
+          if (props.name == '') return;
           return props.navigation.navigate(props.name);
         }}>
         <Image source={props.source} style={styles.customDrawerImage} />
@@ -99,19 +100,19 @@ const CustomDrawer = props => {
       <CustomDrawerButton
         source={ICON_TAG}
         text="offer and promo"
-        name={'MPS'}
+        name={''}
         navigation={props.navigation}
       />
       <CustomDrawerButton
         source={ICON_PAPER}
         text="Privacy policy"
-        name={'MPS'}
+        name={''}
         navigation={props.navigation}
       />
       <CustomDrawerButton
         source={ICON_SHIELD}
         text="Security"
-        name={'MPS'}
+        name={''}
         navigation={props.navigation}
       />
 
@@ -161,7 +162,7 @@ const MainHomeScreen = props => {
         style={styles.searchInput}
         hitSlop={{top: '100%', bottom: '100%', left: '100%', right: '100%'}}
         navigation={props.navigation}
-        namee={'SS'}
+        name={'SS'}
       />
       <></>
       {/* See more */}

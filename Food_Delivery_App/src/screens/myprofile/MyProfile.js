@@ -16,6 +16,7 @@ import {IMG_BANK} from '../../assets/images';
 import {IMG_LINE} from '../../assets/images';
 import {IMG_PAYPAL} from '../../assets/images';
 import {useState} from 'react';
+import GoBack from '../HomeScreen/components/GoBack';
 
 const PaymentMethod = [
   {
@@ -45,15 +46,7 @@ const MyProScreen = ({navigation}) => {
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Go back button */}
 
-      <View style={styles.goBackContainer}>
-        <TouchableOpacity
-          hitSlop={styles.hitSlop}
-          onPress={() => {
-            navigation.goBack();
-          }}>
-          <IC_GoBack />
-        </TouchableOpacity>
-      </View>
+      <GoBack navigation={navigation} />
 
       {/* screen name */}
       <Text style={styles.screenName}>My Profile</Text>
@@ -146,17 +139,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: CUSTOM_COLORS.Athens_Gray,
   },
-  goBackContainer: {
-    position: 'absolute',
-    top: scale(61),
-    left: scale(50),
-  },
-  hitSlop: {
-    top: scale(10),
-    left: scale(10),
-    right: scale(10),
-    bottom: scale(10),
-  },
+
   screenName: {
     textAlign: 'center',
     fontSize: scale(18),
