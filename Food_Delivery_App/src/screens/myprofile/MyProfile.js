@@ -17,9 +17,6 @@ import {IMG_LINE} from '../../assets/images';
 import {IMG_PAYPAL} from '../../assets/images';
 import {useState} from 'react';
 
-import {EmitterSubscription} from 'react-native';
-let subscriptions: EmitterSubscription[];
-
 const PaymentMethod = [
   {
     title: 'Card',
@@ -43,6 +40,7 @@ const MyProScreen = ({navigation}) => {
     navigation.navigate('MyInforScreen');
   };
   const [isSelect, setIsSelect] = useState(0);
+
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Go back button */}
@@ -133,62 +131,6 @@ const MyProScreen = ({navigation}) => {
             );
           }}
         />
-
-        {/* <TouchableOpacity
-          onPress={() => {
-            setIsSelect('1');
-          }}
-          style={styles.touchCard}>
-          <View style={styles.selectBorder}></View>
-          <View style={styles.viewCard}>
-            <Image source={IMG_CARD} style={styles.imagePayment}></Image>
-          </View>
-          <Text style={styles.textviewPaymentCard}> Card</Text>
-          <Image source={IMG_LINE} style={styles.viewLineCard}></Image>
-          <View
-            style={styles.select}
-            backgroundColor={
-              isSelect === '1' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
-            }></View>
-        </TouchableOpacity> */}
-
-        {/*Button Bank */}
-        {/* <TouchableOpacity
-          onPress={() => {
-            setIsSelect('2');
-          }}
-          style={styles.touchBank}>
-          <View style={styles.selectBorder}></View>
-          <View style={styles.viewBank}>
-            <Image source={IMG_BANK} style={styles.imagePayment}></Image>
-          </View>
-          <Text style={styles.textviewPaymentBank}> Bank account</Text>
-          <Image source={IMG_LINE} style={styles.viewLineBank}></Image>
-          <View
-            style={styles.select}
-            backgroundColor={
-              isSelect === '2' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
-            }></View>
-        </TouchableOpacity> */}
-
-        {/*Button Paypal */}
-        {/* <TouchableOpacity
-          onPress={() => {
-            setIsSelect('3');
-          }}
-          style={styles.touchPaypal}>
-          <View style={styles.selectBorder}></View>
-          <View style={styles.viewPaypal}>
-            <Image source={IMG_PAYPAL} style={styles.imagePayment}></Image>
-          </View>
-          <Text style={styles.textviewPaymentPaypal}> Paypal</Text>
-
-          <View
-            style={styles.select}
-            backgroundColor={
-              isSelect === '3' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
-            }></View>
-        </TouchableOpacity> */}
       </View>
       <CustomButton
         title="Update"
