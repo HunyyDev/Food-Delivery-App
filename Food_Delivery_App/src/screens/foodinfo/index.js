@@ -117,6 +117,12 @@ const styles=StyleSheet.create({
     color:CUSTOM_COLORS.Black,
     opacity:0.5,
   },
+  hitSlop: {
+    top: scale(10),
+    left: scale(10),
+    right: scale(10),
+    bottom: scale(10),
+  },
   Returnpolicy:{
     left:scale(53),
     top:scale(70),
