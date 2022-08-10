@@ -1,11 +1,17 @@
 import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
 import React, {Component} from 'react';
+import {IMG_VEGETABLE} from '../../../assets/images';
 import Custom_FoodBoard from './Custom_FoodBoard';
+//import scale from '../../../../responsive';
 import scale from '../../../constants/responsive';
+import foodBoard from '../foodBoard';
 
 export default class Custom_FoodScrollView extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      foodBoard:foodBoard
+    };
   }
 
   render() {
@@ -15,7 +21,7 @@ export default class Custom_FoodScrollView extends Component {
         style={{...this.props.style}}
         showsHorizontalScrollIndicator={false}>
         <View style={styles.viewContainer}>
-          {this.props.foodBoard.map(item => {
+          {this.state.foodBoard.map(item => {
             return (
               <TouchableOpacity
                 key={item.key}

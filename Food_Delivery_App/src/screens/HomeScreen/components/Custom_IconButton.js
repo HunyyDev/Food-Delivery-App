@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {Image, StyleSheet, TouchableOpacity} from 'react-native';
 import CUSTOM_COLORS from '../../../constants/colors';
-import scale from '../../../constants/responsive';
 
 export default class Custom_IconButton extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   navigate = location => {
     this.props.navigation.navigate(location);
@@ -26,8 +26,8 @@ export default class Custom_IconButton extends Component {
 
 const styles = StyleSheet.create({
   touchableContainer: props => ({
-    width: scale(31),
-    height: scale(31),
+    width: 31,
+    height: 31,
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: CUSTOM_COLORS.Concreate,
