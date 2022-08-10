@@ -14,6 +14,10 @@ const HomeScreen = props => {
   const onTransitToCart = () => {
     props.navigation.navigate(SCREEN_NAME.CART_SCREEN);
   };
+
+  const onTransitToSearch = () => {
+    props.navigation.navigate(SCREEN_NAME.SEARCH_SCREEN)
+  }
   return (
     <View style={styles.container}>
       {/* Header Section */}
@@ -28,7 +32,7 @@ const HomeScreen = props => {
 
       {/* Seach Section */}
       <View style={styles.search}>
-        <Search />
+        <Search onTransitToSearch={onTransitToSearch}/>
       </View>
 
       {/* Slider Section */}

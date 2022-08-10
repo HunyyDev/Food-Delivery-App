@@ -6,12 +6,12 @@ import {
   View,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigation';
 import colors from '../../assets/constants/colors';
 import {normalize, scaleX, scaleY} from '../../helperFunction';
 
-const data = [
+const foodMenu = [
   {
     _id: 0,
     name: 'ABCD',
@@ -80,14 +80,37 @@ const data = [
 
 const SearchScreen = props => {
   const {navigation} = props;
+  const [searchTerm, setSearchTerm] = useState('');
+  const [data, setData] = useState(foodMenu);
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      if (searchTerm === '') setData(foodMenu);
+      else {
+        const temp = foodMenu.filter(food =>
+          food.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        );
+        setData(temp);
+      }
+    }, 100);
+
+    return () => clearInterval(intervalID);
+  }, [searchTerm]);
+
   return (
     <View>
       <CustomBreadcrumbNavigation
         searchField={true}
         onBack={() => navigation.goBack()}
+        setSearchTerm={setSearchTerm}
+        searchTerm={searchTerm}
       />
       <View style={styles.container}>
-        <Text style={styles.textFound}>Found {5} results</Text>
+        <Text style={styles.textFound}>
+          {searchTerm
+            ? `Found ${data.length} ${data.length === 1 ? 'result' : 'results'}`
+            : ''}
+        </Text>
         <FlatList
           data={data}
           keyExtractor={item => '#' + item._id}

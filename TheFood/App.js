@@ -7,6 +7,7 @@ import {SafeAreaView} from 'react-native';
 import RootNavigator from './src/routes/RootNavigator.js';
 
 const App = () => {
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <RootNavigator />

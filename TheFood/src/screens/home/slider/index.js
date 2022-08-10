@@ -4,6 +4,7 @@ import {
   Alert,
   TouchableOpacity,
   TouchableWithoutFeedback,
+  AsyncStorage,
 } from 'react-native';
 import React, {Component} from 'react';
 import FoodType from './components/FoodType';

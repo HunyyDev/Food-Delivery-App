@@ -27,7 +27,9 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.LOADING_SCREEN}
           component={LoaderScreen}
-          options={{headerShown: false}}></Stack.Screen>
+          options={{headerShown: false}}
+          {...props}
+          ></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING_SCREEN}
           component={OnBoardingScreen}

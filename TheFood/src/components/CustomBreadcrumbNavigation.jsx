@@ -16,6 +16,8 @@ const CustomBreadcrumbNavigation = ({
   RightIcon = null,
   searchField = null,
   onBack,
+  setSearchTerm,
+  searchTerm,
 }) => {
   return (
     <View style={styles.container}>
@@ -30,7 +32,12 @@ const CustomBreadcrumbNavigation = ({
       {searchField ? (
         <View style={styles.searchFieldContainer}>
           <TextInput
-            style={[styles.searchFieldContainer.searchField]}></TextInput>
+            style={[styles.searchFieldContainer.searchField]}
+            autoFocus={true}
+            value={searchTerm}
+            onChangeText={text => {
+              setSearchTerm(text);
+            }}></TextInput>
         </View>
       ) : (
         <></>
