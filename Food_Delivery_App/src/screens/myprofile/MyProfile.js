@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, ImageComponent, Text} from 'react-native';
+import {Text} from 'react-native';
 import {StyleSheet} from 'react-native';
 import {View} from 'react-native';
 import {SafeAreaView} from 'react-navigation';
@@ -9,7 +9,7 @@ import {TouchableOpacity} from 'react-native';
 import {IC_GoBack} from '../../assets/icons';
 import scale from '../../constants/responsive';
 import FONT_FAMILY from '../../constants/font';
-import {Image} from 'react-native';
+import {Image, FlatList} from 'react-native';
 import {IMG_AVATAR} from '../../assets/images';
 import {IMG_CARD} from '../../assets/images';
 import {IMG_BANK} from '../../assets/images';
@@ -17,11 +17,32 @@ import {IMG_LINE} from '../../assets/images';
 import {IMG_PAYPAL} from '../../assets/images';
 import {useState} from 'react';
 
+import {EmitterSubscription} from 'react-native';
+let subscriptions: EmitterSubscription[];
+
+const PaymentMethod = [
+  {
+    title: 'Card',
+    sourceIMG: IMG_CARD,
+    backgroundColor: CUSTOM_COLORS.TahitiGold,
+  },
+  {
+    title: 'Bank account',
+    sourceIMG: IMG_BANK,
+    backgroundColor: CUSTOM_COLORS.FrenchRose,
+  },
+  {
+    title: 'Paypal',
+    sourceIMG: IMG_PAYPAL,
+    backgroundColor: CUSTOM_COLORS.BlueRibbon,
+  },
+];
+
 const MyProScreen = ({navigation}) => {
   const onPressMyprofile = () => {
     navigation.navigate('MyInforScreen');
   };
-  const [isSelect, setIsSelect] = useState('1');
+  const [isSelect, setIsSelect] = useState(0);
   return (
     <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
       {/* Go back button */}
@@ -60,11 +81,60 @@ const MyProScreen = ({navigation}) => {
         <Text style={styles.textPayment}>Payment Method</Text>
       </>
       <View style={styles.viewPayment}>
-        <Image source={IMG_LINE} style={styles.viewLineCard}></Image>
-
         {/*Button card */}
 
-        <TouchableOpacity
+        <FlatList
+          data={PaymentMethod}
+          renderItem={({item, index}) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  setIsSelect(index);
+                }}
+                style={styles.touchPayment}>
+                <View
+                  style={[
+                    styles.selectBorder,
+                    isSelect == index
+                      ? {borderColor: CUSTOM_COLORS.SunsetOrange}
+                      : {borderColor: CUSTOM_COLORS.Black},
+                  ]}>
+                  <View
+                    style={styles.select}
+                    backgroundColor={
+                      isSelect == index
+                        ? CUSTOM_COLORS.SunsetOrange
+                        : 'transparent'
+                    }
+                  />
+                </View>
+
+                {/* childComponent */}
+                <View
+                  style={[
+                    styles.childComponentContainer,
+                    index < PaymentMethod.length - 1
+                      ? styles.childComponentContainerBorder
+                      : null,
+                  ]}>
+                  <View
+                    style={[
+                      styles.viewPaymentItem,
+                      {backgroundColor: item.backgroundColor},
+                    ]}>
+                    <Image
+                      source={item.sourceIMG}
+                      style={styles.imagePayment}
+                    />
+                  </View>
+                  <Text style={styles.textviewPayment}>{item.title}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+        />
+
+        {/* <TouchableOpacity
           onPress={() => {
             setIsSelect('1');
           }}
@@ -80,10 +150,10 @@ const MyProScreen = ({navigation}) => {
             backgroundColor={
               isSelect === '1' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
             }></View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/*Button Bank */}
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             setIsSelect('2');
           }}
@@ -99,10 +169,10 @@ const MyProScreen = ({navigation}) => {
             backgroundColor={
               isSelect === '2' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
             }></View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/*Button Paypal */}
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             setIsSelect('3');
           }}
@@ -118,7 +188,7 @@ const MyProScreen = ({navigation}) => {
             backgroundColor={
               isSelect === '3' ? CUSTOM_COLORS.SunsetOrange : 'transparent'
             }></View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <CustomButton
         title="Update"
@@ -162,22 +232,7 @@ const styles = StyleSheet.create({
     left: scale(53),
     top: scale(138),
   },
-  textPayment: {
-    fontSize: 15,
-    color: CUSTOM_COLORS.Black,
-    fontFamily: FONT_FAMILY.SFBold,
-    left: scale(53),
-    top: scale(351),
-  },
-  viewPayment: {
-    backgroundColor: CUSTOM_COLORS.White,
-    width: scale(315),
-    height: scale(231),
-    left: scale(50),
-    bottom: scale(233),
-    borderRadius: scale(20),
-    position: 'absolute',
-  },
+
   viewInfomation: {
     backgroundColor: CUSTOM_COLORS.White,
     width: scale(315),
@@ -229,100 +284,72 @@ const styles = StyleSheet.create({
     fontFamily: FONT_FAMILY.Abel,
   },
 
-  viewCard: {
-    backgroundColor: CUSTOM_COLORS.TahitiGold,
-    width: scale(40),
-    height: scale(40),
-    left: scale(51),
-    bottom: scale(0),
-    borderRadius: scale(10),
+  viewPayment: {
+    backgroundColor: CUSTOM_COLORS.White,
+    width: scale(315),
+    // height: scale(231),
+    borderRadius: scale(20),
+
+    left: scale(50),
+    bottom: scale(233),
     position: 'absolute',
   },
-  viewBank: {
-    backgroundColor: CUSTOM_COLORS.FrenchRose,
+  textPayment: {
+    fontSize: 15,
+    color: CUSTOM_COLORS.Black,
+    fontFamily: FONT_FAMILY.SFBold,
+    left: scale(53),
+    top: scale(351),
+  },
+
+  childComponentContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    paddingVertical: 15,
+    alignItems: 'center',
+    marginLeft: scale(15),
+    marginRight: scale(32),
+  },
+  childComponentContainerBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: CUSTOM_COLORS.Black,
+  },
+
+  viewPaymentItem: {
+    // backgroundColor: CUSTOM_COLORS.TahitiGold,
     width: scale(40),
     height: scale(40),
-    left: scale(51),
-    bottom: scale(0),
     borderRadius: scale(10),
-    position: 'absolute',
+    // left: scale(51),
+    // bottom: scale(0),
+    // position: 'absolute',
+
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  viewPaypal: {
-    backgroundColor: CUSTOM_COLORS.BlueRibbon,
-    width: scale(40),
-    height: scale(40),
-    left: scale(51),
-    bottom: scale(0),
-    borderRadius: scale(10),
-    position: 'absolute',
-  },
+
   imagePayment: {
     width: scale(16),
     height: scale(12),
-    left: scale(13),
-    bottom: scale(15),
-    position: 'absolute',
+    // left: scale(13),
+    // bottom: scale(15),
+    // position: 'absolute',
   },
-  textviewPaymentCard: {
-    left: scale(102),
-    bottom: scale(10),
-    position: 'absolute',
+  textviewPayment: {
+    // left: scale(102),
+    // bottom: scale(10),
+    // position: 'absolute',
     fontFamily: FONT_FAMILY.Abel,
     color: CUSTOM_COLORS.Black,
-  },
-  textviewPaymentBank: {
-    left: scale(102),
-    bottom: scale(10),
-    position: 'absolute',
-    fontFamily: FONT_FAMILY.Abel,
-    color: CUSTOM_COLORS.Black,
-  },
-  textviewPaymentPaypal: {
-    left: scale(102),
-    bottom: scale(10),
-    position: 'absolute',
-    fontFamily: FONT_FAMILY.Abel,
-    color: CUSTOM_COLORS.Black,
-  },
-  viewLineCard: {
-    width: scale(232),
-    height: scale(0),
-    left: scale(51),
-    bottom: scale(0),
-    position: 'absolute',
+    marginLeft: scale(11),
   },
 
-  viewLineBank: {
-    width: scale(232),
-    height: scale(0),
-    left: scale(0),
-    bottom: scale(86),
-    position: 'absolute',
-  },
-
-  touchCard: {
-    position: 'absolute',
-    top: scale(20),
-    width: scale(315),
-    height: scale(40),
-    backgroundColor: CUSTOM_COLORS.White,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  touchBank: {
-    position: 'absolute',
-    top: scale(90),
-    width: scale(315),
-    height: scale(40),
-    backgroundColor: CUSTOM_COLORS.White,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  touchPaypal: {
-    position: 'absolute',
-    top: scale(160),
-    width: scale(315),
-    height: scale(40),
+  touchPayment: {
+    // position: 'absolute',
+    // top: scale(20),
+    // width: scale(315),
+    // height: scale(40),
+    width: '100%',
     backgroundColor: CUSTOM_COLORS.White,
     flexDirection: 'row',
     alignItems: 'center',
@@ -332,15 +359,16 @@ const styles = StyleSheet.create({
     width: scale(7),
     height: scale(7),
     borderRadius: 360,
-    left: scale(10),
+    // left: scale(10),
   },
 
   selectBorder: {
-    left: scale(21),
+    // left: scale(21),
+    marginLeft: scale(21),
     width: scale(15),
     height: scale(15),
     borderRadius: 360,
-    borderColor: CUSTOM_COLORS.SunsetOrange,
+    // borderColor: CUSTOM_COLORS.SunsetOrange,
     borderWidth: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
