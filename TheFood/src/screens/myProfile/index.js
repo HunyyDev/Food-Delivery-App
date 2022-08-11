@@ -28,8 +28,6 @@ const MyProfileScreen = props => {
   ];
 
   const {navigation} = props;
-
-  var check = 0;
   return (
     <ScrollView style={styles.container}>
       <CustomBreadcrumbNavigation title="" onBack={() => navigation.goBack()} />
