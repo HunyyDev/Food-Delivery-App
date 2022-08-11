@@ -1,17 +1,16 @@
 import React from 'react';
-import {View} from 'react-native';
-import OnBoardingScreen from './src/screens/onboarding';
-import LoginScreen from './src/screens/auth';
-// import HomeScreen from './src/screens/home';
 import {SafeAreaView} from 'react-native';
 import RootNavigator from './src/routes/RootNavigator.js';
+import {Provider} from 'react-redux';
+import {Store} from './src/redux/store.js';
 
 const App = () => {
-
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <RootNavigator />
-    </SafeAreaView>
+    <Provider store={Store}>
+      <SafeAreaView style={{flex: 1}}>
+        <RootNavigator />
+      </SafeAreaView>
+    </Provider>
   );
 };
 

@@ -16,8 +16,9 @@ const HomeScreen = props => {
   };
 
   const onTransitToSearch = () => {
-    props.navigation.navigate(SCREEN_NAME.SEARCH_SCREEN)
-  }
+    props.navigation.navigate(SCREEN_NAME.SEARCH_SCREEN);
+  };
+
   return (
     <View style={styles.container}>
       {/* Header Section */}
@@ -32,12 +33,12 @@ const HomeScreen = props => {
 
       {/* Seach Section */}
       <View style={styles.search}>
-        <Search onTransitToSearch={onTransitToSearch}/>
+        <Search onTransitToSearch={onTransitToSearch} />
       </View>
 
       {/* Slider Section */}
       <View style={styles.slider}>
-        <Slider onNavigation={navigation} />
+        <Slider onNavigation={navigation}/>
       </View>
 
       {/* Footer Section */}

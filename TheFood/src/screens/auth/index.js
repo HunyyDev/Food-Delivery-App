@@ -93,6 +93,7 @@ class LoginScreen extends Component {
       },
     });
   };
+  
   render() {
     const {navigation} = this.props;
     return (

@@ -4,12 +4,12 @@ import {
   Alert,
   TouchableOpacity,
   TouchableWithoutFeedback,
-  AsyncStorage,
 } from 'react-native';
 import React, {Component} from 'react';
 import FoodType from './components/FoodType';
 import FoodCard from './components/FoodCard';
 import styles from './styles';
+import {useSelector} from 'react-redux';
 
 const typeOfFood = ['Foods', 'Drinks', 'Snacks', 'Sauces', 'BimBim'];
 
@@ -29,10 +29,10 @@ const foodCards = [
 export default class Slider extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       selected: 0,
     };
+    foodList = useSelector(state => state.food)
   }
 
   onSelectedFoodType = index => {
@@ -40,6 +40,7 @@ export default class Slider extends Component {
   };
 
   render() {
+    console.log(this.foodList); 
     return (
       <View style={styles.container}>
         <ScrollView
