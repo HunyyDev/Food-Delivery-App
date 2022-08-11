@@ -4,7 +4,7 @@ import {thunk} from 'redux-thunk';
 
 import foodReducer from './reducers';
 
-const reducer = {food: foodReducer };
+const reducer = {food: foodReducer};
 
 export const Store = configureStore({
   reducer,
