@@ -18,17 +18,17 @@ import CheckoutDeliveryScreen from '../screens/delivery';
 import CheckoutPaymentScreen from '../screens/payment';
 import DetailScreen from '../screens/detailItem';
 
-import {useDispatch} from 'react-redux'
-import { useEffect } from 'react';
-import {getFoodData} from '../redux/actions'
+// import {useDispatch} from 'react-redux'
+import {useEffect} from 'react';
+import {getFoodData} from '../redux/actions';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = props => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-      dispatch(getFoodData())
-  })
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getFoodData());
+  // });
 
   return (
     <NavigationContainer>
@@ -36,8 +36,7 @@ const RootNavigator = props => {
         <Stack.Screen
           name={SCREEN_NAME.LOADING_SCREEN}
           component={LoaderScreen}
-          options={{headerShown: false}}
-          ></Stack.Screen>
+          options={{headerShown: false}}></Stack.Screen>
         <Stack.Screen
           name={SCREEN_NAME.ONBOARDING_SCREEN}
           component={OnBoardingScreen}

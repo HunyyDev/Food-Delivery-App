@@ -15,6 +15,7 @@ import CUSTOM_COLOR from '../../assets/constants/colors';
 import {scaleX, scaleY, normalize} from '../../helperFunction';
 import {useState} from 'react';
 import SCREEN_NAME from '../../assets/constants/screens';
+// import {useSelector, useDispatch} from 'react-redux';
 
 const IMAGE = '../../assets/images/BellaOlonjeLogo111.png';
 class LoginScreen extends Component {
@@ -27,6 +28,10 @@ class LoginScreen extends Component {
       password: '',
       confirmPassword: '',
     };
+    // dispatch = useDispatch();
+    // const UserPassword = useSelector(state => {
+    //   return state.food;
+    // });
   }
 
   setCheckedA = () => {
@@ -40,6 +45,7 @@ class LoginScreen extends Component {
       });
     }
   };
+
   setCheckedB = () => {
     if (!this.state.isCheckedB) {
       this.setState({
@@ -93,7 +99,7 @@ class LoginScreen extends Component {
       },
     });
   };
-  
+
   render() {
     const {navigation} = this.props;
     return (
