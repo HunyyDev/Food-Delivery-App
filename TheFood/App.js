@@ -6,11 +6,11 @@ import {Store} from './src/redux/store.js';
 
 const App = () => {
   return (
-    <Provider store={Store}>
+    // <Provider store={Store}>
       <SafeAreaView style={{flex: 1}}>
         <RootNavigator />
       </SafeAreaView>
-    </Provider>
+    // </Provider>
   );
 };
 

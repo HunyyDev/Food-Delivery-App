@@ -25,10 +25,10 @@ import {getFoodData} from '../redux/actions'
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = props => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-      dispatch(getFoodData())
-  })
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //     dispatch(getFoodData())
+  // })
 
   return (
     <NavigationContainer>

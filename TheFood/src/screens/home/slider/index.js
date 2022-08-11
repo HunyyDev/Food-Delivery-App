@@ -32,7 +32,7 @@ export default class Slider extends Component {
     this.state = {
       selected: 0,
     };
-    foodList = useSelector(state => state.food)
+    // foodList = useSelector(state => state.food)
   }
 
   onSelectedFoodType = index => {
