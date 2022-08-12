@@ -18,30 +18,33 @@ const DATA = [
     title: 'Veggie tomato mix',
     cost: 'N1,900',
     source: IMG_Food,
+    component: 'ProductDetail',
   },
   {
     id: 2,
     title: 'Veggie tomato mix',
     cost: 'N1,900',
     source: IMG_Food2,
+    component: 'WaitingForUpgrade',
   },
   {
     id: 3,
     title: 'Spicy fish sauce',
     cost: 'N1,900',
     source: IMG_Food3,
+    component: 'WaitingForUpgrade',
   },
 ];
 
-const Item = ({title, source, cost, navigation}) => (
+const Item = props => (
   <TouchableOpacity
     style={styles.listContainer}
     onPress={() => {
-      navigation.navigate('ProductDetail');
+      props.navigation.navigate(props.component);
     }}>
-    <Image style={styles.foodImage} source={source} />
-    <Text style={styles.textFoodContainer}>{title}</Text>
-    <Text style={styles.textPriceContainer}>{cost}</Text>
+    <Image style={styles.foodImage} source={props.source} />
+    <Text style={styles.textFoodContainer}>{props.title}</Text>
+    <Text style={styles.textPriceContainer}>{props.cost}</Text>
   </TouchableOpacity>
 );
 
@@ -55,6 +58,7 @@ export class Foods extends Component {
       title={item.title}
       cost={item.cost}
       navigation={this.props.navigation}
+      component={item.component}
     />
   );
   render() {
