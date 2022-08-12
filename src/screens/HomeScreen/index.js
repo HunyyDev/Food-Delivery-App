@@ -6,97 +6,212 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  TouchableOpacity,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
-import {ScreenContainer} from 'react-native-screens';
 import CUSTOM_COLOR from '../../assets/constants/colors';
 import FONT_FAMILY from '../../assets/constants/fonts';
-import scale from '../../assets/constants/reponsive';
+import scale from '../../assets/constants/responsive';
+import {UnderlineButton} from '../../assets/components/UnderlineButton';
 import {
   IMG_Vector,
   IMG_Cart,
   IMG_Search,
-  IMG_Food,
-  IMG_Food3,
-  IMG_Food2,
   IMG_Home,
   IMG_Heart,
   IMG_User,
   IMG_Clock,
 } from '../../assets/images';
-
-export class HomeScreen extends Component {
+import {Drinks} from './DrinksForm';
+import {Foods} from './FoodsForm';
+import {Snacks} from './SnacksForm';
+import {Sauce} from './SauceForm';
+class Condition extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+  checkSwitch = props => {
+    switch (props.label) {
+      case 'Foods':
+        this.FOODS();
+        break;
+
+      case 'Drinks':
+        this.DRINKS();
+        break;
+
+      case 'Snacks':
+        this.SNACKS();
+        break;
+
+      case 'Sauce':
+        this.SAUCE();
+        break;
+    }
+  };
+  FOODS = props => {
+    props.label === 'Foods';
+  };
+  DRINKS = props => {
+    props.label === 'Drinks';
+  };
+  SNACKS = props => {
+    props.label === 'Snacks';
+  };
+  SAUCE = props => {
+    props.label === 'Sauce';
+  };
+  render() {
+    if (this.props.label === 'Foods') {
+      return <Foods {...this.props} />;
+    } else {
+      if (this.props.label === 'Drinks') {
+        return <Drinks {...this.props} />;
+      } else {
+        if (this.props.label === 'Snacks') {
+          return <Snacks {...this.props} />;
+        } else {
+          return <Sauce {...this.props} />;
+        }
+      }
+    }
+  }
+}
+export class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      label: 'Foods',
+    };
+  }
 
   render() {
     return (
-      <SafeAreaView style={styles.backgroundContainer}>
-        <View style={styles.imageContainer}>
-          <Image source={IMG_Vector} />
-        </View>
-
-        <View style={styles.cartContainer}>
+      <SafeAreaView
+        style={styles.backgroundContainer}
+        onPressHandle={() => {
+          this.getData();
+        }}>
+        <TouchableOpacity
+          style={styles.imageContainer}
+          onPress={() => this.props.navigation.openDrawer()}>
+          <Image source={IMG_Vector} style={styles.Menu} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.cartContainer}
+          onPress={() => {
+            this.props.navigation.navigate('CartScreen');
+          }}>
           <Image source={IMG_Cart} />
-        </View>
-
+        </TouchableOpacity>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
         </View>
-
-        <View style={styles.searchContainer}>
+        <TouchableOpacity style={styles.searchContainer}>
           <Image source={IMG_Search} style={styles.searchImage} />
-          <TextInput
-            hitSlop={{top: '100%', left: '100%', right: '100%', bottom: '100%'}}
-            placeholder={'Search'}
+          <Text
             style={styles.searchInput}
-          />
+            onPress={() => this.props.navigation.navigate('SearchScreen')}>
+            {'Search'}
+          </Text>
+        </TouchableOpacity>
+        <ScrollView
+          style={styles.scrollView}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.contentContainer}>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Foods'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Foods'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Foods</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Drinks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Drinks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Drinks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Snacks'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Snacks'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Snacks</Text>
+            </UnderlineButton>
+          </View>
+          <View style={styles.backgroundTitle}>
+            <UnderlineButton
+              onPress={() => this.setState({label: 'Sauce'})}
+              style={styles.button}
+              underlineStyle={[
+                styles.underLine,
+                {
+                  backgroundColor:
+                    this.state.label === 'Sauce'
+                      ? CUSTOM_COLOR.Vermilion
+                      : CUSTOM_COLOR.Concrete,
+                },
+              ]}>
+              <Text style={styles.buttonText}>Sauce</Text>
+            </UnderlineButton>
+          </View>
+        </ScrollView>
+        <View style={styles.viewTaskbar}>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_Home} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.iconContainer}>
+            <Image source={IMG_Heart} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => {
+              this.props.navigation.navigate('MyProfileScreen');
+            }}>
+            <Image source={IMG_User} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => {
+              this.props.navigation.navigate('HistoryScreen');
+            }}>
+            <Image source={IMG_Clock} />
+          </TouchableOpacity>
         </View>
-        <View style={styles.scrollView1}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Text style={styles.text1}>{'Foods'}</Text>
-            <Text style={styles.text1}>{'Drinks'}</Text>
-            <Text style={styles.text1}>{'Snacks'}</Text>
-            <Text style={styles.text1}>{'Sauce'}</Text>
-          </ScrollView>
-        </View>
-        <View style={styles.scrollView2}>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.contentContiner}>
-            <View style={styles.listContainer}>
-              <Image style={styles.foodImage} source={IMG_Food2} />
-              <Text style={styles.textFoodContainer}>
-                {'Veggie \ntomato mix'}
-              </Text>
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
-              <Image style={styles.foodImage} source={IMG_Food} />
-              <Text style={styles.textFoodContainer}>
-                {'Veggie \ntomato mix'}
-              </Text>
-              <Text style={styles.textPriceContainer}>{'N1,900'}</Text>
-            </View>
-            <View style={styles.listContainer}>
-              <Image style={styles.foodImage} source={IMG_Food3} />
-              <Text style={styles.textFoodContainer}>
-                {'Spicy \nfish sauce'}
-              </Text>
-              <Text style={styles.textPriceContainer}>{'N2,300'}</Text>
-            </View>
-          </ScrollView>
-        </View>
-        <View style={styles.viewTabbar}>
-          <Image style={styles.icon1Container} source={IMG_Home} />
-          <Image style={styles.icon2Container} source={IMG_Heart} />
-          <Image style={styles.icon3Container} source={IMG_User} />
-          <Image style={styles.icon4Container} source={IMG_Clock} />
-        </View>
+        <Condition
+          label={this.state.label}
+          navigation={this.props.navigation}
+        />
       </SafeAreaView>
     );
   }
@@ -104,15 +219,25 @@ export class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   backgroundContainer: {
-    backgroundColor: CUSTOM_COLOR.Silver,
+    backgroundColor: CUSTOM_COLOR.Concrete,
     flex: 1,
     alignItems: 'center',
   },
+  contentContainer: {
+    paddingVertical: 3,
+    width: scale(550),
+    height: scale(50),
+    justifyContent: 'space-around',
+  },
   imageContainer: {
-    width: 'auto',
-    height: 'auto',
+    width: scale(28),
+    height: scale(20),
     top: scale(74),
     left: scale(54.6),
+    position: 'absolute',
+  },
+  Menu: {
+    resizeMode: 'cover',
     position: 'absolute',
   },
   cartContainer: {
@@ -124,7 +249,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: 'black',
-    fontFamily: FONT_FAMILY.SFBold,
+    fontFamily: FONT_FAMILY.SFBlack,
     fontSize: scale(34),
   },
   titleContainer: {
@@ -133,11 +258,17 @@ const styles = StyleSheet.create({
     top: scale(132),
     left: scale(50),
     position: 'absolute',
+    justifyContent: 'space-around',
+  },
+  backgroundTitle: {
+    width: '20%',
+    height: scale(45),
   },
   searchContainer: {
-    width: scale(430),
+    width: scale(380),
     height: scale(60),
     top: scale(242),
+    backgroundColor: CUSTOM_COLOR.White,
     borderRadius: scale(30),
     position: 'absolute',
     flexDirection: 'row',
@@ -155,97 +286,57 @@ const styles = StyleSheet.create({
     width: scale(300),
     position: 'absolute',
   },
-  scrollView1: {
+  scrollView: {
+    marginTop: scale(330),
     left: scale(100),
-    width: scale(450),
-    height: scale(40),
-    top: scale(348),
-    backgroundColor: CUSTOM_COLOR.Silver,
+    width: '80%',
     position: 'absolute',
-    justifyContent: 'center',
+  },
+  backgroundItem: {
+    width: '100%',
+    height: scale(50),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: CUSTOM_COLOR.Black,
+    position: 'absolute',
   },
   text1: {
     left: scale(50),
     fontSize: scale(20),
-    fontFamily: FONT_FAMILY.SFRegular,
+    fontFamily: FONT_FAMILY.SFBlack,
     color: CUSTOM_COLOR.Vermilion,
     marginRight: scale(91),
   },
-  scrollView2: {
-    marginTop: scale(450),
-    backgroundColor: 'white',
-    backgroundColor: CUSTOM_COLOR.Silver,
-    height: scale(370),
-  },
-  listContainer: {
-    backgroundColor: 'white',
-    width: scale(200),
-    height: scale(270),
-    marginTop: scale(60.49),
-    marginRight: scale(20),
-    borderRadius: scale(40),
-    resizeMode: 'strech',
-  },
-  foodImage: {
-    width: scale(150),
-    height: scale(150),
-    left: scale(25),
-    top: scale(-60),
-    borderRadius: scale(800),
+  viewTaskbar: {
+    height: scale(25),
+    width: '90%',
+    bottom: scale(45),
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     position: 'absolute',
   },
-  contentContiner: {
-    paddingVertical: 20,
-    width: scale(650),
-    height: scale(500),
+  iconContainer: {
+    height: scale(35),
+    width: scale(35),
+    alignSelf: 'center',
+    bottom: scale(0),
+  },
+  underLine: {
+    width: scale(100),
+    height: scale(4),
+    alignSelf: 'center',
+    position: 'absolute',
+    borderRadius: 30,
+  },
+  button: {
+    height: '70%',
+  },
+  buttonText: {
+    color: 'black',
+    fontSize: 18,
+    fontFamily: FONT_FAMILY.SFBlack,
+    alignSelf: 'center',
+    alignContent: 'center',
     justifyContent: 'center',
   },
-  textFoodContainer: {
-    fontFamily: FONT_FAMILY.SFProTextBold,
-    fontSize: 18,
-    color: CUSTOM_COLOR.Black,
-    fontStyle: 'normal',
-    textAlign: 'center',
-    lineHeight: 22,
-    top: scale(115),
-  },
-  textPriceContainer: {
-    color: CUSTOM_COLOR.Vermilion,
-    fontFamily: FONT_FAMILY.SFProTextBold,
-    fontSize: 15,
-    textAlign: 'center',
-    top: scale(130),
-    lineHeight: 20,
-  },
-  viewTabbar:{
-   // width: scale(25),
-    height: scale(25),
-    bottom: scale(50.1),
-  
-    position: 'absolute',
-  },
-  icon1Container:{
-    position: 'absolute',
-    left: scale(-200),
-    bottom: scale(0),
-
-    
-  },
-  icon2Container: {
-    position: 'absolute',
-    left: scale(-80.57),
-    bottom: scale(0),
-
-  },
-  icon3Container:{
-    position: 'absolute',
-    left: scale(40),
-    bottom: scale(0),
-  },
-  icon4Container:{
-    position: 'absolute',
-    left: scale(150),
-    bottom: scale(-6),
-    opacity: 0.5,
-  }
 });

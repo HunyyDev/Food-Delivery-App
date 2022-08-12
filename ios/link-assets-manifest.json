@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/FontsFree-Net-Abel-Regular.ttf",
+      "sha1": "3ccc61028c66b2866400315e38301ce5df27e06a"
+    },
+    {
       "path": "src/assets/fonts/FontsFree-Net-SF-Pro-Rounded-Black.ttf",
       "sha1": "b116081850f9820eed953b981d88e8cca79fc97d"
     },
@@ -88,6 +92,14 @@
     {
       "path": "src/assets/fonts/Montserrat-ThinItalic.ttf",
       "sha1": "21fdb007ec60c23df8ef1fbb586b397b2f1f099a"
+    },
+    {
+      "path": "src/assets/fonts/Poppins-Bold.ttf",
+      "sha1": "974b66074f1e265c0d203a4e2989c6120af3bc55"
+    },
+    {
+      "path": "src/assets/fonts/SF-Pro-Rounded-Bold.ttf",
+      "sha1": "ff61a8eb119864c0800f424fa3223aa815426523"
     },
     {
       "path": "src/assets/fonts/SF-Pro-Text-Bold.ttf",

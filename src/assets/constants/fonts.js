@@ -7,5 +7,10 @@ const FONT_FAMILY = {
   SFBlack: SF + 'Black',
   SFBold: SF + 'Bold',
   SFProTextBold: SFProText + 'Bold',
+  SFProRoundedBold: 'SF-Pro-Rounded-Bold',
+  AbelRe: 'FontsFree-Net-Abel-Regular',
+  SFProTextRengula: 'FontsFree-Net-SFProText-Regular',
+  AbelRengula: 'FontsFree-Net-Abel-Regular',
+  PoppinsBold: 'Poppins-Bold',
 };
 export default FONT_FAMILY;

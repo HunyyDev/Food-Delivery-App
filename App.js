@@ -1,30 +1,12 @@
-import {Onboarding} from './src/screens/onboarding';
-import {Login} from './src/screens/login';
-import {WaitingForUpgrade} from './src/screens/WaitingForUpgrade';
+import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {HomeScreen} from './src/screens/HomeScreen';
-
-const stack = createNativeStackNavigator();
+import RootNavigation from './src/routes/RootNavigation';
 
 const App = props => {
   return (
     <NavigationContainer>
-      <stack.Navigator>
-        <stack.Screen name="Onboarding" options={{headerShown: false}}>
-          {props => <Onboarding {...props} />}
-        </stack.Screen>
-        <stack.Screen name="Login" options={{headerShown: false}}>
-          {props => <Login {...props} />}
-        </stack.Screen>
-        <stack.Screen name="WaitingForUpgrade" options={{headerShown: false}}>
-          {props => <WaitingForUpgrade {...props} />}
-        </stack.Screen>
-        <stack.Screen name="HomeScreen" options={{headerShown: false}}>
-          {props => <HomeScreen {...props} />}
-        </stack.Screen>
-      </stack.Navigator>
+      <RootNavigation />
     </NavigationContainer>
   );
 };
