@@ -17,7 +17,7 @@ export {default as IMG_Hand} from './Hand.png';
 export {default as IMG_BodyArrow} from './BodyArrow.png';
 export {default as IMG_ArrowLeft} from './ArrowLeft.png';
 export {default as IMG_ArrowRight} from './ArrowRight.png';
-export {default as IMG_Bank} from './bank.png';
+export {default as IMG_Bank} from './Bank.png';
 export {default as IMG_Card} from './card.png';
 export {default as IMG_FishWith} from './fishwith.png';
 export {default as IMG_Viggie} from './viggie.png';
