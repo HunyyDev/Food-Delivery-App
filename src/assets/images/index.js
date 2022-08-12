@@ -26,4 +26,4 @@ export {default as IMG_NoInternet} from './eva_wifi-off-fill.png';
 export {default as IMG_Personal} from './Rectangle6.png';
 export {default as IMG_Go} from './chevron-left.png';
 export {default as IMG_History} from './HistoryImage.png';
-export {default as IMG_BlackHeart} from './BlackHeart.png';
+export {default as IMG_BlackHeart} from './blackHeart.png';

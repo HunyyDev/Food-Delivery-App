@@ -10,14 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@react-native-community/netinfo": "^9.3.0",
-=======
     "@react-navigation/drawer": "^6.4.3",
->>>>>>> 997980b42f3d6ca6110de8ba447273ae163ebc33
-=======
->>>>>>> 3d9830577ea761f255b66429cc4b3b1de217c6ae
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
     "react": "18.0.0",
