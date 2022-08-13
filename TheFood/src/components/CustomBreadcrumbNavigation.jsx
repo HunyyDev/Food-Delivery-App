@@ -10,12 +10,14 @@ import {scaleX, scaleY, normalize} from '../helperFunction';
 import {ICOnBack} from '../assets/icons';
 import CUSTOM_COLOR from '../assets/constants/colors';
 import colors from '../assets/constants/colors';
+import {ICHeart} from '../assets/icons';
 
 const CustomBreadcrumbNavigation = ({
   title = null,
   RightIcon = null,
   searchField = null,
   onBack,
+  onPressRightIcon,
   setSearchTerm,
   searchTerm,
 }) => {
@@ -43,7 +45,13 @@ const CustomBreadcrumbNavigation = ({
         <></>
       )}
 
-      {RightIcon ? <RightIcon /> : <View></View>}
+      {RightIcon ? (
+        <TouchableOpacity onPress={onPressRightIcon}>
+          <ICHeart />
+        </TouchableOpacity>
+      ) : (
+        <View></View>
+      )}
     </View>
   );
 };

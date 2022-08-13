@@ -25,7 +25,9 @@ export default class Search extends Component {
         <TextInput
           style={styles.input}
           placeholder="Search"
-          onFocus={this.props.onNavigation.navigate(SCREEN_NAME.SEARCH_SCREEN)}
+          onFocus={() =>
+            this.props.onNavigation.navigate(SCREEN_NAME.SEARCH_SCREEN)
+          }
           showSoftInputOnFocus={false}
         />
       </View>
