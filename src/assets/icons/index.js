@@ -16,3 +16,4 @@ export {default as ICON_LOCAL_OFFER} from './ic_outline-local-offer.png';
 export {default as ICON_STICKY_NOTE} from './ic_outline-sticky-note-2.png';
 export {default as ICON_SECURITY} from './whh_securityalt.png';
 export {default as ICON_LINE} from './Line5.png';
+export {default as ICON_GOOGLE} from './google.png';

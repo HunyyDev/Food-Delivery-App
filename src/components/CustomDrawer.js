@@ -21,6 +21,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import SCREEN_NAME from '../constants/screens';
 
 import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const widthWindow = Dimensions.get('window').width;
 
@@ -40,6 +41,8 @@ const CustomDrawer = props => {
   const SignOut = async () => {
     await AsyncStorage.setItem('SIGN_OUT', '1');
     auth().signOut();
+    await GoogleSignin.revokeAccess();
+    await GoogleSignin.signOut();
   };
 
   const onSignOut = useCallback(value => {

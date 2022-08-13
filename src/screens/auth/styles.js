@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   TextInput: {
     color: COLORS.Black,
     fontFamily: FONT_FAMILY.TextBold,
-    marginBottom: 50,
+    marginBottom: 20,
   },
   buttonWhite: {
     backgroundColor: COLORS.White,
@@ -112,6 +112,26 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     margin: 20,
   },
+  googleButton: {
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: COLORS.Black,
+    padding: 15,
+    width: 300,
+    alignSelf: 'center',
+    backgroundColor: COLORS.Transparent,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  googleText: {
+    color: COLORS.Black,
+    // textAlign: 'center',
+    marginLeft: 10,
+    // alignItems: 'center',
+    fontSize: 17,
+  },
+  googleIcon: {},
 });
 
 export default styles;
