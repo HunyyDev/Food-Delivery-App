@@ -8,6 +8,7 @@ const SCREEN_NAME = {
   INFORMATION: 'Information',
   MY_PROFILE: 'MyProfile',
   CART: 'Cart',
+  DETAIL_PRODUCT: 'DetailProduct',
 };
 
 export default SCREEN_NAME;

@@ -39,6 +39,7 @@ const CustomDrawer = props => {
 
   const SignOut = async () => {
     await AsyncStorage.setItem('SIGN_OUT', '1');
+    auth().signOut();
   };
 
   const onSignOut = useCallback(value => {

@@ -13,6 +13,8 @@ import OnboardingScreen from '../screens/onboarding';
 import FirstTimeScreen from '../screens/onboarding/FirstTimeScreen';
 import InformationScreen from '../screens/profile/InformationScreen';
 import MyProfileScreen from '../screens/profile/MyProfileScreen';
+import DetailProduct from '../screens/detailProduct';
+
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerHome from './DrawerHome';
 
@@ -32,6 +34,10 @@ const AuthNavigator = props => {
       <Stack.Screen
         name={SCREEN_NAME.ONBOARDING}
         component={OnboardingScreen}
+      />
+      <Stack.Screen
+        name={SCREEN_NAME.DETAIL_PRODUCT}
+        component={DetailProduct}
       />
       <Stack.Screen name={SCREEN_NAME.HOME} component={DrawerRoutes} />
       <Stack.Screen name={SCREEN_NAME.DELIVERY} component={DeliveryScreen} />

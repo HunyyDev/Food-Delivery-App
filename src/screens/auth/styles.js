@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   TextInput: {
     color: COLORS.Black,
     fontFamily: FONT_FAMILY.TextBold,
+    marginBottom: 50,
   },
   buttonWhite: {
     backgroundColor: COLORS.White,

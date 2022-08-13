@@ -1,8 +1,11 @@
 import React from 'react';
 import {Alert, Image, Text, TouchableOpacity, View} from 'react-native';
+import SCREEN_NAME from '../constants/screens';
 import styles from '../screens/home/styles';
 
 const ButtonProduct = props => {
+  const {navigation} = props;
+
   const ButtonAlert = (title, announce) => {
     Alert.alert(title, announce, [
       {
@@ -14,13 +17,21 @@ const ButtonProduct = props => {
       },
     ]);
   };
+
   return (
     <>
-      <TouchableOpacity onPress={() => ButtonAlert(props.title, 'Het hang!')}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate(SCREEN_NAME.DETAIL_PRODUCT, {
+            title: props.title,
+            price: props.price,
+            images: props.source,
+          })
+        }>
         <View style={styles.productItem}>
           <Image
             style={styles.imageWrapper}
-            source={props.source}
+            source={props.source[0]}
             resizeMode="cover"
           />
           <View style={styles.productInfo}>

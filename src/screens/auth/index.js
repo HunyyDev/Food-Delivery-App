@@ -7,6 +7,7 @@ import {
   Alert,
   TextInput,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Logo} from '../../assets/images';
@@ -171,15 +172,24 @@ export default class LoginScreen extends Component {
                 )
               }
             </Pressable>
-            <Button
-              title="Google Sign-In"
+            <TouchableOpacity
+              style={{
+                borderRadius: 1000,
+                borderWidth: 2,
+                borderColor: COLORS.Black,
+                padding: 15,
+                width: 300,
+                alignSelf: 'center',
+              }}
               onPress={() =>
                 onGoogleButtonPress().then(() => {
-                  console.log('Signed in with Google!');
                   this.Login();
                 })
-              }
-            />
+              }>
+              <Text style={{color: COLORS.Black, textAlign: 'center'}}>
+                Signin with Google
+              </Text>
+            </TouchableOpacity>
 
             <>
               <Pressable
@@ -236,6 +246,24 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}
               />
             </View>
+            <TouchableOpacity
+              style={{
+                borderRadius: 1000,
+                borderWidth: 2,
+                borderColor: COLORS.Black,
+                padding: 15,
+                width: 300,
+                alignSelf: 'center',
+              }}
+              onPress={() =>
+                onGoogleButtonPress().then(() => {
+                  this.Login();
+                })
+              }>
+              <Text style={{color: COLORS.Black, textAlign: 'center'}}>
+                Signin with Google
+              </Text>
+            </TouchableOpacity>
             <>
               <Pressable
                 onPress={this.onSignUp}
