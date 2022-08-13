@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     width: 80,
     height: 90,
+    borderRadius: 10,
   },
   TextBox: {
     // marginLeft: 15,

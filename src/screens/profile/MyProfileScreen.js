@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './styles';
 import {
   ICON_CHEVRON,
@@ -19,7 +19,20 @@ import LargeButton from '../../components/LargeButton';
 import RadioButton from '../../components/RadioButton';
 import RoundedWhiteBox from '../../components/RoundedWhiteBox';
 
+import auth from '@react-native-firebase/auth';
+import {useReducer} from 'react/cjs/react.production.min';
+
 const MyProfileScreen = props => {
+  const [user, setUser] = useState(null);
+
+  const onAuthStateChanged = userInfo => {
+    setUser(userInfo);
+  };
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
@@ -39,13 +52,20 @@ const MyProfileScreen = props => {
       <View style={styles.PersonalBox}>
         <View style={styles.whiteBox}>
           <View>
-            <Image source={IMG_Marvis} style={styles.MarvisIMG1} />
+            <Image
+              source={user.photoURL ? {uri: user.photoURL} : IMG_Marvis}
+              style={styles.MarvisIMG1}
+            />
           </View>
           <View style={styles.TextBox1}>
-            <Text style={styles.MarvisText}>Marvis Ighedosa</Text>
-            <Text style={styles.otherText}>dosamarvis@gmail.com</Text>
+            <Text style={styles.MarvisText}>
+              {user?.displayName || 'Anonymous'}
+            </Text>
+            <Text style={styles.otherText}>{user?.email || 'unknown'}</Text>
             <View style={styles.phoneBox}>
-              <Text style={styles.otherText}>+234 9011039271</Text>
+              <Text style={styles.otherText}>
+                {user?.phoneNumber || 'unknown'}
+              </Text>
             </View>
             <Text style={styles.otherText}>
               No 15 uti street off ovie palace road effurun delta state

@@ -46,13 +46,12 @@ const styles = StyleSheet.create({
   buttonWhite: {
     backgroundColor: COLORS.White,
     borderRadius: 35,
+    width: '100%',
     height: Dimensions.get('window').height * 0.08,
     padding: 20,
-    width: Dimensions.get('window').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    // marginTop: 30,
     margin: 30,
   },
   TextButtonWhite: {
@@ -63,9 +62,9 @@ const styles = StyleSheet.create({
   buttonOrange: {
     backgroundColor: COLORS.SunsetOrange,
     borderRadius: 35,
+    width: '100%',
     height: Dimensions.get('window').height * 0.08,
     padding: 20,
-    width: Dimensions.get('window').width * 0.8,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
@@ -82,7 +81,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    margin: 20,
+    width: Dimensions.get('window').width * 0.8,
+    // margin: 20,
   },
 });
 

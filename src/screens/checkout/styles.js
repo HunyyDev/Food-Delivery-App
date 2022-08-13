@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.Concrete,
+    position: 'relative',
   },
   headerContainer: {
     height: Dimensions.get('window').height * 0.103,
@@ -186,6 +187,63 @@ const styles = StyleSheet.create({
     // fontWeight: 400,
     fontFamily: FONT_FAMILY.TextRegular,
     color: COLORS.Black,
+  },
+
+  modalBackground: {
+    position: 'absolute',
+    backgroundColor: 'rgba(0,0,0, 0.5)',
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
+    justifyContent: 'center',
+  },
+  modalContainer: {
+    width: Dimensions.get('window').width - 100,
+    alignSelf: 'center',
+    backgroundColor: COLORS.White,
+    borderRadius: 30,
+  },
+  modalHeader: {
+    backgroundColor: COLORS.Gallery,
+    color: COLORS.Black,
+    paddingVertical: 18,
+    paddingLeft: 45,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    fontSize: 20,
+    fontFamily: FONT_FAMILY.PoppinsMedium,
+  },
+  noteContainer: {
+    marginHorizontal: 46,
+  },
+  noteItem: {
+    marginVertical: 18,
+  },
+  noteTitle: {
+    textTransform: 'uppercase',
+    color: COLORS.Black,
+    opacity: 0.5,
+    fontSize: 15,
+    marginBottom: 5,
+  },
+  noteNumber: {
+    color: COLORS.Black,
+    fontSize: 17,
+  },
+  footer: {
+    marginLeft: 46,
+    marginRight: 18,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  footerCancel: {
+    fontFamily: FONT_FAMILY.PoppinsSemiBold,
+    fontSize: 17,
+    color: COLORS.Black,
+    opacity: 0.5,
+  },
+  footerProceed: {
+    width: 160,
   },
 });
 
