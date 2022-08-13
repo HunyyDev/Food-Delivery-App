@@ -5,7 +5,7 @@ import COLORS from '../constants/colors';
 import FONT_FAMILY from '../constants/fonts';
 
 const LargeButton = props => {
-  const {label, text, style, onPress, ...rest} = props;
+  const {label, text, style, onPress, check, ...rest} = props;
   return (
     <Pressable
       onPress={onPress}
