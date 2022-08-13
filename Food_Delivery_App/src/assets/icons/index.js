@@ -7,3 +7,8 @@ export {default as ICO_Body} from './body.png';
 export {default as ICO_House} from './house.png';
 export {default as ICO_Visor} from './visor.png';
 export {default as ICO_User} from './user.png';
+export {default as ICO_Chevron_Left} from './chevron-left.png';
+export {default as ICO_Group} from './Group.png';
+export {default as ICO_Tablet} from './tablet.png';
+export {default as ICO_Line} from './Line.png';
+export {default as ICO_Chevron_Right} from './chevronRight.png';

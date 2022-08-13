@@ -10,7 +10,7 @@ const CustomButton = ({label, navigation}) => {
     <TouchableOpacity
       style={styles.button({label})}
       onPress={() => {
-        label === 'Login'
+        label === 'Login' || label === 'Sign-Up'
           ? navigation.navigate('Home')
           : navigation.navigate('Login');
       }}>
@@ -31,11 +31,22 @@ const styles = StyleSheet.create({
     //color: CUSTOM_COLOR.White,
 
     backgroundColor:
-      label === 'Login' ? CUSTOM_COLOR.SunsetOrange : CUSTOM_COLOR.White,
+      label === 'Login' ||
+      label === 'Sign-Up' ||
+      label === 'Start odering' ||
+      label === 'Update'
+        ? CUSTOM_COLOR.SunsetOrange
+        : CUSTOM_COLOR.White,
   }),
   buttonText: ({label}) => ({
     fontSize: 25,
     fontFamily: FONT_FAMILY.Black_Sf,
-    color: label === 'Login' ? CUSTOM_COLOR.White : CUSTOM_COLOR.SunsetOrange,
+    color:
+      label === 'Login' ||
+      label === 'Sign-Up' ||
+      label === 'Start odering' ||
+      label === 'Update'
+        ? CUSTOM_COLOR.White
+        : CUSTOM_COLOR.SunsetOrange,
   }),
 });

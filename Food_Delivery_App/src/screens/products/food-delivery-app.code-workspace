@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"name": "handwritten-digits-detection-app",
+			"path": "..\\..\\..\\..\\..\\..\\ND\\handwritten-digits-detection-app"
+		},
+		{
+			"name": "learn-react-native",
+			"path": "..\\..\\..\\..\\..\\..\\Learn RN\\learn-react-native"
+		}
+	],
+	"settings": {}
+}

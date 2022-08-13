@@ -25,6 +25,9 @@ import {
 import CustomLogin_SignUp from '../../Components/CustomLogin_SignUp';
 import {IMG_Food_1, IMG_Logo} from '../../assets/images';
 import CustomMenubar from '../../Components/CustomMenubar';
+import CustomHomeMenu from '../../Components/CustomHomeMenu';
+import CustomList from '../../Components/CustomList';
+import CustomButtonTop from '../../Components/CustomButtonTop';
 const windowHeight = Dimensions.get('window').height;
 const windowWidth = Dimensions.get('window').width;
 export default class HomeScreen extends Component {
@@ -39,8 +42,12 @@ export default class HomeScreen extends Component {
           {/* Top */}
           <View style={styles.containerTop}>
             <Image source={ICO_Bar} style={styles.bar} />
-            <Image source={ICO_Cart} style={styles.cart} />
-
+            {/* <Image source={ICO_Cart} style={styles.cart} /> */}
+            <CustomButtonTop
+              src={ICO_Cart}
+              navigation={this.props.navigation}
+              destination={'Oder'}
+            />
             <Text style={styles.text}>{`Delicious \nfood for you`}</Text>
 
             <View style={styles.search}>
@@ -98,31 +105,51 @@ export default class HomeScreen extends Component {
                   padding: 50,
                   justifyContent: 'center',
                 }}>
-                <View style={styles.menu}>
-                  <Image source={IMG_Food_1} style={styles.food} />
-                  <Text
-                    style={styles.textMenu}>{`    Veggie \ntomato mix`}</Text>
-                  <Text style={styles.textMenu2}>N1,900</Text>
-                </View>
-                <View style={styles.menu}>
-                  <Image source={IMG_Food_1} style={styles.food} />
-                  <Text
-                    style={styles.textMenu}>{`    Veggie \ntomato mix`}</Text>
-                  <Text style={styles.textMenu2}>N1,900</Text>
-                </View>
-                <View style={styles.menu}>
-                  <Image source={IMG_Food_1} style={styles.food} />
-                  <Text
-                    style={styles.textMenu}>{`    Veggie \ntomato mix`}</Text>
-                  <Text style={styles.textMenu2}>N1,900</Text>
-                </View>
+                <CustomList
+                  src={IMG_Food_1}
+                  name={`    Veggie \ntomato mix`}
+                  cost={'N1,900'}
+                  navigation={this.props.navigation}
+                />
+                <CustomList
+                  src={IMG_Food_1}
+                  name={`    Veggie \ntomato mix`}
+                  cost={'N1,900'}
+                  navigation={this.props.navigation}
+                />
+                <CustomList
+                  src={IMG_Food_1}
+                  name={`    Veggie \ntomato mix`}
+                  cost={'N1,900'}
+                  navigation={this.props.navigation}
+                />
               </View>
             </ScrollView>
             <View style={styles.bottomBar2}>
-              <Image source={ICO_House} style={styles.house} />
-              <Image source={ICO_Heart} style={styles.heart} />
-              <Image source={ICO_User} style={styles.person} />
-              <Image source={ICO_Timer} style={styles.timer} />
+              <CustomHomeMenu
+                src={ICO_House}
+                isChoosing={true}
+                label={'House'}
+                navigation={this.props.navigation}
+              />
+              <CustomHomeMenu
+                src={ICO_Heart}
+                isChoosing={true}
+                label={'Heart'}
+                navigation={this.props.navigation}
+              />
+              <CustomHomeMenu
+                src={ICO_User}
+                isChoosing={true}
+                label={'User'}
+                navigation={this.props.navigation}
+              />
+              <CustomHomeMenu
+                src={ICO_Timer}
+                isChoosing={true}
+                label={'Timer'}
+                navigation={this.props.navigation}
+              />
             </View>
           </View>
         </ScrollView>
@@ -150,6 +177,7 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     marginTop: 50,
     fontSize: 40,
+    color: CUSTOM_COLOR.Black,
   },
   bar: {
     marginLeft: 50,
@@ -161,17 +189,6 @@ const styles = StyleSheet.create({
     width: 30,
     height: 25,
   },
-  house: {
-    marginLeft: 20,
-    height: 30,
-    width: 30,
-  },
-  heart: {
-    height: 35,
-    width: 40,
-  },
-  person: {width: 40, height: 40},
-  timer: {height: 40, width: 40},
   search: {
     width: 314,
     height: 60,

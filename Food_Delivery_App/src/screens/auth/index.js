@@ -15,6 +15,7 @@ import CustomInput from '../../Components/CustomInput';
 import CustomButton from '../../Components/CustomButton';
 import CustomLogin_SignUp from '../../Components/CustomLogin_SignUp';
 import CustomFW from '../../Components/CustomFW';
+import ButtonGoBack from '../../Components/ButtonGoBack';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -32,6 +33,7 @@ export default class LonginScreen extends Component {
         <>
           {/* Top */}
           <View style={styles.containerTop}>
+            <ButtonGoBack navigation={this.props.navigation} />
             <Image source={IMG_Logo} style={styles.image} />
             <View style={styles.bar}>
               <CustomLogin_SignUp
@@ -63,7 +65,7 @@ export default class LonginScreen extends Component {
           {/* Bot */}
           <View style={styles.containerBot}>
             <CustomButton
-              label="Login"
+              label={this.state.tab === 'login' ? 'Login' : 'Sign-Up'}
               navigation={this.props.navigation}></CustomButton>
           </View>
         </>
@@ -77,8 +79,8 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight * 0.35,
     backgroundColor: CUSTOM_COLOR.White,
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
     overflow: 'hidden',
