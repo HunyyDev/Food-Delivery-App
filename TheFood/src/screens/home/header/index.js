@@ -7,7 +7,6 @@ import SCREEN_NAME from '../../../assets/constants/screens';
 
 class Header extends Component {
   render() {
-    const {navigation} = this;
     return (
       <View style={styles.container}>
         <TouchableOpacity style={styles.icmenuContainer}>
@@ -15,7 +14,9 @@ class Header extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.iccarttyreContainer}
-          onPress={this.props.onTransitToCart}>
+          onPress={() =>
+            this.props.onNavigation.navigate(SCREEN_NAME.CART_SCREEN)
+          }>
           <View style={styles.iccarttyreContainer.iccarttyre}>
             <ICCart />
           </View>

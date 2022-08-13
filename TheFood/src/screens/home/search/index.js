@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, {Component} from 'react';
+import SCREEN_NAME from '../../../assets/constants/screens';
 
 import {ICSearch} from '../../../assets/icons';
 import styles from './styles';
@@ -24,7 +25,7 @@ export default class Search extends Component {
         <TextInput
           style={styles.input}
           placeholder="Search"
-          onFocus={this.props.onTransitToSearch}
+          onFocus={this.props.onNavigation.navigate(SCREEN_NAME.SEARCH_SCREEN)}
           showSoftInputOnFocus={false}
         />
       </View>

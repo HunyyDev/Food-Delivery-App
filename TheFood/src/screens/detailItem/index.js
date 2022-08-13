@@ -14,6 +14,7 @@ import {ICNoInternet, ICHistory} from '../../assets/icons';
 import CustomButton from '../../components/CustomButton';
 import CustomBreadcrumbNavigation from '../../components/CustomBreadcrumbNavigation';
 import FoodCard from '../home/slider/components/FoodCard';
+import {ICHeart} from '../../assets/icons';
 
 const DetailScreen = props => {
   const {navigation} = props;
@@ -22,12 +23,12 @@ const DetailScreen = props => {
       <View style={styles.header}>
         <CustomBreadcrumbNavigation
           onBack={() => navigation.goBack()}
-          title="History"
+          title=""
         />
       </View>
 
       <View style={styles.button}>
-        <CustomButton type="secondary" title="Try again" />
+        <CustomButton type="secondary" title="Add to cart" />
       </View>
     </View>
   );

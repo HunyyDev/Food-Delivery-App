@@ -93,7 +93,7 @@ class LoginScreen extends Component {
       },
     });
   };
-  
+
   render() {
     const {navigation} = this.props;
     return (
@@ -147,7 +147,15 @@ class LoginScreen extends Component {
           <TouchableOpacity
             style={styles.forgotPasswords}
             onPress={() => alert('Mã xác nhận đã được gửi về Email')}>
-            <Text style={styles.forgotPassword}>Forgot passcode?</Text>
+            <Text
+              style={[
+                styles.forgotPassword,
+                {
+                  fontFamily: 'FontsFree-Net-Abel-Regular',
+                },
+              ]}>
+              Forgot passcode?
+            </Text>
           </TouchableOpacity>
         )) || (
           <View style={styles.input.inputPassword}>
@@ -249,6 +257,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: scaleX(50),
     paddingBottom: scaleY(20),
+    // fontFamily: 'FontsFree-Net-Abel-Regular',
   },
   forgotPasswords: {},
 });

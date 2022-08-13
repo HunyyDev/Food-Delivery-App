@@ -94,7 +94,6 @@ const CartScreen = props => {
                       style={{paddingHorizontal: scaleY(10)}}
                       onPress={() => {
                         onMinus(index, '-');
-                        // setSt(st - 1);
                       }}>
                       <Text>-</Text>
                     </TouchableOpacity>
