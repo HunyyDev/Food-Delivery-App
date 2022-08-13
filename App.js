@@ -7,6 +7,7 @@ import DeliveryScreen from './src/screens/checkout/DeliveryScreen.js';
 import PaymentScreen from './src/screens/checkout/PaymentScreen.js';
 import InformationScreen from './src/screens/profile/InformationScreen.js';
 import MyProfileScreen from './src/screens/profile/MyProfileScreen.js';
+import DrawerHome from './src/routes/DrawerHome.js';
 
 const App = props => {
   return (
@@ -15,6 +16,9 @@ const App = props => {
     // <InformationScreen />
     // <MyProfileScreen />
     <RootNavigator {...props} />
+    // <>
+    // <DrawerHome {...props} />
+    // </>
   );
 };
 

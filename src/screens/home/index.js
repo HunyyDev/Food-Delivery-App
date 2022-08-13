@@ -1,3 +1,4 @@
+import {DrawerActions} from '@react-navigation/native';
 import React, {Component} from 'react';
 import {
   Alert,
@@ -23,6 +24,7 @@ import ButtonProduct from '../../components/ButtonProduct';
 import COLORS from '../../constants/colors';
 import SCREEN_NAME from '../../constants/screens';
 import styles from './styles';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -42,7 +44,7 @@ export default class HomeScreen extends Component {
     {
       id: 2,
       source: IMG_Product_2,
-      title: 'Egg and cucmber...',
+      title: 'Egg and cucumber...',
       price: 'N1,900',
     },
     {
@@ -76,7 +78,13 @@ export default class HomeScreen extends Component {
       <ScrollView style={styles.container}>
         <>
           <View style={styles.MenuContainer}>
-            <Image source={ICON_Menu} style={styles.IconMenu} />
+            <TouchableOpacity
+              onPress={() =>
+                this.props.navigation.dispatch(DrawerActions.openDrawer())
+              }>
+              <Image style={styles.IconMenu} source={ICON_Menu} />
+            </TouchableOpacity>
+
             <TouchableOpacity
               onPress={() => this.props.navigation.navigate(SCREEN_NAME.CART)}
               style={styles.IconShop}>

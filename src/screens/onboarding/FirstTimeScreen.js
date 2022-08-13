@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import {
   Dimensions,
   Image,
@@ -14,12 +14,34 @@ import {
   IMG_LOADING,
 } from '../../assets/images';
 import SCREEN_NAME from '../../constants/screens';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const FirstTimeScreen = props => {
   const {navigation} = props;
 
   const fadedAnimation = useRef(new Animated.Value(0)).current;
   const loadingAnimation = useRef(new Animated.Value(0)).current;
+
+  // const DefaultAccount = async () => {
+  //   await AsyncStorage.setItem('USERNAME', 'ChimCanhCut');
+  //   await AsyncStorage.setItem('PASSWORD', 'ReactNative');
+  //   await AsyncStorage.setItem('SIGN_OUT', '1');
+  // };
+
+  let check = 1;
+
+  const CheckAccount = async () => {
+    const isSignOut = await AsyncStorage.getItem('SIGN_OUT');
+    // console.log('isSignOut', isSignOut);
+    isSignOut === '1' ? (check = 1) : (check = 0);
+  };
+
+  // const isLogin = useCallback(value => CheckAccount(), []);
+
+  useEffect(() => {
+    CheckAccount();
+    // console.log('check', check);
+  }, []);
 
   useEffect(() => {
     Animated.timing(fadedAnimation, {
@@ -34,7 +56,11 @@ const FirstTimeScreen = props => {
       toValue: 1,
       duration: 4000,
       useNativeDriver: true,
-    }).start(() => navigation.navigate(SCREEN_NAME.ONBOARDING));
+    }).start(() =>
+      check
+        ? navigation.navigate(SCREEN_NAME.ONBOARDING)
+        : navigation.navigate(SCREEN_NAME.HOME),
+    );
   }, [loadingAnimation, navigation]);
 
   return (
