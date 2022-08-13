@@ -17,6 +17,8 @@ import Custom_InputOne from '../login/components/Custom_InputOne';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_SwitchButton from '../login/components/Custom_SwitchButton';
 import {ScrollView} from 'react-native-gesture-handler';
+import auth from '@react-native-firebase/auth'
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 export default class LoginScreen extends Component {
   constructor(props) {

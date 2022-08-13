@@ -3,9 +3,11 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View, 
+  Animated,
+  ViewBase,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
 import AddToCartItem from './components/AddToCartItem';
 import FONT_FAMILY from '../../constants/fonts';
@@ -15,6 +17,7 @@ import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import {IC_GoBack, IC_SwipeHand} from '../../assets/icons';
 import {FlatList} from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
+
 
 const CartScreen = ({ navigation: { goBack } }) => {
   const Foods = [
