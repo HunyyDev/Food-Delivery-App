@@ -6,6 +6,7 @@ import {
   Pressable,
   Alert,
   TextInput,
+  Button,
 } from 'react-native';
 import React, {Component} from 'react';
 import {IMG_Logo} from '../../assets/images';
@@ -15,6 +16,20 @@ import UnderlineButton from '../../components/UnderlineButton';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {or} from 'react-native-reanimated';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import COLORS from '../../constants/colors';
+
+async function onGoogleButtonPress() {
+  const {idToken} = await GoogleSignin.signIn();
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken, null);
+  return auth().signInWithCredential(googleCredential);
+}
+function onSignOut() {
+  return auth()
+    .signOut()
+    .then(() => console.log('User signed out!'));
+}
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -156,6 +171,16 @@ export default class LoginScreen extends Component {
                 )
               }
             </Pressable>
+            <Button
+              title="Google Sign-In"
+              onPress={() =>
+                onGoogleButtonPress().then(() => {
+                  console.log('Signed in with Google!');
+                  this.Login();
+                })
+              }
+            />
+
             <>
               <Pressable
                 onPress={this.onLogin}
