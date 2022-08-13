@@ -109,7 +109,7 @@ const MyDrawer = () => {
       drawerContent={CustomScrollDrawer}>
       <Drawer.Screen name="Home" component={HomeScreen} />
       {/* <Drawer.Screen name="SignOut" component={SignOut}
-        {...props => <SignOut {...props} />}
+        // {...props => <SignOut {...props} />}
       /> */}
       <Drawer.Screen name="Orders" component={CartScreen} />
       <Drawer.Screen name="Search" component={SearchScreen} />
