@@ -53,7 +53,7 @@ const MyProfileScreen = props => {
         <View style={styles.whiteBox}>
           <View>
             <Image
-              source={user.photoURL ? {uri: user.photoURL} : IMG_Marvis}
+              source={user?.photoURL ? {uri: user.photoURL} : IMG_Marvis}
               style={styles.MarvisIMG1}
             />
           </View>
