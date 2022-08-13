@@ -20,7 +20,7 @@ const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const DrawerRoutes = props => {
-  return <DrawerHome />;
+  return <DrawerHome {...props} />;
 };
 
 const MainNavigator = props => {

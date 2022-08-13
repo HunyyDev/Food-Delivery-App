@@ -1,5 +1,5 @@
 import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
-import React, {useCallback} from 'react';
+import React, {useCallback, useState, useEffect} from 'react';
 import {
   DrawerContentScrollView,
   DrawerItemList,
@@ -20,21 +20,40 @@ import ButtonDrawer from './ButtonDrawer';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import SCREEN_NAME from '../constants/screens';
 
+import auth from '@react-native-firebase/auth';
+
 const widthWindow = Dimensions.get('window').width;
 
 const CustomDrawer = props => {
   const {navigation} = props;
+  const [user, setUser] = useState(null);
+
+  const onAuthStateChanged = userInfo => {
+    setUser(userInfo);
+  };
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
   const SignOut = async () => {
     await AsyncStorage.setItem('SIGN_OUT', '1');
   };
+
   const onSignOut = useCallback(value => {
     SignOut();
     navigation.navigate(SCREEN_NAME.LOGIN);
   }, []);
+
   return (
     <View style={styles.container}>
       <DrawerContentScrollView {...props}>
-        <Image source={IMG_Marvis} style={styles.User} />
+        {/* <Image source={IMG_Marvis} style={styles.User} /> */}
+        <Image
+          source={user?.photoURL ? {uri: user.photoURL} : IMG_Marvis}
+          style={styles.User}
+        />
         {/* <DrawerItemList {...props} /> */}
         <ButtonDrawer
           text={'Profile'}
@@ -73,6 +92,7 @@ const styles = StyleSheet.create({
     marginTop: 65,
     alignSelf: 'center',
     marginBottom: 30,
+    borderRadius: 10,
   },
   SignOutBox: {
     height: Dimensions.get('window').height * 0.1,
