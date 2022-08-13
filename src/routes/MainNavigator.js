@@ -9,6 +9,7 @@ import LoginScreen from '../screens/auth';
 import CartScreen from '../screens/checkout/CartScreen';
 import DeliveryScreen from '../screens/checkout/DeliveryScreen';
 import PaymentScreen from '../screens/checkout/PaymentScreen';
+import DetailProduct from '../screens/detailProduct';
 import HomeScreen from '../screens/home';
 import OnboardingScreen from '../screens/onboarding';
 import FirstTimeScreen from '../screens/onboarding/FirstTimeScreen';
@@ -32,6 +33,10 @@ const MainNavigator = props => {
       <Stack.Screen name={SCREEN_NAME.HOME} component={DrawerRoutes} />
       <Stack.Screen name={SCREEN_NAME.DELIVERY} component={DeliveryScreen} />
       <Stack.Screen name={SCREEN_NAME.PAYMENT} component={PaymentScreen} />
+      <Stack.Screen
+        name={SCREEN_NAME.DETAIL_PRODUCT}
+        component={DetailProduct}
+      />
       <Stack.Screen
         name={SCREEN_NAME.INFORMATION}
         component={InformationScreen}

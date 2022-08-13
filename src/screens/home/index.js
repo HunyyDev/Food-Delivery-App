@@ -30,25 +30,25 @@ const HomeScreen = props => {
   const productList = [
     {
       id: 1,
-      source: IMG_Product_1,
+      source: [IMG_Product_1, IMG_Product_2, IMG_Product_3],
       title: 'Veggie tomato mix',
       price: 'N1,900',
     },
     {
       id: 2,
-      source: IMG_Product_2,
+      source: [IMG_Product_2, IMG_Product_1, IMG_Product_3],
       title: 'Egg and cucumber...',
       price: 'N1,900',
     },
     {
       id: 3,
-      source: IMG_Product_3,
+      source: [IMG_Product_3, IMG_Product_1, IMG_Product_2],
       title: 'Fried chicken m.',
       price: 'N2,300.99',
     },
     {
       id: 4,
-      source: IMG_Product_1,
+      source: [IMG_Product_1, IMG_Product_2, IMG_Product_3],
       title: 'Spicy fish sauce',
       price: 'N2,300.99',
     },
@@ -125,6 +125,7 @@ const HomeScreen = props => {
           <View style={styles.productWrapper}>
             {productList.map(({id, source, title, price}) => (
               <ButtonProduct
+                navigation={props.navigation}
                 key={id}
                 title={title}
                 source={source}
