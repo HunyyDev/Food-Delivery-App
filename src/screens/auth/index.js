@@ -20,6 +20,7 @@ import {or} from 'react-native-reanimated';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import COLORS from '../../constants/colors';
+import {ICON_GOOGLE} from '../../assets/icons';
 
 async function onGoogleButtonPress() {
   const {idToken} = await GoogleSignin.signIn();
@@ -247,22 +248,14 @@ export default class LoginScreen extends Component {
               />
             </View>
             <TouchableOpacity
-              style={{
-                borderRadius: 1000,
-                borderWidth: 2,
-                borderColor: COLORS.Black,
-                padding: 15,
-                width: 300,
-                alignSelf: 'center',
-              }}
+              style={styles.googleButton}
               onPress={() =>
                 onGoogleButtonPress().then(() => {
                   this.Login();
                 })
               }>
-              <Text style={{color: COLORS.Black, textAlign: 'center'}}>
-                Signin with Google
-              </Text>
+              {/* <Image source={ICON_GOOGLE} /> */}
+              <Text style={styles.googleText}>Sign-in with Google</Text>
             </TouchableOpacity>
             <>
               <Pressable

@@ -112,6 +112,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     margin: 20,
   },
+  googleButton: {
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: COLORS.Black,
+    padding: 15,
+    width: 300,
+    alignSelf: 'center',
+  },
+  googleText: {
+    color: COLORS.Black,
+    textAlign: 'center',
+  },
 });
 
 export default styles;
