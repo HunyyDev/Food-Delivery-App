@@ -139,7 +139,31 @@ export default class LoginScreen extends Component {
                       [{Text: 'OK'}],
                     );
                   } else {
-                    this.props.navigation.navigate('MyDrawer');
+                    auth()
+                      .createUserWithEmailAndPassword(
+                        this.state.mail,
+                        this.state.pass,
+                      )
+                      .then(() => {this.props.navigation.navigate('MyDrawer')})
+                      .catch(error => {
+                        if (error.code === 'auth/email-already-in-use') {
+                          Alert.alert(
+                            '',
+                            'That email address is already in use!',
+                            [{Text: 'OK'}],
+                          );
+                        }
+                    
+                        if (error.code === 'auth/invalid-email') {
+                          if (error.code === 'auth/invalid-email') {
+                            Alert.alert(
+                              '',
+                              'That email address is invalid!',
+                              [{Text: 'OK'}],
+                            );
+                          }
+                        }
+                      });
                   }
                 }}
               />
