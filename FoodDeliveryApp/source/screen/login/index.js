@@ -12,13 +12,13 @@ import {
 import React, {Component} from 'react';
 import CUSTOM_COLOR from '../../constants/color';
 import scale from '../../../responsive';
-import {IMG_LOGO} from '../../assets/images';
+import {IMG_ggLogo, IMG_LOGO} from '../../assets/images';
 import Custom_InputOne from '../login/components/Custom_InputOne';
 import Custom_ButtonOne from '../../components/Custom_ButtonOne';
 import Custom_SwitchButton from '../login/components/Custom_SwitchButton';
 import {ScrollView} from 'react-native-gesture-handler';
-import auth from '@react-native-firebase/auth'
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -104,7 +104,17 @@ export default class LoginScreen extends Component {
                       [{Text: 'OK'}],
                     );
                   } else {
-                    this.props.navigation.navigate('MyDrawer');
+                    auth()
+                      .signInWithEmailAndPassword(
+                        this.state.mail,
+                        this.state.pass,
+                      )
+                      .then(() => {
+                        this.props.navigation.navigate('MyDrawer');
+                      })
+                      .catch(error => {
+                        Alert.alert('', error.code, [{Text: 'OK'}]);
+                      });
                   }
                 }}
               />
@@ -144,7 +154,9 @@ export default class LoginScreen extends Component {
                         this.state.mail,
                         this.state.pass,
                       )
-                      .then(() => {this.props.navigation.navigate('MyDrawer')})
+                      .then(() => {
+                        this.props.navigation.navigate('MyDrawer');
+                      })
                       .catch(error => {
                         if (error.code === 'auth/email-already-in-use') {
                           Alert.alert(
@@ -153,14 +165,12 @@ export default class LoginScreen extends Component {
                             [{Text: 'OK'}],
                           );
                         }
-                    
+
                         if (error.code === 'auth/invalid-email') {
                           if (error.code === 'auth/invalid-email') {
-                            Alert.alert(
-                              '',
-                              'That email address is invalid!',
-                              [{Text: 'OK'}],
-                            );
+                            Alert.alert('', 'That email address is invalid!', [
+                              {Text: 'OK'},
+                            ]);
                           }
                         }
                       });
@@ -168,6 +178,11 @@ export default class LoginScreen extends Component {
                 }}
               />
             ) : null}
+            <TouchableOpacity style={styles.ggLogo}>
+            <View >
+            <Image source={IMG_ggLogo} style={styles.ggPic}/>
+            </View>
+            </TouchableOpacity>
           </SafeAreaView>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -209,6 +224,20 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.Vermilion,
     fontSize: scale(16),
   },
+  ggLogo: {
+    position: 'absolute',
+    width: scale(50),
+    height: scale(50),
+    borderWidth: 1,
+    top: scale(600),
+    left: scale(315),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ggPic: {
+    width: scale(40),
+    height: scale(40),
+  }
 });
 
 function isLogin(props) {

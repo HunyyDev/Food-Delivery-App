@@ -19,3 +19,4 @@ export {default as IMG_ProfileLogo} from './ProfileIcon.png';
 export {default as IMG_Tag} from './TagIcon.png';
 export {default as IMG_Shield} from './SecurityIcon.png';
 export {default as IMG_ToRightArrow} from './ToRight.png';
+export {default as IMG_ggLogo} from './ggLogo.png';
