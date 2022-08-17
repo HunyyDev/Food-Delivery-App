@@ -3,11 +3,7 @@ import React from 'react';
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
 } from '@react-navigation/drawer';
-
-
 import {
   IMG_AVATAR,
   IMG_Cart2,
@@ -28,7 +24,7 @@ import SearchScreen from '../../search';
 import OfferScreen from '../offer';
 import PrivacyScreen from '../privacy';
 import SecurityScreen from '../security';
-import SignOut from '../signOut';
+import auth from '@react-native-firebase/auth';
 
 const Button = props => {
   return (
@@ -90,7 +86,10 @@ const MyDrawer = () => {
             flexDirection: 'row',
           }}
 
-          onPress={() => props.navigation.jumpTo('SignOut')}>
+          onPress={() => {auth()
+            .signOut()
+            .then(() =>  props.navigation.replace("Login"))
+            .catch((error) => console.log(error.message))}}>
           <Text style={[styles.text, { position: 'relative' }]}>
             {'Sign-out'}
           </Text>
@@ -109,9 +108,6 @@ const MyDrawer = () => {
       screenOptions={{ headerShown: false, drawerStyle: { width: scale(259) }, swipeEdgeWidth: scale(40) }}
       drawerContent={CustomScrollDrawer}>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="SignOut" component={SignOut}
-        {...props => <SignOut {...props} />}
-      />
       <Drawer.Screen name="Orders" component={CartScreen} />
       <Drawer.Screen name="Search" component={SearchScreen} />
       <Drawer.Screen name="Profile" component={MyInFoScreen} />
@@ -153,7 +149,6 @@ const styles = StyleSheet.create({
     },
     text: {
       color: CUSTOM_COLOR.White,
-      //fontFamily: CUSTOM_FONT.PoppinsSemiBold,
       fontSize: scale(17), 
       lineHeight: scale(25.5),
       position:'absolute',
