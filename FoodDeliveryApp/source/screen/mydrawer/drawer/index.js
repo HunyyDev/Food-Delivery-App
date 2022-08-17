@@ -28,6 +28,7 @@ import SearchScreen from '../../search';
 import OfferScreen from '../offer';
 import PrivacyScreen from '../privacy';
 import SecurityScreen from '../security';
+import SignOut from '../signOut';
 
 const Button = props => {
   return (
@@ -80,7 +81,7 @@ const MyDrawer = () => {
           <Button label="Security" source={IMG_Shield}  component="Security"
             navigation={props.navigation}/>
         </View>
-        {/* <TouchableOpacity
+        <TouchableOpacity
           style={{
             position: 'absolute',
             bottom: scale(36),
@@ -98,7 +99,7 @@ const MyDrawer = () => {
             style={{ marginLeft: scale(12), alignSelf: 'center' }}
           />
 
-        </TouchableOpacity> */}
+        </TouchableOpacity>
       </DrawerContentScrollView>
     );
   };
@@ -108,9 +109,9 @@ const MyDrawer = () => {
       screenOptions={{ headerShown: false, drawerStyle: { width: scale(259) }, swipeEdgeWidth: scale(40) }}
       drawerContent={CustomScrollDrawer}>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      {/* <Drawer.Screen name="SignOut" component={SignOut}
-        // {...props => <SignOut {...props} />}
-      /> */}
+      <Drawer.Screen name="SignOut" component={SignOut}
+        {...props => <SignOut {...props} />}
+      />
       <Drawer.Screen name="Orders" component={CartScreen} />
       <Drawer.Screen name="Search" component={SearchScreen} />
       <Drawer.Screen name="Profile" component={MyInFoScreen} />
