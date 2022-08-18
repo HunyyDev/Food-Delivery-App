@@ -1,36 +1,117 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet} from 'react-native';
+import React from 'react';
+import OnBoardingScreen from '../screens/onBoarding/OnBoardingScreen';
+import LoginScreen from '../screens/auth/LoginScreen';
+import HomeScreen from '../screens/home/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import SCREEN_NAME from '../constants/screens';
-import HomeScreen from '../screens/home/HomeScreen';
-import LoginScreen from '../screens/auth/LoginScreen';
-import OnBoardingScreen from '../screens/onBoarding/OnBoardingScreen';
+import CartScreen from '../screens/cart/CartScreen';
+import ProfileScreen from '../screens/profile/ProfileScreen';
+import HistoryScreen from '../screens/history/HistoryScreen';
+import SearchScreen from '../screens/search/SearchScreen';
+import DeliveryScreen from '../screens/checkOut/DeliveryScreen';
+import PaymentScreen from '../screens/checkOut/PaymentScreen';
+import FoodDetailScreen from '../screens/food/FoodDetailScreen';
+import LoadingScreen from '../screens/loading/LoadingScreen';
+import NoConnectScreen from '../screens/noConnect/NoConnectScreen';
+import OrderScreen from '../screens/order/OrderScreen';
+import ProfileEditScreen from '../screens/profile/ProfileEditScreen';
+import NotFoundScreen from '../screens/search/NotFoundScreen';
 
-const RootNavigator = (props) => {
-    const Stack = createNativeStackNavigator()
+
+
+
+
+
+const Stack = createNativeStackNavigator();
+
+const RootNavigator = () => {
   return (
     <>
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen 
-                    name={SCREEN_NAME.ONBOARD} 
-                    component={OnBoardingScreen} 
-                    options={{headerShown:false}} />
-                <Stack.Screen 
-                    name={SCREEN_NAME.LOGIN} 
-                    component={LoginScreen} 
-                    options={{headerShown:false}} />
-                <Stack.Screen 
-                    name={SCREEN_NAME.HOME} 
-                    component={HomeScreen} 
-                    options={{headerShown:false}} />
-            </Stack.Navigator>
-        </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="OnBoarding"
+            component={OnBoardingScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CartScreen"
+            component={CartScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="SearchScreen"
+            component={SearchScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="NotFoundScreen"
+            component={NotFoundScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ProfileScreen"
+            component={ProfileScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="HistoryScreen"
+            component={HistoryScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DeliveryScreen"
+            component={DeliveryScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="PaymentScreen"
+            component={PaymentScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="FoodDetailScreen"
+            component={FoodDetailScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ProfileEditScreen"
+            component={ProfileEditScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="OrderScreen"
+            component={OrderScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="LoadingScreen"
+            component={LoadingScreen}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="NoConnectScreen"
+            component={NoConnectScreen}
+            options={{headerShown: false}}
+          />
+
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
-  )
-}
+  );
+};
 
-export default RootNavigator
+export default RootNavigator;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

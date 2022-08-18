@@ -19,11 +19,12 @@ import {
   IC_Heart,
   IC_User,
   IC_Clock,
-} from '../../assets/icons/index';
+} from '../../assets/icons/index.js';
 import Label from './components/Label';
 import MenuBlock from './components/MenuBlock';
-import {IMG_Dishes_1, IMG_Dishes_2} from '../../assets/images/index';
+import {IMG_Dishes_1} from '../../assets/images/index';
 import InputBox from '../../components/InputBox';
+import SCREEN_NAME from '../../constants/screens';
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -40,25 +41,37 @@ class HomeScreen extends React.Component {
         {/* Header */}
         <>
           <View style={styles.headerContainer}>
-            <TouchableOpacity style={[styles.iconContainer, styles.ic_more]}>
+            <TouchableOpacity 
+            style={[styles.iconContainer, styles.ic_more]}
+            // onPress={() => this.props.navigation.navigate(HOMEDRAWER)}
+            >
               <IC_More />
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.iconContainer, styles.ic_cart]}>
+            <TouchableOpacity
+              style={[
+                styles.iconContainer,
+                styles.ic_cart,
+                {alignItems: 'flex-end'},
+              ]}
+              onPress={() => {
+                this.props.navigation.navigate(SCREEN_NAME.CART),
+                  this.setState({nav_selected: 'Home'});
+              }}>
               <IC_Cart />
             </TouchableOpacity>
           </View>
         </>
         {/* Title */}
-        <>
+        <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Delicious \nfood for you'}</Text>
-        </>
+        </View>
         {/* Search Bar */}
         <>
           <View style={styles.searchContainer}>
-            <IC_Search style={styles.icon_search} />
-            <InputBox
-              style={[styles.input]}
-              placeholder="Searching..."></InputBox>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate(SCREEN_NAME.SEARCH)}>
+              <IC_Search style={styles.icon_search} />
+            </TouchableOpacity>
+            <InputBox style={[styles.input]} placeholder="Searching..." />
           </View>
         </>
         {/* Picker */}
@@ -67,8 +80,7 @@ class HomeScreen extends React.Component {
             <ScrollView
               style={styles.picker}
               horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              marginLeft={scale(90)}>
+              showsHorizontalScrollIndicator={false}>
               <TouchableOpacity
                 style={styles.pickerContent}
                 onPress={() => {
@@ -125,10 +137,9 @@ class HomeScreen extends React.Component {
               horizontal={true}
               showsHorizontalScrollIndicator={false}>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -136,10 +147,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -147,10 +157,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -158,10 +167,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -169,10 +177,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -180,10 +187,9 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
               </View>
               <View style={styles.menuContent}>
-                <TouchableOpacity 
-                style={styles.menuContentContainer}
-                onPress={() => alert('Thông tin món ăn:')}
-                >
+                <TouchableOpacity
+                  style={styles.menuContentContainer}
+                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.FOOD_DETAIL)}>
                   <View style={styles.menuImage}>
                     <Image source={IMG_Dishes_1} resizeMode={'contain'} />
                   </View>
@@ -214,6 +220,7 @@ class HomeScreen extends React.Component {
           <TouchableOpacity
             onPress={() => {
               this.setState({nav_selected: 'User'});
+              this.props.navigation.navigate(SCREEN_NAME.PROFILE);
             }}>
             <IC_User
               fill={this.state.nav_selected === 'User' ? '#FA4A0C' : '#ADADAF'}
@@ -221,6 +228,7 @@ class HomeScreen extends React.Component {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
+              this.props.navigation.navigate(SCREEN_NAME.HISTORY);
               this.setState({nav_selected: 'Clock'});
             }}>
             <IC_Clock
@@ -228,6 +236,7 @@ class HomeScreen extends React.Component {
             />
           </TouchableOpacity>
         </View>
+
       </SafeAreaView>
     );
   }
@@ -241,25 +250,32 @@ const styles = StyleSheet.create({
     backgroundColor: CUSTOM_COLOR.AntiFlashWhite,
   },
   headerContainer: {
-    width: '100%',
-    height: scale(132, 'h'),
+    flex: 1,
     flexDirection: 'row',
+    //backgroundColor: 'red',
+    marginHorizontal: scale(56),
+  },
+  titleContainer: {
+    flex: 2,
+    //backgroundColor: 'yellow',
+    marginHorizontal: scale(56),
   },
   iconContainer: {
-    height: 25,
+    flex: 1,
+    //backgroundColor: 'white',
+    justifyContent: 'center',
   },
-  ic_more: {
-    marginTop: scale(74, 'h'),
-    marginLeft: scale(55),
-  },
-  ic_cart: {
-    marginTop: scale(65, 'h'),
-    marginLeft: scale(273),
-  },
+  // ic_more: {
+  //   marginTop: scale(74, 'h'),
+  //   marginLeft: scale(55),
+  // },
+  // ic_cart: {
+  //   marginTop: scale(65, 'h'),
+  //   marginLeft: scale(273),
+  // },
   title: {
     fontSize: scale(34),
     fontFamily: FONT_FAMILY.Bold,
-    marginLeft: scale(50),
     color: CUSTOM_COLOR.Black,
   },
   searchContainer: {
@@ -284,15 +300,20 @@ const styles = StyleSheet.create({
   pickerContainer: {
     marginTop: scale(40, 'h'),
     height: scale(50, 'h'),
+    marginHorizontal: scale(56),
+
+    // backgroundColor: 'pink',
   },
   picker: {
     flex: 1,
+    // backgroundColor: 'yellow',
   },
   pickerContent: {
     flex: 1,
+    paddingHorizontal: scale(15),
     justifyContent: 'center',
     alignItems: 'center',
-    width: scale(87),
+    //backgroundColor: 'red',
   },
   menuContainer: {
     height: scale(400, 'h'),
@@ -304,10 +325,11 @@ const styles = StyleSheet.create({
     paddingTop: scale(50, 'h'),
   },
   menuContent: {
-    flex: 1,
+    marginLeft: scale(56),
+    // flex: 1,
     width: scale(220),
     height: '100%',
-    marginHorizontal: scale(15),
+    // marginHorizontal: scale(15),
     borderRadius: scale(30),
   },
   menuImage: {
@@ -331,9 +353,11 @@ const styles = StyleSheet.create({
     marginTop: scale(25, 'h'),
   },
   footContainer: {
+    marginHorizontal: scale(56),
+
     height: '10%',
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
 });

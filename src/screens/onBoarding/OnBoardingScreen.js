@@ -5,8 +5,6 @@ import {
   View,
   Image,
   ImageBackground,
-  Dimensions,
-  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -14,7 +12,6 @@ import {IMG_Background, IMG_Logo} from '../../assets/images/index';
 import FONT_FAMILY from '../../constants/fonts';
 import scale from '../../constants/responsive';
 import CustomButton from '../../components/CustomButton';
-import SCREEN_NAME from '../../constants/screens'
 
 class OnBoardingScreen extends React.Component {
   render() {
@@ -41,13 +38,13 @@ class OnBoardingScreen extends React.Component {
               source={IMG_Background}
               style={styles.background}
               resizeMode={'contain'}>
-              <>
+              <View style={styles.buttonContainer}>
                 <CustomButton
                   type="primary"
                   text="Get Started"
-                  onPress={() => this.props.navigation.navigate(SCREEN_NAME.LOGIN)}
+                  onPress={() => this.props.navigation.navigate('Login')}
                 />
-              </>
+              </View>
             </ImageBackground>
           </View>
         </>
@@ -82,7 +79,10 @@ const styles = StyleSheet.create({
     color: CUSTOM_COLOR.White,
     marginLeft: scale(50),
   },
-  backgroundContainer: {},
+  buttonContainer: {
+    height: scale(90),
+    width: '100%',
+  },
   background: {
     width: '100%',
     height: scale(540, 'h'),
