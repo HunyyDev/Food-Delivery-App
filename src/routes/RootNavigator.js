@@ -2,7 +2,11 @@ import {StyleSheet} from 'react-native';
 import React from 'react';
 import OnBoardingScreen from '../screens/onBoarding/OnBoardingScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
+<<<<<<< HEAD
 import HomeScreen from '../screens/home/HomeScreen';
+=======
+import HomeScreen from '../screens/MyDrawer/home/HomeScreen';
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
@@ -17,6 +21,10 @@ import NoConnectScreen from '../screens/noConnect/NoConnectScreen';
 import OrderScreen from '../screens/order/OrderScreen';
 import ProfileEditScreen from '../screens/profile/ProfileEditScreen';
 import NotFoundScreen from '../screens/search/NotFoundScreen';
+<<<<<<< HEAD
+=======
+import MyDrawer from '../screens/MyDrawer/Drawer/index';
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 
 
 
@@ -41,8 +49,13 @@ const RootNavigator = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
+<<<<<<< HEAD
             name="HomeScreen"
             component={HomeScreen}
+=======
+            name="MyDrawer"
+            component={MyDrawer}
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
             options={{headerShown: false}}
           />
           <Stack.Screen

@@ -5,6 +5,40 @@
 //  * @format
 //  * @flow strict-local
 //  */
+<<<<<<< HEAD
+=======
+
+// import React from 'react';
+// import OnBoardingScreen from './src/screens/onBoarding/OnBoardingScreen';
+// import LoginScreen from './src/screens/auth/LoginScreen';
+// import HomeScreen from './src/screens/home/HomeScreen';
+// import {NavigationContainer} from '@react-navigation/native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+// const Stack = createNativeStackNavigator();
+
+// const App = props => {
+//   return (
+//     <>
+//       <NavigationContainer>
+//         <Stack.Navigator screenOptions={{headerShown: false}}>
+//           <Stack.Screen name="Onboarding" options={{headerShown: false}}>
+//             {props => <OnBoardingScreen {...props} />}
+//           </Stack.Screen>
+//           <Stack.Screen name="Login" options={{headerShown: false}}>
+//             {props => <LoginScreen {...props} />}
+//           </Stack.Screen>
+//           <Stack.Screen name="Home" options={{headerShown: false}}>
+//             {props => <HomeScreen {...props} />}
+//           </Stack.Screen>
+//         </Stack.Navigator>
+//       </NavigationContainer>
+//     </>
+//   );
+// };
+
+// export default App;
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 
 // import React from 'react';
 // import OnBoardingScreen from './src/onBoarding/OnBoardingScreen';
@@ -53,6 +87,7 @@
 
 import {StyleSheet} from 'react-native';
 import React from 'react';
+<<<<<<< HEAD
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CUSTOM_COLOR from './src/constants/colors';
 import RootNavigator from './src/routes/RootNavigator';
@@ -95,3 +130,12 @@ const styles = StyleSheet.create({
   },
   HeadeStyles: {},
 });
+=======
+import RootNavigator from './src/routes/RootNavigator';
+
+const App = props => {
+  return <RootNavigator {...props} />
+}
+
+export default App
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94

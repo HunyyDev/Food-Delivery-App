@@ -6,13 +6,21 @@ import FONT_FAMILY from '../constants/fonts';
 import scale from '../constants/responsive';
 
 class CustomPersonalDetail extends React.Component {
+<<<<<<< HEAD
   render() {
     return (
       <View style={styles.contentContainer}>
+=======
+
+  render() {
+    return (
+      <View style={this.props.style}>
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
         {this.props.image === 'Marvis' ? (
           <Image style={styles.imageContainer} source={IMG_Marvis} />
         ) : null}
         <View style={styles.infoContainer}>
+<<<<<<< HEAD
           <View style={[styles.box, styles.border]}>
             <Text style={[styles.information, styles.name]}>
               {this.props.name}
@@ -22,6 +30,28 @@ class CustomPersonalDetail extends React.Component {
           <View style={[styles.box, styles.border]}>
             <Text style={styles.info}>{this.props.text2}</Text>
           </View>
+=======
+          <View style={styles.box}>
+            <Text style={[styles.information, styles.name]}>
+              {this.props.name}
+            </Text>
+          </View>
+          {this.props.lineDivider1==='true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
+          <View style={styles.box}>
+            <Text style={styles.info}>{this.props.text1}</Text>
+          </View>
+          {this.props.lineDivider2=== 'true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
+          <View style={styles.box}>
+            <Text style={styles.info}>{this.props.text2}</Text>
+          </View>
+          {this.props.lineDivider3=== 'true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
           <View style={styles.box}>
             <Text style={styles.info}>{this.props.text3}</Text>
           </View>
@@ -85,4 +115,13 @@ const styles = StyleSheet.create({
     marginLeft: scale(10),
     // backgroundColor: 'green',
   },
+<<<<<<< HEAD
+=======
+
+  lineDivider: {
+    width: '100%',
+    height: 1,
+    backgroundColor: CUSTOM_COLOR.Silver,
+  },
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 });

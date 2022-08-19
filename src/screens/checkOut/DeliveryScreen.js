@@ -5,10 +5,17 @@ import CustomButton from "../../components/CustomButton";
 import CUSTOM_COLOR from "../../constants/colors";
 import FONT_FAMILY from "../../constants/fonts";
 import scale from "../../constants/responsive";
+<<<<<<< HEAD
 import { IC_NonSelected, IC_Selected, IC_Back } from "../fonts../assets/icons";
 import CustomPersonalDetail from "../../components/CustomPersonalDetail";
 import CustomHeaderBack from "../../components/CustomHeaderBack";
 import CustomSelected from "../../components/CustomSelected";
+=======
+import CustomPersonalDetail from "../../components/CustomPersonalDetail";
+import CustomHeaderBack from "../../components/CustomHeaderBack";
+import CustomSelected from "../../components/CustomSelected";
+import SCREEN_NAME from "../../constants/screens";
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 
 class DeliveryScreen extends React.Component {
   state = {
@@ -26,16 +33,31 @@ class DeliveryScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         {/* Header Show  */}
         <View style={styles.navigationBar}>
+<<<<<<< HEAD
           <CustomHeaderBack title='Checkout'/>
         </View>
         
 
+=======
+          <CustomHeaderBack title='Checkout' onPress={() => this.props.navigation.goBack()}/>
+        </View>
+        
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
         {/* Title */}
         <View style={styles.titleContainer}>
           <Text style={styles.title}>{'Delivery'}</Text>
         </View>
       
         {/* Address Details  */}
+<<<<<<< HEAD
+=======
+        <View style={styles.addressChange}>
+          <Text style={styles.details}>{'Address Details'}</Text>
+          <TouchableOpacity style={styles.changeTouch}>
+            <Text style={styles.change}>{'change'}</Text>
+          </TouchableOpacity>
+        </View>
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
         <CustomPersonalDetail 
         style={styles.addressContainer} 
         image='' 
@@ -71,7 +93,14 @@ class DeliveryScreen extends React.Component {
 
         {/* Button  */}
         <View style={styles.buttonContainer}>
+<<<<<<< HEAD
           <CustomButton type='secondary' text='Proceed to payment'/>
+=======
+          <CustomButton 
+          type='secondary' 
+          onPress={() => this.props.navigation.navigate(SCREEN_NAME.PAYMENT)}
+          text='Proceed to payment'/>
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
         </View>
 
       </SafeAreaView>
@@ -104,13 +133,33 @@ const styles = StyleSheet.create({
   addressContainer: {
     // height: scale(196, 'h'),
     // width: scale(315),
+<<<<<<< HEAD
     //backgroundColor: 'yellow',
+=======
+    backgroundColor: CUSTOM_COLOR.White,
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
     marginHorizontal: scale(50),
     marginTop: scale(35, 'h'),
     flex: 3,
     borderRadius: scale(20),
   },
 
+<<<<<<< HEAD
+=======
+  addressChange: {
+    flexDirection: "row",
+    //backgroundColor: "pink",
+    marginHorizontal: scale(50),
+    alignItems: 'center',
+  },
+
+  details: {
+    color: CUSTOM_COLOR.Black,
+    fontSize: scale(17),
+    fontFamily: FONT_FAMILY.Bold,
+  },
+
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
   deliveryContainer: {
     // height: scale(196, 'h'),
     // width: scale(315),
@@ -193,6 +242,10 @@ const styles = StyleSheet.create({
   change: {
     color: CUSTOM_COLOR.TahitiGold,
     fontSize: scale(15),
+<<<<<<< HEAD
+=======
+    fontFamily: FONT_FAMILY.Bold,
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
   },
 
   contentContainer: {

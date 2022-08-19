@@ -64,4 +64,8 @@ package-lock.json
 yarn.lock
 /package-lock.json
 ios/Podfile.lock
+<<<<<<< HEAD
 .vscode/settings.json
+=======
+.vscode/settings.json
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94

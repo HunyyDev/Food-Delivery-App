@@ -14,6 +14,10 @@ const SCREEN_NAME = {
     PROFILE: 'ProfileScreen',
     PROFILE_EDIT: 'ProfileEditScreen',
     NOTFOUND: 'NotFoundScreen',
+<<<<<<< HEAD
+=======
+    DRAWER: 'MyDrawer',
+>>>>>>> fac1cc961b7b6728a499131822a70a12c34e4d94
 }
 
 export default SCREEN_NAME
