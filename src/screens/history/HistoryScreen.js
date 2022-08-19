@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import scale from '../../constants/responsive';
 import CUSTOM_COLOR from '../../constants/colors';
@@ -7,49 +7,33 @@ import { IC_Clock } from '../../assets/icons/index';
 import CustomButton from '../../components/CustomButton';
 import CustomHeaderBack from '../../components/CustomHeaderBack';
 
-// const HistoryScreen = ({navigation}) => {
-//     React.useLayoutEffect (() => {
-//         navigation.setOptions ({
-//             title: 'History',
-//             headerStyle: {
-//                 backgroundColor: CUSTOM_COLOR.Cultured,
-//                 justifyContent: 'center',
-//                 alignItems: 'center',
-//               },
-//               headerTitleStyle: {
-//                 alignSelf: 'center',
-//                 fontFamily: FONT_FAMILY.Light,
-//               },
-//               headerTitleAlign: 'center',
-//               headerTintColor: CUSTOM_COLOR.Black,
-//         });
-//     }, [navigation]);
-
-const HistoryScreen = () => {
-    return (
-        <SafeAreaView style = {styles.container}>
-            <View style = {styles.headerContainer}>
-                <CustomHeaderBack 
-                    title = 'History'
-                    marginLeft = {scale(56)}
-                    onPress={() => this.props.navigation.goBack()}
+class HistoryScreen extends Component {
+    render() {
+        return (
+            <SafeAreaView style = {styles.container}>
+                <View style = {styles.headerContainer}>
+                    <CustomHeaderBack 
+                        title = 'History'
+                        marginLeft = {scale(56)}
+                        onPress={() => this.props.navigation.goBack()}
+                        />
+                </View>
+    
+                <View style = {styles.historyContainer}>
+                    <IC_Clock style = {styles.ic_Clock}/>
+                    <Text style = {styles.txt1}>No history yet</Text>
+                    <Text style = {styles.txt2}>{'Hit the orange button down \nbelow to Create an order'}</Text>
+                </View>
+                
+                <View style={styles.buttonContainer}>
+                    <CustomButton
+                        type = {'secondary'}
+                        text = {'Start ordering'}
                     />
-            </View>
-
-            <View style = {styles.historyContainer}>
-                <IC_Clock style = {styles.ic_Clock}/>
-                <Text style = {styles.txt1}>No history yet</Text>
-                <Text style = {styles.txt2}>{'Hit the orange button down \nbelow to Create an order'}</Text>
-            </View>
-            
-            <View style={styles.buttonContainer}>
-                <CustomButton
-                    type = {'secondary'}
-                    text = {'Start ordering'}
-                />
-            </View>
-        </SafeAreaView>
-    );
+                </View>
+            </SafeAreaView>
+        );
+    }
 }
 
 export default HistoryScreen;

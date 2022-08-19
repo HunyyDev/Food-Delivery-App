@@ -14,7 +14,7 @@ import {
   import CustomHeaderBack from '../../components/CustomHeaderBack';
   import CustomHeaderText from '../../components/CustomHeaderText';
   import CustomSelected from '../../components/CustomSelected';
-  import {IC_Bank} from '../../assets/icons';
+  import SCREEN_NAME from '../../constants/screens';
   
   export default class PaymentScreen extends Component {
     state = {
@@ -158,7 +158,7 @@ import {
                     </TouchableOpacity>
                     <TouchableOpacity
                       style={styles.touchButton}
-                      onPress={() => this.props.navigation.navigate('Loading')}>
+                      onPress={() => this.props.navigation.navigate(SCREEN_NAME.LOADING)}>
                       <View style={styles.button}>
                         <Text
                           style={[

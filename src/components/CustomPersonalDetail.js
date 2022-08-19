@@ -6,22 +6,34 @@ import FONT_FAMILY from '../constants/fonts';
 import scale from '../constants/responsive';
 
 class CustomPersonalDetail extends React.Component {
+
   render() {
     return (
-      <View style={styles.contentContainer}>
+      <View style={this.props.style}>
         {this.props.image === 'Marvis' ? (
           <Image style={styles.imageContainer} source={IMG_Marvis} />
         ) : null}
         <View style={styles.infoContainer}>
-          <View style={[styles.box, styles.border]}>
+          <View style={styles.box}>
             <Text style={[styles.information, styles.name]}>
               {this.props.name}
             </Text>
+          </View>
+          {this.props.lineDivider1==='true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
+          <View style={styles.box}>
             <Text style={styles.info}>{this.props.text1}</Text>
           </View>
-          <View style={[styles.box, styles.border]}>
+          {this.props.lineDivider2=== 'true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
+          <View style={styles.box}>
             <Text style={styles.info}>{this.props.text2}</Text>
           </View>
+          {this.props.lineDivider3=== 'true' ? (
+            <View style={styles.lineDivider}/>
+          ): null}
           <View style={styles.box}>
             <Text style={styles.info}>{this.props.text3}</Text>
           </View>
@@ -84,5 +96,11 @@ const styles = StyleSheet.create({
     marginTop: scale(10),
     marginLeft: scale(10),
     // backgroundColor: 'green',
+  },
+
+  lineDivider: {
+    width: '100%',
+    height: 1,
+    backgroundColor: CUSTOM_COLOR.Silver,
   },
 });
