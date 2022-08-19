@@ -8,9 +8,9 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
-import scale from '../../constants/responsive';
-import CUSTOM_COLOR from '../../constants/colors';
-import FONT_FAMILY from '../../constants/fonts';
+import scale from '../../../constants/responsive';
+import CUSTOM_COLOR from '../../../constants/colors';
+import FONT_FAMILY from '../../../constants/fonts';
 import {
   IC_More,
   IC_Cart,
@@ -19,12 +19,17 @@ import {
   IC_Heart,
   IC_User,
   IC_Clock,
-} from '../../assets/icons/index.js';
+} from '../../../assets/icons/index.js';
 import Label from './components/Label';
 import MenuBlock from './components/MenuBlock';
-import {IMG_Dishes_1} from '../../assets/images/index';
-import InputBox from '../../components/InputBox';
-import SCREEN_NAME from '../../constants/screens';
+import {IMG_Dishes_1} from '../../../assets/images/index';
+import InputBox from '../../../components/InputBox';
+import SCREEN_NAME from '../../../constants/screens';
+import { DrawerActions } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
+
+
+
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -35,7 +40,9 @@ class HomeScreen extends React.Component {
     };
   }
 
+
   render() {
+    const { navigation } = this.props;
     return (
       <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
         {/* Header */}
@@ -43,9 +50,9 @@ class HomeScreen extends React.Component {
           <View style={styles.headerContainer}>
             <TouchableOpacity 
             style={[styles.iconContainer, styles.ic_more]}
-            // onPress={() => this.props.navigation.navigate(HOMEDRAWER)}
+            onPress={() => this.props.navigation.openDrawer()}
             >
-              <IC_More />
+              <IC_More/>
             </TouchableOpacity>
             <TouchableOpacity
               style={[
@@ -242,7 +249,10 @@ class HomeScreen extends React.Component {
   }
 }
 
-export default HomeScreen;
+export default function(props) {
+  const navigation = useNavigation();
+  return <HomeScreen {...props} navigation={navigation}/>;
+}
 
 const styles = StyleSheet.create({
   container: {

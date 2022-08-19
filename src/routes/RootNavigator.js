@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import React from 'react';
 import OnBoardingScreen from '../screens/onBoarding/OnBoardingScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
-import HomeScreen from '../screens/home/HomeScreen';
+import HomeScreen from '../screens/MyDrawer/home/HomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CartScreen from '../screens/cart/CartScreen';
@@ -17,6 +17,7 @@ import NoConnectScreen from '../screens/noConnect/NoConnectScreen';
 import OrderScreen from '../screens/order/OrderScreen';
 import ProfileEditScreen from '../screens/profile/ProfileEditScreen';
 import NotFoundScreen from '../screens/search/NotFoundScreen';
+import MyDrawer from '../screens/MyDrawer/Drawer/index';
 
 
 
@@ -41,8 +42,8 @@ const RootNavigator = () => {
             options={{headerShown: false}}
           />
           <Stack.Screen
-            name="HomeScreen"
-            component={HomeScreen}
+            name="MyDrawer"
+            component={MyDrawer}
             options={{headerShown: false}}
           />
           <Stack.Screen
