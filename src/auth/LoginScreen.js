@@ -86,11 +86,13 @@ export class LoginScreen extends Component {
               <CustomInput
                 label={'Email address'}
                 onChangeText={email => this.setState({email: email})}
+                autoCap={'none'}
               />
               <CustomInput
                 label={'Password'}
                 secureText={true}
                 onChangeText={pass => this.setState({pass: pass})}
+                autoCap={'none'}
               />
             </View>
             {this.state.page === LOGIN ? (
@@ -105,6 +107,7 @@ export class LoginScreen extends Component {
                 onChangeText={confirmPass =>
                   this.setState({confirmPass: confirmPass})
                 }
+                autoCap={'none'}
               />
             )}
           </View>
@@ -117,16 +120,21 @@ export class LoginScreen extends Component {
               text={this.state.page === LOGIN ? 'Login' : 'Sign Up'}
               onPress={() => {
                 if (this.state.email === '' || this.state.password === '') {
-                  alert('Bạn chưa điền đầy đủ thông tin!')
+                  alert('Bạn chưa điền đầy đủ thông tin!');
                 } else {
-                  if (this.state.page === LOGIN) {this.props.navigation.navigate('Home')}
-                  else {
-                    if (this.correctConFirmPassword(this.state.pass, this.state.confirmPass)) {
-                      alert('Bạn đã tạo tài khoản thành công!')
-                      this.props.navigation.navigate('Home')
-                    }
-                    else {
-                      alert('Mật khẩu không trùng khớp, vui lòng điền lại!')
+                  if (this.state.page === LOGIN) {
+                    this.props.navigation.navigate('Home');
+                  } else {
+                    if (
+                      this.correctConFirmPassword(
+                        this.state.pass,
+                        this.state.confirmPass,
+                      )
+                    ) {
+                      alert('Bạn đã tạo tài khoản thành công!');
+                      this.props.navigation.navigate('Home');
+                    } else {
+                      alert('Mật khẩu không trùng khớp, vui lòng điền lại!');
                     }
                   }
                 }

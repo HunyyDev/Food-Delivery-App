@@ -14,7 +14,9 @@ export default class CustomInput extends Component {
             secureTextEntry={this.props.secureText}
             placeholder={this.props.label}
             style={styles.input}
-            onChangeText={this.props.onChangeText}/>
+            onChangeText={this.props.onChangeText}
+            autoCapitalize={this.props.autoCap}
+          />
         </View>
       </>
     );
