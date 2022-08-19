@@ -11,5 +11,7 @@ const CUSTOM_COLOR = {
   Vermilion: '#FA4A0C',
   Manatee: '#9A9A9D',
   Bombay: '#ADADAF',
+  AthensGray: '#F5F5F8',
+  Alabaster: '#F9F9F9',
 };
 export default CUSTOM_COLOR;

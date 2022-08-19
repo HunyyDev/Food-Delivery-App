@@ -1,4 +1,12 @@
 export {default as IMG_Logo} from './logo.png';
 export {default as IMG_Background} from './background.png';
 export {default as IMG_Dishes_1} from './dishes_1.png';
-export {default as IMG_Dishes_2} from './dishes_2.png';
+export {default as IMG_Dishes_1_small} from './dishes_1_small.png';
+export {default as IMG_Dishes_2_small} from './dishes_2_small.png';
+export {default as IMG_Dishes_3} from './dishes_3.png';
+export {default as IMG_Dishes_4} from './dishes_4.png';
+export {default as IMG_Dishes_5} from './dishes_5.png';
+export {default as IMG_BackButton} from './back_button.png';
+export {default as IMG_BackgroundScreen19} from './backgroundscreen19.png';
+export {default as IMG_BellaOlonjeLogo} from './BellaOlonjelogo1.png';
+export {default as IMG_Marvis} from './Rectangle_6.png';
