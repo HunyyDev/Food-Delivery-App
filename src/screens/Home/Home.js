@@ -1,130 +1,98 @@
 import React from 'react';
 import {useState} from 'react';
-import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  TextInput,
+  Pressable,
+  Dimensions,
+} from 'react-native';
 
 import {
-  IMG_MAGNIFIER,
-  IMG_MENU,
-  IMG_TROLLEY,
-  IMG_VEGGIE,
-  IMG_HEART,
-  IMG_HISTORY,
-  IMG_HOUSE,
-  IMG_USER,
+  IMG_GRAY_HOME,
+  IMG_GRAY_PROFILE,
+  IMG_GREEN_PROFILE,
+  IMG_GREEN_HOME,
 } from '../../assets/images';
-import Menu from '../../components/Menu/Menu';
 import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
-import Dish from '../../components/Dish/Dish';
+import Back from '../../components/Back/Back';
 
 const Home = props => {
-  const [chosenList, setChosenList] = useState([true, false, false, false]);
+  const navigation = props.navigation;
 
-  const clicked = chosen => {
-    let list = [];
-    for (let i = 0; i < 4; i++) {
-      list[i] = false;
-    }
-    list[chosen] = true;
-    setChosenList(list);
+  const onPress = props;
+
+  const navigateToUserPage = () => {
+    navigation.navigate('User');
   };
-
   return (
-    <ScrollView>
-      <View style={styles.options}>
-        <Image source={IMG_MENU} resizeMode="contain" />
-        <Image source={IMG_TROLLEY} resizeMode="contain" />
-      </View>
-      <View>
-        <Text style={styles.text}>Delicious{'\n'}food for you</Text>
-      </View>
-      <View style={styles.findFrame}>
-        <Image source={IMG_MAGNIFIER} />
-        <Text style={styles.textFind}>Search</Text>
-      </View>
-      <ScrollView horizontal>
-        <View style={styles.textMenuFrame}>
-          <Menu isChosen={chosenList[0]} onPress={() => clicked(0)}>
-            Foods
-          </Menu>
-          <Menu isChosen={chosenList[1]} onPress={() => clicked(1)}>
-            Drinks
-          </Menu>
-          <Menu isChosen={chosenList[2]} onPress={() => clicked(2)}>
-            Snacks
-          </Menu>
-          <Menu isChosen={chosenList[3]} onPress={() => clicked(3)}>
-            Sauce
-          </Menu>
+    <View style={styles.backGround}>
+      <ScrollView>
+        <Back navigation={props.navigation} style={styles.back}></Back>
+
+        <View style={styles.Time}>
+          <Text style={styles.TextFrame}>November</Text>
+        </View>
+        <View style={styles.Menu}>
+          <Image source={IMG_GRAY_HOME}></Image>
+          <TouchableOpacity onPress={navigateToUserPage}>
+            <Image source={IMG_GREEN_PROFILE}></Image>
+          </TouchableOpacity>
         </View>
       </ScrollView>
-      <Text style={styles.seeMore}>see more</Text>
-      <ScrollView horizontal>
-        <Dish price="N6,500">Beef{'\n'}salad mix</Dish>
-        <Dish price="N1,900">Veggie{'\n'}tomato mix</Dish>
-        <Dish price="N2,300">Spicy fish{'\n'}sauce</Dish>
-      </ScrollView>
-      <View style={styles.properties}>
-        <Image source={IMG_HOUSE} />
-        <Image source={IMG_HEART} />
-        <Image source={IMG_USER} />
-        <Image source={IMG_HISTORY} />
-      </View>
-    </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({
-  options: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 74,
-    marginLeft: 54.6,
-    marginRight: 42,
-    backgroundColor: COLORS.CONCRETEE,
+  backGround: {
+    backgroundColor: 'white',
+    height: Dimensions.get('window').height,
+    width: Dimensions.get('window').width,
   },
-  text: {
-    color: COLORS.BLACK,
-    fontSize: 34,
-    fontFamily: FONT_FAMILY.SF_PRO_ROUNDED_BOLD,
-    marginLeft: 50,
-    marginTop: 43.33,
-  },
-  findFrame: {
-    flexDirection: 'row',
-    backgroundColor: COLORS.GALLERY,
-    marginLeft: 50,
-    paddingLeft: 35,
-    borderRadius: 30,
-    height: 60,
-    marginRight: 50,
-    paddingTop: 21,
-  },
-  textFind: {
-    fontFamily: FONT_FAMILY.SF_PRO_ROUNDED_REGULAR,
-    marginLeft: 16,
-    marginTop: -8,
-    fontSize: 17,
-    opacity: 0.5,
-    color: COLORS.BLACK,
-  },
-  textMenuFrame: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingLeft: 91,
-  },
-  seeMore: {
-    fontSize: 15,
-    color: COLORS.VERMILION,
-    marginRight: 41,
-    marginTop: 45,
+  Time: {
+    width: 166,
+    height: 46,
+    // marginLeft: 51,
     alignSelf: 'flex-end',
+    marginTop: -35,
+    borderRadius: 10,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    flex: 1,
+    marginBottom: 36,
+    marginRight: 10,
+    marginLeft: 200,
+    backgroundColor: COLORS.RIPE_LEMON,
   },
-
-  properties: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+  TextFrame: {
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_BOLD,
+    color: COLORS.BLACK,
+    marginBottom: 10,
+    fontSize: 18,
     alignItems: 'center',
-    marginTop: 52,
+    alignContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
+
+    display: 'flex',
+  },
+  back: {
+    width: 53,
+    height: 53,
+  },
+  Menu: {
+    flexDirection: 'row',
+    width: Dimensions.get('window').width,
+    height: 79,
+    backgroundColor: COLORS.GALLERY,
+    alignContent: 'center',
+    marginTop: 690,
+    justifyContent: 'center',
   },
 });
 export default Home;

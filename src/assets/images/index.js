@@ -1,10 +1,31 @@
-export {default as IMG_BACKGROUND} from './background.png';
-export {default as IMG_LOGO} from './logo.png';
 export {default as IMG_MENU} from './menu.png';
 export {default as IMG_MAGNIFIER} from './magnifier.png';
-export {default as IMG_VEGGIE} from './veggie.png';
 export {default as IMG_TROLLEY} from './trolley.png';
 export {default as IMG_HEART} from './heart.png';
-export {default as IMG_HOUSE} from './heroicons-solid_home.png';
 export {default as IMG_USER} from './user.png';
 export {default as IMG_HISTORY} from './ic_sharp-history.png';
+export {default as IMG_BACK} from './back.png';
+export {default as IMG_LINE} from './Line.png';
+export {default as IMG_WIFI} from './eva_wifi-off-fill.png';
+export {default as IMG_HAND} from './iwwa_swipe.png';
+export {default as IMG_WHITE_POINT} from './Ellipse5.png';
+export {default as IMG_RED_POINT} from './Ellipse3.png';
+export {default as IMG_NOT_CHOSEN} from './Not.png';
+export {default as IMG_CHOSEN} from './Chosen.png';
+export {default as IMG_NEXT} from './next.png';
+export {default as IMG_OB} from './OnBoarding.png';
+export {default as IMG_GREEN_ELIP} from './GreenElip.png';
+export {default as IMG_GRAY_CIRCLE} from './GrayCircle.png';
+export {default as IMG_GOOGLE} from './Google.png';
+export {default as IMG_GRAY_HOME} from './Home.png';
+export {default as IMG_GREEN_PROFILE} from './Profile.png';
+export {default as IMG_GREEN_HOME} from './GreenHome.png';
+export {default as IMG_GRAY_PROFILE} from './GrayProfile.png';
+export {default as IMG_LOGO_WHITE} from './LogoWhite.png';
+export {default as IMG_CHOSEN_HOME} from './TabHomeChoose.png';
+export {default as IMG_NOT_CHOSEN_Home} from './TabHome.png';
+export {default as IMG_CHOSEN_INFOR} from './TabInfor.png';
+export {default as IMG_NOT_CHOSEN_INFOR} from './TabInforNotChoose.png';
+export {default as IMG_LOGOUT} from './LogOut.png';
+
+

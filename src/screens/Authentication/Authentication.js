@@ -1,114 +1,211 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Text,
   View,
   StyleSheet,
-  Image,
   ScrollView,
-  Pressable,
+  Dimensions,
+  TouchableOpacity,
+  Image,
+  TextInput,
 } from 'react-native';
-import {IMG_LOGO} from '../../assets/images';
-import COLORS from '../../constants/colors';
+
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
+import {IMG_GOOGLE} from '../../assets/images';
+
 import FONT_FAMILY from '../../constants/fonts';
-import FillIn from '../../components/FillIn/FillIn';
-import LongButton from '../../components/LongButton/LongButton';
-import PresentLine from '../../components/PresentLine/PresentLine';
+import COLORS from '../../constants/colors';
+import Back from '../../components/Back/Back';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const Authentication = props => {
-  const [present, setPresent] = useState('login');
-
-  const {navigation} = props;
+  const navigation = props.navigation;
   const navigateToHomePage = () => {
     navigation.navigate('Home');
   };
-  const onPress = props;
-  const onPressFuntionLog = () => {
-    setPresent('login');
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId:
+        '563269076578-jrtmsr5fcoh7fq1pk2sc7k75dqdpv9s0.apps.googleusercontent.com',
+    });
+  }, []);
+  const googleSignin = async () => {
+    const {idToken} = await GoogleSignin.signIn();
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+    return auth().signInWithCredential(googleCredential);
   };
-  const onPressFuntion = () => {
-    setPresent('sign-up');
-  };
+  const [useData, setUserData] = useState(0);
+
   return (
-    <ScrollView>
-      <View style={styles.background}>
-        <View style={styles.backgroundLogo}>
-          <View style={styles.imageLogoFrame} resizeMode="contain">
-            <Image style={styles.imageLogo} source={IMG_LOGO} />
-          </View>
-          <View style={styles.tabFrame}>
-            <Pressable onPress={onPressFuntionLog}>
-              <Text style={styles.text}>Login</Text>
-            </Pressable>
-            <Pressable onPress={onPressFuntion}>
-              <Text style={styles.text}>Sign-up</Text>
-            </Pressable>
-          </View>
+    <View style={styles.backGround}>
+      <ScrollView>
+        <Back navigation={props.navigation} style={styles.back}></Back>
+        <Text style={styles.Note}>Continute</Text>
+        <Text style={styles.NoteBottom}>with your account</Text>
+
+        <View style={styles.fieldSet}>
+          <Text style={styles.legend}>Email</Text>
+          <TextInput style={styles.Text}></TextInput>
         </View>
-        {present === 'login' ? (
-          <View>
-            <PresentLine type="longLeft"></PresentLine>
-            <FillIn type="email">Email address</FillIn>
-            <FillIn type="pass">Password</FillIn>
-            <Text style={styles.noteText}>Forgot passcode?</Text>
-          </View>
-        ) : (
-          <View>
-            <PresentLine type="longRight"></PresentLine>
-            <FillIn type="email">Email address</FillIn>
-            <FillIn type="pass">Password</FillIn>
-            <FillIn type="pass">Confirm Password</FillIn>
-          </View>
-        )}
-        <View style={styles.longButton}>
-          <LongButton onPress={navigateToHomePage} type="Long_Orange_Button">
-            Login
-          </LongButton>
+        <View style={styles.fieldSet}>
+          <Text style={styles.legend}>Password</Text>
+          <TextInput style={styles.Text} secureTextEntry={true}></TextInput>
         </View>
-      </View>
-    </ScrollView>
+        <TouchableOpacity onPress={navigateToHomePage}>
+          <View style={styles.button}>
+            <Text style={styles.TextFrame}>Get Started</Text>
+          </View>
+        </TouchableOpacity>
+
+        <View style={styles.fieldSetLine}>
+          <Text style={styles.legendLine}>Or sign in with</Text>
+          <TextInput style={styles.Text} secureTextEntry={true}></TextInput>
+        </View>
+        <Pressable
+          onPress={() =>
+            googleSignin()
+              .then(res => {
+                console.log(res.user);
+                setUserData(res.user);
+              })
+              .catch(error => console.log(error))
+          }>
+          <Image style={styles.Image} source={IMG_GOOGLE}></Image>
+        </Pressable>
+      </ScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
+  back: {
+    width: 53,
+    height: 53,
+    margin: 50,
+  },
+  backGround: {
+    backgroundColor: 'white',
+    height: Dimensions.get('window').height,
+  },
+  NoteBottom: {
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_BOLD,
+    color: COLORS.BLACK,
+    fontSize: 30,
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    alignSelf: 'flex-start',
+    justifyContent: 'flex-start',
+    display: 'flex',
+    marginLeft: 40,
+  },
+  Note: {
+    marginTop: 250,
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_BOLD,
+    color: COLORS.BLACK,
+    fontSize: 30,
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
+    alignSelf: 'flex-start',
+    justifyContent: 'flex-start',
+    display: 'flex',
+    marginLeft: 40,
+  },
+  Text: {
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_REGULAR,
+    color: COLORS.BLACK,
+    fontSize: 20,
+    alignItems: 'center',
+    alignContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    display: 'flex',
+  },
+  fieldSet: {
+    marginTop: 20,
+    marginBottom: 30,
+    justifyContent: 'center',
+    alignSelf: 'center',
+    paddingHorizontal: 10,
+    paddingBottom: 10,
+    borderRadius: 5,
+    borderWidth: 1,
+    width: 348,
+    height: 56,
+    alignItems: 'center',
+    borderColor: COLORS.SLIVER,
+  },
+  fieldSetLine: {
+    marginTop: 20,
+    marginBottom: 30,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignSelf: 'center',
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    width: 348,
+    height: 1,
+    alignItems: 'center',
+    borderColor: COLORS.SLIVER,
     backgroundColor: COLORS.SLIVER,
   },
-  backgroundLogo: {
-    height: 382,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-    top: -15,
+  legendLine: {
+    position: 'absolute',
+    alignSelf: 'center',
+    marginLeft: 100,
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    top: -10,
+    left: 10,
     backgroundColor: COLORS.WHITE,
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_REGULAR,
+    color: COLORS.BLACK,
+    fontSize: 16,
   },
-  imageLogoFrame: {
-    flex: 1,
+  legend: {
+    position: 'absolute',
+    top: -10,
+    left: 10,
+    fontWeight: 'bold',
+    backgroundColor: COLORS.WHITE,
+    fontFamily: FONT_FAMILY.SF_PRO_TEXT_BOLD,
+    color: COLORS.BLACK,
+    fontSize: 16,
+  },
+  button: {
+    width: 344,
+    height: 56,
+    // marginLeft: 51,
+    alignSelf: 'center',
+    marginTop: 30,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
+    marginBottom: 36,
+    backgroundColor: COLORS.JUNGLE_GREEN,
   },
-  imageLogo: {
-    width: 131.53,
-    height: 162.38,
-  },
-  tabFrame: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-  },
-  text: {
-    color: COLORS.BLACK,
-    fontFamily: FONT_FAMILY.SF_PRO_TEXREGULAR,
-    fontSize: 18,
-    paddingVertical: 15,
-  },
-  noteText: {
-    color: COLORS.VERMILION,
-    fontSize: 17,
+  TextFrame: {
     fontFamily: FONT_FAMILY.SF_PRO_TEXT_BOLD,
-    marginLeft: 50,
-    marginTop: 34,
+    color: COLORS.WHITE,
+    fontSize: 18,
+    alignItems: 'center',
+    alignContent: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    display: 'flex',
   },
-  longButton: {
-    marginTop: 136,
+  Image: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignContent: 'center',
   },
 });
 export default Authentication;

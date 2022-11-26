@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "563269076578",
+    "project_id": "themorethemerrierapp",
+    "storage_bucket": "themorethemerrierapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563269076578:android:67cf587905c52dae41f33b",
+        "android_client_info": {
+          "package_name": "com.food_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563269076578-jrtmsr5fcoh7fq1pk2sc7k75dqdpv9s0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXmDvUl-8APuceJnZ9eVWr9DSlGnesYUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563269076578-jrtmsr5fcoh7fq1pk2sc7k75dqdpv9s0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

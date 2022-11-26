@@ -1,19 +1,12 @@
 import React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  ScrollView,
-  Dimensions,
-  Image,
-} from 'react-native';
-
-import OnBoarding from './src/screens/OnBoarding/OnBoarding';
-import Authentication from './src/screens/Authentication/Authentication';
-import Home from './src/screens/Home/Home';
+import {StyleSheet} from 'react-native';
 
 import COLORS from './src/constants/colors';
 import FONT_FAMILY from './src/constants/fonts';
+import Authentication from './src/screens/Authentication/Authentication';
+import Home from './src/screens/Home/Home';
+import OnBoarding from './src/screens/OnBoarding/OnBoarding';
+import User from './src/screens/User/User';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -27,6 +20,7 @@ const App = () => {
         <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Authentication" component={Authentication} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="User" component={User} />
       </Stack.Navigator>
     </NavigationContainer>
   );
