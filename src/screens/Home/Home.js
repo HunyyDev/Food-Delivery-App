@@ -21,30 +21,46 @@ import {
 import COLORS from '../../constants/colors';
 import FONT_FAMILY from '../../constants/fonts';
 import Back from '../../components/Back/Back';
+import Task from '../../components/Task/Task';
+
+const taskList = [
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+  {title: 'Học bài', from: '5:00', to: '7:30'},
+];
 
 const Home = props => {
   const navigation = props.navigation;
 
-  const onPress = props;
-
   const navigateToUserPage = () => {
     navigation.navigate('User');
   };
+
   return (
     <View style={styles.backGround}>
       <ScrollView>
-        <Back navigation={props.navigation} style={styles.back}></Back>
+        <Back navigation={props.navigation} style={styles.back} />
 
         <View style={styles.Time}>
           <Text style={styles.TextFrame}>November</Text>
         </View>
-        <View style={styles.Menu}>
-          <Image source={IMG_GRAY_HOME}></Image>
-          <TouchableOpacity onPress={navigateToUserPage}>
-            <Image source={IMG_GREEN_PROFILE}></Image>
-          </TouchableOpacity>
+
+        <View style={styles.tasksTime}>
+          {taskList.map(({title, from, to}, index) => (
+            <Task title={title} from={from} to={to} isActive={index === 0} />
+          ))}
         </View>
       </ScrollView>
+      <View style={styles.Menu}>
+        <Image source={IMG_GRAY_HOME} />
+        <TouchableOpacity onPress={navigateToUserPage}>
+          <Image source={IMG_GREEN_PROFILE} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -53,6 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: Dimensions.get('window').height,
     width: Dimensions.get('window').width,
+    position: 'relative',
   },
   Time: {
     width: 166,
@@ -89,10 +106,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: Dimensions.get('window').width,
     height: 79,
+    position: 'absolute',
+    bottom: 0,
     backgroundColor: COLORS.GALLERY,
     alignContent: 'center',
-    marginTop: 690,
+    // marginTop: 690,
     justifyContent: 'center',
+  },
+  tasksTime: {
+    width: Dimensions.get('window').width,
+    alignItems: 'flex-end',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 20,
   },
 });
 export default Home;
